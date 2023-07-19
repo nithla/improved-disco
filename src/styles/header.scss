@@ -1,0 +1,57 @@
+.header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 1rem;
+    // min-height: 100vh;
+    background: $la-db-bl-le;
+    box-sizing: border-box;
+
+    &__logo {
+        &-text {
+            cursor: pointer;
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            margin: 1rem;
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 3rem; //responsive size
+            background-image: linear-gradient(to right,
+                    #fff,
+                    #fff 50%,
+                    #000 50%); //to be changed
+            background-size: 200% 100%;
+            background-position: 100%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            transition: all 0.3s ease-in-out;
+
+            &:hover {
+                // background: black;
+                background-position: 0;
+                box-shadow: #fff 0 6px 0 -5px;
+            }
+        }
+    }
+
+    &__navigation {
+        width: fit-content;
+
+        &-links {
+            display: grid;
+            grid-auto-flow: column;
+            column-gap: 2rem;
+            cursor: default;
+
+            li {
+                display: inline-block;
+                cursor: pointer;
+                transition: all 0.3s ease-in-out;
+
+                &:hover {
+                    color: #ece2dc;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,94 @@
+/* Theme Colours */
+$dark-blue: #000033;
+$dark-blue-50: rgba(0, 0, 51, 0.50);
+$dark-blue-75: rgba(0, 0, 51, 0.75);
+$dark-blue-95: rgba(0, 0, 51, 0.95);
+$black: #000;
+$white: #fff;
+$beige: #ece2dc;
+$dark-vanilla: #E1BEA8;
+$pink: #f7a8b2;
+$pink-35: rgba(247, 168, 178, 0.35);
+$blush: #FEC8D8;
+$lilac: #E0BBE4;
+$lavendar: #957DAD;
+$babyblue: #CAE0EF;
+$deep-blush: rgb(193, 110, 100);
+$deep-blush-35: rgba(193, 110, 100, 0.35);
+$purple: #492D49;
+
+
+$db-dv-le: linear-gradient(to left, $deep-blush 0%, $dark-vanilla 100%);
+$db-dv-ri: linear-gradient(to right, $deep-blush 0%, $dark-vanilla 100%);
+
+$la-db-bl-ri: linear-gradient(to right, #957dad, #a478a4, #b17399, #bb6f8a, #c06d7a, #c7747c, #cd7c7f, #d38382, #df9398, #eaa5ae, #f4b6c4, #fec8d8);
+$la-db-bl-le: linear-gradient(to left, #957dad, #a478a4, #b17399, #bb6f8a, #c06d7a, #c7747c, #cd7c7f, #d38382, #df9398, #eaa5ae, #f4b6c4, #fec8d8);
+
+$sm: 576px;
+$md: 768px;
+$lg: 992px;
+$xl: 1200px;
+
+$background-image: url('../images/eberhard-grossgasteiger-644372-unsplash.jpg');
+$background-image-crop: url('../images/eberhard-grossgasteiger-644372-unsplash-crop.jpg');
+
+.d-flex {
+    display: flex;
+}
+
+@mixin media-breakpoint-down($breakpoint) {
+    @if $breakpoint==sm {
+        @media (max-width: $sm) {
+            @content;
+        }
+    }
+
+    @else if $breakpoint==md {
+        @media (max-width: $md) {
+            @content;
+        }
+    }
+
+    @else if $breakpoint==lg {
+        @media (max-width: $lg) {
+            @content;
+        }
+    }
+
+    @else {
+        @media (max-width: $xl) {
+            @content;
+        }
+    }
+}
+
+@mixin media-breakpoint-up($breakpoint) {
+    @if $breakpoint==sm {
+        @media (min-width: $sm) {
+            @content;
+        }
+    }
+
+    @else if $breakpoint==md {
+        @media (min-width: $md) {
+            @content;
+        }
+    }
+
+    @else if $breakpoint==lg {
+        @media (min-width: $lg) {
+            @content;
+        }
+    }
+
+    @else {
+        @media (min-width: $xl) {
+            @content;
+        }
+    }
+}
+
+@mixin nit-sm {
+    font-size: 2rem;
+    line-height: 1.4;
+}

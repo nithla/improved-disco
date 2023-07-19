@@ -1,0 +1,15 @@
+.archive {
+    background-color: #E0BBE4;
+
+    &__card {
+        background-color: #000;
+        width: 7.5rem;
+        height: 7.5rem;
+
+        &-wrapper {
+            display: flex;
+            justify-content: space-between;
+            padding: 1rem;
+        }
+    }
+}

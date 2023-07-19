@@ -1,0 +1,20 @@
+.home {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 1rem;
+    background-color: #f7a8b2;
+    padding: 1rem;
+
+    &__picture,
+    &__bio {
+        flex: 1;
+    }
+
+    &__picture {
+        background-color: #000;
+    }
+
+    &__bio {
+        text-align: justify;
+    }
+}
