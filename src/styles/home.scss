@@ -2,7 +2,7 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     column-gap: 1rem;
-    background-color: #f7a8b2;
+    background: $la-db-bl-le;
     padding: 1rem;
 
     &__picture,
