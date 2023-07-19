@@ -9,9 +9,10 @@
     background-size: cover;
     background-blend-mode: multiply;
     box-sizing: border-box;
-    position: relative;
     text-transform: uppercase;
     letter-spacing: 0.2rem;
+    position: sticky;
+    top: 0;
 
     &__logo {
         &-text {
