@@ -1,4 +1,6 @@
 /* Theme Colours */
+
+/* Colours */
 $dark-blue: #000033;
 $dark-blue-50: rgba(0, 0, 51, 0.50);
 $dark-blue-75: rgba(0, 0, 51, 0.75);
@@ -17,25 +19,53 @@ $deep-blush: rgb(193, 110, 100);
 $deep-blush-35: rgba(193, 110, 100, 0.35);
 $purple: #492D49;
 
-
+/* Gradients */
 $db-dv-le: linear-gradient(to left, $deep-blush 0%, $dark-vanilla 100%);
 $db-dv-ri: linear-gradient(to right, $deep-blush 0%, $dark-vanilla 100%);
-
 $la-db-bl-ri: linear-gradient(to right, #957dad, #a478a4, #b17399, #bb6f8a, #c06d7a, #c7747c, #cd7c7f, #d38382, #df9398, #eaa5ae, #f4b6c4, #fec8d8);
 $la-db-bl-le: linear-gradient(to left, #957dad, #a478a4, #b17399, #bb6f8a, #c06d7a, #c7747c, #cd7c7f, #d38382, #df9398, #eaa5ae, #f4b6c4, #fec8d8);
 
+/* Fonts */
+/*  Serif Fonts */
+$Cormorant: 'Cormorant Garamond', Times, serif;
+$Playfair: 'Playfair Display', Times, serif;
+$Cinzel: 'Cinzel Decorative', Times, serif;
+
+/*  Cursive Fonts */
+$Pinyon: 'Pinyon Script', cursive;
+$Italianno: 'Italianno', cursive;
+$Ballet: 'Ballet', cursive;
+$Mueller: 'Herr Von Muellerhoff', cursive;
+$Doulaise: 'Monsieur La Doulaise', cursive;
+$Delafield: 'Mrs Saint Delafield', cursive;
+$Sail: 'Sail', cursive;
+$Dynalight: 'Dynalight', cursive;
+
+/*  Sans-Serif Fonts */
+$Poppins: 'Poppins', Arial, Helvetica, sans-serif;
+$Montserrat: 'Montserrat', Arial, Helvetica, sans-serif;
+$Oswald: 'Oswald', Arial, Helvetica, sans-serif;
+$Raleway: 'Raleway', Arial, Helvetica, sans-serif;
+$Manrope: 'Manrope', Arial, Helvetica, sans-serif;
+$Spartan: 'Spartan', Arial, Helvetica, sans-serif;
+
+/* Breakpoints */
 $sm: 576px;
 $md: 768px;
 $lg: 992px;
 $xl: 1200px;
 
-$background-image: url('../images/eberhard-grossgasteiger-644372-unsplash.jpg');
-$background-image-crop: url('../images/eberhard-grossgasteiger-644372-unsplash-crop.jpg');
+/* Images */
+$background-image: url('../assets/1.jpg');
+$background-image-crop: url('../assets/1-crop.jpg');
+$cherry-blossom: url('../assets/cherry-blossom.svg');
 
+/* Classes */
 .d-flex {
     display: flex;
 }
 
+/* Mixins */
 @mixin media-breakpoint-down($breakpoint) {
     @if $breakpoint==sm {
         @media (max-width: $sm) {

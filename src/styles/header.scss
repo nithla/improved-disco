@@ -4,32 +4,29 @@
     align-items: center;
     flex-direction: column;
     padding: 1rem;
-    // min-height: 100vh;
-    background: $la-db-bl-le;
+    min-height: 10rem;
+    background: $background-image $dark-blue-50;
+    background-size: cover;
+    background-blend-mode: multiply;
     box-sizing: border-box;
+    position: relative;
+    text-transform: uppercase;
+    letter-spacing: 0.2rem;
 
     &__logo {
         &-text {
             cursor: pointer;
             display: inline-block;
             padding: 0.25rem 0.75rem;
-            margin: 1rem;
-            font-family: 'Times New Roman', Times, serif;
-            font-size: 3rem; //responsive size
-            background-image: linear-gradient(to right,
-                    #fff,
-                    #fff 50%,
-                    #000 50%); //to be changed
-            background-size: 200% 100%;
-            background-position: 100%;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            margin: 1rem 1rem 1.5rem;
+            font-family: $Cormorant;
+            font-size: 1.5rem; //responsive size
+            font-weight: 100;
             transition: all 0.3s ease-in-out;
+            color: $white;
 
             &:hover {
-                // background: black;
-                background-position: 0;
-                box-shadow: #fff 0 6px 0 -5px;
+                box-shadow: $white 0 6px 0 -5px;
             }
         }
     }
@@ -47,9 +44,11 @@
                 display: inline-block;
                 cursor: pointer;
                 transition: all 0.3s ease-in-out;
+                font-family: $Spartan;
+                font-size: 0.5rem;
 
                 &:hover {
-                    color: #ece2dc;
+                    color: $pink;
                 }
             }
         }
