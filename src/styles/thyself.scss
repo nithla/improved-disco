@@ -1,13 +1,17 @@
 .thyself {
+    margin: 0 7.5vw 2rem;
+    border-image: $la-db-bl-le 30;
+    border-width: 0.5rem;
+    border-style: solid;
+
     &__card {
         background-color: #000;
         width: 15rem;
-        height: 7.5rem;
+        height: 15rem;
 
         &-wrapper {
             display: flex;
             justify-content: space-between;
-            padding: 1rem;
         }
     }
 }
