@@ -1,6 +1,13 @@
+* {
+    box-sizing: border-box;
+}
+
 body {
-    background-color: $dark-blue;
+    background: $background-image  $dark-blue-50;
+    background-size: cover;
+    background-blend-mode: multiply;
     color: white;
+    background-attachment: fixed;
 }
 
 .main {

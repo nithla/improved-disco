@@ -5,6 +5,7 @@ $dark-blue: #000033;
 $dark-blue-50: rgba(0, 0, 51, 0.50);
 $dark-blue-75: rgba(0, 0, 51, 0.75);
 $dark-blue-95: rgba(0, 0, 51, 0.95);
+$blue: #556880;
 $black: #000;
 $white: #fff;
 $beige: #ece2dc;
@@ -22,6 +23,9 @@ $purple: #492D49;
 /* Gradients */
 $db-dv-le: linear-gradient(to left, $deep-blush 0%, $dark-vanilla 100%);
 $db-dv-ri: linear-gradient(to right, $deep-blush 0%, $dark-vanilla 100%);
+$bl-la-bo: linear-gradient(to bottom, $blue 0%, $lavendar 100%);
+$la-li-bo: linear-gradient(to bottom, $lavendar 0%, $lilac 100%);
+$li-bl-bo: linear-gradient(to bottom, $lilac 0%, $blue 100%);
 $la-db-bl-ri: linear-gradient(to right, #957dad, #a478a4, #b17399, #bb6f8a, #c06d7a, #c7747c, #cd7c7f, #d38382, #df9398, #eaa5ae, #f4b6c4, #fec8d8);
 $la-db-bl-le: linear-gradient(to left, #957dad, #a478a4, #b17399, #bb6f8a, #c06d7a, #c7747c, #cd7c7f, #d38382, #df9398, #eaa5ae, #f4b6c4, #fec8d8);
 
