@@ -2,7 +2,12 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     column-gap: 3rem;
-    padding: 2rem 7.5vw;
+    padding: 2rem 0;
+    border-image: $la-db-bl-le 30;
+    border-top-width: 1.5px;
+    border-top-style: solid;
+    width: calc(100% - 15vw);
+    margin: 0 auto;
 
     &__picture {
         border-image: $la-db-bl-le 30;
