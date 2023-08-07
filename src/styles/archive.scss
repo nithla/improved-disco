@@ -1,15 +1,42 @@
 .archive {
-    background: $la-db-bl-le;
+    // background: $dark-blue-25;
     padding: 2rem 7.5vw;
 
     &__card {
         background-color: #000;
         width: 7.5rem;
         height: 15rem;
+        margin: 0 1rem;
 
         &-wrapper {
             display: flex;
-            justify-content: space-between;
+            position: relative;
         }
+    }
+
+    .slick-list {
+        overflow: hidden;
+        mask-image: linear-gradient(90deg, $trans 0%, $black 12.5%, $black 50%, $black 87.5%, $trans 100%);
+        -webkit-mask-image: linear-gradient(90deg, $trans 0%, $black 12.5%, $black 50%, $black 87.5%, $trans 100%);
+    }
+
+    .slick-track {
+        display: flex;
+    }
+
+    .slick-arrow {
+        position: relative;
+        &::before {
+            position: absolute;
+            padding: 0.5rem 0.75rem;
+            top: 50%;
+            transform: translateY(-50%);
+            cursor: pointer;
+            background: $db-dv-le-to;
+        }
+    }
+
+    .prev::before {
+        transform: translate(-100%, -50%);
     }
 }

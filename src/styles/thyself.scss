@@ -3,15 +3,43 @@
     border-image: $la-db-bl-le 30;
     border-width: 0.5rem;
     border-style: solid;
+    // gap: 10px;
+    // background-color: #2196F3;
+    // padding: 10px;
 
     &__card {
         background-color: #000;
         width: 15rem;
         height: 15rem;
 
+        &:nth-child(1) {
+            grid-area: header;
+        }
+
+        &:nth-child(2) {
+            grid-area: menu;
+        }
+
+        &:nth-child(3) {
+            grid-area: main;
+        }
+
+        &:nth-child(4) {
+            grid-area: right;
+        }
+
+        &:nth-child(5) {
+            grid-area: footer;
+        }
+
         &-wrapper {
             display: flex;
             justify-content: space-between;
+            display: grid;
+            grid-template-areas:
+                'header header header header header header'
+                'menu main main main right right'
+                'menu footer footer footer footer footer';
         }
     }
 }

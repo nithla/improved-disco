@@ -7,6 +7,13 @@
     <title>
         <%=htmlWebpackPlugin.options.title %>
     </title>
+    <!-- <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" /> -->
+    <script src="https://code.jquery.com/jquery-3.7.0.slim.min.js"
+        integrity="sha256-tG5mcZUtJsZvyKAxYLVXrmjKBVLd6VpVccqz/r4ypFE=" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
 <body>
@@ -52,7 +59,9 @@
                 culpa vitae? Repellat enim sapiente nam eveniet voluptas ab, vel laboriosam quidem inventore. Lorem
                 ipsum dolor sit amet consectetur, adipisicing elit. Consequuntur aut illum debitis excepturi consectetur
                 nam fuga maiores enim esse magnam impedit aperiam, assumenda quis aliquam. Harum explicabo corporis
-                minus repudiandae? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repudiandae unde labore voluptate possimus nihil, dolorum enim tempora debitis vitae! Sunt provident perferendis amet odit quo hic omnis itaque debitis harum.</div>
+                minus repudiandae? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repudiandae unde labore
+                voluptate possimus nihil, dolorum enim tempora debitis vitae! Sunt provident perferendis amet odit quo
+                hic omnis itaque debitis harum.</div>
         </section>
         <section class="thyself">
             <div class="thyself__carousel">
@@ -88,5 +97,34 @@
         </footer>
     </div>
 </body>
+
+<script>
+    $('.archive__card-wrapper').slick({
+        prevArrow: '<i class="fa fa-angle-left prev" aria-hidden="true"></i>',
+        nextArrow: '<i class="fa fa-angle-right next" aria-hidden="true"></i>',
+        centerMode: true,
+        centerPadding: '60px',
+        slidesToShow: 3,
+        responsive: [
+            {
+                breakpoint: 768,
+                settings: {
+                    arrows: false,
+                    centerMode: true,
+                    centerPadding: '40px',
+                    slidesToShow: 3
+                }
+            },
+            {
+                breakpoint: 480,
+                settings: {
+                    arrows: false,
+                    centerMode: true,
+                    centerPadding: '40px',
+                    slidesToShow: 1
+                }
+            }
+        ]
+    });</script>
 
 </html>
