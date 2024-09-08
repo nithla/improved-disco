@@ -25,36 +25,70 @@ $purple: #492D49;
 /* Gradients */
 $db-dv-le: linear-gradient(to left, $deep-blush 0%, $dark-vanilla 100%);
 $db-dv-le-to: linear-gradient(to left top, $deep-blush 0%, $pink 100%);
+$db-dv-ri-bo: linear-gradient(to right bottom, $deep-blush 0%, $pink 100%);
 $db-dv-ri: linear-gradient(to right, $deep-blush 0%, $dark-vanilla 100%);
 $bl-la-bo: linear-gradient(to bottom, $blue 0%, $lavendar 100%);
-$la-li-bo: linear-gradient(to bottom, $lavendar 0%, $lilac 100%);
+$la-li-bo: linear-gradient(to top left, $lavendar 0%, $lilac 100%);
 $li-bl-bo: linear-gradient(to bottom, $lilac 0%, $blue 100%);
 $la-db-bl-ri: linear-gradient(to right, #957dad, #a478a4, #b17399, #bb6f8a, #c06d7a, #c7747c, #cd7c7f, #d38382, #df9398, #eaa5ae, #f4b6c4, #fec8d8);
 $la-db-bl-le: linear-gradient(to left, #957dad, #a478a4, #b17399, #bb6f8a, #c06d7a, #c7747c, #cd7c7f, #d38382, #df9398, #eaa5ae, #f4b6c4, #fec8d8);
+$la-db-bl-to: linear-gradient(to top left, #957dad, #a478a4, #b17399, #bb6f8a, #c06d7a, #c7747c, #cd7c7f, #d38382, #df9398, #eaa5ae, #f4b6c4, #fec8d8);
 
 /* Fonts */
 /*  Serif Fonts */
-$Cormorant: 'Cormorant Garamond', Times, serif;
-$Playfair: 'Playfair Display', Times, serif;
-$Cinzel: 'Cinzel Decorative', Times, serif;
+$Cormorant: 'Cormorant Garamond',
+Times,
+serif;
+$Playfair: 'Playfair Display',
+Times,
+serif;
+$Cinzel: 'Cinzel Decorative',
+Times,
+serif;
 
 /*  Cursive Fonts */
-$Pinyon: 'Pinyon Script', cursive;
-$Italianno: 'Italianno', cursive;
-$Ballet: 'Ballet', cursive;
-$Mueller: 'Herr Von Muellerhoff', cursive;
-$Doulaise: 'Monsieur La Doulaise', cursive;
-$Delafield: 'Mrs Saint Delafield', cursive;
-$Sail: 'Sail', cursive;
-$Dynalight: 'Dynalight', cursive;
+$Pinyon: 'Pinyon Script',
+cursive;
+$Italianno: 'Italianno',
+cursive;
+$Ballet: 'Ballet',
+cursive;
+$Mueller: 'Herr Von Muellerhoff',
+cursive;
+$Doulaise: 'Monsieur La Doulaise',
+cursive;
+$Delafield: 'Mrs Saint Delafield',
+cursive;
+$Sail: 'Sail',
+cursive;
+$Dynalight: 'Dynalight',
+cursive;
 
 /*  Sans-Serif Fonts */
-$Poppins: 'Poppins', Arial, Helvetica, sans-serif;
-$Montserrat: 'Montserrat', Arial, Helvetica, sans-serif;
-$Oswald: 'Oswald', Arial, Helvetica, sans-serif;
-$Raleway: 'Raleway', Arial, Helvetica, sans-serif;
-$Manrope: 'Manrope', Arial, Helvetica, sans-serif;
-$Spartan: 'Spartan', Arial, Helvetica, sans-serif;
+$Poppins: 'Poppins',
+Arial,
+Helvetica,
+sans-serif;
+$Montserrat: 'Montserrat',
+Arial,
+Helvetica,
+sans-serif;
+$Oswald: 'Oswald',
+Arial,
+Helvetica,
+sans-serif;
+$Raleway: 'Raleway',
+Arial,
+Helvetica,
+sans-serif;
+$Manrope: 'Manrope',
+Arial,
+Helvetica,
+sans-serif;
+$Spartan: 'Spartan',
+Arial,
+Helvetica,
+sans-serif;
 
 /* Breakpoints */
 $sm: 576px;
@@ -74,19 +108,19 @@ $cherry-blossom: url('../assets/cherry-blossom.svg');
 
 /* Mixins */
 @mixin media-breakpoint-down($breakpoint) {
-    @if $breakpoint==sm {
+    @if $breakpoint==$sm {
         @media (max-width: $sm) {
             @content;
         }
     }
 
-    @else if $breakpoint==md {
+    @else if $breakpoint==$md {
         @media (max-width: $md) {
             @content;
         }
     }
 
-    @else if $breakpoint==lg {
+    @else if $breakpoint==$lg {
         @media (max-width: $lg) {
             @content;
         }
@@ -100,19 +134,19 @@ $cherry-blossom: url('../assets/cherry-blossom.svg');
 }
 
 @mixin media-breakpoint-up($breakpoint) {
-    @if $breakpoint==sm {
+    @if $breakpoint==$sm {
         @media (min-width: $sm) {
             @content;
         }
     }
 
-    @else if $breakpoint==md {
+    @else if $breakpoint==$md {
         @media (min-width: $md) {
             @content;
         }
     }
 
-    @else if $breakpoint==lg {
+    @else if $breakpoint==$lg {
         @media (min-width: $lg) {
             @content;
         }
@@ -128,4 +162,104 @@ $cherry-blossom: url('../assets/cherry-blossom.svg');
 @mixin nit-sm {
     font-size: 2rem;
     line-height: 1.4;
+}
+
+
+
+@mixin btn-border-drawing($color: #ccc, $hover: black, $width: 2px, $vertical: top, $horizontal: left, $duration: 0.3s) {
+    box-shadow: inset 0 0 0 $width $color;
+    color: $color;
+    transition: color $duration calc($duration/3);
+    position: relative;
+
+    &::before,
+    &::after {
+        border: 0 solid transparent;
+        box-sizing: border-box;
+        content: '';
+        pointer-events: none;
+        position: absolute;
+        width: 0;
+        height: 0;
+
+        #{$vertical}: 0;
+        #{$horizontal}: 0;
+    }
+
+    &::before {
+        $h-side: if($horizontal=='left', 'right', 'left');
+
+        border-#{$vertical}-width: $width;
+        border-#{$h-side}-width: $width;
+    }
+
+    &::after {
+        $v-side: if($vertical=='top', 'bottom', 'top');
+
+        border-#{$v-side}-width: $width;
+        border-#{$horizontal}-width: $width;
+    }
+
+    &:hover {
+        color: $hover;
+
+        &::before,
+        &::after {
+            border-color: $hover;
+            transition: border-color 0s, width $duration, height $duration;
+            width: 100%;
+            height: 100%;
+        }
+
+        &::before {
+            transition-delay: 0s, 0s, $duration;
+        }
+
+        &::after {
+            transition-delay: 0s, $duration, 0s;
+        }
+    }
+}
+
+@mixin border {
+    border: 0.5rem solid transparent;
+    border-image: $la-db-bl-le 30;
+}
+
+@mixin default-text {
+    font-family: $Spartan;
+    font-size: 0.75rem;
+    line-height: 1.25rem;
+    color: $black;
+    font-weight: 600;
+}
+
+a {
+    color: $black;
+    text-decoration: none;
+}
+
+button {
+    @include default-text;
+    @include btn-border-drawing($black, $deep-blush, 2px, bottom, right);
+    border: none;
+    padding: 1rem;
+    width: 100%;
+    cursor: pointer;
+    text-transform: uppercase;
+
+    @include media-breakpoint-up($sm) {
+        width: 10rem;
+    }
+}
+
+@mixin flex-row ($content) {
+    display: flex;
+    justify-content: $content;
+}
+
+@mixin flex-column {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
