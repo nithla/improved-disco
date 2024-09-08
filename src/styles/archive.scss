@@ -1,6 +1,9 @@
 .archive {
-    // background: $dark-blue-25;
+    @include border;
+    border-left: 0;
+    border-right: 0;
     padding: 2rem 7.5vw;
+    background: $background-image;
 
     &__card {
         background-color: #000;
@@ -26,6 +29,7 @@
 
     .slick-arrow {
         position: relative;
+
         &::before {
             position: absolute;
             padding: 0.5rem 0.75rem;
@@ -33,10 +37,22 @@
             transform: translateY(-50%);
             cursor: pointer;
             background: $db-dv-le-to;
+            transition: all 0.4s ease-in-out;
+            color: $black;
+        }
+
+        &:hover::before {
+            background: $black;
+            color: $pink;
         }
     }
 
     .prev::before {
         transform: translate(-100%, -50%);
+        left: -1rem;
+    }
+
+    .next::before {
+        left: 1rem;
     }
 }
