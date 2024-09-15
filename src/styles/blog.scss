@@ -8,7 +8,7 @@
 
     &__card {
         @include default-text;
-        padding: 2rem;
+        padding: 1.5rem;
         height: auto;
         background-color: $white;
         text-align: justify;
@@ -24,6 +24,11 @@
             @include flex-row(space-between);
             flex-basis: 85%;
             gap: 1.5rem;
+
+            @include media-breakpoint-down($xl) {
+                padding: 1.5rem;
+                background: $pink;
+            }
         }
 
         &__content {
@@ -50,14 +55,6 @@
         padding: 1.5rem;
         background: $background-image;
         text-align: center;
-
-        @include media-breakpoint-down($xl) {
-            margin-top: 1.5rem;
-        }
-
-        @include media-breakpoint-down($md) {
-            margin-top: 0;
-        }
 
         &__content {
             @include default-text;

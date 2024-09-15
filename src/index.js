@@ -8,7 +8,6 @@ import './styles/header.scss'
 import './styles/footer.scss'
 import './styles/blog.scss'
 import './styles/archive.scss'
-import './styles/contact.scss'
 import './styles/home.scss'
 
 import laughing from './assets/1.jpg'
