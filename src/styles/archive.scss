@@ -1,8 +1,8 @@
 .archive {
-    @include border;
+    // @include border;
     border-left: 0;
     border-right: 0;
-    padding: 2rem 7.5vw;
+    padding: 1.5rem 7.5vw;
     background: $background-image;
 
     &__card {
@@ -32,7 +32,7 @@
 
         &::before {
             position: absolute;
-            padding: 0.5rem 0.75rem;
+            padding: .5rem 0.75rem;
             top: 50%;
             transform: translateY(-50%);
             cursor: pointer;
