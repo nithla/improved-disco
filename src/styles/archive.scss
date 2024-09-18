@@ -1,5 +1,4 @@
 .archive {
-    // @include border;
     border-left: 0;
     border-right: 0;
     padding: 1.5rem 7.5vw;
@@ -14,6 +13,11 @@
         &-wrapper {
             display: flex;
             position: relative;
+        }
+
+        img {
+            width: inherit;
+            height: auto;
         }
     }
 
