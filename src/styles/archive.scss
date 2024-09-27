@@ -1,19 +1,27 @@
 .archive {
-    // @include border;
     border-left: 0;
     border-right: 0;
     padding: 1.5rem 7.5vw;
-    background: $background-image;
+    background: $deep-blush-35;
 
     &__card {
-        background-color: #000;
         width: 7.5rem;
         height: 15rem;
         margin: 0 1rem;
+        @include border;
+        border-width: 3px;
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
 
         &-wrapper {
             display: flex;
             position: relative;
+        }
+
+        img {
+            width: 100%;
+            height: fit-content;
         }
     }
 
@@ -36,7 +44,7 @@
             top: 50%;
             transform: translateY(-50%);
             cursor: pointer;
-            background: $db-dv-le-to;
+            background: $black;
             transition: all 0.4s ease-in-out;
             color: $black;
         }
