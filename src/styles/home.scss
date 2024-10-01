@@ -1,27 +1,31 @@
 .home {
     @include border;
-    display: flex;
     width: calc(100% - 15vw);
     margin: 1.5rem auto;
-
-    &__picture {
-        flex-basis: 25%;
-        img {
-            max-width: 100%;
-            height: auto;
-            display: block;
-        }
-    }
+    background: $blue;
+    display: flex;
 
     &__bio {
-        flex-basis: 75%;
         @include default-text;
         color: white;
-        font-weight: 200;
-        text-align: justify;
-        padding: 1.5rem;
-        background: $blue;
-        display: flex;
-        align-items: center;
+        font-weight: 300;
+
+        &-text {
+            padding: 1.5rem;
+        }
+
+        &-picture {
+            float: right;
+            height: 100%;
+            display: flex;
+            align-items: flex-end;
+            shape-outside: inset(calc(100% - 12rem) 0 0);
+
+            img {
+                margin-top: 0.5rem;
+                width: 10rem;
+                height: auto;
+            }
+        }
     }
 }
