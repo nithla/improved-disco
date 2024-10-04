@@ -1,112 +1,53 @@
-/* Theme Colours */
+/*--------------------------- Theme Colours ---------------------------*/
 
 /* Colours */
-$dark-blue: #000033;
-$dark-blue-25: rgba(0, 0, 51, 0.15);
-$dark-blue-50: rgba(0, 0, 51, 0.50);
-$dark-blue-75: rgba(0, 0, 51, 0.75);
-$dark-blue-95: rgba(0, 0, 51, 0.95);
-$blue: #556880;
-$black: #000;
 $trans: transparent;
 $white: #fff;
-$beige: #ece2dc;
-$dark-vanilla: #E1BEA8;
+$black: #000;
+$dark-blue: #000033;
+$dark-blue-50: rgba(0, 0, 51, 0.50);
+$blue: #556880;
 $pink: #f7a8b2;
-$pink-35: rgba(247, 168, 178, 0.35);
-$blush: #FEC8D8;
-$lilac: #E0BBE4;
-$lavendar: #957DAD;
-$babyblue: #CAE0EF;
 $deep-blush: rgb(193, 110, 100);
 $deep-blush-35: rgba(193, 110, 100, 0.35);
-$purple: #492D49;
 
-/* Gradients */
-$db-dv-le: linear-gradient(to left, $deep-blush 0%, $dark-vanilla 100%);
-$db-dv-le-to: linear-gradient(to left top, $deep-blush 0%, $pink 100%);
-$db-dv-ri-bo: linear-gradient(to right bottom, $deep-blush 0%, $pink 100%);
-$db-dv-ri: linear-gradient(to right, $deep-blush 0%, $dark-vanilla 100%);
-$bl-la-bo: linear-gradient(to bottom, $blue 0%, $lavendar 100%);
-$la-li-bo: linear-gradient(to top left, $lavendar 0%, $lilac 100%);
-$li-bl-bo: linear-gradient(to bottom, $lilac 0%, $blue 100%);
-$la-db-bl-ri: linear-gradient(to right, #957dad, #a478a4, #b17399, #bb6f8a, #c06d7a, #c7747c, #cd7c7f, #d38382, #df9398, #eaa5ae, #f4b6c4, #fec8d8);
+/* Gradient */
 $la-db-bl-le: linear-gradient(to left, #957dad, #a478a4, #b17399, #bb6f8a, #c06d7a, #c7747c, #cd7c7f, #d38382, #df9398, #eaa5ae, #f4b6c4, #fec8d8);
-$la-db-bl-to: linear-gradient(to top left, #957dad, #a478a4, #b17399, #bb6f8a, #c06d7a, #c7747c, #cd7c7f, #d38382, #df9398, #eaa5ae, #f4b6c4, #fec8d8);
 
-/* Fonts */
-/*  Serif Fonts */
-$Cormorant: 'Cormorant Garamond',
-Times,
-serif;
-$Playfair: 'Playfair Display',
-Times,
-serif;
-$Cinzel: 'Cinzel Decorative',
-Times,
-serif;
+/*-------------------------- Theme Colours End -------------------------*/
 
-/*  Cursive Fonts */
-$Pinyon: 'Pinyon Script',
-cursive;
-$Italianno: 'Italianno',
-cursive;
-$Ballet: 'Ballet',
-cursive;
-$Mueller: 'Herr Von Muellerhoff',
-cursive;
-$Doulaise: 'Monsieur La Doulaise',
-cursive;
-$Delafield: 'Mrs Saint Delafield',
-cursive;
-$Sail: 'Sail',
-cursive;
-$Dynalight: 'Dynalight',
-cursive;
 
-/*  Sans-Serif Fonts */
-$Poppins: 'Poppins',
-Arial,
-Helvetica,
-sans-serif;
-$Montserrat: 'Montserrat',
-Arial,
-Helvetica,
-sans-serif;
-$Oswald: 'Oswald',
-Arial,
-Helvetica,
-sans-serif;
-$Raleway: 'Raleway',
-Arial,
-Helvetica,
-sans-serif;
-$Manrope: 'Manrope',
-Arial,
-Helvetica,
-sans-serif;
-$Spartan: 'Spartan',
-Arial,
-Helvetica,
-sans-serif;
+/*-------------------------------- Fonts -------------------------------*/
 
-/* Breakpoints */
+/*  Serif Font */
+$Cormorant: 'Cormorant Garamond', Times, serif;
+
+/*  Sans-Serif Font */
+$Spartan: 'Spartan', Arial, Helvetica, sans-serif;
+
+/*------------------------------ Fonts End -----------------------------*/
+
+
+/*----------------------------- Breakpoints ----------------------------*/
+
 $sm: 576px;
 $md: 768px;
 $lg: 992px;
 $xl: 1200px;
 
-/* Images */
+/*--------------------------- Breakpoints End --------------------------*/
+
+
+/*------------------------------- Images -------------------------------*/
+
 $background-image: url('../assets/1.jpg');
 $background-image-crop: url('../assets/1-crop.jpg');
-$cherry-blossom: url('../assets/cherry-blossom.svg');
 
-/* Classes */
-.d-flex {
-    display: flex;
-}
+/*----------------------------- Images End -----------------------------*/
 
-/* Mixins */
+
+/*------------------------------- Mixins -------------------------------*/
+
 @mixin media-breakpoint-down($breakpoint) {
     @if $breakpoint==$sm {
         @media (max-width: $sm) {
@@ -159,12 +100,16 @@ $cherry-blossom: url('../assets/cherry-blossom.svg');
     }
 }
 
-@mixin nit-sm {
-    font-size: 2rem;
-    line-height: 1.4;
+@mixin flex-row ($content) {
+    display: flex;
+    justify-content: $content;
 }
 
-
+@mixin flex-column {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
 
 @mixin btn-border-drawing($color: #ccc, $hover: black, $width: 2px, $vertical: top, $horizontal: left, $duration: 0.3s) {
     box-shadow: inset 0 0 0 $width $color;
@@ -234,6 +179,11 @@ $cherry-blossom: url('../assets/cherry-blossom.svg');
     font-weight: 600;
 }
 
+/*----------------------------- Mixins End -----------------------------*/
+
+
+/*------------------------------- Common -------------------------------*/
+
 a {
     color: $black;
     text-decoration: none;
@@ -253,13 +203,4 @@ button {
     }
 }
 
-@mixin flex-row ($content) {
-    display: flex;
-    justify-content: $content;
-}
-
-@mixin flex-column {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
+/*---------------------------- Common Ends -----------------------------*/
