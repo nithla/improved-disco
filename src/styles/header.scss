@@ -3,7 +3,7 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    padding: 1rem;
+    padding: 1rem 7.5vw;
     min-height: 4rem;
     background: $background-image $dark-blue-50;
     background-size: cover;
@@ -14,21 +14,82 @@
     position: sticky;
     top: 0;
     z-index: 2;
+    text-align: center;
+
+    @include media-breakpoint-down($md) {
+        background: none;
+        position: relative;
+    }
 
     &__logo {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        @include media-breakpoint-down($sm) {
+            width: 100%;
+        }
+
         &-text {
             cursor: pointer;
             display: inline-block;
             padding: 0.25rem 0.75rem;
             margin: 1rem 1rem 1.5rem;
             font-family: $Cormorant;
-            font-size: 1.5rem; //responsive size
+            font-size: 1.5rem;
             font-weight: 100;
+            letter-spacing: 0.5rem;
+            word-spacing: -5px;
             transition: all 0.3s ease-in-out;
             color: $white;
+            width: 5.5rem;
+
+            @include media-breakpoint-down($sm) {
+                margin: 1rem 0 0.5rem;
+                width: 4rem;
+                padding: 0;
+            }
 
             &:hover {
                 box-shadow: $white 0 6px 0 -5px;
+            }
+        }
+
+        &-caret {
+            height: 1rem;
+            width: 1rem;
+            transform: rotate(90deg);
+            display: flex;
+
+            @include media-breakpoint-up($sm) {
+                display: none;
+            }
+
+            p {
+                transform: rotate(-90deg);
+                @include default-text;
+                font-size: 0.3rem;
+                color: white;
+                padding: 0.15rem;
+            }
+
+            &::before,
+            &::after {
+                border-right: 2px solid white;
+                content: '';
+                display: block;
+                height: 8px;
+                margin-top: -6px;
+                position: absolute;
+                transform: rotate(135deg);
+                right: 50%;
+                top: 50%;
+                width: 0;
+            }
+
+            &::after {
+                margin-top: -1px;
+                transform: rotate(45deg);
             }
         }
     }
@@ -36,11 +97,23 @@
     &__navigation {
         width: fit-content;
 
+        @include media-breakpoint-down($sm) {
+            width: 100%;
+        }
+
         &-links {
-            display: grid;
-            grid-auto-flow: column;
+            display: flex;
+            // display: none;
             column-gap: 2rem;
             cursor: default;
+
+            @include media-breakpoint-down($sm) {
+                flex-direction: column;
+                row-gap: 2rem;
+                margin: 1rem 0;
+                background: $deep-blush-35;
+                padding: 1rem;
+            }
 
             li {
                 display: inline-block;
@@ -51,6 +124,11 @@
 
                 &:hover {
                     color: $pink;
+                }
+
+                @include media-breakpoint-down($sm) {
+                    font-size: 0.75rem;
+                    text-transform: none;
                 }
             }
         }

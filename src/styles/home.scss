@@ -1,7 +1,7 @@
 .home {
     @include border;
     width: calc(100% - 15vw);
-    margin: 1.5rem auto;
+    margin: 0 auto 1.5rem;
     background: $blue;
     display: flex;
 
@@ -25,6 +25,9 @@
                 margin-top: 0.5rem;
                 width: 10rem;
                 height: auto;
+                position: relative;
+                bottom: -8px;
+                right: -10px;
             }
         }
     }
