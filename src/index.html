@@ -7,10 +7,6 @@
     <title>
         <%=htmlWebpackPlugin.options.title %>
     </title>
-    <!-- <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" /> -->
-    <script src="https://code.jquery.com/jquery-3.7.0.slim.min.js"
-        integrity="sha256-tG5mcZUtJsZvyKAxYLVXrmjKBVLd6VpVccqz/r4ypFE=" crossorigin="anonymous"></script>
-    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
         integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -21,11 +17,14 @@
         <header class="header">
             <div class="header__logo">
                 <p class="header__logo-text">NRG</p>
-                <div class="header__logo-caret"><p>Menu</p></div>
+                <div class="header__logo-caret">
+                    <p>Menu</p>
+                </div>
             </div>
             <div class="header__navigation">
                 <ul class="header__navigation-links">
                     <li>Home</li>
+                    <li>Work</li>
                     <li>Blog</li>
                     <li>Archive</li>
                     <li>Contact</li>
@@ -95,6 +94,17 @@
                 <h2 class="blog__navigation__content">...more unnecessary insights by Nithila</h2>
             </div>
         </section>
+        <section class="footer">
+            <div class="footer__contact">
+                <div class="footer__contact__works"></div>
+                <div class="footer__contact__input-wrapper">
+                    <label class="footer__contact__input__name">Your email goes here<input type="email"></label>
+                    <label class="footer__contact__input__query">Enter your query and I shall reach out to you
+                        soon!<textarea class="footer__contact__input__email"></textarea></label>
+                    <button class="footer__contact__input__button">Email me :D</button>
+                </div>
+            </div>
+        </section>
         <section class="archive">
             <div class="archive__card-wrapper">
                 <div class="archive__card"><img src="2.jpg"></div>
@@ -103,52 +113,16 @@
                 <div class="archive__card"><img src="2.jpg"></div>
             </div>
         </section>
-        <footer class="footer">
-            <div class="footer__contact">
-                <div class="footer__contact__picture"></div>
-                <div class="footer__contact__input-wrapper">
-                    <label class="footer__contact__input__name">Your email goes here<input type="email"></label>
-                    <label class="footer__contact__input__query">Enter your query and I shall reach out to you
-                        soon!<textarea class="footer__contact__input__email"></textarea></label>
-                    <button class="footer__contact__input__button">Email me :D</button>
-                </div>
-            </div>
-            <ul class="footer__social-links">
-                <li><a href="https://www.linkedin.com/in/nithilareddygaddam/"><img src="linkedin.png"></a></li>
-                <li><a href="https://letterboxd.com/nithilareddy/"><img src="letterboxd.svg"></a></li>
-                <li><a href="https://www.instagram.com/nithilareddy/"><img src="instagram.png"></a></li>
-            </ul>
-        </footer>
+        <ul class="footer__social-links">
+            <li><a href="https://www.linkedin.com/in/nithilareddygaddam/"><img src="linkedin.png"></a></li>
+            <li><a href="https://letterboxd.com/nithilareddy/"><img src="letterboxd.svg"></a></li>
+            <li><a href="https://www.instagram.com/nithilareddy/"><img src="instagram.png"></a></li>
+        </ul>
+
     </div>
 </body>
 
 <script>
-    $('.archive__card-wrapper').slick({
-        prevArrow: '<i class="fa fa-angle-left prev" aria-hidden="true"></i>',
-        nextArrow: '<i class="fa fa-angle-right next" aria-hidden="true"></i>',
-        centerMode: true,
-        centerPadding: '60px',
-        slidesToShow: 3,
-        responsive: [
-            {
-                breakpoint: 768,
-                settings: {
-                    arrows: false,
-                    centerMode: true,
-                    centerPadding: '40px',
-                    slidesToShow: 3
-                }
-            },
-            {
-                breakpoint: 480,
-                settings: {
-                    arrows: false,
-                    centerMode: true,
-                    centerPadding: '40px',
-                    slidesToShow: 1
-                }
-            }
-        ]
-    });</script>
+</script>
 
 </html>

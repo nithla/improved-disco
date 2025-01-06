@@ -2,20 +2,18 @@
     border-left: 0;
     border-right: 0;
     padding: 1.5rem 7.5vw;
-    background: $deep-blush-35;
+    background: linear-gradient(transparent, $blue-35, $deep-blush-35);
 
     &__card {
+        @include flex-row(center, unset);
         width: 7.5rem;
-        height: 15rem;
-        margin: 0 1rem;
-        @include border;
-        border-width: 3px;
+        height: 12rem;
         overflow: hidden;
         display: flex;
         justify-content: center;
 
         &-wrapper {
-            display: flex;
+            @include flex-row(center, unset);
             position: relative;
         }
 
@@ -35,6 +33,10 @@
         display: flex;
     }
 
+    .slick-slide {
+        margin: 0 1.5rem;
+    }
+
     .slick-arrow {
         position: relative;
 
@@ -44,23 +46,35 @@
             top: 50%;
             transform: translateY(-50%);
             cursor: pointer;
-            background: $black;
+            // background: $white;
             transition: all 0.4s ease-in-out;
-            color: $black;
+            color: $white;
         }
 
         &:hover::before {
-            background: $black;
-            color: $pink;
+            background: $white;
+            color: $blue;
+
+            @include media-breakpoint-down($md) {
+                background: $trans;
+                color: white;
+            }
         }
     }
 
     .prev::before {
         transform: translate(-100%, -50%);
-        left: -1rem;
+
+        @include media-breakpoint-down($md) {
+            left: 1rem;
+        }
     }
 
     .next::before {
-        left: 1rem;
+        @include media-breakpoint-down($md) {
+            left: -1rem;
+        }
     }
 }
+
+

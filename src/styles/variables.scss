@@ -7,12 +7,14 @@ $black: #000;
 $dark-blue: #000033;
 $dark-blue-50: rgba(0, 0, 51, 0.50);
 $blue: #556880;
+$blue-35: rgba(85, 104, 128, .5);
 $pink: #f7a8b2;
 $deep-blush: rgb(193, 110, 100);
 $deep-blush-35: rgba(193, 110, 100, 0.35);
 
 /* Gradient */
 $la-db-bl-le: linear-gradient(to left, #957dad, #a478a4, #b17399, #bb6f8a, #c06d7a, #c7747c, #cd7c7f, #d38382, #df9398, #eaa5ae, #f4b6c4, #fec8d8);
+$sunset: linear-gradient(225deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 70%, rgba(252,176,69,1) 100%);
 
 /*-------------------------- Theme Colours End -------------------------*/
 
@@ -100,15 +102,17 @@ $background-image-crop: url('../assets/1-crop.jpg');
     }
 }
 
-@mixin flex-row ($content) {
+@mixin flex-row ($justify-content, $align-items) {
     display: flex;
-    justify-content: $content;
+    justify-content: $justify-content;
+    align-items: $align-items;
 }
 
-@mixin flex-column {
+@mixin flex-column($justify-content, $align-items) {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: $justify-content;
+    align-items: $align-items;
 }
 
 @mixin btn-border-drawing($color: #ccc, $hover: black, $width: 2px, $vertical: top, $horizontal: left, $duration: 0.3s) {

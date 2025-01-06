@@ -21,13 +21,13 @@
         }
 
         &-wrapper {
-            @include flex-row(space-between);
+            @include flex-row(space-between, unset);
             flex-basis: 85%;
             gap: 1.5rem;
 
             @include media-breakpoint-down($xl) {
                 padding: 1.5rem;
-                background: $pink;
+                background: $la-db-bl-le;
             }
         }
 
@@ -49,8 +49,7 @@
     }
 
     &__navigation {
-        @include flex-column;
-        align-items: center;
+        @include flex-column(center, center);
         flex-basis: 15%;
         padding: 1.5rem;
         background: $background-image;
