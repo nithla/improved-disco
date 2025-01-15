@@ -1,30 +1,38 @@
 /*--------------------------- Theme Colours ---------------------------*/
 
 /* Colours */
-$trans: transparent;
 $white: #fff;
 $black: #000;
 $dark-blue: #000033;
+$yellow: #ffff00;
 $dark-blue-50: rgba(0, 0, 51, 0.50);
-$blue: #556880;
-$blue-35: rgba(85, 104, 128, .5);
-$pink: #f7a8b2;
-$deep-blush: rgb(193, 110, 100);
-$deep-blush-35: rgba(193, 110, 100, 0.35);
 
 /* Gradient */
-$la-db-bl-le: linear-gradient(to left, #957dad, #a478a4, #b17399, #bb6f8a, #c06d7a, #c7747c, #cd7c7f, #d38382, #df9398, #eaa5ae, #f4b6c4, #fec8d8);
-$sunset: linear-gradient(225deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 70%, rgba(252,176,69,1) 100%);
+$sunset: linear-gradient(135deg, black, $dark-blue 70%, rgba(131, 58, 180, 1) 100%);
+$sunset-var: linear-gradient(225deg, black, $dark-blue, rgba(131, 58, 180, 1) 100%);
 
 /*-------------------------- Theme Colours End -------------------------*/
 
 
 /*-------------------------------- Fonts -------------------------------*/
 
-/*  Serif Font */
+/******************** Serif Fonts *****************************/
+/* Cormorant Garamond */
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap');
 $Cormorant: 'Cormorant Garamond', Times, serif;
 
-/*  Sans-Serif Font */
+/********************** Cursive Fonts *************************/
+/* Italianno */
+@import url('https://fonts.googleapis.com/css2?family=Italianno&display=swap');
+$Italianno: 'Italianno', Snell Roundhand, cursive;
+
+/********************* Sans-serif Fonts ************************/
+/* Raleway */
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+$Raleway: 'Raleway', Arial, Helvetica, sans-serif;
+
+/* Spartan */
+@import url('https://fonts.googleapis.com/css2?family=Spartan:wght@100;200;300;400;500;600;700;800;900&display=swap');
 $Spartan: 'Spartan', Arial, Helvetica, sans-serif;
 
 /*------------------------------ Fonts End -----------------------------*/
@@ -38,14 +46,6 @@ $lg: 992px;
 $xl: 1200px;
 
 /*--------------------------- Breakpoints End --------------------------*/
-
-
-/*------------------------------- Images -------------------------------*/
-
-$background-image: url('../assets/1.jpg');
-$background-image-crop: url('../assets/1-crop.jpg');
-
-/*----------------------------- Images End -----------------------------*/
 
 
 /*------------------------------- Mixins -------------------------------*/
@@ -170,23 +170,27 @@ $background-image-crop: url('../assets/1-crop.jpg');
     }
 }
 
-@mixin border {
-    border: 0.5rem solid transparent;
-    border-image: $la-db-bl-le 30;
-}
-
 @mixin default-text {
     font-family: $Spartan;
     font-size: 0.75rem;
     line-height: 1.25rem;
     color: $black;
     font-weight: 600;
+    word-spacing: 0.25rem;
 }
 
 /*----------------------------- Mixins End -----------------------------*/
 
 
 /*------------------------------- Common -------------------------------*/
+
+h2 {
+    margin-bottom: 1.5rem;
+    font-size: 4rem;
+    font-family: $Raleway;
+    font-weight: 500;
+    line-height: 3.25rem;
+}
 
 a {
     color: $black;
@@ -195,7 +199,7 @@ a {
 
 button {
     @include default-text;
-    @include btn-border-drawing($black, $deep-blush, 2px, bottom, right);
+    @include btn-border-drawing($black, $yellow, 2px, bottom, right);
     border: none;
     padding: 1rem;
     width: 100%;
@@ -206,5 +210,13 @@ button {
         width: 10rem;
     }
 }
+
+.underline {
+    padding-bottom: 0.125rem;
+    text-decoration: none;
+    border-bottom: 2px solid yellow;
+}
+
+
 
 /*---------------------------- Common Ends -----------------------------*/

@@ -3,11 +3,25 @@
 }
 
 body {
-    background: $background-image  $dark-blue-50;
+    background: $sunset;
     background-size: cover;
     background-blend-mode: multiply;
     color: white;
     background-attachment: fixed;
+    overflow-x: hidden;
+
+    &::-webkit-scrollbar {
+        width: 10px;
+    }
+
+    &::-webkit-scrollbar-track {
+        background: $white;
+    }
+
+    /* Handle */
+    &::-webkit-scrollbar-thumb {
+        background: rgba(255, 255, 0, 0.75);
+    }
 }
 
 .main {
