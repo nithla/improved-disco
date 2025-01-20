@@ -1,0 +1,39 @@
+.skills {
+    @include flex-column(unset, center);
+    margin: 0 auto 3rem;
+    padding: 1.5rem;
+    width: calc(100% - 15vw);
+    max-height: 40rem;
+    background: $transwhite-bg;
+    opacity: 1;
+    gap: 1.5rem;
+    transition: max-height 0.3s ease-in-out;
+
+    &.d-none {
+        margin: 0;
+        padding: 0;
+        max-height: 0;
+        opacity: 0;
+    }
+    
+    @include media-breakpoint-down($sm) {
+        display: none;
+    }
+
+    &__download .fa {
+        margin-right: 0.25rem;
+    }
+
+    &__list {
+        @include default-text;
+        text-align: left;
+
+        th,
+        td {
+            border: 1px solid $border-yellow;
+            padding: 0.5rem;
+            width: 25%;
+            vertical-align: middle;
+        }
+    }
+}

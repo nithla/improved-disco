@@ -7,112 +7,150 @@
     <title>
         <%=htmlWebpackPlugin.options.title %>
     </title>
-    <!-- <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" /> -->
-    <script src="https://code.jquery.com/jquery-3.7.0.slim.min.js"
-        integrity="sha256-tG5mcZUtJsZvyKAxYLVXrmjKBVLd6VpVccqz/r4ypFE=" crossorigin="anonymous"></script>
-    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
         integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
 <body>
-    <div class="main">
+    <div class="main" id="home">
         <header class="header">
             <div class="header__logo">
                 <p class="header__logo-text">NRG</p>
-                <div class="header__logo-caret"><p>Menu</p></div>
+                <div class="header__logo-caret">
+                    <p>Menu</p>
+                </div>
             </div>
             <div class="header__navigation">
-                <ul class="header__navigation-links">
-                    <li>Home</li>
-                    <li>Blog</li>
-                    <li>Archive</li>
-                    <li>Contact</li>
+                <ul class="header__navigation-links d-none">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#work">Work</a></li>
+                    <li><a href="#contact">Contact</a></li>
                 </ul>
             </div>
         </header>
-        <section class="home">
 
+        <section class="home" >
             <div class="home__bio">
-                <div class="home__bio-picture"><img src="6.png"></div>
-                <p class="home__bio-text">Lorem ipsum dolor sit amet, consectetuer adipiscing
-                    elit. Aenean commodo ligula eget
-                    dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur
-                    ridiculus
-                    mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis
-                    enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut,
-                    imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt.
-                    Cras
-                    dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula,
-                    porttitor
-                    eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a,
-                    tellus.
-                    Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies
-                    nisi
-                    vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus,
-                    tellus
-                    eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam
-                    nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt tempus.
-                    Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros
-                    faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Donec sodales sagittis magna. Sed
-                    consequat, leo eget bibendum sodales, augue velit cursus nunc, quis gravida magna mi a libero. Fusce
-                    vulputate eleifend sapien. Vestibulum purus quam, scelerisque ut, mollis sed, nonummy id, metus.
-                    Nullam
-                    accumsan lorem in dui. Cras ultricies mi eu turpis hendrerit fringilla. Vestibulum ante ipsum primis
-                    in
-                    faucibus orci luctus et ultrices posuere cubilia Curae; In ac dui quis mi consectetuer lacinia. Nam
-                    pretium turpis et arcu. Duis arcu tortor, suscipit eget, imperdiet nec, imperdiet iaculis, ipsum.
-                    Sed
-                    aliquam ultrices mauris. Integer ante arcu, accumsan a, consectetuer eget, posuere ut, mauris.
-                    Praesent
-                    adipiscing. Phasellus ullamcorper ipsum rutrum nunc. Nunc nonummy metus. Vestib
-                </p>
+                <div class="home__bio-text-wrapper">
+                    <h2 class="home__title">Hi, I’m Nithila!</h2>
+                    <p class="home__bio-text"> With over four years of experience in the tech & consulting, I’ve
+                        evolved from a <u class="underline">software developer</u> to a <u class="underline">product
+                            owner</u>, merging my technical skills with a strong business mindset. I’ve worked on global
+                        projects like corporate websites and DevOps tools, and
+                        my journey has taught me how to bridge the gap between what users need and what businesses
+                        require.</p>
+                    <p class="home__bio-text" id="work">I’m passionate about driving product success by crafting clear roadmaps,
+                        prioritizing the right
+                        features, and ensuring seamless collaboration between stakeholders and teams. With an MBA from
+                        IIM Kozhikode and a B.Tech. in Computer Science from MGIT, I’m here to make things happen—innovative,
+                        impactful,and on-point.</p>
+                </div>
+                <div class="home__bio-picture"><img src="1.png"></div>
             </div>
         </section>
-        <section class="blog">
-            <div class="blog__card-wrapper">
-                <div class="blog__card">
-                    <h3 class="blog__card__title"><a href="">Hello</a></h3>
-                    <p class="blog__card__content">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo quam
-                        molestiae sit quisquam non, quae accusantium aliquam vel odit accusamus animi eveniet quibusdam
-                        nobis, pariatur deserunt, molestias quaerat amet? Cupiditate! Lorem ipsum dolor sit amet
-                        consectetur, adipisicing elit. Totam hic vel eligendi! Numquam provident, quas officia molestias
-                        esse, iure veritatis vel nam sequi possimus magnam eaque temporibus consectetur velit deleniti.
-                    </p>
-                    <a class="blog__card__cta" href="">Read more</a>
+
+        <section class="pivot">
+            <h2 class="pivot__text">From concept to execution, driving results and not just output!</h2>
+            <div class="pivot__card-wrapper">
+                <div class="pivot__card">
+                    <p class="pivot__card__text">How I lead change</p>
+                    <ul class="pivot__card__bullets">
+                        <li>Align product vision with business & market goals</li>
+                        <li>Develop user-centric, scalable solutions</li>
+                        <li>Lead cross-functional teams</li>
+                    </ul>
                 </div>
-                <div class="blog__card">
-                    <h3 class="blog__card__title"><a href="">Hello</a></h3>
-                    <p class="blog__card__content">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo quam
-                        molestiae sit quisquam non, quae accusantium aliquam vel odit accusamus animi eveniet quibusdam
-                        nobis, pariatur deserunt, molestias quaerat amet? Cupiditate!</p>
-                    <a class="blog__card__cta" href="">Read more</a>
+                <div class="pivot__card">
+                    <p class="pivot__card__text">How I leverage expertise</p>
+                    <ul class="pivot__card__bullets">
+                        <li>Agile Scrum + JIRA</li>
+                        <li>UI/UX experience</li>
+                        <li>Business intelligence tools</li>
+                    </ul>
+                </div>
+                <div class="pivot__card">
+                    <p class="pivot__card__text">How you'll thrive</p>
+                    <ul class="pivot__card__bullets">
+                        <li>Increased user engagement & retention</li>
+                        <li>Fast, iterative releases</li>
+                        <li>Data-driven decision making</li>
+                    </ul>
                 </div>
             </div>
-            <div class="blog__navigation">
-                <button class="blog__navigation__cta" type="button">Explore</button>
-                <h2 class="blog__navigation__content">...more unnecessary insights by Nithila</h2>
+            <div class="pivot__caret">
+                <p>Learn more</p>
             </div>
         </section>
-        <section class="archive">
-            <div class="archive__card-wrapper">
-                <div class="archive__card"><img src="2.jpg"></div>
-                <div class="archive__card"><img src="2.jpg"></div>
-                <div class="archive__card"><img src="2.jpg"></div>
-                <div class="archive__card"><img src="2.jpg"></div>
+
+        <section class="skills d-none">
+            <table class="skills__list">
+                <tr>
+                    <th>Product management</th>
+                    <th>Stakeholder management</th>
+                    <th>Feature prioritization & backlog management</th>
+                    <th>Risk management</th>
+                </tr>
+                <tr>
+                    <th>Root cause analysis</th>
+                    <th>Cross-functional collaboration</th>
+                    <th>Sprint planning & exceution</th>
+                    <th>Conflict resolution</th>
+                </tr>
+                <tr>
+                    <th>Roadmap planning</th>
+                    <th>Agile Scrum</th>
+                    <th>User story creation, mapping & refinement</th>
+                    <th>Analytics & KPIs, SQL</th>
+                </tr>
+                <tr>
+                    <th>Go-to-market strategy</th>
+                    <th>Jira & Confluence</th>
+                    <th>Continuous & iterative improvement</th>
+                    <th>Reports + dashboards: PowerBI, Tableau</th>
+                </tr>
+                <tr>
+                    <th>Customer research</th>
+                    <th>Figma, Adobe XD, InVision</th>
+                    <th>Quality assurance</th>
+                    <th>Frontend developer expertise</th>
+                </tr>
+            </table>
+
+            <button class="skills__download"><span><i class="fa fa-download"></i>Download resume</span></button>
+        </section>
+
+        <section class="work">
+            <div class="work__carousel">
+                <img src="bt.png">
+                <img src="accenture.png">
+                <img src="canopygrowth.png">
+                <img src="dupont.png">
+                <img src="eon.png">
+                <img src="equinix.png">
+                <img src="myntra.png">
+                <img src="tadigital.png">
+                <img src="thoughtworks.png">
+            </div>
+            <p>Projects I've worked on</p>
+            <div class="work__download-resume"></div>
+        </section>
+
+        <section class="contact" id="contact">
+            <h2 class="contact__text">Get in touch!</h2>
+            <div class="contact__input-wrapper">
+                <input type="text" class="contact__input__name" placeholder="Name">
+                <input type="email" class="contact__input__name" placeholder="E-mail">
+                <input type="tel" class="contact__input__name" placeholder="Phone number">
+            </div>
+            <div class="contact__input-wrapper">
+                <textarea class="contact__input__query"
+                    placeholder="Enter your query and I shall reach out to you!"></textarea>
+                <button class="contact__input__button"><span>Email me :D</span></button>
             </div>
         </section>
+
         <footer class="footer">
-            <div class="footer__contact">
-                <div class="footer__contact__picture"></div>
-                <div class="footer__contact__input-wrapper">
-                    <label class="footer__contact__input__name">Your email goes here<input type="email"></label>
-                    <label class="footer__contact__input__query">Enter your query and I shall reach out to you
-                        soon!<textarea class="footer__contact__input__email"></textarea></label>
-                    <button class="footer__contact__input__button">Email me :D</button>
-                </div>
-            </div>
             <ul class="footer__social-links">
                 <li><a href="https://www.linkedin.com/in/nithilareddygaddam/"><img src="linkedin.png"></a></li>
                 <li><a href="https://letterboxd.com/nithilareddy/"><img src="letterboxd.svg"></a></li>
@@ -121,34 +159,5 @@
         </footer>
     </div>
 </body>
-
-<script>
-    $('.archive__card-wrapper').slick({
-        prevArrow: '<i class="fa fa-angle-left prev" aria-hidden="true"></i>',
-        nextArrow: '<i class="fa fa-angle-right next" aria-hidden="true"></i>',
-        centerMode: true,
-        centerPadding: '60px',
-        slidesToShow: 3,
-        responsive: [
-            {
-                breakpoint: 768,
-                settings: {
-                    arrows: false,
-                    centerMode: true,
-                    centerPadding: '40px',
-                    slidesToShow: 3
-                }
-            },
-            {
-                breakpoint: 480,
-                settings: {
-                    arrows: false,
-                    centerMode: true,
-                    centerPadding: '40px',
-                    slidesToShow: 1
-                }
-            }
-        ]
-    });</script>
 
 </html>

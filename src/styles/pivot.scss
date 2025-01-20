@@ -1,0 +1,110 @@
+.pivot {
+    margin: 0 auto 2rem;
+    width: calc(100% - 15vw);
+    background-color: $sunset;
+
+    @include media-breakpoint-down($sm) {
+        margin-bottom: 1.5rem;
+    }
+
+    &__text {
+        margin-bottom: 1.5rem;
+        font-size: 2rem;
+        line-height: 1;
+    }
+
+    &__card {
+        @include default-text;
+        border-radius: 0.5rem;
+        box-shadow: 0 2px 12px $shadow-color;
+        padding: 1.5rem 1.5rem 0.75rem 2.25rem;
+        flex: 1;
+        background-color: $white;
+        color: $black;
+        transition: all 0.3s ease;
+
+        &:hover {
+            box-shadow: 0 4px 20px $shadow-color;
+            background-color: $yellow;
+            transform: translateY(-0.25rem);
+        }
+
+        &-wrapper {
+            @include flex-row(space-between, stretch);
+            margin: 0 auto;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+
+            @include media-breakpoint-down($sm) {
+                flex-direction: column;
+            }
+        }
+
+        &__text {
+            @include default-text;
+            margin-bottom: 1rem;
+            line-height: 1;
+            font-size: 1rem;
+            font-weight: 700;
+            color: $black;
+            text-shadow: 2px 2px $yellow;
+        }
+
+        ul {
+            li {
+                margin-bottom: 0.75rem;
+
+                &:hover {
+                    transition: color 0.3s ease;
+                }
+            }
+        }
+    }
+
+    &__caret {
+        @include default-text;
+        @include flex-column(center, center);
+        position: relative;
+        margin: 0.75rem auto 0;
+        width: fit-content;
+        cursor: pointer;
+
+        @include media-breakpoint-down($sm) {
+            display: none;
+        }
+
+        &.inverse::after {
+            transform: rotate(315deg);
+            margin-top: 0.25rem;
+        }
+
+        &::after {
+            position: relative;
+            left: -5px;
+            margin-right: 0.5rem;
+            margin-left: 1.0rem;
+            border-right: 0.2rem solid $white;
+            border-top: 0.2rem solid $white;
+            display: inline-block;
+            width: 0.5rem;
+            height: 0.5rem;
+            transform: rotate(135deg);
+            content: "";
+        }
+
+        &:hover {
+            color: $yellow;
+
+            &::after {
+                border-color: $yellow;
+            }
+        }
+    }
+}
+
+// Responsive design
+@media (max-width: 768px) {
+    .pivot {
+        align-items: center;
+    }
+}

@@ -1,13 +1,26 @@
-* {
+*, html {
     box-sizing: border-box;
+    scroll-behavior: smooth !important;
 }
 
 body {
-    background: $background-image  $dark-blue-50;
-    background-size: cover;
-    background-blend-mode: multiply;
-    color: white;
+    background: $sunset;
     background-attachment: fixed;
+    color: $white;
+    overflow-x: hidden;
+
+    &::-webkit-scrollbar {
+        width: 0.75rem;
+    }
+
+    &::-webkit-scrollbar-track {
+        background: $sunset;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        border: 1px solid $black;
+        background: $yellow;
+    }
 }
 
 .main {

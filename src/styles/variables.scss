@@ -1,29 +1,60 @@
 /*--------------------------- Theme Colours ---------------------------*/
 
 /* Colours */
-$trans: transparent;
 $white: #fff;
 $black: #000;
 $dark-blue: #000033;
+$yellow: #ffff00;
+$purple: rgba(131, 58, 180, 1);
 $dark-blue-50: rgba(0, 0, 51, 0.50);
-$blue: #556880;
-$pink: #f7a8b2;
-$deep-blush: rgb(193, 110, 100);
-$deep-blush-35: rgba(193, 110, 100, 0.35);
+$border-yellow: rgba(255, 255, 0, 0.25);
+$transwhite-bg: rgba(255, 255, 255, 0.1);
+$shadow-color: rgba(0, 0, 0, 0.1);
 
 /* Gradient */
-$la-db-bl-le: linear-gradient(to left, #957dad, #a478a4, #b17399, #bb6f8a, #c06d7a, #c7747c, #cd7c7f, #d38382, #df9398, #eaa5ae, #f4b6c4, #fec8d8);
+$sunset: linear-gradient(135deg, black, $dark-blue 70%, $purple 100%);
+$sunset-var: linear-gradient(225deg, black, $dark-blue, $purple 100%);
+$sunset-header: linear-gradient(135deg, black, #00001b, #170A4A);
 
 /*-------------------------- Theme Colours End -------------------------*/
 
 
 /*-------------------------------- Fonts -------------------------------*/
 
-/*  Serif Font */
-$Cormorant: 'Cormorant Garamond', Times, serif;
+/******************** Serif Fonts *****************************/
+/* Cormorant Garamond */
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap');
+$Cormorant: 'Cormorant Garamond',
+Times,
+serif;
 
-/*  Sans-Serif Font */
-$Spartan: 'Spartan', Arial, Helvetica, sans-serif;
+/* Arizonia */
+@import url('https://fonts.googleapis.com/css2?family=Arizonia&display=swap');
+$Arizonia: 'Arizonia',
+Times,
+serif;
+
+/********************** Cursive Fonts *************************/
+/* Italianno */
+@import url('https://fonts.googleapis.com/css2?family=Italianno&display=swap');
+$Italianno: 'Italianno',
+Snell Roundhand,
+cursive;
+
+/********************* Sans-serif Fonts ************************/
+/* Raleway */
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+$Raleway: 'Raleway',
+Arial,
+Helvetica,
+sans-serif;
+
+/* Spartan */
+@import url('https://fonts.googleapis.com/css2?family=Spartan:wght@100;200;300;400;500;600;700;800;900&display=swap');
+$Spartan: 'Spartan',
+Arial,
+Helvetica,
+sans-serif;
 
 /*------------------------------ Fonts End -----------------------------*/
 
@@ -36,14 +67,6 @@ $lg: 992px;
 $xl: 1200px;
 
 /*--------------------------- Breakpoints End --------------------------*/
-
-
-/*------------------------------- Images -------------------------------*/
-
-$background-image: url('../assets/1.jpg');
-$background-image-crop: url('../assets/1-crop.jpg');
-
-/*----------------------------- Images End -----------------------------*/
 
 
 /*------------------------------- Mixins -------------------------------*/
@@ -100,83 +123,26 @@ $background-image-crop: url('../assets/1-crop.jpg');
     }
 }
 
-@mixin flex-row ($content) {
+@mixin flex-row ($justify-content, $align-items) {
     display: flex;
-    justify-content: $content;
+    justify-content: $justify-content;
+    align-items: $align-items;
 }
 
-@mixin flex-column {
+@mixin flex-column($justify-content, $align-items) {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-}
-
-@mixin btn-border-drawing($color: #ccc, $hover: black, $width: 2px, $vertical: top, $horizontal: left, $duration: 0.3s) {
-    box-shadow: inset 0 0 0 $width $color;
-    color: $color;
-    transition: color $duration calc($duration/3);
-    position: relative;
-
-    &::before,
-    &::after {
-        border: 0 solid transparent;
-        box-sizing: border-box;
-        content: '';
-        pointer-events: none;
-        position: absolute;
-        width: 0;
-        height: 0;
-
-        #{$vertical}: 0;
-        #{$horizontal}: 0;
-    }
-
-    &::before {
-        $h-side: if($horizontal=='left', 'right', 'left');
-
-        border-#{$vertical}-width: $width;
-        border-#{$h-side}-width: $width;
-    }
-
-    &::after {
-        $v-side: if($vertical=='top', 'bottom', 'top');
-
-        border-#{$v-side}-width: $width;
-        border-#{$horizontal}-width: $width;
-    }
-
-    &:hover {
-        color: $hover;
-
-        &::before,
-        &::after {
-            border-color: $hover;
-            transition: border-color 0s, width $duration, height $duration;
-            width: 100%;
-            height: 100%;
-        }
-
-        &::before {
-            transition-delay: 0s, 0s, $duration;
-        }
-
-        &::after {
-            transition-delay: 0s, $duration, 0s;
-        }
-    }
-}
-
-@mixin border {
-    border: 0.5rem solid transparent;
-    border-image: $la-db-bl-le 30;
+    justify-content: $justify-content;
+    align-items: $align-items;
 }
 
 @mixin default-text {
+    line-height: 1.25rem;
+    word-spacing: 0.25rem;
     font-family: $Spartan;
     font-size: 0.75rem;
-    line-height: 1.25rem;
-    color: $black;
-    font-weight: 600;
+    font-weight: 300;
+    color: $white;
 }
 
 /*----------------------------- Mixins End -----------------------------*/
@@ -184,23 +150,64 @@ $background-image-crop: url('../assets/1-crop.jpg');
 
 /*------------------------------- Common -------------------------------*/
 
+h2 {
+    margin-bottom: 1.5rem;
+    line-height: 3.25rem;
+    font-size: 4rem;
+    font-family: $Raleway;
+    font-weight: 500;
+}
+
 a {
-    color: $black;
+    color: $white;
     text-decoration: none;
 }
 
 button {
-    @include default-text;
-    @include btn-border-drawing($black, $deep-blush, 2px, bottom, right);
-    border: none;
-    padding: 1rem;
-    width: 100%;
+    position: relative;
+    border: 0;
+    padding: 0;
+    background: white;
     cursor: pointer;
-    text-transform: uppercase;
 
-    @include media-breakpoint-up($sm) {
-        width: 10rem;
+    span {
+        @include default-text;
+        position: relative;
+        z-index: 2;
+        padding: 0.75rem;
+        display: inline-block;
+        font-weight: 400;
+        color: $black;
+        text-align: center;
+        transition: all .35s;
+
+        &:hover {
+            color: $white;
+        }
     }
+
+    &::after {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 0;
+        height: 100%;
+        background: $dark-blue-50;
+        transition: all .3s;
+        content: "";
+    }
+
+    &:hover {
+        &::after {
+            width: 100%;
+        }
+    }
+}
+
+.underline {
+    border-bottom: 2px solid yellow;
+    padding-bottom: 0.125rem;
+    text-decoration: none;
 }
 
 /*---------------------------- Common Ends -----------------------------*/
