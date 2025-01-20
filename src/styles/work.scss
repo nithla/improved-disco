@@ -1,7 +1,9 @@
 .work {
     overflow: hidden;
-    margin-top: 4.5rem;
 
+    @include media-breakpoint-down($sm) {
+        margin-top: 0;
+    }
 
     &__carousel {
         border: 2px solid yellow;
@@ -20,8 +22,7 @@
         }
 
         .slick-track {
-            display: flex;
-            align-items: center;
+            @include flex-row(unset, center);
             padding: 1.5rem 0;
         }
 

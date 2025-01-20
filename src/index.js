@@ -7,10 +7,12 @@ import './styles/footer.scss'
 import './styles/home.scss'
 import './styles/pivot.scss'
 import './styles/skills.scss'
+import './styles/contact.scss'
 import './styles/work.scss'
 
 /* JavaScript */
 import './javascript/carousel.js'
+import './javascript/menu.js'
 
 /* Assets */
 import './assets/personal-pictures/1.png';

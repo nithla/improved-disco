@@ -1,15 +1,16 @@
 .home {
     width: calc(100% - 15vw);
-    margin: 3rem auto;
-    border: 1px solid yellow;
+    margin: 0 auto 3rem;
+    border: 1px solid $yellow;
+
+    @include media-breakpoint-down($sm) {
+        margin: 0 auto 1.5rem;
+    }
 
     &__bio {
         @include default-text;
+        @include flex-row(unset, flex-end);
         padding: 1.5rem 1.5rem 0 1.5rem;
-        color: white;
-        font-weight: 300;
-        display: flex;
-        align-items: flex-end;
 
         @include media-breakpoint-down($sm) {
             flex-direction: column;
@@ -25,12 +26,12 @@
             shape-outside: inset(calc(100% - 12rem) 0 0);
 
             img {
-                margin-top: 0.5rem;
-                width: 10rem;
-                height: auto;
                 position: relative;
                 bottom: -8px;
                 right: -1.75rem;
+                margin-top: 0.5rem;
+                width: 10rem;
+                height: auto;
             }
         }
     }

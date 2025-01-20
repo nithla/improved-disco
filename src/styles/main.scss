@@ -1,26 +1,25 @@
-* {
+*, html {
     box-sizing: border-box;
+    scroll-behavior: smooth !important;
 }
 
 body {
     background: $sunset;
-    background-size: cover;
-    background-blend-mode: multiply;
-    color: white;
     background-attachment: fixed;
+    color: $white;
     overflow-x: hidden;
 
     &::-webkit-scrollbar {
-        width: 10px;
+        width: 0.75rem;
     }
 
     &::-webkit-scrollbar-track {
-        background: $white;
+        background: $sunset;
     }
 
-    /* Handle */
     &::-webkit-scrollbar-thumb {
-        background: rgba(255, 255, 0, 0.75);
+        border: 1px solid $black;
+        background: $yellow;
     }
 }
 
