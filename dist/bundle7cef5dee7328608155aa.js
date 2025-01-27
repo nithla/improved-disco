@@ -28,10 +28,83 @@ jquery__WEBPACK_IMPORTED_MODULE_0___default()('.work__carousel').slick({
 
 /***/ }),
 
-/***/ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[0].use[2]!./src/styles/fonts.scss":
-/*!****************************************************************************************************************************************!*\
-  !*** ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[0].use[2]!./src/styles/fonts.scss ***!
-  \****************************************************************************************************************************************/
+/***/ "./src/javascript/download.js":
+/*!************************************!*\
+  !*** ./src/javascript/download.js ***!
+  \************************************/
+/***/ (() => {
+
+$('.skills__download span').on('click', function (e) {
+  window.location.href = './Nithila_Resume.doc';
+});
+
+/***/ }),
+
+/***/ "./src/javascript/form.js":
+/*!********************************!*\
+  !*** ./src/javascript/form.js ***!
+  \********************************/
+/***/ (() => {
+
+var contactButton = $('.contact__input__button span');
+contactButton.on('click', function (e) {
+  $.ajax({
+    url: '/clients.php',
+    // Replace with your server-side script URL
+    type: 'POST',
+    data: {
+      // Add any data you want to send to the server here
+      key1: 'value1',
+      key2: 'value2'
+    },
+    success: function success(response) {
+      // Handle the response from the server
+      alert('File updated successfully!');
+    },
+    error: function error(xhr, status, _error) {
+      // Handle any errors
+      console.log(xhr, status, _error);
+    }
+  });
+});
+
+/***/ }),
+
+/***/ "./src/javascript/menu.js":
+/*!********************************!*\
+  !*** ./src/javascript/menu.js ***!
+  \********************************/
+/***/ (() => {
+
+var pivotCaret = $('.pivot__caret');
+var skills = $('.skills');
+var headerCaret = $('.header__logo-caret');
+var headerNavigation = $('.header__navigation-links');
+pivotCaret.on('click', function (e) {
+  if (skills.hasClass('d-none')) {
+    skills.removeClass('d-none');
+    pivotCaret.text('See Less').addClass('inverse');
+  } else {
+    skills.addClass('d-none');
+    pivotCaret.text('Learn More').removeClass('inverse');
+  }
+});
+headerCaret.on('click', function (e) {
+  if (headerNavigation.hasClass('d-none')) {
+    headerNavigation.removeClass('d-none');
+    headerCaret.addClass('inverse');
+  } else {
+    headerNavigation.addClass('d-none');
+    headerCaret.removeClass('inverse');
+  }
+});
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[0].use[2]!./src/styles/contact.scss":
+/*!******************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[0].use[2]!./src/styles/contact.scss ***!
+  \******************************************************************************************************************************************/
 /***/ ((module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -48,19 +121,9 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
 ___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap);"]);
-___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap);"]);
-___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&display=swap);"]);
-___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Pinyon+Script&display=swap);"]);
+___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Arizonia&display=swap);"]);
 ___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Italianno&display=swap);"]);
-___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Ballet&family=Herr+Von+Muellerhoff&family=Monsieur+La+Doulaise&display=swap);"]);
-___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Mrs+Saint+Delafield&display=swap);"]);
-___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Sail&display=swap);"]);
-___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Dynalight&display=swap);"]);
-___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap);"]);
-___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap);"]);
-___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap);"]);
 ___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap);"]);
-___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap);"]);
 ___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Spartan:wght@100;200;300;400;500;600;700;800;900&display=swap);"]);
 // Module
 ___CSS_LOADER_EXPORT___.push([module.id, `/*--------------------------- Theme Colours ---------------------------*/
@@ -68,111 +131,145 @@ ___CSS_LOADER_EXPORT___.push([module.id, `/*--------------------------- Theme Co
 /* Gradient */
 /*-------------------------- Theme Colours End -------------------------*/
 /*-------------------------------- Fonts -------------------------------*/
-/*  Serif Font */
-/*  Sans-Serif Font */
+/******************** Serif Fonts *****************************/
+/* Cormorant Garamond */
+/* Arizonia */
+/********************** Cursive Fonts *************************/
+/* Italianno */
+/********************* Sans-serif Fonts ************************/
+/* Raleway */
+/* Spartan */
 /*------------------------------ Fonts End -----------------------------*/
 /*----------------------------- Breakpoints ----------------------------*/
 /*--------------------------- Breakpoints End --------------------------*/
-/*------------------------------- Images -------------------------------*/
-/*----------------------------- Images End -----------------------------*/
 /*------------------------------- Mixins -------------------------------*/
 /*----------------------------- Mixins End -----------------------------*/
 /*------------------------------- Common -------------------------------*/
 h2 {
   margin-bottom: 1.5rem;
+  line-height: 3.25rem;
   font-size: 4rem;
   font-family: "Raleway", Arial, Helvetica, sans-serif;
   font-weight: 500;
-  line-height: 3.25rem;
 }
 
 a {
-  color: #000;
+  color: #fff;
   text-decoration: none;
 }
 
 button {
+  position: relative;
+  border: 0;
+  padding: 0;
+  background: white;
+  cursor: pointer;
+}
+button span {
+  line-height: 1.25rem;
+  word-spacing: 0.25rem;
   font-family: "Spartan", Arial, Helvetica, sans-serif;
   font-size: 0.75rem;
-  line-height: 1.25rem;
-  color: #000;
-  font-weight: 600;
-  word-spacing: 0.25rem;
-  box-shadow: inset 0 0 0 2px #000;
-  color: #000;
-  transition: color 0.3s 0.1s;
+  font-weight: 300;
+  color: #fff;
   position: relative;
-  border: none;
-  padding: 1rem;
-  width: 100%;
-  cursor: pointer;
-  text-transform: uppercase;
+  z-index: 2;
+  padding: 0.75rem;
+  display: inline-block;
+  font-weight: 400;
+  color: #000;
+  text-align: center;
+  transition: all 0.35s;
 }
-button::before, button::after {
-  border: 0 solid transparent;
-  box-sizing: border-box;
-  content: "";
-  pointer-events: none;
-  position: absolute;
-  width: 0;
-  height: 0;
-  bottom: 0;
-  right: 0;
-}
-button::before {
-  border-bottom-width: 2px;
-  border-left-width: 2px;
+button span:hover {
+  color: #fff;
 }
 button::after {
-  border-top-width: 2px;
-  border-right-width: 2px;
-}
-button:hover {
-  color: rgb(193, 110, 100);
-}
-button:hover::before, button:hover::after {
-  border-color: rgb(193, 110, 100);
-  transition: border-color 0s, width 0.3s, height 0.3s;
-  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
   height: 100%;
-}
-button:hover::before {
-  transition-delay: 0s, 0s, 0.3s;
+  background: rgba(0, 0, 51, 0.5);
+  transition: all 0.3s;
+  content: "";
 }
 button:hover::after {
-  transition-delay: 0s, 0.3s, 0s;
-}
-@media (min-width: 576px) {
-  button {
-    width: 10rem;
-  }
+  width: 100%;
 }
 
 .underline {
+  border-bottom: 2px solid yellow;
   padding-bottom: 0.125rem;
   text-decoration: none;
-  border-bottom: 2px solid yellow;
 }
 
 /*---------------------------- Common Ends -----------------------------*/
-/**************************** Serif Fonts *************************************/
-/* Cormorant Garamond */
-/* Playfair Display */
-/* Cinzel Decorative */
-/****************************** Cursive Fonts *********************************/
-/* Pinyon Script */
-/* Italianno */
-/* Ballet; Herr Von Mueller; Monsieur La Doulaise */
-/* Mrs Saint Delafield */
-/* Sail */
-/* Dynalight */
-/***************************** Sans-serif Fonts ********************************/
-/* Poppins */
-/* Montserrat */
-/* Oswald */
-/* Raleway */
-/* Manrope */
-/* Spartan */`, "",{"version":3,"sources":["webpack://./src/styles/variables.scss","webpack://./src/styles/fonts.scss"],"names":[],"mappings":"AAAA,wEAAA;AAEA,YAAA;AAYA,aAAA;AAKA,yEAAA;AAGA,yEAAA;AAEA,gBAAA;AAGA,qBAAA;AAIA,yEAAA;AAGA,yEAAA;AAOA,yEAAA;AAGA,yEAAA;AAKA,yEAAA;AAGA,yEAAA;AAyIA,yEAAA;AAGA,yEAAA;AAEA;EACI,qBAAA;EACA,eAAA;EACA,oDAxKM;EAyKN,gBAAA;EACA,oBAAA;ACnKJ;;ADsKA;EACI,WAtMI;EAuMJ,qBAAA;ACnKJ;;ADsKA;EA1BI,oDAzJM;EA0JN,kBAAA;EACA,oBAAA;EACA,WAnLI;EAoLJ,gBAAA;EACA,qBAAA;EAlEA,gCAAA;EACA,WApHI;EAqHJ,2BAAA;EACA,kBAAA;EAuFA,YAAA;EACA,aAAA;EACA,WAAA;EACA,eAAA;EACA,yBAAA;AC3JJ;ADkEI;EAEI,2BAAA;EACA,sBAAA;EACA,WAAA;EACA,oBAAA;EACA,kBAAA;EACA,QAAA;EACA,SAAA;EAEA,SAAA;EACA,QAAA;AClER;ADqEI;EAGI,wBAmE6C;EAlE7C,sBAkE6C;ACvIrD;ADwEI;EAGI,qBA4D6C;EA3D7C,uBA2D6C;ACnIrD;AD2EI;EACI,yBA/IK;ACsEb;AD2EQ;EAEI,gCAnJC;EAoJD,oDAAA;EACA,WAAA;EACA,YAAA;AC1EZ;AD6EQ;EACI,8BAAA;AC3EZ;AD8EQ;EACI,8BAAA;AC5EZ;ADXQ;EA6HR;IAUQ,YAAA;ECxHN;AACF;;AD2HA;EACI,wBAAA;EACA,qBAAA;EACA,+BAAA;ACxHJ;;AD4HA,yEAAA;AClOgC,+EAAA;AAChC,uBAAA;AAGA,qBAAA;AAGA,sBAAA;AAGA,+EAAA;AACA,kBAAA;AAGA,cAAA;AAGA,mDAAA;AAGA,wBAAA;AAGA,SAAA;AAGA,cAAA;AAGA,gFAAA;AACA,YAAA;AAGA,eAAA;AAGA,WAAA;AAGA,YAAA;AAGA,YAAA;AAGA,YAAA","sourcesContent":["/*--------------------------- Theme Colours ---------------------------*/\r\n\r\n/* Colours */\r\n$trans: transparent;\r\n$white: #fff;\r\n$black: #000;\r\n$dark-blue: #000033;\r\n$dark-blue-50: rgba(0, 0, 51, 0.50);\r\n$blue: #556880;\r\n$blue-35: rgba(85, 104, 128, .5);\r\n$pink: #f7a8b2;\r\n$deep-blush: rgb(193, 110, 100);\r\n$deep-blush-35: rgba(193, 110, 100, 0.35);\r\n\r\n/* Gradient */\r\n$la-db-bl-le: linear-gradient(to left, #957dad, #a478a4, #b17399, #bb6f8a, #c06d7a, #c7747c, #cd7c7f, #d38382, #df9398, #eaa5ae, #f4b6c4, #fec8d8);\r\n$sunset: linear-gradient(135deg, black, $dark-blue 70%, rgba(131,58,180,1) 100%);\r\n$sunset-header: linear-gradient(225deg, black, $dark-blue, rgba(131,58,180,1) 100%);\r\n\r\n/*-------------------------- Theme Colours End -------------------------*/\r\n\r\n\r\n/*-------------------------------- Fonts -------------------------------*/\r\n\r\n/*  Serif Font */\r\n$Cormorant: 'Cormorant Garamond', Times, serif;\r\n\r\n/*  Sans-Serif Font */\r\n$Spartan: 'Spartan', Arial, Helvetica, sans-serif;\r\n$Raleway: 'Raleway', Arial, Helvetica, sans-serif;\r\n\r\n/*------------------------------ Fonts End -----------------------------*/\r\n\r\n\r\n/*----------------------------- Breakpoints ----------------------------*/\r\n\r\n$sm: 576px;\r\n$md: 768px;\r\n$lg: 992px;\r\n$xl: 1200px;\r\n\r\n/*--------------------------- Breakpoints End --------------------------*/\r\n\r\n\r\n/*------------------------------- Images -------------------------------*/\r\n\r\n$background-image: url('../assets/1.jpg');\r\n$background-image-crop: url('../assets/1-crop.jpg');\r\n\r\n/*----------------------------- Images End -----------------------------*/\r\n\r\n\r\n/*------------------------------- Mixins -------------------------------*/\r\n\r\n@mixin media-breakpoint-down($breakpoint) {\r\n    @if $breakpoint==$sm {\r\n        @media (max-width: $sm) {\r\n            @content;\r\n        }\r\n    }\r\n\r\n    @else if $breakpoint==$md {\r\n        @media (max-width: $md) {\r\n            @content;\r\n        }\r\n    }\r\n\r\n    @else if $breakpoint==$lg {\r\n        @media (max-width: $lg) {\r\n            @content;\r\n        }\r\n    }\r\n\r\n    @else {\r\n        @media (max-width: $xl) {\r\n            @content;\r\n        }\r\n    }\r\n}\r\n\r\n@mixin media-breakpoint-up($breakpoint) {\r\n    @if $breakpoint==$sm {\r\n        @media (min-width: $sm) {\r\n            @content;\r\n        }\r\n    }\r\n\r\n    @else if $breakpoint==$md {\r\n        @media (min-width: $md) {\r\n            @content;\r\n        }\r\n    }\r\n\r\n    @else if $breakpoint==$lg {\r\n        @media (min-width: $lg) {\r\n            @content;\r\n        }\r\n    }\r\n\r\n    @else {\r\n        @media (min-width: $xl) {\r\n            @content;\r\n        }\r\n    }\r\n}\r\n\r\n@mixin flex-row ($justify-content, $align-items) {\r\n    display: flex;\r\n    justify-content: $justify-content;\r\n    align-items: $align-items;\r\n}\r\n\r\n@mixin flex-column($justify-content, $align-items) {\r\n    display: flex;\r\n    flex-direction: column;\r\n    justify-content: $justify-content;\r\n    align-items: $align-items;\r\n}\r\n\r\n@mixin btn-border-drawing($color: #ccc, $hover: black, $width: 2px, $vertical: top, $horizontal: left, $duration: 0.3s) {\r\n    box-shadow: inset 0 0 0 $width $color;\r\n    color: $color;\r\n    transition: color $duration calc($duration/3);\r\n    position: relative;\r\n\r\n    &::before,\r\n    &::after {\r\n        border: 0 solid transparent;\r\n        box-sizing: border-box;\r\n        content: '';\r\n        pointer-events: none;\r\n        position: absolute;\r\n        width: 0;\r\n        height: 0;\r\n\r\n        #{$vertical}: 0;\r\n        #{$horizontal}: 0;\r\n    }\r\n\r\n    &::before {\r\n        $h-side: if($horizontal=='left', 'right', 'left');\r\n\r\n        border-#{$vertical}-width: $width;\r\n        border-#{$h-side}-width: $width;\r\n    }\r\n\r\n    &::after {\r\n        $v-side: if($vertical=='top', 'bottom', 'top');\r\n\r\n        border-#{$v-side}-width: $width;\r\n        border-#{$horizontal}-width: $width;\r\n    }\r\n\r\n    &:hover {\r\n        color: $hover;\r\n\r\n        &::before,\r\n        &::after {\r\n            border-color: $hover;\r\n            transition: border-color 0s, width $duration, height $duration;\r\n            width: 100%;\r\n            height: 100%;\r\n        }\r\n\r\n        &::before {\r\n            transition-delay: 0s, 0s, $duration;\r\n        }\r\n\r\n        &::after {\r\n            transition-delay: 0s, $duration, 0s;\r\n        }\r\n    }\r\n}\r\n\r\n@mixin border {\r\n    border: 0;\r\n    // border: 0.5rem solid transparent;\r\n    // border-image: $la-db-bl-le 30;\r\n}\r\n\r\n@mixin default-text {\r\n    font-family: $Spartan;\r\n    font-size: 0.75rem;\r\n    line-height: 1.25rem;\r\n    color: $black;\r\n    font-weight: 600;\r\n    word-spacing: 0.25rem;\r\n}\r\n\r\n/*----------------------------- Mixins End -----------------------------*/\r\n\r\n\r\n/*------------------------------- Common -------------------------------*/\r\n\r\nh2 {\r\n    margin-bottom: 1.5rem;\r\n    font-size: 4rem;\r\n    font-family: $Raleway;\r\n    font-weight: 500;\r\n    line-height: 3.25rem;\r\n}\r\n\r\na {\r\n    color: $black;\r\n    text-decoration: none;\r\n}\r\n\r\nbutton {\r\n    @include default-text;\r\n    @include btn-border-drawing($black, $deep-blush, 2px, bottom, right);\r\n    border: none;\r\n    padding: 1rem;\r\n    width: 100%;\r\n    cursor: pointer;\r\n    text-transform: uppercase;\r\n\r\n    @include media-breakpoint-up($sm) {\r\n        width: 10rem;\r\n    }\r\n}\r\n\r\n.underline {\r\n    padding-bottom:0.125rem;\r\n    text-decoration:none;\r\n    border-bottom:2px solid yellow;}\r\n\r\n\r\n\r\n/*---------------------------- Common Ends -----------------------------*/","\n                                @import \"variables.scss\";\n                                /**************************** Serif Fonts *************************************/\r\n/* Cormorant Garamond */\r\n@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap');\r\n\r\n/* Playfair Display */\r\n@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');\r\n\r\n/* Cinzel Decorative */\r\n@import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&display=swap');\r\n\r\n/****************************** Cursive Fonts *********************************/\r\n/* Pinyon Script */\r\n@import url('https://fonts.googleapis.com/css2?family=Pinyon+Script&display=swap');\r\n\r\n/* Italianno */\r\n@import url('https://fonts.googleapis.com/css2?family=Italianno&display=swap');\r\n\r\n/* Ballet; Herr Von Mueller; Monsieur La Doulaise */\r\n@import url('https://fonts.googleapis.com/css2?family=Ballet&family=Herr+Von+Muellerhoff&family=Monsieur+La+Doulaise&display=swap');\r\n\r\n/* Mrs Saint Delafield */\r\n@import url('https://fonts.googleapis.com/css2?family=Mrs+Saint+Delafield&display=swap');\r\n\r\n/* Sail */\r\n@import url('https://fonts.googleapis.com/css2?family=Sail&display=swap');\r\n\r\n/* Dynalight */\r\n@import url('https://fonts.googleapis.com/css2?family=Dynalight&display=swap');\r\n\r\n/***************************** Sans-serif Fonts ********************************/\r\n/* Poppins */\r\n@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');\r\n\r\n/* Montserrat */\r\n@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');\r\n\r\n/* Oswald */\r\n@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap');\r\n\r\n/* Raleway */\r\n@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');\r\n\r\n/* Manrope */\r\n@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap');\r\n\r\n/* Spartan */\r\n@import url('https://fonts.googleapis.com/css2?family=Spartan:wght@100;200;300;400;500;600;700;800;900&display=swap');\n                              "],"sourceRoot":""}]);
+.contact {
+  margin: 3rem auto 1.5rem;
+  padding: 1.5rem 7.5vw;
+  display: flex;
+}
+@media (max-width: 768px) {
+  .contact {
+    margin: 1.5rem auto 0;
+    flex-direction: column;
+    gap: 1rem;
+  }
+}
+.contact__text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 0;
+  flex-basis: 30%;
+  background: #ffff00;
+  color: rgba(0, 0, 0, 0.25);
+  text-align: center;
+  text-transform: capitalize;
+}
+.contact__input-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem;
+  flex-basis: 40%;
+  color: #fff;
+  text-shadow: black 0px 0px 4px;
+  gap: 1rem;
+}
+@media (max-width: 768px) {
+  .contact__input-wrapper {
+    flex-direction: column;
+  }
+}
+.contact__input__name, .contact__input__query {
+  line-height: 1.25rem;
+  word-spacing: 0.25rem;
+  font-family: "Spartan", Arial, Helvetica, sans-serif;
+  font-size: 0.75rem;
+  font-weight: 300;
+  color: #fff;
+  border: 0;
+  border-bottom: 1px solid rgba(255, 255, 0, 0.25);
+  padding: 0.5rem;
+  display: block;
+  width: 100%;
+  height: 1.5rem;
+  background: none;
+}
+.contact__input__name:focus, .contact__input__name:hover, .contact__input__query:focus, .contact__input__query:hover {
+  outline: 0;
+  border-bottom: #ffff00 solid 2px;
+}
+.contact__input__name::placeholder, .contact__input__query::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+.contact__input__query {
+  height: 5rem;
+}`, "",{"version":3,"sources":["webpack://./src/styles/variables.scss","webpack://./src/styles/contact.scss"],"names":[],"mappings":"AAAA,wEAAA;AAEA,YAAA;AAWA,aAAA;AAKA,yEAAA;AAGA,yEAAA;AAEA,+DAAA;AACA,uBAAA;AAMA,aAAA;AAMA,+DAAA;AACA,cAAA;AAMA,gEAAA;AACA,YAAA;AAOA,YAAA;AAOA,yEAAA;AAGA,yEAAA;AAOA,yEAAA;AAGA,yEAAA;AA4EA,yEAAA;AAGA,yEAAA;AAEA;EACI,qBAAA;EACA,oBAAA;EACA,eAAA;EACA,oDA9GM;EA+GN,gBAAA;AC/HJ;;ADkIA;EACI,WA9JI;EA+JJ,qBAAA;AC/HJ;;ADkIA;EACI,kBAAA;EACA,SAAA;EACA,UAAA;EACA,iBAAA;EACA,eAAA;AC/HJ;ADiII;EAjCA,oBAAA;EACA,qBAAA;EACA,oDAxFM;EAyFN,kBAAA;EACA,gBAAA;EACA,WA7II;EA2KA,kBAAA;EACA,UAAA;EACA,gBAAA;EACA,qBAAA;EACA,gBAAA;EACA,WA/KA;EAgLA,kBAAA;EACA,qBAAA;AC1HR;AD4HQ;EACI,WArLJ;AC2DR;AD8HI;EACI,kBAAA;EACA,MAAA;EACA,OAAA;EACA,QAAA;EACA,YAAA;EACA,+BA1LO;EA2LP,oBAAA;EACA,WAAA;AC5HR;ADgIQ;EACI,WAAA;AC9HZ;;ADmIA;EACI,+BAAA;EACA,wBAAA;EACA,qBAAA;AChIJ;;ADmIA,yEAAA;AClNgC;EAC5B,wBAAA;EACA,qBAAA;EACA,aAAA;AAmFJ;ADPQ;EC/EwB;IAMxB,qBAAA;IACA,sBAAA;IACA,SAAA;EAoFN;AACF;AAlFI;EDuHA,aAAA;EACA,sBAAA;EACA,uBCxHyB;EDyHzB,mBCzHiC;EAC7B,gBAAA;EACA,eAAA;EACA,mBDXC;ECYD,0BAAA;EACA,kBAAA;EACA,0BAAA;AAuFR;AAlFQ;ED2GJ,aAAA;EACA,sBAAA;EACA,8BC5G6B;ED6G7B,mBC7G4C;EACpC,gBAAA;EACA,eAAA;EACA,WD1BJ;EC2BI,8BAAA;EACA,SAAA;AAuFZ;ADrCQ;ECxDA;IASQ,sBAAA;EAwFd;AACF;AArFQ;EDqGJ,oBAAA;EACA,qBAAA;EACA,oDAxFM;EAyFN,kBAAA;EACA,gBAAA;EACA,WA7II;ECsCI,SAAA;EACA,gDAAA;EACA,eAAA;EACA,cAAA;EACA,WAAA;EACA,cAAA;EACA,gBAAA;AA2FZ;AAzFY;EAEI,UAAA;EACA,gCAAA;AA0FhB;AAvFY;EACI,+BAAA;AAyFhB;AArFQ;EACI,YAAA;AAuFZ","sourcesContent":["/*--------------------------- Theme Colours ---------------------------*/\r\n\r\n/* Colours */\r\n$white: #fff;\r\n$black: #000;\r\n$dark-blue: #000033;\r\n$yellow: #ffff00;\r\n$purple: rgba(131, 58, 180, 1);\r\n$dark-blue-50: rgba(0, 0, 51, 0.50);\r\n$border-yellow: rgba(255, 255, 0, 0.25);\r\n$transwhite-bg: rgba(255, 255, 255, 0.1);\r\n$shadow-color: rgba(0, 0, 0, 0.1);\r\n\r\n/* Gradient */\r\n$sunset: linear-gradient(135deg, black, $dark-blue 70%, $purple 100%);\r\n$sunset-var: linear-gradient(225deg, black, $dark-blue, $purple 100%);\r\n$sunset-header: linear-gradient(135deg, black, #00001b, #170A4A);\r\n\r\n/*-------------------------- Theme Colours End -------------------------*/\r\n\r\n\r\n/*-------------------------------- Fonts -------------------------------*/\r\n\r\n/******************** Serif Fonts *****************************/\r\n/* Cormorant Garamond */\r\n@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap');\r\n$Cormorant: 'Cormorant Garamond',\r\nTimes,\r\nserif;\r\n\r\n/* Arizonia */\r\n@import url('https://fonts.googleapis.com/css2?family=Arizonia&display=swap');\r\n$Arizonia: 'Arizonia',\r\nTimes,\r\nserif;\r\n\r\n/********************** Cursive Fonts *************************/\r\n/* Italianno */\r\n@import url('https://fonts.googleapis.com/css2?family=Italianno&display=swap');\r\n$Italianno: 'Italianno',\r\nSnell Roundhand,\r\ncursive;\r\n\r\n/********************* Sans-serif Fonts ************************/\r\n/* Raleway */\r\n@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');\r\n$Raleway: 'Raleway',\r\nArial,\r\nHelvetica,\r\nsans-serif;\r\n\r\n/* Spartan */\r\n@import url('https://fonts.googleapis.com/css2?family=Spartan:wght@100;200;300;400;500;600;700;800;900&display=swap');\r\n$Spartan: 'Spartan',\r\nArial,\r\nHelvetica,\r\nsans-serif;\r\n\r\n/*------------------------------ Fonts End -----------------------------*/\r\n\r\n\r\n/*----------------------------- Breakpoints ----------------------------*/\r\n\r\n$sm: 576px;\r\n$md: 768px;\r\n$lg: 992px;\r\n$xl: 1200px;\r\n\r\n/*--------------------------- Breakpoints End --------------------------*/\r\n\r\n\r\n/*------------------------------- Mixins -------------------------------*/\r\n\r\n@mixin media-breakpoint-down($breakpoint) {\r\n    @if $breakpoint==$sm {\r\n        @media (max-width: $sm) {\r\n            @content;\r\n        }\r\n    }\r\n\r\n    @else if $breakpoint==$md {\r\n        @media (max-width: $md) {\r\n            @content;\r\n        }\r\n    }\r\n\r\n    @else if $breakpoint==$lg {\r\n        @media (max-width: $lg) {\r\n            @content;\r\n        }\r\n    }\r\n\r\n    @else {\r\n        @media (max-width: $xl) {\r\n            @content;\r\n        }\r\n    }\r\n}\r\n\r\n@mixin media-breakpoint-up($breakpoint) {\r\n    @if $breakpoint==$sm {\r\n        @media (min-width: $sm) {\r\n            @content;\r\n        }\r\n    }\r\n\r\n    @else if $breakpoint==$md {\r\n        @media (min-width: $md) {\r\n            @content;\r\n        }\r\n    }\r\n\r\n    @else if $breakpoint==$lg {\r\n        @media (min-width: $lg) {\r\n            @content;\r\n        }\r\n    }\r\n\r\n    @else {\r\n        @media (min-width: $xl) {\r\n            @content;\r\n        }\r\n    }\r\n}\r\n\r\n@mixin flex-row ($justify-content, $align-items) {\r\n    display: flex;\r\n    justify-content: $justify-content;\r\n    align-items: $align-items;\r\n}\r\n\r\n@mixin flex-column($justify-content, $align-items) {\r\n    display: flex;\r\n    flex-direction: column;\r\n    justify-content: $justify-content;\r\n    align-items: $align-items;\r\n}\r\n\r\n@mixin default-text {\r\n    line-height: 1.25rem;\r\n    word-spacing: 0.25rem;\r\n    font-family: $Spartan;\r\n    font-size: 0.75rem;\r\n    font-weight: 300;\r\n    color: $white;\r\n}\r\n\r\n/*----------------------------- Mixins End -----------------------------*/\r\n\r\n\r\n/*------------------------------- Common -------------------------------*/\r\n\r\nh2 {\r\n    margin-bottom: 1.5rem;\r\n    line-height: 3.25rem;\r\n    font-size: 4rem;\r\n    font-family: $Raleway;\r\n    font-weight: 500;\r\n}\r\n\r\na {\r\n    color: $white;\r\n    text-decoration: none;\r\n}\r\n\r\nbutton {\r\n    position: relative;\r\n    border: 0;\r\n    padding: 0;\r\n    background: white;\r\n    cursor: pointer;\r\n\r\n    span {\r\n        @include default-text;\r\n        position: relative;\r\n        z-index: 2;\r\n        padding: 0.75rem;\r\n        display: inline-block;\r\n        font-weight: 400;\r\n        color: $black;\r\n        text-align: center;\r\n        transition: all .35s;\r\n\r\n        &:hover {\r\n            color: $white;\r\n        }\r\n    }\r\n\r\n    &::after {\r\n        position: absolute;\r\n        top: 0;\r\n        left: 0;\r\n        width: 0;\r\n        height: 100%;\r\n        background: $dark-blue-50;\r\n        transition: all .3s;\r\n        content: \"\";\r\n    }\r\n\r\n    &:hover {\r\n        &::after {\r\n            width: 100%;\r\n        }\r\n    }\r\n}\r\n\r\n.underline {\r\n    border-bottom: 2px solid yellow;\r\n    padding-bottom: 0.125rem;\r\n    text-decoration: none;\r\n}\r\n\r\n/*---------------------------- Common Ends -----------------------------*/","\n                                @import \"variables.scss\";\n                                .contact {\r\n    margin: 3rem auto 1.5rem;\r\n    padding: 1.5rem 7.5vw;\r\n    display: flex;\r\n\r\n    @include media-breakpoint-down($md) {\r\n        margin: 1.5rem auto 0;\r\n        flex-direction: column;\r\n        gap: 1rem;\r\n    }\r\n\r\n    &__text {\r\n        @include flex-column(center, center);\r\n        margin-bottom: 0;\r\n        flex-basis: 30%;\r\n        background: $yellow;\r\n        color: rgba(0, 0, 0, 0.25);\r\n        text-align: center;\r\n        text-transform: capitalize;\r\n    }\r\n\r\n    &__input {\r\n\r\n        &-wrapper {\r\n            @include flex-column(space-between, center);\r\n            padding: 0.75rem;\r\n            flex-basis: 40%;\r\n            color: $white;\r\n            text-shadow: black 0px 0px 4px;\r\n            gap: 1rem;\r\n\r\n            @include media-breakpoint-down ($md) {\r\n                flex-direction: column;\r\n            }\r\n        }\r\n\r\n        &__name,\r\n        &__query {\r\n            @include default-text;\r\n            border: 0;\r\n            border-bottom: 1px solid $border-yellow;\r\n            padding: 0.5rem;\r\n            display: block;\r\n            width: 100%;\r\n            height: 1.5rem;\r\n            background: none;\r\n\r\n            &:focus,\r\n            &:hover {\r\n                outline: 0;\r\n                border-bottom: $yellow solid 2px;\r\n            }\r\n\r\n            &::placeholder {\r\n                color: rgba(255, 255, 255, 0.5);\r\n            }\r\n        }\r\n\r\n        &__query {\r\n            height: 5rem;\r\n        }\r\n    }\r\n}\n                              "],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -194,118 +291,105 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
 /* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../node_modules/css-loader/dist/runtime/getUrl.js */ "./node_modules/css-loader/dist/runtime/getUrl.js");
-/* harmony import */ var _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2__);
 // Imports
 
 
-
-var ___CSS_LOADER_URL_IMPORT_0___ = new URL(/* asset import */ __webpack_require__(/*! ../assets/personal-pictures/2.jpg */ "./src/assets/personal-pictures/2.jpg"), __webpack_require__.b);
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
-var ___CSS_LOADER_URL_REPLACEMENT_0___ = _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2___default()(___CSS_LOADER_URL_IMPORT_0___);
+___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap);"]);
+___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Arizonia&display=swap);"]);
+___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Italianno&display=swap);"]);
+___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap);"]);
+___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Spartan:wght@100;200;300;400;500;600;700;800;900&display=swap);"]);
 // Module
 ___CSS_LOADER_EXPORT___.push([module.id, `/*--------------------------- Theme Colours ---------------------------*/
 /* Colours */
 /* Gradient */
 /*-------------------------- Theme Colours End -------------------------*/
 /*-------------------------------- Fonts -------------------------------*/
-/*  Serif Font */
-/*  Sans-Serif Font */
+/******************** Serif Fonts *****************************/
+/* Cormorant Garamond */
+/* Arizonia */
+/********************** Cursive Fonts *************************/
+/* Italianno */
+/********************* Sans-serif Fonts ************************/
+/* Raleway */
+/* Spartan */
 /*------------------------------ Fonts End -----------------------------*/
 /*----------------------------- Breakpoints ----------------------------*/
 /*--------------------------- Breakpoints End --------------------------*/
-/*------------------------------- Images -------------------------------*/
-/*----------------------------- Images End -----------------------------*/
 /*------------------------------- Mixins -------------------------------*/
 /*----------------------------- Mixins End -----------------------------*/
 /*------------------------------- Common -------------------------------*/
 h2 {
   margin-bottom: 1.5rem;
+  line-height: 3.25rem;
   font-size: 4rem;
   font-family: "Raleway", Arial, Helvetica, sans-serif;
   font-weight: 500;
-  line-height: 3.25rem;
 }
 
 a {
-  color: #000;
+  color: #fff;
   text-decoration: none;
 }
 
 button {
+  position: relative;
+  border: 0;
+  padding: 0;
+  background: white;
+  cursor: pointer;
+}
+button span {
+  line-height: 1.25rem;
+  word-spacing: 0.25rem;
   font-family: "Spartan", Arial, Helvetica, sans-serif;
   font-size: 0.75rem;
-  line-height: 1.25rem;
-  color: #000;
-  font-weight: 600;
-  word-spacing: 0.25rem;
-  box-shadow: inset 0 0 0 2px #000;
-  color: #000;
-  transition: color 0.3s 0.1s;
+  font-weight: 300;
+  color: #fff;
   position: relative;
-  border: none;
-  padding: 1rem;
-  width: 100%;
-  cursor: pointer;
-  text-transform: uppercase;
+  z-index: 2;
+  padding: 0.75rem;
+  display: inline-block;
+  font-weight: 400;
+  color: #000;
+  text-align: center;
+  transition: all 0.35s;
 }
-button::before, button::after {
-  border: 0 solid transparent;
-  box-sizing: border-box;
-  content: "";
-  pointer-events: none;
-  position: absolute;
-  width: 0;
-  height: 0;
-  bottom: 0;
-  right: 0;
-}
-button::before {
-  border-bottom-width: 2px;
-  border-left-width: 2px;
+button span:hover {
+  color: #fff;
 }
 button::after {
-  border-top-width: 2px;
-  border-right-width: 2px;
-}
-button:hover {
-  color: rgb(193, 110, 100);
-}
-button:hover::before, button:hover::after {
-  border-color: rgb(193, 110, 100);
-  transition: border-color 0s, width 0.3s, height 0.3s;
-  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
   height: 100%;
-}
-button:hover::before {
-  transition-delay: 0s, 0s, 0.3s;
+  background: rgba(0, 0, 51, 0.5);
+  transition: all 0.3s;
+  content: "";
 }
 button:hover::after {
-  transition-delay: 0s, 0.3s, 0s;
-}
-@media (min-width: 576px) {
-  button {
-    width: 10rem;
-  }
+  width: 100%;
 }
 
 .underline {
+  border-bottom: 2px solid yellow;
   padding-bottom: 0.125rem;
   text-decoration: none;
-  border-bottom: 2px solid yellow;
 }
 
 /*---------------------------- Common Ends -----------------------------*/
 .footer {
-  padding: 4.5rem 7.5vw;
+  padding: 0 7.5vw;
 }
 .footer__social-links {
-  padding: 0.5rem 0 0;
-  margin-bottom: 3rem;
   display: flex;
   justify-content: center;
+  align-items: unset;
+  margin-bottom: 3rem;
+  padding: 0.5rem 0 0;
   gap: 1.5rem;
-  list-style: none;
 }
 .footer__social-links img {
   width: 2rem;
@@ -315,66 +399,7 @@ button:hover::after {
   .footer__social-links img {
     width: 2rem;
   }
-}
-.footer__contact {
-  display: flex;
-  background: linear-gradient(225deg, black, #000033, rgb(131, 58, 180) 100%);
-}
-.footer__contact__works {
-  flex-basis: 30%;
-  background: url(${___CSS_LOADER_URL_REPLACEMENT_0___});
-  background-size: cover;
-  background-position: top center;
-}
-@media (max-width: 768px) {
-  .footer__contact__works {
-    display: none;
-  }
-}
-.footer__contact__input-wrapper {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  font-family: "Spartan", Arial, Helvetica, sans-serif;
-  font-size: 0.75rem;
-  line-height: 1.25rem;
-  color: #000;
-  font-weight: 600;
-  word-spacing: 0.25rem;
-  color: white;
-  text-shadow: black 0px 0px 4px;
-  flex-basis: 40%;
-  gap: 1rem;
-  padding: 1.5rem;
-}
-@media (max-width: 768px) {
-  .footer__contact__input-wrapper {
-    flex-basis: 100%;
-  }
-}
-.footer__contact__input__name, .footer__contact__input__query {
-  width: 100%;
-}
-.footer__contact__input__name input, .footer__contact__input__query textarea {
-  font-family: "Spartan", Arial, Helvetica, sans-serif;
-  font-size: 0.75rem;
-  line-height: 1.25rem;
-  color: #000;
-  font-weight: 600;
-  word-spacing: 0.25rem;
-  border: none;
-  display: block;
-  width: 100%;
-  height: 1.5rem;
-  padding: 0.5rem;
-}
-.footer__contact__input__name input:focus, .footer__contact__input__name input:hover, .footer__contact__input__query textarea:focus, .footer__contact__input__query textarea:hover {
-  outline: rgb(193, 110, 100) solid 2px;
-}
-.footer__contact__input__query textarea {
-  height: 5rem;
-}`, "",{"version":3,"sources":["webpack://./src/styles/variables.scss","webpack://./src/styles/footer.scss"],"names":[],"mappings":"AAAA,wEAAA;AAEA,YAAA;AAYA,aAAA;AAKA,yEAAA;AAGA,yEAAA;AAEA,gBAAA;AAGA,qBAAA;AAIA,yEAAA;AAGA,yEAAA;AAOA,yEAAA;AAGA,yEAAA;AAKA,yEAAA;AAGA,yEAAA;AAyIA,yEAAA;AAGA,yEAAA;AAEA;EACI,qBAAA;EACA,eAAA;EACA,oDAxKM;EAyKN,gBAAA;EACA,oBAAA;AClLJ;;ADqLA;EACI,WAtMI;EAuMJ,qBAAA;AClLJ;;ADqLA;EA1BI,oDAzJM;EA0JN,kBAAA;EACA,oBAAA;EACA,WAnLI;EAoLJ,gBAAA;EACA,qBAAA;EAlEA,gCAAA;EACA,WApHI;EAqHJ,2BAAA;EACA,kBAAA;EAuFA,YAAA;EACA,aAAA;EACA,WAAA;EACA,eAAA;EACA,yBAAA;AC1KJ;ADiFI;EAEI,2BAAA;EACA,sBAAA;EACA,WAAA;EACA,oBAAA;EACA,kBAAA;EACA,QAAA;EACA,SAAA;EAEA,SAAA;EACA,QAAA;ACjFR;ADoFI;EAGI,wBAmE6C;EAlE7C,sBAkE6C;ACtJrD;ADuFI;EAGI,qBA4D6C;EA3D7C,uBA2D6C;AClJrD;AD0FI;EACI,yBA/IK;ACuDb;AD0FQ;EAEI,gCAnJC;EAoJD,oDAAA;EACA,WAAA;EACA,YAAA;ACzFZ;AD4FQ;EACI,8BAAA;AC1FZ;AD6FQ;EACI,8BAAA;AC3FZ;ADIQ;EA6HR;IAUQ,YAAA;ECvIN;AACF;;AD0IA;EACI,wBAAA;EACA,qBAAA;EACA,+BAAA;ACvIJ;;AD2IA,yEAAA;AClOgC;EAC5B,qBAAA;AA2FJ;AAzFI;EACI,mBAAA;EACA,mBAAA;EAEA,aAAA;EACA,uBAAA;EACA,WAAA;EAEA,gBAAA;AAyFR;AAvFQ;EACI,WAAA;EACA,YAAA;AAyFZ;AD5CQ;EC/CA;IAKQ,WAAA;EA0Fd;AACF;AAtFI;EAGI,aAAA;EACA,2EDZQ;ACkGhB;AApFQ;EACI,eAAA;EACA,mDAAA;EACA,sBAAA;EACA,+BAAA;AAsFZ;AD3DQ;EC/BA;IAOQ,aAAA;EAuFd;AACF;AAlFY;EDqER,aAAA;EACA,sBAAA;EACA,8BCtEiC;EDuEjC,mBCvEgD;EDwIhD,oDAzJM;EA0JN,kBAAA;EACA,oBAAA;EACA,WAnLI;EAoLJ,gBAAA;EACA,qBAAA;EC3IY,YAAA;EACA,8BAAA;EACA,eAAA;EACA,SAAA;EACA,eAAA;AA4FhB;ADjFQ;EClBI;IAUQ,gBAAA;EA6FlB;AACF;AA1FY;EAEI,WAAA;AA2FhB;AAxFY;EDsHR,oDAzJM;EA0JN,kBAAA;EACA,oBAAA;EACA,WAnLI;EAoLJ,gBAAA;EACA,qBAAA;ECxHY,YAAA;EACA,cAAA;EACA,WAAA;EACA,cAAA;EACA,eAAA;AA8FhB;AA5FgB;EAEI,qCAAA;AA6FpB;AAzFY;EACI,YAAA;AA2FhB","sourcesContent":["/*--------------------------- Theme Colours ---------------------------*/\r\n\r\n/* Colours */\r\n$trans: transparent;\r\n$white: #fff;\r\n$black: #000;\r\n$dark-blue: #000033;\r\n$dark-blue-50: rgba(0, 0, 51, 0.50);\r\n$blue: #556880;\r\n$blue-35: rgba(85, 104, 128, .5);\r\n$pink: #f7a8b2;\r\n$deep-blush: rgb(193, 110, 100);\r\n$deep-blush-35: rgba(193, 110, 100, 0.35);\r\n\r\n/* Gradient */\r\n$la-db-bl-le: linear-gradient(to left, #957dad, #a478a4, #b17399, #bb6f8a, #c06d7a, #c7747c, #cd7c7f, #d38382, #df9398, #eaa5ae, #f4b6c4, #fec8d8);\r\n$sunset: linear-gradient(135deg, black, $dark-blue 70%, rgba(131,58,180,1) 100%);\r\n$sunset-header: linear-gradient(225deg, black, $dark-blue, rgba(131,58,180,1) 100%);\r\n\r\n/*-------------------------- Theme Colours End -------------------------*/\r\n\r\n\r\n/*-------------------------------- Fonts -------------------------------*/\r\n\r\n/*  Serif Font */\r\n$Cormorant: 'Cormorant Garamond', Times, serif;\r\n\r\n/*  Sans-Serif Font */\r\n$Spartan: 'Spartan', Arial, Helvetica, sans-serif;\r\n$Raleway: 'Raleway', Arial, Helvetica, sans-serif;\r\n\r\n/*------------------------------ Fonts End -----------------------------*/\r\n\r\n\r\n/*----------------------------- Breakpoints ----------------------------*/\r\n\r\n$sm: 576px;\r\n$md: 768px;\r\n$lg: 992px;\r\n$xl: 1200px;\r\n\r\n/*--------------------------- Breakpoints End --------------------------*/\r\n\r\n\r\n/*------------------------------- Images -------------------------------*/\r\n\r\n$background-image: url('../assets/1.jpg');\r\n$background-image-crop: url('../assets/1-crop.jpg');\r\n\r\n/*----------------------------- Images End -----------------------------*/\r\n\r\n\r\n/*------------------------------- Mixins -------------------------------*/\r\n\r\n@mixin media-breakpoint-down($breakpoint) {\r\n    @if $breakpoint==$sm {\r\n        @media (max-width: $sm) {\r\n            @content;\r\n        }\r\n    }\r\n\r\n    @else if $breakpoint==$md {\r\n        @media (max-width: $md) {\r\n            @content;\r\n        }\r\n    }\r\n\r\n    @else if $breakpoint==$lg {\r\n        @media (max-width: $lg) {\r\n            @content;\r\n        }\r\n    }\r\n\r\n    @else {\r\n        @media (max-width: $xl) {\r\n            @content;\r\n        }\r\n    }\r\n}\r\n\r\n@mixin media-breakpoint-up($breakpoint) {\r\n    @if $breakpoint==$sm {\r\n        @media (min-width: $sm) {\r\n            @content;\r\n        }\r\n    }\r\n\r\n    @else if $breakpoint==$md {\r\n        @media (min-width: $md) {\r\n            @content;\r\n        }\r\n    }\r\n\r\n    @else if $breakpoint==$lg {\r\n        @media (min-width: $lg) {\r\n            @content;\r\n        }\r\n    }\r\n\r\n    @else {\r\n        @media (min-width: $xl) {\r\n            @content;\r\n        }\r\n    }\r\n}\r\n\r\n@mixin flex-row ($justify-content, $align-items) {\r\n    display: flex;\r\n    justify-content: $justify-content;\r\n    align-items: $align-items;\r\n}\r\n\r\n@mixin flex-column($justify-content, $align-items) {\r\n    display: flex;\r\n    flex-direction: column;\r\n    justify-content: $justify-content;\r\n    align-items: $align-items;\r\n}\r\n\r\n@mixin btn-border-drawing($color: #ccc, $hover: black, $width: 2px, $vertical: top, $horizontal: left, $duration: 0.3s) {\r\n    box-shadow: inset 0 0 0 $width $color;\r\n    color: $color;\r\n    transition: color $duration calc($duration/3);\r\n    position: relative;\r\n\r\n    &::before,\r\n    &::after {\r\n        border: 0 solid transparent;\r\n        box-sizing: border-box;\r\n        content: '';\r\n        pointer-events: none;\r\n        position: absolute;\r\n        width: 0;\r\n        height: 0;\r\n\r\n        #{$vertical}: 0;\r\n        #{$horizontal}: 0;\r\n    }\r\n\r\n    &::before {\r\n        $h-side: if($horizontal=='left', 'right', 'left');\r\n\r\n        border-#{$vertical}-width: $width;\r\n        border-#{$h-side}-width: $width;\r\n    }\r\n\r\n    &::after {\r\n        $v-side: if($vertical=='top', 'bottom', 'top');\r\n\r\n        border-#{$v-side}-width: $width;\r\n        border-#{$horizontal}-width: $width;\r\n    }\r\n\r\n    &:hover {\r\n        color: $hover;\r\n\r\n        &::before,\r\n        &::after {\r\n            border-color: $hover;\r\n            transition: border-color 0s, width $duration, height $duration;\r\n            width: 100%;\r\n            height: 100%;\r\n        }\r\n\r\n        &::before {\r\n            transition-delay: 0s, 0s, $duration;\r\n        }\r\n\r\n        &::after {\r\n            transition-delay: 0s, $duration, 0s;\r\n        }\r\n    }\r\n}\r\n\r\n@mixin border {\r\n    border: 0;\r\n    // border: 0.5rem solid transparent;\r\n    // border-image: $la-db-bl-le 30;\r\n}\r\n\r\n@mixin default-text {\r\n    font-family: $Spartan;\r\n    font-size: 0.75rem;\r\n    line-height: 1.25rem;\r\n    color: $black;\r\n    font-weight: 600;\r\n    word-spacing: 0.25rem;\r\n}\r\n\r\n/*----------------------------- Mixins End -----------------------------*/\r\n\r\n\r\n/*------------------------------- Common -------------------------------*/\r\n\r\nh2 {\r\n    margin-bottom: 1.5rem;\r\n    font-size: 4rem;\r\n    font-family: $Raleway;\r\n    font-weight: 500;\r\n    line-height: 3.25rem;\r\n}\r\n\r\na {\r\n    color: $black;\r\n    text-decoration: none;\r\n}\r\n\r\nbutton {\r\n    @include default-text;\r\n    @include btn-border-drawing($black, $deep-blush, 2px, bottom, right);\r\n    border: none;\r\n    padding: 1rem;\r\n    width: 100%;\r\n    cursor: pointer;\r\n    text-transform: uppercase;\r\n\r\n    @include media-breakpoint-up($sm) {\r\n        width: 10rem;\r\n    }\r\n}\r\n\r\n.underline {\r\n    padding-bottom:0.125rem;\r\n    text-decoration:none;\r\n    border-bottom:2px solid yellow;}\r\n\r\n\r\n\r\n/*---------------------------- Common Ends -----------------------------*/","\n                                @import \"variables.scss\";\n                                .footer {\r\n    padding: 4.5rem 7.5vw;\r\n\r\n    &__social-links {\r\n        padding: 0.5rem 0 0;\r\n        margin-bottom: 3rem;\r\n        // background: $deep-blush-35;\r\n        display: flex;\r\n        justify-content: center;\r\n        gap: 1.5rem;\r\n\r\n        list-style: none;\r\n\r\n        img {\r\n            width: 2rem;\r\n            height: 2rem;\r\n\r\n            @include media-breakpoint-down($md) {\r\n                width: 2rem;\r\n            }\r\n        }\r\n    }\r\n\r\n    &__contact {\r\n        // border: 2px solid yellow;\r\n// \r\n        display: flex;\r\n        background: $sunset-header;\r\n\r\n        &__works {\r\n            flex-basis: 30%;\r\n            background: url('../assets/personal-pictures/2.jpg');\r\n            background-size: cover;\r\n            background-position: top center;\r\n\r\n            @include media-breakpoint-down ($md) {\r\n                display: none;\r\n            }\r\n        }\r\n\r\n        &__input {\r\n\r\n            &-wrapper {\r\n                @include flex-column(space-between, center);\r\n                @include default-text;\r\n                color: white;\r\n                text-shadow: black 0px 0px 4px;\r\n                flex-basis: 40%;\r\n                gap: 1rem;\r\n                padding: 1.5rem;\r\n\r\n                @include media-breakpoint-down ($md) {\r\n                    flex-basis: 100%;\r\n                }\r\n            }\r\n\r\n            &__name,\r\n            &__query {\r\n                width: 100%;\r\n            }\r\n\r\n            &__name input,\r\n            &__query textarea {\r\n                @include default-text;\r\n                border: none;\r\n                display: block;\r\n                width: 100%;\r\n                height: 1.5rem;\r\n                padding: 0.5rem;\r\n\r\n                &:focus,\r\n                &:hover {\r\n                    outline: $deep-blush solid 2px;\r\n                }\r\n            }\r\n\r\n            &__query textarea {\r\n                height: 5rem;\r\n            }\r\n        }\r\n    }\r\n}\n                              "],"sourceRoot":""}]);
+}`, "",{"version":3,"sources":["webpack://./src/styles/variables.scss","webpack://./src/styles/footer.scss"],"names":[],"mappings":"AAAA,wEAAA;AAEA,YAAA;AAWA,aAAA;AAKA,yEAAA;AAGA,yEAAA;AAEA,+DAAA;AACA,uBAAA;AAMA,aAAA;AAMA,+DAAA;AACA,cAAA;AAMA,gEAAA;AACA,YAAA;AAOA,YAAA;AAOA,yEAAA;AAGA,yEAAA;AAOA,yEAAA;AAGA,yEAAA;AA4EA,yEAAA;AAGA,yEAAA;AAEA;EACI,qBAAA;EACA,oBAAA;EACA,eAAA;EACA,oDA9GM;EA+GN,gBAAA;AC/HJ;;ADkIA;EACI,WA9JI;EA+JJ,qBAAA;AC/HJ;;ADkIA;EACI,kBAAA;EACA,SAAA;EACA,UAAA;EACA,iBAAA;EACA,eAAA;AC/HJ;ADiII;EAjCA,oBAAA;EACA,qBAAA;EACA,oDAxFM;EAyFN,kBAAA;EACA,gBAAA;EACA,WA7II;EA2KA,kBAAA;EACA,UAAA;EACA,gBAAA;EACA,qBAAA;EACA,gBAAA;EACA,WA/KA;EAgLA,kBAAA;EACA,qBAAA;AC1HR;AD4HQ;EACI,WArLJ;AC2DR;AD8HI;EACI,kBAAA;EACA,MAAA;EACA,OAAA;EACA,QAAA;EACA,YAAA;EACA,+BA1LO;EA2LP,oBAAA;EACA,WAAA;AC5HR;ADgIQ;EACI,WAAA;AC9HZ;;ADmIA;EACI,+BAAA;EACA,wBAAA;EACA,qBAAA;AChIJ;;ADmIA,yEAAA;AClNgC;EAC5B,gBAAA;AAmFJ;AAjFI;EDyHA,aAAA;EACA,uBCzHsB;ED0HtB,kBC1H8B;EAC1B,mBAAA;EACA,mBAAA;EACA,WAAA;AAqFR;AAnFQ;EACI,WAAA;EACA,YAAA;AAqFZ;ADjBQ;ECtEA;IAKQ,WAAA;EAsFd;AACF","sourcesContent":["/*--------------------------- Theme Colours ---------------------------*/\r\n\r\n/* Colours */\r\n$white: #fff;\r\n$black: #000;\r\n$dark-blue: #000033;\r\n$yellow: #ffff00;\r\n$purple: rgba(131, 58, 180, 1);\r\n$dark-blue-50: rgba(0, 0, 51, 0.50);\r\n$border-yellow: rgba(255, 255, 0, 0.25);\r\n$transwhite-bg: rgba(255, 255, 255, 0.1);\r\n$shadow-color: rgba(0, 0, 0, 0.1);\r\n\r\n/* Gradient */\r\n$sunset: linear-gradient(135deg, black, $dark-blue 70%, $purple 100%);\r\n$sunset-var: linear-gradient(225deg, black, $dark-blue, $purple 100%);\r\n$sunset-header: linear-gradient(135deg, black, #00001b, #170A4A);\r\n\r\n/*-------------------------- Theme Colours End -------------------------*/\r\n\r\n\r\n/*-------------------------------- Fonts -------------------------------*/\r\n\r\n/******************** Serif Fonts *****************************/\r\n/* Cormorant Garamond */\r\n@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap');\r\n$Cormorant: 'Cormorant Garamond',\r\nTimes,\r\nserif;\r\n\r\n/* Arizonia */\r\n@import url('https://fonts.googleapis.com/css2?family=Arizonia&display=swap');\r\n$Arizonia: 'Arizonia',\r\nTimes,\r\nserif;\r\n\r\n/********************** Cursive Fonts *************************/\r\n/* Italianno */\r\n@import url('https://fonts.googleapis.com/css2?family=Italianno&display=swap');\r\n$Italianno: 'Italianno',\r\nSnell Roundhand,\r\ncursive;\r\n\r\n/********************* Sans-serif Fonts ************************/\r\n/* Raleway */\r\n@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');\r\n$Raleway: 'Raleway',\r\nArial,\r\nHelvetica,\r\nsans-serif;\r\n\r\n/* Spartan */\r\n@import url('https://fonts.googleapis.com/css2?family=Spartan:wght@100;200;300;400;500;600;700;800;900&display=swap');\r\n$Spartan: 'Spartan',\r\nArial,\r\nHelvetica,\r\nsans-serif;\r\n\r\n/*------------------------------ Fonts End -----------------------------*/\r\n\r\n\r\n/*----------------------------- Breakpoints ----------------------------*/\r\n\r\n$sm: 576px;\r\n$md: 768px;\r\n$lg: 992px;\r\n$xl: 1200px;\r\n\r\n/*--------------------------- Breakpoints End --------------------------*/\r\n\r\n\r\n/*------------------------------- Mixins -------------------------------*/\r\n\r\n@mixin media-breakpoint-down($breakpoint) {\r\n    @if $breakpoint==$sm {\r\n        @media (max-width: $sm) {\r\n            @content;\r\n        }\r\n    }\r\n\r\n    @else if $breakpoint==$md {\r\n        @media (max-width: $md) {\r\n            @content;\r\n        }\r\n    }\r\n\r\n    @else if $breakpoint==$lg {\r\n        @media (max-width: $lg) {\r\n            @content;\r\n        }\r\n    }\r\n\r\n    @else {\r\n        @media (max-width: $xl) {\r\n            @content;\r\n        }\r\n    }\r\n}\r\n\r\n@mixin media-breakpoint-up($breakpoint) {\r\n    @if $breakpoint==$sm {\r\n        @media (min-width: $sm) {\r\n            @content;\r\n        }\r\n    }\r\n\r\n    @else if $breakpoint==$md {\r\n        @media (min-width: $md) {\r\n            @content;\r\n        }\r\n    }\r\n\r\n    @else if $breakpoint==$lg {\r\n        @media (min-width: $lg) {\r\n            @content;\r\n        }\r\n    }\r\n\r\n    @else {\r\n        @media (min-width: $xl) {\r\n            @content;\r\n        }\r\n    }\r\n}\r\n\r\n@mixin flex-row ($justify-content, $align-items) {\r\n    display: flex;\r\n    justify-content: $justify-content;\r\n    align-items: $align-items;\r\n}\r\n\r\n@mixin flex-column($justify-content, $align-items) {\r\n    display: flex;\r\n    flex-direction: column;\r\n    justify-content: $justify-content;\r\n    align-items: $align-items;\r\n}\r\n\r\n@mixin default-text {\r\n    line-height: 1.25rem;\r\n    word-spacing: 0.25rem;\r\n    font-family: $Spartan;\r\n    font-size: 0.75rem;\r\n    font-weight: 300;\r\n    color: $white;\r\n}\r\n\r\n/*----------------------------- Mixins End -----------------------------*/\r\n\r\n\r\n/*------------------------------- Common -------------------------------*/\r\n\r\nh2 {\r\n    margin-bottom: 1.5rem;\r\n    line-height: 3.25rem;\r\n    font-size: 4rem;\r\n    font-family: $Raleway;\r\n    font-weight: 500;\r\n}\r\n\r\na {\r\n    color: $white;\r\n    text-decoration: none;\r\n}\r\n\r\nbutton {\r\n    position: relative;\r\n    border: 0;\r\n    padding: 0;\r\n    background: white;\r\n    cursor: pointer;\r\n\r\n    span {\r\n        @include default-text;\r\n        position: relative;\r\n        z-index: 2;\r\n        padding: 0.75rem;\r\n        display: inline-block;\r\n        font-weight: 400;\r\n        color: $black;\r\n        text-align: center;\r\n        transition: all .35s;\r\n\r\n        &:hover {\r\n            color: $white;\r\n        }\r\n    }\r\n\r\n    &::after {\r\n        position: absolute;\r\n        top: 0;\r\n        left: 0;\r\n        width: 0;\r\n        height: 100%;\r\n        background: $dark-blue-50;\r\n        transition: all .3s;\r\n        content: \"\";\r\n    }\r\n\r\n    &:hover {\r\n        &::after {\r\n            width: 100%;\r\n        }\r\n    }\r\n}\r\n\r\n.underline {\r\n    border-bottom: 2px solid yellow;\r\n    padding-bottom: 0.125rem;\r\n    text-decoration: none;\r\n}\r\n\r\n/*---------------------------- Common Ends -----------------------------*/","\n                                @import \"variables.scss\";\n                                .footer {\r\n    padding: 0 7.5vw;\r\n\r\n    &__social-links {\r\n        @include flex-row(center, unset);\r\n        margin-bottom: 3rem;\r\n        padding: 0.5rem 0 0;\r\n        gap: 1.5rem;\r\n\r\n        img {\r\n            width: 2rem;\r\n            height: 2rem;\r\n\r\n            @include media-breakpoint-down($md) {\r\n                width: 2rem;\r\n            }\r\n        }\r\n    }\r\n\r\n}\n                              "],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -400,126 +425,119 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
+___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap);"]);
+___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Arizonia&display=swap);"]);
+___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Italianno&display=swap);"]);
+___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap);"]);
+___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Spartan:wght@100;200;300;400;500;600;700;800;900&display=swap);"]);
 // Module
 ___CSS_LOADER_EXPORT___.push([module.id, `/*--------------------------- Theme Colours ---------------------------*/
 /* Colours */
 /* Gradient */
 /*-------------------------- Theme Colours End -------------------------*/
 /*-------------------------------- Fonts -------------------------------*/
-/*  Serif Font */
-/*  Sans-Serif Font */
+/******************** Serif Fonts *****************************/
+/* Cormorant Garamond */
+/* Arizonia */
+/********************** Cursive Fonts *************************/
+/* Italianno */
+/********************* Sans-serif Fonts ************************/
+/* Raleway */
+/* Spartan */
 /*------------------------------ Fonts End -----------------------------*/
 /*----------------------------- Breakpoints ----------------------------*/
 /*--------------------------- Breakpoints End --------------------------*/
-/*------------------------------- Images -------------------------------*/
-/*----------------------------- Images End -----------------------------*/
 /*------------------------------- Mixins -------------------------------*/
 /*----------------------------- Mixins End -----------------------------*/
 /*------------------------------- Common -------------------------------*/
 h2 {
   margin-bottom: 1.5rem;
+  line-height: 3.25rem;
   font-size: 4rem;
   font-family: "Raleway", Arial, Helvetica, sans-serif;
   font-weight: 500;
-  line-height: 3.25rem;
 }
 
 a {
-  color: #000;
+  color: #fff;
   text-decoration: none;
 }
 
 button {
+  position: relative;
+  border: 0;
+  padding: 0;
+  background: white;
+  cursor: pointer;
+}
+button span {
+  line-height: 1.25rem;
+  word-spacing: 0.25rem;
   font-family: "Spartan", Arial, Helvetica, sans-serif;
   font-size: 0.75rem;
-  line-height: 1.25rem;
-  color: #000;
-  font-weight: 600;
-  word-spacing: 0.25rem;
-  box-shadow: inset 0 0 0 2px #000;
-  color: #000;
-  transition: color 0.3s 0.1s;
+  font-weight: 300;
+  color: #fff;
   position: relative;
-  border: none;
-  padding: 1rem;
-  width: 100%;
-  cursor: pointer;
-  text-transform: uppercase;
+  z-index: 2;
+  padding: 0.75rem;
+  display: inline-block;
+  font-weight: 400;
+  color: #000;
+  text-align: center;
+  transition: all 0.35s;
 }
-button::before, button::after {
-  border: 0 solid transparent;
-  box-sizing: border-box;
-  content: "";
-  pointer-events: none;
-  position: absolute;
-  width: 0;
-  height: 0;
-  bottom: 0;
-  right: 0;
-}
-button::before {
-  border-bottom-width: 2px;
-  border-left-width: 2px;
+button span:hover {
+  color: #fff;
 }
 button::after {
-  border-top-width: 2px;
-  border-right-width: 2px;
-}
-button:hover {
-  color: rgb(193, 110, 100);
-}
-button:hover::before, button:hover::after {
-  border-color: rgb(193, 110, 100);
-  transition: border-color 0s, width 0.3s, height 0.3s;
-  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
   height: 100%;
-}
-button:hover::before {
-  transition-delay: 0s, 0s, 0.3s;
+  background: rgba(0, 0, 51, 0.5);
+  transition: all 0.3s;
+  content: "";
 }
 button:hover::after {
-  transition-delay: 0s, 0.3s, 0s;
-}
-@media (min-width: 576px) {
-  button {
-    width: 10rem;
-  }
+  width: 100%;
 }
 
 .underline {
+  border-bottom: 2px solid yellow;
   padding-bottom: 0.125rem;
   text-decoration: none;
-  border-bottom: 2px solid yellow;
 }
 
 /*---------------------------- Common Ends -----------------------------*/
 .header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin: 3rem 0 0;
   padding: 0 7.5vw;
-  background-size: cover;
-  background-blend-mode: multiply;
-  box-sizing: border-box;
-  top: 0;
-  z-index: 2;
   text-align: center;
 }
-@media (max-width: 768px) {
+@media (min-width: 576px) {
   .header {
-    background: none;
-    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    margin: 0;
+    background: linear-gradient(135deg, black, #00001b, #170A4A);
+    width: 100%;
+    height: 7rem;
+    z-index: 4;
   }
 }
 @media (max-width: 576px) {
   .header {
     flex-direction: column;
+    margin-top: 1rem;
   }
 }
 .header__logo {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
 }
 @media (max-width: 576px) {
@@ -528,61 +546,58 @@ button:hover::after {
   }
 }
 .header__logo-text {
-  cursor: pointer;
   display: inline-block;
-  font-family: "Italianno";
-  font-size: 1.5rem;
-  font-weight: 500;
+  font-family: "Arizonia", Times, serif;
+  font-size: 3rem;
   color: #fff;
-}
-@media (max-width: 576px) {
-  .header__logo-text {
-    margin: 1rem 0 0.5rem;
-    width: 4rem;
-    padding: 0;
-  }
+  text-transform: lowercase;
+  cursor: pointer;
 }
 .header__logo-text:hover {
-  color: yellow;
+  color: #ffff00;
 }
 .header__logo-caret {
-  height: 1rem;
-  width: 1rem;
-  transform: rotate(90deg);
-  display: flex;
+  margin: 0.75rem 0 0.25rem;
+  cursor: pointer;
 }
 @media (min-width: 576px) {
   .header__logo-caret {
     display: none;
   }
 }
+.header__logo-caret.inverse::after {
+  transform: rotate(315deg);
+  margin-top: 0.25rem;
+}
 .header__logo-caret p {
-  transform: rotate(-90deg);
+  line-height: 1.25rem;
+  word-spacing: 0.25rem;
   font-family: "Spartan", Arial, Helvetica, sans-serif;
   font-size: 0.75rem;
-  line-height: 1.25rem;
-  color: #000;
-  font-weight: 600;
-  word-spacing: 0.25rem;
-  font-size: 0.3rem;
-  color: white;
-  padding: 0.15rem;
-}
-.header__logo-caret::before, .header__logo-caret::after {
-  border-right: 2px solid white;
-  content: "";
-  display: block;
-  height: 8px;
-  margin-top: -6px;
-  position: absolute;
-  transform: rotate(135deg);
-  right: 50%;
-  top: 50%;
-  width: 0;
+  font-weight: 300;
+  color: #fff;
+  font-size: 0.5rem;
+  color: #fff;
 }
 .header__logo-caret::after {
-  margin-top: -1px;
-  transform: rotate(45deg);
+  position: relative;
+  left: -4px;
+  top: -7px;
+  margin-right: 0.5rem;
+  margin-left: 1rem;
+  border-right: 0.2rem solid #fff;
+  border-top: 0.2rem solid #fff;
+  display: inline-block;
+  width: 0.35rem;
+  height: 0.35rem;
+  transform: rotate(135deg);
+  content: "";
+}
+.header__logo-caret:hover p {
+  color: #ffff00;
+}
+.header__logo-caret:hover::after {
+  border-color: #ffff00;
 }
 .header__navigation {
   width: fit-content;
@@ -599,29 +614,49 @@ button:hover::after {
 }
 @media (max-width: 576px) {
   .header__navigation-links {
-    flex-direction: column;
-    row-gap: 2rem;
-    margin: 1rem 0;
-    background: rgba(193, 110, 100, 0.35);
+    margin-bottom: 1.5rem;
+    border: 1px solid rgba(255, 255, 0, 0.25);
     padding: 1rem;
+    background: rgba(255, 255, 255, 0.1);
+    flex-direction: column;
+    row-gap: 0.75rem;
+    max-height: 40rem;
+    opacity: 1;
+    transition: max-height 0.3s ease-in-out;
+  }
+  .header__navigation-links.d-none {
+    margin: 0;
+    padding: 0;
+    max-height: 0;
+    opacity: 0;
+    gap: 0;
+  }
+  .header__navigation-links.d-none li {
+    height: 0;
   }
 }
 .header__navigation-links li {
-  display: inline-block;
-  cursor: pointer;
-  transition: all 0.3s ease-in-out;
+  line-height: 1.25rem;
+  word-spacing: 0.25rem;
   font-family: "Spartan", Arial, Helvetica, sans-serif;
   font-size: 0.75rem;
+  font-weight: 300;
+  color: #fff;
+  display: inline-block;
+  font-size: 0.75rem;
+  color: #fff;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
 }
-.header__navigation-links li:hover {
-  color: #f7a8b2;
+.header__navigation-links li:hover a {
+  color: #ffff00;
 }
 @media (max-width: 576px) {
   .header__navigation-links li {
     font-size: 0.75rem;
     text-transform: none;
   }
-}`, "",{"version":3,"sources":["webpack://./src/styles/variables.scss","webpack://./src/styles/header.scss"],"names":[],"mappings":"AAAA,wEAAA;AAEA,YAAA;AAYA,aAAA;AAKA,yEAAA;AAGA,yEAAA;AAEA,gBAAA;AAGA,qBAAA;AAIA,yEAAA;AAGA,yEAAA;AAOA,yEAAA;AAGA,yEAAA;AAKA,yEAAA;AAGA,yEAAA;AAyIA,yEAAA;AAGA,yEAAA;AAEA;EACI,qBAAA;EACA,eAAA;EACA,oDAxKM;EAyKN,gBAAA;EACA,oBAAA;AClLJ;;ADqLA;EACI,WAtMI;EAuMJ,qBAAA;AClLJ;;ADqLA;EA1BI,oDAzJM;EA0JN,kBAAA;EACA,oBAAA;EACA,WAnLI;EAoLJ,gBAAA;EACA,qBAAA;EAlEA,gCAAA;EACA,WApHI;EAqHJ,2BAAA;EACA,kBAAA;EAuFA,YAAA;EACA,aAAA;EACA,WAAA;EACA,eAAA;EACA,yBAAA;AC1KJ;ADiFI;EAEI,2BAAA;EACA,sBAAA;EACA,WAAA;EACA,oBAAA;EACA,kBAAA;EACA,QAAA;EACA,SAAA;EAEA,SAAA;EACA,QAAA;ACjFR;ADoFI;EAGI,wBAmE6C;EAlE7C,sBAkE6C;ACtJrD;ADuFI;EAGI,qBA4D6C;EA3D7C,uBA2D6C;AClJrD;AD0FI;EACI,yBA/IK;ACuDb;AD0FQ;EAEI,gCAnJC;EAoJD,oDAAA;EACA,WAAA;EACA,YAAA;ACzFZ;AD4FQ;EACI,8BAAA;AC1FZ;AD6FQ;EACI,8BAAA;AC3FZ;ADIQ;EA6HR;IAUQ,YAAA;ECvIN;AACF;;AD0IA;EACI,wBAAA;EACA,qBAAA;EACA,+BAAA;ACvIJ;;AD2IA,yEAAA;AClOgC;EAC5B,aAAA;EACA,8BAAA;EACA,mBAAA;EACA,gBAAA;EACA,gBAAA;EAEA,sBAAA;EACA,+BAAA;EACA,sBAAA;EACA,MAAA;EACA,UAAA;EACA,kBAAA;AA0FJ;AD1CQ;EC5DwB;IAexB,gBAAA;IACA,kBAAA;EA2FN;AACF;ADtDQ;ECtDwB;IAoBxB,sBAAA;EA4FN;AACF;AA1FI;EACI,aAAA;EACA,sBAAA;EACA,mBAAA;AA4FR;ADhEQ;EC/BJ;IAMQ,WAAA;EA6FV;AACF;AA3FQ;EACI,eAAA;EACA,qBAAA;EACA,wBAAA;EACA,iBAAA;EACA,gBAAA;EACA,WDpCJ;ACiIR;AD7EQ;ECtBA;IASQ,qBAAA;IACA,WAAA;IACA,UAAA;EA8Fd;AACF;AA5FY;EACI,aAAA;AA8FhB;AA1FQ;EACI,YAAA;EACA,WAAA;EACA,wBAAA;EACA,aAAA;AA4FZ;ADnEQ;EC7BA;IAOQ,aAAA;EA6Fd;AACF;AA3FY;EACI,yBAAA;EDqHZ,oDAzJM;EA0JN,kBAAA;EACA,oBAAA;EACA,WAnLI;EAoLJ,gBAAA;EACA,qBAAA;ECxHY,iBAAA;EACA,YAAA;EACA,gBAAA;AAkGhB;AA/FY;EAEI,6BAAA;EACA,WAAA;EACA,cAAA;EACA,WAAA;EACA,gBAAA;EACA,kBAAA;EACA,yBAAA;EACA,UAAA;EACA,QAAA;EACA,QAAA;AAgGhB;AA7FY;EACI,gBAAA;EACA,wBAAA;AA+FhB;AA1FI;EACI,kBAAA;AA4FR;ADjIQ;ECoCJ;IAIQ,WAAA;EA6FV;AACF;AA3FQ;EACI,aAAA;EAEA,gBAAA;EACA,eAAA;AA4FZ;AD3IQ;EC2CA;IAOQ,sBAAA;IACA,aAAA;IACA,cAAA;IACA,qCDjGA;ICkGA,aAAA;EA6Fd;AACF;AA3FY;EACI,qBAAA;EACA,eAAA;EACA,gCAAA;EACA,oDDzFN;EC0FM,kBAAA;AA6FhB;AA3FgB;EACI,cD/Gb;AC4MP;AD9JQ;ECyDI;IAYQ,kBAAA;IACA,oBAAA;EA6FlB;AACF","sourcesContent":["/*--------------------------- Theme Colours ---------------------------*/\r\n\r\n/* Colours */\r\n$trans: transparent;\r\n$white: #fff;\r\n$black: #000;\r\n$dark-blue: #000033;\r\n$dark-blue-50: rgba(0, 0, 51, 0.50);\r\n$blue: #556880;\r\n$blue-35: rgba(85, 104, 128, .5);\r\n$pink: #f7a8b2;\r\n$deep-blush: rgb(193, 110, 100);\r\n$deep-blush-35: rgba(193, 110, 100, 0.35);\r\n\r\n/* Gradient */\r\n$la-db-bl-le: linear-gradient(to left, #957dad, #a478a4, #b17399, #bb6f8a, #c06d7a, #c7747c, #cd7c7f, #d38382, #df9398, #eaa5ae, #f4b6c4, #fec8d8);\r\n$sunset: linear-gradient(135deg, black, $dark-blue 70%, rgba(131,58,180,1) 100%);\r\n$sunset-header: linear-gradient(225deg, black, $dark-blue, rgba(131,58,180,1) 100%);\r\n\r\n/*-------------------------- Theme Colours End -------------------------*/\r\n\r\n\r\n/*-------------------------------- Fonts -------------------------------*/\r\n\r\n/*  Serif Font */\r\n$Cormorant: 'Cormorant Garamond', Times, serif;\r\n\r\n/*  Sans-Serif Font */\r\n$Spartan: 'Spartan', Arial, Helvetica, sans-serif;\r\n$Raleway: 'Raleway', Arial, Helvetica, sans-serif;\r\n\r\n/*------------------------------ Fonts End -----------------------------*/\r\n\r\n\r\n/*----------------------------- Breakpoints ----------------------------*/\r\n\r\n$sm: 576px;\r\n$md: 768px;\r\n$lg: 992px;\r\n$xl: 1200px;\r\n\r\n/*--------------------------- Breakpoints End --------------------------*/\r\n\r\n\r\n/*------------------------------- Images -------------------------------*/\r\n\r\n$background-image: url('../assets/1.jpg');\r\n$background-image-crop: url('../assets/1-crop.jpg');\r\n\r\n/*----------------------------- Images End -----------------------------*/\r\n\r\n\r\n/*------------------------------- Mixins -------------------------------*/\r\n\r\n@mixin media-breakpoint-down($breakpoint) {\r\n    @if $breakpoint==$sm {\r\n        @media (max-width: $sm) {\r\n            @content;\r\n        }\r\n    }\r\n\r\n    @else if $breakpoint==$md {\r\n        @media (max-width: $md) {\r\n            @content;\r\n        }\r\n    }\r\n\r\n    @else if $breakpoint==$lg {\r\n        @media (max-width: $lg) {\r\n            @content;\r\n        }\r\n    }\r\n\r\n    @else {\r\n        @media (max-width: $xl) {\r\n            @content;\r\n        }\r\n    }\r\n}\r\n\r\n@mixin media-breakpoint-up($breakpoint) {\r\n    @if $breakpoint==$sm {\r\n        @media (min-width: $sm) {\r\n            @content;\r\n        }\r\n    }\r\n\r\n    @else if $breakpoint==$md {\r\n        @media (min-width: $md) {\r\n            @content;\r\n        }\r\n    }\r\n\r\n    @else if $breakpoint==$lg {\r\n        @media (min-width: $lg) {\r\n            @content;\r\n        }\r\n    }\r\n\r\n    @else {\r\n        @media (min-width: $xl) {\r\n            @content;\r\n        }\r\n    }\r\n}\r\n\r\n@mixin flex-row ($justify-content, $align-items) {\r\n    display: flex;\r\n    justify-content: $justify-content;\r\n    align-items: $align-items;\r\n}\r\n\r\n@mixin flex-column($justify-content, $align-items) {\r\n    display: flex;\r\n    flex-direction: column;\r\n    justify-content: $justify-content;\r\n    align-items: $align-items;\r\n}\r\n\r\n@mixin btn-border-drawing($color: #ccc, $hover: black, $width: 2px, $vertical: top, $horizontal: left, $duration: 0.3s) {\r\n    box-shadow: inset 0 0 0 $width $color;\r\n    color: $color;\r\n    transition: color $duration calc($duration/3);\r\n    position: relative;\r\n\r\n    &::before,\r\n    &::after {\r\n        border: 0 solid transparent;\r\n        box-sizing: border-box;\r\n        content: '';\r\n        pointer-events: none;\r\n        position: absolute;\r\n        width: 0;\r\n        height: 0;\r\n\r\n        #{$vertical}: 0;\r\n        #{$horizontal}: 0;\r\n    }\r\n\r\n    &::before {\r\n        $h-side: if($horizontal=='left', 'right', 'left');\r\n\r\n        border-#{$vertical}-width: $width;\r\n        border-#{$h-side}-width: $width;\r\n    }\r\n\r\n    &::after {\r\n        $v-side: if($vertical=='top', 'bottom', 'top');\r\n\r\n        border-#{$v-side}-width: $width;\r\n        border-#{$horizontal}-width: $width;\r\n    }\r\n\r\n    &:hover {\r\n        color: $hover;\r\n\r\n        &::before,\r\n        &::after {\r\n            border-color: $hover;\r\n            transition: border-color 0s, width $duration, height $duration;\r\n            width: 100%;\r\n            height: 100%;\r\n        }\r\n\r\n        &::before {\r\n            transition-delay: 0s, 0s, $duration;\r\n        }\r\n\r\n        &::after {\r\n            transition-delay: 0s, $duration, 0s;\r\n        }\r\n    }\r\n}\r\n\r\n@mixin border {\r\n    border: 0;\r\n    // border: 0.5rem solid transparent;\r\n    // border-image: $la-db-bl-le 30;\r\n}\r\n\r\n@mixin default-text {\r\n    font-family: $Spartan;\r\n    font-size: 0.75rem;\r\n    line-height: 1.25rem;\r\n    color: $black;\r\n    font-weight: 600;\r\n    word-spacing: 0.25rem;\r\n}\r\n\r\n/*----------------------------- Mixins End -----------------------------*/\r\n\r\n\r\n/*------------------------------- Common -------------------------------*/\r\n\r\nh2 {\r\n    margin-bottom: 1.5rem;\r\n    font-size: 4rem;\r\n    font-family: $Raleway;\r\n    font-weight: 500;\r\n    line-height: 3.25rem;\r\n}\r\n\r\na {\r\n    color: $black;\r\n    text-decoration: none;\r\n}\r\n\r\nbutton {\r\n    @include default-text;\r\n    @include btn-border-drawing($black, $deep-blush, 2px, bottom, right);\r\n    border: none;\r\n    padding: 1rem;\r\n    width: 100%;\r\n    cursor: pointer;\r\n    text-transform: uppercase;\r\n\r\n    @include media-breakpoint-up($sm) {\r\n        width: 10rem;\r\n    }\r\n}\r\n\r\n.underline {\r\n    padding-bottom:0.125rem;\r\n    text-decoration:none;\r\n    border-bottom:2px solid yellow;}\r\n\r\n\r\n\r\n/*---------------------------- Common Ends -----------------------------*/","\n                                @import \"variables.scss\";\n                                .header {\r\n    display: flex;\r\n    justify-content: space-between;\r\n    align-items: center;\r\n    margin: 3rem 0 0;\r\n    padding: 0 7.5vw;\r\n    // min-height: 4rem;\r\n    background-size: cover;\r\n    background-blend-mode: multiply;\r\n    box-sizing: border-box;\r\n    top: 0;\r\n    z-index: 2;\r\n    text-align: center;\r\n\r\n    @include media-breakpoint-down($md) {\r\n        background: none;\r\n        position: relative;\r\n    }\r\n\r\n    @include media-breakpoint-down($sm) {\r\n        flex-direction: column;\r\n    }\r\n\r\n    &__logo {\r\n        display: flex;\r\n        flex-direction: column;\r\n        align-items: center;\r\n\r\n        @include media-breakpoint-down($sm) {\r\n            width: 100%;\r\n        }\r\n\r\n        &-text {\r\n            cursor: pointer;\r\n            display: inline-block;\r\n            font-family: 'Italianno';\r\n            font-size: 1.5rem;\r\n            font-weight: 500;\r\n            color: $white;\r\n\r\n            @include media-breakpoint-down($sm) {\r\n                margin: 1rem 0 0.5rem;\r\n                width: 4rem;\r\n                padding: 0;\r\n            }\r\n\r\n            &:hover {\r\n                color: yellow;\r\n            }\r\n        }\r\n\r\n        &-caret {\r\n            height: 1rem;\r\n            width: 1rem;\r\n            transform: rotate(90deg);\r\n            display: flex;\r\n\r\n            @include media-breakpoint-up($sm) {\r\n                display: none;\r\n            }\r\n\r\n            p {\r\n                transform: rotate(-90deg);\r\n                @include default-text;\r\n                font-size: 0.3rem;\r\n                color: white;\r\n                padding: 0.15rem;\r\n            }\r\n\r\n            &::before,\r\n            &::after {\r\n                border-right: 2px solid white;\r\n                content: '';\r\n                display: block;\r\n                height: 8px;\r\n                margin-top: -6px;\r\n                position: absolute;\r\n                transform: rotate(135deg);\r\n                right: 50%;\r\n                top: 50%;\r\n                width: 0;\r\n            }\r\n\r\n            &::after {\r\n                margin-top: -1px;\r\n                transform: rotate(45deg);\r\n            }\r\n        }\r\n    }\r\n\r\n    &__navigation {\r\n        width: fit-content;\r\n\r\n        @include media-breakpoint-down($sm) {\r\n            width: 100%;\r\n        }\r\n\r\n        &-links {\r\n            display: flex;\r\n            // display: none;\r\n            column-gap: 2rem;\r\n            cursor: default;\r\n\r\n            @include media-breakpoint-down($sm) {\r\n                flex-direction: column;\r\n                row-gap: 2rem;\r\n                margin: 1rem 0;\r\n                background: $deep-blush-35;\r\n                padding: 1rem;\r\n            }\r\n\r\n            li {\r\n                display: inline-block;\r\n                cursor: pointer;\r\n                transition: all 0.3s ease-in-out;\r\n                font-family: $Spartan;\r\n                font-size: 0.75rem;\r\n\r\n                &:hover {\r\n                    color: $pink;\r\n                }\r\n\r\n                @include media-breakpoint-down($sm) {\r\n                    font-size: 0.75rem;\r\n                    text-transform: none;\r\n                }\r\n            }\r\n        }\r\n    }\r\n}\n                              "],"sourceRoot":""}]);
+}`, "",{"version":3,"sources":["webpack://./src/styles/variables.scss","webpack://./src/styles/header.scss"],"names":[],"mappings":"AAAA,wEAAA;AAEA,YAAA;AAWA,aAAA;AAKA,yEAAA;AAGA,yEAAA;AAEA,+DAAA;AACA,uBAAA;AAMA,aAAA;AAMA,+DAAA;AACA,cAAA;AAMA,gEAAA;AACA,YAAA;AAOA,YAAA;AAOA,yEAAA;AAGA,yEAAA;AAOA,yEAAA;AAGA,yEAAA;AA4EA,yEAAA;AAGA,yEAAA;AAEA;EACI,qBAAA;EACA,oBAAA;EACA,eAAA;EACA,oDA9GM;EA+GN,gBAAA;AC/HJ;;ADkIA;EACI,WA9JI;EA+JJ,qBAAA;AC/HJ;;ADkIA;EACI,kBAAA;EACA,SAAA;EACA,UAAA;EACA,iBAAA;EACA,eAAA;AC/HJ;ADiII;EAjCA,oBAAA;EACA,qBAAA;EACA,oDAxFM;EAyFN,kBAAA;EACA,gBAAA;EACA,WA7II;EA2KA,kBAAA;EACA,UAAA;EACA,gBAAA;EACA,qBAAA;EACA,gBAAA;EACA,WA/KA;EAgLA,kBAAA;EACA,qBAAA;AC1HR;AD4HQ;EACI,WArLJ;AC2DR;AD8HI;EACI,kBAAA;EACA,MAAA;EACA,OAAA;EACA,QAAA;EACA,YAAA;EACA,+BA1LO;EA2LP,oBAAA;EACA,WAAA;AC5HR;ADgIQ;EACI,WAAA;AC9HZ;;ADmIA;EACI,+BAAA;EACA,wBAAA;EACA,qBAAA;AChIJ;;ADmIA,yEAAA;AClNgC;EAC5B,gBAAA;EACA,kBAAA;AAmFJ;ADcQ;ECnGwB;ID4H5B,aAAA;IACA,8BCxHsB;IDyHtB,mBCzHqC;IACjC,gBAAA;IACA,MAAA;IACA,SAAA;IACA,4DDKQ;ICJR,WAAA;IACA,YAAA;IACA,UAAA;EAsFN;AACF;AD1BQ;ECzEwB;IAgBxB,sBAAA;IACA,gBAAA;EAuFN;AACF;AArFI;ED8GA,aAAA;EACA,sBAAA;EACA,uBC/GyB;EDgHzB,mBChHiC;AA0FrC;ADtCQ;ECrDJ;IAIQ,WAAA;EA2FV;AACF;AAzFQ;EACI,qBAAA;EACA,qCDCD;ECAC,eAAA;EACA,WD9BJ;EC+BI,yBAAA;EACA,eAAA;AA2FZ;AAzFY;EACI,cDhCP;AC2HT;AAvFQ;EACI,yBAAA;EACA,eAAA;AAyFZ;ADhCQ;EC3DA;IAKQ,aAAA;EA0Fd;AACF;AAxFY;EACI,yBAAA;EACA,mBAAA;AA0FhB;AAvFY;EDoFR,oBAAA;EACA,qBAAA;EACA,oDAxFM;EAyFN,kBAAA;EACA,gBAAA;EACA,WA7II;ECsDQ,iBAAA;EACA,WDvDR;ACqJR;AA3FY;EACI,kBAAA;EACA,UAAA;EACA,SAAA;EACA,oBAAA;EACA,iBAAA;EACA,+BAAA;EACA,6BAAA;EACA,qBAAA;EACA,cAAA;EACA,eAAA;EACA,yBAAA;EACA,WAAA;AA6FhB;AAzFgB;EACI,cDxEX;ACmKT;AAxFgB;EACI,qBD5EX;ACsKT;AApFI;EACI,kBAAA;AAsFR;ADpGQ;ECaJ;IAIQ,WAAA;EAuFV;AACF;AArFQ;EACI,aAAA;EACA,gBAAA;EACA,eAAA;AAuFZ;AD9GQ;ECoBA;IAMQ,qBAAA;IACA,yCAAA;IACA,aAAA;IACA,oCD9FA;IC+FA,sBAAA;IACA,gBAAA;IACA,iBAAA;IACA,UAAA;IACA,uCAAA;EAwFd;EAtFc;IACI,SAAA;IACA,UAAA;IACA,aAAA;IACA,UAAA;IACA,MAAA;EAwFlB;EAtFkB;IACI,SAAA;EAwFtB;AACF;AApFY;EDeR,oBAAA;EACA,qBAAA;EACA,oDAxFM;EAyFN,kBAAA;EACA,gBAAA;EACA,WA7II;EC2HQ,qBAAA;EACA,kBAAA;EACA,WD7HR;EC8HQ,gCAAA;EACA,eAAA;AA2FhB;AAzFgB;EACI,cD/HX;AC0NT;ADrJQ;ECiDI;IAaQ,kBAAA;IACA,oBAAA;EA2FlB;AACF","sourcesContent":["/*--------------------------- Theme Colours ---------------------------*/\r\n\r\n/* Colours */\r\n$white: #fff;\r\n$black: #000;\r\n$dark-blue: #000033;\r\n$yellow: #ffff00;\r\n$purple: rgba(131, 58, 180, 1);\r\n$dark-blue-50: rgba(0, 0, 51, 0.50);\r\n$border-yellow: rgba(255, 255, 0, 0.25);\r\n$transwhite-bg: rgba(255, 255, 255, 0.1);\r\n$shadow-color: rgba(0, 0, 0, 0.1);\r\n\r\n/* Gradient */\r\n$sunset: linear-gradient(135deg, black, $dark-blue 70%, $purple 100%);\r\n$sunset-var: linear-gradient(225deg, black, $dark-blue, $purple 100%);\r\n$sunset-header: linear-gradient(135deg, black, #00001b, #170A4A);\r\n\r\n/*-------------------------- Theme Colours End -------------------------*/\r\n\r\n\r\n/*-------------------------------- Fonts -------------------------------*/\r\n\r\n/******************** Serif Fonts *****************************/\r\n/* Cormorant Garamond */\r\n@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap');\r\n$Cormorant: 'Cormorant Garamond',\r\nTimes,\r\nserif;\r\n\r\n/* Arizonia */\r\n@import url('https://fonts.googleapis.com/css2?family=Arizonia&display=swap');\r\n$Arizonia: 'Arizonia',\r\nTimes,\r\nserif;\r\n\r\n/********************** Cursive Fonts *************************/\r\n/* Italianno */\r\n@import url('https://fonts.googleapis.com/css2?family=Italianno&display=swap');\r\n$Italianno: 'Italianno',\r\nSnell Roundhand,\r\ncursive;\r\n\r\n/********************* Sans-serif Fonts ************************/\r\n/* Raleway */\r\n@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');\r\n$Raleway: 'Raleway',\r\nArial,\r\nHelvetica,\r\nsans-serif;\r\n\r\n/* Spartan */\r\n@import url('https://fonts.googleapis.com/css2?family=Spartan:wght@100;200;300;400;500;600;700;800;900&display=swap');\r\n$Spartan: 'Spartan',\r\nArial,\r\nHelvetica,\r\nsans-serif;\r\n\r\n/*------------------------------ Fonts End -----------------------------*/\r\n\r\n\r\n/*----------------------------- Breakpoints ----------------------------*/\r\n\r\n$sm: 576px;\r\n$md: 768px;\r\n$lg: 992px;\r\n$xl: 1200px;\r\n\r\n/*--------------------------- Breakpoints End --------------------------*/\r\n\r\n\r\n/*------------------------------- Mixins -------------------------------*/\r\n\r\n@mixin media-breakpoint-down($breakpoint) {\r\n    @if $breakpoint==$sm {\r\n        @media (max-width: $sm) {\r\n            @content;\r\n        }\r\n    }\r\n\r\n    @else if $breakpoint==$md {\r\n        @media (max-width: $md) {\r\n            @content;\r\n        }\r\n    }\r\n\r\n    @else if $breakpoint==$lg {\r\n        @media (max-width: $lg) {\r\n            @content;\r\n        }\r\n    }\r\n\r\n    @else {\r\n        @media (max-width: $xl) {\r\n            @content;\r\n        }\r\n    }\r\n}\r\n\r\n@mixin media-breakpoint-up($breakpoint) {\r\n    @if $breakpoint==$sm {\r\n        @media (min-width: $sm) {\r\n            @content;\r\n        }\r\n    }\r\n\r\n    @else if $breakpoint==$md {\r\n        @media (min-width: $md) {\r\n            @content;\r\n        }\r\n    }\r\n\r\n    @else if $breakpoint==$lg {\r\n        @media (min-width: $lg) {\r\n            @content;\r\n        }\r\n    }\r\n\r\n    @else {\r\n        @media (min-width: $xl) {\r\n            @content;\r\n        }\r\n    }\r\n}\r\n\r\n@mixin flex-row ($justify-content, $align-items) {\r\n    display: flex;\r\n    justify-content: $justify-content;\r\n    align-items: $align-items;\r\n}\r\n\r\n@mixin flex-column($justify-content, $align-items) {\r\n    display: flex;\r\n    flex-direction: column;\r\n    justify-content: $justify-content;\r\n    align-items: $align-items;\r\n}\r\n\r\n@mixin default-text {\r\n    line-height: 1.25rem;\r\n    word-spacing: 0.25rem;\r\n    font-family: $Spartan;\r\n    font-size: 0.75rem;\r\n    font-weight: 300;\r\n    color: $white;\r\n}\r\n\r\n/*----------------------------- Mixins End -----------------------------*/\r\n\r\n\r\n/*------------------------------- Common -------------------------------*/\r\n\r\nh2 {\r\n    margin-bottom: 1.5rem;\r\n    line-height: 3.25rem;\r\n    font-size: 4rem;\r\n    font-family: $Raleway;\r\n    font-weight: 500;\r\n}\r\n\r\na {\r\n    color: $white;\r\n    text-decoration: none;\r\n}\r\n\r\nbutton {\r\n    position: relative;\r\n    border: 0;\r\n    padding: 0;\r\n    background: white;\r\n    cursor: pointer;\r\n\r\n    span {\r\n        @include default-text;\r\n        position: relative;\r\n        z-index: 2;\r\n        padding: 0.75rem;\r\n        display: inline-block;\r\n        font-weight: 400;\r\n        color: $black;\r\n        text-align: center;\r\n        transition: all .35s;\r\n\r\n        &:hover {\r\n            color: $white;\r\n        }\r\n    }\r\n\r\n    &::after {\r\n        position: absolute;\r\n        top: 0;\r\n        left: 0;\r\n        width: 0;\r\n        height: 100%;\r\n        background: $dark-blue-50;\r\n        transition: all .3s;\r\n        content: \"\";\r\n    }\r\n\r\n    &:hover {\r\n        &::after {\r\n            width: 100%;\r\n        }\r\n    }\r\n}\r\n\r\n.underline {\r\n    border-bottom: 2px solid yellow;\r\n    padding-bottom: 0.125rem;\r\n    text-decoration: none;\r\n}\r\n\r\n/*---------------------------- Common Ends -----------------------------*/","\n                                @import \"variables.scss\";\n                                .header {\r\n    padding: 0 7.5vw;\r\n    text-align: center;\r\n\r\n    @include media-breakpoint-up($sm) {\r\n        @include flex-row(space-between, center);\r\n        position: sticky;\r\n        top: 0;\r\n        margin: 0;\r\n        background: $sunset-header;\r\n        width: 100%;\r\n        height: 7rem;\r\n        z-index: 4;\r\n    }\r\n\r\n    @include media-breakpoint-down($sm) {\r\n        flex-direction: column;\r\n        margin-top: 1rem;\r\n    }\r\n\r\n    &__logo {\r\n        @include flex-column(center, center);\r\n\r\n        @include media-breakpoint-down($sm) {\r\n            width: 100%;\r\n        }\r\n\r\n        &-text {\r\n            display: inline-block;\r\n            font-family: $Arizonia;\r\n            font-size: 3rem;\r\n            color: $white;\r\n            text-transform: lowercase;\r\n            cursor: pointer;\r\n\r\n            &:hover {\r\n                color: $yellow;\r\n            }\r\n        }\r\n\r\n        &-caret {\r\n            margin: 0.75rem 0 0.25rem;\r\n            cursor: pointer;\r\n\r\n            @include media-breakpoint-up($sm) {\r\n                display: none;\r\n            }\r\n\r\n            &.inverse::after {\r\n                transform: rotate(315deg);\r\n                margin-top: 0.25rem;\r\n            }\r\n\r\n            p {\r\n                @include default-text;\r\n                font-size: 0.5rem;\r\n                color: $white;\r\n            }\r\n\r\n            &::after {\r\n                position: relative;\r\n                left: -4px;\r\n                top: -7px;\r\n                margin-right: 0.5rem;\r\n                margin-left: 1.0rem;\r\n                border-right: 0.2rem solid $white;\r\n                border-top: 0.2rem solid $white;\r\n                display: inline-block;\r\n                width: 0.35rem;\r\n                height: 0.35rem;\r\n                transform: rotate(135deg);\r\n                content: \"\";\r\n            }\r\n\r\n            &:hover {\r\n                p {\r\n                    color: $yellow;\r\n                }\r\n\r\n                &::after {\r\n                    border-color: $yellow;\r\n                }\r\n            }\r\n        }\r\n    }\r\n\r\n    &__navigation {\r\n        width: fit-content;\r\n\r\n        @include media-breakpoint-down($sm) {\r\n            width: 100%;\r\n        }\r\n\r\n        &-links {\r\n            display: flex;\r\n            column-gap: 2rem;\r\n            cursor: default;\r\n\r\n            @include media-breakpoint-down($sm) {\r\n                margin-bottom: 1.5rem;\r\n                border: 1px solid $border-yellow;\r\n                padding: 1rem;\r\n                background: $transwhite-bg;\r\n                flex-direction: column;\r\n                row-gap: 0.75rem;\r\n                max-height: 40rem;\r\n                opacity: 1;\r\n                transition: max-height 0.3s ease-in-out;\r\n\r\n                &.d-none {\r\n                    margin: 0;\r\n                    padding: 0;\r\n                    max-height: 0;\r\n                    opacity: 0;\r\n                    gap: 0;\r\n\r\n                    li {\r\n                        height: 0;\r\n                    }\r\n                }\r\n            }\r\n\r\n            li {\r\n                @include default-text;\r\n                display: inline-block;\r\n                font-size: 0.75rem;\r\n                color: $white;\r\n                transition: all 0.3s ease-in-out;\r\n                cursor: pointer;\r\n\r\n                &:hover a {\r\n                    color: $yellow;\r\n                }\r\n\r\n                @include media-breakpoint-down($sm) {\r\n                    font-size: 0.75rem;\r\n                    text-transform: none;\r\n                }\r\n            }\r\n        }\r\n    }\r\n}\n                              "],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -647,117 +682,112 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
+___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap);"]);
+___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Arizonia&display=swap);"]);
+___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Italianno&display=swap);"]);
+___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap);"]);
+___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Spartan:wght@100;200;300;400;500;600;700;800;900&display=swap);"]);
 // Module
 ___CSS_LOADER_EXPORT___.push([module.id, `/*--------------------------- Theme Colours ---------------------------*/
 /* Colours */
 /* Gradient */
 /*-------------------------- Theme Colours End -------------------------*/
 /*-------------------------------- Fonts -------------------------------*/
-/*  Serif Font */
-/*  Sans-Serif Font */
+/******************** Serif Fonts *****************************/
+/* Cormorant Garamond */
+/* Arizonia */
+/********************** Cursive Fonts *************************/
+/* Italianno */
+/********************* Sans-serif Fonts ************************/
+/* Raleway */
+/* Spartan */
 /*------------------------------ Fonts End -----------------------------*/
 /*----------------------------- Breakpoints ----------------------------*/
 /*--------------------------- Breakpoints End --------------------------*/
-/*------------------------------- Images -------------------------------*/
-/*----------------------------- Images End -----------------------------*/
 /*------------------------------- Mixins -------------------------------*/
 /*----------------------------- Mixins End -----------------------------*/
 /*------------------------------- Common -------------------------------*/
 h2 {
   margin-bottom: 1.5rem;
+  line-height: 3.25rem;
   font-size: 4rem;
   font-family: "Raleway", Arial, Helvetica, sans-serif;
   font-weight: 500;
-  line-height: 3.25rem;
 }
 
 a {
-  color: #000;
+  color: #fff;
   text-decoration: none;
 }
 
 button {
+  position: relative;
+  border: 0;
+  padding: 0;
+  background: white;
+  cursor: pointer;
+}
+button span {
+  line-height: 1.25rem;
+  word-spacing: 0.25rem;
   font-family: "Spartan", Arial, Helvetica, sans-serif;
   font-size: 0.75rem;
-  line-height: 1.25rem;
-  color: #000;
-  font-weight: 600;
-  word-spacing: 0.25rem;
-  box-shadow: inset 0 0 0 2px #000;
-  color: #000;
-  transition: color 0.3s 0.1s;
+  font-weight: 300;
+  color: #fff;
   position: relative;
-  border: none;
-  padding: 1rem;
-  width: 100%;
-  cursor: pointer;
-  text-transform: uppercase;
+  z-index: 2;
+  padding: 0.75rem;
+  display: inline-block;
+  font-weight: 400;
+  color: #000;
+  text-align: center;
+  transition: all 0.35s;
 }
-button::before, button::after {
-  border: 0 solid transparent;
-  box-sizing: border-box;
-  content: "";
-  pointer-events: none;
-  position: absolute;
-  width: 0;
-  height: 0;
-  bottom: 0;
-  right: 0;
-}
-button::before {
-  border-bottom-width: 2px;
-  border-left-width: 2px;
+button span:hover {
+  color: #fff;
 }
 button::after {
-  border-top-width: 2px;
-  border-right-width: 2px;
-}
-button:hover {
-  color: rgb(193, 110, 100);
-}
-button:hover::before, button:hover::after {
-  border-color: rgb(193, 110, 100);
-  transition: border-color 0s, width 0.3s, height 0.3s;
-  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
   height: 100%;
-}
-button:hover::before {
-  transition-delay: 0s, 0s, 0.3s;
+  background: rgba(0, 0, 51, 0.5);
+  transition: all 0.3s;
+  content: "";
 }
 button:hover::after {
-  transition-delay: 0s, 0.3s, 0s;
-}
-@media (min-width: 576px) {
-  button {
-    width: 10rem;
-  }
+  width: 100%;
 }
 
 .underline {
+  border-bottom: 2px solid yellow;
   padding-bottom: 0.125rem;
   text-decoration: none;
-  border-bottom: 2px solid yellow;
 }
 
 /*---------------------------- Common Ends -----------------------------*/
 .home {
-  border: 0;
   width: calc(100% - 15vw);
-  margin: 3rem auto;
-  border: 1px solid yellow;
+  margin: 0 auto 3rem;
+  border: 1px solid #ffff00;
+}
+@media (max-width: 576px) {
+  .home {
+    margin: 0 auto 1.5rem;
+  }
 }
 .home__bio {
+  line-height: 1.25rem;
+  word-spacing: 0.25rem;
   font-family: "Spartan", Arial, Helvetica, sans-serif;
   font-size: 0.75rem;
-  line-height: 1.25rem;
-  color: #000;
-  font-weight: 600;
-  word-spacing: 0.25rem;
-  padding: 1.5rem 1.5rem 0 1.5rem;
-  color: white;
   font-weight: 300;
+  color: #fff;
   display: flex;
+  justify-content: unset;
   align-items: flex-end;
+  padding: 1.5rem 1.5rem 0 1.5rem;
 }
 @media (max-width: 576px) {
   .home__bio {
@@ -773,13 +803,13 @@ button:hover::after {
   shape-outside: inset(calc(100% - 12rem) 0 0);
 }
 .home__bio-picture img {
-  margin-top: 0.5rem;
-  width: 10rem;
-  height: auto;
   position: relative;
   bottom: -8px;
   right: -1.75rem;
-}`, "",{"version":3,"sources":["webpack://./src/styles/variables.scss","webpack://./src/styles/home.scss"],"names":[],"mappings":"AAAA,wEAAA;AAEA,YAAA;AAYA,aAAA;AAKA,yEAAA;AAGA,yEAAA;AAEA,gBAAA;AAGA,qBAAA;AAIA,yEAAA;AAGA,yEAAA;AAOA,yEAAA;AAGA,yEAAA;AAKA,yEAAA;AAGA,yEAAA;AAyIA,yEAAA;AAGA,yEAAA;AAEA;EACI,qBAAA;EACA,eAAA;EACA,oDAxKM;EAyKN,gBAAA;EACA,oBAAA;AClLJ;;ADqLA;EACI,WAtMI;EAuMJ,qBAAA;AClLJ;;ADqLA;EA1BI,oDAzJM;EA0JN,kBAAA;EACA,oBAAA;EACA,WAnLI;EAoLJ,gBAAA;EACA,qBAAA;EAlEA,gCAAA;EACA,WApHI;EAqHJ,2BAAA;EACA,kBAAA;EAuFA,YAAA;EACA,aAAA;EACA,WAAA;EACA,eAAA;EACA,yBAAA;AC1KJ;ADiFI;EAEI,2BAAA;EACA,sBAAA;EACA,WAAA;EACA,oBAAA;EACA,kBAAA;EACA,QAAA;EACA,SAAA;EAEA,SAAA;EACA,QAAA;ACjFR;ADoFI;EAGI,wBAmE6C;EAlE7C,sBAkE6C;ACtJrD;ADuFI;EAGI,qBA4D6C;EA3D7C,uBA2D6C;AClJrD;AD0FI;EACI,yBA/IK;ACuDb;AD0FQ;EAEI,gCAnJC;EAoJD,oDAAA;EACA,WAAA;EACA,YAAA;ACzFZ;AD4FQ;EACI,8BAAA;AC1FZ;AD6FQ;EACI,8BAAA;AC3FZ;ADIQ;EA6HR;IAUQ,YAAA;ECvIN;AACF;;AD0IA;EACI,wBAAA;EACA,qBAAA;EACA,+BAAA;ACvIJ;;AD2IA,yEAAA;AClOgC;ED6K5B,SAAA;EC3KA,wBAAA;EACA,iBAAA;EACA,wBAAA;AA2FJ;AArFI;EDyKA,oDAzJM;EA0JN,kBAAA;EACA,oBAAA;EACA,WAnLI;EAoLJ,gBAAA;EACA,qBAAA;EC5KI,+BAAA;EACA,YAAA;EACA,gBAAA;EACA,aAAA;EACA,qBAAA;AA4FR;ADtDQ;EC5CJ;IASQ,sBAAA;EA6FV;AACF;AA3FQ;EACI,qBAAA;AA6FZ;AA1FQ;EACI,YAAA;EACA,YAAA;EACA,4CAAA;AA4FZ;AA1FY;EACI,kBAAA;EACA,YAAA;EACA,YAAA;EACA,kBAAA;EACA,YAAA;EACA,eAAA;AA4FhB","sourcesContent":["/*--------------------------- Theme Colours ---------------------------*/\r\n\r\n/* Colours */\r\n$trans: transparent;\r\n$white: #fff;\r\n$black: #000;\r\n$dark-blue: #000033;\r\n$dark-blue-50: rgba(0, 0, 51, 0.50);\r\n$blue: #556880;\r\n$blue-35: rgba(85, 104, 128, .5);\r\n$pink: #f7a8b2;\r\n$deep-blush: rgb(193, 110, 100);\r\n$deep-blush-35: rgba(193, 110, 100, 0.35);\r\n\r\n/* Gradient */\r\n$la-db-bl-le: linear-gradient(to left, #957dad, #a478a4, #b17399, #bb6f8a, #c06d7a, #c7747c, #cd7c7f, #d38382, #df9398, #eaa5ae, #f4b6c4, #fec8d8);\r\n$sunset: linear-gradient(135deg, black, $dark-blue 70%, rgba(131,58,180,1) 100%);\r\n$sunset-header: linear-gradient(225deg, black, $dark-blue, rgba(131,58,180,1) 100%);\r\n\r\n/*-------------------------- Theme Colours End -------------------------*/\r\n\r\n\r\n/*-------------------------------- Fonts -------------------------------*/\r\n\r\n/*  Serif Font */\r\n$Cormorant: 'Cormorant Garamond', Times, serif;\r\n\r\n/*  Sans-Serif Font */\r\n$Spartan: 'Spartan', Arial, Helvetica, sans-serif;\r\n$Raleway: 'Raleway', Arial, Helvetica, sans-serif;\r\n\r\n/*------------------------------ Fonts End -----------------------------*/\r\n\r\n\r\n/*----------------------------- Breakpoints ----------------------------*/\r\n\r\n$sm: 576px;\r\n$md: 768px;\r\n$lg: 992px;\r\n$xl: 1200px;\r\n\r\n/*--------------------------- Breakpoints End --------------------------*/\r\n\r\n\r\n/*------------------------------- Images -------------------------------*/\r\n\r\n$background-image: url('../assets/1.jpg');\r\n$background-image-crop: url('../assets/1-crop.jpg');\r\n\r\n/*----------------------------- Images End -----------------------------*/\r\n\r\n\r\n/*------------------------------- Mixins -------------------------------*/\r\n\r\n@mixin media-breakpoint-down($breakpoint) {\r\n    @if $breakpoint==$sm {\r\n        @media (max-width: $sm) {\r\n            @content;\r\n        }\r\n    }\r\n\r\n    @else if $breakpoint==$md {\r\n        @media (max-width: $md) {\r\n            @content;\r\n        }\r\n    }\r\n\r\n    @else if $breakpoint==$lg {\r\n        @media (max-width: $lg) {\r\n            @content;\r\n        }\r\n    }\r\n\r\n    @else {\r\n        @media (max-width: $xl) {\r\n            @content;\r\n        }\r\n    }\r\n}\r\n\r\n@mixin media-breakpoint-up($breakpoint) {\r\n    @if $breakpoint==$sm {\r\n        @media (min-width: $sm) {\r\n            @content;\r\n        }\r\n    }\r\n\r\n    @else if $breakpoint==$md {\r\n        @media (min-width: $md) {\r\n            @content;\r\n        }\r\n    }\r\n\r\n    @else if $breakpoint==$lg {\r\n        @media (min-width: $lg) {\r\n            @content;\r\n        }\r\n    }\r\n\r\n    @else {\r\n        @media (min-width: $xl) {\r\n            @content;\r\n        }\r\n    }\r\n}\r\n\r\n@mixin flex-row ($justify-content, $align-items) {\r\n    display: flex;\r\n    justify-content: $justify-content;\r\n    align-items: $align-items;\r\n}\r\n\r\n@mixin flex-column($justify-content, $align-items) {\r\n    display: flex;\r\n    flex-direction: column;\r\n    justify-content: $justify-content;\r\n    align-items: $align-items;\r\n}\r\n\r\n@mixin btn-border-drawing($color: #ccc, $hover: black, $width: 2px, $vertical: top, $horizontal: left, $duration: 0.3s) {\r\n    box-shadow: inset 0 0 0 $width $color;\r\n    color: $color;\r\n    transition: color $duration calc($duration/3);\r\n    position: relative;\r\n\r\n    &::before,\r\n    &::after {\r\n        border: 0 solid transparent;\r\n        box-sizing: border-box;\r\n        content: '';\r\n        pointer-events: none;\r\n        position: absolute;\r\n        width: 0;\r\n        height: 0;\r\n\r\n        #{$vertical}: 0;\r\n        #{$horizontal}: 0;\r\n    }\r\n\r\n    &::before {\r\n        $h-side: if($horizontal=='left', 'right', 'left');\r\n\r\n        border-#{$vertical}-width: $width;\r\n        border-#{$h-side}-width: $width;\r\n    }\r\n\r\n    &::after {\r\n        $v-side: if($vertical=='top', 'bottom', 'top');\r\n\r\n        border-#{$v-side}-width: $width;\r\n        border-#{$horizontal}-width: $width;\r\n    }\r\n\r\n    &:hover {\r\n        color: $hover;\r\n\r\n        &::before,\r\n        &::after {\r\n            border-color: $hover;\r\n            transition: border-color 0s, width $duration, height $duration;\r\n            width: 100%;\r\n            height: 100%;\r\n        }\r\n\r\n        &::before {\r\n            transition-delay: 0s, 0s, $duration;\r\n        }\r\n\r\n        &::after {\r\n            transition-delay: 0s, $duration, 0s;\r\n        }\r\n    }\r\n}\r\n\r\n@mixin border {\r\n    border: 0;\r\n    // border: 0.5rem solid transparent;\r\n    // border-image: $la-db-bl-le 30;\r\n}\r\n\r\n@mixin default-text {\r\n    font-family: $Spartan;\r\n    font-size: 0.75rem;\r\n    line-height: 1.25rem;\r\n    color: $black;\r\n    font-weight: 600;\r\n    word-spacing: 0.25rem;\r\n}\r\n\r\n/*----------------------------- Mixins End -----------------------------*/\r\n\r\n\r\n/*------------------------------- Common -------------------------------*/\r\n\r\nh2 {\r\n    margin-bottom: 1.5rem;\r\n    font-size: 4rem;\r\n    font-family: $Raleway;\r\n    font-weight: 500;\r\n    line-height: 3.25rem;\r\n}\r\n\r\na {\r\n    color: $black;\r\n    text-decoration: none;\r\n}\r\n\r\nbutton {\r\n    @include default-text;\r\n    @include btn-border-drawing($black, $deep-blush, 2px, bottom, right);\r\n    border: none;\r\n    padding: 1rem;\r\n    width: 100%;\r\n    cursor: pointer;\r\n    text-transform: uppercase;\r\n\r\n    @include media-breakpoint-up($sm) {\r\n        width: 10rem;\r\n    }\r\n}\r\n\r\n.underline {\r\n    padding-bottom:0.125rem;\r\n    text-decoration:none;\r\n    border-bottom:2px solid yellow;}\r\n\r\n\r\n\r\n/*---------------------------- Common Ends -----------------------------*/","\n                                @import \"variables.scss\";\n                                .home {\r\n    @include border;\r\n    width: calc(100% - 15vw);\r\n    margin: 3rem auto;\r\n    border: 1px solid yellow;\r\n\r\n    // &__title{\r\n    //     text-shadow: -2px 2px yellow;\r\n    // }\r\n\r\n    &__bio {\r\n        @include default-text;\r\n        padding: 1.5rem 1.5rem 0 1.5rem;\r\n        color: white;\r\n        font-weight: 300;\r\n        display: flex;\r\n        align-items: flex-end;\r\n\r\n        @include media-breakpoint-down($sm) {\r\n            flex-direction: column;\r\n        }\r\n\r\n        &-text {\r\n            margin-bottom: 1.5rem;\r\n        }\r\n\r\n        &-picture {\r\n            float: right;\r\n            height: 100%;\r\n            shape-outside: inset(calc(100% - 12rem) 0 0);\r\n\r\n            img {\r\n                margin-top: 0.5rem;\r\n                width: 10rem;\r\n                height: auto;\r\n                position: relative;\r\n                bottom: -8px;\r\n                right: -1.75rem;\r\n            }\r\n        }\r\n    }\r\n}\n                              "],"sourceRoot":""}]);
+  margin-top: 0.5rem;
+  width: 10rem;
+  height: auto;
+}`, "",{"version":3,"sources":["webpack://./src/styles/variables.scss","webpack://./src/styles/home.scss"],"names":[],"mappings":"AAAA,wEAAA;AAEA,YAAA;AAWA,aAAA;AAKA,yEAAA;AAGA,yEAAA;AAEA,+DAAA;AACA,uBAAA;AAMA,aAAA;AAMA,+DAAA;AACA,cAAA;AAMA,gEAAA;AACA,YAAA;AAOA,YAAA;AAOA,yEAAA;AAGA,yEAAA;AAOA,yEAAA;AAGA,yEAAA;AA4EA,yEAAA;AAGA,yEAAA;AAEA;EACI,qBAAA;EACA,oBAAA;EACA,eAAA;EACA,oDA9GM;EA+GN,gBAAA;AC/HJ;;ADkIA;EACI,WA9JI;EA+JJ,qBAAA;AC/HJ;;ADkIA;EACI,kBAAA;EACA,SAAA;EACA,UAAA;EACA,iBAAA;EACA,eAAA;AC/HJ;ADiII;EAjCA,oBAAA;EACA,qBAAA;EACA,oDAxFM;EAyFN,kBAAA;EACA,gBAAA;EACA,WA7II;EA2KA,kBAAA;EACA,UAAA;EACA,gBAAA;EACA,qBAAA;EACA,gBAAA;EACA,WA/KA;EAgLA,kBAAA;EACA,qBAAA;AC1HR;AD4HQ;EACI,WArLJ;AC2DR;AD8HI;EACI,kBAAA;EACA,MAAA;EACA,OAAA;EACA,QAAA;EACA,YAAA;EACA,+BA1LO;EA2LP,oBAAA;EACA,WAAA;AC5HR;ADgIQ;EACI,WAAA;AC9HZ;;ADmIA;EACI,+BAAA;EACA,wBAAA;EACA,qBAAA;AChIJ;;ADmIA,yEAAA;AClNgC;EAC5B,wBAAA;EACA,mBAAA;EACA,yBAAA;AAmFJ;ADbQ;ECzEwB;IAMxB,qBAAA;EAoFN;AACF;AAlFI;EDgIA,oBAAA;EACA,qBAAA;EACA,oDAxFM;EAyFN,kBAAA;EACA,gBAAA;EACA,WA7II;EA2HJ,aAAA;EACA,sBClHsB;EDmHtB,qBCnH6B;EACzB,+BAAA;AA2FR;AD9BQ;EChEJ;IAMQ,sBAAA;EA4FV;AACF;AA1FQ;EACI,qBAAA;AA4FZ;AAzFQ;EACI,YAAA;EACA,YAAA;EACA,4CAAA;AA2FZ;AAzFY;EACI,kBAAA;EACA,YAAA;EACA,eAAA;EACA,kBAAA;EACA,YAAA;EACA,YAAA;AA2FhB","sourcesContent":["/*--------------------------- Theme Colours ---------------------------*/\r\n\r\n/* Colours */\r\n$white: #fff;\r\n$black: #000;\r\n$dark-blue: #000033;\r\n$yellow: #ffff00;\r\n$purple: rgba(131, 58, 180, 1);\r\n$dark-blue-50: rgba(0, 0, 51, 0.50);\r\n$border-yellow: rgba(255, 255, 0, 0.25);\r\n$transwhite-bg: rgba(255, 255, 255, 0.1);\r\n$shadow-color: rgba(0, 0, 0, 0.1);\r\n\r\n/* Gradient */\r\n$sunset: linear-gradient(135deg, black, $dark-blue 70%, $purple 100%);\r\n$sunset-var: linear-gradient(225deg, black, $dark-blue, $purple 100%);\r\n$sunset-header: linear-gradient(135deg, black, #00001b, #170A4A);\r\n\r\n/*-------------------------- Theme Colours End -------------------------*/\r\n\r\n\r\n/*-------------------------------- Fonts -------------------------------*/\r\n\r\n/******************** Serif Fonts *****************************/\r\n/* Cormorant Garamond */\r\n@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap');\r\n$Cormorant: 'Cormorant Garamond',\r\nTimes,\r\nserif;\r\n\r\n/* Arizonia */\r\n@import url('https://fonts.googleapis.com/css2?family=Arizonia&display=swap');\r\n$Arizonia: 'Arizonia',\r\nTimes,\r\nserif;\r\n\r\n/********************** Cursive Fonts *************************/\r\n/* Italianno */\r\n@import url('https://fonts.googleapis.com/css2?family=Italianno&display=swap');\r\n$Italianno: 'Italianno',\r\nSnell Roundhand,\r\ncursive;\r\n\r\n/********************* Sans-serif Fonts ************************/\r\n/* Raleway */\r\n@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');\r\n$Raleway: 'Raleway',\r\nArial,\r\nHelvetica,\r\nsans-serif;\r\n\r\n/* Spartan */\r\n@import url('https://fonts.googleapis.com/css2?family=Spartan:wght@100;200;300;400;500;600;700;800;900&display=swap');\r\n$Spartan: 'Spartan',\r\nArial,\r\nHelvetica,\r\nsans-serif;\r\n\r\n/*------------------------------ Fonts End -----------------------------*/\r\n\r\n\r\n/*----------------------------- Breakpoints ----------------------------*/\r\n\r\n$sm: 576px;\r\n$md: 768px;\r\n$lg: 992px;\r\n$xl: 1200px;\r\n\r\n/*--------------------------- Breakpoints End --------------------------*/\r\n\r\n\r\n/*------------------------------- Mixins -------------------------------*/\r\n\r\n@mixin media-breakpoint-down($breakpoint) {\r\n    @if $breakpoint==$sm {\r\n        @media (max-width: $sm) {\r\n            @content;\r\n        }\r\n    }\r\n\r\n    @else if $breakpoint==$md {\r\n        @media (max-width: $md) {\r\n            @content;\r\n        }\r\n    }\r\n\r\n    @else if $breakpoint==$lg {\r\n        @media (max-width: $lg) {\r\n            @content;\r\n        }\r\n    }\r\n\r\n    @else {\r\n        @media (max-width: $xl) {\r\n            @content;\r\n        }\r\n    }\r\n}\r\n\r\n@mixin media-breakpoint-up($breakpoint) {\r\n    @if $breakpoint==$sm {\r\n        @media (min-width: $sm) {\r\n            @content;\r\n        }\r\n    }\r\n\r\n    @else if $breakpoint==$md {\r\n        @media (min-width: $md) {\r\n            @content;\r\n        }\r\n    }\r\n\r\n    @else if $breakpoint==$lg {\r\n        @media (min-width: $lg) {\r\n            @content;\r\n        }\r\n    }\r\n\r\n    @else {\r\n        @media (min-width: $xl) {\r\n            @content;\r\n        }\r\n    }\r\n}\r\n\r\n@mixin flex-row ($justify-content, $align-items) {\r\n    display: flex;\r\n    justify-content: $justify-content;\r\n    align-items: $align-items;\r\n}\r\n\r\n@mixin flex-column($justify-content, $align-items) {\r\n    display: flex;\r\n    flex-direction: column;\r\n    justify-content: $justify-content;\r\n    align-items: $align-items;\r\n}\r\n\r\n@mixin default-text {\r\n    line-height: 1.25rem;\r\n    word-spacing: 0.25rem;\r\n    font-family: $Spartan;\r\n    font-size: 0.75rem;\r\n    font-weight: 300;\r\n    color: $white;\r\n}\r\n\r\n/*----------------------------- Mixins End -----------------------------*/\r\n\r\n\r\n/*------------------------------- Common -------------------------------*/\r\n\r\nh2 {\r\n    margin-bottom: 1.5rem;\r\n    line-height: 3.25rem;\r\n    font-size: 4rem;\r\n    font-family: $Raleway;\r\n    font-weight: 500;\r\n}\r\n\r\na {\r\n    color: $white;\r\n    text-decoration: none;\r\n}\r\n\r\nbutton {\r\n    position: relative;\r\n    border: 0;\r\n    padding: 0;\r\n    background: white;\r\n    cursor: pointer;\r\n\r\n    span {\r\n        @include default-text;\r\n        position: relative;\r\n        z-index: 2;\r\n        padding: 0.75rem;\r\n        display: inline-block;\r\n        font-weight: 400;\r\n        color: $black;\r\n        text-align: center;\r\n        transition: all .35s;\r\n\r\n        &:hover {\r\n            color: $white;\r\n        }\r\n    }\r\n\r\n    &::after {\r\n        position: absolute;\r\n        top: 0;\r\n        left: 0;\r\n        width: 0;\r\n        height: 100%;\r\n        background: $dark-blue-50;\r\n        transition: all .3s;\r\n        content: \"\";\r\n    }\r\n\r\n    &:hover {\r\n        &::after {\r\n            width: 100%;\r\n        }\r\n    }\r\n}\r\n\r\n.underline {\r\n    border-bottom: 2px solid yellow;\r\n    padding-bottom: 0.125rem;\r\n    text-decoration: none;\r\n}\r\n\r\n/*---------------------------- Common Ends -----------------------------*/","\n                                @import \"variables.scss\";\n                                .home {\r\n    width: calc(100% - 15vw);\r\n    margin: 0 auto 3rem;\r\n    border: 1px solid $yellow;\r\n\r\n    @include media-breakpoint-down($sm) {\r\n        margin: 0 auto 1.5rem;\r\n    }\r\n\r\n    &__bio {\r\n        @include default-text;\r\n        @include flex-row(unset, flex-end);\r\n        padding: 1.5rem 1.5rem 0 1.5rem;\r\n\r\n        @include media-breakpoint-down($sm) {\r\n            flex-direction: column;\r\n        }\r\n\r\n        &-text {\r\n            margin-bottom: 1.5rem;\r\n        }\r\n\r\n        &-picture {\r\n            float: right;\r\n            height: 100%;\r\n            shape-outside: inset(calc(100% - 12rem) 0 0);\r\n\r\n            img {\r\n                position: relative;\r\n                bottom: -8px;\r\n                right: -1.75rem;\r\n                margin-top: 0.5rem;\r\n                width: 10rem;\r\n                height: auto;\r\n            }\r\n        }\r\n    }\r\n}\n                              "],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -805,125 +835,116 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
+___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap);"]);
+___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Arizonia&display=swap);"]);
+___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Italianno&display=swap);"]);
+___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap);"]);
+___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Spartan:wght@100;200;300;400;500;600;700;800;900&display=swap);"]);
 // Module
 ___CSS_LOADER_EXPORT___.push([module.id, `/*--------------------------- Theme Colours ---------------------------*/
 /* Colours */
 /* Gradient */
 /*-------------------------- Theme Colours End -------------------------*/
 /*-------------------------------- Fonts -------------------------------*/
-/*  Serif Font */
-/*  Sans-Serif Font */
+/******************** Serif Fonts *****************************/
+/* Cormorant Garamond */
+/* Arizonia */
+/********************** Cursive Fonts *************************/
+/* Italianno */
+/********************* Sans-serif Fonts ************************/
+/* Raleway */
+/* Spartan */
 /*------------------------------ Fonts End -----------------------------*/
 /*----------------------------- Breakpoints ----------------------------*/
 /*--------------------------- Breakpoints End --------------------------*/
-/*------------------------------- Images -------------------------------*/
-/*----------------------------- Images End -----------------------------*/
 /*------------------------------- Mixins -------------------------------*/
 /*----------------------------- Mixins End -----------------------------*/
 /*------------------------------- Common -------------------------------*/
 h2 {
   margin-bottom: 1.5rem;
+  line-height: 3.25rem;
   font-size: 4rem;
   font-family: "Raleway", Arial, Helvetica, sans-serif;
   font-weight: 500;
-  line-height: 3.25rem;
 }
 
 a {
-  color: #000;
+  color: #fff;
   text-decoration: none;
 }
 
 button {
+  position: relative;
+  border: 0;
+  padding: 0;
+  background: white;
+  cursor: pointer;
+}
+button span {
+  line-height: 1.25rem;
+  word-spacing: 0.25rem;
   font-family: "Spartan", Arial, Helvetica, sans-serif;
   font-size: 0.75rem;
-  line-height: 1.25rem;
-  color: #000;
-  font-weight: 600;
-  word-spacing: 0.25rem;
-  box-shadow: inset 0 0 0 2px #000;
-  color: #000;
-  transition: color 0.3s 0.1s;
+  font-weight: 300;
+  color: #fff;
   position: relative;
-  border: none;
-  padding: 1rem;
-  width: 100%;
-  cursor: pointer;
-  text-transform: uppercase;
+  z-index: 2;
+  padding: 0.75rem;
+  display: inline-block;
+  font-weight: 400;
+  color: #000;
+  text-align: center;
+  transition: all 0.35s;
 }
-button::before, button::after {
-  border: 0 solid transparent;
-  box-sizing: border-box;
-  content: "";
-  pointer-events: none;
-  position: absolute;
-  width: 0;
-  height: 0;
-  bottom: 0;
-  right: 0;
-}
-button::before {
-  border-bottom-width: 2px;
-  border-left-width: 2px;
+button span:hover {
+  color: #fff;
 }
 button::after {
-  border-top-width: 2px;
-  border-right-width: 2px;
-}
-button:hover {
-  color: rgb(193, 110, 100);
-}
-button:hover::before, button:hover::after {
-  border-color: rgb(193, 110, 100);
-  transition: border-color 0s, width 0.3s, height 0.3s;
-  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
   height: 100%;
-}
-button:hover::before {
-  transition-delay: 0s, 0s, 0.3s;
+  background: rgba(0, 0, 51, 0.5);
+  transition: all 0.3s;
+  content: "";
 }
 button:hover::after {
-  transition-delay: 0s, 0.3s, 0s;
-}
-@media (min-width: 576px) {
-  button {
-    width: 10rem;
-  }
+  width: 100%;
 }
 
 .underline {
+  border-bottom: 2px solid yellow;
   padding-bottom: 0.125rem;
   text-decoration: none;
-  border-bottom: 2px solid yellow;
 }
 
 /*---------------------------- Common Ends -----------------------------*/
-* {
+*, html {
   box-sizing: border-box;
+  scroll-behavior: smooth !important;
 }
 
 body {
   background: linear-gradient(135deg, black, #000033 70%, rgb(131, 58, 180) 100%);
-  background-size: cover;
-  background-blend-mode: multiply;
-  color: white;
   background-attachment: fixed;
+  color: #fff;
   overflow-x: hidden;
-  /* Handle */
 }
 body::-webkit-scrollbar {
-  width: 10px;
+  width: 0.75rem;
 }
 body::-webkit-scrollbar-track {
-  background: #fff;
+  background: linear-gradient(135deg, black, #000033 70%, rgb(131, 58, 180) 100%);
 }
 body::-webkit-scrollbar-thumb {
-  background: rgba(255, 255, 0, 0.75);
+  border: 1px solid #000;
+  background: #ffff00;
 }
 
 .main {
   min-height: 100vh;
-}`, "",{"version":3,"sources":["webpack://./src/styles/variables.scss","webpack://./src/styles/main.scss"],"names":[],"mappings":"AAAA,wEAAA;AAEA,YAAA;AAYA,aAAA;AAKA,yEAAA;AAGA,yEAAA;AAEA,gBAAA;AAGA,qBAAA;AAIA,yEAAA;AAGA,yEAAA;AAOA,yEAAA;AAGA,yEAAA;AAKA,yEAAA;AAGA,yEAAA;AAyIA,yEAAA;AAGA,yEAAA;AAEA;EACI,qBAAA;EACA,eAAA;EACA,oDAxKM;EAyKN,gBAAA;EACA,oBAAA;AClLJ;;ADqLA;EACI,WAtMI;EAuMJ,qBAAA;AClLJ;;ADqLA;EA1BI,oDAzJM;EA0JN,kBAAA;EACA,oBAAA;EACA,WAnLI;EAoLJ,gBAAA;EACA,qBAAA;EAlEA,gCAAA;EACA,WApHI;EAqHJ,2BAAA;EACA,kBAAA;EAuFA,YAAA;EACA,aAAA;EACA,WAAA;EACA,eAAA;EACA,yBAAA;AC1KJ;ADiFI;EAEI,2BAAA;EACA,sBAAA;EACA,WAAA;EACA,oBAAA;EACA,kBAAA;EACA,QAAA;EACA,SAAA;EAEA,SAAA;EACA,QAAA;ACjFR;ADoFI;EAGI,wBAmE6C;EAlE7C,sBAkE6C;ACtJrD;ADuFI;EAGI,qBA4D6C;EA3D7C,uBA2D6C;AClJrD;AD0FI;EACI,yBA/IK;ACuDb;AD0FQ;EAEI,gCAnJC;EAoJD,oDAAA;EACA,WAAA;EACA,YAAA;ACzFZ;AD4FQ;EACI,8BAAA;AC1FZ;AD6FQ;EACI,8BAAA;AC3FZ;ADIQ;EA6HR;IAUQ,YAAA;ECvIN;AACF;;AD0IA;EACI,wBAAA;EACA,qBAAA;EACA,+BAAA;ACvIJ;;AD2IA,yEAAA;AClOgC;EAC5B,sBAAA;AA2FJ;;AAxFA;EACI,+EDSK;ECRL,sBAAA;EACA,+BAAA;EACA,YAAA;EACA,4BAAA;EACA,kBAAA;EAUA,WAAA;AAkFJ;AA1FI;EACI,WAAA;AA4FR;AAzFI;EACI,gBDfA;AC0GR;AAvFI;EACI,mCAAA;AAyFR;;AArFA;EACI,iBAAA;AAwFJ","sourcesContent":["/*--------------------------- Theme Colours ---------------------------*/\r\n\r\n/* Colours */\r\n$trans: transparent;\r\n$white: #fff;\r\n$black: #000;\r\n$dark-blue: #000033;\r\n$dark-blue-50: rgba(0, 0, 51, 0.50);\r\n$blue: #556880;\r\n$blue-35: rgba(85, 104, 128, .5);\r\n$pink: #f7a8b2;\r\n$deep-blush: rgb(193, 110, 100);\r\n$deep-blush-35: rgba(193, 110, 100, 0.35);\r\n\r\n/* Gradient */\r\n$la-db-bl-le: linear-gradient(to left, #957dad, #a478a4, #b17399, #bb6f8a, #c06d7a, #c7747c, #cd7c7f, #d38382, #df9398, #eaa5ae, #f4b6c4, #fec8d8);\r\n$sunset: linear-gradient(135deg, black, $dark-blue 70%, rgba(131,58,180,1) 100%);\r\n$sunset-header: linear-gradient(225deg, black, $dark-blue, rgba(131,58,180,1) 100%);\r\n\r\n/*-------------------------- Theme Colours End -------------------------*/\r\n\r\n\r\n/*-------------------------------- Fonts -------------------------------*/\r\n\r\n/*  Serif Font */\r\n$Cormorant: 'Cormorant Garamond', Times, serif;\r\n\r\n/*  Sans-Serif Font */\r\n$Spartan: 'Spartan', Arial, Helvetica, sans-serif;\r\n$Raleway: 'Raleway', Arial, Helvetica, sans-serif;\r\n\r\n/*------------------------------ Fonts End -----------------------------*/\r\n\r\n\r\n/*----------------------------- Breakpoints ----------------------------*/\r\n\r\n$sm: 576px;\r\n$md: 768px;\r\n$lg: 992px;\r\n$xl: 1200px;\r\n\r\n/*--------------------------- Breakpoints End --------------------------*/\r\n\r\n\r\n/*------------------------------- Images -------------------------------*/\r\n\r\n$background-image: url('../assets/1.jpg');\r\n$background-image-crop: url('../assets/1-crop.jpg');\r\n\r\n/*----------------------------- Images End -----------------------------*/\r\n\r\n\r\n/*------------------------------- Mixins -------------------------------*/\r\n\r\n@mixin media-breakpoint-down($breakpoint) {\r\n    @if $breakpoint==$sm {\r\n        @media (max-width: $sm) {\r\n            @content;\r\n        }\r\n    }\r\n\r\n    @else if $breakpoint==$md {\r\n        @media (max-width: $md) {\r\n            @content;\r\n        }\r\n    }\r\n\r\n    @else if $breakpoint==$lg {\r\n        @media (max-width: $lg) {\r\n            @content;\r\n        }\r\n    }\r\n\r\n    @else {\r\n        @media (max-width: $xl) {\r\n            @content;\r\n        }\r\n    }\r\n}\r\n\r\n@mixin media-breakpoint-up($breakpoint) {\r\n    @if $breakpoint==$sm {\r\n        @media (min-width: $sm) {\r\n            @content;\r\n        }\r\n    }\r\n\r\n    @else if $breakpoint==$md {\r\n        @media (min-width: $md) {\r\n            @content;\r\n        }\r\n    }\r\n\r\n    @else if $breakpoint==$lg {\r\n        @media (min-width: $lg) {\r\n            @content;\r\n        }\r\n    }\r\n\r\n    @else {\r\n        @media (min-width: $xl) {\r\n            @content;\r\n        }\r\n    }\r\n}\r\n\r\n@mixin flex-row ($justify-content, $align-items) {\r\n    display: flex;\r\n    justify-content: $justify-content;\r\n    align-items: $align-items;\r\n}\r\n\r\n@mixin flex-column($justify-content, $align-items) {\r\n    display: flex;\r\n    flex-direction: column;\r\n    justify-content: $justify-content;\r\n    align-items: $align-items;\r\n}\r\n\r\n@mixin btn-border-drawing($color: #ccc, $hover: black, $width: 2px, $vertical: top, $horizontal: left, $duration: 0.3s) {\r\n    box-shadow: inset 0 0 0 $width $color;\r\n    color: $color;\r\n    transition: color $duration calc($duration/3);\r\n    position: relative;\r\n\r\n    &::before,\r\n    &::after {\r\n        border: 0 solid transparent;\r\n        box-sizing: border-box;\r\n        content: '';\r\n        pointer-events: none;\r\n        position: absolute;\r\n        width: 0;\r\n        height: 0;\r\n\r\n        #{$vertical}: 0;\r\n        #{$horizontal}: 0;\r\n    }\r\n\r\n    &::before {\r\n        $h-side: if($horizontal=='left', 'right', 'left');\r\n\r\n        border-#{$vertical}-width: $width;\r\n        border-#{$h-side}-width: $width;\r\n    }\r\n\r\n    &::after {\r\n        $v-side: if($vertical=='top', 'bottom', 'top');\r\n\r\n        border-#{$v-side}-width: $width;\r\n        border-#{$horizontal}-width: $width;\r\n    }\r\n\r\n    &:hover {\r\n        color: $hover;\r\n\r\n        &::before,\r\n        &::after {\r\n            border-color: $hover;\r\n            transition: border-color 0s, width $duration, height $duration;\r\n            width: 100%;\r\n            height: 100%;\r\n        }\r\n\r\n        &::before {\r\n            transition-delay: 0s, 0s, $duration;\r\n        }\r\n\r\n        &::after {\r\n            transition-delay: 0s, $duration, 0s;\r\n        }\r\n    }\r\n}\r\n\r\n@mixin border {\r\n    border: 0;\r\n    // border: 0.5rem solid transparent;\r\n    // border-image: $la-db-bl-le 30;\r\n}\r\n\r\n@mixin default-text {\r\n    font-family: $Spartan;\r\n    font-size: 0.75rem;\r\n    line-height: 1.25rem;\r\n    color: $black;\r\n    font-weight: 600;\r\n    word-spacing: 0.25rem;\r\n}\r\n\r\n/*----------------------------- Mixins End -----------------------------*/\r\n\r\n\r\n/*------------------------------- Common -------------------------------*/\r\n\r\nh2 {\r\n    margin-bottom: 1.5rem;\r\n    font-size: 4rem;\r\n    font-family: $Raleway;\r\n    font-weight: 500;\r\n    line-height: 3.25rem;\r\n}\r\n\r\na {\r\n    color: $black;\r\n    text-decoration: none;\r\n}\r\n\r\nbutton {\r\n    @include default-text;\r\n    @include btn-border-drawing($black, $deep-blush, 2px, bottom, right);\r\n    border: none;\r\n    padding: 1rem;\r\n    width: 100%;\r\n    cursor: pointer;\r\n    text-transform: uppercase;\r\n\r\n    @include media-breakpoint-up($sm) {\r\n        width: 10rem;\r\n    }\r\n}\r\n\r\n.underline {\r\n    padding-bottom:0.125rem;\r\n    text-decoration:none;\r\n    border-bottom:2px solid yellow;}\r\n\r\n\r\n\r\n/*---------------------------- Common Ends -----------------------------*/","\n                                @import \"variables.scss\";\n                                * {\r\n    box-sizing: border-box;\r\n}\r\n\r\nbody {\r\n    background: $sunset;\r\n    background-size: cover;\r\n    background-blend-mode: multiply;\r\n    color: white;\r\n    background-attachment: fixed;\r\n    overflow-x: hidden;\r\n\r\n    &::-webkit-scrollbar {\r\n        width: 10px;\r\n    }\r\n\r\n    &::-webkit-scrollbar-track {\r\n        background: $white;\r\n    }\r\n\r\n    /* Handle */\r\n    &::-webkit-scrollbar-thumb {\r\n        background: rgba(255, 255, 0, 0.75);\r\n    }\r\n}\r\n\r\n.main {\r\n    min-height: 100vh;\r\n}\n                              "],"sourceRoot":""}]);
+}`, "",{"version":3,"sources":["webpack://./src/styles/variables.scss","webpack://./src/styles/main.scss"],"names":[],"mappings":"AAAA,wEAAA;AAEA,YAAA;AAWA,aAAA;AAKA,yEAAA;AAGA,yEAAA;AAEA,+DAAA;AACA,uBAAA;AAMA,aAAA;AAMA,+DAAA;AACA,cAAA;AAMA,gEAAA;AACA,YAAA;AAOA,YAAA;AAOA,yEAAA;AAGA,yEAAA;AAOA,yEAAA;AAGA,yEAAA;AA4EA,yEAAA;AAGA,yEAAA;AAEA;EACI,qBAAA;EACA,oBAAA;EACA,eAAA;EACA,oDA9GM;EA+GN,gBAAA;AC/HJ;;ADkIA;EACI,WA9JI;EA+JJ,qBAAA;AC/HJ;;ADkIA;EACI,kBAAA;EACA,SAAA;EACA,UAAA;EACA,iBAAA;EACA,eAAA;AC/HJ;ADiII;EAjCA,oBAAA;EACA,qBAAA;EACA,oDAxFM;EAyFN,kBAAA;EACA,gBAAA;EACA,WA7II;EA2KA,kBAAA;EACA,UAAA;EACA,gBAAA;EACA,qBAAA;EACA,gBAAA;EACA,WA/KA;EAgLA,kBAAA;EACA,qBAAA;AC1HR;AD4HQ;EACI,WArLJ;AC2DR;AD8HI;EACI,kBAAA;EACA,MAAA;EACA,OAAA;EACA,QAAA;EACA,YAAA;EACA,+BA1LO;EA2LP,oBAAA;EACA,WAAA;AC5HR;ADgIQ;EACI,WAAA;AC9HZ;;ADmIA;EACI,+BAAA;EACA,wBAAA;EACA,qBAAA;AChIJ;;ADmIA,yEAAA;AClNgC;EAC5B,sBAAA;EACA,kCAAA;AAmFJ;;AAhFA;EACI,+EDMK;ECLL,4BAAA;EACA,WDPI;ECQJ,kBAAA;AAmFJ;AAjFI;EACI,cAAA;AAmFR;AAhFI;EACI,+EDJC;ACsFT;AA/EI;EACI,sBAAA;EACA,mBDjBC;ACkGT;;AA7EA;EACI,iBAAA;AAgFJ","sourcesContent":["/*--------------------------- Theme Colours ---------------------------*/\r\n\r\n/* Colours */\r\n$white: #fff;\r\n$black: #000;\r\n$dark-blue: #000033;\r\n$yellow: #ffff00;\r\n$purple: rgba(131, 58, 180, 1);\r\n$dark-blue-50: rgba(0, 0, 51, 0.50);\r\n$border-yellow: rgba(255, 255, 0, 0.25);\r\n$transwhite-bg: rgba(255, 255, 255, 0.1);\r\n$shadow-color: rgba(0, 0, 0, 0.1);\r\n\r\n/* Gradient */\r\n$sunset: linear-gradient(135deg, black, $dark-blue 70%, $purple 100%);\r\n$sunset-var: linear-gradient(225deg, black, $dark-blue, $purple 100%);\r\n$sunset-header: linear-gradient(135deg, black, #00001b, #170A4A);\r\n\r\n/*-------------------------- Theme Colours End -------------------------*/\r\n\r\n\r\n/*-------------------------------- Fonts -------------------------------*/\r\n\r\n/******************** Serif Fonts *****************************/\r\n/* Cormorant Garamond */\r\n@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap');\r\n$Cormorant: 'Cormorant Garamond',\r\nTimes,\r\nserif;\r\n\r\n/* Arizonia */\r\n@import url('https://fonts.googleapis.com/css2?family=Arizonia&display=swap');\r\n$Arizonia: 'Arizonia',\r\nTimes,\r\nserif;\r\n\r\n/********************** Cursive Fonts *************************/\r\n/* Italianno */\r\n@import url('https://fonts.googleapis.com/css2?family=Italianno&display=swap');\r\n$Italianno: 'Italianno',\r\nSnell Roundhand,\r\ncursive;\r\n\r\n/********************* Sans-serif Fonts ************************/\r\n/* Raleway */\r\n@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');\r\n$Raleway: 'Raleway',\r\nArial,\r\nHelvetica,\r\nsans-serif;\r\n\r\n/* Spartan */\r\n@import url('https://fonts.googleapis.com/css2?family=Spartan:wght@100;200;300;400;500;600;700;800;900&display=swap');\r\n$Spartan: 'Spartan',\r\nArial,\r\nHelvetica,\r\nsans-serif;\r\n\r\n/*------------------------------ Fonts End -----------------------------*/\r\n\r\n\r\n/*----------------------------- Breakpoints ----------------------------*/\r\n\r\n$sm: 576px;\r\n$md: 768px;\r\n$lg: 992px;\r\n$xl: 1200px;\r\n\r\n/*--------------------------- Breakpoints End --------------------------*/\r\n\r\n\r\n/*------------------------------- Mixins -------------------------------*/\r\n\r\n@mixin media-breakpoint-down($breakpoint) {\r\n    @if $breakpoint==$sm {\r\n        @media (max-width: $sm) {\r\n            @content;\r\n        }\r\n    }\r\n\r\n    @else if $breakpoint==$md {\r\n        @media (max-width: $md) {\r\n            @content;\r\n        }\r\n    }\r\n\r\n    @else if $breakpoint==$lg {\r\n        @media (max-width: $lg) {\r\n            @content;\r\n        }\r\n    }\r\n\r\n    @else {\r\n        @media (max-width: $xl) {\r\n            @content;\r\n        }\r\n    }\r\n}\r\n\r\n@mixin media-breakpoint-up($breakpoint) {\r\n    @if $breakpoint==$sm {\r\n        @media (min-width: $sm) {\r\n            @content;\r\n        }\r\n    }\r\n\r\n    @else if $breakpoint==$md {\r\n        @media (min-width: $md) {\r\n            @content;\r\n        }\r\n    }\r\n\r\n    @else if $breakpoint==$lg {\r\n        @media (min-width: $lg) {\r\n            @content;\r\n        }\r\n    }\r\n\r\n    @else {\r\n        @media (min-width: $xl) {\r\n            @content;\r\n        }\r\n    }\r\n}\r\n\r\n@mixin flex-row ($justify-content, $align-items) {\r\n    display: flex;\r\n    justify-content: $justify-content;\r\n    align-items: $align-items;\r\n}\r\n\r\n@mixin flex-column($justify-content, $align-items) {\r\n    display: flex;\r\n    flex-direction: column;\r\n    justify-content: $justify-content;\r\n    align-items: $align-items;\r\n}\r\n\r\n@mixin default-text {\r\n    line-height: 1.25rem;\r\n    word-spacing: 0.25rem;\r\n    font-family: $Spartan;\r\n    font-size: 0.75rem;\r\n    font-weight: 300;\r\n    color: $white;\r\n}\r\n\r\n/*----------------------------- Mixins End -----------------------------*/\r\n\r\n\r\n/*------------------------------- Common -------------------------------*/\r\n\r\nh2 {\r\n    margin-bottom: 1.5rem;\r\n    line-height: 3.25rem;\r\n    font-size: 4rem;\r\n    font-family: $Raleway;\r\n    font-weight: 500;\r\n}\r\n\r\na {\r\n    color: $white;\r\n    text-decoration: none;\r\n}\r\n\r\nbutton {\r\n    position: relative;\r\n    border: 0;\r\n    padding: 0;\r\n    background: white;\r\n    cursor: pointer;\r\n\r\n    span {\r\n        @include default-text;\r\n        position: relative;\r\n        z-index: 2;\r\n        padding: 0.75rem;\r\n        display: inline-block;\r\n        font-weight: 400;\r\n        color: $black;\r\n        text-align: center;\r\n        transition: all .35s;\r\n\r\n        &:hover {\r\n            color: $white;\r\n        }\r\n    }\r\n\r\n    &::after {\r\n        position: absolute;\r\n        top: 0;\r\n        left: 0;\r\n        width: 0;\r\n        height: 100%;\r\n        background: $dark-blue-50;\r\n        transition: all .3s;\r\n        content: \"\";\r\n    }\r\n\r\n    &:hover {\r\n        &::after {\r\n            width: 100%;\r\n        }\r\n    }\r\n}\r\n\r\n.underline {\r\n    border-bottom: 2px solid yellow;\r\n    padding-bottom: 0.125rem;\r\n    text-decoration: none;\r\n}\r\n\r\n/*---------------------------- Common Ends -----------------------------*/","\n                                @import \"variables.scss\";\n                                *, html {\r\n    box-sizing: border-box;\r\n    scroll-behavior: smooth !important;\r\n}\r\n\r\nbody {\r\n    background: $sunset;\r\n    background-attachment: fixed;\r\n    color: $white;\r\n    overflow-x: hidden;\r\n\r\n    &::-webkit-scrollbar {\r\n        width: 0.75rem;\r\n    }\r\n\r\n    &::-webkit-scrollbar-track {\r\n        background: $sunset;\r\n    }\r\n\r\n    &::-webkit-scrollbar-thumb {\r\n        border: 1px solid $black;\r\n        background: $yellow;\r\n    }\r\n}\r\n\r\n.main {\r\n    min-height: 100vh;\r\n}\n                              "],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -949,152 +970,152 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
+___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap);"]);
+___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Arizonia&display=swap);"]);
+___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Italianno&display=swap);"]);
+___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap);"]);
+___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Spartan:wght@100;200;300;400;500;600;700;800;900&display=swap);"]);
 // Module
 ___CSS_LOADER_EXPORT___.push([module.id, `/*--------------------------- Theme Colours ---------------------------*/
 /* Colours */
 /* Gradient */
 /*-------------------------- Theme Colours End -------------------------*/
 /*-------------------------------- Fonts -------------------------------*/
-/*  Serif Font */
-/*  Sans-Serif Font */
+/******************** Serif Fonts *****************************/
+/* Cormorant Garamond */
+/* Arizonia */
+/********************** Cursive Fonts *************************/
+/* Italianno */
+/********************* Sans-serif Fonts ************************/
+/* Raleway */
+/* Spartan */
 /*------------------------------ Fonts End -----------------------------*/
 /*----------------------------- Breakpoints ----------------------------*/
 /*--------------------------- Breakpoints End --------------------------*/
-/*------------------------------- Images -------------------------------*/
-/*----------------------------- Images End -----------------------------*/
 /*------------------------------- Mixins -------------------------------*/
 /*----------------------------- Mixins End -----------------------------*/
 /*------------------------------- Common -------------------------------*/
 h2 {
   margin-bottom: 1.5rem;
+  line-height: 3.25rem;
   font-size: 4rem;
   font-family: "Raleway", Arial, Helvetica, sans-serif;
   font-weight: 500;
-  line-height: 3.25rem;
 }
 
 a {
-  color: #000;
+  color: #fff;
   text-decoration: none;
 }
 
 button {
+  position: relative;
+  border: 0;
+  padding: 0;
+  background: white;
+  cursor: pointer;
+}
+button span {
+  line-height: 1.25rem;
+  word-spacing: 0.25rem;
   font-family: "Spartan", Arial, Helvetica, sans-serif;
   font-size: 0.75rem;
-  line-height: 1.25rem;
-  color: #000;
-  font-weight: 600;
-  word-spacing: 0.25rem;
-  box-shadow: inset 0 0 0 2px #000;
-  color: #000;
-  transition: color 0.3s 0.1s;
+  font-weight: 300;
+  color: #fff;
   position: relative;
-  border: none;
-  padding: 1rem;
-  width: 100%;
-  cursor: pointer;
-  text-transform: uppercase;
+  z-index: 2;
+  padding: 0.75rem;
+  display: inline-block;
+  font-weight: 400;
+  color: #000;
+  text-align: center;
+  transition: all 0.35s;
 }
-button::before, button::after {
-  border: 0 solid transparent;
-  box-sizing: border-box;
-  content: "";
-  pointer-events: none;
-  position: absolute;
-  width: 0;
-  height: 0;
-  bottom: 0;
-  right: 0;
-}
-button::before {
-  border-bottom-width: 2px;
-  border-left-width: 2px;
+button span:hover {
+  color: #fff;
 }
 button::after {
-  border-top-width: 2px;
-  border-right-width: 2px;
-}
-button:hover {
-  color: rgb(193, 110, 100);
-}
-button:hover::before, button:hover::after {
-  border-color: rgb(193, 110, 100);
-  transition: border-color 0s, width 0.3s, height 0.3s;
-  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
   height: 100%;
-}
-button:hover::before {
-  transition-delay: 0s, 0s, 0.3s;
+  background: rgba(0, 0, 51, 0.5);
+  transition: all 0.3s;
+  content: "";
 }
 button:hover::after {
-  transition-delay: 0s, 0.3s, 0s;
-}
-@media (min-width: 576px) {
-  button {
-    width: 10rem;
-  }
+  width: 100%;
 }
 
 .underline {
+  border-bottom: 2px solid yellow;
   padding-bottom: 0.125rem;
   text-decoration: none;
-  border-bottom: 2px solid yellow;
 }
 
 /*---------------------------- Common Ends -----------------------------*/
 .pivot {
+  margin: 0 auto 2rem;
   width: calc(100% - 15vw);
-  margin: 0 auto;
-  margin-bottom: 2rem;
   background-color: linear-gradient(135deg, black, #000033 70%, rgb(131, 58, 180) 100%);
 }
+@media (max-width: 576px) {
+  .pivot {
+    margin-bottom: 1.5rem;
+  }
+}
 .pivot__text {
-  font-family: "Raleway", Arial, Helvetica, sans-serif;
-  font-size: 2rem;
-  font-weight: 600;
-  line-height: 1;
   margin-bottom: 1.5rem;
+  font-size: 2rem;
+  line-height: 1;
 }
 .pivot__card {
+  line-height: 1.25rem;
+  word-spacing: 0.25rem;
   font-family: "Spartan", Arial, Helvetica, sans-serif;
   font-size: 0.75rem;
-  line-height: 1.25rem;
-  color: #000;
-  font-weight: 600;
-  word-spacing: 0.25rem;
-  background-color: #fff;
-  font-weight: 400;
-  border-radius: 8px;
-  padding: 1.5rem 1.5rem 0.75rem 2.25rem;
+  font-weight: 300;
+  color: #fff;
+  border-radius: 0.5rem;
   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+  padding: 1.5rem 1.5rem 0.75rem 2.25rem;
   flex: 1;
+  background-color: #fff;
+  color: #000;
   transition: all 0.3s ease;
 }
 .pivot__card:hover {
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  background-color: #ffff00;
   transform: translateY(-0.25rem);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-  background-color: yellow;
 }
 .pivot__card-wrapper {
   display: flex;
   justify-content: space-between;
   align-items: stretch;
   margin: 0 auto;
-  gap: 1.5rem;
   flex-wrap: wrap;
+  gap: 1.5rem;
+}
+@media (max-width: 576px) {
+  .pivot__card-wrapper {
+    flex-direction: column;
+  }
 }
 .pivot__card__text {
+  line-height: 1.25rem;
+  word-spacing: 0.25rem;
   font-family: "Spartan", Arial, Helvetica, sans-serif;
   font-size: 0.75rem;
-  line-height: 1.25rem;
-  color: #000;
-  font-weight: 600;
-  word-spacing: 0.25rem;
+  font-weight: 300;
+  color: #fff;
+  margin-bottom: 1rem;
   line-height: 1;
   font-size: 1rem;
-  margin-bottom: 1rem;
   font-weight: 700;
-  text-shadow: 2px 2px yellow;
+  color: #000;
+  text-shadow: 2px 2px #ffff00;
 }
 .pivot__card ul li {
   margin-bottom: 0.75rem;
@@ -1103,48 +1124,55 @@ button:hover::after {
   transition: color 0.3s ease;
 }
 .pivot__caret {
-  margin-top: 0.75rem;
-  text-align: center;
-  transform: rotate(90deg);
-  position: relative;
-  cursor: pointer;
-}
-.pivot__caret p {
-  display: inline-block;
-  transform: rotate(-90deg);
+  line-height: 1.25rem;
+  word-spacing: 0.25rem;
   font-family: "Spartan", Arial, Helvetica, sans-serif;
   font-size: 0.75rem;
-  line-height: 1.25rem;
-  color: #000;
-  font-weight: 600;
-  word-spacing: 0.25rem;
-  color: white;
-  padding: 0.15rem;
+  font-weight: 300;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  margin: 0.75rem auto 0;
+  width: fit-content;
+  cursor: pointer;
 }
-.pivot__caret::before, .pivot__caret::after {
-  width: 2rem;
-  border-right: 2px solid white;
-  content: "";
-  display: block;
-  height: 8px;
-  margin-top: -6px;
-  position: absolute;
-  transform: rotate(135deg);
-  right: 48%;
-  top: 50%;
-  width: 0;
+@media (max-width: 576px) {
+  .pivot__caret {
+    display: none;
+  }
+}
+.pivot__caret.inverse::after {
+  transform: rotate(315deg);
+  margin-top: 0.25rem;
 }
 .pivot__caret::after {
-  margin-top: -1px;
-  transform: rotate(45deg);
+  position: relative;
+  left: -5px;
+  margin-right: 0.5rem;
+  margin-left: 1rem;
+  border-right: 0.2rem solid #fff;
+  border-top: 0.2rem solid #fff;
+  display: inline-block;
+  width: 0.5rem;
+  height: 0.5rem;
+  transform: rotate(135deg);
+  content: "";
+}
+.pivot__caret:hover {
+  color: #ffff00;
+}
+.pivot__caret:hover::after {
+  border-color: #ffff00;
 }
 
 @media (max-width: 768px) {
   .pivot {
-    flex-direction: column;
     align-items: center;
   }
-}`, "",{"version":3,"sources":["webpack://./src/styles/variables.scss","webpack://./src/styles/pivot.scss"],"names":[],"mappings":"AAAA,wEAAA;AAEA,YAAA;AAYA,aAAA;AAKA,yEAAA;AAGA,yEAAA;AAEA,gBAAA;AAGA,qBAAA;AAIA,yEAAA;AAGA,yEAAA;AAOA,yEAAA;AAGA,yEAAA;AAKA,yEAAA;AAGA,yEAAA;AAyIA,yEAAA;AAGA,yEAAA;AAEA;EACI,qBAAA;EACA,eAAA;EACA,oDAxKM;EAyKN,gBAAA;EACA,oBAAA;AClLJ;;ADqLA;EACI,WAtMI;EAuMJ,qBAAA;AClLJ;;ADqLA;EA1BI,oDAzJM;EA0JN,kBAAA;EACA,oBAAA;EACA,WAnLI;EAoLJ,gBAAA;EACA,qBAAA;EAlEA,gCAAA;EACA,WApHI;EAqHJ,2BAAA;EACA,kBAAA;EAuFA,YAAA;EACA,aAAA;EACA,WAAA;EACA,eAAA;EACA,yBAAA;AC1KJ;ADiFI;EAEI,2BAAA;EACA,sBAAA;EACA,WAAA;EACA,oBAAA;EACA,kBAAA;EACA,QAAA;EACA,SAAA;EAEA,SAAA;EACA,QAAA;ACjFR;ADoFI;EAGI,wBAmE6C;EAlE7C,sBAkE6C;ACtJrD;ADuFI;EAGI,qBA4D6C;EA3D7C,uBA2D6C;AClJrD;AD0FI;EACI,yBA/IK;ACuDb;AD0FQ;EAEI,gCAnJC;EAoJD,oDAAA;EACA,WAAA;EACA,YAAA;ACzFZ;AD4FQ;EACI,8BAAA;AC1FZ;AD6FQ;EACI,8BAAA;AC3FZ;ADIQ;EA6HR;IAUQ,YAAA;ECvIN;AACF;;AD0IA;EACI,wBAAA;EACA,qBAAA;EACA,+BAAA;ACvIJ;;AD2IA,yEAAA;AC/NA;EACI,wBAAA;EACA,cAAA;EAEA,mBAAA;EACA,qFDMK;ACiFT;AArFI;EACI,oDDgBE;ECfF,eAAA;EACA,gBAAA;EACA,cAAA;EACA,qBAAA;AAuFR;AApFI;EDiKA,oDAzJM;EA0JN,kBAAA;EACA,oBAAA;EACA,WAnLI;EAoLJ,gBAAA;EACA,qBAAA;ECpKI,sBDlBA;ECoBA,gBAAA;EACA,kBAAA;EACA,sCAAA;EACA,yCAAA;EACA,OAAA;EACA,yBAAA;AA0FR;AAxFQ;EACI,+BAAA;EACA,yCAAA;EACA,wBAAA;AA0FZ;AAvFQ;EDsEJ,aAAA;EACA,8BCtE0B;EDuE1B,oBCvEyC;EACjC,cAAA;EACA,WAAA;EACA,eAAA;AA2FZ;AAxFQ;EDyIJ,oDAzJM;EA0JN,kBAAA;EACA,oBAAA;EACA,WAnLI;EAoLJ,gBAAA;EACA,qBAAA;EC5IQ,cAAA;EACA,eAAA;EACA,mBAAA;EACA,gBAAA;EACA,2BAAA;AA+FZ;AA1FY;EACI,sBAAA;AA4FhB;AAzFgB;EACI,2BAAA;AA2FpB;AArFI;EACI,mBAAA;EACA,kBAAA;EACA,wBAAA;EACA,kBAAA;EACA,eAAA;AAuFR;AArFQ;EACI,qBAAA;EACA,yBAAA;ED0GR,oDAzJM;EA0JN,kBAAA;EACA,oBAAA;EACA,WAnLI;EAoLJ,gBAAA;EACA,qBAAA;EC7GQ,YAAA;EACA,gBAAA;AA4FZ;AAzFQ;EAEI,WAAA;EAEA,6BAAA;EACA,WAAA;EACA,cAAA;EACA,WAAA;EACA,gBAAA;EACA,kBAAA;EACA,yBAAA;EACA,UAAA;EACA,QAAA;EACA,QAAA;AAyFZ;AAtFQ;EACI,gBAAA;EACA,wBAAA;AAwFZ;;AAlFA;EACI;IACI,sBAAA;IACA,mBAAA;EAqFN;AACF","sourcesContent":["/*--------------------------- Theme Colours ---------------------------*/\r\n\r\n/* Colours */\r\n$trans: transparent;\r\n$white: #fff;\r\n$black: #000;\r\n$dark-blue: #000033;\r\n$dark-blue-50: rgba(0, 0, 51, 0.50);\r\n$blue: #556880;\r\n$blue-35: rgba(85, 104, 128, .5);\r\n$pink: #f7a8b2;\r\n$deep-blush: rgb(193, 110, 100);\r\n$deep-blush-35: rgba(193, 110, 100, 0.35);\r\n\r\n/* Gradient */\r\n$la-db-bl-le: linear-gradient(to left, #957dad, #a478a4, #b17399, #bb6f8a, #c06d7a, #c7747c, #cd7c7f, #d38382, #df9398, #eaa5ae, #f4b6c4, #fec8d8);\r\n$sunset: linear-gradient(135deg, black, $dark-blue 70%, rgba(131,58,180,1) 100%);\r\n$sunset-header: linear-gradient(225deg, black, $dark-blue, rgba(131,58,180,1) 100%);\r\n\r\n/*-------------------------- Theme Colours End -------------------------*/\r\n\r\n\r\n/*-------------------------------- Fonts -------------------------------*/\r\n\r\n/*  Serif Font */\r\n$Cormorant: 'Cormorant Garamond', Times, serif;\r\n\r\n/*  Sans-Serif Font */\r\n$Spartan: 'Spartan', Arial, Helvetica, sans-serif;\r\n$Raleway: 'Raleway', Arial, Helvetica, sans-serif;\r\n\r\n/*------------------------------ Fonts End -----------------------------*/\r\n\r\n\r\n/*----------------------------- Breakpoints ----------------------------*/\r\n\r\n$sm: 576px;\r\n$md: 768px;\r\n$lg: 992px;\r\n$xl: 1200px;\r\n\r\n/*--------------------------- Breakpoints End --------------------------*/\r\n\r\n\r\n/*------------------------------- Images -------------------------------*/\r\n\r\n$background-image: url('../assets/1.jpg');\r\n$background-image-crop: url('../assets/1-crop.jpg');\r\n\r\n/*----------------------------- Images End -----------------------------*/\r\n\r\n\r\n/*------------------------------- Mixins -------------------------------*/\r\n\r\n@mixin media-breakpoint-down($breakpoint) {\r\n    @if $breakpoint==$sm {\r\n        @media (max-width: $sm) {\r\n            @content;\r\n        }\r\n    }\r\n\r\n    @else if $breakpoint==$md {\r\n        @media (max-width: $md) {\r\n            @content;\r\n        }\r\n    }\r\n\r\n    @else if $breakpoint==$lg {\r\n        @media (max-width: $lg) {\r\n            @content;\r\n        }\r\n    }\r\n\r\n    @else {\r\n        @media (max-width: $xl) {\r\n            @content;\r\n        }\r\n    }\r\n}\r\n\r\n@mixin media-breakpoint-up($breakpoint) {\r\n    @if $breakpoint==$sm {\r\n        @media (min-width: $sm) {\r\n            @content;\r\n        }\r\n    }\r\n\r\n    @else if $breakpoint==$md {\r\n        @media (min-width: $md) {\r\n            @content;\r\n        }\r\n    }\r\n\r\n    @else if $breakpoint==$lg {\r\n        @media (min-width: $lg) {\r\n            @content;\r\n        }\r\n    }\r\n\r\n    @else {\r\n        @media (min-width: $xl) {\r\n            @content;\r\n        }\r\n    }\r\n}\r\n\r\n@mixin flex-row ($justify-content, $align-items) {\r\n    display: flex;\r\n    justify-content: $justify-content;\r\n    align-items: $align-items;\r\n}\r\n\r\n@mixin flex-column($justify-content, $align-items) {\r\n    display: flex;\r\n    flex-direction: column;\r\n    justify-content: $justify-content;\r\n    align-items: $align-items;\r\n}\r\n\r\n@mixin btn-border-drawing($color: #ccc, $hover: black, $width: 2px, $vertical: top, $horizontal: left, $duration: 0.3s) {\r\n    box-shadow: inset 0 0 0 $width $color;\r\n    color: $color;\r\n    transition: color $duration calc($duration/3);\r\n    position: relative;\r\n\r\n    &::before,\r\n    &::after {\r\n        border: 0 solid transparent;\r\n        box-sizing: border-box;\r\n        content: '';\r\n        pointer-events: none;\r\n        position: absolute;\r\n        width: 0;\r\n        height: 0;\r\n\r\n        #{$vertical}: 0;\r\n        #{$horizontal}: 0;\r\n    }\r\n\r\n    &::before {\r\n        $h-side: if($horizontal=='left', 'right', 'left');\r\n\r\n        border-#{$vertical}-width: $width;\r\n        border-#{$h-side}-width: $width;\r\n    }\r\n\r\n    &::after {\r\n        $v-side: if($vertical=='top', 'bottom', 'top');\r\n\r\n        border-#{$v-side}-width: $width;\r\n        border-#{$horizontal}-width: $width;\r\n    }\r\n\r\n    &:hover {\r\n        color: $hover;\r\n\r\n        &::before,\r\n        &::after {\r\n            border-color: $hover;\r\n            transition: border-color 0s, width $duration, height $duration;\r\n            width: 100%;\r\n            height: 100%;\r\n        }\r\n\r\n        &::before {\r\n            transition-delay: 0s, 0s, $duration;\r\n        }\r\n\r\n        &::after {\r\n            transition-delay: 0s, $duration, 0s;\r\n        }\r\n    }\r\n}\r\n\r\n@mixin border {\r\n    border: 0;\r\n    // border: 0.5rem solid transparent;\r\n    // border-image: $la-db-bl-le 30;\r\n}\r\n\r\n@mixin default-text {\r\n    font-family: $Spartan;\r\n    font-size: 0.75rem;\r\n    line-height: 1.25rem;\r\n    color: $black;\r\n    font-weight: 600;\r\n    word-spacing: 0.25rem;\r\n}\r\n\r\n/*----------------------------- Mixins End -----------------------------*/\r\n\r\n\r\n/*------------------------------- Common -------------------------------*/\r\n\r\nh2 {\r\n    margin-bottom: 1.5rem;\r\n    font-size: 4rem;\r\n    font-family: $Raleway;\r\n    font-weight: 500;\r\n    line-height: 3.25rem;\r\n}\r\n\r\na {\r\n    color: $black;\r\n    text-decoration: none;\r\n}\r\n\r\nbutton {\r\n    @include default-text;\r\n    @include btn-border-drawing($black, $deep-blush, 2px, bottom, right);\r\n    border: none;\r\n    padding: 1rem;\r\n    width: 100%;\r\n    cursor: pointer;\r\n    text-transform: uppercase;\r\n\r\n    @include media-breakpoint-up($sm) {\r\n        width: 10rem;\r\n    }\r\n}\r\n\r\n.underline {\r\n    padding-bottom:0.125rem;\r\n    text-decoration:none;\r\n    border-bottom:2px solid yellow;}\r\n\r\n\r\n\r\n/*---------------------------- Common Ends -----------------------------*/","\n                                @import \"variables.scss\";\n                                $shadow-color: rgba(0, 0, 0, 0.1);\r\n$hover-shadow-color: rgba(0, 0, 0, 0.2);\r\n\r\n.pivot {\r\n    width: calc(100% - 15vw);\r\n    margin: 0 auto;\r\n    // padding: 1.5rem;\r\n    margin-bottom: 2rem;\r\n    background-color: $sunset;\r\n\r\n    &__text {\r\n        font-family: $Raleway;\r\n        font-size: 2rem;\r\n        font-weight: 600;\r\n        line-height: 1;\r\n        margin-bottom: 1.5rem;\r\n    }\r\n\r\n    &__card {\r\n        @include default-text;\r\n        background-color: $white;\r\n        // color: $white;\r\n        font-weight: 400;\r\n        border-radius: 8px;\r\n        padding: 1.5rem 1.5rem 0.75rem 2.25rem;\r\n        box-shadow: 0 2px 12px $shadow-color;\r\n        flex: 1;\r\n        transition: all 0.3s ease;\r\n\r\n        &:hover {\r\n            transform: translateY(-0.25rem);\r\n            box-shadow: 0 4px 20px $hover-shadow-color;\r\n            background-color: yellow;\r\n        }\r\n\r\n        &-wrapper {\r\n            @include flex-row(space-between, stretch);\r\n            margin: 0 auto;\r\n            gap: 1.5rem;\r\n            flex-wrap: wrap;\r\n        }\r\n\r\n        &__text {\r\n            @include default-text;\r\n            line-height: 1;\r\n            font-size: 1rem;\r\n            margin-bottom: 1rem;\r\n            font-weight: 700;\r\n            text-shadow: 2px 2px yellow;\r\n        }\r\n\r\n        ul {\r\n\r\n            li {\r\n                margin-bottom: 0.75rem;\r\n                // font-size: 1em;\r\n\r\n                &:hover {\r\n                    transition: color 0.3s ease;\r\n                }\r\n            }\r\n        }\r\n    }\r\n\r\n    &__caret {\r\n        margin-top: 0.75rem;\r\n        text-align: center;\r\n        transform: rotate(90deg);\r\n        position: relative;\r\n        cursor: pointer;\r\n\r\n        p {\r\n            display: inline-block;\r\n            transform: rotate(-90deg);\r\n            @include default-text;\r\n            color: white;\r\n            padding: 0.15rem;\r\n        }\r\n\r\n        &::before,\r\n        &::after {\r\n            width: 2rem;\r\n\r\n            border-right: 2px solid white;\r\n            content: '';\r\n            display: block;\r\n            height: 8px;\r\n            margin-top: -6px;\r\n            position: absolute;\r\n            transform: rotate(135deg);\r\n            right: 48%;\r\n            top: 50%;\r\n            width: 0;\r\n        }\r\n\r\n        &::after {\r\n            margin-top: -1px;\r\n            transform: rotate(45deg);\r\n        }\r\n    }\r\n}\r\n\r\n// Responsive design\r\n@media (max-width: 768px) {\r\n    .pivot {\r\n        flex-direction: column;\r\n        align-items: center;\r\n    }\r\n}\n                              "],"sourceRoot":""}]);
+}`, "",{"version":3,"sources":["webpack://./src/styles/variables.scss","webpack://./src/styles/pivot.scss"],"names":[],"mappings":"AAAA,wEAAA;AAEA,YAAA;AAWA,aAAA;AAKA,yEAAA;AAGA,yEAAA;AAEA,+DAAA;AACA,uBAAA;AAMA,aAAA;AAMA,+DAAA;AACA,cAAA;AAMA,gEAAA;AACA,YAAA;AAOA,YAAA;AAOA,yEAAA;AAGA,yEAAA;AAOA,yEAAA;AAGA,yEAAA;AA4EA,yEAAA;AAGA,yEAAA;AAEA;EACI,qBAAA;EACA,oBAAA;EACA,eAAA;EACA,oDA9GM;EA+GN,gBAAA;AC/HJ;;ADkIA;EACI,WA9JI;EA+JJ,qBAAA;AC/HJ;;ADkIA;EACI,kBAAA;EACA,SAAA;EACA,UAAA;EACA,iBAAA;EACA,eAAA;AC/HJ;ADiII;EAjCA,oBAAA;EACA,qBAAA;EACA,oDAxFM;EAyFN,kBAAA;EACA,gBAAA;EACA,WA7II;EA2KA,kBAAA;EACA,UAAA;EACA,gBAAA;EACA,qBAAA;EACA,gBAAA;EACA,WA/KA;EAgLA,kBAAA;EACA,qBAAA;AC1HR;AD4HQ;EACI,WArLJ;AC2DR;AD8HI;EACI,kBAAA;EACA,MAAA;EACA,OAAA;EACA,QAAA;EACA,YAAA;EACA,+BA1LO;EA2LP,oBAAA;EACA,WAAA;AC5HR;ADgIQ;EACI,WAAA;AC9HZ;;ADmIA;EACI,+BAAA;EACA,wBAAA;EACA,qBAAA;AChIJ;;ADmIA,yEAAA;AClNgC;EAC5B,mBAAA;EACA,wBAAA;EACA,qFDSK;AC0ET;ADbQ;ECzEwB;IAMxB,qBAAA;EAoFN;AACF;AAlFI;EACI,qBAAA;EACA,eAAA;EACA,cAAA;AAoFR;AAjFI;ED0HA,oBAAA;EACA,qBAAA;EACA,oDAxFM;EAyFN,kBAAA;EACA,gBAAA;EACA,WA7II;ECgBA,qBAAA;EACA,yCAAA;EACA,sCAAA;EACA,OAAA;EACA,sBDpBA;ECqBA,WDpBA;ECqBA,yBAAA;AAwFR;AAtFQ;EACI,yCAAA;EACA,yBDvBH;ECwBG,+BAAA;AAwFZ;AArFQ;ED6FJ,aAAA;EACA,8BC7F0B;ED8F1B,oBC9FyC;EACjC,cAAA;EACA,eAAA;EACA,WAAA;AAyFZ;ADnDQ;EC1CA;IAOQ,sBAAA;EA0Fd;AACF;AAvFQ;ED+FJ,oBAAA;EACA,qBAAA;EACA,oDAxFM;EAyFN,kBAAA;EACA,gBAAA;EACA,WA7II;EC2CI,mBAAA;EACA,cAAA;EACA,eAAA;EACA,gBAAA;EACA,WD9CJ;EC+CI,4BAAA;AA8FZ;AA1FY;EACI,sBAAA;AA4FhB;AA1FgB;EACI,2BAAA;AA4FpB;AAtFI;ED0EA,oBAAA;EACA,qBAAA;EACA,oDAxFM;EAyFN,kBAAA;EACA,gBAAA;EACA,WA7II;EAiIJ,aAAA;EACA,sBAAA;EACA,uBCnEyB;EDoEzB,mBCpEiC;EAC7B,kBAAA;EACA,sBAAA;EACA,kBAAA;EACA,eAAA;AAgGR;AD5FQ;ECVJ;IASQ,aAAA;EAiGV;AACF;AA/FQ;EACI,yBAAA;EACA,mBAAA;AAiGZ;AA9FQ;EACI,kBAAA;EACA,UAAA;EACA,oBAAA;EACA,iBAAA;EACA,+BAAA;EACA,6BAAA;EACA,qBAAA;EACA,aAAA;EACA,cAAA;EACA,yBAAA;EACA,WAAA;AAgGZ;AA7FQ;EACI,cD3FH;AC0LT;AA7FY;EACI,qBD9FP;AC6LT;;AAxFA;EACI;IACI,mBAAA;EA2FN;AACF","sourcesContent":["/*--------------------------- Theme Colours ---------------------------*/\r\n\r\n/* Colours */\r\n$white: #fff;\r\n$black: #000;\r\n$dark-blue: #000033;\r\n$yellow: #ffff00;\r\n$purple: rgba(131, 58, 180, 1);\r\n$dark-blue-50: rgba(0, 0, 51, 0.50);\r\n$border-yellow: rgba(255, 255, 0, 0.25);\r\n$transwhite-bg: rgba(255, 255, 255, 0.1);\r\n$shadow-color: rgba(0, 0, 0, 0.1);\r\n\r\n/* Gradient */\r\n$sunset: linear-gradient(135deg, black, $dark-blue 70%, $purple 100%);\r\n$sunset-var: linear-gradient(225deg, black, $dark-blue, $purple 100%);\r\n$sunset-header: linear-gradient(135deg, black, #00001b, #170A4A);\r\n\r\n/*-------------------------- Theme Colours End -------------------------*/\r\n\r\n\r\n/*-------------------------------- Fonts -------------------------------*/\r\n\r\n/******************** Serif Fonts *****************************/\r\n/* Cormorant Garamond */\r\n@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap');\r\n$Cormorant: 'Cormorant Garamond',\r\nTimes,\r\nserif;\r\n\r\n/* Arizonia */\r\n@import url('https://fonts.googleapis.com/css2?family=Arizonia&display=swap');\r\n$Arizonia: 'Arizonia',\r\nTimes,\r\nserif;\r\n\r\n/********************** Cursive Fonts *************************/\r\n/* Italianno */\r\n@import url('https://fonts.googleapis.com/css2?family=Italianno&display=swap');\r\n$Italianno: 'Italianno',\r\nSnell Roundhand,\r\ncursive;\r\n\r\n/********************* Sans-serif Fonts ************************/\r\n/* Raleway */\r\n@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');\r\n$Raleway: 'Raleway',\r\nArial,\r\nHelvetica,\r\nsans-serif;\r\n\r\n/* Spartan */\r\n@import url('https://fonts.googleapis.com/css2?family=Spartan:wght@100;200;300;400;500;600;700;800;900&display=swap');\r\n$Spartan: 'Spartan',\r\nArial,\r\nHelvetica,\r\nsans-serif;\r\n\r\n/*------------------------------ Fonts End -----------------------------*/\r\n\r\n\r\n/*----------------------------- Breakpoints ----------------------------*/\r\n\r\n$sm: 576px;\r\n$md: 768px;\r\n$lg: 992px;\r\n$xl: 1200px;\r\n\r\n/*--------------------------- Breakpoints End --------------------------*/\r\n\r\n\r\n/*------------------------------- Mixins -------------------------------*/\r\n\r\n@mixin media-breakpoint-down($breakpoint) {\r\n    @if $breakpoint==$sm {\r\n        @media (max-width: $sm) {\r\n            @content;\r\n        }\r\n    }\r\n\r\n    @else if $breakpoint==$md {\r\n        @media (max-width: $md) {\r\n            @content;\r\n        }\r\n    }\r\n\r\n    @else if $breakpoint==$lg {\r\n        @media (max-width: $lg) {\r\n            @content;\r\n        }\r\n    }\r\n\r\n    @else {\r\n        @media (max-width: $xl) {\r\n            @content;\r\n        }\r\n    }\r\n}\r\n\r\n@mixin media-breakpoint-up($breakpoint) {\r\n    @if $breakpoint==$sm {\r\n        @media (min-width: $sm) {\r\n            @content;\r\n        }\r\n    }\r\n\r\n    @else if $breakpoint==$md {\r\n        @media (min-width: $md) {\r\n            @content;\r\n        }\r\n    }\r\n\r\n    @else if $breakpoint==$lg {\r\n        @media (min-width: $lg) {\r\n            @content;\r\n        }\r\n    }\r\n\r\n    @else {\r\n        @media (min-width: $xl) {\r\n            @content;\r\n        }\r\n    }\r\n}\r\n\r\n@mixin flex-row ($justify-content, $align-items) {\r\n    display: flex;\r\n    justify-content: $justify-content;\r\n    align-items: $align-items;\r\n}\r\n\r\n@mixin flex-column($justify-content, $align-items) {\r\n    display: flex;\r\n    flex-direction: column;\r\n    justify-content: $justify-content;\r\n    align-items: $align-items;\r\n}\r\n\r\n@mixin default-text {\r\n    line-height: 1.25rem;\r\n    word-spacing: 0.25rem;\r\n    font-family: $Spartan;\r\n    font-size: 0.75rem;\r\n    font-weight: 300;\r\n    color: $white;\r\n}\r\n\r\n/*----------------------------- Mixins End -----------------------------*/\r\n\r\n\r\n/*------------------------------- Common -------------------------------*/\r\n\r\nh2 {\r\n    margin-bottom: 1.5rem;\r\n    line-height: 3.25rem;\r\n    font-size: 4rem;\r\n    font-family: $Raleway;\r\n    font-weight: 500;\r\n}\r\n\r\na {\r\n    color: $white;\r\n    text-decoration: none;\r\n}\r\n\r\nbutton {\r\n    position: relative;\r\n    border: 0;\r\n    padding: 0;\r\n    background: white;\r\n    cursor: pointer;\r\n\r\n    span {\r\n        @include default-text;\r\n        position: relative;\r\n        z-index: 2;\r\n        padding: 0.75rem;\r\n        display: inline-block;\r\n        font-weight: 400;\r\n        color: $black;\r\n        text-align: center;\r\n        transition: all .35s;\r\n\r\n        &:hover {\r\n            color: $white;\r\n        }\r\n    }\r\n\r\n    &::after {\r\n        position: absolute;\r\n        top: 0;\r\n        left: 0;\r\n        width: 0;\r\n        height: 100%;\r\n        background: $dark-blue-50;\r\n        transition: all .3s;\r\n        content: \"\";\r\n    }\r\n\r\n    &:hover {\r\n        &::after {\r\n            width: 100%;\r\n        }\r\n    }\r\n}\r\n\r\n.underline {\r\n    border-bottom: 2px solid yellow;\r\n    padding-bottom: 0.125rem;\r\n    text-decoration: none;\r\n}\r\n\r\n/*---------------------------- Common Ends -----------------------------*/","\n                                @import \"variables.scss\";\n                                .pivot {\r\n    margin: 0 auto 2rem;\r\n    width: calc(100% - 15vw);\r\n    background-color: $sunset;\r\n\r\n    @include media-breakpoint-down($sm) {\r\n        margin-bottom: 1.5rem;\r\n    }\r\n\r\n    &__text {\r\n        margin-bottom: 1.5rem;\r\n        font-size: 2rem;\r\n        line-height: 1;\r\n    }\r\n\r\n    &__card {\r\n        @include default-text;\r\n        border-radius: 0.5rem;\r\n        box-shadow: 0 2px 12px $shadow-color;\r\n        padding: 1.5rem 1.5rem 0.75rem 2.25rem;\r\n        flex: 1;\r\n        background-color: $white;\r\n        color: $black;\r\n        transition: all 0.3s ease;\r\n\r\n        &:hover {\r\n            box-shadow: 0 4px 20px $shadow-color;\r\n            background-color: $yellow;\r\n            transform: translateY(-0.25rem);\r\n        }\r\n\r\n        &-wrapper {\r\n            @include flex-row(space-between, stretch);\r\n            margin: 0 auto;\r\n            flex-wrap: wrap;\r\n            gap: 1.5rem;\r\n\r\n            @include media-breakpoint-down($sm) {\r\n                flex-direction: column;\r\n            }\r\n        }\r\n\r\n        &__text {\r\n            @include default-text;\r\n            margin-bottom: 1rem;\r\n            line-height: 1;\r\n            font-size: 1rem;\r\n            font-weight: 700;\r\n            color: $black;\r\n            text-shadow: 2px 2px $yellow;\r\n        }\r\n\r\n        ul {\r\n            li {\r\n                margin-bottom: 0.75rem;\r\n\r\n                &:hover {\r\n                    transition: color 0.3s ease;\r\n                }\r\n            }\r\n        }\r\n    }\r\n\r\n    &__caret {\r\n        @include default-text;\r\n        @include flex-column(center, center);\r\n        position: relative;\r\n        margin: 0.75rem auto 0;\r\n        width: fit-content;\r\n        cursor: pointer;\r\n\r\n        @include media-breakpoint-down($sm) {\r\n            display: none;\r\n        }\r\n\r\n        &.inverse::after {\r\n            transform: rotate(315deg);\r\n            margin-top: 0.25rem;\r\n        }\r\n\r\n        &::after {\r\n            position: relative;\r\n            left: -5px;\r\n            margin-right: 0.5rem;\r\n            margin-left: 1.0rem;\r\n            border-right: 0.2rem solid $white;\r\n            border-top: 0.2rem solid $white;\r\n            display: inline-block;\r\n            width: 0.5rem;\r\n            height: 0.5rem;\r\n            transform: rotate(135deg);\r\n            content: \"\";\r\n        }\r\n\r\n        &:hover {\r\n            color: $yellow;\r\n\r\n            &::after {\r\n                border-color: $yellow;\r\n            }\r\n        }\r\n    }\r\n}\r\n\r\n// Responsive design\r\n@media (max-width: 768px) {\r\n    .pivot {\r\n        align-items: center;\r\n    }\r\n}\n                              "],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -1170,96 +1198,88 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
+___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap);"]);
+___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Arizonia&display=swap);"]);
+___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Italianno&display=swap);"]);
+___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap);"]);
+___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Spartan:wght@100;200;300;400;500;600;700;800;900&display=swap);"]);
 // Module
 ___CSS_LOADER_EXPORT___.push([module.id, `/*--------------------------- Theme Colours ---------------------------*/
 /* Colours */
 /* Gradient */
 /*-------------------------- Theme Colours End -------------------------*/
 /*-------------------------------- Fonts -------------------------------*/
-/*  Serif Font */
-/*  Sans-Serif Font */
+/******************** Serif Fonts *****************************/
+/* Cormorant Garamond */
+/* Arizonia */
+/********************** Cursive Fonts *************************/
+/* Italianno */
+/********************* Sans-serif Fonts ************************/
+/* Raleway */
+/* Spartan */
 /*------------------------------ Fonts End -----------------------------*/
 /*----------------------------- Breakpoints ----------------------------*/
 /*--------------------------- Breakpoints End --------------------------*/
-/*------------------------------- Images -------------------------------*/
-/*----------------------------- Images End -----------------------------*/
 /*------------------------------- Mixins -------------------------------*/
 /*----------------------------- Mixins End -----------------------------*/
 /*------------------------------- Common -------------------------------*/
 h2 {
   margin-bottom: 1.5rem;
+  line-height: 3.25rem;
   font-size: 4rem;
   font-family: "Raleway", Arial, Helvetica, sans-serif;
   font-weight: 500;
-  line-height: 3.25rem;
 }
 
 a {
-  color: #000;
+  color: #fff;
   text-decoration: none;
 }
 
 button {
+  position: relative;
+  border: 0;
+  padding: 0;
+  background: white;
+  cursor: pointer;
+}
+button span {
+  line-height: 1.25rem;
+  word-spacing: 0.25rem;
   font-family: "Spartan", Arial, Helvetica, sans-serif;
   font-size: 0.75rem;
-  line-height: 1.25rem;
-  color: #000;
-  font-weight: 600;
-  word-spacing: 0.25rem;
-  box-shadow: inset 0 0 0 2px #000;
-  color: #000;
-  transition: color 0.3s 0.1s;
+  font-weight: 300;
+  color: #fff;
   position: relative;
-  border: none;
-  padding: 1rem;
-  width: 100%;
-  cursor: pointer;
-  text-transform: uppercase;
+  z-index: 2;
+  padding: 0.75rem;
+  display: inline-block;
+  font-weight: 400;
+  color: #000;
+  text-align: center;
+  transition: all 0.35s;
 }
-button::before, button::after {
-  border: 0 solid transparent;
-  box-sizing: border-box;
-  content: "";
-  pointer-events: none;
-  position: absolute;
-  width: 0;
-  height: 0;
-  bottom: 0;
-  right: 0;
-}
-button::before {
-  border-bottom-width: 2px;
-  border-left-width: 2px;
+button span:hover {
+  color: #fff;
 }
 button::after {
-  border-top-width: 2px;
-  border-right-width: 2px;
-}
-button:hover {
-  color: rgb(193, 110, 100);
-}
-button:hover::before, button:hover::after {
-  border-color: rgb(193, 110, 100);
-  transition: border-color 0s, width 0.3s, height 0.3s;
-  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
   height: 100%;
-}
-button:hover::before {
-  transition-delay: 0s, 0s, 0.3s;
+  background: rgba(0, 0, 51, 0.5);
+  transition: all 0.3s;
+  content: "";
 }
 button:hover::after {
-  transition-delay: 0s, 0.3s, 0s;
-}
-@media (min-width: 576px) {
-  button {
-    width: 10rem;
-  }
+  width: 100%;
 }
 
 .underline {
+  border-bottom: 2px solid yellow;
   padding-bottom: 0.125rem;
   text-decoration: none;
-  border-bottom: 2px solid yellow;
 }
 
 /*---------------------------- Common Ends -----------------------------*/
@@ -1294,6 +1314,10 @@ body {
   line-height: 1;
 }
 
+ol, ul {
+  list-style: none;
+}
+
 blockquote, q {
   quotes: none;
 }
@@ -1307,7 +1331,7 @@ q:before, q:after {
 table {
   border-collapse: collapse;
   border-spacing: 0;
-}`, "",{"version":3,"sources":["webpack://./src/styles/variables.scss","webpack://./src/styles/reset.scss"],"names":[],"mappings":"AAAA,wEAAA;AAEA,YAAA;AAYA,aAAA;AAKA,yEAAA;AAGA,yEAAA;AAEA,gBAAA;AAGA,qBAAA;AAIA,yEAAA;AAGA,yEAAA;AAOA,yEAAA;AAGA,yEAAA;AAKA,yEAAA;AAGA,yEAAA;AAyIA,yEAAA;AAGA,yEAAA;AAEA;EACI,qBAAA;EACA,eAAA;EACA,oDAxKM;EAyKN,gBAAA;EACA,oBAAA;AClLJ;;ADqLA;EACI,WAtMI;EAuMJ,qBAAA;AClLJ;;ADqLA;EA1BI,oDAzJM;EA0JN,kBAAA;EACA,oBAAA;EACA,WAnLI;EAoLJ,gBAAA;EACA,qBAAA;EAlEA,gCAAA;EACA,WApHI;EAqHJ,2BAAA;EACA,kBAAA;EAuFA,YAAA;EACA,aAAA;EACA,WAAA;EACA,eAAA;EACA,yBAAA;AC1KJ;ADiFI;EAEI,2BAAA;EACA,sBAAA;EACA,WAAA;EACA,oBAAA;EACA,kBAAA;EACA,QAAA;EACA,SAAA;EAEA,SAAA;EACA,QAAA;ACjFR;ADoFI;EAGI,wBAmE6C;EAlE7C,sBAkE6C;ACtJrD;ADuFI;EAGI,qBA4D6C;EA3D7C,uBA2D6C;AClJrD;AD0FI;EACI,yBA/IK;ACuDb;AD0FQ;EAEI,gCAnJC;EAoJD,oDAAA;EACA,WAAA;EACA,YAAA;ACzFZ;AD4FQ;EACI,8BAAA;AC1FZ;AD6FQ;EACI,8BAAA;AC3FZ;ADIQ;EA6HR;IAUQ,YAAA;ECvIN;AACF;;AD0IA;EACI,wBAAA;EACA,qBAAA;EACA,+BAAA;ACvIJ;;AD2IA,yEAAA;AClOgC;;;;;;;;;;;;;EAa/B,SAAA;EACA,UAAA;EACA,SAAA;EACA,eAAA;EACA,aAAA;EACA,wBAAA;AA2FD;;AAzFA,gDAAA;AACA;;EAEC,cAAA;AA4FD;;AA1FA;EACC,cAAA;AA6FD;;AAxFA;EACC,YAAA;AA2FD;;AAzFA;;EAEC,WAAA;EACA,aAAA;AA4FD;;AA1FA;EACC,yBAAA;EACA,iBAAA;AA6FD","sourcesContent":["/*--------------------------- Theme Colours ---------------------------*/\r\n\r\n/* Colours */\r\n$trans: transparent;\r\n$white: #fff;\r\n$black: #000;\r\n$dark-blue: #000033;\r\n$dark-blue-50: rgba(0, 0, 51, 0.50);\r\n$blue: #556880;\r\n$blue-35: rgba(85, 104, 128, .5);\r\n$pink: #f7a8b2;\r\n$deep-blush: rgb(193, 110, 100);\r\n$deep-blush-35: rgba(193, 110, 100, 0.35);\r\n\r\n/* Gradient */\r\n$la-db-bl-le: linear-gradient(to left, #957dad, #a478a4, #b17399, #bb6f8a, #c06d7a, #c7747c, #cd7c7f, #d38382, #df9398, #eaa5ae, #f4b6c4, #fec8d8);\r\n$sunset: linear-gradient(135deg, black, $dark-blue 70%, rgba(131,58,180,1) 100%);\r\n$sunset-header: linear-gradient(225deg, black, $dark-blue, rgba(131,58,180,1) 100%);\r\n\r\n/*-------------------------- Theme Colours End -------------------------*/\r\n\r\n\r\n/*-------------------------------- Fonts -------------------------------*/\r\n\r\n/*  Serif Font */\r\n$Cormorant: 'Cormorant Garamond', Times, serif;\r\n\r\n/*  Sans-Serif Font */\r\n$Spartan: 'Spartan', Arial, Helvetica, sans-serif;\r\n$Raleway: 'Raleway', Arial, Helvetica, sans-serif;\r\n\r\n/*------------------------------ Fonts End -----------------------------*/\r\n\r\n\r\n/*----------------------------- Breakpoints ----------------------------*/\r\n\r\n$sm: 576px;\r\n$md: 768px;\r\n$lg: 992px;\r\n$xl: 1200px;\r\n\r\n/*--------------------------- Breakpoints End --------------------------*/\r\n\r\n\r\n/*------------------------------- Images -------------------------------*/\r\n\r\n$background-image: url('../assets/1.jpg');\r\n$background-image-crop: url('../assets/1-crop.jpg');\r\n\r\n/*----------------------------- Images End -----------------------------*/\r\n\r\n\r\n/*------------------------------- Mixins -------------------------------*/\r\n\r\n@mixin media-breakpoint-down($breakpoint) {\r\n    @if $breakpoint==$sm {\r\n        @media (max-width: $sm) {\r\n            @content;\r\n        }\r\n    }\r\n\r\n    @else if $breakpoint==$md {\r\n        @media (max-width: $md) {\r\n            @content;\r\n        }\r\n    }\r\n\r\n    @else if $breakpoint==$lg {\r\n        @media (max-width: $lg) {\r\n            @content;\r\n        }\r\n    }\r\n\r\n    @else {\r\n        @media (max-width: $xl) {\r\n            @content;\r\n        }\r\n    }\r\n}\r\n\r\n@mixin media-breakpoint-up($breakpoint) {\r\n    @if $breakpoint==$sm {\r\n        @media (min-width: $sm) {\r\n            @content;\r\n        }\r\n    }\r\n\r\n    @else if $breakpoint==$md {\r\n        @media (min-width: $md) {\r\n            @content;\r\n        }\r\n    }\r\n\r\n    @else if $breakpoint==$lg {\r\n        @media (min-width: $lg) {\r\n            @content;\r\n        }\r\n    }\r\n\r\n    @else {\r\n        @media (min-width: $xl) {\r\n            @content;\r\n        }\r\n    }\r\n}\r\n\r\n@mixin flex-row ($justify-content, $align-items) {\r\n    display: flex;\r\n    justify-content: $justify-content;\r\n    align-items: $align-items;\r\n}\r\n\r\n@mixin flex-column($justify-content, $align-items) {\r\n    display: flex;\r\n    flex-direction: column;\r\n    justify-content: $justify-content;\r\n    align-items: $align-items;\r\n}\r\n\r\n@mixin btn-border-drawing($color: #ccc, $hover: black, $width: 2px, $vertical: top, $horizontal: left, $duration: 0.3s) {\r\n    box-shadow: inset 0 0 0 $width $color;\r\n    color: $color;\r\n    transition: color $duration calc($duration/3);\r\n    position: relative;\r\n\r\n    &::before,\r\n    &::after {\r\n        border: 0 solid transparent;\r\n        box-sizing: border-box;\r\n        content: '';\r\n        pointer-events: none;\r\n        position: absolute;\r\n        width: 0;\r\n        height: 0;\r\n\r\n        #{$vertical}: 0;\r\n        #{$horizontal}: 0;\r\n    }\r\n\r\n    &::before {\r\n        $h-side: if($horizontal=='left', 'right', 'left');\r\n\r\n        border-#{$vertical}-width: $width;\r\n        border-#{$h-side}-width: $width;\r\n    }\r\n\r\n    &::after {\r\n        $v-side: if($vertical=='top', 'bottom', 'top');\r\n\r\n        border-#{$v-side}-width: $width;\r\n        border-#{$horizontal}-width: $width;\r\n    }\r\n\r\n    &:hover {\r\n        color: $hover;\r\n\r\n        &::before,\r\n        &::after {\r\n            border-color: $hover;\r\n            transition: border-color 0s, width $duration, height $duration;\r\n            width: 100%;\r\n            height: 100%;\r\n        }\r\n\r\n        &::before {\r\n            transition-delay: 0s, 0s, $duration;\r\n        }\r\n\r\n        &::after {\r\n            transition-delay: 0s, $duration, 0s;\r\n        }\r\n    }\r\n}\r\n\r\n@mixin border {\r\n    border: 0;\r\n    // border: 0.5rem solid transparent;\r\n    // border-image: $la-db-bl-le 30;\r\n}\r\n\r\n@mixin default-text {\r\n    font-family: $Spartan;\r\n    font-size: 0.75rem;\r\n    line-height: 1.25rem;\r\n    color: $black;\r\n    font-weight: 600;\r\n    word-spacing: 0.25rem;\r\n}\r\n\r\n/*----------------------------- Mixins End -----------------------------*/\r\n\r\n\r\n/*------------------------------- Common -------------------------------*/\r\n\r\nh2 {\r\n    margin-bottom: 1.5rem;\r\n    font-size: 4rem;\r\n    font-family: $Raleway;\r\n    font-weight: 500;\r\n    line-height: 3.25rem;\r\n}\r\n\r\na {\r\n    color: $black;\r\n    text-decoration: none;\r\n}\r\n\r\nbutton {\r\n    @include default-text;\r\n    @include btn-border-drawing($black, $deep-blush, 2px, bottom, right);\r\n    border: none;\r\n    padding: 1rem;\r\n    width: 100%;\r\n    cursor: pointer;\r\n    text-transform: uppercase;\r\n\r\n    @include media-breakpoint-up($sm) {\r\n        width: 10rem;\r\n    }\r\n}\r\n\r\n.underline {\r\n    padding-bottom:0.125rem;\r\n    text-decoration:none;\r\n    border-bottom:2px solid yellow;}\r\n\r\n\r\n\r\n/*---------------------------- Common Ends -----------------------------*/","\n                                @import \"variables.scss\";\n                                html, body, div, span, applet, object, iframe,\r\nh1, h2, h3, h4, h5, h6, p, blockquote, pre,\r\na, abbr, acronym, address, big, cite, code,\r\ndel, dfn, em, img, ins, kbd, q, s, samp,\r\nsmall, strike, strong, sub, sup, tt, var,\r\nb, u, i, center,\r\ndl, dt, dd, ol, ul, li,\r\nfieldset, form, label, legend,\r\ntable, caption, tbody, tfoot, thead, tr, th, td,\r\narticle, aside, canvas, details, embed, \r\nfigure, figcaption, footer, header, hgroup, \r\nmenu, nav, output, ruby, section, summary,\r\ntime, mark, audio, video {\r\n\tmargin: 0;\r\n\tpadding: 0;\r\n\tborder: 0;\r\n\tfont-size: 100%;\r\n\tfont: inherit;\r\n\tvertical-align: baseline;\r\n}\r\n/* HTML5 display-role reset for older browsers */\r\narticle, aside, details, figcaption, figure, \r\nfooter, header, hgroup, menu, nav, section {\r\n\tdisplay: block;\r\n}\r\nbody {\r\n\tline-height: 1;\r\n}\r\n// ol, ul {\r\n// \tlist-style: none;\r\n// }\r\nblockquote, q {\r\n\tquotes: none;\r\n}\r\nblockquote:before, blockquote:after,\r\nq:before, q:after {\r\n\tcontent: '';\r\n\tcontent: none;\r\n}\r\ntable {\r\n\tborder-collapse: collapse;\r\n\tborder-spacing: 0;\r\n}\n                              "],"sourceRoot":""}]);
+}`, "",{"version":3,"sources":["webpack://./src/styles/variables.scss","webpack://./src/styles/reset.scss"],"names":[],"mappings":"AAAA,wEAAA;AAEA,YAAA;AAWA,aAAA;AAKA,yEAAA;AAGA,yEAAA;AAEA,+DAAA;AACA,uBAAA;AAMA,aAAA;AAMA,+DAAA;AACA,cAAA;AAMA,gEAAA;AACA,YAAA;AAOA,YAAA;AAOA,yEAAA;AAGA,yEAAA;AAOA,yEAAA;AAGA,yEAAA;AA4EA,yEAAA;AAGA,yEAAA;AAEA;EACI,qBAAA;EACA,oBAAA;EACA,eAAA;EACA,oDA9GM;EA+GN,gBAAA;AC/HJ;;ADkIA;EACI,WA9JI;EA+JJ,qBAAA;AC/HJ;;ADkIA;EACI,kBAAA;EACA,SAAA;EACA,UAAA;EACA,iBAAA;EACA,eAAA;AC/HJ;ADiII;EAjCA,oBAAA;EACA,qBAAA;EACA,oDAxFM;EAyFN,kBAAA;EACA,gBAAA;EACA,WA7II;EA2KA,kBAAA;EACA,UAAA;EACA,gBAAA;EACA,qBAAA;EACA,gBAAA;EACA,WA/KA;EAgLA,kBAAA;EACA,qBAAA;AC1HR;AD4HQ;EACI,WArLJ;AC2DR;AD8HI;EACI,kBAAA;EACA,MAAA;EACA,OAAA;EACA,QAAA;EACA,YAAA;EACA,+BA1LO;EA2LP,oBAAA;EACA,WAAA;AC5HR;ADgIQ;EACI,WAAA;AC9HZ;;ADmIA;EACI,+BAAA;EACA,wBAAA;EACA,qBAAA;AChIJ;;ADmIA,yEAAA;AClNgC;;;;;;;;;;;;;EAa/B,SAAA;EACA,UAAA;EACA,SAAA;EACA,eAAA;EACA,aAAA;EACA,wBAAA;AAmFD;;AAjFA,gDAAA;AACA;;EAEC,cAAA;AAoFD;;AAlFA;EACC,cAAA;AAqFD;;AAnFA;EACC,gBAAA;AAsFD;;AApFA;EACC,YAAA;AAuFD;;AArFA;;EAEC,WAAA;EACA,aAAA;AAwFD;;AAtFA;EACC,yBAAA;EACA,iBAAA;AAyFD","sourcesContent":["/*--------------------------- Theme Colours ---------------------------*/\r\n\r\n/* Colours */\r\n$white: #fff;\r\n$black: #000;\r\n$dark-blue: #000033;\r\n$yellow: #ffff00;\r\n$purple: rgba(131, 58, 180, 1);\r\n$dark-blue-50: rgba(0, 0, 51, 0.50);\r\n$border-yellow: rgba(255, 255, 0, 0.25);\r\n$transwhite-bg: rgba(255, 255, 255, 0.1);\r\n$shadow-color: rgba(0, 0, 0, 0.1);\r\n\r\n/* Gradient */\r\n$sunset: linear-gradient(135deg, black, $dark-blue 70%, $purple 100%);\r\n$sunset-var: linear-gradient(225deg, black, $dark-blue, $purple 100%);\r\n$sunset-header: linear-gradient(135deg, black, #00001b, #170A4A);\r\n\r\n/*-------------------------- Theme Colours End -------------------------*/\r\n\r\n\r\n/*-------------------------------- Fonts -------------------------------*/\r\n\r\n/******************** Serif Fonts *****************************/\r\n/* Cormorant Garamond */\r\n@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap');\r\n$Cormorant: 'Cormorant Garamond',\r\nTimes,\r\nserif;\r\n\r\n/* Arizonia */\r\n@import url('https://fonts.googleapis.com/css2?family=Arizonia&display=swap');\r\n$Arizonia: 'Arizonia',\r\nTimes,\r\nserif;\r\n\r\n/********************** Cursive Fonts *************************/\r\n/* Italianno */\r\n@import url('https://fonts.googleapis.com/css2?family=Italianno&display=swap');\r\n$Italianno: 'Italianno',\r\nSnell Roundhand,\r\ncursive;\r\n\r\n/********************* Sans-serif Fonts ************************/\r\n/* Raleway */\r\n@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');\r\n$Raleway: 'Raleway',\r\nArial,\r\nHelvetica,\r\nsans-serif;\r\n\r\n/* Spartan */\r\n@import url('https://fonts.googleapis.com/css2?family=Spartan:wght@100;200;300;400;500;600;700;800;900&display=swap');\r\n$Spartan: 'Spartan',\r\nArial,\r\nHelvetica,\r\nsans-serif;\r\n\r\n/*------------------------------ Fonts End -----------------------------*/\r\n\r\n\r\n/*----------------------------- Breakpoints ----------------------------*/\r\n\r\n$sm: 576px;\r\n$md: 768px;\r\n$lg: 992px;\r\n$xl: 1200px;\r\n\r\n/*--------------------------- Breakpoints End --------------------------*/\r\n\r\n\r\n/*------------------------------- Mixins -------------------------------*/\r\n\r\n@mixin media-breakpoint-down($breakpoint) {\r\n    @if $breakpoint==$sm {\r\n        @media (max-width: $sm) {\r\n            @content;\r\n        }\r\n    }\r\n\r\n    @else if $breakpoint==$md {\r\n        @media (max-width: $md) {\r\n            @content;\r\n        }\r\n    }\r\n\r\n    @else if $breakpoint==$lg {\r\n        @media (max-width: $lg) {\r\n            @content;\r\n        }\r\n    }\r\n\r\n    @else {\r\n        @media (max-width: $xl) {\r\n            @content;\r\n        }\r\n    }\r\n}\r\n\r\n@mixin media-breakpoint-up($breakpoint) {\r\n    @if $breakpoint==$sm {\r\n        @media (min-width: $sm) {\r\n            @content;\r\n        }\r\n    }\r\n\r\n    @else if $breakpoint==$md {\r\n        @media (min-width: $md) {\r\n            @content;\r\n        }\r\n    }\r\n\r\n    @else if $breakpoint==$lg {\r\n        @media (min-width: $lg) {\r\n            @content;\r\n        }\r\n    }\r\n\r\n    @else {\r\n        @media (min-width: $xl) {\r\n            @content;\r\n        }\r\n    }\r\n}\r\n\r\n@mixin flex-row ($justify-content, $align-items) {\r\n    display: flex;\r\n    justify-content: $justify-content;\r\n    align-items: $align-items;\r\n}\r\n\r\n@mixin flex-column($justify-content, $align-items) {\r\n    display: flex;\r\n    flex-direction: column;\r\n    justify-content: $justify-content;\r\n    align-items: $align-items;\r\n}\r\n\r\n@mixin default-text {\r\n    line-height: 1.25rem;\r\n    word-spacing: 0.25rem;\r\n    font-family: $Spartan;\r\n    font-size: 0.75rem;\r\n    font-weight: 300;\r\n    color: $white;\r\n}\r\n\r\n/*----------------------------- Mixins End -----------------------------*/\r\n\r\n\r\n/*------------------------------- Common -------------------------------*/\r\n\r\nh2 {\r\n    margin-bottom: 1.5rem;\r\n    line-height: 3.25rem;\r\n    font-size: 4rem;\r\n    font-family: $Raleway;\r\n    font-weight: 500;\r\n}\r\n\r\na {\r\n    color: $white;\r\n    text-decoration: none;\r\n}\r\n\r\nbutton {\r\n    position: relative;\r\n    border: 0;\r\n    padding: 0;\r\n    background: white;\r\n    cursor: pointer;\r\n\r\n    span {\r\n        @include default-text;\r\n        position: relative;\r\n        z-index: 2;\r\n        padding: 0.75rem;\r\n        display: inline-block;\r\n        font-weight: 400;\r\n        color: $black;\r\n        text-align: center;\r\n        transition: all .35s;\r\n\r\n        &:hover {\r\n            color: $white;\r\n        }\r\n    }\r\n\r\n    &::after {\r\n        position: absolute;\r\n        top: 0;\r\n        left: 0;\r\n        width: 0;\r\n        height: 100%;\r\n        background: $dark-blue-50;\r\n        transition: all .3s;\r\n        content: \"\";\r\n    }\r\n\r\n    &:hover {\r\n        &::after {\r\n            width: 100%;\r\n        }\r\n    }\r\n}\r\n\r\n.underline {\r\n    border-bottom: 2px solid yellow;\r\n    padding-bottom: 0.125rem;\r\n    text-decoration: none;\r\n}\r\n\r\n/*---------------------------- Common Ends -----------------------------*/","\n                                @import \"variables.scss\";\n                                html, body, div, span, applet, object, iframe,\r\nh1, h2, h3, h4, h5, h6, p, blockquote, pre,\r\na, abbr, acronym, address, big, cite, code,\r\ndel, dfn, em, img, ins, kbd, q, s, samp,\r\nsmall, strike, strong, sub, sup, tt, var,\r\nb, u, i, center,\r\ndl, dt, dd, ol, ul, li,\r\nfieldset, form, label, legend,\r\ntable, caption, tbody, tfoot, thead, tr, th, td,\r\narticle, aside, canvas, details, embed, \r\nfigure, figcaption, footer, header, hgroup, \r\nmenu, nav, output, ruby, section, summary,\r\ntime, mark, audio, video {\r\n\tmargin: 0;\r\n\tpadding: 0;\r\n\tborder: 0;\r\n\tfont-size: 100%;\r\n\tfont: inherit;\r\n\tvertical-align: baseline;\r\n}\r\n/* HTML5 display-role reset for older browsers */\r\narticle, aside, details, figcaption, figure, \r\nfooter, header, hgroup, menu, nav, section {\r\n\tdisplay: block;\r\n}\r\nbody {\r\n\tline-height: 1;\r\n}\r\nol, ul {\r\n\tlist-style: none;\r\n}\r\nblockquote, q {\r\n\tquotes: none;\r\n}\r\nblockquote:before, blockquote:after,\r\nq:before, q:after {\r\n\tcontent: '';\r\n\tcontent: none;\r\n}\r\ntable {\r\n\tborder-collapse: collapse;\r\n\tborder-spacing: 0;\r\n}\n                              "],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -1333,123 +1357,138 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
+___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap);"]);
+___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Arizonia&display=swap);"]);
+___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Italianno&display=swap);"]);
+___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap);"]);
+___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Spartan:wght@100;200;300;400;500;600;700;800;900&display=swap);"]);
 // Module
 ___CSS_LOADER_EXPORT___.push([module.id, `/*--------------------------- Theme Colours ---------------------------*/
 /* Colours */
 /* Gradient */
 /*-------------------------- Theme Colours End -------------------------*/
 /*-------------------------------- Fonts -------------------------------*/
-/*  Serif Font */
-/*  Sans-Serif Font */
+/******************** Serif Fonts *****************************/
+/* Cormorant Garamond */
+/* Arizonia */
+/********************** Cursive Fonts *************************/
+/* Italianno */
+/********************* Sans-serif Fonts ************************/
+/* Raleway */
+/* Spartan */
 /*------------------------------ Fonts End -----------------------------*/
 /*----------------------------- Breakpoints ----------------------------*/
 /*--------------------------- Breakpoints End --------------------------*/
-/*------------------------------- Images -------------------------------*/
-/*----------------------------- Images End -----------------------------*/
 /*------------------------------- Mixins -------------------------------*/
 /*----------------------------- Mixins End -----------------------------*/
 /*------------------------------- Common -------------------------------*/
 h2 {
   margin-bottom: 1.5rem;
+  line-height: 3.25rem;
   font-size: 4rem;
   font-family: "Raleway", Arial, Helvetica, sans-serif;
   font-weight: 500;
-  line-height: 3.25rem;
 }
 
 a {
-  color: #000;
+  color: #fff;
   text-decoration: none;
 }
 
 button {
+  position: relative;
+  border: 0;
+  padding: 0;
+  background: white;
+  cursor: pointer;
+}
+button span {
+  line-height: 1.25rem;
+  word-spacing: 0.25rem;
   font-family: "Spartan", Arial, Helvetica, sans-serif;
   font-size: 0.75rem;
-  line-height: 1.25rem;
-  color: #000;
-  font-weight: 600;
-  word-spacing: 0.25rem;
-  box-shadow: inset 0 0 0 2px #000;
-  color: #000;
-  transition: color 0.3s 0.1s;
+  font-weight: 300;
+  color: #fff;
   position: relative;
-  border: none;
-  padding: 1rem;
-  width: 100%;
-  cursor: pointer;
-  text-transform: uppercase;
+  z-index: 2;
+  padding: 0.75rem;
+  display: inline-block;
+  font-weight: 400;
+  color: #000;
+  text-align: center;
+  transition: all 0.35s;
 }
-button::before, button::after {
-  border: 0 solid transparent;
-  box-sizing: border-box;
-  content: "";
-  pointer-events: none;
-  position: absolute;
-  width: 0;
-  height: 0;
-  bottom: 0;
-  right: 0;
-}
-button::before {
-  border-bottom-width: 2px;
-  border-left-width: 2px;
+button span:hover {
+  color: #fff;
 }
 button::after {
-  border-top-width: 2px;
-  border-right-width: 2px;
-}
-button:hover {
-  color: rgb(193, 110, 100);
-}
-button:hover::before, button:hover::after {
-  border-color: rgb(193, 110, 100);
-  transition: border-color 0s, width 0.3s, height 0.3s;
-  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
   height: 100%;
-}
-button:hover::before {
-  transition-delay: 0s, 0s, 0.3s;
+  background: rgba(0, 0, 51, 0.5);
+  transition: all 0.3s;
+  content: "";
 }
 button:hover::after {
-  transition-delay: 0s, 0.3s, 0s;
-}
-@media (min-width: 576px) {
-  button {
-    width: 10rem;
-  }
+  width: 100%;
 }
 
 .underline {
+  border-bottom: 2px solid yellow;
   padding-bottom: 0.125rem;
   text-decoration: none;
-  border-bottom: 2px solid yellow;
 }
 
 /*---------------------------- Common Ends -----------------------------*/
 .skills {
-  display: none;
-  width: calc(100% - 15vw);
+  display: flex;
+  flex-direction: column;
+  justify-content: unset;
+  align-items: center;
   margin: 0 auto 3rem;
-  background: rgba(255, 255, 255, 0.25);
   padding: 1.5rem;
+  width: calc(100% - 15vw);
+  max-height: 40rem;
+  background: rgba(255, 255, 255, 0.1);
+  opacity: 1;
+  gap: 1.5rem;
+  transition: max-height 0.3s ease-in-out;
+}
+.skills.d-none {
+  margin: 0;
+  padding: 0;
+  max-height: 0;
+  opacity: 0;
+}
+.skills.d-none table {
+  display: none;
+}
+@media (max-width: 576px) {
+  .skills {
+    display: none;
+  }
+}
+.skills__download .fa {
+  margin-right: 0.25rem;
 }
 .skills__list {
-  display: grid;
-  grid-template-columns: auto auto auto auto;
-  row-gap: 0.75rem;
-  column-gap: 3rem;
-  list-style: none;
-}
-.skills__list li {
+  line-height: 1.25rem;
+  word-spacing: 0.25rem;
   font-family: "Spartan", Arial, Helvetica, sans-serif;
   font-size: 0.75rem;
-  line-height: 1.25rem;
-  color: #000;
-  font-weight: 600;
-  word-spacing: 0.25rem;
   font-weight: 300;
   color: #fff;
-}`, "",{"version":3,"sources":["webpack://./src/styles/variables.scss","webpack://./src/styles/skills.scss"],"names":[],"mappings":"AAAA,wEAAA;AAEA,YAAA;AAYA,aAAA;AAKA,yEAAA;AAGA,yEAAA;AAEA,gBAAA;AAGA,qBAAA;AAIA,yEAAA;AAGA,yEAAA;AAOA,yEAAA;AAGA,yEAAA;AAKA,yEAAA;AAGA,yEAAA;AAyIA,yEAAA;AAGA,yEAAA;AAEA;EACI,qBAAA;EACA,eAAA;EACA,oDAxKM;EAyKN,gBAAA;EACA,oBAAA;AClLJ;;ADqLA;EACI,WAtMI;EAuMJ,qBAAA;AClLJ;;ADqLA;EA1BI,oDAzJM;EA0JN,kBAAA;EACA,oBAAA;EACA,WAnLI;EAoLJ,gBAAA;EACA,qBAAA;EAlEA,gCAAA;EACA,WApHI;EAqHJ,2BAAA;EACA,kBAAA;EAuFA,YAAA;EACA,aAAA;EACA,WAAA;EACA,eAAA;EACA,yBAAA;AC1KJ;ADiFI;EAEI,2BAAA;EACA,sBAAA;EACA,WAAA;EACA,oBAAA;EACA,kBAAA;EACA,QAAA;EACA,SAAA;EAEA,SAAA;EACA,QAAA;ACjFR;ADoFI;EAGI,wBAmE6C;EAlE7C,sBAkE6C;ACtJrD;ADuFI;EAGI,qBA4D6C;EA3D7C,uBA2D6C;AClJrD;AD0FI;EACI,yBA/IK;ACuDb;AD0FQ;EAEI,gCAnJC;EAoJD,oDAAA;EACA,WAAA;EACA,YAAA;ACzFZ;AD4FQ;EACI,8BAAA;AC1FZ;AD6FQ;EACI,8BAAA;AC3FZ;ADIQ;EA6HR;IAUQ,YAAA;ECvIN;AACF;;AD0IA;EACI,wBAAA;EACA,qBAAA;EACA,+BAAA;ACvIJ;;AD2IA,yEAAA;AClOgC;EAC5B,aAAA;EACA,wBAAA;EACA,mBAAA;EACA,qCAAA;EACA,eAAA;AA2FJ;AAxFI;EACI,aAAA;EACA,0CAAA;EACA,gBAAA;EACA,gBAAA;EACA,gBAAA;AA0FR;AAxFQ;EDoKJ,oDAzJM;EA0JN,kBAAA;EACA,oBAAA;EACA,WAnLI;EAoLJ,gBAAA;EACA,qBAAA;ECvKQ,gBAAA;EACA,WDhBJ;AC+GR","sourcesContent":["/*--------------------------- Theme Colours ---------------------------*/\r\n\r\n/* Colours */\r\n$trans: transparent;\r\n$white: #fff;\r\n$black: #000;\r\n$dark-blue: #000033;\r\n$dark-blue-50: rgba(0, 0, 51, 0.50);\r\n$blue: #556880;\r\n$blue-35: rgba(85, 104, 128, .5);\r\n$pink: #f7a8b2;\r\n$deep-blush: rgb(193, 110, 100);\r\n$deep-blush-35: rgba(193, 110, 100, 0.35);\r\n\r\n/* Gradient */\r\n$la-db-bl-le: linear-gradient(to left, #957dad, #a478a4, #b17399, #bb6f8a, #c06d7a, #c7747c, #cd7c7f, #d38382, #df9398, #eaa5ae, #f4b6c4, #fec8d8);\r\n$sunset: linear-gradient(135deg, black, $dark-blue 70%, rgba(131,58,180,1) 100%);\r\n$sunset-header: linear-gradient(225deg, black, $dark-blue, rgba(131,58,180,1) 100%);\r\n\r\n/*-------------------------- Theme Colours End -------------------------*/\r\n\r\n\r\n/*-------------------------------- Fonts -------------------------------*/\r\n\r\n/*  Serif Font */\r\n$Cormorant: 'Cormorant Garamond', Times, serif;\r\n\r\n/*  Sans-Serif Font */\r\n$Spartan: 'Spartan', Arial, Helvetica, sans-serif;\r\n$Raleway: 'Raleway', Arial, Helvetica, sans-serif;\r\n\r\n/*------------------------------ Fonts End -----------------------------*/\r\n\r\n\r\n/*----------------------------- Breakpoints ----------------------------*/\r\n\r\n$sm: 576px;\r\n$md: 768px;\r\n$lg: 992px;\r\n$xl: 1200px;\r\n\r\n/*--------------------------- Breakpoints End --------------------------*/\r\n\r\n\r\n/*------------------------------- Images -------------------------------*/\r\n\r\n$background-image: url('../assets/1.jpg');\r\n$background-image-crop: url('../assets/1-crop.jpg');\r\n\r\n/*----------------------------- Images End -----------------------------*/\r\n\r\n\r\n/*------------------------------- Mixins -------------------------------*/\r\n\r\n@mixin media-breakpoint-down($breakpoint) {\r\n    @if $breakpoint==$sm {\r\n        @media (max-width: $sm) {\r\n            @content;\r\n        }\r\n    }\r\n\r\n    @else if $breakpoint==$md {\r\n        @media (max-width: $md) {\r\n            @content;\r\n        }\r\n    }\r\n\r\n    @else if $breakpoint==$lg {\r\n        @media (max-width: $lg) {\r\n            @content;\r\n        }\r\n    }\r\n\r\n    @else {\r\n        @media (max-width: $xl) {\r\n            @content;\r\n        }\r\n    }\r\n}\r\n\r\n@mixin media-breakpoint-up($breakpoint) {\r\n    @if $breakpoint==$sm {\r\n        @media (min-width: $sm) {\r\n            @content;\r\n        }\r\n    }\r\n\r\n    @else if $breakpoint==$md {\r\n        @media (min-width: $md) {\r\n            @content;\r\n        }\r\n    }\r\n\r\n    @else if $breakpoint==$lg {\r\n        @media (min-width: $lg) {\r\n            @content;\r\n        }\r\n    }\r\n\r\n    @else {\r\n        @media (min-width: $xl) {\r\n            @content;\r\n        }\r\n    }\r\n}\r\n\r\n@mixin flex-row ($justify-content, $align-items) {\r\n    display: flex;\r\n    justify-content: $justify-content;\r\n    align-items: $align-items;\r\n}\r\n\r\n@mixin flex-column($justify-content, $align-items) {\r\n    display: flex;\r\n    flex-direction: column;\r\n    justify-content: $justify-content;\r\n    align-items: $align-items;\r\n}\r\n\r\n@mixin btn-border-drawing($color: #ccc, $hover: black, $width: 2px, $vertical: top, $horizontal: left, $duration: 0.3s) {\r\n    box-shadow: inset 0 0 0 $width $color;\r\n    color: $color;\r\n    transition: color $duration calc($duration/3);\r\n    position: relative;\r\n\r\n    &::before,\r\n    &::after {\r\n        border: 0 solid transparent;\r\n        box-sizing: border-box;\r\n        content: '';\r\n        pointer-events: none;\r\n        position: absolute;\r\n        width: 0;\r\n        height: 0;\r\n\r\n        #{$vertical}: 0;\r\n        #{$horizontal}: 0;\r\n    }\r\n\r\n    &::before {\r\n        $h-side: if($horizontal=='left', 'right', 'left');\r\n\r\n        border-#{$vertical}-width: $width;\r\n        border-#{$h-side}-width: $width;\r\n    }\r\n\r\n    &::after {\r\n        $v-side: if($vertical=='top', 'bottom', 'top');\r\n\r\n        border-#{$v-side}-width: $width;\r\n        border-#{$horizontal}-width: $width;\r\n    }\r\n\r\n    &:hover {\r\n        color: $hover;\r\n\r\n        &::before,\r\n        &::after {\r\n            border-color: $hover;\r\n            transition: border-color 0s, width $duration, height $duration;\r\n            width: 100%;\r\n            height: 100%;\r\n        }\r\n\r\n        &::before {\r\n            transition-delay: 0s, 0s, $duration;\r\n        }\r\n\r\n        &::after {\r\n            transition-delay: 0s, $duration, 0s;\r\n        }\r\n    }\r\n}\r\n\r\n@mixin border {\r\n    border: 0;\r\n    // border: 0.5rem solid transparent;\r\n    // border-image: $la-db-bl-le 30;\r\n}\r\n\r\n@mixin default-text {\r\n    font-family: $Spartan;\r\n    font-size: 0.75rem;\r\n    line-height: 1.25rem;\r\n    color: $black;\r\n    font-weight: 600;\r\n    word-spacing: 0.25rem;\r\n}\r\n\r\n/*----------------------------- Mixins End -----------------------------*/\r\n\r\n\r\n/*------------------------------- Common -------------------------------*/\r\n\r\nh2 {\r\n    margin-bottom: 1.5rem;\r\n    font-size: 4rem;\r\n    font-family: $Raleway;\r\n    font-weight: 500;\r\n    line-height: 3.25rem;\r\n}\r\n\r\na {\r\n    color: $black;\r\n    text-decoration: none;\r\n}\r\n\r\nbutton {\r\n    @include default-text;\r\n    @include btn-border-drawing($black, $deep-blush, 2px, bottom, right);\r\n    border: none;\r\n    padding: 1rem;\r\n    width: 100%;\r\n    cursor: pointer;\r\n    text-transform: uppercase;\r\n\r\n    @include media-breakpoint-up($sm) {\r\n        width: 10rem;\r\n    }\r\n}\r\n\r\n.underline {\r\n    padding-bottom:0.125rem;\r\n    text-decoration:none;\r\n    border-bottom:2px solid yellow;}\r\n\r\n\r\n\r\n/*---------------------------- Common Ends -----------------------------*/","\n                                @import \"variables.scss\";\n                                .skills {\r\n    display: none;\r\n    width: calc(100% - 15vw);\r\n    margin: 0 auto 3rem;\r\n    background: rgba(255, 255, 255, 0.25);\r\n    padding: 1.5rem;\r\n\r\n\r\n    &__list {\r\n        display: grid;\r\n        grid-template-columns: auto auto auto auto;\r\n        row-gap: 0.75rem;\r\n        column-gap: 3rem;\r\n        list-style: none;\r\n\r\n        li {\r\n            @include default-text;\r\n            font-weight: 300;\r\n            color: $white;\r\n        }\r\n    }\r\n}\n                              "],"sourceRoot":""}]);
+  text-align: left;
+}
+.skills__list th,
+.skills__list td {
+  border: 1px solid rgba(255, 255, 0, 0.25);
+  padding: 0.5rem;
+  width: 25%;
+  vertical-align: middle;
+}`, "",{"version":3,"sources":["webpack://./src/styles/variables.scss","webpack://./src/styles/skills.scss"],"names":[],"mappings":"AAAA,wEAAA;AAEA,YAAA;AAWA,aAAA;AAKA,yEAAA;AAGA,yEAAA;AAEA,+DAAA;AACA,uBAAA;AAMA,aAAA;AAMA,+DAAA;AACA,cAAA;AAMA,gEAAA;AACA,YAAA;AAOA,YAAA;AAOA,yEAAA;AAGA,yEAAA;AAOA,yEAAA;AAGA,yEAAA;AA4EA,yEAAA;AAGA,yEAAA;AAEA;EACI,qBAAA;EACA,oBAAA;EACA,eAAA;EACA,oDA9GM;EA+GN,gBAAA;AC/HJ;;ADkIA;EACI,WA9JI;EA+JJ,qBAAA;AC/HJ;;ADkIA;EACI,kBAAA;EACA,SAAA;EACA,UAAA;EACA,iBAAA;EACA,eAAA;AC/HJ;ADiII;EAjCA,oBAAA;EACA,qBAAA;EACA,oDAxFM;EAyFN,kBAAA;EACA,gBAAA;EACA,WA7II;EA2KA,kBAAA;EACA,UAAA;EACA,gBAAA;EACA,qBAAA;EACA,gBAAA;EACA,WA/KA;EAgLA,kBAAA;EACA,qBAAA;AC1HR;AD4HQ;EACI,WArLJ;AC2DR;AD8HI;EACI,kBAAA;EACA,MAAA;EACA,OAAA;EACA,QAAA;EACA,YAAA;EACA,+BA1LO;EA2LP,oBAAA;EACA,WAAA;AC5HR;ADgIQ;EACI,WAAA;AC9HZ;;ADmIA;EACI,+BAAA;EACA,wBAAA;EACA,qBAAA;AChIJ;;ADmIA,yEAAA;AClNgC;EDkI5B,aAAA;EACA,sBAAA;EACA,sBCnIqB;EDoIrB,mBCpI4B;EAC5B,mBAAA;EACA,eAAA;EACA,wBAAA;EACA,iBAAA;EACA,oCDEY;ECDZ,UAAA;EACA,WAAA;EACA,uCAAA;AAsFJ;AApFI;EACI,SAAA;EACA,UAAA;EACA,aAAA;EACA,UAAA;AAsFR;AApFQ;EACI,aAAA;AAsFZ;AD/BQ;ECzEwB;IAuBxB,aAAA;EAqFN;AACF;AAnFI;EACI,qBAAA;AAqFR;AAlFI;ED2GA,oBAAA;EACA,qBAAA;EACA,oDAxFM;EAyFN,kBAAA;EACA,gBAAA;EACA,WA7II;EC+BA,gBAAA;AAyFR;AAvFQ;;EAEI,yCAAA;EACA,eAAA;EACA,UAAA;EACA,sBAAA;AAyFZ","sourcesContent":["/*--------------------------- Theme Colours ---------------------------*/\r\n\r\n/* Colours */\r\n$white: #fff;\r\n$black: #000;\r\n$dark-blue: #000033;\r\n$yellow: #ffff00;\r\n$purple: rgba(131, 58, 180, 1);\r\n$dark-blue-50: rgba(0, 0, 51, 0.50);\r\n$border-yellow: rgba(255, 255, 0, 0.25);\r\n$transwhite-bg: rgba(255, 255, 255, 0.1);\r\n$shadow-color: rgba(0, 0, 0, 0.1);\r\n\r\n/* Gradient */\r\n$sunset: linear-gradient(135deg, black, $dark-blue 70%, $purple 100%);\r\n$sunset-var: linear-gradient(225deg, black, $dark-blue, $purple 100%);\r\n$sunset-header: linear-gradient(135deg, black, #00001b, #170A4A);\r\n\r\n/*-------------------------- Theme Colours End -------------------------*/\r\n\r\n\r\n/*-------------------------------- Fonts -------------------------------*/\r\n\r\n/******************** Serif Fonts *****************************/\r\n/* Cormorant Garamond */\r\n@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap');\r\n$Cormorant: 'Cormorant Garamond',\r\nTimes,\r\nserif;\r\n\r\n/* Arizonia */\r\n@import url('https://fonts.googleapis.com/css2?family=Arizonia&display=swap');\r\n$Arizonia: 'Arizonia',\r\nTimes,\r\nserif;\r\n\r\n/********************** Cursive Fonts *************************/\r\n/* Italianno */\r\n@import url('https://fonts.googleapis.com/css2?family=Italianno&display=swap');\r\n$Italianno: 'Italianno',\r\nSnell Roundhand,\r\ncursive;\r\n\r\n/********************* Sans-serif Fonts ************************/\r\n/* Raleway */\r\n@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');\r\n$Raleway: 'Raleway',\r\nArial,\r\nHelvetica,\r\nsans-serif;\r\n\r\n/* Spartan */\r\n@import url('https://fonts.googleapis.com/css2?family=Spartan:wght@100;200;300;400;500;600;700;800;900&display=swap');\r\n$Spartan: 'Spartan',\r\nArial,\r\nHelvetica,\r\nsans-serif;\r\n\r\n/*------------------------------ Fonts End -----------------------------*/\r\n\r\n\r\n/*----------------------------- Breakpoints ----------------------------*/\r\n\r\n$sm: 576px;\r\n$md: 768px;\r\n$lg: 992px;\r\n$xl: 1200px;\r\n\r\n/*--------------------------- Breakpoints End --------------------------*/\r\n\r\n\r\n/*------------------------------- Mixins -------------------------------*/\r\n\r\n@mixin media-breakpoint-down($breakpoint) {\r\n    @if $breakpoint==$sm {\r\n        @media (max-width: $sm) {\r\n            @content;\r\n        }\r\n    }\r\n\r\n    @else if $breakpoint==$md {\r\n        @media (max-width: $md) {\r\n            @content;\r\n        }\r\n    }\r\n\r\n    @else if $breakpoint==$lg {\r\n        @media (max-width: $lg) {\r\n            @content;\r\n        }\r\n    }\r\n\r\n    @else {\r\n        @media (max-width: $xl) {\r\n            @content;\r\n        }\r\n    }\r\n}\r\n\r\n@mixin media-breakpoint-up($breakpoint) {\r\n    @if $breakpoint==$sm {\r\n        @media (min-width: $sm) {\r\n            @content;\r\n        }\r\n    }\r\n\r\n    @else if $breakpoint==$md {\r\n        @media (min-width: $md) {\r\n            @content;\r\n        }\r\n    }\r\n\r\n    @else if $breakpoint==$lg {\r\n        @media (min-width: $lg) {\r\n            @content;\r\n        }\r\n    }\r\n\r\n    @else {\r\n        @media (min-width: $xl) {\r\n            @content;\r\n        }\r\n    }\r\n}\r\n\r\n@mixin flex-row ($justify-content, $align-items) {\r\n    display: flex;\r\n    justify-content: $justify-content;\r\n    align-items: $align-items;\r\n}\r\n\r\n@mixin flex-column($justify-content, $align-items) {\r\n    display: flex;\r\n    flex-direction: column;\r\n    justify-content: $justify-content;\r\n    align-items: $align-items;\r\n}\r\n\r\n@mixin default-text {\r\n    line-height: 1.25rem;\r\n    word-spacing: 0.25rem;\r\n    font-family: $Spartan;\r\n    font-size: 0.75rem;\r\n    font-weight: 300;\r\n    color: $white;\r\n}\r\n\r\n/*----------------------------- Mixins End -----------------------------*/\r\n\r\n\r\n/*------------------------------- Common -------------------------------*/\r\n\r\nh2 {\r\n    margin-bottom: 1.5rem;\r\n    line-height: 3.25rem;\r\n    font-size: 4rem;\r\n    font-family: $Raleway;\r\n    font-weight: 500;\r\n}\r\n\r\na {\r\n    color: $white;\r\n    text-decoration: none;\r\n}\r\n\r\nbutton {\r\n    position: relative;\r\n    border: 0;\r\n    padding: 0;\r\n    background: white;\r\n    cursor: pointer;\r\n\r\n    span {\r\n        @include default-text;\r\n        position: relative;\r\n        z-index: 2;\r\n        padding: 0.75rem;\r\n        display: inline-block;\r\n        font-weight: 400;\r\n        color: $black;\r\n        text-align: center;\r\n        transition: all .35s;\r\n\r\n        &:hover {\r\n            color: $white;\r\n        }\r\n    }\r\n\r\n    &::after {\r\n        position: absolute;\r\n        top: 0;\r\n        left: 0;\r\n        width: 0;\r\n        height: 100%;\r\n        background: $dark-blue-50;\r\n        transition: all .3s;\r\n        content: \"\";\r\n    }\r\n\r\n    &:hover {\r\n        &::after {\r\n            width: 100%;\r\n        }\r\n    }\r\n}\r\n\r\n.underline {\r\n    border-bottom: 2px solid yellow;\r\n    padding-bottom: 0.125rem;\r\n    text-decoration: none;\r\n}\r\n\r\n/*---------------------------- Common Ends -----------------------------*/","\n                                @import \"variables.scss\";\n                                .skills {\r\n    @include flex-column(unset, center);\r\n    margin: 0 auto 3rem;\r\n    padding: 1.5rem;\r\n    width: calc(100% - 15vw);\r\n    max-height: 40rem;\r\n    background: $transwhite-bg;\r\n    opacity: 1;\r\n    gap: 1.5rem;\r\n    transition: max-height 0.3s ease-in-out;\r\n\r\n    &.d-none {\r\n        margin: 0;\r\n        padding: 0;\r\n        max-height: 0;\r\n        opacity: 0;\r\n\r\n        & table {\r\n            display: none;\r\n        }\r\n    }\r\n\r\n    @include media-breakpoint-down($sm) {\r\n        display: none;\r\n    }\r\n\r\n    &__download .fa {\r\n        margin-right: 0.25rem;\r\n    }\r\n\r\n    &__list {\r\n        @include default-text;\r\n        text-align: left;\r\n\r\n        th,\r\n        td {\r\n            border: 1px solid $border-yellow;\r\n            padding: 0.5rem;\r\n            width: 25%;\r\n            vertical-align: middle;\r\n        }\r\n    }\r\n}\n                              "],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -1475,99 +1514,91 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
+___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap);"]);
+___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Arizonia&display=swap);"]);
+___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Italianno&display=swap);"]);
+___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap);"]);
+___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Spartan:wght@100;200;300;400;500;600;700;800;900&display=swap);"]);
 // Module
 ___CSS_LOADER_EXPORT___.push([module.id, `/*--------------------------- Theme Colours ---------------------------*/
 /* Colours */
 /* Gradient */
 /*-------------------------- Theme Colours End -------------------------*/
 /*-------------------------------- Fonts -------------------------------*/
-/*  Serif Font */
-/*  Sans-Serif Font */
+/******************** Serif Fonts *****************************/
+/* Cormorant Garamond */
+/* Arizonia */
+/********************** Cursive Fonts *************************/
+/* Italianno */
+/********************* Sans-serif Fonts ************************/
+/* Raleway */
+/* Spartan */
 /*------------------------------ Fonts End -----------------------------*/
 /*----------------------------- Breakpoints ----------------------------*/
 /*--------------------------- Breakpoints End --------------------------*/
-/*------------------------------- Images -------------------------------*/
-/*----------------------------- Images End -----------------------------*/
 /*------------------------------- Mixins -------------------------------*/
 /*----------------------------- Mixins End -----------------------------*/
 /*------------------------------- Common -------------------------------*/
 h2 {
   margin-bottom: 1.5rem;
+  line-height: 3.25rem;
   font-size: 4rem;
   font-family: "Raleway", Arial, Helvetica, sans-serif;
   font-weight: 500;
-  line-height: 3.25rem;
 }
 
 a {
-  color: #000;
+  color: #fff;
   text-decoration: none;
 }
 
 button {
+  position: relative;
+  border: 0;
+  padding: 0;
+  background: white;
+  cursor: pointer;
+}
+button span {
+  line-height: 1.25rem;
+  word-spacing: 0.25rem;
   font-family: "Spartan", Arial, Helvetica, sans-serif;
   font-size: 0.75rem;
-  line-height: 1.25rem;
-  color: #000;
-  font-weight: 600;
-  word-spacing: 0.25rem;
-  box-shadow: inset 0 0 0 2px #000;
-  color: #000;
-  transition: color 0.3s 0.1s;
+  font-weight: 300;
+  color: #fff;
   position: relative;
-  border: none;
-  padding: 1rem;
-  width: 100%;
-  cursor: pointer;
-  text-transform: uppercase;
+  z-index: 2;
+  padding: 0.75rem;
+  display: inline-block;
+  font-weight: 400;
+  color: #000;
+  text-align: center;
+  transition: all 0.35s;
 }
-button::before, button::after {
-  border: 0 solid transparent;
-  box-sizing: border-box;
-  content: "";
-  pointer-events: none;
-  position: absolute;
-  width: 0;
-  height: 0;
-  bottom: 0;
-  right: 0;
-}
-button::before {
-  border-bottom-width: 2px;
-  border-left-width: 2px;
+button span:hover {
+  color: #fff;
 }
 button::after {
-  border-top-width: 2px;
-  border-right-width: 2px;
-}
-button:hover {
-  color: rgb(193, 110, 100);
-}
-button:hover::before, button:hover::after {
-  border-color: rgb(193, 110, 100);
-  transition: border-color 0s, width 0.3s, height 0.3s;
-  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
   height: 100%;
-}
-button:hover::before {
-  transition-delay: 0s, 0s, 0.3s;
+  background: rgba(0, 0, 51, 0.5);
+  transition: all 0.3s;
+  content: "";
 }
 button:hover::after {
-  transition-delay: 0s, 0.3s, 0s;
-}
-@media (min-width: 576px) {
-  button {
-    width: 10rem;
-  }
+  width: 100%;
 }
 
 .underline {
+  border-bottom: 2px solid yellow;
   padding-bottom: 0.125rem;
   text-decoration: none;
-  border-bottom: 2px solid yellow;
 }
 
-/*---------------------------- Common Ends -----------------------------*/`, "",{"version":3,"sources":["webpack://./src/styles/variables.scss"],"names":[],"mappings":"AAAA,wEAAA;AAEA,YAAA;AAYA,aAAA;AAKA,yEAAA;AAGA,yEAAA;AAEA,gBAAA;AAGA,qBAAA;AAIA,yEAAA;AAGA,yEAAA;AAOA,yEAAA;AAGA,yEAAA;AAKA,yEAAA;AAGA,yEAAA;AAyIA,yEAAA;AAGA,yEAAA;AAEA;EACI,qBAAA;EACA,eAAA;EACA,oDAxKM;EAyKN,gBAAA;EACA,oBAAA;AAlLJ;;AAqLA;EACI,WAtMI;EAuMJ,qBAAA;AAlLJ;;AAqLA;EA1BI,oDAzJM;EA0JN,kBAAA;EACA,oBAAA;EACA,WAnLI;EAoLJ,gBAAA;EACA,qBAAA;EAlEA,gCAAA;EACA,WApHI;EAqHJ,2BAAA;EACA,kBAAA;EAuFA,YAAA;EACA,aAAA;EACA,WAAA;EACA,eAAA;EACA,yBAAA;AA1KJ;AAiFI;EAEI,2BAAA;EACA,sBAAA;EACA,WAAA;EACA,oBAAA;EACA,kBAAA;EACA,QAAA;EACA,SAAA;EAEA,SAAA;EACA,QAAA;AAjFR;AAoFI;EAGI,wBAmE6C;EAlE7C,sBAkE6C;AAtJrD;AAuFI;EAGI,qBA4D6C;EA3D7C,uBA2D6C;AAlJrD;AA0FI;EACI,yBA/IK;AAuDb;AA0FQ;EAEI,gCAnJC;EAoJD,oDAAA;EACA,WAAA;EACA,YAAA;AAzFZ;AA4FQ;EACI,8BAAA;AA1FZ;AA6FQ;EACI,8BAAA;AA3FZ;AAIQ;EA6HR;IAUQ,YAAA;EAvIN;AACF;;AA0IA;EACI,wBAAA;EACA,qBAAA;EACA,+BAAA;AAvIJ;;AA2IA,yEAAA","sourcesContent":["/*--------------------------- Theme Colours ---------------------------*/\r\n\r\n/* Colours */\r\n$trans: transparent;\r\n$white: #fff;\r\n$black: #000;\r\n$dark-blue: #000033;\r\n$dark-blue-50: rgba(0, 0, 51, 0.50);\r\n$blue: #556880;\r\n$blue-35: rgba(85, 104, 128, .5);\r\n$pink: #f7a8b2;\r\n$deep-blush: rgb(193, 110, 100);\r\n$deep-blush-35: rgba(193, 110, 100, 0.35);\r\n\r\n/* Gradient */\r\n$la-db-bl-le: linear-gradient(to left, #957dad, #a478a4, #b17399, #bb6f8a, #c06d7a, #c7747c, #cd7c7f, #d38382, #df9398, #eaa5ae, #f4b6c4, #fec8d8);\r\n$sunset: linear-gradient(135deg, black, $dark-blue 70%, rgba(131,58,180,1) 100%);\r\n$sunset-header: linear-gradient(225deg, black, $dark-blue, rgba(131,58,180,1) 100%);\r\n\r\n/*-------------------------- Theme Colours End -------------------------*/\r\n\r\n\r\n/*-------------------------------- Fonts -------------------------------*/\r\n\r\n/*  Serif Font */\r\n$Cormorant: 'Cormorant Garamond', Times, serif;\r\n\r\n/*  Sans-Serif Font */\r\n$Spartan: 'Spartan', Arial, Helvetica, sans-serif;\r\n$Raleway: 'Raleway', Arial, Helvetica, sans-serif;\r\n\r\n/*------------------------------ Fonts End -----------------------------*/\r\n\r\n\r\n/*----------------------------- Breakpoints ----------------------------*/\r\n\r\n$sm: 576px;\r\n$md: 768px;\r\n$lg: 992px;\r\n$xl: 1200px;\r\n\r\n/*--------------------------- Breakpoints End --------------------------*/\r\n\r\n\r\n/*------------------------------- Images -------------------------------*/\r\n\r\n$background-image: url('../assets/1.jpg');\r\n$background-image-crop: url('../assets/1-crop.jpg');\r\n\r\n/*----------------------------- Images End -----------------------------*/\r\n\r\n\r\n/*------------------------------- Mixins -------------------------------*/\r\n\r\n@mixin media-breakpoint-down($breakpoint) {\r\n    @if $breakpoint==$sm {\r\n        @media (max-width: $sm) {\r\n            @content;\r\n        }\r\n    }\r\n\r\n    @else if $breakpoint==$md {\r\n        @media (max-width: $md) {\r\n            @content;\r\n        }\r\n    }\r\n\r\n    @else if $breakpoint==$lg {\r\n        @media (max-width: $lg) {\r\n            @content;\r\n        }\r\n    }\r\n\r\n    @else {\r\n        @media (max-width: $xl) {\r\n            @content;\r\n        }\r\n    }\r\n}\r\n\r\n@mixin media-breakpoint-up($breakpoint) {\r\n    @if $breakpoint==$sm {\r\n        @media (min-width: $sm) {\r\n            @content;\r\n        }\r\n    }\r\n\r\n    @else if $breakpoint==$md {\r\n        @media (min-width: $md) {\r\n            @content;\r\n        }\r\n    }\r\n\r\n    @else if $breakpoint==$lg {\r\n        @media (min-width: $lg) {\r\n            @content;\r\n        }\r\n    }\r\n\r\n    @else {\r\n        @media (min-width: $xl) {\r\n            @content;\r\n        }\r\n    }\r\n}\r\n\r\n@mixin flex-row ($justify-content, $align-items) {\r\n    display: flex;\r\n    justify-content: $justify-content;\r\n    align-items: $align-items;\r\n}\r\n\r\n@mixin flex-column($justify-content, $align-items) {\r\n    display: flex;\r\n    flex-direction: column;\r\n    justify-content: $justify-content;\r\n    align-items: $align-items;\r\n}\r\n\r\n@mixin btn-border-drawing($color: #ccc, $hover: black, $width: 2px, $vertical: top, $horizontal: left, $duration: 0.3s) {\r\n    box-shadow: inset 0 0 0 $width $color;\r\n    color: $color;\r\n    transition: color $duration calc($duration/3);\r\n    position: relative;\r\n\r\n    &::before,\r\n    &::after {\r\n        border: 0 solid transparent;\r\n        box-sizing: border-box;\r\n        content: '';\r\n        pointer-events: none;\r\n        position: absolute;\r\n        width: 0;\r\n        height: 0;\r\n\r\n        #{$vertical}: 0;\r\n        #{$horizontal}: 0;\r\n    }\r\n\r\n    &::before {\r\n        $h-side: if($horizontal=='left', 'right', 'left');\r\n\r\n        border-#{$vertical}-width: $width;\r\n        border-#{$h-side}-width: $width;\r\n    }\r\n\r\n    &::after {\r\n        $v-side: if($vertical=='top', 'bottom', 'top');\r\n\r\n        border-#{$v-side}-width: $width;\r\n        border-#{$horizontal}-width: $width;\r\n    }\r\n\r\n    &:hover {\r\n        color: $hover;\r\n\r\n        &::before,\r\n        &::after {\r\n            border-color: $hover;\r\n            transition: border-color 0s, width $duration, height $duration;\r\n            width: 100%;\r\n            height: 100%;\r\n        }\r\n\r\n        &::before {\r\n            transition-delay: 0s, 0s, $duration;\r\n        }\r\n\r\n        &::after {\r\n            transition-delay: 0s, $duration, 0s;\r\n        }\r\n    }\r\n}\r\n\r\n@mixin border {\r\n    border: 0;\r\n    // border: 0.5rem solid transparent;\r\n    // border-image: $la-db-bl-le 30;\r\n}\r\n\r\n@mixin default-text {\r\n    font-family: $Spartan;\r\n    font-size: 0.75rem;\r\n    line-height: 1.25rem;\r\n    color: $black;\r\n    font-weight: 600;\r\n    word-spacing: 0.25rem;\r\n}\r\n\r\n/*----------------------------- Mixins End -----------------------------*/\r\n\r\n\r\n/*------------------------------- Common -------------------------------*/\r\n\r\nh2 {\r\n    margin-bottom: 1.5rem;\r\n    font-size: 4rem;\r\n    font-family: $Raleway;\r\n    font-weight: 500;\r\n    line-height: 3.25rem;\r\n}\r\n\r\na {\r\n    color: $black;\r\n    text-decoration: none;\r\n}\r\n\r\nbutton {\r\n    @include default-text;\r\n    @include btn-border-drawing($black, $deep-blush, 2px, bottom, right);\r\n    border: none;\r\n    padding: 1rem;\r\n    width: 100%;\r\n    cursor: pointer;\r\n    text-transform: uppercase;\r\n\r\n    @include media-breakpoint-up($sm) {\r\n        width: 10rem;\r\n    }\r\n}\r\n\r\n.underline {\r\n    padding-bottom:0.125rem;\r\n    text-decoration:none;\r\n    border-bottom:2px solid yellow;}\r\n\r\n\r\n\r\n/*---------------------------- Common Ends -----------------------------*/"],"sourceRoot":""}]);
+/*---------------------------- Common Ends -----------------------------*/`, "",{"version":3,"sources":["webpack://./src/styles/variables.scss"],"names":[],"mappings":"AAAA,wEAAA;AAEA,YAAA;AAWA,aAAA;AAKA,yEAAA;AAGA,yEAAA;AAEA,+DAAA;AACA,uBAAA;AAMA,aAAA;AAMA,+DAAA;AACA,cAAA;AAMA,gEAAA;AACA,YAAA;AAOA,YAAA;AAOA,yEAAA;AAGA,yEAAA;AAOA,yEAAA;AAGA,yEAAA;AA4EA,yEAAA;AAGA,yEAAA;AAEA;EACI,qBAAA;EACA,oBAAA;EACA,eAAA;EACA,oDA9GM;EA+GN,gBAAA;AA/HJ;;AAkIA;EACI,WA9JI;EA+JJ,qBAAA;AA/HJ;;AAkIA;EACI,kBAAA;EACA,SAAA;EACA,UAAA;EACA,iBAAA;EACA,eAAA;AA/HJ;AAiII;EAjCA,oBAAA;EACA,qBAAA;EACA,oDAxFM;EAyFN,kBAAA;EACA,gBAAA;EACA,WA7II;EA2KA,kBAAA;EACA,UAAA;EACA,gBAAA;EACA,qBAAA;EACA,gBAAA;EACA,WA/KA;EAgLA,kBAAA;EACA,qBAAA;AA1HR;AA4HQ;EACI,WArLJ;AA2DR;AA8HI;EACI,kBAAA;EACA,MAAA;EACA,OAAA;EACA,QAAA;EACA,YAAA;EACA,+BA1LO;EA2LP,oBAAA;EACA,WAAA;AA5HR;AAgIQ;EACI,WAAA;AA9HZ;;AAmIA;EACI,+BAAA;EACA,wBAAA;EACA,qBAAA;AAhIJ;;AAmIA,yEAAA","sourcesContent":["/*--------------------------- Theme Colours ---------------------------*/\r\n\r\n/* Colours */\r\n$white: #fff;\r\n$black: #000;\r\n$dark-blue: #000033;\r\n$yellow: #ffff00;\r\n$purple: rgba(131, 58, 180, 1);\r\n$dark-blue-50: rgba(0, 0, 51, 0.50);\r\n$border-yellow: rgba(255, 255, 0, 0.25);\r\n$transwhite-bg: rgba(255, 255, 255, 0.1);\r\n$shadow-color: rgba(0, 0, 0, 0.1);\r\n\r\n/* Gradient */\r\n$sunset: linear-gradient(135deg, black, $dark-blue 70%, $purple 100%);\r\n$sunset-var: linear-gradient(225deg, black, $dark-blue, $purple 100%);\r\n$sunset-header: linear-gradient(135deg, black, #00001b, #170A4A);\r\n\r\n/*-------------------------- Theme Colours End -------------------------*/\r\n\r\n\r\n/*-------------------------------- Fonts -------------------------------*/\r\n\r\n/******************** Serif Fonts *****************************/\r\n/* Cormorant Garamond */\r\n@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap');\r\n$Cormorant: 'Cormorant Garamond',\r\nTimes,\r\nserif;\r\n\r\n/* Arizonia */\r\n@import url('https://fonts.googleapis.com/css2?family=Arizonia&display=swap');\r\n$Arizonia: 'Arizonia',\r\nTimes,\r\nserif;\r\n\r\n/********************** Cursive Fonts *************************/\r\n/* Italianno */\r\n@import url('https://fonts.googleapis.com/css2?family=Italianno&display=swap');\r\n$Italianno: 'Italianno',\r\nSnell Roundhand,\r\ncursive;\r\n\r\n/********************* Sans-serif Fonts ************************/\r\n/* Raleway */\r\n@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');\r\n$Raleway: 'Raleway',\r\nArial,\r\nHelvetica,\r\nsans-serif;\r\n\r\n/* Spartan */\r\n@import url('https://fonts.googleapis.com/css2?family=Spartan:wght@100;200;300;400;500;600;700;800;900&display=swap');\r\n$Spartan: 'Spartan',\r\nArial,\r\nHelvetica,\r\nsans-serif;\r\n\r\n/*------------------------------ Fonts End -----------------------------*/\r\n\r\n\r\n/*----------------------------- Breakpoints ----------------------------*/\r\n\r\n$sm: 576px;\r\n$md: 768px;\r\n$lg: 992px;\r\n$xl: 1200px;\r\n\r\n/*--------------------------- Breakpoints End --------------------------*/\r\n\r\n\r\n/*------------------------------- Mixins -------------------------------*/\r\n\r\n@mixin media-breakpoint-down($breakpoint) {\r\n    @if $breakpoint==$sm {\r\n        @media (max-width: $sm) {\r\n            @content;\r\n        }\r\n    }\r\n\r\n    @else if $breakpoint==$md {\r\n        @media (max-width: $md) {\r\n            @content;\r\n        }\r\n    }\r\n\r\n    @else if $breakpoint==$lg {\r\n        @media (max-width: $lg) {\r\n            @content;\r\n        }\r\n    }\r\n\r\n    @else {\r\n        @media (max-width: $xl) {\r\n            @content;\r\n        }\r\n    }\r\n}\r\n\r\n@mixin media-breakpoint-up($breakpoint) {\r\n    @if $breakpoint==$sm {\r\n        @media (min-width: $sm) {\r\n            @content;\r\n        }\r\n    }\r\n\r\n    @else if $breakpoint==$md {\r\n        @media (min-width: $md) {\r\n            @content;\r\n        }\r\n    }\r\n\r\n    @else if $breakpoint==$lg {\r\n        @media (min-width: $lg) {\r\n            @content;\r\n        }\r\n    }\r\n\r\n    @else {\r\n        @media (min-width: $xl) {\r\n            @content;\r\n        }\r\n    }\r\n}\r\n\r\n@mixin flex-row ($justify-content, $align-items) {\r\n    display: flex;\r\n    justify-content: $justify-content;\r\n    align-items: $align-items;\r\n}\r\n\r\n@mixin flex-column($justify-content, $align-items) {\r\n    display: flex;\r\n    flex-direction: column;\r\n    justify-content: $justify-content;\r\n    align-items: $align-items;\r\n}\r\n\r\n@mixin default-text {\r\n    line-height: 1.25rem;\r\n    word-spacing: 0.25rem;\r\n    font-family: $Spartan;\r\n    font-size: 0.75rem;\r\n    font-weight: 300;\r\n    color: $white;\r\n}\r\n\r\n/*----------------------------- Mixins End -----------------------------*/\r\n\r\n\r\n/*------------------------------- Common -------------------------------*/\r\n\r\nh2 {\r\n    margin-bottom: 1.5rem;\r\n    line-height: 3.25rem;\r\n    font-size: 4rem;\r\n    font-family: $Raleway;\r\n    font-weight: 500;\r\n}\r\n\r\na {\r\n    color: $white;\r\n    text-decoration: none;\r\n}\r\n\r\nbutton {\r\n    position: relative;\r\n    border: 0;\r\n    padding: 0;\r\n    background: white;\r\n    cursor: pointer;\r\n\r\n    span {\r\n        @include default-text;\r\n        position: relative;\r\n        z-index: 2;\r\n        padding: 0.75rem;\r\n        display: inline-block;\r\n        font-weight: 400;\r\n        color: $black;\r\n        text-align: center;\r\n        transition: all .35s;\r\n\r\n        &:hover {\r\n            color: $white;\r\n        }\r\n    }\r\n\r\n    &::after {\r\n        position: absolute;\r\n        top: 0;\r\n        left: 0;\r\n        width: 0;\r\n        height: 100%;\r\n        background: $dark-blue-50;\r\n        transition: all .3s;\r\n        content: \"\";\r\n    }\r\n\r\n    &:hover {\r\n        &::after {\r\n            width: 100%;\r\n        }\r\n    }\r\n}\r\n\r\n.underline {\r\n    border-bottom: 2px solid yellow;\r\n    padding-bottom: 0.125rem;\r\n    text-decoration: none;\r\n}\r\n\r\n/*---------------------------- Common Ends -----------------------------*/"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -1593,102 +1624,98 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
+___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap);"]);
+___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Arizonia&display=swap);"]);
+___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Italianno&display=swap);"]);
+___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap);"]);
+___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Spartan:wght@100;200;300;400;500;600;700;800;900&display=swap);"]);
 // Module
 ___CSS_LOADER_EXPORT___.push([module.id, `/*--------------------------- Theme Colours ---------------------------*/
 /* Colours */
 /* Gradient */
 /*-------------------------- Theme Colours End -------------------------*/
 /*-------------------------------- Fonts -------------------------------*/
-/*  Serif Font */
-/*  Sans-Serif Font */
+/******************** Serif Fonts *****************************/
+/* Cormorant Garamond */
+/* Arizonia */
+/********************** Cursive Fonts *************************/
+/* Italianno */
+/********************* Sans-serif Fonts ************************/
+/* Raleway */
+/* Spartan */
 /*------------------------------ Fonts End -----------------------------*/
 /*----------------------------- Breakpoints ----------------------------*/
 /*--------------------------- Breakpoints End --------------------------*/
-/*------------------------------- Images -------------------------------*/
-/*----------------------------- Images End -----------------------------*/
 /*------------------------------- Mixins -------------------------------*/
 /*----------------------------- Mixins End -----------------------------*/
 /*------------------------------- Common -------------------------------*/
 h2 {
   margin-bottom: 1.5rem;
+  line-height: 3.25rem;
   font-size: 4rem;
   font-family: "Raleway", Arial, Helvetica, sans-serif;
   font-weight: 500;
-  line-height: 3.25rem;
 }
 
 a {
-  color: #000;
+  color: #fff;
   text-decoration: none;
 }
 
 button {
+  position: relative;
+  border: 0;
+  padding: 0;
+  background: white;
+  cursor: pointer;
+}
+button span {
+  line-height: 1.25rem;
+  word-spacing: 0.25rem;
   font-family: "Spartan", Arial, Helvetica, sans-serif;
   font-size: 0.75rem;
-  line-height: 1.25rem;
-  color: #000;
-  font-weight: 600;
-  word-spacing: 0.25rem;
-  box-shadow: inset 0 0 0 2px #000;
-  color: #000;
-  transition: color 0.3s 0.1s;
+  font-weight: 300;
+  color: #fff;
   position: relative;
-  border: none;
-  padding: 1rem;
-  width: 100%;
-  cursor: pointer;
-  text-transform: uppercase;
+  z-index: 2;
+  padding: 0.75rem;
+  display: inline-block;
+  font-weight: 400;
+  color: #000;
+  text-align: center;
+  transition: all 0.35s;
 }
-button::before, button::after {
-  border: 0 solid transparent;
-  box-sizing: border-box;
-  content: "";
-  pointer-events: none;
-  position: absolute;
-  width: 0;
-  height: 0;
-  bottom: 0;
-  right: 0;
-}
-button::before {
-  border-bottom-width: 2px;
-  border-left-width: 2px;
+button span:hover {
+  color: #fff;
 }
 button::after {
-  border-top-width: 2px;
-  border-right-width: 2px;
-}
-button:hover {
-  color: rgb(193, 110, 100);
-}
-button:hover::before, button:hover::after {
-  border-color: rgb(193, 110, 100);
-  transition: border-color 0s, width 0.3s, height 0.3s;
-  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
   height: 100%;
-}
-button:hover::before {
-  transition-delay: 0s, 0s, 0.3s;
+  background: rgba(0, 0, 51, 0.5);
+  transition: all 0.3s;
+  content: "";
 }
 button:hover::after {
-  transition-delay: 0s, 0.3s, 0s;
-}
-@media (min-width: 576px) {
-  button {
-    width: 10rem;
-  }
+  width: 100%;
 }
 
 .underline {
+  border-bottom: 2px solid yellow;
   padding-bottom: 0.125rem;
   text-decoration: none;
-  border-bottom: 2px solid yellow;
 }
 
 /*---------------------------- Common Ends -----------------------------*/
 .work {
   overflow: hidden;
-  margin-top: 4.5rem;
+}
+@media (max-width: 576px) {
+  .work {
+    margin-top: 0;
+  }
 }
 .work__carousel {
   border: 2px solid yellow;
@@ -1706,6 +1733,7 @@ button:hover::after {
 }
 .work__carousel .slick-track {
   display: flex;
+  justify-content: unset;
   align-items: center;
   padding: 1.5rem 0;
 }
@@ -1718,16 +1746,16 @@ button:hover::after {
   display: none !important;
 }
 .work p {
+  line-height: 1.25rem;
+  word-spacing: 0.25rem;
   font-family: "Spartan", Arial, Helvetica, sans-serif;
   font-size: 0.75rem;
-  line-height: 1.25rem;
-  color: #000;
-  font-weight: 600;
-  word-spacing: 0.25rem;
+  font-weight: 300;
+  color: #fff;
   margin-top: 0.75rem;
   color: #fff;
   text-align: center;
-}`, "",{"version":3,"sources":["webpack://./src/styles/variables.scss","webpack://./src/styles/work.scss"],"names":[],"mappings":"AAAA,wEAAA;AAEA,YAAA;AAYA,aAAA;AAKA,yEAAA;AAGA,yEAAA;AAEA,gBAAA;AAGA,qBAAA;AAIA,yEAAA;AAGA,yEAAA;AAOA,yEAAA;AAGA,yEAAA;AAKA,yEAAA;AAGA,yEAAA;AAyIA,yEAAA;AAGA,yEAAA;AAEA;EACI,qBAAA;EACA,eAAA;EACA,oDAxKM;EAyKN,gBAAA;EACA,oBAAA;AClLJ;;ADqLA;EACI,WAtMI;EAuMJ,qBAAA;AClLJ;;ADqLA;EA1BI,oDAzJM;EA0JN,kBAAA;EACA,oBAAA;EACA,WAnLI;EAoLJ,gBAAA;EACA,qBAAA;EAlEA,gCAAA;EACA,WApHI;EAqHJ,2BAAA;EACA,kBAAA;EAuFA,YAAA;EACA,aAAA;EACA,WAAA;EACA,eAAA;EACA,yBAAA;AC1KJ;ADiFI;EAEI,2BAAA;EACA,sBAAA;EACA,WAAA;EACA,oBAAA;EACA,kBAAA;EACA,QAAA;EACA,SAAA;EAEA,SAAA;EACA,QAAA;ACjFR;ADoFI;EAGI,wBAmE6C;EAlE7C,sBAkE6C;ACtJrD;ADuFI;EAGI,qBA4D6C;EA3D7C,uBA2D6C;AClJrD;AD0FI;EACI,yBA/IK;ACuDb;AD0FQ;EAEI,gCAnJC;EAoJD,oDAAA;EACA,WAAA;EACA,YAAA;ACzFZ;AD4FQ;EACI,8BAAA;AC1FZ;AD6FQ;EACI,8BAAA;AC3FZ;ADIQ;EA6HR;IAUQ,YAAA;ECvIN;AACF;;AD0IA;EACI,wBAAA;EACA,qBAAA;EACA,+BAAA;ACvIJ;;AD2IA,yEAAA;AClOgC;EAC5B,gBAAA;EACA,kBAAA;AA2FJ;AAxFI;EACI,wBAAA;EACA,cAAA;EACA,eAAA;EACA,sBDPA;ACiGR;AAxFQ;EACI,SAAA;EACA,YAAA;EACA,2BAAA;AA0FZ;AAvFQ;EACI,gBAAA;AAyFZ;AAtFQ;EACI,aAAA;EACA,mBAAA;EACA,iBAAA;AAwFZ;AArFQ;EACI,cAAA;EACA,YAAA;AAuFZ;AApFQ;;EAEI,wBAAA;AAsFZ;AAlFI;ED6IA,oDAzJM;EA0JN,kBAAA;EACA,oBAAA;EACA,WAnLI;EAoLJ,gBAAA;EACA,qBAAA;EChJI,mBAAA;EACA,WDvCA;ECwCA,kBAAA;AAyFR","sourcesContent":["/*--------------------------- Theme Colours ---------------------------*/\r\n\r\n/* Colours */\r\n$trans: transparent;\r\n$white: #fff;\r\n$black: #000;\r\n$dark-blue: #000033;\r\n$dark-blue-50: rgba(0, 0, 51, 0.50);\r\n$blue: #556880;\r\n$blue-35: rgba(85, 104, 128, .5);\r\n$pink: #f7a8b2;\r\n$deep-blush: rgb(193, 110, 100);\r\n$deep-blush-35: rgba(193, 110, 100, 0.35);\r\n\r\n/* Gradient */\r\n$la-db-bl-le: linear-gradient(to left, #957dad, #a478a4, #b17399, #bb6f8a, #c06d7a, #c7747c, #cd7c7f, #d38382, #df9398, #eaa5ae, #f4b6c4, #fec8d8);\r\n$sunset: linear-gradient(135deg, black, $dark-blue 70%, rgba(131,58,180,1) 100%);\r\n$sunset-header: linear-gradient(225deg, black, $dark-blue, rgba(131,58,180,1) 100%);\r\n\r\n/*-------------------------- Theme Colours End -------------------------*/\r\n\r\n\r\n/*-------------------------------- Fonts -------------------------------*/\r\n\r\n/*  Serif Font */\r\n$Cormorant: 'Cormorant Garamond', Times, serif;\r\n\r\n/*  Sans-Serif Font */\r\n$Spartan: 'Spartan', Arial, Helvetica, sans-serif;\r\n$Raleway: 'Raleway', Arial, Helvetica, sans-serif;\r\n\r\n/*------------------------------ Fonts End -----------------------------*/\r\n\r\n\r\n/*----------------------------- Breakpoints ----------------------------*/\r\n\r\n$sm: 576px;\r\n$md: 768px;\r\n$lg: 992px;\r\n$xl: 1200px;\r\n\r\n/*--------------------------- Breakpoints End --------------------------*/\r\n\r\n\r\n/*------------------------------- Images -------------------------------*/\r\n\r\n$background-image: url('../assets/1.jpg');\r\n$background-image-crop: url('../assets/1-crop.jpg');\r\n\r\n/*----------------------------- Images End -----------------------------*/\r\n\r\n\r\n/*------------------------------- Mixins -------------------------------*/\r\n\r\n@mixin media-breakpoint-down($breakpoint) {\r\n    @if $breakpoint==$sm {\r\n        @media (max-width: $sm) {\r\n            @content;\r\n        }\r\n    }\r\n\r\n    @else if $breakpoint==$md {\r\n        @media (max-width: $md) {\r\n            @content;\r\n        }\r\n    }\r\n\r\n    @else if $breakpoint==$lg {\r\n        @media (max-width: $lg) {\r\n            @content;\r\n        }\r\n    }\r\n\r\n    @else {\r\n        @media (max-width: $xl) {\r\n            @content;\r\n        }\r\n    }\r\n}\r\n\r\n@mixin media-breakpoint-up($breakpoint) {\r\n    @if $breakpoint==$sm {\r\n        @media (min-width: $sm) {\r\n            @content;\r\n        }\r\n    }\r\n\r\n    @else if $breakpoint==$md {\r\n        @media (min-width: $md) {\r\n            @content;\r\n        }\r\n    }\r\n\r\n    @else if $breakpoint==$lg {\r\n        @media (min-width: $lg) {\r\n            @content;\r\n        }\r\n    }\r\n\r\n    @else {\r\n        @media (min-width: $xl) {\r\n            @content;\r\n        }\r\n    }\r\n}\r\n\r\n@mixin flex-row ($justify-content, $align-items) {\r\n    display: flex;\r\n    justify-content: $justify-content;\r\n    align-items: $align-items;\r\n}\r\n\r\n@mixin flex-column($justify-content, $align-items) {\r\n    display: flex;\r\n    flex-direction: column;\r\n    justify-content: $justify-content;\r\n    align-items: $align-items;\r\n}\r\n\r\n@mixin btn-border-drawing($color: #ccc, $hover: black, $width: 2px, $vertical: top, $horizontal: left, $duration: 0.3s) {\r\n    box-shadow: inset 0 0 0 $width $color;\r\n    color: $color;\r\n    transition: color $duration calc($duration/3);\r\n    position: relative;\r\n\r\n    &::before,\r\n    &::after {\r\n        border: 0 solid transparent;\r\n        box-sizing: border-box;\r\n        content: '';\r\n        pointer-events: none;\r\n        position: absolute;\r\n        width: 0;\r\n        height: 0;\r\n\r\n        #{$vertical}: 0;\r\n        #{$horizontal}: 0;\r\n    }\r\n\r\n    &::before {\r\n        $h-side: if($horizontal=='left', 'right', 'left');\r\n\r\n        border-#{$vertical}-width: $width;\r\n        border-#{$h-side}-width: $width;\r\n    }\r\n\r\n    &::after {\r\n        $v-side: if($vertical=='top', 'bottom', 'top');\r\n\r\n        border-#{$v-side}-width: $width;\r\n        border-#{$horizontal}-width: $width;\r\n    }\r\n\r\n    &:hover {\r\n        color: $hover;\r\n\r\n        &::before,\r\n        &::after {\r\n            border-color: $hover;\r\n            transition: border-color 0s, width $duration, height $duration;\r\n            width: 100%;\r\n            height: 100%;\r\n        }\r\n\r\n        &::before {\r\n            transition-delay: 0s, 0s, $duration;\r\n        }\r\n\r\n        &::after {\r\n            transition-delay: 0s, $duration, 0s;\r\n        }\r\n    }\r\n}\r\n\r\n@mixin border {\r\n    border: 0;\r\n    // border: 0.5rem solid transparent;\r\n    // border-image: $la-db-bl-le 30;\r\n}\r\n\r\n@mixin default-text {\r\n    font-family: $Spartan;\r\n    font-size: 0.75rem;\r\n    line-height: 1.25rem;\r\n    color: $black;\r\n    font-weight: 600;\r\n    word-spacing: 0.25rem;\r\n}\r\n\r\n/*----------------------------- Mixins End -----------------------------*/\r\n\r\n\r\n/*------------------------------- Common -------------------------------*/\r\n\r\nh2 {\r\n    margin-bottom: 1.5rem;\r\n    font-size: 4rem;\r\n    font-family: $Raleway;\r\n    font-weight: 500;\r\n    line-height: 3.25rem;\r\n}\r\n\r\na {\r\n    color: $black;\r\n    text-decoration: none;\r\n}\r\n\r\nbutton {\r\n    @include default-text;\r\n    @include btn-border-drawing($black, $deep-blush, 2px, bottom, right);\r\n    border: none;\r\n    padding: 1rem;\r\n    width: 100%;\r\n    cursor: pointer;\r\n    text-transform: uppercase;\r\n\r\n    @include media-breakpoint-up($sm) {\r\n        width: 10rem;\r\n    }\r\n}\r\n\r\n.underline {\r\n    padding-bottom:0.125rem;\r\n    text-decoration:none;\r\n    border-bottom:2px solid yellow;}\r\n\r\n\r\n\r\n/*---------------------------- Common Ends -----------------------------*/","\n                                @import \"variables.scss\";\n                                .work {\r\n    overflow: hidden;\r\n    margin-top: 4.5rem;\r\n\r\n\r\n    &__carousel {\r\n        border: 2px solid yellow;\r\n        border-left: 0;\r\n        border-right: 0;\r\n        background-color: $white;\r\n\r\n        & img {\r\n            margin: 0;\r\n            height: 2rem;\r\n            max-width: 12rem !important;\r\n        }\r\n\r\n        .slick-list {\r\n            overflow: hidden;\r\n        }\r\n\r\n        .slick-track {\r\n            display: flex;\r\n            align-items: center;\r\n            padding: 1.5rem 0;\r\n        }\r\n\r\n        .slick-slide {\r\n            margin: 0 3rem;\r\n            height: 2rem;\r\n        }\r\n\r\n        .slick-prev,\r\n        .slick-next {\r\n            display: none !important;\r\n        }\r\n    }\r\n\r\n    p {\r\n        @include default-text;\r\n        margin-top: 0.75rem;\r\n        color: $white;\r\n        text-align: center;\r\n    }\r\n}\n                              "],"sourceRoot":""}]);
+}`, "",{"version":3,"sources":["webpack://./src/styles/variables.scss","webpack://./src/styles/work.scss"],"names":[],"mappings":"AAAA,wEAAA;AAEA,YAAA;AAWA,aAAA;AAKA,yEAAA;AAGA,yEAAA;AAEA,+DAAA;AACA,uBAAA;AAMA,aAAA;AAMA,+DAAA;AACA,cAAA;AAMA,gEAAA;AACA,YAAA;AAOA,YAAA;AAOA,yEAAA;AAGA,yEAAA;AAOA,yEAAA;AAGA,yEAAA;AA4EA,yEAAA;AAGA,yEAAA;AAEA;EACI,qBAAA;EACA,oBAAA;EACA,eAAA;EACA,oDA9GM;EA+GN,gBAAA;AC/HJ;;ADkIA;EACI,WA9JI;EA+JJ,qBAAA;AC/HJ;;ADkIA;EACI,kBAAA;EACA,SAAA;EACA,UAAA;EACA,iBAAA;EACA,eAAA;AC/HJ;ADiII;EAjCA,oBAAA;EACA,qBAAA;EACA,oDAxFM;EAyFN,kBAAA;EACA,gBAAA;EACA,WA7II;EA2KA,kBAAA;EACA,UAAA;EACA,gBAAA;EACA,qBAAA;EACA,gBAAA;EACA,WA/KA;EAgLA,kBAAA;EACA,qBAAA;AC1HR;AD4HQ;EACI,WArLJ;AC2DR;AD8HI;EACI,kBAAA;EACA,MAAA;EACA,OAAA;EACA,QAAA;EACA,YAAA;EACA,+BA1LO;EA2LP,oBAAA;EACA,WAAA;AC5HR;ADgIQ;EACI,WAAA;AC9HZ;;ADmIA;EACI,+BAAA;EACA,wBAAA;EACA,qBAAA;AChIJ;;ADmIA,yEAAA;AClNgC;EAC5B,gBAAA;AAmFJ;ADXQ;ECzEwB;IAIxB,aAAA;EAoFN;AACF;AAlFI;EACI,wBAAA;EACA,cAAA;EACA,eAAA;EACA,sBDVA;AC8FR;AAlFQ;EACI,SAAA;EACA,YAAA;EACA,2BAAA;AAoFZ;AAjFQ;EACI,gBAAA;AAmFZ;AAhFQ;EDqGJ,aAAA;EACA,sBCrG0B;EDsG1B,mBCtGiC;EACzB,iBAAA;AAoFZ;AAjFQ;EACI,cAAA;EACA,YAAA;AAmFZ;AAhFQ;;EAEI,wBAAA;AAkFZ;AA9EI;EDkGA,oBAAA;EACA,qBAAA;EACA,oDAxFM;EAyFN,kBAAA;EACA,gBAAA;EACA,WA7II;ECwCA,mBAAA;EACA,WDzCA;EC0CA,kBAAA;AAqFR","sourcesContent":["/*--------------------------- Theme Colours ---------------------------*/\r\n\r\n/* Colours */\r\n$white: #fff;\r\n$black: #000;\r\n$dark-blue: #000033;\r\n$yellow: #ffff00;\r\n$purple: rgba(131, 58, 180, 1);\r\n$dark-blue-50: rgba(0, 0, 51, 0.50);\r\n$border-yellow: rgba(255, 255, 0, 0.25);\r\n$transwhite-bg: rgba(255, 255, 255, 0.1);\r\n$shadow-color: rgba(0, 0, 0, 0.1);\r\n\r\n/* Gradient */\r\n$sunset: linear-gradient(135deg, black, $dark-blue 70%, $purple 100%);\r\n$sunset-var: linear-gradient(225deg, black, $dark-blue, $purple 100%);\r\n$sunset-header: linear-gradient(135deg, black, #00001b, #170A4A);\r\n\r\n/*-------------------------- Theme Colours End -------------------------*/\r\n\r\n\r\n/*-------------------------------- Fonts -------------------------------*/\r\n\r\n/******************** Serif Fonts *****************************/\r\n/* Cormorant Garamond */\r\n@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap');\r\n$Cormorant: 'Cormorant Garamond',\r\nTimes,\r\nserif;\r\n\r\n/* Arizonia */\r\n@import url('https://fonts.googleapis.com/css2?family=Arizonia&display=swap');\r\n$Arizonia: 'Arizonia',\r\nTimes,\r\nserif;\r\n\r\n/********************** Cursive Fonts *************************/\r\n/* Italianno */\r\n@import url('https://fonts.googleapis.com/css2?family=Italianno&display=swap');\r\n$Italianno: 'Italianno',\r\nSnell Roundhand,\r\ncursive;\r\n\r\n/********************* Sans-serif Fonts ************************/\r\n/* Raleway */\r\n@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');\r\n$Raleway: 'Raleway',\r\nArial,\r\nHelvetica,\r\nsans-serif;\r\n\r\n/* Spartan */\r\n@import url('https://fonts.googleapis.com/css2?family=Spartan:wght@100;200;300;400;500;600;700;800;900&display=swap');\r\n$Spartan: 'Spartan',\r\nArial,\r\nHelvetica,\r\nsans-serif;\r\n\r\n/*------------------------------ Fonts End -----------------------------*/\r\n\r\n\r\n/*----------------------------- Breakpoints ----------------------------*/\r\n\r\n$sm: 576px;\r\n$md: 768px;\r\n$lg: 992px;\r\n$xl: 1200px;\r\n\r\n/*--------------------------- Breakpoints End --------------------------*/\r\n\r\n\r\n/*------------------------------- Mixins -------------------------------*/\r\n\r\n@mixin media-breakpoint-down($breakpoint) {\r\n    @if $breakpoint==$sm {\r\n        @media (max-width: $sm) {\r\n            @content;\r\n        }\r\n    }\r\n\r\n    @else if $breakpoint==$md {\r\n        @media (max-width: $md) {\r\n            @content;\r\n        }\r\n    }\r\n\r\n    @else if $breakpoint==$lg {\r\n        @media (max-width: $lg) {\r\n            @content;\r\n        }\r\n    }\r\n\r\n    @else {\r\n        @media (max-width: $xl) {\r\n            @content;\r\n        }\r\n    }\r\n}\r\n\r\n@mixin media-breakpoint-up($breakpoint) {\r\n    @if $breakpoint==$sm {\r\n        @media (min-width: $sm) {\r\n            @content;\r\n        }\r\n    }\r\n\r\n    @else if $breakpoint==$md {\r\n        @media (min-width: $md) {\r\n            @content;\r\n        }\r\n    }\r\n\r\n    @else if $breakpoint==$lg {\r\n        @media (min-width: $lg) {\r\n            @content;\r\n        }\r\n    }\r\n\r\n    @else {\r\n        @media (min-width: $xl) {\r\n            @content;\r\n        }\r\n    }\r\n}\r\n\r\n@mixin flex-row ($justify-content, $align-items) {\r\n    display: flex;\r\n    justify-content: $justify-content;\r\n    align-items: $align-items;\r\n}\r\n\r\n@mixin flex-column($justify-content, $align-items) {\r\n    display: flex;\r\n    flex-direction: column;\r\n    justify-content: $justify-content;\r\n    align-items: $align-items;\r\n}\r\n\r\n@mixin default-text {\r\n    line-height: 1.25rem;\r\n    word-spacing: 0.25rem;\r\n    font-family: $Spartan;\r\n    font-size: 0.75rem;\r\n    font-weight: 300;\r\n    color: $white;\r\n}\r\n\r\n/*----------------------------- Mixins End -----------------------------*/\r\n\r\n\r\n/*------------------------------- Common -------------------------------*/\r\n\r\nh2 {\r\n    margin-bottom: 1.5rem;\r\n    line-height: 3.25rem;\r\n    font-size: 4rem;\r\n    font-family: $Raleway;\r\n    font-weight: 500;\r\n}\r\n\r\na {\r\n    color: $white;\r\n    text-decoration: none;\r\n}\r\n\r\nbutton {\r\n    position: relative;\r\n    border: 0;\r\n    padding: 0;\r\n    background: white;\r\n    cursor: pointer;\r\n\r\n    span {\r\n        @include default-text;\r\n        position: relative;\r\n        z-index: 2;\r\n        padding: 0.75rem;\r\n        display: inline-block;\r\n        font-weight: 400;\r\n        color: $black;\r\n        text-align: center;\r\n        transition: all .35s;\r\n\r\n        &:hover {\r\n            color: $white;\r\n        }\r\n    }\r\n\r\n    &::after {\r\n        position: absolute;\r\n        top: 0;\r\n        left: 0;\r\n        width: 0;\r\n        height: 100%;\r\n        background: $dark-blue-50;\r\n        transition: all .3s;\r\n        content: \"\";\r\n    }\r\n\r\n    &:hover {\r\n        &::after {\r\n            width: 100%;\r\n        }\r\n    }\r\n}\r\n\r\n.underline {\r\n    border-bottom: 2px solid yellow;\r\n    padding-bottom: 0.125rem;\r\n    text-decoration: none;\r\n}\r\n\r\n/*---------------------------- Common Ends -----------------------------*/","\n                                @import \"variables.scss\";\n                                .work {\r\n    overflow: hidden;\r\n\r\n    @include media-breakpoint-down($sm) {\r\n        margin-top: 0;\r\n    }\r\n\r\n    &__carousel {\r\n        border: 2px solid yellow;\r\n        border-left: 0;\r\n        border-right: 0;\r\n        background-color: $white;\r\n\r\n        & img {\r\n            margin: 0;\r\n            height: 2rem;\r\n            max-width: 12rem !important;\r\n        }\r\n\r\n        .slick-list {\r\n            overflow: hidden;\r\n        }\r\n\r\n        .slick-track {\r\n            @include flex-row(unset, center);\r\n            padding: 1.5rem 0;\r\n        }\r\n\r\n        .slick-slide {\r\n            margin: 0 3rem;\r\n            height: 2rem;\r\n        }\r\n\r\n        .slick-prev,\r\n        .slick-next {\r\n            display: none !important;\r\n        }\r\n    }\r\n\r\n    p {\r\n        @include default-text;\r\n        margin-top: 0.75rem;\r\n        color: $white;\r\n        text-align: center;\r\n    }\r\n}\n                              "],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -1825,42 +1853,6 @@ module.exports = function (cssWithMappingToString) {
     }
   };
   return list;
-};
-
-/***/ }),
-
-/***/ "./node_modules/css-loader/dist/runtime/getUrl.js":
-/*!********************************************************!*\
-  !*** ./node_modules/css-loader/dist/runtime/getUrl.js ***!
-  \********************************************************/
-/***/ ((module) => {
-
-"use strict";
-
-
-module.exports = function (url, options) {
-  if (!options) {
-    options = {};
-  }
-  if (!url) {
-    return url;
-  }
-  url = String(url.__esModule ? url.default : url);
-
-  // If url is already wrapped in quotes, remove them
-  if (/^['"].*['"]$/.test(url)) {
-    url = url.slice(1, -1);
-  }
-  if (options.hash) {
-    url += options.hash;
-  }
-
-  // Should url be wrapped?
-  // See https://drafts.csswg.org/css-values-3/#urls
-  if (/["'() \t\n]|(%20)/.test(url) || options.needQuotes) {
-    return "\"".concat(url.replace(/"/g, '\\"').replace(/\n/g, "\\n"), "\"");
-  }
-  return url;
 };
 
 /***/ }),
@@ -15638,10 +15630,10 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
 
 /***/ }),
 
-/***/ "./src/styles/fonts.scss":
-/*!*******************************!*\
-  !*** ./src/styles/fonts.scss ***!
-  \*******************************/
+/***/ "./src/styles/contact.scss":
+/*!*********************************!*\
+  !*** ./src/styles/contact.scss ***!
+  \*********************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -15661,7 +15653,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _node_modules_style_loader_dist_runtime_insertStyleElement_js__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_insertStyleElement_js__WEBPACK_IMPORTED_MODULE_4__);
 /* harmony import */ var _node_modules_style_loader_dist_runtime_styleTagTransform_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! !../../node_modules/style-loader/dist/runtime/styleTagTransform.js */ "./node_modules/style-loader/dist/runtime/styleTagTransform.js");
 /* harmony import */ var _node_modules_style_loader_dist_runtime_styleTagTransform_js__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_styleTagTransform_js__WEBPACK_IMPORTED_MODULE_5__);
-/* harmony import */ var _node_modules_css_loader_dist_cjs_js_node_modules_sass_loader_dist_cjs_js_ruleSet_1_rules_0_use_2_fonts_scss__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! !!../../node_modules/css-loader/dist/cjs.js!../../node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[0].use[2]!./fonts.scss */ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[0].use[2]!./src/styles/fonts.scss");
+/* harmony import */ var _node_modules_css_loader_dist_cjs_js_node_modules_sass_loader_dist_cjs_js_ruleSet_1_rules_0_use_2_contact_scss__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! !!../../node_modules/css-loader/dist/cjs.js!../../node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[0].use[2]!./contact.scss */ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[0].use[2]!./src/styles/contact.scss");
 
       
       
@@ -15683,12 +15675,12 @@ options.setAttributes = (_node_modules_style_loader_dist_runtime_setAttributesWi
 options.domAPI = (_node_modules_style_loader_dist_runtime_styleDomAPI_js__WEBPACK_IMPORTED_MODULE_1___default());
 options.insertStyleElement = (_node_modules_style_loader_dist_runtime_insertStyleElement_js__WEBPACK_IMPORTED_MODULE_4___default());
 
-var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default()(_node_modules_css_loader_dist_cjs_js_node_modules_sass_loader_dist_cjs_js_ruleSet_1_rules_0_use_2_fonts_scss__WEBPACK_IMPORTED_MODULE_6__["default"], options);
+var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default()(_node_modules_css_loader_dist_cjs_js_node_modules_sass_loader_dist_cjs_js_ruleSet_1_rules_0_use_2_contact_scss__WEBPACK_IMPORTED_MODULE_6__["default"], options);
 
 
 
 
-       /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_css_loader_dist_cjs_js_node_modules_sass_loader_dist_cjs_js_ruleSet_1_rules_0_use_2_fonts_scss__WEBPACK_IMPORTED_MODULE_6__["default"] && _node_modules_css_loader_dist_cjs_js_node_modules_sass_loader_dist_cjs_js_ruleSet_1_rules_0_use_2_fonts_scss__WEBPACK_IMPORTED_MODULE_6__["default"].locals ? _node_modules_css_loader_dist_cjs_js_node_modules_sass_loader_dist_cjs_js_ruleSet_1_rules_0_use_2_fonts_scss__WEBPACK_IMPORTED_MODULE_6__["default"].locals : undefined);
+       /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_css_loader_dist_cjs_js_node_modules_sass_loader_dist_cjs_js_ruleSet_1_rules_0_use_2_contact_scss__WEBPACK_IMPORTED_MODULE_6__["default"] && _node_modules_css_loader_dist_cjs_js_node_modules_sass_loader_dist_cjs_js_ruleSet_1_rules_0_use_2_contact_scss__WEBPACK_IMPORTED_MODULE_6__["default"].locals ? _node_modules_css_loader_dist_cjs_js_node_modules_sass_loader_dist_cjs_js_ruleSet_1_rules_0_use_2_contact_scss__WEBPACK_IMPORTED_MODULE_6__["default"].locals : undefined);
 
 
 /***/ }),
@@ -16461,6 +16453,17 @@ module.exports = styleTagTransform;
 
 /***/ }),
 
+/***/ "./src/assets/Nithila_Resume.doc":
+/*!***************************************!*\
+  !*** ./src/assets/Nithila_Resume.doc ***!
+  \***************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+module.exports = __webpack_require__.p + "Nithila_Resume.doc";
+
+/***/ }),
+
 /***/ "./src/assets/personal-pictures/1.png":
 /*!********************************************!*\
   !*** ./src/assets/personal-pictures/1.png ***!
@@ -16549,6 +16552,17 @@ module.exports = __webpack_require__.p + "equinix.png";
 
 /***/ }),
 
+/***/ "./src/assets/project-logos/logo.png":
+/*!*******************************************!*\
+  !*** ./src/assets/project-logos/logo.png ***!
+  \*******************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+module.exports = __webpack_require__.p + "logo.png";
+
+/***/ }),
+
 /***/ "./src/assets/project-logos/myntra.png":
 /*!*********************************************!*\
   !*** ./src/assets/project-logos/myntra.png ***!
@@ -16613,6 +16627,17 @@ module.exports = __webpack_require__.p + "letterboxd.svg";
 "use strict";
 module.exports = __webpack_require__.p + "linkedin.png";
 
+/***/ }),
+
+/***/ "./src/clients.php":
+/*!*************************!*\
+  !*** ./src/clients.php ***!
+  \*************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+module.exports = __webpack_require__.p + "clients.php";
+
 /***/ })
 
 /******/ 	});
@@ -16640,9 +16665,6 @@ module.exports = __webpack_require__.p + "linkedin.png";
 /******/ 		// Return the exports of the module
 /******/ 		return module.exports;
 /******/ 	}
-/******/ 	
-/******/ 	// expose the modules object (__webpack_modules__)
-/******/ 	__webpack_require__.m = __webpack_modules__;
 /******/ 	
 /************************************************************************/
 /******/ 	/* webpack/runtime/compat get default export */
@@ -16720,32 +16742,6 @@ module.exports = __webpack_require__.p + "linkedin.png";
 /******/ 		__webpack_require__.p = scriptUrl;
 /******/ 	})();
 /******/ 	
-/******/ 	/* webpack/runtime/jsonp chunk loading */
-/******/ 	(() => {
-/******/ 		__webpack_require__.b = document.baseURI || self.location.href;
-/******/ 		
-/******/ 		// object to store loaded and loading chunks
-/******/ 		// undefined = chunk not loaded, null = chunk preloaded/prefetched
-/******/ 		// [resolve, reject, Promise] = chunk loading, 0 = chunk loaded
-/******/ 		var installedChunks = {
-/******/ 			"bundle": 0
-/******/ 		};
-/******/ 		
-/******/ 		// no chunk on demand loading
-/******/ 		
-/******/ 		// no prefetching
-/******/ 		
-/******/ 		// no preloaded
-/******/ 		
-/******/ 		// no HMR
-/******/ 		
-/******/ 		// no HMR manifest
-/******/ 		
-/******/ 		// no on chunks loaded
-/******/ 		
-/******/ 		// no jsonp function
-/******/ 	})();
-/******/ 	
 /******/ 	/* webpack/runtime/nonce */
 /******/ 	(() => {
 /******/ 		__webpack_require__.nc = undefined;
@@ -16762,29 +16758,38 @@ var __webpack_exports__ = {};
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _styles_reset_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./styles/reset.scss */ "./src/styles/reset.scss");
 /* harmony import */ var _styles_variables_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./styles/variables.scss */ "./src/styles/variables.scss");
-/* harmony import */ var _styles_fonts_scss__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./styles/fonts.scss */ "./src/styles/fonts.scss");
-/* harmony import */ var _styles_main_scss__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./styles/main.scss */ "./src/styles/main.scss");
-/* harmony import */ var _styles_header_scss__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./styles/header.scss */ "./src/styles/header.scss");
-/* harmony import */ var _styles_footer_scss__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./styles/footer.scss */ "./src/styles/footer.scss");
-/* harmony import */ var _styles_home_scss__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./styles/home.scss */ "./src/styles/home.scss");
-/* harmony import */ var _styles_pivot_scss__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./styles/pivot.scss */ "./src/styles/pivot.scss");
-/* harmony import */ var _styles_skills_scss__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./styles/skills.scss */ "./src/styles/skills.scss");
+/* harmony import */ var _styles_main_scss__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./styles/main.scss */ "./src/styles/main.scss");
+/* harmony import */ var _styles_header_scss__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./styles/header.scss */ "./src/styles/header.scss");
+/* harmony import */ var _styles_footer_scss__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./styles/footer.scss */ "./src/styles/footer.scss");
+/* harmony import */ var _styles_home_scss__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./styles/home.scss */ "./src/styles/home.scss");
+/* harmony import */ var _styles_pivot_scss__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./styles/pivot.scss */ "./src/styles/pivot.scss");
+/* harmony import */ var _styles_skills_scss__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./styles/skills.scss */ "./src/styles/skills.scss");
+/* harmony import */ var _styles_contact_scss__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./styles/contact.scss */ "./src/styles/contact.scss");
 /* harmony import */ var _styles_work_scss__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./styles/work.scss */ "./src/styles/work.scss");
 /* harmony import */ var _javascript_carousel_js__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./javascript/carousel.js */ "./src/javascript/carousel.js");
-/* harmony import */ var _assets_personal_pictures_1_png__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./assets/personal-pictures/1.png */ "./src/assets/personal-pictures/1.png");
-/* harmony import */ var _assets_personal_pictures_2_jpg__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./assets/personal-pictures/2.jpg */ "./src/assets/personal-pictures/2.jpg");
-/* harmony import */ var _assets_social_logos_instagram_png__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./assets/social-logos/instagram.png */ "./src/assets/social-logos/instagram.png");
-/* harmony import */ var _assets_social_logos_letterboxd_svg__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./assets/social-logos/letterboxd.svg */ "./src/assets/social-logos/letterboxd.svg");
-/* harmony import */ var _assets_social_logos_linkedin_png__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./assets/social-logos/linkedin.png */ "./src/assets/social-logos/linkedin.png");
-/* harmony import */ var _assets_project_logos_canopygrowth_png__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./assets/project-logos/canopygrowth.png */ "./src/assets/project-logos/canopygrowth.png");
-/* harmony import */ var _assets_project_logos_dupont_png__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./assets/project-logos/dupont.png */ "./src/assets/project-logos/dupont.png");
-/* harmony import */ var _assets_project_logos_eon_png__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./assets/project-logos/eon.png */ "./src/assets/project-logos/eon.png");
-/* harmony import */ var _assets_project_logos_equinix_png__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./assets/project-logos/equinix.png */ "./src/assets/project-logos/equinix.png");
-/* harmony import */ var _assets_project_logos_myntra_png__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./assets/project-logos/myntra.png */ "./src/assets/project-logos/myntra.png");
-/* harmony import */ var _assets_project_logos_tadigital_png__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./assets/project-logos/tadigital.png */ "./src/assets/project-logos/tadigital.png");
-/* harmony import */ var _assets_project_logos_thoughtworks_png__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./assets/project-logos/thoughtworks.png */ "./src/assets/project-logos/thoughtworks.png");
-/* harmony import */ var _assets_project_logos_accenture_png__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ./assets/project-logos/accenture.png */ "./src/assets/project-logos/accenture.png");
-/* harmony import */ var _assets_project_logos_bt_png__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ./assets/project-logos/bt.png */ "./src/assets/project-logos/bt.png");
+/* harmony import */ var _javascript_menu_js__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./javascript/menu.js */ "./src/javascript/menu.js");
+/* harmony import */ var _javascript_menu_js__WEBPACK_IMPORTED_MODULE_11___default = /*#__PURE__*/__webpack_require__.n(_javascript_menu_js__WEBPACK_IMPORTED_MODULE_11__);
+/* harmony import */ var _javascript_download_js__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./javascript/download.js */ "./src/javascript/download.js");
+/* harmony import */ var _javascript_download_js__WEBPACK_IMPORTED_MODULE_12___default = /*#__PURE__*/__webpack_require__.n(_javascript_download_js__WEBPACK_IMPORTED_MODULE_12__);
+/* harmony import */ var _javascript_form_js__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./javascript/form.js */ "./src/javascript/form.js");
+/* harmony import */ var _javascript_form_js__WEBPACK_IMPORTED_MODULE_13___default = /*#__PURE__*/__webpack_require__.n(_javascript_form_js__WEBPACK_IMPORTED_MODULE_13__);
+/* harmony import */ var _clients_php__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./clients.php */ "./src/clients.php");
+/* harmony import */ var _assets_personal_pictures_1_png__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./assets/personal-pictures/1.png */ "./src/assets/personal-pictures/1.png");
+/* harmony import */ var _assets_personal_pictures_2_jpg__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./assets/personal-pictures/2.jpg */ "./src/assets/personal-pictures/2.jpg");
+/* harmony import */ var _assets_social_logos_instagram_png__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./assets/social-logos/instagram.png */ "./src/assets/social-logos/instagram.png");
+/* harmony import */ var _assets_social_logos_letterboxd_svg__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./assets/social-logos/letterboxd.svg */ "./src/assets/social-logos/letterboxd.svg");
+/* harmony import */ var _assets_social_logos_linkedin_png__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./assets/social-logos/linkedin.png */ "./src/assets/social-logos/linkedin.png");
+/* harmony import */ var _assets_project_logos_canopygrowth_png__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./assets/project-logos/canopygrowth.png */ "./src/assets/project-logos/canopygrowth.png");
+/* harmony import */ var _assets_project_logos_dupont_png__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./assets/project-logos/dupont.png */ "./src/assets/project-logos/dupont.png");
+/* harmony import */ var _assets_project_logos_eon_png__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./assets/project-logos/eon.png */ "./src/assets/project-logos/eon.png");
+/* harmony import */ var _assets_project_logos_equinix_png__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ./assets/project-logos/equinix.png */ "./src/assets/project-logos/equinix.png");
+/* harmony import */ var _assets_project_logos_myntra_png__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ./assets/project-logos/myntra.png */ "./src/assets/project-logos/myntra.png");
+/* harmony import */ var _assets_project_logos_tadigital_png__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ./assets/project-logos/tadigital.png */ "./src/assets/project-logos/tadigital.png");
+/* harmony import */ var _assets_project_logos_thoughtworks_png__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! ./assets/project-logos/thoughtworks.png */ "./src/assets/project-logos/thoughtworks.png");
+/* harmony import */ var _assets_project_logos_accenture_png__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! ./assets/project-logos/accenture.png */ "./src/assets/project-logos/accenture.png");
+/* harmony import */ var _assets_project_logos_bt_png__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! ./assets/project-logos/bt.png */ "./src/assets/project-logos/bt.png");
+/* harmony import */ var _assets_project_logos_logo_png__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(/*! ./assets/project-logos/logo.png */ "./src/assets/project-logos/logo.png");
+/* harmony import */ var _assets_Nithila_Resume_doc__WEBPACK_IMPORTED_MODULE_30__ = __webpack_require__(/*! ./assets/Nithila_Resume.doc */ "./src/assets/Nithila_Resume.doc");
 /* Styles */
 
 
@@ -16800,7 +16805,13 @@ __webpack_require__.r(__webpack_exports__);
 /* JavaScript */
 
 
+
+
+
+
 /* Assets */
+
+
 
 
 
@@ -16819,4 +16830,4 @@ __webpack_require__.r(__webpack_exports__);
 
 /******/ })()
 ;
-//# sourceMappingURL=bundlebff641a93be23c1ec7a6.js.map
+//# sourceMappingURL=bundle7cef5dee7328608155aa.js.map
