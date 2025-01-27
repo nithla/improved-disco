@@ -3,6 +3,15 @@
     padding: 1.5rem 7.5vw;
     display: flex;
 
+    .error {
+        @include default-text;
+        position: relative;
+        top: -0.75rem;
+        font-size: 0.6rem;
+        font-weight: 600;
+        color: red;
+    }
+
     @include media-breakpoint-down($md) {
         margin: 1.5rem auto 0;
         flex-direction: column;

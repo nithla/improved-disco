@@ -7,6 +7,7 @@
     <title>
         <%=htmlWebpackPlugin.options.title %>
     </title>
+    <link rel="icon" href="logo.png" type="image/png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
         integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -40,7 +41,7 @@
                         projects like corporate websites and DevOps tools, and
                         my journey has taught me how to bridge the gap between what users need and what businesses
                         require.</p>
-                    <p class="home__bio-text" id="work">I’m passionate about driving product success by crafting clear roadmaps,
+                    <p class="home__bio-text" >I’m passionate about driving product success by crafting clear roadmaps,
                         prioritizing the right
                         features, and ensuring seamless collaboration between stakeholders and teams. With an MBA from
                         IIM Kozhikode and a B.Tech. in Computer Science from MGIT, I’m here to make things happen—innovative,
@@ -50,7 +51,7 @@
             </div>
         </section>
 
-        <section class="pivot">
+        <section class="pivot" id="work">
             <h2 class="pivot__text">From concept to execution, driving results and not just output!</h2>
             <div class="pivot__card-wrapper">
                 <div class="pivot__card">
@@ -139,14 +140,14 @@
         <section class="contact" id="contact">
             <h2 class="contact__text">Get in touch!</h2>
             <div class="contact__input-wrapper">
-                <input type="text" class="contact__input__name" placeholder="Name">
-                <input type="email" class="contact__input__name" placeholder="E-mail">
-                <input type="tel" class="contact__input__name" placeholder="Phone number">
+                <input type="text" id="contactName" class="contact__input__name" placeholder="Name">
+                <input type="email" id="contactEmail" class="contact__input__name" placeholder="E-mail">
+                <input type="tel" id="contactPhone" class="contact__input__name" placeholder="Phone number">
             </div>
             <div class="contact__input-wrapper">
-                <textarea class="contact__input__query"
+                <textarea id="contactQuery" class="contact__input__query"
                     placeholder="Enter your query and I shall reach out to you!"></textarea>
-                <button class="contact__input__button"><span>Email me :D</span></button>
+                <button class="contact__input__button"><span>Contact me :D</span></button>
             </div>
         </section>
 
