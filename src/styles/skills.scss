@@ -20,17 +20,27 @@
         }
     }
 
-    @include media-breakpoint-down($sm) {
-        display: none;
-    }
-
     &__download .fa {
         margin-right: 0.25rem;
+    }
+
+    &__text {
+        @include default-text;
+        font-size: 1.25rem;
+        font-weight: 500;
+
+        @include media-breakpoint-down($sm) {
+            display: none;
+        }
     }
 
     &__list {
         @include default-text;
         text-align: left;
+
+        @include media-breakpoint-down($sm) {
+            display: none;
+        }
 
         th,
         td {
