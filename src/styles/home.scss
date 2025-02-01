@@ -1,11 +1,7 @@
 .home {
     width: calc(100% - 15vw);
-    margin: 0 auto 3rem;
+    margin: 0 auto;
     border: 1px solid $yellow;
-
-    @include media-breakpoint-down($sm) {
-        margin: 0 auto 1.5rem;
-    }
 
     &__bio {
         @include default-text;
