@@ -10,11 +10,6 @@ body {
     color: $white;
     overflow-x: hidden;
 
-    /* iOS specific fix */
-    @media only screen and (-webkit-min-device-pixel-ratio: 2) {
-        background-attachment: scroll !important;
-    }
-
     &::-webkit-scrollbar {
         width: 0.75rem;
     }
