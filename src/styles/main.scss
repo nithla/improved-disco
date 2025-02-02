@@ -12,11 +12,8 @@ body {
 
     /* iOS specific fix */
     @media only screen and (-webkit-min-device-pixel-ratio: 2) {
-        body {
-            background-attachment: scroll !important;
-        }
+        background-attachment: scroll !important;
     }
-
 
     &::-webkit-scrollbar {
         width: 0.75rem;
