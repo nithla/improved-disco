@@ -1,6 +1,13 @@
 .footer {
     padding: 0 7.5vw;
 
+    p {
+        @include default-text;
+        margin-top: 0.75rem;
+        color: $white;
+        text-align: center;
+    }
+
     &__social-links {
         @include flex-row(center, unset);
         margin-bottom: 3rem;

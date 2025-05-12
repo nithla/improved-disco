@@ -11,13 +11,13 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
         integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-<script defer src="bundle7cef5dee7328608155aa.js"></script></head>
+<script defer src="bundle2c4d651b1cd4b694ebb6.js"></script></head>
 
 <body>
     <div class="main" id="home">
         <header class="header">
             <div class="header__logo">
-                <p class="header__logo-text">NRG</p>
+                <p class="header__logo-text"><a href="#home">NRG</a></p>
                 <div class="header__logo-caret">
                     <p>Menu</p>
                 </div>
@@ -43,15 +43,15 @@
                         require.</p>
                     <p class="home__bio-text" >I’m passionate about driving product success by crafting clear roadmaps,
                         prioritizing the right
-                        features, and ensuring seamless collaboration between stakeholders and teams. With an MBA from
-                        IIM Kozhikode and a B.Tech. in Computer Science from MGIT, I’m here to make things happen—innovative,
-                        impactful,and on-point.</p>
+                        features, and ensuring seamless collaboration between stakeholders and teams. With an <u class="underline">MBA from
+                        IIM Kozhikode</u> and a <u class="underline">B.Tech. in Computer Science</u> from MGIT, I’m here to make things happen—innovative,
+                        impactful, and on-point.</p>
                 </div>
-                <div class="home__bio-picture"><img src="1.png"></div>
+                <div class="home__bio-picture"><img src="sp1.png"></div>
             </div>
         </section>
-
-        <section class="pivot" id="work">
+        <section class="empty" id="work"></section>
+        <section class="pivot">
             <h2 class="pivot__text">From concept to execution, driving results and not just output!</h2>
             <div class="pivot__card-wrapper">
                 <div class="pivot__card">
@@ -85,6 +85,7 @@
         </section>
 
         <section class="skills d-none">
+            <h3 class="skills__text">My skills</h3>
             <table class="skills__list">
                 <tr>
                     <th>Product management</th>
@@ -140,12 +141,12 @@
         <section class="contact" id="contact">
             <h2 class="contact__text">Get in touch!</h2>
             <div class="contact__input-wrapper">
-                <input type="text" class="contact__input__name" placeholder="Name">
-                <input type="email" class="contact__input__name" placeholder="E-mail">
-                <input type="tel" class="contact__input__name" placeholder="Phone number">
+                <input type="text" id="contactName" class="contact__input__name" placeholder="Name">
+                <input type="email" id="contactEmail" class="contact__input__name" placeholder="E-mail">
+                <input type="tel" id="contactPhone" class="contact__input__name" placeholder="Phone number">
             </div>
             <div class="contact__input-wrapper">
-                <textarea class="contact__input__query"
+                <textarea id="contactQuery" class="contact__input__query"
                     placeholder="Enter your query and I shall reach out to you!"></textarea>
                 <button class="contact__input__button"><span>Contact me :D</span></button>
             </div>

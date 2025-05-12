@@ -36,4 +36,4 @@ import './assets/project-logos/bt.png'
 
 import './assets/project-logos/logo.png'
 
-import './assets/Nithila_Resume.doc'
+import './assets/Nithila_Resume.pdf'
