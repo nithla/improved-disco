@@ -19,7 +19,7 @@ import './javascript/form.js'
 /* Assets */
 import './assets/personal-pictures/1.png'
 import './assets/personal-pictures/2.jpg'
-import './assets/personal-pictures/sp1.jpg'
+import './assets/personal-pictures/sp1.png'
 
 import './assets/social-logos/instagram.png'
 import './assets/social-logos/letterboxd.svg'
