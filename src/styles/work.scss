@@ -1,5 +1,10 @@
 .work {
+    z-index: 13;
     overflow: hidden;
+    background: $crt-vignette;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 
     @include media-breakpoint-down($sm) {
         margin-top: 0;

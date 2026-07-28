@@ -31,7 +31,45 @@
             </div>
         </header>
 
-        <section class="home" >
+        <div class="mondrian" aria-hidden="true">
+            <div class="mondrian__strip mondrian__strip--left">
+                <div class="mondrian__cell mondrian__cell--red" style="flex: 0 0 20%; border-bottom-width: 10px;"></div>
+                <div class="mondrian__cell mondrian__cell--white" style="flex: 0 0 9%; border-bottom-width: 7px;"></div>
+                <div class="mondrian__row" style="flex: 0 0 16%; border-bottom-width: 3px;">
+                    <div class="mondrian__cell mondrian__cell--white" style="flex: 1;"></div>
+                    <div class="mondrian__cell mondrian__cell--yellow" style="flex: 0 0 36%;"></div>
+                </div>
+                <div class="mondrian__cell mondrian__cell--white" style="flex: 1; border-bottom-width: 7px;"></div>
+                <div class="mondrian__cell mondrian__cell--black" style="flex: 0 0 7%; border-bottom-width: 3px;"></div>
+                <div class="mondrian__cell mondrian__cell--blue" style="flex: 0 0 22%;"></div>
+            </div>
+
+            <div class="mondrian__strip mondrian__strip--right">
+                <div class="mondrian__row" style="flex: 0 0 12%; border-bottom-width: 10px;">
+                    <div class="mondrian__cell mondrian__cell--black" style="flex: 0 0 22%;"></div>
+                    <div class="mondrian__cell mondrian__cell--white" style="flex: 1;"></div>
+                </div>
+                <div class="mondrian__cell mondrian__cell--yellow" style="flex: 0 0 11%; border-bottom-width: 3px;"></div>
+                <div class="mondrian__cell mondrian__cell--white" style="flex: 1; border-bottom-width: 7px;"></div>
+                <div class="mondrian__row" style="flex: 0 0 20%; border-bottom-width: 3px;">
+                    <div class="mondrian__cell mondrian__cell--red" style="flex: 0 0 55%;"></div>
+                    <div class="mondrian__cell mondrian__cell--white" style="flex: 1;"></div>
+                </div>
+                <div class="mondrian__cell mondrian__cell--white" style="flex: 0 0 9%;"></div>
+            </div>
+
+            <div class="mondrian__strip mondrian__strip--bottom">
+                <div class="mondrian__cell mondrian__cell--white" style="flex: 1; border-right-width: 7px;"></div>
+                <div class="mondrian__cell mondrian__cell--white" style="flex: 0 0 4%; border-right-width: 3px;"></div>
+                <div class="mondrian__cell mondrian__cell--yellow" style="flex: 0 0 9%; border-right-width: 3px;"></div>
+                <div class="mondrian__cell mondrian__cell--white" style="flex: 0 0 6%; border-right-width: 10px;"></div>
+                <div class="mondrian__cell mondrian__cell--red" style="flex: 0 0 17%;"></div>
+            </div>
+        </div>
+
+        <div class="screen-frame"></div>
+
+        <section class="home panel">
             <div class="home__bio">
                 <div class="home__bio-text-wrapper">
                     <h2 class="home__title">Hi, I’m Nithila!</h2>
@@ -50,79 +88,77 @@
                 <div class="home__bio-picture"><img src="sp1.png"></div>
             </div>
         </section>
-        <section class="empty" id="work"></section>
-        <section class="pivot">
-            <h2 class="pivot__text">From concept to execution, driving results and not just output!</h2>
-            <div class="pivot__card-wrapper">
-                <div class="pivot__card">
-                    <p class="pivot__card__text">How I lead change</p>
-                    <ul class="pivot__card__bullets">
-                        <li>Align product vision with business & market goals</li>
-                        <li>Develop user-centric, scalable solutions</li>
-                        <li>Lead cross-functional teams</li>
-                    </ul>
-                </div>
-                <div class="pivot__card">
-                    <p class="pivot__card__text">How I leverage expertise</p>
-                    <ul class="pivot__card__bullets">
-                        <li>Agile Scrum + JIRA</li>
-                        <li>UI/UX experience</li>
-                        <li>Business intelligence tools</li>
-                    </ul>
-                </div>
-                <div class="pivot__card">
-                    <p class="pivot__card__text">How you'll thrive</p>
-                    <ul class="pivot__card__bullets">
-                        <li>Increased user engagement & retention</li>
-                        <li>Fast, iterative releases</li>
-                        <li>Data-driven decision making</li>
-                    </ul>
+        <section class="experience panel" id="experience">
+            <div class="experience__stage experience__stage--cards">
+                <h2 class="experience__heading">From concept to execution, driving results and not just output!</h2>
+                <div class="experience__card-wrapper">
+                    <div class="experience__card">
+                        <p class="experience__card__text">How I lead change</p>
+                        <ul class="experience__card__bullets">
+                            <li>Align product vision with business & market goals</li>
+                            <li>Develop user-centric, scalable solutions</li>
+                            <li>Lead cross-functional teams</li>
+                        </ul>
+                    </div>
+                    <div class="experience__card">
+                        <p class="experience__card__text">How I leverage expertise</p>
+                        <ul class="experience__card__bullets">
+                            <li>Agile Scrum + JIRA</li>
+                            <li>UI/UX experience</li>
+                            <li>Business intelligence tools</li>
+                        </ul>
+                    </div>
+                    <div class="experience__card">
+                        <p class="experience__card__text">How you'll thrive</p>
+                        <ul class="experience__card__bullets">
+                            <li>Increased user engagement & retention</li>
+                            <li>Fast, iterative releases</li>
+                            <li>Data-driven decision making</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
-            <div class="pivot__caret">
-                <p>Learn more</p>
+
+            <div class="experience__stage experience__stage--skills">
+                <h3 class="skills__text">My skills</h3>
+                <table class="skills__list">
+                    <tr>
+                        <th>Product management</th>
+                        <th>Stakeholder management</th>
+                        <th>Feature prioritization & backlog management</th>
+                        <th>Risk management</th>
+                    </tr>
+                    <tr>
+                        <th>Root cause analysis</th>
+                        <th>Cross-functional collaboration</th>
+                        <th>Sprint planning & exceution</th>
+                        <th>Conflict resolution</th>
+                    </tr>
+                    <tr>
+                        <th>Roadmap planning</th>
+                        <th>Agile Scrum</th>
+                        <th>User story creation, mapping & refinement</th>
+                        <th>Analytics & KPIs, SQL</th>
+                    </tr>
+                    <tr>
+                        <th>Go-to-market strategy</th>
+                        <th>Jira & Confluence</th>
+                        <th>Continuous & iterative improvement</th>
+                        <th>Reports + dashboards: PowerBI, Tableau</th>
+                    </tr>
+                    <tr>
+                        <th>Customer research</th>
+                        <th>Figma, Adobe XD, InVision</th>
+                        <th>Quality assurance</th>
+                        <th>Frontend developer expertise</th>
+                    </tr>
+                </table>
+
+                <button class="skills__download"><span><i class="fa fa-download"></i>Download resume</span></button>
             </div>
         </section>
 
-        <section class="skills d-none">
-            <h3 class="skills__text">My skills</h3>
-            <table class="skills__list">
-                <tr>
-                    <th>Product management</th>
-                    <th>Stakeholder management</th>
-                    <th>Feature prioritization & backlog management</th>
-                    <th>Risk management</th>
-                </tr>
-                <tr>
-                    <th>Root cause analysis</th>
-                    <th>Cross-functional collaboration</th>
-                    <th>Sprint planning & exceution</th>
-                    <th>Conflict resolution</th>
-                </tr>
-                <tr>
-                    <th>Roadmap planning</th>
-                    <th>Agile Scrum</th>
-                    <th>User story creation, mapping & refinement</th>
-                    <th>Analytics & KPIs, SQL</th>
-                </tr>
-                <tr>
-                    <th>Go-to-market strategy</th>
-                    <th>Jira & Confluence</th>
-                    <th>Continuous & iterative improvement</th>
-                    <th>Reports + dashboards: PowerBI, Tableau</th>
-                </tr>
-                <tr>
-                    <th>Customer research</th>
-                    <th>Figma, Adobe XD, InVision</th>
-                    <th>Quality assurance</th>
-                    <th>Frontend developer expertise</th>
-                </tr>
-            </table>
-
-            <button class="skills__download"><span><i class="fa fa-download"></i>Download resume</span></button>
-        </section>
-
-        <section class="work">
+        <section class="work panel" id="work">
             <div class="work__carousel">
                 <img src="bt.png">
                 <img src="accenture.png">
@@ -138,7 +174,7 @@
             <div class="work__download-resume"></div>
         </section>
 
-        <section class="contact" id="contact">
+        <section class="contact panel" id="contact">
             <h2 class="contact__text">Get in touch!</h2>
             <div class="contact__input-wrapper">
                 <input type="text" id="contactName" class="contact__input__name" placeholder="Name">

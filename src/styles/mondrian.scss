@@ -1,0 +1,120 @@
+$mondrian-line-thick: 10px;
+$mondrian-line-medium: 7px;
+$mondrian-line-thin: 3px;
+$mondrian-red: #d5372b;
+$mondrian-yellow: #f2c40c;
+$mondrian-blue: #17469e;
+$mondrian-white: #d9d6c9;
+$mondrian-grey: #c7c3b5;
+
+.mondrian {
+    display: none;
+    pointer-events: none;
+
+    @include media-breakpoint-up($sm) {
+        display: block;
+        position: fixed;
+        inset: 0;
+        z-index: 5;
+        // Softens the vector-crisp edges just enough to stop reading as CSS.
+        filter: blur(0.4px);
+    }
+
+    // Woven canvas thread + brushed acrylic grain, layered over the whole
+    // composition so the flat fills and black lines read as painted.
+    &::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background-image:
+            repeating-linear-gradient(0deg, rgba($black, 0.07) 0, rgba($black, 0.07) 1px, transparent 1px, transparent 3px),
+            repeating-linear-gradient(90deg, rgba($black, 0.07) 0, rgba($black, 0.07) 1px, transparent 1px, transparent 3px),
+            url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='turbulence' baseFrequency='0.9 0.15' numOctaves='4' seed='7' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+        background-blend-mode: multiply, multiply, normal;
+        mix-blend-mode: overlay;
+        opacity: 0.5;
+    }
+
+    &__strip {
+        position: absolute;
+        box-sizing: border-box;
+        display: flex;
+
+        &--left,
+        &--right {
+            top: $header-height;
+            width: $frame-inset;
+            height: calc(100vh - #{$header-height} * 2);
+            flex-direction: column;
+        }
+
+        &--left {
+            left: 0;
+            border-right: $mondrian-line-thick solid $black;
+        }
+
+        &--right {
+            right: 0;
+            border-left: $mondrian-line-thick solid $black;
+        }
+
+        &--bottom {
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            height: $header-height;
+            flex-direction: row;
+            border-top: $mondrian-line-thick solid $black;
+        }
+    }
+
+    &__row {
+        display: flex;
+        flex-direction: row;
+    }
+
+    &__cell {
+        box-sizing: border-box;
+        box-shadow: inset 0 0 0.6vw rgba($black, 0.22);
+
+        &--white {
+            background: $mondrian-white;
+        }
+
+        &--grey {
+            background: $mondrian-grey;
+        }
+
+        &--red {
+            background: $mondrian-red;
+        }
+
+        &--yellow {
+            background: $mondrian-yellow;
+        }
+
+        &--blue {
+            background: $mondrian-blue;
+        }
+
+        &--black {
+            background: $black;
+        }
+    }
+
+    // Default dividers are thin; individual cells override the width
+    // inline (border-bottom-width) for the varied line rhythm.
+    &__strip--left,
+    &__strip--right {
+        > *:not(:last-child) {
+            border-bottom: $mondrian-line-thin solid $black;
+        }
+    }
+
+    &__strip--bottom,
+    &__row {
+        > *:not(:last-child) {
+            border-right: $mondrian-line-thin solid $black;
+        }
+    }
+}

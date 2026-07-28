@@ -1,7 +1,10 @@
 .contact {
-    margin: 3rem auto 1.5rem;
-    padding: 1.5rem 7.5vw;
+    z-index: 14;
+    height: 100%;
+    padding: 1.5rem;
+    background: $crt-vignette;
     display: flex;
+    align-items: center;
 
     .error {
         @include default-text;

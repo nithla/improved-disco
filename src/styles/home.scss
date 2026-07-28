@@ -1,7 +1,7 @@
 .home {
-    width: calc(100% - 15vw);
-    margin: 0 auto;
-    border: 1px solid $yellow;
+    z-index: 11;
+    display: flex;
+    align-items: center;
 
     &__bio {
         @include default-text;

@@ -11,6 +11,16 @@ $border-yellow: rgba(255, 255, 0, 0.25);
 $transwhite-bg: rgba(255, 255, 255, 0.1);
 $shadow-color: rgba(0, 0, 0, 0.1);
 
+/* CRT / Doordarshan-era palette */
+$crt-black: #0a0a0c;
+$crt-charcoal: #1c1c20;
+$crt-glow: #ffcf3f;
+$crt-vignette: radial-gradient(ellipse at 50% 0%, $crt-charcoal 0%, $crt-black 65%);
+
+/* Layout */
+$header-height: 7rem;
+$frame-inset: 7.5vw;
+
 /* Gradient */
 $sunset: linear-gradient(135deg, black, $dark-blue 70%, $purple 100%);
 $sunset-var: linear-gradient(225deg, black, $dark-blue, $purple 100%);

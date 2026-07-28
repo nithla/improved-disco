@@ -1,0 +1,66 @@
+.experience {
+    z-index: 12;
+    overflow: hidden;
+    background: $crt-vignette;
+
+    &__stage {
+        padding: 1.5rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        @include media-breakpoint-up($sm) {
+            position: absolute;
+            inset: 0;
+        }
+    }
+
+    &__heading {
+        margin-bottom: 1.5rem;
+        font-size: 2rem;
+        line-height: 1;
+    }
+
+    &__card-wrapper {
+        @include flex-row(space-between, stretch);
+        margin: 0 auto;
+        width: 100%;
+        flex-wrap: wrap;
+        gap: 1.5rem;
+
+        @include media-breakpoint-down($sm) {
+            flex-direction: column;
+        }
+    }
+
+    &__card {
+        @include default-text;
+        border-radius: 0.5rem;
+        box-shadow: 0 2px 12px $shadow-color;
+        padding: 1.5rem 1.5rem 0.75rem 2.25rem;
+        flex: 1;
+        background-color: $white;
+        color: $black;
+        transition: all 0.3s ease;
+
+        &:hover {
+            box-shadow: 0 4px 20px $shadow-color;
+            background-color: $crt-glow;
+            transform: translateY(-0.25rem);
+        }
+
+        &__text {
+            @include default-text;
+            margin-bottom: 1rem;
+            line-height: 1;
+            font-size: 1rem;
+            font-weight: 700;
+            color: $black;
+            text-shadow: 2px 2px $crt-glow;
+        }
+
+        ul li {
+            margin-bottom: 0.75rem;
+        }
+    }
+}

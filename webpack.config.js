@@ -33,15 +33,15 @@ module.exports = {
                     {
                         loader: 'sass-loader',
                         options: {
+                            sassOptions: {
+                                includePaths: [path.resolve(__dirname, 'src/styles')],
+                            },
                             additionalData: (content, loaderContext) => {
                                 if (loaderContext.resourcePath.endsWith('variables.scss')) {
                                     return content;
                                 }
-                                return `
-                                @import "variables.scss";
-                                ${content}
-                              `;
-                            }
+                                return `@use "variables" as *;\n${content}`;
+                            },
                         },
                     },
                 ],
