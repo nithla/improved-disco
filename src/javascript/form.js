@@ -1,3 +1,4 @@
+import $ from 'jquery';
 
 const contactButton = $('.contact__input__button span');
 

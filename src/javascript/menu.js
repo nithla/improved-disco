@@ -1,3 +1,5 @@
+import $ from 'jquery';
+
 const pivotCaret = $('.pivot__caret');
 const skills = $('.skills');
 const headerCaret = $('.header__logo-caret');

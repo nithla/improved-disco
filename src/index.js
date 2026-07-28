@@ -35,6 +35,6 @@ import './assets/project-logos/thoughtworks.png'
 import './assets/project-logos/accenture.png'
 import './assets/project-logos/bt.png'
 
-import './assets/project-logos/logo.png'
+import './assets/logo.png'
 
 import './assets/Nithila_Resume.pdf'
