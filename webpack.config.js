@@ -33,12 +33,13 @@ module.exports = {
                     {
                         loader: 'sass-loader',
                         options: {
+                            api: 'modern',
                             additionalData: (content, loaderContext) => {
                                 if (loaderContext.resourcePath.endsWith('variables.scss')) {
                                     return content;
                                 }
                                 return `
-                                @import "variables.scss";
+                                @use "variables.scss" as *;
                                 ${content}
                               `;
                             }

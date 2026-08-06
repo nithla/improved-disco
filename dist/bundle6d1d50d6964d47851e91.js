@@ -1,11 +1,11 @@
 /******/ (() => { // webpackBootstrap
 /******/ 	var __webpack_modules__ = ({
 
-/***/ "./src/javascript/carousel.js":
+/***/ "./src/javascript/carousel.js"
 /*!************************************!*\
   !*** ./src/javascript/carousel.js ***!
   \************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
@@ -26,25 +26,25 @@ jquery__WEBPACK_IMPORTED_MODULE_0___default()('.work__carousel').slick({
   variableWidth: true
 });
 
-/***/ }),
+/***/ },
 
-/***/ "./src/javascript/download.js":
+/***/ "./src/javascript/download.js"
 /*!************************************!*\
   !*** ./src/javascript/download.js ***!
   \************************************/
-/***/ (() => {
+() {
 
 $('.skills__download span').on('click', function (e) {
   window.open('./Nithila_Resume.pdf');
 });
 
-/***/ }),
+/***/ },
 
-/***/ "./src/javascript/form.js":
+/***/ "./src/javascript/form.js"
 /*!********************************!*\
   !*** ./src/javascript/form.js ***!
   \********************************/
-/***/ (() => {
+() {
 
 var contactButton = $('.contact__input__button span');
 contactButton.on('click', function (e) {
@@ -137,13 +137,13 @@ function resetForm() {
   $('#contactQuery').val('');
 }
 
-/***/ }),
+/***/ },
 
-/***/ "./src/javascript/menu.js":
+/***/ "./src/javascript/menu.js"
 /*!********************************!*\
   !*** ./src/javascript/menu.js ***!
   \********************************/
-/***/ (() => {
+() {
 
 var pivotCaret = $('.pivot__caret');
 var skills = $('.skills');
@@ -168,13 +168,13 @@ headerCaret.on('click', function (e) {
   }
 });
 
-/***/ }),
+/***/ },
 
-/***/ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[0].use[2]!./src/styles/contact.scss":
+/***/ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[0].use[2]!./src/styles/contact.scss"
 /*!******************************************************************************************************************************************!*\
   !*** ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[0].use[2]!./src/styles/contact.scss ***!
   \******************************************************************************************************************************************/
-/***/ ((module, __webpack_exports__, __webpack_require__) => {
+(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
@@ -351,18 +351,18 @@ button:hover::after {
 }
 .contact__input__query {
   height: 5rem;
-}`, "",{"version":3,"sources":["webpack://./src/styles/variables.scss","webpack://./src/styles/contact.scss"],"names":[],"mappings":"AAAA,wEAAA;AAEA,YAAA;AAWA,aAAA;AAKA,yEAAA;AAGA,yEAAA;AAEA,+DAAA;AACA,uBAAA;AAMA,aAAA;AAMA,+DAAA;AACA,cAAA;AAMA,gEAAA;AACA,YAAA;AAOA,YAAA;AAOA,yEAAA;AAGA,yEAAA;AAOA,yEAAA;AAGA,yEAAA;AA4EA,yEAAA;AAGA,yEAAA;AAEA;EACI,qBAAA;EACA,oBAAA;EACA,eAAA;EACA,oDA9GM;EA+GN,gBAAA;AC/HJ;;ADkIA;EACI,WA9JI;EA+JJ,qBAAA;AC/HJ;;ADkIA;EACI,kBAAA;EACA,SAAA;EACA,UAAA;EACA,iBAAA;EACA,eAAA;AC/HJ;ADiII;EAjCA,oBAAA;EACA,qBAAA;EACA,oDAxFM;EAyFN,kBAAA;EACA,gBAAA;EACA,WA7II;EA2KA,kBAAA;EACA,UAAA;EACA,gBAAA;EACA,qBAAA;EACA,gBAAA;EACA,WA/KA;EAgLA,kBAAA;EACA,qBAAA;AC1HR;AD4HQ;EACI,WArLJ;AC2DR;AD8HI;EACI,kBAAA;EACA,MAAA;EACA,OAAA;EACA,QAAA;EACA,YAAA;EACA,+BA1LO;EA2LP,oBAAA;EACA,WAAA;AC5HR;ADgIQ;EACI,WAAA;AC9HZ;;ADmIA;EACI,+BAAA;EACA,wBAAA;EACA,qBAAA;AChIJ;;ADmIA,yEAAA;AClNgC;EAC5B,wBAAA;EACA,qBAAA;EACA,aAAA;AAmFJ;AAjFI;EDoIA,oBAAA;EACA,qBAAA;EACA,oDAxFM;EAyFN,kBAAA;EACA,gBAAA;EACA,WA7II;ECMA,kBAAA;EACA,aAAA;EACA,iBAAA;EACA,gBAAA;EACA,UAAA;AAwFR;ADpBQ;EC/EwB;IAexB,qBAAA;IACA,sBAAA;IACA,SAAA;EAwFN;AACF;AAtFI;ED8GA,aAAA;EACA,sBAAA;EACA,uBC/GyB;EDgHzB,mBChHiC;EAC7B,gBAAA;EACA,eAAA;EACA,mBDpBC;ECqBD,0BAAA;EACA,kBAAA;EACA,0BAAA;AA2FR;AAtFQ;EDkGJ,aAAA;EACA,sBAAA;EACA,8BCnG6B;EDoG7B,mBCpG4C;EACpC,gBAAA;EACA,eAAA;EACA,WDnCJ;ECoCI,8BAAA;EACA,SAAA;AA2FZ;ADlDQ;EC/CA;IASQ,sBAAA;EA4Fd;AACF;AAzFQ;ED4FJ,oBAAA;EACA,qBAAA;EACA,oDAxFM;EAyFN,kBAAA;EACA,gBAAA;EACA,WA7II;EC+CI,SAAA;EACA,gDAAA;EACA,eAAA;EACA,cAAA;EACA,WAAA;EACA,cAAA;EACA,gBAAA;AA+FZ;AA7FY;EAEI,UAAA;EACA,gCAAA;AA8FhB;AA3FY;EACI,+BAAA;AA6FhB;AAzFQ;EACI,YAAA;AA2FZ","sourcesContent":["/*--------------------------- Theme Colours ---------------------------*/\r\n\r\n/* Colours */\r\n$white: #fff;\r\n$black: #000;\r\n$dark-blue: #000033;\r\n$yellow: #ffff00;\r\n$purple: rgba(131, 58, 180, 1);\r\n$dark-blue-50: rgba(0, 0, 51, 0.50);\r\n$border-yellow: rgba(255, 255, 0, 0.25);\r\n$transwhite-bg: rgba(255, 255, 255, 0.1);\r\n$shadow-color: rgba(0, 0, 0, 0.1);\r\n\r\n/* Gradient */\r\n$sunset: linear-gradient(135deg, black, $dark-blue 70%, $purple 100%);\r\n$sunset-var: linear-gradient(225deg, black, $dark-blue, $purple 100%);\r\n$sunset-header: linear-gradient(135deg, black, #00001b, #170A4A);\r\n\r\n/*-------------------------- Theme Colours End -------------------------*/\r\n\r\n\r\n/*-------------------------------- Fonts -------------------------------*/\r\n\r\n/******************** Serif Fonts *****************************/\r\n/* Cormorant Garamond */\r\n@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap');\r\n$Cormorant: 'Cormorant Garamond',\r\nTimes,\r\nserif;\r\n\r\n/* Arizonia */\r\n@import url('https://fonts.googleapis.com/css2?family=Arizonia&display=swap');\r\n$Arizonia: 'Arizonia',\r\nTimes,\r\nserif;\r\n\r\n/********************** Cursive Fonts *************************/\r\n/* Italianno */\r\n@import url('https://fonts.googleapis.com/css2?family=Italianno&display=swap');\r\n$Italianno: 'Italianno',\r\nSnell Roundhand,\r\ncursive;\r\n\r\n/********************* Sans-serif Fonts ************************/\r\n/* Raleway */\r\n@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');\r\n$Raleway: 'Raleway',\r\nArial,\r\nHelvetica,\r\nsans-serif;\r\n\r\n/* Spartan */\r\n@import url('https://fonts.googleapis.com/css2?family=Spartan:wght@100;200;300;400;500;600;700;800;900&display=swap');\r\n$Spartan: 'Spartan',\r\nArial,\r\nHelvetica,\r\nsans-serif;\r\n\r\n/*------------------------------ Fonts End -----------------------------*/\r\n\r\n\r\n/*----------------------------- Breakpoints ----------------------------*/\r\n\r\n$sm: 576px;\r\n$md: 768px;\r\n$lg: 992px;\r\n$xl: 1200px;\r\n\r\n/*--------------------------- Breakpoints End --------------------------*/\r\n\r\n\r\n/*------------------------------- Mixins -------------------------------*/\r\n\r\n@mixin media-breakpoint-down($breakpoint) {\r\n    @if $breakpoint==$sm {\r\n        @media (max-width: $sm) {\r\n            @content;\r\n        }\r\n    }\r\n\r\n    @else if $breakpoint==$md {\r\n        @media (max-width: $md) {\r\n            @content;\r\n        }\r\n    }\r\n\r\n    @else if $breakpoint==$lg {\r\n        @media (max-width: $lg) {\r\n            @content;\r\n        }\r\n    }\r\n\r\n    @else {\r\n        @media (max-width: $xl) {\r\n            @content;\r\n        }\r\n    }\r\n}\r\n\r\n@mixin media-breakpoint-up($breakpoint) {\r\n    @if $breakpoint==$sm {\r\n        @media (min-width: $sm) {\r\n            @content;\r\n        }\r\n    }\r\n\r\n    @else if $breakpoint==$md {\r\n        @media (min-width: $md) {\r\n            @content;\r\n        }\r\n    }\r\n\r\n    @else if $breakpoint==$lg {\r\n        @media (min-width: $lg) {\r\n            @content;\r\n        }\r\n    }\r\n\r\n    @else {\r\n        @media (min-width: $xl) {\r\n            @content;\r\n        }\r\n    }\r\n}\r\n\r\n@mixin flex-row ($justify-content, $align-items) {\r\n    display: flex;\r\n    justify-content: $justify-content;\r\n    align-items: $align-items;\r\n}\r\n\r\n@mixin flex-column($justify-content, $align-items) {\r\n    display: flex;\r\n    flex-direction: column;\r\n    justify-content: $justify-content;\r\n    align-items: $align-items;\r\n}\r\n\r\n@mixin default-text {\r\n    line-height: 1.25rem;\r\n    word-spacing: 0.25rem;\r\n    font-family: $Spartan;\r\n    font-size: 0.75rem;\r\n    font-weight: 300;\r\n    color: $white;\r\n}\r\n\r\n/*----------------------------- Mixins End -----------------------------*/\r\n\r\n\r\n/*------------------------------- Common -------------------------------*/\r\n\r\nh2 {\r\n    margin-bottom: 1.5rem;\r\n    line-height: 3.25rem;\r\n    font-size: 4rem;\r\n    font-family: $Raleway;\r\n    font-weight: 500;\r\n}\r\n\r\na {\r\n    color: $white;\r\n    text-decoration: none;\r\n}\r\n\r\nbutton {\r\n    position: relative;\r\n    border: 0;\r\n    padding: 0;\r\n    background: white;\r\n    cursor: pointer;\r\n\r\n    span {\r\n        @include default-text;\r\n        position: relative;\r\n        z-index: 2;\r\n        padding: 0.75rem;\r\n        display: inline-block;\r\n        font-weight: 400;\r\n        color: $black;\r\n        text-align: center;\r\n        transition: all .35s;\r\n\r\n        &:hover {\r\n            color: $white;\r\n        }\r\n    }\r\n\r\n    &::after {\r\n        position: absolute;\r\n        top: 0;\r\n        left: 0;\r\n        width: 0;\r\n        height: 100%;\r\n        background: $dark-blue-50;\r\n        transition: all .3s;\r\n        content: \"\";\r\n    }\r\n\r\n    &:hover {\r\n        &::after {\r\n            width: 100%;\r\n        }\r\n    }\r\n}\r\n\r\n.underline {\r\n    border-bottom: 2px solid yellow;\r\n    padding-bottom: 0.125rem;\r\n    text-decoration: none;\r\n}\r\n\r\n/*---------------------------- Common Ends -----------------------------*/","\n                                @import \"variables.scss\";\n                                .contact {\r\n    margin: 3rem auto 1.5rem;\r\n    padding: 1.5rem 7.5vw;\r\n    display: flex;\r\n\r\n    .error {\r\n        @include default-text;\r\n        position: relative;\r\n        top: -0.75rem;\r\n        font-size: 0.6rem;\r\n        font-weight: 600;\r\n        color: red;\r\n    }\r\n\r\n    @include media-breakpoint-down($md) {\r\n        margin: 1.5rem auto 0;\r\n        flex-direction: column;\r\n        gap: 1rem;\r\n    }\r\n\r\n    &__text {\r\n        @include flex-column(center, center);\r\n        margin-bottom: 0;\r\n        flex-basis: 30%;\r\n        background: $yellow;\r\n        color: rgba(0, 0, 0, 0.25);\r\n        text-align: center;\r\n        text-transform: capitalize;\r\n    }\r\n\r\n    &__input {\r\n\r\n        &-wrapper {\r\n            @include flex-column(space-between, center);\r\n            padding: 0.75rem;\r\n            flex-basis: 40%;\r\n            color: $white;\r\n            text-shadow: black 0px 0px 4px;\r\n            gap: 1rem;\r\n\r\n            @include media-breakpoint-down ($md) {\r\n                flex-direction: column;\r\n            }\r\n        }\r\n\r\n        &__name,\r\n        &__query {\r\n            @include default-text;\r\n            border: 0;\r\n            border-bottom: 1px solid $border-yellow;\r\n            padding: 0.5rem;\r\n            display: block;\r\n            width: 100%;\r\n            height: 1.5rem;\r\n            background: none;\r\n\r\n            &:focus,\r\n            &:hover {\r\n                outline: 0;\r\n                border-bottom: $yellow solid 2px;\r\n            }\r\n\r\n            &::placeholder {\r\n                color: rgba(255, 255, 255, 0.5);\r\n            }\r\n        }\r\n\r\n        &__query {\r\n            height: 5rem;\r\n        }\r\n    }\r\n}\n                              "],"sourceRoot":""}]);
+}`, "",{"version":3,"sources":["webpack://./src/styles/variables.scss","webpack://./src/styles/contact.scss"],"names":[],"mappings":"AAAA,wEAAA;AAEA,YAAA;AAWA,aAAA;AAKA,yEAAA;AAGA,yEAAA;AAEA,+DAAA;AACA,uBAAA;AAMA,aAAA;AAMA,+DAAA;AACA,cAAA;AAMA,gEAAA;AACA,YAAA;AAOA,YAAA;AAOA,yEAAA;AAGA,yEAAA;AAOA,yEAAA;AAGA,yEAAA;AA4EA,yEAAA;AAGA,yEAAA;AAEA;EACI,qBAAA;EACA,oBAAA;EACA,eAAA;EACA,oDA9GM;EA+GN,gBAAA;AC/HJ;;ADkIA;EACI,WA9JI;EA+JJ,qBAAA;AC/HJ;;ADkIA;EACI,kBAAA;EACA,SAAA;EACA,UAAA;EACA,iBAAA;EACA,eAAA;AC/HJ;ADiII;EAjCA,oBAAA;EACA,qBAAA;EACA,oDAxFM;EAyFN,kBAAA;EACA,gBAAA;EACA,WA7II;EA2KA,kBAAA;EACA,UAAA;EACA,gBAAA;EACA,qBAAA;EACA,gBAAA;EACA,WA/KA;EAgLA,kBAAA;EACA,qBAAA;AC1HR;AD4HQ;EACI,WArLJ;AC2DR;AD8HI;EACI,kBAAA;EACA,MAAA;EACA,OAAA;EACA,QAAA;EACA,YAAA;EACA,+BA1LO;EA2LP,oBAAA;EACA,WAAA;AC5HR;ADgIQ;EACI,WAAA;AC9HZ;;ADmIA;EACI,+BAAA;EACA,wBAAA;EACA,qBAAA;AChIJ;;ADmIA,yEAAA;AClNgC;EAC5B,wBAAA;EACA,qBAAA;EACA,aAAA;AAmFJ;AAjFI;EDoIA,oBAAA;EACA,qBAAA;EACA,oDAxFM;EAyFN,kBAAA;EACA,gBAAA;EACA,WA7II;ECMA,kBAAA;EACA,aAAA;EACA,iBAAA;EACA,gBAAA;EACA,UAAA;AAwFR;ADpBQ;EC/EwB;IAexB,qBAAA;IACA,sBAAA;IACA,SAAA;EAwFN;AACF;AAtFI;ED8GA,aAAA;EACA,sBAAA;EACA,uBC/GyB;EDgHzB,mBChHiC;EAC7B,gBAAA;EACA,eAAA;EACA,mBDpBC;ECqBD,0BAAA;EACA,kBAAA;EACA,0BAAA;AA2FR;AAtFQ;EDkGJ,aAAA;EACA,sBAAA;EACA,8BCnG6B;EDoG7B,mBCpG4C;EACpC,gBAAA;EACA,eAAA;EACA,WDnCJ;ECoCI,8BAAA;EACA,SAAA;AA2FZ;ADlDQ;EC/CA;IASQ,sBAAA;EA4Fd;AACF;AAzFQ;ED4FJ,oBAAA;EACA,qBAAA;EACA,oDAxFM;EAyFN,kBAAA;EACA,gBAAA;EACA,WA7II;EC+CI,SAAA;EACA,gDAAA;EACA,eAAA;EACA,cAAA;EACA,WAAA;EACA,cAAA;EACA,gBAAA;AA+FZ;AA7FY;EAEI,UAAA;EACA,gCAAA;AA8FhB;AA3FY;EACI,+BAAA;AA6FhB;AAzFQ;EACI,YAAA;AA2FZ","sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
 
-/***/ }),
+/***/ },
 
-/***/ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[0].use[2]!./src/styles/footer.scss":
+/***/ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[0].use[2]!./src/styles/footer.scss"
 /*!*****************************************************************************************************************************************!*\
   !*** ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[0].use[2]!./src/styles/footer.scss ***!
   \*****************************************************************************************************************************************/
-/***/ ((module, __webpack_exports__, __webpack_require__) => {
+(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
@@ -492,18 +492,18 @@ button:hover::after {
   .footer__social-links img {
     width: 2rem;
   }
-}`, "",{"version":3,"sources":["webpack://./src/styles/variables.scss","webpack://./src/styles/footer.scss"],"names":[],"mappings":"AAAA,wEAAA;AAEA,YAAA;AAWA,aAAA;AAKA,yEAAA;AAGA,yEAAA;AAEA,+DAAA;AACA,uBAAA;AAMA,aAAA;AAMA,+DAAA;AACA,cAAA;AAMA,gEAAA;AACA,YAAA;AAOA,YAAA;AAOA,yEAAA;AAGA,yEAAA;AAOA,yEAAA;AAGA,yEAAA;AA4EA,yEAAA;AAGA,yEAAA;AAEA;EACI,qBAAA;EACA,oBAAA;EACA,eAAA;EACA,oDA9GM;EA+GN,gBAAA;AC/HJ;;ADkIA;EACI,WA9JI;EA+JJ,qBAAA;AC/HJ;;ADkIA;EACI,kBAAA;EACA,SAAA;EACA,UAAA;EACA,iBAAA;EACA,eAAA;AC/HJ;ADiII;EAjCA,oBAAA;EACA,qBAAA;EACA,oDAxFM;EAyFN,kBAAA;EACA,gBAAA;EACA,WA7II;EA2KA,kBAAA;EACA,UAAA;EACA,gBAAA;EACA,qBAAA;EACA,gBAAA;EACA,WA/KA;EAgLA,kBAAA;EACA,qBAAA;AC1HR;AD4HQ;EACI,WArLJ;AC2DR;AD8HI;EACI,kBAAA;EACA,MAAA;EACA,OAAA;EACA,QAAA;EACA,YAAA;EACA,+BA1LO;EA2LP,oBAAA;EACA,WAAA;AC5HR;ADgIQ;EACI,WAAA;AC9HZ;;ADmIA;EACI,+BAAA;EACA,wBAAA;EACA,qBAAA;AChIJ;;ADmIA,yEAAA;AClNgC;EAC5B,gBAAA;AAmFJ;AAjFI;EDsIA,oBAAA;EACA,qBAAA;EACA,oDAxFM;EAyFN,kBAAA;EACA,gBAAA;EACA,WA7II;ECIA,mBAAA;EACA,WDLA;ECMA,kBAAA;AAwFR;AArFI;EDkHA,aAAA;EACA,uBClHsB;EDmHtB,kBCnH8B;EAC1B,mBAAA;EACA,mBAAA;EACA,WAAA;AAyFR;AAvFQ;EACI,WAAA;EACA,YAAA;AAyFZ;AD5BQ;EC/DA;IAKQ,WAAA;EA0Fd;AACF","sourcesContent":["/*--------------------------- Theme Colours ---------------------------*/\r\n\r\n/* Colours */\r\n$white: #fff;\r\n$black: #000;\r\n$dark-blue: #000033;\r\n$yellow: #ffff00;\r\n$purple: rgba(131, 58, 180, 1);\r\n$dark-blue-50: rgba(0, 0, 51, 0.50);\r\n$border-yellow: rgba(255, 255, 0, 0.25);\r\n$transwhite-bg: rgba(255, 255, 255, 0.1);\r\n$shadow-color: rgba(0, 0, 0, 0.1);\r\n\r\n/* Gradient */\r\n$sunset: linear-gradient(135deg, black, $dark-blue 70%, $purple 100%);\r\n$sunset-var: linear-gradient(225deg, black, $dark-blue, $purple 100%);\r\n$sunset-header: linear-gradient(135deg, black, #00001b, #170A4A);\r\n\r\n/*-------------------------- Theme Colours End -------------------------*/\r\n\r\n\r\n/*-------------------------------- Fonts -------------------------------*/\r\n\r\n/******************** Serif Fonts *****************************/\r\n/* Cormorant Garamond */\r\n@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap');\r\n$Cormorant: 'Cormorant Garamond',\r\nTimes,\r\nserif;\r\n\r\n/* Arizonia */\r\n@import url('https://fonts.googleapis.com/css2?family=Arizonia&display=swap');\r\n$Arizonia: 'Arizonia',\r\nTimes,\r\nserif;\r\n\r\n/********************** Cursive Fonts *************************/\r\n/* Italianno */\r\n@import url('https://fonts.googleapis.com/css2?family=Italianno&display=swap');\r\n$Italianno: 'Italianno',\r\nSnell Roundhand,\r\ncursive;\r\n\r\n/********************* Sans-serif Fonts ************************/\r\n/* Raleway */\r\n@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');\r\n$Raleway: 'Raleway',\r\nArial,\r\nHelvetica,\r\nsans-serif;\r\n\r\n/* Spartan */\r\n@import url('https://fonts.googleapis.com/css2?family=Spartan:wght@100;200;300;400;500;600;700;800;900&display=swap');\r\n$Spartan: 'Spartan',\r\nArial,\r\nHelvetica,\r\nsans-serif;\r\n\r\n/*------------------------------ Fonts End -----------------------------*/\r\n\r\n\r\n/*----------------------------- Breakpoints ----------------------------*/\r\n\r\n$sm: 576px;\r\n$md: 768px;\r\n$lg: 992px;\r\n$xl: 1200px;\r\n\r\n/*--------------------------- Breakpoints End --------------------------*/\r\n\r\n\r\n/*------------------------------- Mixins -------------------------------*/\r\n\r\n@mixin media-breakpoint-down($breakpoint) {\r\n    @if $breakpoint==$sm {\r\n        @media (max-width: $sm) {\r\n            @content;\r\n        }\r\n    }\r\n\r\n    @else if $breakpoint==$md {\r\n        @media (max-width: $md) {\r\n            @content;\r\n        }\r\n    }\r\n\r\n    @else if $breakpoint==$lg {\r\n        @media (max-width: $lg) {\r\n            @content;\r\n        }\r\n    }\r\n\r\n    @else {\r\n        @media (max-width: $xl) {\r\n            @content;\r\n        }\r\n    }\r\n}\r\n\r\n@mixin media-breakpoint-up($breakpoint) {\r\n    @if $breakpoint==$sm {\r\n        @media (min-width: $sm) {\r\n            @content;\r\n        }\r\n    }\r\n\r\n    @else if $breakpoint==$md {\r\n        @media (min-width: $md) {\r\n            @content;\r\n        }\r\n    }\r\n\r\n    @else if $breakpoint==$lg {\r\n        @media (min-width: $lg) {\r\n            @content;\r\n        }\r\n    }\r\n\r\n    @else {\r\n        @media (min-width: $xl) {\r\n            @content;\r\n        }\r\n    }\r\n}\r\n\r\n@mixin flex-row ($justify-content, $align-items) {\r\n    display: flex;\r\n    justify-content: $justify-content;\r\n    align-items: $align-items;\r\n}\r\n\r\n@mixin flex-column($justify-content, $align-items) {\r\n    display: flex;\r\n    flex-direction: column;\r\n    justify-content: $justify-content;\r\n    align-items: $align-items;\r\n}\r\n\r\n@mixin default-text {\r\n    line-height: 1.25rem;\r\n    word-spacing: 0.25rem;\r\n    font-family: $Spartan;\r\n    font-size: 0.75rem;\r\n    font-weight: 300;\r\n    color: $white;\r\n}\r\n\r\n/*----------------------------- Mixins End -----------------------------*/\r\n\r\n\r\n/*------------------------------- Common -------------------------------*/\r\n\r\nh2 {\r\n    margin-bottom: 1.5rem;\r\n    line-height: 3.25rem;\r\n    font-size: 4rem;\r\n    font-family: $Raleway;\r\n    font-weight: 500;\r\n}\r\n\r\na {\r\n    color: $white;\r\n    text-decoration: none;\r\n}\r\n\r\nbutton {\r\n    position: relative;\r\n    border: 0;\r\n    padding: 0;\r\n    background: white;\r\n    cursor: pointer;\r\n\r\n    span {\r\n        @include default-text;\r\n        position: relative;\r\n        z-index: 2;\r\n        padding: 0.75rem;\r\n        display: inline-block;\r\n        font-weight: 400;\r\n        color: $black;\r\n        text-align: center;\r\n        transition: all .35s;\r\n\r\n        &:hover {\r\n            color: $white;\r\n        }\r\n    }\r\n\r\n    &::after {\r\n        position: absolute;\r\n        top: 0;\r\n        left: 0;\r\n        width: 0;\r\n        height: 100%;\r\n        background: $dark-blue-50;\r\n        transition: all .3s;\r\n        content: \"\";\r\n    }\r\n\r\n    &:hover {\r\n        &::after {\r\n            width: 100%;\r\n        }\r\n    }\r\n}\r\n\r\n.underline {\r\n    border-bottom: 2px solid yellow;\r\n    padding-bottom: 0.125rem;\r\n    text-decoration: none;\r\n}\r\n\r\n/*---------------------------- Common Ends -----------------------------*/","\n                                @import \"variables.scss\";\n                                .footer {\r\n    padding: 0 7.5vw;\r\n\r\n    p {\r\n        @include default-text;\r\n        margin-top: 0.75rem;\r\n        color: $white;\r\n        text-align: center;\r\n    }\r\n\r\n    &__social-links {\r\n        @include flex-row(center, unset);\r\n        margin-bottom: 3rem;\r\n        padding: 0.5rem 0 0;\r\n        gap: 1.5rem;\r\n\r\n        img {\r\n            width: 2rem;\r\n            height: 2rem;\r\n\r\n            @include media-breakpoint-down($md) {\r\n                width: 2rem;\r\n            }\r\n        }\r\n    }\r\n\r\n}\n                              "],"sourceRoot":""}]);
+}`, "",{"version":3,"sources":["webpack://./src/styles/variables.scss","webpack://./src/styles/footer.scss"],"names":[],"mappings":"AAAA,wEAAA;AAEA,YAAA;AAWA,aAAA;AAKA,yEAAA;AAGA,yEAAA;AAEA,+DAAA;AACA,uBAAA;AAMA,aAAA;AAMA,+DAAA;AACA,cAAA;AAMA,gEAAA;AACA,YAAA;AAOA,YAAA;AAOA,yEAAA;AAGA,yEAAA;AAOA,yEAAA;AAGA,yEAAA;AA4EA,yEAAA;AAGA,yEAAA;AAEA;EACI,qBAAA;EACA,oBAAA;EACA,eAAA;EACA,oDA9GM;EA+GN,gBAAA;AC/HJ;;ADkIA;EACI,WA9JI;EA+JJ,qBAAA;AC/HJ;;ADkIA;EACI,kBAAA;EACA,SAAA;EACA,UAAA;EACA,iBAAA;EACA,eAAA;AC/HJ;ADiII;EAjCA,oBAAA;EACA,qBAAA;EACA,oDAxFM;EAyFN,kBAAA;EACA,gBAAA;EACA,WA7II;EA2KA,kBAAA;EACA,UAAA;EACA,gBAAA;EACA,qBAAA;EACA,gBAAA;EACA,WA/KA;EAgLA,kBAAA;EACA,qBAAA;AC1HR;AD4HQ;EACI,WArLJ;AC2DR;AD8HI;EACI,kBAAA;EACA,MAAA;EACA,OAAA;EACA,QAAA;EACA,YAAA;EACA,+BA1LO;EA2LP,oBAAA;EACA,WAAA;AC5HR;ADgIQ;EACI,WAAA;AC9HZ;;ADmIA;EACI,+BAAA;EACA,wBAAA;EACA,qBAAA;AChIJ;;ADmIA,yEAAA;AClNgC;EAC5B,gBAAA;AAmFJ;AAjFI;EDsIA,oBAAA;EACA,qBAAA;EACA,oDAxFM;EAyFN,kBAAA;EACA,gBAAA;EACA,WA7II;ECIA,mBAAA;EACA,WDLA;ECMA,kBAAA;AAwFR;AArFI;EDkHA,aAAA;EACA,uBClHsB;EDmHtB,kBCnH8B;EAC1B,mBAAA;EACA,mBAAA;EACA,WAAA;AAyFR;AAvFQ;EACI,WAAA;EACA,YAAA;AAyFZ;AD5BQ;EC/DA;IAKQ,WAAA;EA0Fd;AACF","sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
 
-/***/ }),
+/***/ },
 
-/***/ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[0].use[2]!./src/styles/header.scss":
+/***/ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[0].use[2]!./src/styles/header.scss"
 /*!*****************************************************************************************************************************************!*\
   !*** ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[0].use[2]!./src/styles/header.scss ***!
   \*****************************************************************************************************************************************/
-/***/ ((module, __webpack_exports__, __webpack_require__) => {
+(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
@@ -749,18 +749,18 @@ button:hover::after {
     font-size: 0.75rem;
     text-transform: none;
   }
-}`, "",{"version":3,"sources":["webpack://./src/styles/variables.scss","webpack://./src/styles/header.scss"],"names":[],"mappings":"AAAA,wEAAA;AAEA,YAAA;AAWA,aAAA;AAKA,yEAAA;AAGA,yEAAA;AAEA,+DAAA;AACA,uBAAA;AAMA,aAAA;AAMA,+DAAA;AACA,cAAA;AAMA,gEAAA;AACA,YAAA;AAOA,YAAA;AAOA,yEAAA;AAGA,yEAAA;AAOA,yEAAA;AAGA,yEAAA;AA4EA,yEAAA;AAGA,yEAAA;AAEA;EACI,qBAAA;EACA,oBAAA;EACA,eAAA;EACA,oDA9GM;EA+GN,gBAAA;AC/HJ;;ADkIA;EACI,WA9JI;EA+JJ,qBAAA;AC/HJ;;ADkIA;EACI,kBAAA;EACA,SAAA;EACA,UAAA;EACA,iBAAA;EACA,eAAA;AC/HJ;ADiII;EAjCA,oBAAA;EACA,qBAAA;EACA,oDAxFM;EAyFN,kBAAA;EACA,gBAAA;EACA,WA7II;EA2KA,kBAAA;EACA,UAAA;EACA,gBAAA;EACA,qBAAA;EACA,gBAAA;EACA,WA/KA;EAgLA,kBAAA;EACA,qBAAA;AC1HR;AD4HQ;EACI,WArLJ;AC2DR;AD8HI;EACI,kBAAA;EACA,MAAA;EACA,OAAA;EACA,QAAA;EACA,YAAA;EACA,+BA1LO;EA2LP,oBAAA;EACA,WAAA;AC5HR;ADgIQ;EACI,WAAA;AC9HZ;;ADmIA;EACI,+BAAA;EACA,wBAAA;EACA,qBAAA;AChIJ;;ADmIA,yEAAA;AClNgC;EAC5B,gBAAA;EACA,kBAAA;AAmFJ;ADcQ;ECnGwB;ID4H5B,aAAA;IACA,8BCxHsB;IDyHtB,mBCzHqC;IACjC,gBAAA;IACA,MAAA;IACA,SAAA;IACA,4DDKQ;ICJR,WAAA;IACA,YAAA;IACA,UAAA;EAsFN;AACF;AD1BQ;ECzEwB;IAgBxB,sBAAA;IACA,gBAAA;EAuFN;AACF;AArFI;ED8GA,aAAA;EACA,sBAAA;EACA,uBC/GyB;EDgHzB,mBChHiC;AA0FrC;ADtCQ;ECrDJ;IAIQ,WAAA;EA2FV;AACF;AAzFQ;EACI,qBAAA;EACA,qCDCD;ECAC,eAAA;EACA,WD9BJ;EC+BI,yBAAA;EACA,eAAA;AA2FZ;AAzFY;EACI,cDhCP;AC2HT;AAvFQ;EACI,yBAAA;EACA,eAAA;AAyFZ;ADhCQ;EC3DA;IAKQ,aAAA;EA0Fd;AACF;AAxFY;EACI,yBAAA;EACA,mBAAA;AA0FhB;AAvFY;EDoFR,oBAAA;EACA,qBAAA;EACA,oDAxFM;EAyFN,kBAAA;EACA,gBAAA;EACA,WA7II;ECsDQ,iBAAA;EACA,WDvDR;ACqJR;AA3FY;EACI,kBAAA;EACA,UAAA;EACA,SAAA;EACA,oBAAA;EACA,iBAAA;EACA,+BAAA;EACA,6BAAA;EACA,qBAAA;EACA,cAAA;EACA,eAAA;EACA,yBAAA;EACA,WAAA;AA6FhB;AAzFgB;EACI,cDxEX;ACmKT;AAxFgB;EACI,qBD5EX;ACsKT;AApFI;EACI,kBAAA;AAsFR;ADpGQ;ECaJ;IAIQ,WAAA;EAuFV;AACF;AArFQ;EACI,aAAA;EACA,gBAAA;EACA,eAAA;AAuFZ;AD9GQ;ECoBA;IAMQ,qBAAA;IACA,yCAAA;IACA,aAAA;IACA,oCD9FA;IC+FA,sBAAA;IACA,gBAAA;IACA,iBAAA;IACA,UAAA;IACA,uCAAA;EAwFd;EAtFc;IACI,SAAA;IACA,UAAA;IACA,aAAA;IACA,UAAA;IACA,MAAA;EAwFlB;EAtFkB;IACI,SAAA;EAwFtB;AACF;AApFY;EDeR,oBAAA;EACA,qBAAA;EACA,oDAxFM;EAyFN,kBAAA;EACA,gBAAA;EACA,WA7II;EC2HQ,qBAAA;EACA,kBAAA;EACA,WD7HR;EC8HQ,gCAAA;EACA,eAAA;AA2FhB;AAzFgB;EACI,cD/HX;AC0NT;ADrJQ;ECiDI;IAaQ,kBAAA;IACA,oBAAA;EA2FlB;AACF","sourcesContent":["/*--------------------------- Theme Colours ---------------------------*/\r\n\r\n/* Colours */\r\n$white: #fff;\r\n$black: #000;\r\n$dark-blue: #000033;\r\n$yellow: #ffff00;\r\n$purple: rgba(131, 58, 180, 1);\r\n$dark-blue-50: rgba(0, 0, 51, 0.50);\r\n$border-yellow: rgba(255, 255, 0, 0.25);\r\n$transwhite-bg: rgba(255, 255, 255, 0.1);\r\n$shadow-color: rgba(0, 0, 0, 0.1);\r\n\r\n/* Gradient */\r\n$sunset: linear-gradient(135deg, black, $dark-blue 70%, $purple 100%);\r\n$sunset-var: linear-gradient(225deg, black, $dark-blue, $purple 100%);\r\n$sunset-header: linear-gradient(135deg, black, #00001b, #170A4A);\r\n\r\n/*-------------------------- Theme Colours End -------------------------*/\r\n\r\n\r\n/*-------------------------------- Fonts -------------------------------*/\r\n\r\n/******************** Serif Fonts *****************************/\r\n/* Cormorant Garamond */\r\n@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap');\r\n$Cormorant: 'Cormorant Garamond',\r\nTimes,\r\nserif;\r\n\r\n/* Arizonia */\r\n@import url('https://fonts.googleapis.com/css2?family=Arizonia&display=swap');\r\n$Arizonia: 'Arizonia',\r\nTimes,\r\nserif;\r\n\r\n/********************** Cursive Fonts *************************/\r\n/* Italianno */\r\n@import url('https://fonts.googleapis.com/css2?family=Italianno&display=swap');\r\n$Italianno: 'Italianno',\r\nSnell Roundhand,\r\ncursive;\r\n\r\n/********************* Sans-serif Fonts ************************/\r\n/* Raleway */\r\n@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');\r\n$Raleway: 'Raleway',\r\nArial,\r\nHelvetica,\r\nsans-serif;\r\n\r\n/* Spartan */\r\n@import url('https://fonts.googleapis.com/css2?family=Spartan:wght@100;200;300;400;500;600;700;800;900&display=swap');\r\n$Spartan: 'Spartan',\r\nArial,\r\nHelvetica,\r\nsans-serif;\r\n\r\n/*------------------------------ Fonts End -----------------------------*/\r\n\r\n\r\n/*----------------------------- Breakpoints ----------------------------*/\r\n\r\n$sm: 576px;\r\n$md: 768px;\r\n$lg: 992px;\r\n$xl: 1200px;\r\n\r\n/*--------------------------- Breakpoints End --------------------------*/\r\n\r\n\r\n/*------------------------------- Mixins -------------------------------*/\r\n\r\n@mixin media-breakpoint-down($breakpoint) {\r\n    @if $breakpoint==$sm {\r\n        @media (max-width: $sm) {\r\n            @content;\r\n        }\r\n    }\r\n\r\n    @else if $breakpoint==$md {\r\n        @media (max-width: $md) {\r\n            @content;\r\n        }\r\n    }\r\n\r\n    @else if $breakpoint==$lg {\r\n        @media (max-width: $lg) {\r\n            @content;\r\n        }\r\n    }\r\n\r\n    @else {\r\n        @media (max-width: $xl) {\r\n            @content;\r\n        }\r\n    }\r\n}\r\n\r\n@mixin media-breakpoint-up($breakpoint) {\r\n    @if $breakpoint==$sm {\r\n        @media (min-width: $sm) {\r\n            @content;\r\n        }\r\n    }\r\n\r\n    @else if $breakpoint==$md {\r\n        @media (min-width: $md) {\r\n            @content;\r\n        }\r\n    }\r\n\r\n    @else if $breakpoint==$lg {\r\n        @media (min-width: $lg) {\r\n            @content;\r\n        }\r\n    }\r\n\r\n    @else {\r\n        @media (min-width: $xl) {\r\n            @content;\r\n        }\r\n    }\r\n}\r\n\r\n@mixin flex-row ($justify-content, $align-items) {\r\n    display: flex;\r\n    justify-content: $justify-content;\r\n    align-items: $align-items;\r\n}\r\n\r\n@mixin flex-column($justify-content, $align-items) {\r\n    display: flex;\r\n    flex-direction: column;\r\n    justify-content: $justify-content;\r\n    align-items: $align-items;\r\n}\r\n\r\n@mixin default-text {\r\n    line-height: 1.25rem;\r\n    word-spacing: 0.25rem;\r\n    font-family: $Spartan;\r\n    font-size: 0.75rem;\r\n    font-weight: 300;\r\n    color: $white;\r\n}\r\n\r\n/*----------------------------- Mixins End -----------------------------*/\r\n\r\n\r\n/*------------------------------- Common -------------------------------*/\r\n\r\nh2 {\r\n    margin-bottom: 1.5rem;\r\n    line-height: 3.25rem;\r\n    font-size: 4rem;\r\n    font-family: $Raleway;\r\n    font-weight: 500;\r\n}\r\n\r\na {\r\n    color: $white;\r\n    text-decoration: none;\r\n}\r\n\r\nbutton {\r\n    position: relative;\r\n    border: 0;\r\n    padding: 0;\r\n    background: white;\r\n    cursor: pointer;\r\n\r\n    span {\r\n        @include default-text;\r\n        position: relative;\r\n        z-index: 2;\r\n        padding: 0.75rem;\r\n        display: inline-block;\r\n        font-weight: 400;\r\n        color: $black;\r\n        text-align: center;\r\n        transition: all .35s;\r\n\r\n        &:hover {\r\n            color: $white;\r\n        }\r\n    }\r\n\r\n    &::after {\r\n        position: absolute;\r\n        top: 0;\r\n        left: 0;\r\n        width: 0;\r\n        height: 100%;\r\n        background: $dark-blue-50;\r\n        transition: all .3s;\r\n        content: \"\";\r\n    }\r\n\r\n    &:hover {\r\n        &::after {\r\n            width: 100%;\r\n        }\r\n    }\r\n}\r\n\r\n.underline {\r\n    border-bottom: 2px solid yellow;\r\n    padding-bottom: 0.125rem;\r\n    text-decoration: none;\r\n}\r\n\r\n/*---------------------------- Common Ends -----------------------------*/","\n                                @import \"variables.scss\";\n                                .header {\r\n    padding: 0 7.5vw;\r\n    text-align: center;\r\n\r\n    @include media-breakpoint-up($sm) {\r\n        @include flex-row(space-between, center);\r\n        position: sticky;\r\n        top: 0;\r\n        margin: 0;\r\n        background: $sunset-header;\r\n        width: 100%;\r\n        height: 7rem;\r\n        z-index: 4;\r\n    }\r\n\r\n    @include media-breakpoint-down($sm) {\r\n        flex-direction: column;\r\n        margin-top: 1rem;\r\n    }\r\n\r\n    &__logo {\r\n        @include flex-column(center, center);\r\n\r\n        @include media-breakpoint-down($sm) {\r\n            width: 100%;\r\n        }\r\n\r\n        &-text {\r\n            display: inline-block;\r\n            font-family: $Arizonia;\r\n            font-size: 3rem;\r\n            color: $white;\r\n            text-transform: lowercase;\r\n            cursor: pointer;\r\n\r\n            a:hover {\r\n                color: $yellow;\r\n            }\r\n        }\r\n\r\n        &-caret {\r\n            margin: 0.75rem 0 0.25rem;\r\n            cursor: pointer;\r\n\r\n            @include media-breakpoint-up($sm) {\r\n                display: none;\r\n            }\r\n\r\n            &.inverse::after {\r\n                transform: rotate(315deg);\r\n                margin-top: 0.25rem;\r\n            }\r\n\r\n            p {\r\n                @include default-text;\r\n                font-size: 0.5rem;\r\n                color: $white;\r\n            }\r\n\r\n            &::after {\r\n                position: relative;\r\n                left: -4px;\r\n                top: -7px;\r\n                margin-right: 0.5rem;\r\n                margin-left: 1.0rem;\r\n                border-right: 0.2rem solid $white;\r\n                border-top: 0.2rem solid $white;\r\n                display: inline-block;\r\n                width: 0.35rem;\r\n                height: 0.35rem;\r\n                transform: rotate(135deg);\r\n                content: \"\";\r\n            }\r\n\r\n            &:hover {\r\n                p {\r\n                    color: $yellow;\r\n                }\r\n\r\n                &::after {\r\n                    border-color: $yellow;\r\n                }\r\n            }\r\n        }\r\n    }\r\n\r\n    &__navigation {\r\n        width: fit-content;\r\n\r\n        @include media-breakpoint-down($sm) {\r\n            width: 100%;\r\n        }\r\n\r\n        &-links {\r\n            display: flex;\r\n            column-gap: 2rem;\r\n            cursor: default;\r\n\r\n            @include media-breakpoint-down($sm) {\r\n                margin-bottom: 1.5rem;\r\n                border: 1px solid $border-yellow;\r\n                padding: 1rem;\r\n                background: $transwhite-bg;\r\n                flex-direction: column;\r\n                row-gap: 0.75rem;\r\n                max-height: 40rem;\r\n                opacity: 1;\r\n                transition: max-height 0.3s ease-in-out;\r\n\r\n                &.d-none {\r\n                    margin: 0;\r\n                    padding: 0;\r\n                    max-height: 0;\r\n                    opacity: 0;\r\n                    gap: 0;\r\n\r\n                    li {\r\n                        height: 0;\r\n                    }\r\n                }\r\n            }\r\n\r\n            li {\r\n                @include default-text;\r\n                display: inline-block;\r\n                font-size: 0.75rem;\r\n                color: $white;\r\n                transition: all 0.3s ease-in-out;\r\n                cursor: pointer;\r\n\r\n                &:hover a {\r\n                    color: $yellow;\r\n                }\r\n\r\n                @include media-breakpoint-down($sm) {\r\n                    font-size: 0.75rem;\r\n                    text-transform: none;\r\n                }\r\n            }\r\n        }\r\n    }\r\n}\n                              "],"sourceRoot":""}]);
+}`, "",{"version":3,"sources":["webpack://./src/styles/variables.scss","webpack://./src/styles/header.scss"],"names":[],"mappings":"AAAA,wEAAA;AAEA,YAAA;AAWA,aAAA;AAKA,yEAAA;AAGA,yEAAA;AAEA,+DAAA;AACA,uBAAA;AAMA,aAAA;AAMA,+DAAA;AACA,cAAA;AAMA,gEAAA;AACA,YAAA;AAOA,YAAA;AAOA,yEAAA;AAGA,yEAAA;AAOA,yEAAA;AAGA,yEAAA;AA4EA,yEAAA;AAGA,yEAAA;AAEA;EACI,qBAAA;EACA,oBAAA;EACA,eAAA;EACA,oDA9GM;EA+GN,gBAAA;AC/HJ;;ADkIA;EACI,WA9JI;EA+JJ,qBAAA;AC/HJ;;ADkIA;EACI,kBAAA;EACA,SAAA;EACA,UAAA;EACA,iBAAA;EACA,eAAA;AC/HJ;ADiII;EAjCA,oBAAA;EACA,qBAAA;EACA,oDAxFM;EAyFN,kBAAA;EACA,gBAAA;EACA,WA7II;EA2KA,kBAAA;EACA,UAAA;EACA,gBAAA;EACA,qBAAA;EACA,gBAAA;EACA,WA/KA;EAgLA,kBAAA;EACA,qBAAA;AC1HR;AD4HQ;EACI,WArLJ;AC2DR;AD8HI;EACI,kBAAA;EACA,MAAA;EACA,OAAA;EACA,QAAA;EACA,YAAA;EACA,+BA1LO;EA2LP,oBAAA;EACA,WAAA;AC5HR;ADgIQ;EACI,WAAA;AC9HZ;;ADmIA;EACI,+BAAA;EACA,wBAAA;EACA,qBAAA;AChIJ;;ADmIA,yEAAA;AClNgC;EAC5B,gBAAA;EACA,kBAAA;AAmFJ;ADcQ;ECnGwB;ID4H5B,aAAA;IACA,8BCxHsB;IDyHtB,mBCzHqC;IACjC,gBAAA;IACA,MAAA;IACA,SAAA;IACA,4DDKQ;ICJR,WAAA;IACA,YAAA;IACA,UAAA;EAsFN;AACF;AD1BQ;ECzEwB;IAgBxB,sBAAA;IACA,gBAAA;EAuFN;AACF;AArFI;ED8GA,aAAA;EACA,sBAAA;EACA,uBC/GyB;EDgHzB,mBChHiC;AA0FrC;ADtCQ;ECrDJ;IAIQ,WAAA;EA2FV;AACF;AAzFQ;EACI,qBAAA;EACA,qCDCD;ECAC,eAAA;EACA,WD9BJ;EC+BI,yBAAA;EACA,eAAA;AA2FZ;AAzFY;EACI,cDhCP;AC2HT;AAvFQ;EACI,yBAAA;EACA,eAAA;AAyFZ;ADhCQ;EC3DA;IAKQ,aAAA;EA0Fd;AACF;AAxFY;EACI,yBAAA;EACA,mBAAA;AA0FhB;AAvFY;EDoFR,oBAAA;EACA,qBAAA;EACA,oDAxFM;EAyFN,kBAAA;EACA,gBAAA;EACA,WA7II;ECsDQ,iBAAA;EACA,WDvDR;ACqJR;AA3FY;EACI,kBAAA;EACA,UAAA;EACA,SAAA;EACA,oBAAA;EACA,iBAAA;EACA,+BAAA;EACA,6BAAA;EACA,qBAAA;EACA,cAAA;EACA,eAAA;EACA,yBAAA;EACA,WAAA;AA6FhB;AAzFgB;EACI,cDxEX;ACmKT;AAxFgB;EACI,qBD5EX;ACsKT;AApFI;EACI,kBAAA;AAsFR;ADpGQ;ECaJ;IAIQ,WAAA;EAuFV;AACF;AArFQ;EACI,aAAA;EACA,gBAAA;EACA,eAAA;AAuFZ;AD9GQ;ECoBA;IAMQ,qBAAA;IACA,yCAAA;IACA,aAAA;IACA,oCD9FA;IC+FA,sBAAA;IACA,gBAAA;IACA,iBAAA;IACA,UAAA;IACA,uCAAA;EAwFd;EAtFc;IACI,SAAA;IACA,UAAA;IACA,aAAA;IACA,UAAA;IACA,MAAA;EAwFlB;EAtFkB;IACI,SAAA;EAwFtB;AACF;AApFY;EDeR,oBAAA;EACA,qBAAA;EACA,oDAxFM;EAyFN,kBAAA;EACA,gBAAA;EACA,WA7II;EC2HQ,qBAAA;EACA,kBAAA;EACA,WD7HR;EC8HQ,gCAAA;EACA,eAAA;AA2FhB;AAzFgB;EACI,cD/HX;AC0NT;ADrJQ;ECiDI;IAaQ,kBAAA;IACA,oBAAA;EA2FlB;AACF","sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
 
-/***/ }),
+/***/ },
 
-/***/ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[0].use[2]!./src/styles/home.scss":
+/***/ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[0].use[2]!./src/styles/home.scss"
 /*!***************************************************************************************************************************************!*\
   !*** ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[0].use[2]!./src/styles/home.scss ***!
   \***************************************************************************************************************************************/
-/***/ ((module, __webpack_exports__, __webpack_require__) => {
+(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
@@ -897,18 +897,18 @@ button:hover::after {
   margin-top: 0.5rem;
   width: 15rem;
   height: auto;
-}`, "",{"version":3,"sources":["webpack://./src/styles/variables.scss","webpack://./src/styles/home.scss"],"names":[],"mappings":"AAAA,wEAAA;AAEA,YAAA;AAWA,aAAA;AAKA,yEAAA;AAGA,yEAAA;AAEA,+DAAA;AACA,uBAAA;AAMA,aAAA;AAMA,+DAAA;AACA,cAAA;AAMA,gEAAA;AACA,YAAA;AAOA,YAAA;AAOA,yEAAA;AAGA,yEAAA;AAOA,yEAAA;AAGA,yEAAA;AA4EA,yEAAA;AAGA,yEAAA;AAEA;EACI,qBAAA;EACA,oBAAA;EACA,eAAA;EACA,oDA9GM;EA+GN,gBAAA;AC/HJ;;ADkIA;EACI,WA9JI;EA+JJ,qBAAA;AC/HJ;;ADkIA;EACI,kBAAA;EACA,SAAA;EACA,UAAA;EACA,iBAAA;EACA,eAAA;AC/HJ;ADiII;EAjCA,oBAAA;EACA,qBAAA;EACA,oDAxFM;EAyFN,kBAAA;EACA,gBAAA;EACA,WA7II;EA2KA,kBAAA;EACA,UAAA;EACA,gBAAA;EACA,qBAAA;EACA,gBAAA;EACA,WA/KA;EAgLA,kBAAA;EACA,qBAAA;AC1HR;AD4HQ;EACI,WArLJ;AC2DR;AD8HI;EACI,kBAAA;EACA,MAAA;EACA,OAAA;EACA,QAAA;EACA,YAAA;EACA,+BA1LO;EA2LP,oBAAA;EACA,WAAA;AC5HR;ADgIQ;EACI,WAAA;AC9HZ;;ADmIA;EACI,+BAAA;EACA,wBAAA;EACA,qBAAA;AChIJ;;ADmIA,yEAAA;AClNgC;EAC5B,wBAAA;EACA,cAAA;EACA,yBAAA;AAmFJ;AAjFI;EDoIA,oBAAA;EACA,qBAAA;EACA,oDAxFM;EAyFN,kBAAA;EACA,gBAAA;EACA,WA7II;EA2HJ,aAAA;EACA,sBCtHsB;EDuHtB,qBCvH6B;EACzB,+BAAA;AA0FR;ADzBQ;ECpEJ;IAMQ,sBAAA;EA2FV;AACF;AAzFQ;EACI,qBAAA;AA2FZ;AAxFQ;EACI,YAAA;EACA,YAAA;EACA,4CAAA;AA0FZ;AAxFY;EACI,kBAAA;EACA,YAAA;EACA,eAAA;EACA,kBAAA;EACA,YAAA;EACA,YAAA;AA0FhB","sourcesContent":["/*--------------------------- Theme Colours ---------------------------*/\r\n\r\n/* Colours */\r\n$white: #fff;\r\n$black: #000;\r\n$dark-blue: #000033;\r\n$yellow: #ffff00;\r\n$purple: rgba(131, 58, 180, 1);\r\n$dark-blue-50: rgba(0, 0, 51, 0.50);\r\n$border-yellow: rgba(255, 255, 0, 0.25);\r\n$transwhite-bg: rgba(255, 255, 255, 0.1);\r\n$shadow-color: rgba(0, 0, 0, 0.1);\r\n\r\n/* Gradient */\r\n$sunset: linear-gradient(135deg, black, $dark-blue 70%, $purple 100%);\r\n$sunset-var: linear-gradient(225deg, black, $dark-blue, $purple 100%);\r\n$sunset-header: linear-gradient(135deg, black, #00001b, #170A4A);\r\n\r\n/*-------------------------- Theme Colours End -------------------------*/\r\n\r\n\r\n/*-------------------------------- Fonts -------------------------------*/\r\n\r\n/******************** Serif Fonts *****************************/\r\n/* Cormorant Garamond */\r\n@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap');\r\n$Cormorant: 'Cormorant Garamond',\r\nTimes,\r\nserif;\r\n\r\n/* Arizonia */\r\n@import url('https://fonts.googleapis.com/css2?family=Arizonia&display=swap');\r\n$Arizonia: 'Arizonia',\r\nTimes,\r\nserif;\r\n\r\n/********************** Cursive Fonts *************************/\r\n/* Italianno */\r\n@import url('https://fonts.googleapis.com/css2?family=Italianno&display=swap');\r\n$Italianno: 'Italianno',\r\nSnell Roundhand,\r\ncursive;\r\n\r\n/********************* Sans-serif Fonts ************************/\r\n/* Raleway */\r\n@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');\r\n$Raleway: 'Raleway',\r\nArial,\r\nHelvetica,\r\nsans-serif;\r\n\r\n/* Spartan */\r\n@import url('https://fonts.googleapis.com/css2?family=Spartan:wght@100;200;300;400;500;600;700;800;900&display=swap');\r\n$Spartan: 'Spartan',\r\nArial,\r\nHelvetica,\r\nsans-serif;\r\n\r\n/*------------------------------ Fonts End -----------------------------*/\r\n\r\n\r\n/*----------------------------- Breakpoints ----------------------------*/\r\n\r\n$sm: 576px;\r\n$md: 768px;\r\n$lg: 992px;\r\n$xl: 1200px;\r\n\r\n/*--------------------------- Breakpoints End --------------------------*/\r\n\r\n\r\n/*------------------------------- Mixins -------------------------------*/\r\n\r\n@mixin media-breakpoint-down($breakpoint) {\r\n    @if $breakpoint==$sm {\r\n        @media (max-width: $sm) {\r\n            @content;\r\n        }\r\n    }\r\n\r\n    @else if $breakpoint==$md {\r\n        @media (max-width: $md) {\r\n            @content;\r\n        }\r\n    }\r\n\r\n    @else if $breakpoint==$lg {\r\n        @media (max-width: $lg) {\r\n            @content;\r\n        }\r\n    }\r\n\r\n    @else {\r\n        @media (max-width: $xl) {\r\n            @content;\r\n        }\r\n    }\r\n}\r\n\r\n@mixin media-breakpoint-up($breakpoint) {\r\n    @if $breakpoint==$sm {\r\n        @media (min-width: $sm) {\r\n            @content;\r\n        }\r\n    }\r\n\r\n    @else if $breakpoint==$md {\r\n        @media (min-width: $md) {\r\n            @content;\r\n        }\r\n    }\r\n\r\n    @else if $breakpoint==$lg {\r\n        @media (min-width: $lg) {\r\n            @content;\r\n        }\r\n    }\r\n\r\n    @else {\r\n        @media (min-width: $xl) {\r\n            @content;\r\n        }\r\n    }\r\n}\r\n\r\n@mixin flex-row ($justify-content, $align-items) {\r\n    display: flex;\r\n    justify-content: $justify-content;\r\n    align-items: $align-items;\r\n}\r\n\r\n@mixin flex-column($justify-content, $align-items) {\r\n    display: flex;\r\n    flex-direction: column;\r\n    justify-content: $justify-content;\r\n    align-items: $align-items;\r\n}\r\n\r\n@mixin default-text {\r\n    line-height: 1.25rem;\r\n    word-spacing: 0.25rem;\r\n    font-family: $Spartan;\r\n    font-size: 0.75rem;\r\n    font-weight: 300;\r\n    color: $white;\r\n}\r\n\r\n/*----------------------------- Mixins End -----------------------------*/\r\n\r\n\r\n/*------------------------------- Common -------------------------------*/\r\n\r\nh2 {\r\n    margin-bottom: 1.5rem;\r\n    line-height: 3.25rem;\r\n    font-size: 4rem;\r\n    font-family: $Raleway;\r\n    font-weight: 500;\r\n}\r\n\r\na {\r\n    color: $white;\r\n    text-decoration: none;\r\n}\r\n\r\nbutton {\r\n    position: relative;\r\n    border: 0;\r\n    padding: 0;\r\n    background: white;\r\n    cursor: pointer;\r\n\r\n    span {\r\n        @include default-text;\r\n        position: relative;\r\n        z-index: 2;\r\n        padding: 0.75rem;\r\n        display: inline-block;\r\n        font-weight: 400;\r\n        color: $black;\r\n        text-align: center;\r\n        transition: all .35s;\r\n\r\n        &:hover {\r\n            color: $white;\r\n        }\r\n    }\r\n\r\n    &::after {\r\n        position: absolute;\r\n        top: 0;\r\n        left: 0;\r\n        width: 0;\r\n        height: 100%;\r\n        background: $dark-blue-50;\r\n        transition: all .3s;\r\n        content: \"\";\r\n    }\r\n\r\n    &:hover {\r\n        &::after {\r\n            width: 100%;\r\n        }\r\n    }\r\n}\r\n\r\n.underline {\r\n    border-bottom: 2px solid yellow;\r\n    padding-bottom: 0.125rem;\r\n    text-decoration: none;\r\n}\r\n\r\n/*---------------------------- Common Ends -----------------------------*/","\n                                @import \"variables.scss\";\n                                .home {\r\n    width: calc(100% - 15vw);\r\n    margin: 0 auto;\r\n    border: 1px solid $yellow;\r\n\r\n    &__bio {\r\n        @include default-text;\r\n        @include flex-row(unset, flex-end);\r\n        padding: 1.5rem 1.5rem 0 1.5rem;\r\n\r\n        @include media-breakpoint-down($sm) {\r\n            flex-direction: column;\r\n        }\r\n\r\n        &-text {\r\n            margin-bottom: 1.5rem;\r\n        }\r\n\r\n        &-picture {\r\n            float: right;\r\n            height: 100%;\r\n            shape-outside: inset(calc(100% - 12rem) 0 0);\r\n\r\n            img {\r\n                position: relative;\r\n                bottom: -8px;\r\n                right: -1.75rem;\r\n                margin-top: 0.5rem;\r\n                width: 15rem;\r\n                height: auto;\r\n            }\r\n        }\r\n    }\r\n}\n                              "],"sourceRoot":""}]);
+}`, "",{"version":3,"sources":["webpack://./src/styles/variables.scss","webpack://./src/styles/home.scss"],"names":[],"mappings":"AAAA,wEAAA;AAEA,YAAA;AAWA,aAAA;AAKA,yEAAA;AAGA,yEAAA;AAEA,+DAAA;AACA,uBAAA;AAMA,aAAA;AAMA,+DAAA;AACA,cAAA;AAMA,gEAAA;AACA,YAAA;AAOA,YAAA;AAOA,yEAAA;AAGA,yEAAA;AAOA,yEAAA;AAGA,yEAAA;AA4EA,yEAAA;AAGA,yEAAA;AAEA;EACI,qBAAA;EACA,oBAAA;EACA,eAAA;EACA,oDA9GM;EA+GN,gBAAA;AC/HJ;;ADkIA;EACI,WA9JI;EA+JJ,qBAAA;AC/HJ;;ADkIA;EACI,kBAAA;EACA,SAAA;EACA,UAAA;EACA,iBAAA;EACA,eAAA;AC/HJ;ADiII;EAjCA,oBAAA;EACA,qBAAA;EACA,oDAxFM;EAyFN,kBAAA;EACA,gBAAA;EACA,WA7II;EA2KA,kBAAA;EACA,UAAA;EACA,gBAAA;EACA,qBAAA;EACA,gBAAA;EACA,WA/KA;EAgLA,kBAAA;EACA,qBAAA;AC1HR;AD4HQ;EACI,WArLJ;AC2DR;AD8HI;EACI,kBAAA;EACA,MAAA;EACA,OAAA;EACA,QAAA;EACA,YAAA;EACA,+BA1LO;EA2LP,oBAAA;EACA,WAAA;AC5HR;ADgIQ;EACI,WAAA;AC9HZ;;ADmIA;EACI,+BAAA;EACA,wBAAA;EACA,qBAAA;AChIJ;;ADmIA,yEAAA;AClNgC;EAC5B,wBAAA;EACA,cAAA;EACA,yBAAA;AAmFJ;AAjFI;EDoIA,oBAAA;EACA,qBAAA;EACA,oDAxFM;EAyFN,kBAAA;EACA,gBAAA;EACA,WA7II;EA2HJ,aAAA;EACA,sBCtHsB;EDuHtB,qBCvH6B;EACzB,+BAAA;AA0FR;ADzBQ;ECpEJ;IAMQ,sBAAA;EA2FV;AACF;AAzFQ;EACI,qBAAA;AA2FZ;AAxFQ;EACI,YAAA;EACA,YAAA;EACA,4CAAA;AA0FZ;AAxFY;EACI,kBAAA;EACA,YAAA;EACA,eAAA;EACA,kBAAA;EACA,YAAA;EACA,YAAA;AA0FhB","sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
 
-/***/ }),
+/***/ },
 
-/***/ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[0].use[2]!./src/styles/main.scss":
+/***/ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[0].use[2]!./src/styles/main.scss"
 /*!***************************************************************************************************************************************!*\
   !*** ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[0].use[2]!./src/styles/main.scss ***!
   \***************************************************************************************************************************************/
-/***/ ((module, __webpack_exports__, __webpack_require__) => {
+(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
@@ -1044,18 +1044,18 @@ body::-webkit-scrollbar-thumb {
   .empty {
     height: 1.5rem;
   }
-}`, "",{"version":3,"sources":["webpack://./src/styles/variables.scss","webpack://./src/styles/main.scss"],"names":[],"mappings":"AAAA,wEAAA;AAEA,YAAA;AAWA,aAAA;AAKA,yEAAA;AAGA,yEAAA;AAEA,+DAAA;AACA,uBAAA;AAMA,aAAA;AAMA,+DAAA;AACA,cAAA;AAMA,gEAAA;AACA,YAAA;AAOA,YAAA;AAOA,yEAAA;AAGA,yEAAA;AAOA,yEAAA;AAGA,yEAAA;AA4EA,yEAAA;AAGA,yEAAA;AAEA;EACI,qBAAA;EACA,oBAAA;EACA,eAAA;EACA,oDA9GM;EA+GN,gBAAA;AC/HJ;;ADkIA;EACI,WA9JI;EA+JJ,qBAAA;AC/HJ;;ADkIA;EACI,kBAAA;EACA,SAAA;EACA,UAAA;EACA,iBAAA;EACA,eAAA;AC/HJ;ADiII;EAjCA,oBAAA;EACA,qBAAA;EACA,oDAxFM;EAyFN,kBAAA;EACA,gBAAA;EACA,WA7II;EA2KA,kBAAA;EACA,UAAA;EACA,gBAAA;EACA,qBAAA;EACA,gBAAA;EACA,WA/KA;EAgLA,kBAAA;EACA,qBAAA;AC1HR;AD4HQ;EACI,WArLJ;AC2DR;AD8HI;EACI,kBAAA;EACA,MAAA;EACA,OAAA;EACA,QAAA;EACA,YAAA;EACA,+BA1LO;EA2LP,oBAAA;EACA,WAAA;AC5HR;ADgIQ;EACI,WAAA;AC9HZ;;ADmIA;EACI,+BAAA;EACA,wBAAA;EACA,qBAAA;AChIJ;;ADmIA,yEAAA;AClNgC;;EAE5B,sBAAA;EACA,kCAAA;AAmFJ;;AAhFA;EACI,+EDKK;ECJL,4BAAA;EACA,WDRI;ECSJ,kBAAA;AAmFJ;AAjFI;EACI,cAAA;AAmFR;AAhFI;EACI,+EDLC;ACuFT;AA/EI;EACI,sBAAA;EACA,mBDlBC;ACmGT;;AA7EA;EACI,iBAAA;AAgFJ;;AA7EA;EACI,cAAA;EACA,wBAAA;EACA,YAAA;AAgFJ;ADxCQ;EC3CR;IAMQ,cAAA;EAiFN;AACF","sourcesContent":["/*--------------------------- Theme Colours ---------------------------*/\r\n\r\n/* Colours */\r\n$white: #fff;\r\n$black: #000;\r\n$dark-blue: #000033;\r\n$yellow: #ffff00;\r\n$purple: rgba(131, 58, 180, 1);\r\n$dark-blue-50: rgba(0, 0, 51, 0.50);\r\n$border-yellow: rgba(255, 255, 0, 0.25);\r\n$transwhite-bg: rgba(255, 255, 255, 0.1);\r\n$shadow-color: rgba(0, 0, 0, 0.1);\r\n\r\n/* Gradient */\r\n$sunset: linear-gradient(135deg, black, $dark-blue 70%, $purple 100%);\r\n$sunset-var: linear-gradient(225deg, black, $dark-blue, $purple 100%);\r\n$sunset-header: linear-gradient(135deg, black, #00001b, #170A4A);\r\n\r\n/*-------------------------- Theme Colours End -------------------------*/\r\n\r\n\r\n/*-------------------------------- Fonts -------------------------------*/\r\n\r\n/******************** Serif Fonts *****************************/\r\n/* Cormorant Garamond */\r\n@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap');\r\n$Cormorant: 'Cormorant Garamond',\r\nTimes,\r\nserif;\r\n\r\n/* Arizonia */\r\n@import url('https://fonts.googleapis.com/css2?family=Arizonia&display=swap');\r\n$Arizonia: 'Arizonia',\r\nTimes,\r\nserif;\r\n\r\n/********************** Cursive Fonts *************************/\r\n/* Italianno */\r\n@import url('https://fonts.googleapis.com/css2?family=Italianno&display=swap');\r\n$Italianno: 'Italianno',\r\nSnell Roundhand,\r\ncursive;\r\n\r\n/********************* Sans-serif Fonts ************************/\r\n/* Raleway */\r\n@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');\r\n$Raleway: 'Raleway',\r\nArial,\r\nHelvetica,\r\nsans-serif;\r\n\r\n/* Spartan */\r\n@import url('https://fonts.googleapis.com/css2?family=Spartan:wght@100;200;300;400;500;600;700;800;900&display=swap');\r\n$Spartan: 'Spartan',\r\nArial,\r\nHelvetica,\r\nsans-serif;\r\n\r\n/*------------------------------ Fonts End -----------------------------*/\r\n\r\n\r\n/*----------------------------- Breakpoints ----------------------------*/\r\n\r\n$sm: 576px;\r\n$md: 768px;\r\n$lg: 992px;\r\n$xl: 1200px;\r\n\r\n/*--------------------------- Breakpoints End --------------------------*/\r\n\r\n\r\n/*------------------------------- Mixins -------------------------------*/\r\n\r\n@mixin media-breakpoint-down($breakpoint) {\r\n    @if $breakpoint==$sm {\r\n        @media (max-width: $sm) {\r\n            @content;\r\n        }\r\n    }\r\n\r\n    @else if $breakpoint==$md {\r\n        @media (max-width: $md) {\r\n            @content;\r\n        }\r\n    }\r\n\r\n    @else if $breakpoint==$lg {\r\n        @media (max-width: $lg) {\r\n            @content;\r\n        }\r\n    }\r\n\r\n    @else {\r\n        @media (max-width: $xl) {\r\n            @content;\r\n        }\r\n    }\r\n}\r\n\r\n@mixin media-breakpoint-up($breakpoint) {\r\n    @if $breakpoint==$sm {\r\n        @media (min-width: $sm) {\r\n            @content;\r\n        }\r\n    }\r\n\r\n    @else if $breakpoint==$md {\r\n        @media (min-width: $md) {\r\n            @content;\r\n        }\r\n    }\r\n\r\n    @else if $breakpoint==$lg {\r\n        @media (min-width: $lg) {\r\n            @content;\r\n        }\r\n    }\r\n\r\n    @else {\r\n        @media (min-width: $xl) {\r\n            @content;\r\n        }\r\n    }\r\n}\r\n\r\n@mixin flex-row ($justify-content, $align-items) {\r\n    display: flex;\r\n    justify-content: $justify-content;\r\n    align-items: $align-items;\r\n}\r\n\r\n@mixin flex-column($justify-content, $align-items) {\r\n    display: flex;\r\n    flex-direction: column;\r\n    justify-content: $justify-content;\r\n    align-items: $align-items;\r\n}\r\n\r\n@mixin default-text {\r\n    line-height: 1.25rem;\r\n    word-spacing: 0.25rem;\r\n    font-family: $Spartan;\r\n    font-size: 0.75rem;\r\n    font-weight: 300;\r\n    color: $white;\r\n}\r\n\r\n/*----------------------------- Mixins End -----------------------------*/\r\n\r\n\r\n/*------------------------------- Common -------------------------------*/\r\n\r\nh2 {\r\n    margin-bottom: 1.5rem;\r\n    line-height: 3.25rem;\r\n    font-size: 4rem;\r\n    font-family: $Raleway;\r\n    font-weight: 500;\r\n}\r\n\r\na {\r\n    color: $white;\r\n    text-decoration: none;\r\n}\r\n\r\nbutton {\r\n    position: relative;\r\n    border: 0;\r\n    padding: 0;\r\n    background: white;\r\n    cursor: pointer;\r\n\r\n    span {\r\n        @include default-text;\r\n        position: relative;\r\n        z-index: 2;\r\n        padding: 0.75rem;\r\n        display: inline-block;\r\n        font-weight: 400;\r\n        color: $black;\r\n        text-align: center;\r\n        transition: all .35s;\r\n\r\n        &:hover {\r\n            color: $white;\r\n        }\r\n    }\r\n\r\n    &::after {\r\n        position: absolute;\r\n        top: 0;\r\n        left: 0;\r\n        width: 0;\r\n        height: 100%;\r\n        background: $dark-blue-50;\r\n        transition: all .3s;\r\n        content: \"\";\r\n    }\r\n\r\n    &:hover {\r\n        &::after {\r\n            width: 100%;\r\n        }\r\n    }\r\n}\r\n\r\n.underline {\r\n    border-bottom: 2px solid yellow;\r\n    padding-bottom: 0.125rem;\r\n    text-decoration: none;\r\n}\r\n\r\n/*---------------------------- Common Ends -----------------------------*/","\n                                @import \"variables.scss\";\n                                *,\r\nhtml {\r\n    box-sizing: border-box;\r\n    scroll-behavior: smooth !important;\r\n}\r\n\r\nbody {\r\n    background: $sunset;\r\n    background-attachment: fixed;\r\n    color: $white;\r\n    overflow-x: hidden;\r\n\r\n    &::-webkit-scrollbar {\r\n        width: 0.75rem;\r\n    }\r\n\r\n    &::-webkit-scrollbar-track {\r\n        background: $sunset;\r\n    }\r\n\r\n    &::-webkit-scrollbar-thumb {\r\n        border: 1px solid $black;\r\n        background: $yellow;\r\n    }\r\n}\r\n\r\n.main {\r\n    min-height: 100vh;\r\n}\r\n\r\n.empty {\r\n    margin: 0 auto;\r\n    width: calc(100% - 15vw);\r\n    height: 3rem;\r\n\r\n    @include media-breakpoint-down($sm) {\r\n        height: 1.5rem;\r\n    }\r\n}\n                              "],"sourceRoot":""}]);
+}`, "",{"version":3,"sources":["webpack://./src/styles/variables.scss","webpack://./src/styles/main.scss"],"names":[],"mappings":"AAAA,wEAAA;AAEA,YAAA;AAWA,aAAA;AAKA,yEAAA;AAGA,yEAAA;AAEA,+DAAA;AACA,uBAAA;AAMA,aAAA;AAMA,+DAAA;AACA,cAAA;AAMA,gEAAA;AACA,YAAA;AAOA,YAAA;AAOA,yEAAA;AAGA,yEAAA;AAOA,yEAAA;AAGA,yEAAA;AA4EA,yEAAA;AAGA,yEAAA;AAEA;EACI,qBAAA;EACA,oBAAA;EACA,eAAA;EACA,oDA9GM;EA+GN,gBAAA;AC/HJ;;ADkIA;EACI,WA9JI;EA+JJ,qBAAA;AC/HJ;;ADkIA;EACI,kBAAA;EACA,SAAA;EACA,UAAA;EACA,iBAAA;EACA,eAAA;AC/HJ;ADiII;EAjCA,oBAAA;EACA,qBAAA;EACA,oDAxFM;EAyFN,kBAAA;EACA,gBAAA;EACA,WA7II;EA2KA,kBAAA;EACA,UAAA;EACA,gBAAA;EACA,qBAAA;EACA,gBAAA;EACA,WA/KA;EAgLA,kBAAA;EACA,qBAAA;AC1HR;AD4HQ;EACI,WArLJ;AC2DR;AD8HI;EACI,kBAAA;EACA,MAAA;EACA,OAAA;EACA,QAAA;EACA,YAAA;EACA,+BA1LO;EA2LP,oBAAA;EACA,WAAA;AC5HR;ADgIQ;EACI,WAAA;AC9HZ;;ADmIA;EACI,+BAAA;EACA,wBAAA;EACA,qBAAA;AChIJ;;ADmIA,yEAAA;AClNgC;;EAE5B,sBAAA;EACA,kCAAA;AAmFJ;;AAhFA;EACI,+EDKK;ECJL,4BAAA;EACA,WDRI;ECSJ,kBAAA;AAmFJ;AAjFI;EACI,cAAA;AAmFR;AAhFI;EACI,+EDLC;ACuFT;AA/EI;EACI,sBAAA;EACA,mBDlBC;ACmGT;;AA7EA;EACI,iBAAA;AAgFJ;;AA7EA;EACI,cAAA;EACA,wBAAA;EACA,YAAA;AAgFJ;ADxCQ;EC3CR;IAMQ,cAAA;EAiFN;AACF","sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
 
-/***/ }),
+/***/ },
 
-/***/ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[0].use[2]!./src/styles/pivot.scss":
+/***/ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[0].use[2]!./src/styles/pivot.scss"
 /*!****************************************************************************************************************************************!*\
   !*** ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[0].use[2]!./src/styles/pivot.scss ***!
   \****************************************************************************************************************************************/
-/***/ ((module, __webpack_exports__, __webpack_require__) => {
+(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
@@ -1274,18 +1274,18 @@ button:hover::after {
   .pivot {
     align-items: center;
   }
-}`, "",{"version":3,"sources":["webpack://./src/styles/variables.scss","webpack://./src/styles/pivot.scss"],"names":[],"mappings":"AAAA,wEAAA;AAEA,YAAA;AAWA,aAAA;AAKA,yEAAA;AAGA,yEAAA;AAEA,+DAAA;AACA,uBAAA;AAMA,aAAA;AAMA,+DAAA;AACA,cAAA;AAMA,gEAAA;AACA,YAAA;AAOA,YAAA;AAOA,yEAAA;AAGA,yEAAA;AAOA,yEAAA;AAGA,yEAAA;AA4EA,yEAAA;AAGA,yEAAA;AAEA;EACI,qBAAA;EACA,oBAAA;EACA,eAAA;EACA,oDA9GM;EA+GN,gBAAA;AC/HJ;;ADkIA;EACI,WA9JI;EA+JJ,qBAAA;AC/HJ;;ADkIA;EACI,kBAAA;EACA,SAAA;EACA,UAAA;EACA,iBAAA;EACA,eAAA;AC/HJ;ADiII;EAjCA,oBAAA;EACA,qBAAA;EACA,oDAxFM;EAyFN,kBAAA;EACA,gBAAA;EACA,WA7II;EA2KA,kBAAA;EACA,UAAA;EACA,gBAAA;EACA,qBAAA;EACA,gBAAA;EACA,WA/KA;EAgLA,kBAAA;EACA,qBAAA;AC1HR;AD4HQ;EACI,WArLJ;AC2DR;AD8HI;EACI,kBAAA;EACA,MAAA;EACA,OAAA;EACA,QAAA;EACA,YAAA;EACA,+BA1LO;EA2LP,oBAAA;EACA,WAAA;AC5HR;ADgIQ;EACI,WAAA;AC9HZ;;ADmIA;EACI,+BAAA;EACA,wBAAA;EACA,qBAAA;AChIJ;;ADmIA,yEAAA;AClNgC;EAC5B,mBAAA;EACA,wBAAA;EACA,qFDSK;AC0ET;ADbQ;ECzEwB;IAMxB,gBAAA;EAoFN;AACF;AAlFI;EACI,qBAAA;EACA,eAAA;EACA,cAAA;AAoFR;AAjFI;ED0HA,oBAAA;EACA,qBAAA;EACA,oDAxFM;EAyFN,kBAAA;EACA,gBAAA;EACA,WA7II;ECgBA,qBAAA;EACA,yCAAA;EACA,sCAAA;EACA,OAAA;EACA,sBDpBA;ECqBA,WDpBA;ECqBA,yBAAA;AAwFR;AAtFQ;EACI,yCAAA;EACA,yBDvBH;ECwBG,+BAAA;AAwFZ;AArFQ;ED6FJ,aAAA;EACA,8BC7F0B;ED8F1B,oBC9FyC;EACjC,cAAA;EACA,eAAA;EACA,WAAA;AAyFZ;ADnDQ;EC1CA;IAOQ,sBAAA;EA0Fd;AACF;AAvFQ;ED+FJ,oBAAA;EACA,qBAAA;EACA,oDAxFM;EAyFN,kBAAA;EACA,gBAAA;EACA,WA7II;EC2CI,mBAAA;EACA,cAAA;EACA,eAAA;EACA,gBAAA;EACA,WD9CJ;EC+CI,4BAAA;AA8FZ;AA1FY;EACI,sBAAA;AA4FhB;AA1FgB;EACI,2BAAA;AA4FpB;AAtFI;ED0EA,oBAAA;EACA,qBAAA;EACA,oDAxFM;EAyFN,kBAAA;EACA,gBAAA;EACA,WA7II;EAiIJ,aAAA;EACA,sBAAA;EACA,uBCnEyB;EDoEzB,mBCpEiC;EAC7B,kBAAA;EACA,sBAAA;EACA,eAAA;EACA,WAAA;EACA,mBDlEC;ECmED,gBAAA;EACA,WDtEA;ECuEA,eAAA;AAgGR;ADhGQ;ECVJ;IAaQ,aAAA;EAiGV;AACF;AA/FQ;EACI,yBAAA;EACA,mBAAA;AAiGZ;AA9FQ;EACI,kBAAA;EACA,UAAA;EACA,SAAA;EACA,oBAAA;EACA,iBAAA;EACA,+BAAA;EACA,6BAAA;EACA,qBAAA;EACA,aAAA;EACA,cAAA;EACA,yBAAA;EACA,WAAA;AAgGZ;AA5FY;EACI,MAAA;AA8FhB;;AAvFA;EACI;IACI,mBAAA;EA0FN;AACF","sourcesContent":["/*--------------------------- Theme Colours ---------------------------*/\r\n\r\n/* Colours */\r\n$white: #fff;\r\n$black: #000;\r\n$dark-blue: #000033;\r\n$yellow: #ffff00;\r\n$purple: rgba(131, 58, 180, 1);\r\n$dark-blue-50: rgba(0, 0, 51, 0.50);\r\n$border-yellow: rgba(255, 255, 0, 0.25);\r\n$transwhite-bg: rgba(255, 255, 255, 0.1);\r\n$shadow-color: rgba(0, 0, 0, 0.1);\r\n\r\n/* Gradient */\r\n$sunset: linear-gradient(135deg, black, $dark-blue 70%, $purple 100%);\r\n$sunset-var: linear-gradient(225deg, black, $dark-blue, $purple 100%);\r\n$sunset-header: linear-gradient(135deg, black, #00001b, #170A4A);\r\n\r\n/*-------------------------- Theme Colours End -------------------------*/\r\n\r\n\r\n/*-------------------------------- Fonts -------------------------------*/\r\n\r\n/******************** Serif Fonts *****************************/\r\n/* Cormorant Garamond */\r\n@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap');\r\n$Cormorant: 'Cormorant Garamond',\r\nTimes,\r\nserif;\r\n\r\n/* Arizonia */\r\n@import url('https://fonts.googleapis.com/css2?family=Arizonia&display=swap');\r\n$Arizonia: 'Arizonia',\r\nTimes,\r\nserif;\r\n\r\n/********************** Cursive Fonts *************************/\r\n/* Italianno */\r\n@import url('https://fonts.googleapis.com/css2?family=Italianno&display=swap');\r\n$Italianno: 'Italianno',\r\nSnell Roundhand,\r\ncursive;\r\n\r\n/********************* Sans-serif Fonts ************************/\r\n/* Raleway */\r\n@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');\r\n$Raleway: 'Raleway',\r\nArial,\r\nHelvetica,\r\nsans-serif;\r\n\r\n/* Spartan */\r\n@import url('https://fonts.googleapis.com/css2?family=Spartan:wght@100;200;300;400;500;600;700;800;900&display=swap');\r\n$Spartan: 'Spartan',\r\nArial,\r\nHelvetica,\r\nsans-serif;\r\n\r\n/*------------------------------ Fonts End -----------------------------*/\r\n\r\n\r\n/*----------------------------- Breakpoints ----------------------------*/\r\n\r\n$sm: 576px;\r\n$md: 768px;\r\n$lg: 992px;\r\n$xl: 1200px;\r\n\r\n/*--------------------------- Breakpoints End --------------------------*/\r\n\r\n\r\n/*------------------------------- Mixins -------------------------------*/\r\n\r\n@mixin media-breakpoint-down($breakpoint) {\r\n    @if $breakpoint==$sm {\r\n        @media (max-width: $sm) {\r\n            @content;\r\n        }\r\n    }\r\n\r\n    @else if $breakpoint==$md {\r\n        @media (max-width: $md) {\r\n            @content;\r\n        }\r\n    }\r\n\r\n    @else if $breakpoint==$lg {\r\n        @media (max-width: $lg) {\r\n            @content;\r\n        }\r\n    }\r\n\r\n    @else {\r\n        @media (max-width: $xl) {\r\n            @content;\r\n        }\r\n    }\r\n}\r\n\r\n@mixin media-breakpoint-up($breakpoint) {\r\n    @if $breakpoint==$sm {\r\n        @media (min-width: $sm) {\r\n            @content;\r\n        }\r\n    }\r\n\r\n    @else if $breakpoint==$md {\r\n        @media (min-width: $md) {\r\n            @content;\r\n        }\r\n    }\r\n\r\n    @else if $breakpoint==$lg {\r\n        @media (min-width: $lg) {\r\n            @content;\r\n        }\r\n    }\r\n\r\n    @else {\r\n        @media (min-width: $xl) {\r\n            @content;\r\n        }\r\n    }\r\n}\r\n\r\n@mixin flex-row ($justify-content, $align-items) {\r\n    display: flex;\r\n    justify-content: $justify-content;\r\n    align-items: $align-items;\r\n}\r\n\r\n@mixin flex-column($justify-content, $align-items) {\r\n    display: flex;\r\n    flex-direction: column;\r\n    justify-content: $justify-content;\r\n    align-items: $align-items;\r\n}\r\n\r\n@mixin default-text {\r\n    line-height: 1.25rem;\r\n    word-spacing: 0.25rem;\r\n    font-family: $Spartan;\r\n    font-size: 0.75rem;\r\n    font-weight: 300;\r\n    color: $white;\r\n}\r\n\r\n/*----------------------------- Mixins End -----------------------------*/\r\n\r\n\r\n/*------------------------------- Common -------------------------------*/\r\n\r\nh2 {\r\n    margin-bottom: 1.5rem;\r\n    line-height: 3.25rem;\r\n    font-size: 4rem;\r\n    font-family: $Raleway;\r\n    font-weight: 500;\r\n}\r\n\r\na {\r\n    color: $white;\r\n    text-decoration: none;\r\n}\r\n\r\nbutton {\r\n    position: relative;\r\n    border: 0;\r\n    padding: 0;\r\n    background: white;\r\n    cursor: pointer;\r\n\r\n    span {\r\n        @include default-text;\r\n        position: relative;\r\n        z-index: 2;\r\n        padding: 0.75rem;\r\n        display: inline-block;\r\n        font-weight: 400;\r\n        color: $black;\r\n        text-align: center;\r\n        transition: all .35s;\r\n\r\n        &:hover {\r\n            color: $white;\r\n        }\r\n    }\r\n\r\n    &::after {\r\n        position: absolute;\r\n        top: 0;\r\n        left: 0;\r\n        width: 0;\r\n        height: 100%;\r\n        background: $dark-blue-50;\r\n        transition: all .3s;\r\n        content: \"\";\r\n    }\r\n\r\n    &:hover {\r\n        &::after {\r\n            width: 100%;\r\n        }\r\n    }\r\n}\r\n\r\n.underline {\r\n    border-bottom: 2px solid yellow;\r\n    padding-bottom: 0.125rem;\r\n    text-decoration: none;\r\n}\r\n\r\n/*---------------------------- Common Ends -----------------------------*/","\n                                @import \"variables.scss\";\n                                .pivot {\r\n    margin: 0 auto 2rem;\r\n    width: calc(100% - 15vw);\r\n    background-color: $sunset;\r\n\r\n    @include media-breakpoint-down($sm) {\r\n        margin-bottom: 0;\r\n    }\r\n\r\n    &__text {\r\n        margin-bottom: 1.5rem;\r\n        font-size: 2rem;\r\n        line-height: 1;\r\n    }\r\n\r\n    &__card {\r\n        @include default-text;\r\n        border-radius: 0.5rem;\r\n        box-shadow: 0 2px 12px $shadow-color;\r\n        padding: 1.5rem 1.5rem 0.75rem 2.25rem;\r\n        flex: 1;\r\n        background-color: $white;\r\n        color: $black;\r\n        transition: all 0.3s ease;\r\n\r\n        &:hover {\r\n            box-shadow: 0 4px 20px $shadow-color;\r\n            background-color: $yellow;\r\n            transform: translateY(-0.25rem);\r\n        }\r\n\r\n        &-wrapper {\r\n            @include flex-row(space-between, stretch);\r\n            margin: 0 auto;\r\n            flex-wrap: wrap;\r\n            gap: 1.5rem;\r\n\r\n            @include media-breakpoint-down($sm) {\r\n                flex-direction: column;\r\n            }\r\n        }\r\n\r\n        &__text {\r\n            @include default-text;\r\n            margin-bottom: 1rem;\r\n            line-height: 1;\r\n            font-size: 1rem;\r\n            font-weight: 700;\r\n            color: $black;\r\n            text-shadow: 2px 2px $yellow;\r\n        }\r\n\r\n        ul {\r\n            li {\r\n                margin-bottom: 0.75rem;\r\n\r\n                &:hover {\r\n                    transition: color 0.3s ease;\r\n                }\r\n            }\r\n        }\r\n    }\r\n\r\n    &__caret {\r\n        @include default-text;\r\n        @include flex-column(center, center);\r\n        position: relative;\r\n        margin: 0.75rem auto 0;\r\n        padding: 0.5rem;\r\n        width: 6rem;\r\n        background: $yellow;\r\n        font-weight: 600;\r\n        color: $black;\r\n        cursor: pointer;\r\n\r\n        @include media-breakpoint-down($sm) {\r\n            display: none;\r\n        }\r\n\r\n        &.inverse::after {\r\n            transform: rotate(315deg);\r\n            margin-top: 0.25rem;\r\n        }\r\n\r\n        &::after {\r\n            position: relative;\r\n            left: -5px;\r\n            top: -2px;\r\n            margin-right: 0.5rem;\r\n            margin-left: 1.0rem;\r\n            border-right: 0.2rem solid $black;\r\n            border-top: 0.2rem solid $black;\r\n            display: inline-block;\r\n            width: 0.5rem;\r\n            height: 0.5rem;\r\n            transform: rotate(135deg);\r\n            content: \"\";\r\n        }\r\n\r\n        &:hover {\r\n            &::after {\r\n                top: 0;\r\n            }\r\n        }\r\n    }\r\n}\r\n\r\n// Responsive design\r\n@media (max-width: 768px) {\r\n    .pivot {\r\n        align-items: center;\r\n    }\r\n}\n                              "],"sourceRoot":""}]);
+}`, "",{"version":3,"sources":["webpack://./src/styles/variables.scss","webpack://./src/styles/pivot.scss"],"names":[],"mappings":"AAAA,wEAAA;AAEA,YAAA;AAWA,aAAA;AAKA,yEAAA;AAGA,yEAAA;AAEA,+DAAA;AACA,uBAAA;AAMA,aAAA;AAMA,+DAAA;AACA,cAAA;AAMA,gEAAA;AACA,YAAA;AAOA,YAAA;AAOA,yEAAA;AAGA,yEAAA;AAOA,yEAAA;AAGA,yEAAA;AA4EA,yEAAA;AAGA,yEAAA;AAEA;EACI,qBAAA;EACA,oBAAA;EACA,eAAA;EACA,oDA9GM;EA+GN,gBAAA;AC/HJ;;ADkIA;EACI,WA9JI;EA+JJ,qBAAA;AC/HJ;;ADkIA;EACI,kBAAA;EACA,SAAA;EACA,UAAA;EACA,iBAAA;EACA,eAAA;AC/HJ;ADiII;EAjCA,oBAAA;EACA,qBAAA;EACA,oDAxFM;EAyFN,kBAAA;EACA,gBAAA;EACA,WA7II;EA2KA,kBAAA;EACA,UAAA;EACA,gBAAA;EACA,qBAAA;EACA,gBAAA;EACA,WA/KA;EAgLA,kBAAA;EACA,qBAAA;AC1HR;AD4HQ;EACI,WArLJ;AC2DR;AD8HI;EACI,kBAAA;EACA,MAAA;EACA,OAAA;EACA,QAAA;EACA,YAAA;EACA,+BA1LO;EA2LP,oBAAA;EACA,WAAA;AC5HR;ADgIQ;EACI,WAAA;AC9HZ;;ADmIA;EACI,+BAAA;EACA,wBAAA;EACA,qBAAA;AChIJ;;ADmIA,yEAAA;AClNgC;EAC5B,mBAAA;EACA,wBAAA;EACA,qFDSK;AC0ET;ADbQ;ECzEwB;IAMxB,gBAAA;EAoFN;AACF;AAlFI;EACI,qBAAA;EACA,eAAA;EACA,cAAA;AAoFR;AAjFI;ED0HA,oBAAA;EACA,qBAAA;EACA,oDAxFM;EAyFN,kBAAA;EACA,gBAAA;EACA,WA7II;ECgBA,qBAAA;EACA,yCAAA;EACA,sCAAA;EACA,OAAA;EACA,sBDpBA;ECqBA,WDpBA;ECqBA,yBAAA;AAwFR;AAtFQ;EACI,yCAAA;EACA,yBDvBH;ECwBG,+BAAA;AAwFZ;AArFQ;ED6FJ,aAAA;EACA,8BC7F0B;ED8F1B,oBC9FyC;EACjC,cAAA;EACA,eAAA;EACA,WAAA;AAyFZ;ADnDQ;EC1CA;IAOQ,sBAAA;EA0Fd;AACF;AAvFQ;ED+FJ,oBAAA;EACA,qBAAA;EACA,oDAxFM;EAyFN,kBAAA;EACA,gBAAA;EACA,WA7II;EC2CI,mBAAA;EACA,cAAA;EACA,eAAA;EACA,gBAAA;EACA,WD9CJ;EC+CI,4BAAA;AA8FZ;AA1FY;EACI,sBAAA;AA4FhB;AA1FgB;EACI,2BAAA;AA4FpB;AAtFI;ED0EA,oBAAA;EACA,qBAAA;EACA,oDAxFM;EAyFN,kBAAA;EACA,gBAAA;EACA,WA7II;EAiIJ,aAAA;EACA,sBAAA;EACA,uBCnEyB;EDoEzB,mBCpEiC;EAC7B,kBAAA;EACA,sBAAA;EACA,eAAA;EACA,WAAA;EACA,mBDlEC;ECmED,gBAAA;EACA,WDtEA;ECuEA,eAAA;AAgGR;ADhGQ;ECVJ;IAaQ,aAAA;EAiGV;AACF;AA/FQ;EACI,yBAAA;EACA,mBAAA;AAiGZ;AA9FQ;EACI,kBAAA;EACA,UAAA;EACA,SAAA;EACA,oBAAA;EACA,iBAAA;EACA,+BAAA;EACA,6BAAA;EACA,qBAAA;EACA,aAAA;EACA,cAAA;EACA,yBAAA;EACA,WAAA;AAgGZ;AA5FY;EACI,MAAA;AA8FhB;;AAvFA;EACI;IACI,mBAAA;EA0FN;AACF","sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
 
-/***/ }),
+/***/ },
 
-/***/ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[0].use[2]!./src/styles/reset.scss":
+/***/ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[0].use[2]!./src/styles/reset.scss"
 /*!****************************************************************************************************************************************!*\
   !*** ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[0].use[2]!./src/styles/reset.scss ***!
   \****************************************************************************************************************************************/
-/***/ ((module, __webpack_exports__, __webpack_require__) => {
+(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
@@ -1433,18 +1433,18 @@ q:before, q:after {
 table {
   border-collapse: collapse;
   border-spacing: 0;
-}`, "",{"version":3,"sources":["webpack://./src/styles/variables.scss","webpack://./src/styles/reset.scss"],"names":[],"mappings":"AAAA,wEAAA;AAEA,YAAA;AAWA,aAAA;AAKA,yEAAA;AAGA,yEAAA;AAEA,+DAAA;AACA,uBAAA;AAMA,aAAA;AAMA,+DAAA;AACA,cAAA;AAMA,gEAAA;AACA,YAAA;AAOA,YAAA;AAOA,yEAAA;AAGA,yEAAA;AAOA,yEAAA;AAGA,yEAAA;AA4EA,yEAAA;AAGA,yEAAA;AAEA;EACI,qBAAA;EACA,oBAAA;EACA,eAAA;EACA,oDA9GM;EA+GN,gBAAA;AC/HJ;;ADkIA;EACI,WA9JI;EA+JJ,qBAAA;AC/HJ;;ADkIA;EACI,kBAAA;EACA,SAAA;EACA,UAAA;EACA,iBAAA;EACA,eAAA;AC/HJ;ADiII;EAjCA,oBAAA;EACA,qBAAA;EACA,oDAxFM;EAyFN,kBAAA;EACA,gBAAA;EACA,WA7II;EA2KA,kBAAA;EACA,UAAA;EACA,gBAAA;EACA,qBAAA;EACA,gBAAA;EACA,WA/KA;EAgLA,kBAAA;EACA,qBAAA;AC1HR;AD4HQ;EACI,WArLJ;AC2DR;AD8HI;EACI,kBAAA;EACA,MAAA;EACA,OAAA;EACA,QAAA;EACA,YAAA;EACA,+BA1LO;EA2LP,oBAAA;EACA,WAAA;AC5HR;ADgIQ;EACI,WAAA;AC9HZ;;ADmIA;EACI,+BAAA;EACA,wBAAA;EACA,qBAAA;AChIJ;;ADmIA,yEAAA;AClNgC;;;;;;;;;;;;;EAa/B,SAAA;EACA,UAAA;EACA,SAAA;EACA,eAAA;EACA,aAAA;EACA,wBAAA;AAmFD;;AAjFA,gDAAA;AACA;;EAEC,cAAA;AAoFD;;AAlFA;EACC,cAAA;AAqFD;;AAnFA;EACC,gBAAA;AAsFD;;AApFA;EACC,YAAA;AAuFD;;AArFA;;EAEC,WAAA;EACA,aAAA;AAwFD;;AAtFA;EACC,yBAAA;EACA,iBAAA;AAyFD","sourcesContent":["/*--------------------------- Theme Colours ---------------------------*/\r\n\r\n/* Colours */\r\n$white: #fff;\r\n$black: #000;\r\n$dark-blue: #000033;\r\n$yellow: #ffff00;\r\n$purple: rgba(131, 58, 180, 1);\r\n$dark-blue-50: rgba(0, 0, 51, 0.50);\r\n$border-yellow: rgba(255, 255, 0, 0.25);\r\n$transwhite-bg: rgba(255, 255, 255, 0.1);\r\n$shadow-color: rgba(0, 0, 0, 0.1);\r\n\r\n/* Gradient */\r\n$sunset: linear-gradient(135deg, black, $dark-blue 70%, $purple 100%);\r\n$sunset-var: linear-gradient(225deg, black, $dark-blue, $purple 100%);\r\n$sunset-header: linear-gradient(135deg, black, #00001b, #170A4A);\r\n\r\n/*-------------------------- Theme Colours End -------------------------*/\r\n\r\n\r\n/*-------------------------------- Fonts -------------------------------*/\r\n\r\n/******************** Serif Fonts *****************************/\r\n/* Cormorant Garamond */\r\n@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap');\r\n$Cormorant: 'Cormorant Garamond',\r\nTimes,\r\nserif;\r\n\r\n/* Arizonia */\r\n@import url('https://fonts.googleapis.com/css2?family=Arizonia&display=swap');\r\n$Arizonia: 'Arizonia',\r\nTimes,\r\nserif;\r\n\r\n/********************** Cursive Fonts *************************/\r\n/* Italianno */\r\n@import url('https://fonts.googleapis.com/css2?family=Italianno&display=swap');\r\n$Italianno: 'Italianno',\r\nSnell Roundhand,\r\ncursive;\r\n\r\n/********************* Sans-serif Fonts ************************/\r\n/* Raleway */\r\n@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');\r\n$Raleway: 'Raleway',\r\nArial,\r\nHelvetica,\r\nsans-serif;\r\n\r\n/* Spartan */\r\n@import url('https://fonts.googleapis.com/css2?family=Spartan:wght@100;200;300;400;500;600;700;800;900&display=swap');\r\n$Spartan: 'Spartan',\r\nArial,\r\nHelvetica,\r\nsans-serif;\r\n\r\n/*------------------------------ Fonts End -----------------------------*/\r\n\r\n\r\n/*----------------------------- Breakpoints ----------------------------*/\r\n\r\n$sm: 576px;\r\n$md: 768px;\r\n$lg: 992px;\r\n$xl: 1200px;\r\n\r\n/*--------------------------- Breakpoints End --------------------------*/\r\n\r\n\r\n/*------------------------------- Mixins -------------------------------*/\r\n\r\n@mixin media-breakpoint-down($breakpoint) {\r\n    @if $breakpoint==$sm {\r\n        @media (max-width: $sm) {\r\n            @content;\r\n        }\r\n    }\r\n\r\n    @else if $breakpoint==$md {\r\n        @media (max-width: $md) {\r\n            @content;\r\n        }\r\n    }\r\n\r\n    @else if $breakpoint==$lg {\r\n        @media (max-width: $lg) {\r\n            @content;\r\n        }\r\n    }\r\n\r\n    @else {\r\n        @media (max-width: $xl) {\r\n            @content;\r\n        }\r\n    }\r\n}\r\n\r\n@mixin media-breakpoint-up($breakpoint) {\r\n    @if $breakpoint==$sm {\r\n        @media (min-width: $sm) {\r\n            @content;\r\n        }\r\n    }\r\n\r\n    @else if $breakpoint==$md {\r\n        @media (min-width: $md) {\r\n            @content;\r\n        }\r\n    }\r\n\r\n    @else if $breakpoint==$lg {\r\n        @media (min-width: $lg) {\r\n            @content;\r\n        }\r\n    }\r\n\r\n    @else {\r\n        @media (min-width: $xl) {\r\n            @content;\r\n        }\r\n    }\r\n}\r\n\r\n@mixin flex-row ($justify-content, $align-items) {\r\n    display: flex;\r\n    justify-content: $justify-content;\r\n    align-items: $align-items;\r\n}\r\n\r\n@mixin flex-column($justify-content, $align-items) {\r\n    display: flex;\r\n    flex-direction: column;\r\n    justify-content: $justify-content;\r\n    align-items: $align-items;\r\n}\r\n\r\n@mixin default-text {\r\n    line-height: 1.25rem;\r\n    word-spacing: 0.25rem;\r\n    font-family: $Spartan;\r\n    font-size: 0.75rem;\r\n    font-weight: 300;\r\n    color: $white;\r\n}\r\n\r\n/*----------------------------- Mixins End -----------------------------*/\r\n\r\n\r\n/*------------------------------- Common -------------------------------*/\r\n\r\nh2 {\r\n    margin-bottom: 1.5rem;\r\n    line-height: 3.25rem;\r\n    font-size: 4rem;\r\n    font-family: $Raleway;\r\n    font-weight: 500;\r\n}\r\n\r\na {\r\n    color: $white;\r\n    text-decoration: none;\r\n}\r\n\r\nbutton {\r\n    position: relative;\r\n    border: 0;\r\n    padding: 0;\r\n    background: white;\r\n    cursor: pointer;\r\n\r\n    span {\r\n        @include default-text;\r\n        position: relative;\r\n        z-index: 2;\r\n        padding: 0.75rem;\r\n        display: inline-block;\r\n        font-weight: 400;\r\n        color: $black;\r\n        text-align: center;\r\n        transition: all .35s;\r\n\r\n        &:hover {\r\n            color: $white;\r\n        }\r\n    }\r\n\r\n    &::after {\r\n        position: absolute;\r\n        top: 0;\r\n        left: 0;\r\n        width: 0;\r\n        height: 100%;\r\n        background: $dark-blue-50;\r\n        transition: all .3s;\r\n        content: \"\";\r\n    }\r\n\r\n    &:hover {\r\n        &::after {\r\n            width: 100%;\r\n        }\r\n    }\r\n}\r\n\r\n.underline {\r\n    border-bottom: 2px solid yellow;\r\n    padding-bottom: 0.125rem;\r\n    text-decoration: none;\r\n}\r\n\r\n/*---------------------------- Common Ends -----------------------------*/","\n                                @import \"variables.scss\";\n                                html, body, div, span, applet, object, iframe,\r\nh1, h2, h3, h4, h5, h6, p, blockquote, pre,\r\na, abbr, acronym, address, big, cite, code,\r\ndel, dfn, em, img, ins, kbd, q, s, samp,\r\nsmall, strike, strong, sub, sup, tt, var,\r\nb, u, i, center,\r\ndl, dt, dd, ol, ul, li,\r\nfieldset, form, label, legend,\r\ntable, caption, tbody, tfoot, thead, tr, th, td,\r\narticle, aside, canvas, details, embed, \r\nfigure, figcaption, footer, header, hgroup, \r\nmenu, nav, output, ruby, section, summary,\r\ntime, mark, audio, video {\r\n\tmargin: 0;\r\n\tpadding: 0;\r\n\tborder: 0;\r\n\tfont-size: 100%;\r\n\tfont: inherit;\r\n\tvertical-align: baseline;\r\n}\r\n/* HTML5 display-role reset for older browsers */\r\narticle, aside, details, figcaption, figure, \r\nfooter, header, hgroup, menu, nav, section {\r\n\tdisplay: block;\r\n}\r\nbody {\r\n\tline-height: 1;\r\n}\r\nol, ul {\r\n\tlist-style: none;\r\n}\r\nblockquote, q {\r\n\tquotes: none;\r\n}\r\nblockquote:before, blockquote:after,\r\nq:before, q:after {\r\n\tcontent: '';\r\n\tcontent: none;\r\n}\r\ntable {\r\n\tborder-collapse: collapse;\r\n\tborder-spacing: 0;\r\n}\n                              "],"sourceRoot":""}]);
+}`, "",{"version":3,"sources":["webpack://./src/styles/variables.scss","webpack://./src/styles/reset.scss"],"names":[],"mappings":"AAAA,wEAAA;AAEA,YAAA;AAWA,aAAA;AAKA,yEAAA;AAGA,yEAAA;AAEA,+DAAA;AACA,uBAAA;AAMA,aAAA;AAMA,+DAAA;AACA,cAAA;AAMA,gEAAA;AACA,YAAA;AAOA,YAAA;AAOA,yEAAA;AAGA,yEAAA;AAOA,yEAAA;AAGA,yEAAA;AA4EA,yEAAA;AAGA,yEAAA;AAEA;EACI,qBAAA;EACA,oBAAA;EACA,eAAA;EACA,oDA9GM;EA+GN,gBAAA;AC/HJ;;ADkIA;EACI,WA9JI;EA+JJ,qBAAA;AC/HJ;;ADkIA;EACI,kBAAA;EACA,SAAA;EACA,UAAA;EACA,iBAAA;EACA,eAAA;AC/HJ;ADiII;EAjCA,oBAAA;EACA,qBAAA;EACA,oDAxFM;EAyFN,kBAAA;EACA,gBAAA;EACA,WA7II;EA2KA,kBAAA;EACA,UAAA;EACA,gBAAA;EACA,qBAAA;EACA,gBAAA;EACA,WA/KA;EAgLA,kBAAA;EACA,qBAAA;AC1HR;AD4HQ;EACI,WArLJ;AC2DR;AD8HI;EACI,kBAAA;EACA,MAAA;EACA,OAAA;EACA,QAAA;EACA,YAAA;EACA,+BA1LO;EA2LP,oBAAA;EACA,WAAA;AC5HR;ADgIQ;EACI,WAAA;AC9HZ;;ADmIA;EACI,+BAAA;EACA,wBAAA;EACA,qBAAA;AChIJ;;ADmIA,yEAAA;AClNgC;;;;;;;;;;;;;EAa/B,SAAA;EACA,UAAA;EACA,SAAA;EACA,eAAA;EACA,aAAA;EACA,wBAAA;AAmFD;;AAjFA,gDAAA;AACA;;EAEC,cAAA;AAoFD;;AAlFA;EACC,cAAA;AAqFD;;AAnFA;EACC,gBAAA;AAsFD;;AApFA;EACC,YAAA;AAuFD;;AArFA;;EAEC,WAAA;EACA,aAAA;AAwFD;;AAtFA;EACC,yBAAA;EACA,iBAAA;AAyFD","sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
 
-/***/ }),
+/***/ },
 
-/***/ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[0].use[2]!./src/styles/skills.scss":
+/***/ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[0].use[2]!./src/styles/skills.scss"
 /*!*****************************************************************************************************************************************!*\
   !*** ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[0].use[2]!./src/styles/skills.scss ***!
   \*****************************************************************************************************************************************/
-/***/ ((module, __webpack_exports__, __webpack_require__) => {
+(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
@@ -1607,18 +1607,18 @@ button:hover::after {
   padding: 0.5rem;
   width: 25%;
   vertical-align: middle;
-}`, "",{"version":3,"sources":["webpack://./src/styles/variables.scss","webpack://./src/styles/skills.scss"],"names":[],"mappings":"AAAA,wEAAA;AAEA,YAAA;AAWA,aAAA;AAKA,yEAAA;AAGA,yEAAA;AAEA,+DAAA;AACA,uBAAA;AAMA,aAAA;AAMA,+DAAA;AACA,cAAA;AAMA,gEAAA;AACA,YAAA;AAOA,YAAA;AAOA,yEAAA;AAGA,yEAAA;AAOA,yEAAA;AAGA,yEAAA;AA4EA,yEAAA;AAGA,yEAAA;AAEA;EACI,qBAAA;EACA,oBAAA;EACA,eAAA;EACA,oDA9GM;EA+GN,gBAAA;AC/HJ;;ADkIA;EACI,WA9JI;EA+JJ,qBAAA;AC/HJ;;ADkIA;EACI,kBAAA;EACA,SAAA;EACA,UAAA;EACA,iBAAA;EACA,eAAA;AC/HJ;ADiII;EAjCA,oBAAA;EACA,qBAAA;EACA,oDAxFM;EAyFN,kBAAA;EACA,gBAAA;EACA,WA7II;EA2KA,kBAAA;EACA,UAAA;EACA,gBAAA;EACA,qBAAA;EACA,gBAAA;EACA,WA/KA;EAgLA,kBAAA;EACA,qBAAA;AC1HR;AD4HQ;EACI,WArLJ;AC2DR;AD8HI;EACI,kBAAA;EACA,MAAA;EACA,OAAA;EACA,QAAA;EACA,YAAA;EACA,+BA1LO;EA2LP,oBAAA;EACA,WAAA;AC5HR;ADgIQ;EACI,WAAA;AC9HZ;;ADmIA;EACI,+BAAA;EACA,wBAAA;EACA,qBAAA;AChIJ;;ADmIA,yEAAA;AClNgC;EDkI5B,aAAA;EACA,sBAAA;EACA,sBCnIqB;EDoIrB,mBCpI4B;EAC5B,mBAAA;EACA,eAAA;EACA,wBAAA;EACA,iBAAA;EACA,oCDEY;ECDZ,UAAA;EACA,WAAA;EACA,uCAAA;AAsFJ;ADIQ;ECxFJ;IAEQ,SAAA;IACA,UAAA;IACA,aAAA;IACA,UAAA;EAsFV;EApFU;IACI,aAAA;EAsFd;AACF;AAlFI;EACI,qBAAA;AAoFR;AAjFI;ED6GA,oBAAA;EACA,qBAAA;EACA,oDAxFM;EAyFN,kBAAA;EACA,gBAAA;EACA,WA7II;EC6BA,kBAAA;EACA,gBAAA;AAwFR;AD9CQ;EC7CJ;IAMQ,aAAA;EAyFV;AACF;AAtFI;EDmGA,oBAAA;EACA,qBAAA;EACA,oDAxFM;EAyFN,kBAAA;EACA,gBAAA;EACA,WA7II;ECuCA,gBAAA;AA6FR;AD5DQ;ECnCJ;IAKQ,aAAA;EA8FV;AACF;AA5FQ;;EAEI,yCAAA;EACA,eAAA;EACA,UAAA;EACA,sBAAA;AA8FZ","sourcesContent":["/*--------------------------- Theme Colours ---------------------------*/\r\n\r\n/* Colours */\r\n$white: #fff;\r\n$black: #000;\r\n$dark-blue: #000033;\r\n$yellow: #ffff00;\r\n$purple: rgba(131, 58, 180, 1);\r\n$dark-blue-50: rgba(0, 0, 51, 0.50);\r\n$border-yellow: rgba(255, 255, 0, 0.25);\r\n$transwhite-bg: rgba(255, 255, 255, 0.1);\r\n$shadow-color: rgba(0, 0, 0, 0.1);\r\n\r\n/* Gradient */\r\n$sunset: linear-gradient(135deg, black, $dark-blue 70%, $purple 100%);\r\n$sunset-var: linear-gradient(225deg, black, $dark-blue, $purple 100%);\r\n$sunset-header: linear-gradient(135deg, black, #00001b, #170A4A);\r\n\r\n/*-------------------------- Theme Colours End -------------------------*/\r\n\r\n\r\n/*-------------------------------- Fonts -------------------------------*/\r\n\r\n/******************** Serif Fonts *****************************/\r\n/* Cormorant Garamond */\r\n@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap');\r\n$Cormorant: 'Cormorant Garamond',\r\nTimes,\r\nserif;\r\n\r\n/* Arizonia */\r\n@import url('https://fonts.googleapis.com/css2?family=Arizonia&display=swap');\r\n$Arizonia: 'Arizonia',\r\nTimes,\r\nserif;\r\n\r\n/********************** Cursive Fonts *************************/\r\n/* Italianno */\r\n@import url('https://fonts.googleapis.com/css2?family=Italianno&display=swap');\r\n$Italianno: 'Italianno',\r\nSnell Roundhand,\r\ncursive;\r\n\r\n/********************* Sans-serif Fonts ************************/\r\n/* Raleway */\r\n@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');\r\n$Raleway: 'Raleway',\r\nArial,\r\nHelvetica,\r\nsans-serif;\r\n\r\n/* Spartan */\r\n@import url('https://fonts.googleapis.com/css2?family=Spartan:wght@100;200;300;400;500;600;700;800;900&display=swap');\r\n$Spartan: 'Spartan',\r\nArial,\r\nHelvetica,\r\nsans-serif;\r\n\r\n/*------------------------------ Fonts End -----------------------------*/\r\n\r\n\r\n/*----------------------------- Breakpoints ----------------------------*/\r\n\r\n$sm: 576px;\r\n$md: 768px;\r\n$lg: 992px;\r\n$xl: 1200px;\r\n\r\n/*--------------------------- Breakpoints End --------------------------*/\r\n\r\n\r\n/*------------------------------- Mixins -------------------------------*/\r\n\r\n@mixin media-breakpoint-down($breakpoint) {\r\n    @if $breakpoint==$sm {\r\n        @media (max-width: $sm) {\r\n            @content;\r\n        }\r\n    }\r\n\r\n    @else if $breakpoint==$md {\r\n        @media (max-width: $md) {\r\n            @content;\r\n        }\r\n    }\r\n\r\n    @else if $breakpoint==$lg {\r\n        @media (max-width: $lg) {\r\n            @content;\r\n        }\r\n    }\r\n\r\n    @else {\r\n        @media (max-width: $xl) {\r\n            @content;\r\n        }\r\n    }\r\n}\r\n\r\n@mixin media-breakpoint-up($breakpoint) {\r\n    @if $breakpoint==$sm {\r\n        @media (min-width: $sm) {\r\n            @content;\r\n        }\r\n    }\r\n\r\n    @else if $breakpoint==$md {\r\n        @media (min-width: $md) {\r\n            @content;\r\n        }\r\n    }\r\n\r\n    @else if $breakpoint==$lg {\r\n        @media (min-width: $lg) {\r\n            @content;\r\n        }\r\n    }\r\n\r\n    @else {\r\n        @media (min-width: $xl) {\r\n            @content;\r\n        }\r\n    }\r\n}\r\n\r\n@mixin flex-row ($justify-content, $align-items) {\r\n    display: flex;\r\n    justify-content: $justify-content;\r\n    align-items: $align-items;\r\n}\r\n\r\n@mixin flex-column($justify-content, $align-items) {\r\n    display: flex;\r\n    flex-direction: column;\r\n    justify-content: $justify-content;\r\n    align-items: $align-items;\r\n}\r\n\r\n@mixin default-text {\r\n    line-height: 1.25rem;\r\n    word-spacing: 0.25rem;\r\n    font-family: $Spartan;\r\n    font-size: 0.75rem;\r\n    font-weight: 300;\r\n    color: $white;\r\n}\r\n\r\n/*----------------------------- Mixins End -----------------------------*/\r\n\r\n\r\n/*------------------------------- Common -------------------------------*/\r\n\r\nh2 {\r\n    margin-bottom: 1.5rem;\r\n    line-height: 3.25rem;\r\n    font-size: 4rem;\r\n    font-family: $Raleway;\r\n    font-weight: 500;\r\n}\r\n\r\na {\r\n    color: $white;\r\n    text-decoration: none;\r\n}\r\n\r\nbutton {\r\n    position: relative;\r\n    border: 0;\r\n    padding: 0;\r\n    background: white;\r\n    cursor: pointer;\r\n\r\n    span {\r\n        @include default-text;\r\n        position: relative;\r\n        z-index: 2;\r\n        padding: 0.75rem;\r\n        display: inline-block;\r\n        font-weight: 400;\r\n        color: $black;\r\n        text-align: center;\r\n        transition: all .35s;\r\n\r\n        &:hover {\r\n            color: $white;\r\n        }\r\n    }\r\n\r\n    &::after {\r\n        position: absolute;\r\n        top: 0;\r\n        left: 0;\r\n        width: 0;\r\n        height: 100%;\r\n        background: $dark-blue-50;\r\n        transition: all .3s;\r\n        content: \"\";\r\n    }\r\n\r\n    &:hover {\r\n        &::after {\r\n            width: 100%;\r\n        }\r\n    }\r\n}\r\n\r\n.underline {\r\n    border-bottom: 2px solid yellow;\r\n    padding-bottom: 0.125rem;\r\n    text-decoration: none;\r\n}\r\n\r\n/*---------------------------- Common Ends -----------------------------*/","\n                                @import \"variables.scss\";\n                                .skills {\r\n    @include flex-column(unset, center);\r\n    margin: 0 auto 3rem;\r\n    padding: 1.5rem;\r\n    width: calc(100% - 15vw);\r\n    max-height: 40rem;\r\n    background: $transwhite-bg;\r\n    opacity: 1;\r\n    gap: 1.5rem;\r\n    transition: max-height 0.3s ease-in-out;\r\n\r\n    &.d-none {\r\n        @include media-breakpoint-up($sm) {\r\n            margin: 0;\r\n            padding: 0;\r\n            max-height: 0;\r\n            opacity: 0;\r\n    \r\n            & table {\r\n                display: none;\r\n            }\r\n        }\r\n    }\r\n\r\n    &__download .fa {\r\n        margin-right: 0.25rem;\r\n    }\r\n\r\n    &__text {\r\n        @include default-text;\r\n        font-size: 1.25rem;\r\n        font-weight: 500;\r\n\r\n        @include media-breakpoint-down($sm) {\r\n            display: none;\r\n        }\r\n    }\r\n\r\n    &__list {\r\n        @include default-text;\r\n        text-align: left;\r\n\r\n        @include media-breakpoint-down($sm) {\r\n            display: none;\r\n        }\r\n\r\n        th,\r\n        td {\r\n            border: 1px solid $border-yellow;\r\n            padding: 0.5rem;\r\n            width: 25%;\r\n            vertical-align: middle;\r\n        }\r\n    }\r\n}\n                              "],"sourceRoot":""}]);
+}`, "",{"version":3,"sources":["webpack://./src/styles/variables.scss","webpack://./src/styles/skills.scss"],"names":[],"mappings":"AAAA,wEAAA;AAEA,YAAA;AAWA,aAAA;AAKA,yEAAA;AAGA,yEAAA;AAEA,+DAAA;AACA,uBAAA;AAMA,aAAA;AAMA,+DAAA;AACA,cAAA;AAMA,gEAAA;AACA,YAAA;AAOA,YAAA;AAOA,yEAAA;AAGA,yEAAA;AAOA,yEAAA;AAGA,yEAAA;AA4EA,yEAAA;AAGA,yEAAA;AAEA;EACI,qBAAA;EACA,oBAAA;EACA,eAAA;EACA,oDA9GM;EA+GN,gBAAA;AC/HJ;;ADkIA;EACI,WA9JI;EA+JJ,qBAAA;AC/HJ;;ADkIA;EACI,kBAAA;EACA,SAAA;EACA,UAAA;EACA,iBAAA;EACA,eAAA;AC/HJ;ADiII;EAjCA,oBAAA;EACA,qBAAA;EACA,oDAxFM;EAyFN,kBAAA;EACA,gBAAA;EACA,WA7II;EA2KA,kBAAA;EACA,UAAA;EACA,gBAAA;EACA,qBAAA;EACA,gBAAA;EACA,WA/KA;EAgLA,kBAAA;EACA,qBAAA;AC1HR;AD4HQ;EACI,WArLJ;AC2DR;AD8HI;EACI,kBAAA;EACA,MAAA;EACA,OAAA;EACA,QAAA;EACA,YAAA;EACA,+BA1LO;EA2LP,oBAAA;EACA,WAAA;AC5HR;ADgIQ;EACI,WAAA;AC9HZ;;ADmIA;EACI,+BAAA;EACA,wBAAA;EACA,qBAAA;AChIJ;;ADmIA,yEAAA;AClNgC;EDkI5B,aAAA;EACA,sBAAA;EACA,sBCnIqB;EDoIrB,mBCpI4B;EAC5B,mBAAA;EACA,eAAA;EACA,wBAAA;EACA,iBAAA;EACA,oCDEY;ECDZ,UAAA;EACA,WAAA;EACA,uCAAA;AAsFJ;ADIQ;ECxFJ;IAEQ,SAAA;IACA,UAAA;IACA,aAAA;IACA,UAAA;EAsFV;EApFU;IACI,aAAA;EAsFd;AACF;AAlFI;EACI,qBAAA;AAoFR;AAjFI;ED6GA,oBAAA;EACA,qBAAA;EACA,oDAxFM;EAyFN,kBAAA;EACA,gBAAA;EACA,WA7II;EC6BA,kBAAA;EACA,gBAAA;AAwFR;AD9CQ;EC7CJ;IAMQ,aAAA;EAyFV;AACF;AAtFI;EDmGA,oBAAA;EACA,qBAAA;EACA,oDAxFM;EAyFN,kBAAA;EACA,gBAAA;EACA,WA7II;ECuCA,gBAAA;AA6FR;AD5DQ;ECnCJ;IAKQ,aAAA;EA8FV;AACF;AA5FQ;;EAEI,yCAAA;EACA,eAAA;EACA,UAAA;EACA,sBAAA;AA8FZ","sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
 
-/***/ }),
+/***/ },
 
-/***/ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[0].use[2]!./src/styles/variables.scss":
+/***/ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[0].use[2]!./src/styles/variables.scss"
 /*!********************************************************************************************************************************************!*\
   !*** ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[0].use[2]!./src/styles/variables.scss ***!
   \********************************************************************************************************************************************/
-/***/ ((module, __webpack_exports__, __webpack_require__) => {
+(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
@@ -1717,18 +1717,18 @@ button:hover::after {
   text-decoration: none;
 }
 
-/*---------------------------- Common Ends -----------------------------*/`, "",{"version":3,"sources":["webpack://./src/styles/variables.scss"],"names":[],"mappings":"AAAA,wEAAA;AAEA,YAAA;AAWA,aAAA;AAKA,yEAAA;AAGA,yEAAA;AAEA,+DAAA;AACA,uBAAA;AAMA,aAAA;AAMA,+DAAA;AACA,cAAA;AAMA,gEAAA;AACA,YAAA;AAOA,YAAA;AAOA,yEAAA;AAGA,yEAAA;AAOA,yEAAA;AAGA,yEAAA;AA4EA,yEAAA;AAGA,yEAAA;AAEA;EACI,qBAAA;EACA,oBAAA;EACA,eAAA;EACA,oDA9GM;EA+GN,gBAAA;AA/HJ;;AAkIA;EACI,WA9JI;EA+JJ,qBAAA;AA/HJ;;AAkIA;EACI,kBAAA;EACA,SAAA;EACA,UAAA;EACA,iBAAA;EACA,eAAA;AA/HJ;AAiII;EAjCA,oBAAA;EACA,qBAAA;EACA,oDAxFM;EAyFN,kBAAA;EACA,gBAAA;EACA,WA7II;EA2KA,kBAAA;EACA,UAAA;EACA,gBAAA;EACA,qBAAA;EACA,gBAAA;EACA,WA/KA;EAgLA,kBAAA;EACA,qBAAA;AA1HR;AA4HQ;EACI,WArLJ;AA2DR;AA8HI;EACI,kBAAA;EACA,MAAA;EACA,OAAA;EACA,QAAA;EACA,YAAA;EACA,+BA1LO;EA2LP,oBAAA;EACA,WAAA;AA5HR;AAgIQ;EACI,WAAA;AA9HZ;;AAmIA;EACI,+BAAA;EACA,wBAAA;EACA,qBAAA;AAhIJ;;AAmIA,yEAAA","sourcesContent":["/*--------------------------- Theme Colours ---------------------------*/\r\n\r\n/* Colours */\r\n$white: #fff;\r\n$black: #000;\r\n$dark-blue: #000033;\r\n$yellow: #ffff00;\r\n$purple: rgba(131, 58, 180, 1);\r\n$dark-blue-50: rgba(0, 0, 51, 0.50);\r\n$border-yellow: rgba(255, 255, 0, 0.25);\r\n$transwhite-bg: rgba(255, 255, 255, 0.1);\r\n$shadow-color: rgba(0, 0, 0, 0.1);\r\n\r\n/* Gradient */\r\n$sunset: linear-gradient(135deg, black, $dark-blue 70%, $purple 100%);\r\n$sunset-var: linear-gradient(225deg, black, $dark-blue, $purple 100%);\r\n$sunset-header: linear-gradient(135deg, black, #00001b, #170A4A);\r\n\r\n/*-------------------------- Theme Colours End -------------------------*/\r\n\r\n\r\n/*-------------------------------- Fonts -------------------------------*/\r\n\r\n/******************** Serif Fonts *****************************/\r\n/* Cormorant Garamond */\r\n@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap');\r\n$Cormorant: 'Cormorant Garamond',\r\nTimes,\r\nserif;\r\n\r\n/* Arizonia */\r\n@import url('https://fonts.googleapis.com/css2?family=Arizonia&display=swap');\r\n$Arizonia: 'Arizonia',\r\nTimes,\r\nserif;\r\n\r\n/********************** Cursive Fonts *************************/\r\n/* Italianno */\r\n@import url('https://fonts.googleapis.com/css2?family=Italianno&display=swap');\r\n$Italianno: 'Italianno',\r\nSnell Roundhand,\r\ncursive;\r\n\r\n/********************* Sans-serif Fonts ************************/\r\n/* Raleway */\r\n@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');\r\n$Raleway: 'Raleway',\r\nArial,\r\nHelvetica,\r\nsans-serif;\r\n\r\n/* Spartan */\r\n@import url('https://fonts.googleapis.com/css2?family=Spartan:wght@100;200;300;400;500;600;700;800;900&display=swap');\r\n$Spartan: 'Spartan',\r\nArial,\r\nHelvetica,\r\nsans-serif;\r\n\r\n/*------------------------------ Fonts End -----------------------------*/\r\n\r\n\r\n/*----------------------------- Breakpoints ----------------------------*/\r\n\r\n$sm: 576px;\r\n$md: 768px;\r\n$lg: 992px;\r\n$xl: 1200px;\r\n\r\n/*--------------------------- Breakpoints End --------------------------*/\r\n\r\n\r\n/*------------------------------- Mixins -------------------------------*/\r\n\r\n@mixin media-breakpoint-down($breakpoint) {\r\n    @if $breakpoint==$sm {\r\n        @media (max-width: $sm) {\r\n            @content;\r\n        }\r\n    }\r\n\r\n    @else if $breakpoint==$md {\r\n        @media (max-width: $md) {\r\n            @content;\r\n        }\r\n    }\r\n\r\n    @else if $breakpoint==$lg {\r\n        @media (max-width: $lg) {\r\n            @content;\r\n        }\r\n    }\r\n\r\n    @else {\r\n        @media (max-width: $xl) {\r\n            @content;\r\n        }\r\n    }\r\n}\r\n\r\n@mixin media-breakpoint-up($breakpoint) {\r\n    @if $breakpoint==$sm {\r\n        @media (min-width: $sm) {\r\n            @content;\r\n        }\r\n    }\r\n\r\n    @else if $breakpoint==$md {\r\n        @media (min-width: $md) {\r\n            @content;\r\n        }\r\n    }\r\n\r\n    @else if $breakpoint==$lg {\r\n        @media (min-width: $lg) {\r\n            @content;\r\n        }\r\n    }\r\n\r\n    @else {\r\n        @media (min-width: $xl) {\r\n            @content;\r\n        }\r\n    }\r\n}\r\n\r\n@mixin flex-row ($justify-content, $align-items) {\r\n    display: flex;\r\n    justify-content: $justify-content;\r\n    align-items: $align-items;\r\n}\r\n\r\n@mixin flex-column($justify-content, $align-items) {\r\n    display: flex;\r\n    flex-direction: column;\r\n    justify-content: $justify-content;\r\n    align-items: $align-items;\r\n}\r\n\r\n@mixin default-text {\r\n    line-height: 1.25rem;\r\n    word-spacing: 0.25rem;\r\n    font-family: $Spartan;\r\n    font-size: 0.75rem;\r\n    font-weight: 300;\r\n    color: $white;\r\n}\r\n\r\n/*----------------------------- Mixins End -----------------------------*/\r\n\r\n\r\n/*------------------------------- Common -------------------------------*/\r\n\r\nh2 {\r\n    margin-bottom: 1.5rem;\r\n    line-height: 3.25rem;\r\n    font-size: 4rem;\r\n    font-family: $Raleway;\r\n    font-weight: 500;\r\n}\r\n\r\na {\r\n    color: $white;\r\n    text-decoration: none;\r\n}\r\n\r\nbutton {\r\n    position: relative;\r\n    border: 0;\r\n    padding: 0;\r\n    background: white;\r\n    cursor: pointer;\r\n\r\n    span {\r\n        @include default-text;\r\n        position: relative;\r\n        z-index: 2;\r\n        padding: 0.75rem;\r\n        display: inline-block;\r\n        font-weight: 400;\r\n        color: $black;\r\n        text-align: center;\r\n        transition: all .35s;\r\n\r\n        &:hover {\r\n            color: $white;\r\n        }\r\n    }\r\n\r\n    &::after {\r\n        position: absolute;\r\n        top: 0;\r\n        left: 0;\r\n        width: 0;\r\n        height: 100%;\r\n        background: $dark-blue-50;\r\n        transition: all .3s;\r\n        content: \"\";\r\n    }\r\n\r\n    &:hover {\r\n        &::after {\r\n            width: 100%;\r\n        }\r\n    }\r\n}\r\n\r\n.underline {\r\n    border-bottom: 2px solid yellow;\r\n    padding-bottom: 0.125rem;\r\n    text-decoration: none;\r\n}\r\n\r\n/*---------------------------- Common Ends -----------------------------*/"],"sourceRoot":""}]);
+/*---------------------------- Common Ends -----------------------------*/`, "",{"version":3,"sources":["webpack://./src/styles/variables.scss"],"names":[],"mappings":"AAAA,wEAAA;AAEA,YAAA;AAWA,aAAA;AAKA,yEAAA;AAGA,yEAAA;AAEA,+DAAA;AACA,uBAAA;AAMA,aAAA;AAMA,+DAAA;AACA,cAAA;AAMA,gEAAA;AACA,YAAA;AAOA,YAAA;AAOA,yEAAA;AAGA,yEAAA;AAOA,yEAAA;AAGA,yEAAA;AA4EA,yEAAA;AAGA,yEAAA;AAEA;EACI,qBAAA;EACA,oBAAA;EACA,eAAA;EACA,oDA9GM;EA+GN,gBAAA;AA/HJ;;AAkIA;EACI,WA9JI;EA+JJ,qBAAA;AA/HJ;;AAkIA;EACI,kBAAA;EACA,SAAA;EACA,UAAA;EACA,iBAAA;EACA,eAAA;AA/HJ;AAiII;EAjCA,oBAAA;EACA,qBAAA;EACA,oDAxFM;EAyFN,kBAAA;EACA,gBAAA;EACA,WA7II;EA2KA,kBAAA;EACA,UAAA;EACA,gBAAA;EACA,qBAAA;EACA,gBAAA;EACA,WA/KA;EAgLA,kBAAA;EACA,qBAAA;AA1HR;AA4HQ;EACI,WArLJ;AA2DR;AA8HI;EACI,kBAAA;EACA,MAAA;EACA,OAAA;EACA,QAAA;EACA,YAAA;EACA,+BA1LO;EA2LP,oBAAA;EACA,WAAA;AA5HR;AAgIQ;EACI,WAAA;AA9HZ;;AAmIA;EACI,+BAAA;EACA,wBAAA;EACA,qBAAA;AAhIJ;;AAmIA,yEAAA","sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
 
-/***/ }),
+/***/ },
 
-/***/ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[0].use[2]!./src/styles/work.scss":
+/***/ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[0].use[2]!./src/styles/work.scss"
 /*!***************************************************************************************************************************************!*\
   !*** ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[0].use[2]!./src/styles/work.scss ***!
   \***************************************************************************************************************************************/
-/***/ ((module, __webpack_exports__, __webpack_require__) => {
+(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
@@ -1879,18 +1879,18 @@ button:hover::after {
   margin-top: 0.75rem;
   color: #fff;
   text-align: center;
-}`, "",{"version":3,"sources":["webpack://./src/styles/variables.scss","webpack://./src/styles/work.scss"],"names":[],"mappings":"AAAA,wEAAA;AAEA,YAAA;AAWA,aAAA;AAKA,yEAAA;AAGA,yEAAA;AAEA,+DAAA;AACA,uBAAA;AAMA,aAAA;AAMA,+DAAA;AACA,cAAA;AAMA,gEAAA;AACA,YAAA;AAOA,YAAA;AAOA,yEAAA;AAGA,yEAAA;AAOA,yEAAA;AAGA,yEAAA;AA4EA,yEAAA;AAGA,yEAAA;AAEA;EACI,qBAAA;EACA,oBAAA;EACA,eAAA;EACA,oDA9GM;EA+GN,gBAAA;AC/HJ;;ADkIA;EACI,WA9JI;EA+JJ,qBAAA;AC/HJ;;ADkIA;EACI,kBAAA;EACA,SAAA;EACA,UAAA;EACA,iBAAA;EACA,eAAA;AC/HJ;ADiII;EAjCA,oBAAA;EACA,qBAAA;EACA,oDAxFM;EAyFN,kBAAA;EACA,gBAAA;EACA,WA7II;EA2KA,kBAAA;EACA,UAAA;EACA,gBAAA;EACA,qBAAA;EACA,gBAAA;EACA,WA/KA;EAgLA,kBAAA;EACA,qBAAA;AC1HR;AD4HQ;EACI,WArLJ;AC2DR;AD8HI;EACI,kBAAA;EACA,MAAA;EACA,OAAA;EACA,QAAA;EACA,YAAA;EACA,+BA1LO;EA2LP,oBAAA;EACA,WAAA;AC5HR;ADgIQ;EACI,WAAA;AC9HZ;;ADmIA;EACI,+BAAA;EACA,wBAAA;EACA,qBAAA;AChIJ;;ADmIA,yEAAA;AClNgC;EAC5B,gBAAA;AAmFJ;ADXQ;ECzEwB;IAIxB,aAAA;EAoFN;AACF;AAlFI;EACI,wBAAA;EACA,cAAA;EACA,eAAA;EACA,sBDVA;AC8FR;AAlFQ;EACI,sBAAA;EACA,YAAA;EACA,iBAAA;AAoFZ;AAjFQ;EACI,gBAAA;AAmFZ;AAhFQ;EDqGJ,aAAA;EACA,sBCrG0B;EDsG1B,mBCtGiC;EACzB,iBAAA;AAoFZ;AAjFQ;EACI,cAAA;EACA,YAAA;AAmFZ;AAjFY;EACI,YAAA;EACA,gBAAA;EACA,aAAA;AAmFhB;AA/EQ;;EAEI,wBAAA;AAiFZ;AA7EI;ED4FA,oBAAA;EACA,qBAAA;EACA,oDAxFM;EAyFN,kBAAA;EACA,gBAAA;EACA,WA7II;EC8CA,mBAAA;EACA,WD/CA;ECgDA,kBAAA;AAoFR","sourcesContent":["/*--------------------------- Theme Colours ---------------------------*/\r\n\r\n/* Colours */\r\n$white: #fff;\r\n$black: #000;\r\n$dark-blue: #000033;\r\n$yellow: #ffff00;\r\n$purple: rgba(131, 58, 180, 1);\r\n$dark-blue-50: rgba(0, 0, 51, 0.50);\r\n$border-yellow: rgba(255, 255, 0, 0.25);\r\n$transwhite-bg: rgba(255, 255, 255, 0.1);\r\n$shadow-color: rgba(0, 0, 0, 0.1);\r\n\r\n/* Gradient */\r\n$sunset: linear-gradient(135deg, black, $dark-blue 70%, $purple 100%);\r\n$sunset-var: linear-gradient(225deg, black, $dark-blue, $purple 100%);\r\n$sunset-header: linear-gradient(135deg, black, #00001b, #170A4A);\r\n\r\n/*-------------------------- Theme Colours End -------------------------*/\r\n\r\n\r\n/*-------------------------------- Fonts -------------------------------*/\r\n\r\n/******************** Serif Fonts *****************************/\r\n/* Cormorant Garamond */\r\n@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap');\r\n$Cormorant: 'Cormorant Garamond',\r\nTimes,\r\nserif;\r\n\r\n/* Arizonia */\r\n@import url('https://fonts.googleapis.com/css2?family=Arizonia&display=swap');\r\n$Arizonia: 'Arizonia',\r\nTimes,\r\nserif;\r\n\r\n/********************** Cursive Fonts *************************/\r\n/* Italianno */\r\n@import url('https://fonts.googleapis.com/css2?family=Italianno&display=swap');\r\n$Italianno: 'Italianno',\r\nSnell Roundhand,\r\ncursive;\r\n\r\n/********************* Sans-serif Fonts ************************/\r\n/* Raleway */\r\n@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');\r\n$Raleway: 'Raleway',\r\nArial,\r\nHelvetica,\r\nsans-serif;\r\n\r\n/* Spartan */\r\n@import url('https://fonts.googleapis.com/css2?family=Spartan:wght@100;200;300;400;500;600;700;800;900&display=swap');\r\n$Spartan: 'Spartan',\r\nArial,\r\nHelvetica,\r\nsans-serif;\r\n\r\n/*------------------------------ Fonts End -----------------------------*/\r\n\r\n\r\n/*----------------------------- Breakpoints ----------------------------*/\r\n\r\n$sm: 576px;\r\n$md: 768px;\r\n$lg: 992px;\r\n$xl: 1200px;\r\n\r\n/*--------------------------- Breakpoints End --------------------------*/\r\n\r\n\r\n/*------------------------------- Mixins -------------------------------*/\r\n\r\n@mixin media-breakpoint-down($breakpoint) {\r\n    @if $breakpoint==$sm {\r\n        @media (max-width: $sm) {\r\n            @content;\r\n        }\r\n    }\r\n\r\n    @else if $breakpoint==$md {\r\n        @media (max-width: $md) {\r\n            @content;\r\n        }\r\n    }\r\n\r\n    @else if $breakpoint==$lg {\r\n        @media (max-width: $lg) {\r\n            @content;\r\n        }\r\n    }\r\n\r\n    @else {\r\n        @media (max-width: $xl) {\r\n            @content;\r\n        }\r\n    }\r\n}\r\n\r\n@mixin media-breakpoint-up($breakpoint) {\r\n    @if $breakpoint==$sm {\r\n        @media (min-width: $sm) {\r\n            @content;\r\n        }\r\n    }\r\n\r\n    @else if $breakpoint==$md {\r\n        @media (min-width: $md) {\r\n            @content;\r\n        }\r\n    }\r\n\r\n    @else if $breakpoint==$lg {\r\n        @media (min-width: $lg) {\r\n            @content;\r\n        }\r\n    }\r\n\r\n    @else {\r\n        @media (min-width: $xl) {\r\n            @content;\r\n        }\r\n    }\r\n}\r\n\r\n@mixin flex-row ($justify-content, $align-items) {\r\n    display: flex;\r\n    justify-content: $justify-content;\r\n    align-items: $align-items;\r\n}\r\n\r\n@mixin flex-column($justify-content, $align-items) {\r\n    display: flex;\r\n    flex-direction: column;\r\n    justify-content: $justify-content;\r\n    align-items: $align-items;\r\n}\r\n\r\n@mixin default-text {\r\n    line-height: 1.25rem;\r\n    word-spacing: 0.25rem;\r\n    font-family: $Spartan;\r\n    font-size: 0.75rem;\r\n    font-weight: 300;\r\n    color: $white;\r\n}\r\n\r\n/*----------------------------- Mixins End -----------------------------*/\r\n\r\n\r\n/*------------------------------- Common -------------------------------*/\r\n\r\nh2 {\r\n    margin-bottom: 1.5rem;\r\n    line-height: 3.25rem;\r\n    font-size: 4rem;\r\n    font-family: $Raleway;\r\n    font-weight: 500;\r\n}\r\n\r\na {\r\n    color: $white;\r\n    text-decoration: none;\r\n}\r\n\r\nbutton {\r\n    position: relative;\r\n    border: 0;\r\n    padding: 0;\r\n    background: white;\r\n    cursor: pointer;\r\n\r\n    span {\r\n        @include default-text;\r\n        position: relative;\r\n        z-index: 2;\r\n        padding: 0.75rem;\r\n        display: inline-block;\r\n        font-weight: 400;\r\n        color: $black;\r\n        text-align: center;\r\n        transition: all .35s;\r\n\r\n        &:hover {\r\n            color: $white;\r\n        }\r\n    }\r\n\r\n    &::after {\r\n        position: absolute;\r\n        top: 0;\r\n        left: 0;\r\n        width: 0;\r\n        height: 100%;\r\n        background: $dark-blue-50;\r\n        transition: all .3s;\r\n        content: \"\";\r\n    }\r\n\r\n    &:hover {\r\n        &::after {\r\n            width: 100%;\r\n        }\r\n    }\r\n}\r\n\r\n.underline {\r\n    border-bottom: 2px solid yellow;\r\n    padding-bottom: 0.125rem;\r\n    text-decoration: none;\r\n}\r\n\r\n/*---------------------------- Common Ends -----------------------------*/","\n                                @import \"variables.scss\";\n                                .work {\r\n    overflow: hidden;\r\n\r\n    @include media-breakpoint-down($sm) {\r\n        margin-top: 0;\r\n    }\r\n\r\n    &__carousel {\r\n        border: 2px solid yellow;\r\n        border-left: 0;\r\n        border-right: 0;\r\n        background-color: $white;\r\n\r\n        & img {\r\n            width: auto !important;\r\n            height: 2rem;\r\n            object-fit: cover;\r\n        }\r\n\r\n        .slick-list {\r\n            overflow: hidden;\r\n        }\r\n\r\n        .slick-track {\r\n            @include flex-row(unset, center);\r\n            padding: 1.5rem 0;\r\n        }\r\n\r\n        .slick-slide {\r\n            margin: 0 3rem;\r\n            height: 2rem;\r\n\r\n            & >div {\r\n                height: 2rem;\r\n                max-width: 13rem;  \r\n                display: flex;\r\n            }\r\n        }\r\n\r\n        .slick-prev,\r\n        .slick-next {\r\n            display: none !important;\r\n        }\r\n    }\r\n\r\n    p {\r\n        @include default-text;\r\n        margin-top: 0.75rem;\r\n        color: $white;\r\n        text-align: center;\r\n    }\r\n}\n                              "],"sourceRoot":""}]);
+}`, "",{"version":3,"sources":["webpack://./src/styles/variables.scss","webpack://./src/styles/work.scss"],"names":[],"mappings":"AAAA,wEAAA;AAEA,YAAA;AAWA,aAAA;AAKA,yEAAA;AAGA,yEAAA;AAEA,+DAAA;AACA,uBAAA;AAMA,aAAA;AAMA,+DAAA;AACA,cAAA;AAMA,gEAAA;AACA,YAAA;AAOA,YAAA;AAOA,yEAAA;AAGA,yEAAA;AAOA,yEAAA;AAGA,yEAAA;AA4EA,yEAAA;AAGA,yEAAA;AAEA;EACI,qBAAA;EACA,oBAAA;EACA,eAAA;EACA,oDA9GM;EA+GN,gBAAA;AC/HJ;;ADkIA;EACI,WA9JI;EA+JJ,qBAAA;AC/HJ;;ADkIA;EACI,kBAAA;EACA,SAAA;EACA,UAAA;EACA,iBAAA;EACA,eAAA;AC/HJ;ADiII;EAjCA,oBAAA;EACA,qBAAA;EACA,oDAxFM;EAyFN,kBAAA;EACA,gBAAA;EACA,WA7II;EA2KA,kBAAA;EACA,UAAA;EACA,gBAAA;EACA,qBAAA;EACA,gBAAA;EACA,WA/KA;EAgLA,kBAAA;EACA,qBAAA;AC1HR;AD4HQ;EACI,WArLJ;AC2DR;AD8HI;EACI,kBAAA;EACA,MAAA;EACA,OAAA;EACA,QAAA;EACA,YAAA;EACA,+BA1LO;EA2LP,oBAAA;EACA,WAAA;AC5HR;ADgIQ;EACI,WAAA;AC9HZ;;ADmIA;EACI,+BAAA;EACA,wBAAA;EACA,qBAAA;AChIJ;;ADmIA,yEAAA;AClNgC;EAC5B,gBAAA;AAmFJ;ADXQ;ECzEwB;IAIxB,aAAA;EAoFN;AACF;AAlFI;EACI,wBAAA;EACA,cAAA;EACA,eAAA;EACA,sBDVA;AC8FR;AAlFQ;EACI,sBAAA;EACA,YAAA;EACA,iBAAA;AAoFZ;AAjFQ;EACI,gBAAA;AAmFZ;AAhFQ;EDqGJ,aAAA;EACA,sBCrG0B;EDsG1B,mBCtGiC;EACzB,iBAAA;AAoFZ;AAjFQ;EACI,cAAA;EACA,YAAA;AAmFZ;AAjFY;EACI,YAAA;EACA,gBAAA;EACA,aAAA;AAmFhB;AA/EQ;;EAEI,wBAAA;AAiFZ;AA7EI;ED4FA,oBAAA;EACA,qBAAA;EACA,oDAxFM;EAyFN,kBAAA;EACA,gBAAA;EACA,WA7II;EC8CA,mBAAA;EACA,WD/CA;ECgDA,kBAAA;AAoFR","sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
 
-/***/ }),
+/***/ },
 
-/***/ "./node_modules/css-loader/dist/runtime/api.js":
+/***/ "./node_modules/css-loader/dist/runtime/api.js"
 /*!*****************************************************!*\
   !*** ./node_modules/css-loader/dist/runtime/api.js ***!
   \*****************************************************/
-/***/ ((module) => {
+(module) {
 
 "use strict";
 
@@ -1979,13 +1979,13 @@ module.exports = function (cssWithMappingToString) {
   return list;
 };
 
-/***/ }),
+/***/ },
 
-/***/ "./node_modules/css-loader/dist/runtime/sourceMaps.js":
+/***/ "./node_modules/css-loader/dist/runtime/sourceMaps.js"
 /*!************************************************************!*\
   !*** ./node_modules/css-loader/dist/runtime/sourceMaps.js ***!
   \************************************************************/
-/***/ ((module) => {
+(module) {
 
 "use strict";
 
@@ -2005,13 +2005,13 @@ module.exports = function (item) {
   return [content].join("\n");
 };
 
-/***/ }),
+/***/ },
 
-/***/ "./node_modules/jquery/dist/jquery.js":
+/***/ "./node_modules/jquery/dist/jquery.js"
 /*!********************************************!*\
   !*** ./node_modules/jquery/dist/jquery.js ***!
   \********************************************/
-/***/ (function(module, exports) {
+(module, exports) {
 
 var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
  * jQuery JavaScript Library v3.7.1
@@ -12732,13 +12732,13 @@ return jQuery;
 } );
 
 
-/***/ }),
+/***/ },
 
-/***/ "./node_modules/slick-carousel/slick/slick.js":
+/***/ "./node_modules/slick-carousel/slick/slick.js"
 /*!****************************************************!*\
   !*** ./node_modules/slick-carousel/slick/slick.js ***!
   \****************************************************/
-/***/ ((module, exports, __webpack_require__) => {
+(module, exports, __webpack_require__) {
 
 var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*
      _ _      _       _
@@ -12764,7 +12764,8 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
 		__WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ?
 		(__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__),
 		__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
-    } else {}
+    } else // removed by dead control flow
+{}
 
 }(function($) {
     'use strict';
@@ -15752,13 +15753,13 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
 }));
 
 
-/***/ }),
+/***/ },
 
-/***/ "./src/styles/contact.scss":
+/***/ "./src/styles/contact.scss"
 /*!*********************************!*\
   !*** ./src/styles/contact.scss ***!
   \*********************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
@@ -15807,13 +15808,13 @@ var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js
        /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_css_loader_dist_cjs_js_node_modules_sass_loader_dist_cjs_js_ruleSet_1_rules_0_use_2_contact_scss__WEBPACK_IMPORTED_MODULE_6__["default"] && _node_modules_css_loader_dist_cjs_js_node_modules_sass_loader_dist_cjs_js_ruleSet_1_rules_0_use_2_contact_scss__WEBPACK_IMPORTED_MODULE_6__["default"].locals ? _node_modules_css_loader_dist_cjs_js_node_modules_sass_loader_dist_cjs_js_ruleSet_1_rules_0_use_2_contact_scss__WEBPACK_IMPORTED_MODULE_6__["default"].locals : undefined);
 
 
-/***/ }),
+/***/ },
 
-/***/ "./src/styles/footer.scss":
+/***/ "./src/styles/footer.scss"
 /*!********************************!*\
   !*** ./src/styles/footer.scss ***!
   \********************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
@@ -15862,13 +15863,13 @@ var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js
        /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_css_loader_dist_cjs_js_node_modules_sass_loader_dist_cjs_js_ruleSet_1_rules_0_use_2_footer_scss__WEBPACK_IMPORTED_MODULE_6__["default"] && _node_modules_css_loader_dist_cjs_js_node_modules_sass_loader_dist_cjs_js_ruleSet_1_rules_0_use_2_footer_scss__WEBPACK_IMPORTED_MODULE_6__["default"].locals ? _node_modules_css_loader_dist_cjs_js_node_modules_sass_loader_dist_cjs_js_ruleSet_1_rules_0_use_2_footer_scss__WEBPACK_IMPORTED_MODULE_6__["default"].locals : undefined);
 
 
-/***/ }),
+/***/ },
 
-/***/ "./src/styles/header.scss":
+/***/ "./src/styles/header.scss"
 /*!********************************!*\
   !*** ./src/styles/header.scss ***!
   \********************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
@@ -15917,13 +15918,13 @@ var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js
        /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_css_loader_dist_cjs_js_node_modules_sass_loader_dist_cjs_js_ruleSet_1_rules_0_use_2_header_scss__WEBPACK_IMPORTED_MODULE_6__["default"] && _node_modules_css_loader_dist_cjs_js_node_modules_sass_loader_dist_cjs_js_ruleSet_1_rules_0_use_2_header_scss__WEBPACK_IMPORTED_MODULE_6__["default"].locals ? _node_modules_css_loader_dist_cjs_js_node_modules_sass_loader_dist_cjs_js_ruleSet_1_rules_0_use_2_header_scss__WEBPACK_IMPORTED_MODULE_6__["default"].locals : undefined);
 
 
-/***/ }),
+/***/ },
 
-/***/ "./src/styles/home.scss":
+/***/ "./src/styles/home.scss"
 /*!******************************!*\
   !*** ./src/styles/home.scss ***!
   \******************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
@@ -15972,13 +15973,13 @@ var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js
        /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_css_loader_dist_cjs_js_node_modules_sass_loader_dist_cjs_js_ruleSet_1_rules_0_use_2_home_scss__WEBPACK_IMPORTED_MODULE_6__["default"] && _node_modules_css_loader_dist_cjs_js_node_modules_sass_loader_dist_cjs_js_ruleSet_1_rules_0_use_2_home_scss__WEBPACK_IMPORTED_MODULE_6__["default"].locals ? _node_modules_css_loader_dist_cjs_js_node_modules_sass_loader_dist_cjs_js_ruleSet_1_rules_0_use_2_home_scss__WEBPACK_IMPORTED_MODULE_6__["default"].locals : undefined);
 
 
-/***/ }),
+/***/ },
 
-/***/ "./src/styles/main.scss":
+/***/ "./src/styles/main.scss"
 /*!******************************!*\
   !*** ./src/styles/main.scss ***!
   \******************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
@@ -16027,13 +16028,13 @@ var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js
        /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_css_loader_dist_cjs_js_node_modules_sass_loader_dist_cjs_js_ruleSet_1_rules_0_use_2_main_scss__WEBPACK_IMPORTED_MODULE_6__["default"] && _node_modules_css_loader_dist_cjs_js_node_modules_sass_loader_dist_cjs_js_ruleSet_1_rules_0_use_2_main_scss__WEBPACK_IMPORTED_MODULE_6__["default"].locals ? _node_modules_css_loader_dist_cjs_js_node_modules_sass_loader_dist_cjs_js_ruleSet_1_rules_0_use_2_main_scss__WEBPACK_IMPORTED_MODULE_6__["default"].locals : undefined);
 
 
-/***/ }),
+/***/ },
 
-/***/ "./src/styles/pivot.scss":
+/***/ "./src/styles/pivot.scss"
 /*!*******************************!*\
   !*** ./src/styles/pivot.scss ***!
   \*******************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
@@ -16082,13 +16083,13 @@ var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js
        /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_css_loader_dist_cjs_js_node_modules_sass_loader_dist_cjs_js_ruleSet_1_rules_0_use_2_pivot_scss__WEBPACK_IMPORTED_MODULE_6__["default"] && _node_modules_css_loader_dist_cjs_js_node_modules_sass_loader_dist_cjs_js_ruleSet_1_rules_0_use_2_pivot_scss__WEBPACK_IMPORTED_MODULE_6__["default"].locals ? _node_modules_css_loader_dist_cjs_js_node_modules_sass_loader_dist_cjs_js_ruleSet_1_rules_0_use_2_pivot_scss__WEBPACK_IMPORTED_MODULE_6__["default"].locals : undefined);
 
 
-/***/ }),
+/***/ },
 
-/***/ "./src/styles/reset.scss":
+/***/ "./src/styles/reset.scss"
 /*!*******************************!*\
   !*** ./src/styles/reset.scss ***!
   \*******************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
@@ -16137,13 +16138,13 @@ var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js
        /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_css_loader_dist_cjs_js_node_modules_sass_loader_dist_cjs_js_ruleSet_1_rules_0_use_2_reset_scss__WEBPACK_IMPORTED_MODULE_6__["default"] && _node_modules_css_loader_dist_cjs_js_node_modules_sass_loader_dist_cjs_js_ruleSet_1_rules_0_use_2_reset_scss__WEBPACK_IMPORTED_MODULE_6__["default"].locals ? _node_modules_css_loader_dist_cjs_js_node_modules_sass_loader_dist_cjs_js_ruleSet_1_rules_0_use_2_reset_scss__WEBPACK_IMPORTED_MODULE_6__["default"].locals : undefined);
 
 
-/***/ }),
+/***/ },
 
-/***/ "./src/styles/skills.scss":
+/***/ "./src/styles/skills.scss"
 /*!********************************!*\
   !*** ./src/styles/skills.scss ***!
   \********************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
@@ -16192,13 +16193,13 @@ var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js
        /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_css_loader_dist_cjs_js_node_modules_sass_loader_dist_cjs_js_ruleSet_1_rules_0_use_2_skills_scss__WEBPACK_IMPORTED_MODULE_6__["default"] && _node_modules_css_loader_dist_cjs_js_node_modules_sass_loader_dist_cjs_js_ruleSet_1_rules_0_use_2_skills_scss__WEBPACK_IMPORTED_MODULE_6__["default"].locals ? _node_modules_css_loader_dist_cjs_js_node_modules_sass_loader_dist_cjs_js_ruleSet_1_rules_0_use_2_skills_scss__WEBPACK_IMPORTED_MODULE_6__["default"].locals : undefined);
 
 
-/***/ }),
+/***/ },
 
-/***/ "./src/styles/variables.scss":
+/***/ "./src/styles/variables.scss"
 /*!***********************************!*\
   !*** ./src/styles/variables.scss ***!
   \***********************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
@@ -16247,13 +16248,13 @@ var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js
        /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_css_loader_dist_cjs_js_node_modules_sass_loader_dist_cjs_js_ruleSet_1_rules_0_use_2_variables_scss__WEBPACK_IMPORTED_MODULE_6__["default"] && _node_modules_css_loader_dist_cjs_js_node_modules_sass_loader_dist_cjs_js_ruleSet_1_rules_0_use_2_variables_scss__WEBPACK_IMPORTED_MODULE_6__["default"].locals ? _node_modules_css_loader_dist_cjs_js_node_modules_sass_loader_dist_cjs_js_ruleSet_1_rules_0_use_2_variables_scss__WEBPACK_IMPORTED_MODULE_6__["default"].locals : undefined);
 
 
-/***/ }),
+/***/ },
 
-/***/ "./src/styles/work.scss":
+/***/ "./src/styles/work.scss"
 /*!******************************!*\
   !*** ./src/styles/work.scss ***!
   \******************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
@@ -16302,13 +16303,13 @@ var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js
        /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_css_loader_dist_cjs_js_node_modules_sass_loader_dist_cjs_js_ruleSet_1_rules_0_use_2_work_scss__WEBPACK_IMPORTED_MODULE_6__["default"] && _node_modules_css_loader_dist_cjs_js_node_modules_sass_loader_dist_cjs_js_ruleSet_1_rules_0_use_2_work_scss__WEBPACK_IMPORTED_MODULE_6__["default"].locals ? _node_modules_css_loader_dist_cjs_js_node_modules_sass_loader_dist_cjs_js_ruleSet_1_rules_0_use_2_work_scss__WEBPACK_IMPORTED_MODULE_6__["default"].locals : undefined);
 
 
-/***/ }),
+/***/ },
 
-/***/ "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js":
+/***/ "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js"
 /*!****************************************************************************!*\
   !*** ./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js ***!
   \****************************************************************************/
-/***/ ((module) => {
+(module) {
 
 "use strict";
 
@@ -16396,13 +16397,13 @@ module.exports = function (list, options) {
   };
 };
 
-/***/ }),
+/***/ },
 
-/***/ "./node_modules/style-loader/dist/runtime/insertBySelector.js":
+/***/ "./node_modules/style-loader/dist/runtime/insertBySelector.js"
 /*!********************************************************************!*\
   !*** ./node_modules/style-loader/dist/runtime/insertBySelector.js ***!
   \********************************************************************/
-/***/ ((module) => {
+(module) {
 
 "use strict";
 
@@ -16440,13 +16441,13 @@ function insertBySelector(insert, style) {
 }
 module.exports = insertBySelector;
 
-/***/ }),
+/***/ },
 
-/***/ "./node_modules/style-loader/dist/runtime/insertStyleElement.js":
+/***/ "./node_modules/style-loader/dist/runtime/insertStyleElement.js"
 /*!**********************************************************************!*\
   !*** ./node_modules/style-loader/dist/runtime/insertStyleElement.js ***!
   \**********************************************************************/
-/***/ ((module) => {
+(module) {
 
 "use strict";
 
@@ -16460,13 +16461,13 @@ function insertStyleElement(options) {
 }
 module.exports = insertStyleElement;
 
-/***/ }),
+/***/ },
 
-/***/ "./node_modules/style-loader/dist/runtime/setAttributesWithoutAttributes.js":
+/***/ "./node_modules/style-loader/dist/runtime/setAttributesWithoutAttributes.js"
 /*!**********************************************************************************!*\
   !*** ./node_modules/style-loader/dist/runtime/setAttributesWithoutAttributes.js ***!
   \**********************************************************************************/
-/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+(module, __unused_webpack_exports, __webpack_require__) {
 
 "use strict";
 
@@ -16480,13 +16481,13 @@ function setAttributesWithoutAttributes(styleElement) {
 }
 module.exports = setAttributesWithoutAttributes;
 
-/***/ }),
+/***/ },
 
-/***/ "./node_modules/style-loader/dist/runtime/styleDomAPI.js":
+/***/ "./node_modules/style-loader/dist/runtime/styleDomAPI.js"
 /*!***************************************************************!*\
   !*** ./node_modules/style-loader/dist/runtime/styleDomAPI.js ***!
   \***************************************************************/
-/***/ ((module) => {
+(module) {
 
 "use strict";
 
@@ -16551,13 +16552,13 @@ function domAPI(options) {
 }
 module.exports = domAPI;
 
-/***/ }),
+/***/ },
 
-/***/ "./node_modules/style-loader/dist/runtime/styleTagTransform.js":
+/***/ "./node_modules/style-loader/dist/runtime/styleTagTransform.js"
 /*!*********************************************************************!*\
   !*** ./node_modules/style-loader/dist/runtime/styleTagTransform.js ***!
   \*********************************************************************/
-/***/ ((module) => {
+(module) {
 
 "use strict";
 
@@ -16575,215 +16576,221 @@ function styleTagTransform(css, styleElement) {
 }
 module.exports = styleTagTransform;
 
-/***/ }),
+/***/ },
 
-/***/ "./src/assets/Nithila_Resume.pdf":
+/***/ "./src/assets/Nithila_Resume.pdf"
 /*!***************************************!*\
   !*** ./src/assets/Nithila_Resume.pdf ***!
   \***************************************/
-/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+(module, __unused_webpack_exports, __webpack_require__) {
 
 "use strict";
 module.exports = __webpack_require__.p + "Nithila_Resume.pdf";
 
-/***/ }),
+/***/ },
 
-/***/ "./src/assets/personal-pictures/1.png":
+/***/ "./src/assets/personal-pictures/1.png"
 /*!********************************************!*\
   !*** ./src/assets/personal-pictures/1.png ***!
   \********************************************/
-/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+(module, __unused_webpack_exports, __webpack_require__) {
 
 "use strict";
 module.exports = __webpack_require__.p + "1.png";
 
-/***/ }),
+/***/ },
 
-/***/ "./src/assets/personal-pictures/2.jpg":
+/***/ "./src/assets/personal-pictures/2.jpg"
 /*!********************************************!*\
   !*** ./src/assets/personal-pictures/2.jpg ***!
   \********************************************/
-/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+(module, __unused_webpack_exports, __webpack_require__) {
 
 "use strict";
 module.exports = __webpack_require__.p + "2.jpg";
 
-/***/ }),
+/***/ },
 
-/***/ "./src/assets/personal-pictures/sp1.png":
+/***/ "./src/assets/personal-pictures/sp1.png"
 /*!**********************************************!*\
   !*** ./src/assets/personal-pictures/sp1.png ***!
   \**********************************************/
-/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+(module, __unused_webpack_exports, __webpack_require__) {
 
 "use strict";
 module.exports = __webpack_require__.p + "sp1.png";
 
-/***/ }),
+/***/ },
 
-/***/ "./src/assets/project-logos/accenture.png":
+/***/ "./src/assets/project-logos/accenture.png"
 /*!************************************************!*\
   !*** ./src/assets/project-logos/accenture.png ***!
   \************************************************/
-/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+(module, __unused_webpack_exports, __webpack_require__) {
 
 "use strict";
 module.exports = __webpack_require__.p + "accenture.png";
 
-/***/ }),
+/***/ },
 
-/***/ "./src/assets/project-logos/bt.png":
+/***/ "./src/assets/project-logos/bt.png"
 /*!*****************************************!*\
   !*** ./src/assets/project-logos/bt.png ***!
   \*****************************************/
-/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+(module, __unused_webpack_exports, __webpack_require__) {
 
 "use strict";
 module.exports = __webpack_require__.p + "bt.png";
 
-/***/ }),
+/***/ },
 
-/***/ "./src/assets/project-logos/canopygrowth.png":
+/***/ "./src/assets/project-logos/canopygrowth.png"
 /*!***************************************************!*\
   !*** ./src/assets/project-logos/canopygrowth.png ***!
   \***************************************************/
-/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+(module, __unused_webpack_exports, __webpack_require__) {
 
 "use strict";
 module.exports = __webpack_require__.p + "canopygrowth.png";
 
-/***/ }),
+/***/ },
 
-/***/ "./src/assets/project-logos/dupont.png":
+/***/ "./src/assets/project-logos/dupont.png"
 /*!*********************************************!*\
   !*** ./src/assets/project-logos/dupont.png ***!
   \*********************************************/
-/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+(module, __unused_webpack_exports, __webpack_require__) {
 
 "use strict";
 module.exports = __webpack_require__.p + "dupont.png";
 
-/***/ }),
+/***/ },
 
-/***/ "./src/assets/project-logos/eon.png":
+/***/ "./src/assets/project-logos/eon.png"
 /*!******************************************!*\
   !*** ./src/assets/project-logos/eon.png ***!
   \******************************************/
-/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+(module, __unused_webpack_exports, __webpack_require__) {
 
 "use strict";
 module.exports = __webpack_require__.p + "eon.png";
 
-/***/ }),
+/***/ },
 
-/***/ "./src/assets/project-logos/equinix.png":
+/***/ "./src/assets/project-logos/equinix.png"
 /*!**********************************************!*\
   !*** ./src/assets/project-logos/equinix.png ***!
   \**********************************************/
-/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+(module, __unused_webpack_exports, __webpack_require__) {
 
 "use strict";
 module.exports = __webpack_require__.p + "equinix.png";
 
-/***/ }),
+/***/ },
 
-/***/ "./src/assets/project-logos/logo.png":
+/***/ "./src/assets/project-logos/logo.png"
 /*!*******************************************!*\
   !*** ./src/assets/project-logos/logo.png ***!
   \*******************************************/
-/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+(module, __unused_webpack_exports, __webpack_require__) {
 
 "use strict";
 module.exports = __webpack_require__.p + "logo.png";
 
-/***/ }),
+/***/ },
 
-/***/ "./src/assets/project-logos/myntra.png":
+/***/ "./src/assets/project-logos/myntra.png"
 /*!*********************************************!*\
   !*** ./src/assets/project-logos/myntra.png ***!
   \*********************************************/
-/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+(module, __unused_webpack_exports, __webpack_require__) {
 
 "use strict";
 module.exports = __webpack_require__.p + "myntra.png";
 
-/***/ }),
+/***/ },
 
-/***/ "./src/assets/project-logos/tadigital.png":
+/***/ "./src/assets/project-logos/tadigital.png"
 /*!************************************************!*\
   !*** ./src/assets/project-logos/tadigital.png ***!
   \************************************************/
-/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+(module, __unused_webpack_exports, __webpack_require__) {
 
 "use strict";
 module.exports = __webpack_require__.p + "tadigital.png";
 
-/***/ }),
+/***/ },
 
-/***/ "./src/assets/project-logos/thoughtworks.png":
+/***/ "./src/assets/project-logos/thoughtworks.png"
 /*!***************************************************!*\
   !*** ./src/assets/project-logos/thoughtworks.png ***!
   \***************************************************/
-/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+(module, __unused_webpack_exports, __webpack_require__) {
 
 "use strict";
 module.exports = __webpack_require__.p + "thoughtworks.png";
 
-/***/ }),
+/***/ },
 
-/***/ "./src/assets/social-logos/instagram.png":
+/***/ "./src/assets/social-logos/instagram.png"
 /*!***********************************************!*\
   !*** ./src/assets/social-logos/instagram.png ***!
   \***********************************************/
-/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+(module, __unused_webpack_exports, __webpack_require__) {
 
 "use strict";
 module.exports = __webpack_require__.p + "instagram.png";
 
-/***/ }),
+/***/ },
 
-/***/ "./src/assets/social-logos/letterboxd.svg":
+/***/ "./src/assets/social-logos/letterboxd.svg"
 /*!************************************************!*\
   !*** ./src/assets/social-logos/letterboxd.svg ***!
   \************************************************/
-/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+(module, __unused_webpack_exports, __webpack_require__) {
 
 "use strict";
 module.exports = __webpack_require__.p + "letterboxd.svg";
 
-/***/ }),
+/***/ },
 
-/***/ "./src/assets/social-logos/linkedin.png":
+/***/ "./src/assets/social-logos/linkedin.png"
 /*!**********************************************!*\
   !*** ./src/assets/social-logos/linkedin.png ***!
   \**********************************************/
-/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+(module, __unused_webpack_exports, __webpack_require__) {
 
 "use strict";
 module.exports = __webpack_require__.p + "linkedin.png";
 
-/***/ })
+/***/ }
 
 /******/ 	});
 /************************************************************************/
 /******/ 	// The module cache
-/******/ 	var __webpack_module_cache__ = {};
+/******/ 	const __webpack_module_cache__ = {};
 /******/ 	
 /******/ 	// The require function
 /******/ 	function __webpack_require__(moduleId) {
 /******/ 		// Check if module is in cache
-/******/ 		var cachedModule = __webpack_module_cache__[moduleId];
+/******/ 		const cachedModule = __webpack_module_cache__[moduleId];
 /******/ 		if (cachedModule !== undefined) {
 /******/ 			return cachedModule.exports;
 /******/ 		}
 /******/ 		// Create a new module (and put it into the cache)
-/******/ 		var module = __webpack_module_cache__[moduleId] = {
+/******/ 		const module = __webpack_module_cache__[moduleId] = {
 /******/ 			id: moduleId,
 /******/ 			// no module.loaded needed
 /******/ 			exports: {}
 /******/ 		};
 /******/ 	
 /******/ 		// Execute the module function
+/******/ 		if (!(moduleId in __webpack_modules__)) {
+/******/ 			delete __webpack_module_cache__[moduleId];
+/******/ 			const e = new Error("Cannot find module '" + moduleId + "'");
+/******/ 			e.code = 'MODULE_NOT_FOUND';
+/******/ 			throw e;
+/******/ 		}
 /******/ 		__webpack_modules__[moduleId].call(module.exports, module, module.exports, __webpack_require__);
 /******/ 	
 /******/ 		// Return the exports of the module
@@ -16795,7 +16802,7 @@ module.exports = __webpack_require__.p + "linkedin.png";
 /******/ 	(() => {
 /******/ 		// getDefaultExport function for compatibility with non-harmony modules
 /******/ 		__webpack_require__.n = (module) => {
-/******/ 			var getter = module && module.__esModule ?
+/******/ 			const getter = module && module.__esModule ?
 /******/ 				() => (module['default']) :
 /******/ 				() => (module);
 /******/ 			__webpack_require__.d(getter, { a: getter });
@@ -16805,11 +16812,26 @@ module.exports = __webpack_require__.p + "linkedin.png";
 /******/ 	
 /******/ 	/* webpack/runtime/define property getters */
 /******/ 	(() => {
-/******/ 		// define getter functions for harmony exports
+/******/ 		// define getter/value functions for harmony exports
 /******/ 		__webpack_require__.d = (exports, definition) => {
-/******/ 			for(var key in definition) {
-/******/ 				if(__webpack_require__.o(definition, key) && !__webpack_require__.o(exports, key)) {
-/******/ 					Object.defineProperty(exports, key, { enumerable: true, get: definition[key] });
+/******/ 			if(Array.isArray(definition)) {
+/******/ 				var i = 0;
+/******/ 				while(i < definition.length) {
+/******/ 					var key = definition[i++];
+/******/ 					var binding = definition[i++];
+/******/ 					if(!__webpack_require__.o(exports, key)) {
+/******/ 						if(binding === 0) {
+/******/ 							Object.defineProperty(exports, key, { enumerable: true, value: definition[i++] });
+/******/ 						} else {
+/******/ 							Object.defineProperty(exports, key, { enumerable: true, get: binding });
+/******/ 						}
+/******/ 					} else if(binding === 0) { i++; }
+/******/ 				}
+/******/ 			} else {
+/******/ 				for(var key in definition) {
+/******/ 					if(__webpack_require__.o(definition, key) && !__webpack_require__.o(exports, key)) {
+/******/ 						Object.defineProperty(exports, key, { enumerable: true, get: definition[key] });
+/******/ 					}
 /******/ 				}
 /******/ 			}
 /******/ 		};
@@ -16836,7 +16858,7 @@ module.exports = __webpack_require__.p + "linkedin.png";
 /******/ 	(() => {
 /******/ 		// define __esModule on exports
 /******/ 		__webpack_require__.r = (exports) => {
-/******/ 			if(typeof Symbol !== 'undefined' && Symbol.toStringTag) {
+/******/ 			if(Symbol.toStringTag) {
 /******/ 				Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
 /******/ 			}
 /******/ 			Object.defineProperty(exports, '__esModule', { value: true });
@@ -16845,24 +16867,24 @@ module.exports = __webpack_require__.p + "linkedin.png";
 /******/ 	
 /******/ 	/* webpack/runtime/publicPath */
 /******/ 	(() => {
-/******/ 		var scriptUrl;
+/******/ 		let scriptUrl;
 /******/ 		if (__webpack_require__.g.importScripts) scriptUrl = __webpack_require__.g.location + "";
-/******/ 		var document = __webpack_require__.g.document;
+/******/ 		const document = __webpack_require__.g.document;
 /******/ 		if (!scriptUrl && document) {
-/******/ 			if (document.currentScript)
+/******/ 			if (document.currentScript?.tagName.toUpperCase() === 'SCRIPT')
 /******/ 				scriptUrl = document.currentScript.src;
 /******/ 			if (!scriptUrl) {
-/******/ 				var scripts = document.getElementsByTagName("script");
+/******/ 				const scripts = document.getElementsByTagName("script");
 /******/ 				if(scripts.length) {
-/******/ 					var i = scripts.length - 1;
-/******/ 					while (i > -1 && !scriptUrl) scriptUrl = scripts[i--].src;
+/******/ 					let i = scripts.length - 1;
+/******/ 					while (i > -1 && (!scriptUrl || !/^http(s?):/.test(scriptUrl))) scriptUrl = scripts[i--].src;
 /******/ 				}
 /******/ 			}
 /******/ 		}
 /******/ 		// When supporting browsers where an automatic publicPath is not supported you must specify an output.publicPath manually via configuration
 /******/ 		// or pass an empty string ("") and set the __webpack_public_path__ variable from your code to use your own logic.
 /******/ 		if (!scriptUrl) throw new Error("Automatic publicPath is not supported in this browser");
-/******/ 		scriptUrl = scriptUrl.replace(/#.*$/, "").replace(/\?.*$/, "").replace(/\/[^\/]+$/, "/");
+/******/ 		scriptUrl = scriptUrl.replace(/^blob:/, "").replace(/#.*$/, "").replace(/\?.*$/, "").replace(/\/[^\/]+$/, "/");
 /******/ 		__webpack_require__.p = scriptUrl;
 /******/ 	})();
 /******/ 	
@@ -16872,8 +16894,8 @@ module.exports = __webpack_require__.p + "linkedin.png";
 /******/ 	})();
 /******/ 	
 /************************************************************************/
-var __webpack_exports__ = {};
-// This entry need to be wrapped in an IIFE because it need to be in strict mode.
+let __webpack_exports__ = {};
+// This entry needs to be wrapped in an IIFE because it needs to be in strict mode.
 (() => {
 "use strict";
 /*!**********************!*\
@@ -16954,4 +16976,4 @@ __webpack_require__.r(__webpack_exports__);
 
 /******/ })()
 ;
-//# sourceMappingURL=bundle1b3305b711a74ebcbed1.js.map
+//# sourceMappingURL=bundle6d1d50d6964d47851e91.js.map
