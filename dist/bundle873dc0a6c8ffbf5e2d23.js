@@ -139,25 +139,64 @@ function resetForm() {
 
 /***/ },
 
+/***/ "./src/javascript/fun.js"
+/*!*******************************!*\
+  !*** ./src/javascript/fun.js ***!
+  \*******************************/
+() {
+
+// TODO: replace with the real API Gateway routes once the Lambdas in
+// spotify-top-tracks-lambda.js and letterboxd-favorites-lambda.js are deployed.
+var TOP_TRACKS_ENDPOINT = 'https://YOUR-API-GATEWAY-ID.execute-api.ap-southeast-2.amazonaws.com/prod/top-tracks';
+var TOP_MOVIES_ENDPOINT = 'https://YOUR-API-GATEWAY-ID.execute-api.ap-southeast-2.amazonaws.com/prod/top-movies';
+function renderStatus(list, message) {
+  list.innerHTML = "<li class=\"fun__status\">".concat(message, "</li>");
+}
+function renderMovies(movies) {
+  var list = document.getElementById('funMovies');
+  if (!movies.length) {
+    renderStatus(list, 'No favorites found.');
+    return;
+  }
+  list.innerHTML = movies.map(function (movie) {
+    return "\n        <li>\n            <a href=\"".concat(movie.url, "\" target=\"_blank\" rel=\"noopener noreferrer\">\n                <img src=\"").concat(movie.poster, "\" alt=\"").concat(movie.title, "\">\n                <span>").concat(movie.title, "</span>\n            </a>\n        </li>\n    ");
+  }).join('');
+}
+function renderTracks(tracks) {
+  var list = document.getElementById('funTracks');
+  if (!tracks.length) {
+    renderStatus(list, 'No top tracks found.');
+    return;
+  }
+  list.innerHTML = tracks.map(function (track) {
+    return "\n        <li>\n            <a href=\"".concat(track.url, "\" target=\"_blank\" rel=\"noopener noreferrer\">\n                <img src=\"").concat(track.albumArt, "\" alt=\"").concat(track.name, "\">\n                <span>\n                    <span class=\"fun__track-name\">").concat(track.name, "</span>\n                    <span class=\"fun__track-artist\">").concat(track.artist, "</span>\n                </span>\n            </a>\n        </li>\n    ");
+  }).join('');
+}
+fetch(TOP_MOVIES_ENDPOINT).then(function (res) {
+  return res.json();
+}).then(function (data) {
+  return renderMovies(data.movies || []);
+})["catch"](function () {
+  return renderStatus(document.getElementById('funMovies'), 'Couldn\'t load favorites right now.');
+});
+fetch(TOP_TRACKS_ENDPOINT).then(function (res) {
+  return res.json();
+}).then(function (data) {
+  return renderTracks(data.tracks || []);
+})["catch"](function () {
+  return renderStatus(document.getElementById('funTracks'), 'Couldn\'t load top tracks right now.');
+});
+
+/***/ },
+
 /***/ "./src/javascript/menu.js"
 /*!********************************!*\
   !*** ./src/javascript/menu.js ***!
   \********************************/
 () {
 
-var pivotCaret = $('.pivot__caret');
-var skills = $('.skills');
 var headerCaret = $('.header__logo-caret');
 var headerNavigation = $('.header__navigation-links');
-pivotCaret.on('click', function (e) {
-  if (skills.hasClass('d-none')) {
-    skills.removeClass('d-none');
-    pivotCaret.text('See Less').addClass('inverse');
-  } else {
-    skills.addClass('d-none');
-    pivotCaret.text('Learn More').removeClass('inverse');
-  }
-});
 headerCaret.on('click', function (e) {
   if (headerNavigation.hasClass('d-none')) {
     headerNavigation.removeClass('d-none');
@@ -185,15 +224,20 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
 /* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../node_modules/css-loader/dist/runtime/getUrl.js */ "./node_modules/css-loader/dist/runtime/getUrl.js");
+/* harmony import */ var _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2__);
 // Imports
 
 
+
+var ___CSS_LOADER_URL_IMPORT_0___ = new URL(/* asset import */ __webpack_require__(/*! ../assets/background/Michelangelo_-_Creation_of_Adam_(cropped).jpg */ "./src/assets/background/Michelangelo_-_Creation_of_Adam_(cropped).jpg"), __webpack_require__.b);
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
 ___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap);"]);
 ___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Arizonia&display=swap);"]);
 ___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Italianno&display=swap);"]);
 ___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap);"]);
 ___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Spartan:wght@100;200;300;400;500;600;700;800;900&display=swap);"]);
+var ___CSS_LOADER_URL_REPLACEMENT_0___ = _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2___default()(___CSS_LOADER_URL_IMPORT_0___);
 // Module
 ___CSS_LOADER_EXPORT___.push([module.id, `/*--------------------------- Theme Colours ---------------------------*/
 /* Colours */
@@ -274,6 +318,19 @@ button:hover::after {
 }
 
 /*---------------------------- Common Ends -----------------------------*/
+.contact-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: stretch;
+  padding: 4rem 0;
+  gap: 1.5rem;
+  background-image: url(${___CSS_LOADER_URL_REPLACEMENT_0___});
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
 .contact {
   margin: 3rem auto 1.5rem;
   padding: 1.5rem 7.5vw;
@@ -351,7 +408,7 @@ button:hover::after {
 }
 .contact__input__query {
   height: 5rem;
-}`, "",{"version":3,"sources":["webpack://./src/styles/variables.scss","webpack://./src/styles/contact.scss"],"names":[],"mappings":"AAAA,wEAAA;AAEA,YAAA;AAWA,aAAA;AAKA,yEAAA;AAGA,yEAAA;AAEA,+DAAA;AACA,uBAAA;AAMA,aAAA;AAMA,+DAAA;AACA,cAAA;AAMA,gEAAA;AACA,YAAA;AAOA,YAAA;AAOA,yEAAA;AAGA,yEAAA;AAOA,yEAAA;AAGA,yEAAA;AA4EA,yEAAA;AAGA,yEAAA;AAEA;EACI,qBAAA;EACA,oBAAA;EACA,eAAA;EACA,oDA9GM;EA+GN,gBAAA;AC/HJ;;ADkIA;EACI,WA9JI;EA+JJ,qBAAA;AC/HJ;;ADkIA;EACI,kBAAA;EACA,SAAA;EACA,UAAA;EACA,iBAAA;EACA,eAAA;AC/HJ;ADiII;EAjCA,oBAAA;EACA,qBAAA;EACA,oDAxFM;EAyFN,kBAAA;EACA,gBAAA;EACA,WA7II;EA2KA,kBAAA;EACA,UAAA;EACA,gBAAA;EACA,qBAAA;EACA,gBAAA;EACA,WA/KA;EAgLA,kBAAA;EACA,qBAAA;AC1HR;AD4HQ;EACI,WArLJ;AC2DR;AD8HI;EACI,kBAAA;EACA,MAAA;EACA,OAAA;EACA,QAAA;EACA,YAAA;EACA,+BA1LO;EA2LP,oBAAA;EACA,WAAA;AC5HR;ADgIQ;EACI,WAAA;AC9HZ;;ADmIA;EACI,+BAAA;EACA,wBAAA;EACA,qBAAA;AChIJ;;ADmIA,yEAAA;AClNgC;EAC5B,wBAAA;EACA,qBAAA;EACA,aAAA;AAmFJ;AAjFI;EDoIA,oBAAA;EACA,qBAAA;EACA,oDAxFM;EAyFN,kBAAA;EACA,gBAAA;EACA,WA7II;ECMA,kBAAA;EACA,aAAA;EACA,iBAAA;EACA,gBAAA;EACA,UAAA;AAwFR;ADpBQ;EC/EwB;IAexB,qBAAA;IACA,sBAAA;IACA,SAAA;EAwFN;AACF;AAtFI;ED8GA,aAAA;EACA,sBAAA;EACA,uBC/GyB;EDgHzB,mBChHiC;EAC7B,gBAAA;EACA,eAAA;EACA,mBDpBC;ECqBD,0BAAA;EACA,kBAAA;EACA,0BAAA;AA2FR;AAtFQ;EDkGJ,aAAA;EACA,sBAAA;EACA,8BCnG6B;EDoG7B,mBCpG4C;EACpC,gBAAA;EACA,eAAA;EACA,WDnCJ;ECoCI,8BAAA;EACA,SAAA;AA2FZ;ADlDQ;EC/CA;IASQ,sBAAA;EA4Fd;AACF;AAzFQ;ED4FJ,oBAAA;EACA,qBAAA;EACA,oDAxFM;EAyFN,kBAAA;EACA,gBAAA;EACA,WA7II;EC+CI,SAAA;EACA,gDAAA;EACA,eAAA;EACA,cAAA;EACA,WAAA;EACA,cAAA;EACA,gBAAA;AA+FZ;AA7FY;EAEI,UAAA;EACA,gCAAA;AA8FhB;AA3FY;EACI,+BAAA;AA6FhB;AAzFQ;EACI,YAAA;AA2FZ","sourceRoot":""}]);
+}`, "",{"version":3,"sources":["webpack://./src/styles/variables.scss","webpack://./src/styles/contact.scss"],"names":[],"mappings":"AAAA,wEAAA;AAEA,YAAA;AAWA,aAAA;AAKA,yEAAA;AAGA,yEAAA;AAEA,+DAAA;AACA,uBAAA;AAMA,aAAA;AAMA,+DAAA;AACA,cAAA;AAMA,gEAAA;AACA,YAAA;AAOA,YAAA;AAOA,yEAAA;AAGA,yEAAA;AAOA,yEAAA;AAGA,yEAAA;AA4EA,yEAAA;AAGA,yEAAA;AAEA;EACI,qBAAA;EACA,oBAAA;EACA,eAAA;EACA,oDA9GM;EA+GN,gBAAA;AC/HJ;;ADkIA;EACI,WA9JI;EA+JJ,qBAAA;AC/HJ;;ADkIA;EACI,kBAAA;EACA,SAAA;EACA,UAAA;EACA,iBAAA;EACA,eAAA;AC/HJ;ADiII;EAjCA,oBAAA;EACA,qBAAA;EACA,oDAxFM;EAyFN,kBAAA;EACA,gBAAA;EACA,WA7II;EA2KA,kBAAA;EACA,UAAA;EACA,gBAAA;EACA,qBAAA;EACA,gBAAA;EACA,WA/KA;EAgLA,kBAAA;EACA,qBAAA;AC1HR;AD4HQ;EACI,WArLJ;AC2DR;AD8HI;EACI,kBAAA;EACA,MAAA;EACA,OAAA;EACA,QAAA;EACA,YAAA;EACA,+BA1LO;EA2LP,oBAAA;EACA,WAAA;AC5HR;ADgIQ;EACI,WAAA;AC9HZ;;ADmIA;EACI,+BAAA;EACA,wBAAA;EACA,qBAAA;AChIJ;;ADmIA,yEAAA;AClNgC;EDkI5B,aAAA;EACA,sBAAA;EACA,uBCnIqB;EDoIrB,oBCpI6B;EAC7B,eAAA;EACA,WAAA;EACA,yDAAA;EACA,sBAAA;EACA,2BAAA;EACA,4BAAA;AAsFJ;;AAnFA;EACI,wBAAA;EACA,qBAAA;EACA,aAAA;AAsFJ;AApFI;ED0HA,oBAAA;EACA,qBAAA;EACA,oDAxFM;EAyFN,kBAAA;EACA,gBAAA;EACA,WA7II;ECgBA,kBAAA;EACA,aAAA;EACA,iBAAA;EACA,gBAAA;EACA,UAAA;AA2FR;ADjCQ;ECrER;IAeQ,qBAAA;IACA,sBAAA;IACA,SAAA;EA2FN;AACF;AAzFI;EDoGA,aAAA;EACA,sBAAA;EACA,uBCrGyB;EDsGzB,mBCtGiC;EAC7B,gBAAA;EACA,eAAA;EACA,mBD9BC;EC+BD,0BAAA;EACA,kBAAA;EACA,0BAAA;AA8FR;AAzFQ;EDwFJ,aAAA;EACA,sBAAA;EACA,8BCzF6B;ED0F7B,mBC1F4C;EACpC,gBAAA;EACA,eAAA;EACA,WD7CJ;EC8CI,8BAAA;EACA,SAAA;AA8FZ;AD/DQ;ECrCA;IASQ,sBAAA;EA+Fd;AACF;AA5FQ;EDkFJ,oBAAA;EACA,qBAAA;EACA,oDAxFM;EAyFN,kBAAA;EACA,gBAAA;EACA,WA7II;ECyDI,SAAA;EACA,gDAAA;EACA,eAAA;EACA,cAAA;EACA,WAAA;EACA,cAAA;EACA,gBAAA;AAkGZ;AAhGY;EAEI,UAAA;EACA,gCAAA;AAiGhB;AA9FY;EACI,+BAAA;AAgGhB;AA5FQ;EACI,YAAA;AA8FZ","sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -499,6 +556,307 @@ button:hover::after {
 
 /***/ },
 
+/***/ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[0].use[2]!./src/styles/fun.scss"
+/*!**************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[0].use[2]!./src/styles/fun.scss ***!
+  \**************************************************************************************************************************************/
+(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../node_modules/css-loader/dist/runtime/sourceMaps.js */ "./node_modules/css-loader/dist/runtime/sourceMaps.js");
+/* harmony import */ var _node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../node_modules/css-loader/dist/runtime/getUrl.js */ "./node_modules/css-loader/dist/runtime/getUrl.js");
+/* harmony import */ var _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2__);
+// Imports
+
+
+
+var ___CSS_LOADER_URL_IMPORT_0___ = new URL(/* asset import */ __webpack_require__(/*! ../assets/background/1665_Girl_with_a_Pearl_Earring.jpg */ "./src/assets/background/1665_Girl_with_a_Pearl_Earring.jpg"), __webpack_require__.b);
+var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
+___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap);"]);
+___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Arizonia&display=swap);"]);
+___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Italianno&display=swap);"]);
+___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap);"]);
+___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Spartan:wght@100;200;300;400;500;600;700;800;900&display=swap);"]);
+var ___CSS_LOADER_URL_REPLACEMENT_0___ = _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2___default()(___CSS_LOADER_URL_IMPORT_0___);
+// Module
+___CSS_LOADER_EXPORT___.push([module.id, `/*--------------------------- Theme Colours ---------------------------*/
+/* Colours */
+/* Gradient */
+/*-------------------------- Theme Colours End -------------------------*/
+/*-------------------------------- Fonts -------------------------------*/
+/******************** Serif Fonts *****************************/
+/* Cormorant Garamond */
+/* Arizonia */
+/********************** Cursive Fonts *************************/
+/* Italianno */
+/********************* Sans-serif Fonts ************************/
+/* Raleway */
+/* Spartan */
+/*------------------------------ Fonts End -----------------------------*/
+/*----------------------------- Breakpoints ----------------------------*/
+/*--------------------------- Breakpoints End --------------------------*/
+/*------------------------------- Mixins -------------------------------*/
+/*----------------------------- Mixins End -----------------------------*/
+/*------------------------------- Common -------------------------------*/
+h2 {
+  margin-bottom: 1.5rem;
+  line-height: 3.25rem;
+  font-size: 4rem;
+  font-family: "Raleway", Arial, Helvetica, sans-serif;
+  font-weight: 500;
+}
+
+a {
+  color: #fff;
+  text-decoration: none;
+}
+
+button {
+  position: relative;
+  border: 0;
+  padding: 0;
+  background: white;
+  cursor: pointer;
+}
+button span {
+  line-height: 1.25rem;
+  word-spacing: 0.25rem;
+  font-family: "Spartan", Arial, Helvetica, sans-serif;
+  font-size: 0.75rem;
+  font-weight: 300;
+  color: #fff;
+  position: relative;
+  z-index: 2;
+  padding: 0.75rem;
+  display: inline-block;
+  font-weight: 400;
+  color: #000;
+  text-align: center;
+  transition: all 0.35s;
+}
+button span:hover {
+  color: #fff;
+}
+button::after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background: rgba(0, 0, 51, 0.5);
+  transition: all 0.3s;
+  content: "";
+}
+button:hover::after {
+  width: 100%;
+}
+
+.underline {
+  border-bottom: 2px solid yellow;
+  padding-bottom: 0.125rem;
+  text-decoration: none;
+}
+
+/*---------------------------- Common Ends -----------------------------*/
+.fun {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  padding: 4rem 7.5vw;
+  width: 100%;
+  gap: 3rem;
+  background-image: url(${___CSS_LOADER_URL_REPLACEMENT_0___});
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.fun__text {
+  margin-bottom: 0;
+}
+.fun__links {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+@media (max-width: 576px) {
+  .fun__links {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+.fun__link {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0.5rem;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+  width: 12rem;
+  background-color: #fff;
+  color: #000;
+  text-align: center;
+  transition: all 0.3s ease;
+  gap: 0.75rem;
+}
+.fun__link img {
+  width: 2.5rem;
+  height: 2.5rem;
+}
+.fun__link i {
+  font-size: 2.5rem;
+}
+.fun__link span {
+  line-height: 1.25rem;
+  word-spacing: 0.25rem;
+  font-family: "Spartan", Arial, Helvetica, sans-serif;
+  font-size: 0.75rem;
+  font-weight: 300;
+  color: #fff;
+  font-weight: 600;
+  color: #000;
+}
+.fun__link:hover {
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  background-color: #ffff00;
+  transform: translateY(-0.25rem);
+}
+.fun__section {
+  width: 100%;
+}
+.fun__subheading {
+  line-height: 1.25rem;
+  word-spacing: 0.25rem;
+  font-family: "Spartan", Arial, Helvetica, sans-serif;
+  font-size: 0.75rem;
+  font-weight: 300;
+  color: #fff;
+  margin-bottom: 1rem;
+  font-size: 1rem;
+  font-weight: 600;
+  text-align: center;
+}
+.fun__status {
+  line-height: 1.25rem;
+  word-spacing: 0.25rem;
+  font-family: "Spartan", Arial, Helvetica, sans-serif;
+  font-size: 0.75rem;
+  font-weight: 300;
+  color: #fff;
+  opacity: 0.6;
+}
+.fun__movies {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+.fun__movies li {
+  width: 8rem;
+}
+.fun__movies a {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 0.5rem;
+  color: #fff;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+.fun__movies a:hover {
+  transform: translateY(-0.25rem);
+}
+.fun__movies img {
+  border-radius: 0.5rem;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+  width: 8rem;
+  height: 12rem;
+  object-fit: cover;
+}
+.fun__movies span {
+  line-height: 1.25rem;
+  word-spacing: 0.25rem;
+  font-family: "Spartan", Arial, Helvetica, sans-serif;
+  font-size: 0.75rem;
+  font-weight: 300;
+  color: #fff;
+}
+.fun__tracks {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;
+  margin: 0 auto;
+  max-width: 30rem;
+  gap: 0.75rem;
+}
+.fun__tracks a {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  border-radius: 0.5rem;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+  padding: 0.75rem;
+  background-color: #fff;
+  color: #000;
+  gap: 1rem;
+  transition: all 0.3s ease;
+}
+.fun__tracks a:hover {
+  background-color: #ffff00;
+  transform: translateY(-0.25rem);
+}
+.fun__tracks img {
+  border-radius: 0.25rem;
+  width: 3rem;
+  height: 3rem;
+  object-fit: cover;
+}
+.fun__tracks span {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+.fun__track-name {
+  line-height: 1.25rem;
+  word-spacing: 0.25rem;
+  font-family: "Spartan", Arial, Helvetica, sans-serif;
+  font-size: 0.75rem;
+  font-weight: 300;
+  color: #fff;
+  font-weight: 600;
+  color: #000;
+}
+.fun__track-artist {
+  line-height: 1.25rem;
+  word-spacing: 0.25rem;
+  font-family: "Spartan", Arial, Helvetica, sans-serif;
+  font-size: 0.75rem;
+  font-weight: 300;
+  color: #fff;
+  font-size: 0.65rem;
+  color: rgba(0, 0, 0, 0.6);
+}`, "",{"version":3,"sources":["webpack://./src/styles/variables.scss","webpack://./src/styles/fun.scss"],"names":[],"mappings":"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","sourceRoot":""}]);
+// Exports
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
+
+
+/***/ },
+
 /***/ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[0].use[2]!./src/styles/header.scss"
 /*!*****************************************************************************************************************************************!*\
   !*** ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[0].use[2]!./src/styles/header.scss ***!
@@ -610,14 +968,18 @@ button:hover::after {
 @media (min-width: 576px) {
   .header {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
-    position: sticky;
+    position: fixed;
     top: 0;
+    right: 0;
     margin: 0;
+    padding: 2rem 1rem;
     background: linear-gradient(135deg, black, #00001b, #170A4A);
-    width: 100%;
-    height: 7rem;
+    width: 8rem;
+    height: 100vh;
+    gap: 2.5rem;
     z-index: 4;
   }
 }
@@ -702,7 +1064,8 @@ button:hover::after {
 }
 .header__navigation-links {
   display: flex;
-  column-gap: 2rem;
+  flex-direction: column;
+  row-gap: 1.5rem;
   cursor: default;
 }
 @media (max-width: 576px) {
@@ -749,7 +1112,7 @@ button:hover::after {
     font-size: 0.75rem;
     text-transform: none;
   }
-}`, "",{"version":3,"sources":["webpack://./src/styles/variables.scss","webpack://./src/styles/header.scss"],"names":[],"mappings":"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","sourceRoot":""}]);
+}`, "",{"version":3,"sources":["webpack://./src/styles/variables.scss","webpack://./src/styles/header.scss"],"names":[],"mappings":"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","sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -771,15 +1134,20 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
 /* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../node_modules/css-loader/dist/runtime/getUrl.js */ "./node_modules/css-loader/dist/runtime/getUrl.js");
+/* harmony import */ var _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2__);
 // Imports
 
 
+
+var ___CSS_LOADER_URL_IMPORT_0___ = new URL(/* asset import */ __webpack_require__(/*! ../assets/background/Irises-Vincent_van_Gogh-web.jpg */ "./src/assets/background/Irises-Vincent_van_Gogh-web.jpg"), __webpack_require__.b);
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
 ___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap);"]);
 ___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Arizonia&display=swap);"]);
 ___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Italianno&display=swap);"]);
 ___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap);"]);
 ___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Spartan:wght@100;200;300;400;500;600;700;800;900&display=swap);"]);
+var ___CSS_LOADER_URL_REPLACEMENT_0___ = _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2___default()(___CSS_LOADER_URL_IMPORT_0___);
 // Module
 ___CSS_LOADER_EXPORT___.push([module.id, `/*--------------------------- Theme Colours ---------------------------*/
 /* Colours */
@@ -861,9 +1229,15 @@ button:hover::after {
 
 /*---------------------------- Common Ends -----------------------------*/
 .home {
-  width: calc(100% - 15vw);
-  margin: 0 auto;
-  border: 1px solid #ffff00;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 6rem 7.5vw;
+  background-image: url(${___CSS_LOADER_URL_REPLACEMENT_0___});
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 .home__bio {
   line-height: 1.25rem;
@@ -875,7 +1249,12 @@ button:hover::after {
   display: flex;
   justify-content: unset;
   align-items: flex-end;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.35);
   padding: 1.5rem 1.5rem 0 1.5rem;
+  max-width: 50rem;
+  background: #fff;
+  color: #000;
 }
 @media (max-width: 576px) {
   .home__bio {
@@ -897,7 +1276,7 @@ button:hover::after {
   margin-top: 0.5rem;
   width: 15rem;
   height: auto;
-}`, "",{"version":3,"sources":["webpack://./src/styles/variables.scss","webpack://./src/styles/home.scss"],"names":[],"mappings":"AAAA,wEAAA;AAEA,YAAA;AAWA,aAAA;AAKA,yEAAA;AAGA,yEAAA;AAEA,+DAAA;AACA,uBAAA;AAMA,aAAA;AAMA,+DAAA;AACA,cAAA;AAMA,gEAAA;AACA,YAAA;AAOA,YAAA;AAOA,yEAAA;AAGA,yEAAA;AAOA,yEAAA;AAGA,yEAAA;AA4EA,yEAAA;AAGA,yEAAA;AAEA;EACI,qBAAA;EACA,oBAAA;EACA,eAAA;EACA,oDA9GM;EA+GN,gBAAA;AC/HJ;;ADkIA;EACI,WA9JI;EA+JJ,qBAAA;AC/HJ;;ADkIA;EACI,kBAAA;EACA,SAAA;EACA,UAAA;EACA,iBAAA;EACA,eAAA;AC/HJ;ADiII;EAjCA,oBAAA;EACA,qBAAA;EACA,oDAxFM;EAyFN,kBAAA;EACA,gBAAA;EACA,WA7II;EA2KA,kBAAA;EACA,UAAA;EACA,gBAAA;EACA,qBAAA;EACA,gBAAA;EACA,WA/KA;EAgLA,kBAAA;EACA,qBAAA;AC1HR;AD4HQ;EACI,WArLJ;AC2DR;AD8HI;EACI,kBAAA;EACA,MAAA;EACA,OAAA;EACA,QAAA;EACA,YAAA;EACA,+BA1LO;EA2LP,oBAAA;EACA,WAAA;AC5HR;ADgIQ;EACI,WAAA;AC9HZ;;ADmIA;EACI,+BAAA;EACA,wBAAA;EACA,qBAAA;AChIJ;;ADmIA,yEAAA;AClNgC;EAC5B,wBAAA;EACA,cAAA;EACA,yBAAA;AAmFJ;AAjFI;EDoIA,oBAAA;EACA,qBAAA;EACA,oDAxFM;EAyFN,kBAAA;EACA,gBAAA;EACA,WA7II;EA2HJ,aAAA;EACA,sBCtHsB;EDuHtB,qBCvH6B;EACzB,+BAAA;AA0FR;ADzBQ;ECpEJ;IAMQ,sBAAA;EA2FV;AACF;AAzFQ;EACI,qBAAA;AA2FZ;AAxFQ;EACI,YAAA;EACA,YAAA;EACA,4CAAA;AA0FZ;AAxFY;EACI,kBAAA;EACA,YAAA;EACA,eAAA;EACA,kBAAA;EACA,YAAA;EACA,YAAA;AA0FhB","sourceRoot":""}]);
+}`, "",{"version":3,"sources":["webpack://./src/styles/variables.scss","webpack://./src/styles/home.scss"],"names":[],"mappings":"AAAA,wEAAA;AAEA,YAAA;AAWA,aAAA;AAKA,yEAAA;AAGA,yEAAA;AAEA,+DAAA;AACA,uBAAA;AAMA,aAAA;AAMA,+DAAA;AACA,cAAA;AAMA,gEAAA;AACA,YAAA;AAOA,YAAA;AAOA,yEAAA;AAGA,yEAAA;AAOA,yEAAA;AAGA,yEAAA;AA4EA,yEAAA;AAGA,yEAAA;AAEA;EACI,qBAAA;EACA,oBAAA;EACA,eAAA;EACA,oDA9GM;EA+GN,gBAAA;AC/HJ;;ADkIA;EACI,WA9JI;EA+JJ,qBAAA;AC/HJ;;ADkIA;EACI,kBAAA;EACA,SAAA;EACA,UAAA;EACA,iBAAA;EACA,eAAA;AC/HJ;ADiII;EAjCA,oBAAA;EACA,qBAAA;EACA,oDAxFM;EAyFN,kBAAA;EACA,gBAAA;EACA,WA7II;EA2KA,kBAAA;EACA,UAAA;EACA,gBAAA;EACA,qBAAA;EACA,gBAAA;EACA,WA/KA;EAgLA,kBAAA;EACA,qBAAA;AC1HR;AD4HQ;EACI,WArLJ;AC2DR;AD8HI;EACI,kBAAA;EACA,MAAA;EACA,OAAA;EACA,QAAA;EACA,YAAA;EACA,+BA1LO;EA2LP,oBAAA;EACA,WAAA;AC5HR;ADgIQ;EACI,WAAA;AC9HZ;;ADmIA;EACI,+BAAA;EACA,wBAAA;EACA,qBAAA;AChIJ;;ADmIA,yEAAA;AClNgC;EDkI5B,aAAA;EACA,sBAAA;EACA,uBCnIqB;EDoIrB,mBCpI6B;EAC7B,mBAAA;EACA,yDAAA;EACA,sBAAA;EACA,2BAAA;EACA,4BAAA;AAsFJ;AApFI;EDiIA,oBAAA;EACA,qBAAA;EACA,oDAxFM;EAyFN,kBAAA;EACA,gBAAA;EACA,WA7II;EA2HJ,aAAA;EACA,sBCnHsB;EDoHtB,qBCpH6B;EACzB,qBAAA;EACA,0CAAA;EACA,+BAAA;EACA,gBAAA;EACA,gBDdA;ECeA,WDdA;AC2GR;ADpCQ;ECjEJ;IAWQ,sBAAA;EA8FV;AACF;AA5FQ;EACI,qBAAA;AA8FZ;AA3FQ;EACI,YAAA;EACA,YAAA;EACA,4CAAA;AA6FZ;AA3FY;EACI,kBAAA;EACA,YAAA;EACA,eAAA;EACA,kBAAA;EACA,YAAA;EACA,YAAA;AA6FhB","sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -1015,8 +1394,7 @@ html {
 }
 
 body {
-  background: linear-gradient(135deg, black, #000033 70%, rgb(131, 58, 180) 100%);
-  background-attachment: fixed;
+  background: #000;
   color: #fff;
   overflow-x: hidden;
 }
@@ -1024,7 +1402,7 @@ body::-webkit-scrollbar {
   width: 0.75rem;
 }
 body::-webkit-scrollbar-track {
-  background: linear-gradient(135deg, black, #000033 70%, rgb(131, 58, 180) 100%);
+  background: #000;
 }
 body::-webkit-scrollbar-thumb {
   border: 1px solid #000;
@@ -1034,17 +1412,19 @@ body::-webkit-scrollbar-thumb {
 .main {
   min-height: 100vh;
 }
-
-.empty {
-  margin: 0 auto;
-  width: calc(100% - 15vw);
-  height: 3rem;
-}
-@media (max-width: 576px) {
-  .empty {
-    height: 1.5rem;
+@media (min-width: 576px) {
+  .main {
+    padding-right: 8rem;
   }
-}`, "",{"version":3,"sources":["webpack://./src/styles/variables.scss","webpack://./src/styles/main.scss"],"names":[],"mappings":"AAAA,wEAAA;AAEA,YAAA;AAWA,aAAA;AAKA,yEAAA;AAGA,yEAAA;AAEA,+DAAA;AACA,uBAAA;AAMA,aAAA;AAMA,+DAAA;AACA,cAAA;AAMA,gEAAA;AACA,YAAA;AAOA,YAAA;AAOA,yEAAA;AAGA,yEAAA;AAOA,yEAAA;AAGA,yEAAA;AA4EA,yEAAA;AAGA,yEAAA;AAEA;EACI,qBAAA;EACA,oBAAA;EACA,eAAA;EACA,oDA9GM;EA+GN,gBAAA;AC/HJ;;ADkIA;EACI,WA9JI;EA+JJ,qBAAA;AC/HJ;;ADkIA;EACI,kBAAA;EACA,SAAA;EACA,UAAA;EACA,iBAAA;EACA,eAAA;AC/HJ;ADiII;EAjCA,oBAAA;EACA,qBAAA;EACA,oDAxFM;EAyFN,kBAAA;EACA,gBAAA;EACA,WA7II;EA2KA,kBAAA;EACA,UAAA;EACA,gBAAA;EACA,qBAAA;EACA,gBAAA;EACA,WA/KA;EAgLA,kBAAA;EACA,qBAAA;AC1HR;AD4HQ;EACI,WArLJ;AC2DR;AD8HI;EACI,kBAAA;EACA,MAAA;EACA,OAAA;EACA,QAAA;EACA,YAAA;EACA,+BA1LO;EA2LP,oBAAA;EACA,WAAA;AC5HR;ADgIQ;EACI,WAAA;AC9HZ;;ADmIA;EACI,+BAAA;EACA,wBAAA;EACA,qBAAA;AChIJ;;ADmIA,yEAAA;AClNgC;;EAE5B,sBAAA;EACA,kCAAA;AAmFJ;;AAhFA;EACI,+EDKK;ECJL,4BAAA;EACA,WDRI;ECSJ,kBAAA;AAmFJ;AAjFI;EACI,cAAA;AAmFR;AAhFI;EACI,+EDLC;ACuFT;AA/EI;EACI,sBAAA;EACA,mBDlBC;ACmGT;;AA7EA;EACI,iBAAA;AAgFJ;;AA7EA;EACI,cAAA;EACA,wBAAA;EACA,YAAA;AAgFJ;ADxCQ;EC3CR;IAMQ,cAAA;EAiFN;AACF","sourceRoot":""}]);
+}
+
+.home,
+.work-section,
+.skills,
+.contact-section,
+.fun {
+  min-height: 100vh;
+}`, "",{"version":3,"sources":["webpack://./src/styles/variables.scss","webpack://./src/styles/main.scss"],"names":[],"mappings":"AAAA,wEAAA;AAEA,YAAA;AAWA,aAAA;AAKA,yEAAA;AAGA,yEAAA;AAEA,+DAAA;AACA,uBAAA;AAMA,aAAA;AAMA,+DAAA;AACA,cAAA;AAMA,gEAAA;AACA,YAAA;AAOA,YAAA;AAOA,yEAAA;AAGA,yEAAA;AAOA,yEAAA;AAGA,yEAAA;AA4EA,yEAAA;AAGA,yEAAA;AAEA;EACI,qBAAA;EACA,oBAAA;EACA,eAAA;EACA,oDA9GM;EA+GN,gBAAA;AC/HJ;;ADkIA;EACI,WA9JI;EA+JJ,qBAAA;AC/HJ;;ADkIA;EACI,kBAAA;EACA,SAAA;EACA,UAAA;EACA,iBAAA;EACA,eAAA;AC/HJ;ADiII;EAjCA,oBAAA;EACA,qBAAA;EACA,oDAxFM;EAyFN,kBAAA;EACA,gBAAA;EACA,WA7II;EA2KA,kBAAA;EACA,UAAA;EACA,gBAAA;EACA,qBAAA;EACA,gBAAA;EACA,WA/KA;EAgLA,kBAAA;EACA,qBAAA;AC1HR;AD4HQ;EACI,WArLJ;AC2DR;AD8HI;EACI,kBAAA;EACA,MAAA;EACA,OAAA;EACA,QAAA;EACA,YAAA;EACA,+BA1LO;EA2LP,oBAAA;EACA,WAAA;AC5HR;ADgIQ;EACI,WAAA;AC9HZ;;ADmIA;EACI,+BAAA;EACA,wBAAA;EACA,qBAAA;AChIJ;;ADmIA,yEAAA;AClNgC;;EAE5B,sBAAA;EACA,kCAAA;AAmFJ;;AAhFA;EACI,gBDLI;ECMJ,WDPI;ECQJ,kBAAA;AAmFJ;AAjFI;EACI,cAAA;AAmFR;AAhFI;EACI,gBDdA;ACgGR;AA/EI;EACI,sBAAA;EACA,mBDjBC;ACkGT;;AA7EA;EACI,iBAAA;AAgFJ;ADPQ;EC1ER;IAIQ,mBAAA;EAiFN;AACF;;AA9EA;;;;;EAKI,iBAAA;AAiFJ","sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -1066,15 +1446,20 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
 /* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../node_modules/css-loader/dist/runtime/getUrl.js */ "./node_modules/css-loader/dist/runtime/getUrl.js");
+/* harmony import */ var _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2__);
 // Imports
 
 
+
+var ___CSS_LOADER_URL_IMPORT_0___ = new URL(/* asset import */ __webpack_require__(/*! ../assets/background/The_Great_Wave_off_Kanagawa.jpg */ "./src/assets/background/The_Great_Wave_off_Kanagawa.jpg"), __webpack_require__.b);
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
 ___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap);"]);
 ___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Arizonia&display=swap);"]);
 ___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Italianno&display=swap);"]);
 ___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap);"]);
 ___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Spartan:wght@100;200;300;400;500;600;700;800;900&display=swap);"]);
+var ___CSS_LOADER_URL_REPLACEMENT_0___ = _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2___default()(___CSS_LOADER_URL_IMPORT_0___);
 // Module
 ___CSS_LOADER_EXPORT___.push([module.id, `/*--------------------------- Theme Colours ---------------------------*/
 /* Colours */
@@ -1155,10 +1540,27 @@ button:hover::after {
 }
 
 /*---------------------------- Common Ends -----------------------------*/
+.work-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: stretch;
+  padding: 4rem 0;
+  gap: 3rem;
+  background-image: url(${___CSS_LOADER_URL_REPLACEMENT_0___});
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
 .pivot {
   margin: 0 auto 2rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.35);
+  padding: 2rem;
   width: calc(100% - 15vw);
-  background-color: linear-gradient(135deg, black, #000033 70%, rgb(131, 58, 180) 100%);
+  background-color: #fff;
+  color: #000;
 }
 @media (max-width: 576px) {
   .pivot {
@@ -1177,18 +1579,20 @@ button:hover::after {
   font-size: 0.75rem;
   font-weight: 300;
   color: #fff;
-  border-radius: 0.5rem;
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
-  padding: 1.5rem 1.5rem 0.75rem 2.25rem;
+  padding: 0 1.5rem;
   flex: 1;
-  background-color: #fff;
   color: #000;
-  transition: all 0.3s ease;
 }
-.pivot__card:hover {
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-  background-color: #ffff00;
-  transform: translateY(-0.25rem);
+.pivot__card:not(:first-child) {
+  border-left: 1px solid rgba(0, 0, 0, 0.15);
+}
+@media (max-width: 576px) {
+  .pivot__card:not(:first-child) {
+    border-left: 0;
+    padding-left: 0;
+    border-top: 1px solid rgba(0, 0, 0, 0.15);
+    padding-top: 1rem;
+  }
 }
 .pivot__card-wrapper {
   display: flex;
@@ -1220,61 +1624,12 @@ button:hover::after {
 .pivot__card ul li {
   margin-bottom: 0.75rem;
 }
-.pivot__card ul li:hover {
-  transition: color 0.3s ease;
-}
-.pivot__caret {
-  line-height: 1.25rem;
-  word-spacing: 0.25rem;
-  font-family: "Spartan", Arial, Helvetica, sans-serif;
-  font-size: 0.75rem;
-  font-weight: 300;
-  color: #fff;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-  margin: 0.75rem auto 0;
-  padding: 0.5rem;
-  width: 6rem;
-  background: #ffff00;
-  font-weight: 600;
-  color: #000;
-  cursor: pointer;
-}
-@media (max-width: 576px) {
-  .pivot__caret {
-    display: none;
-  }
-}
-.pivot__caret.inverse::after {
-  transform: rotate(315deg);
-  margin-top: 0.25rem;
-}
-.pivot__caret::after {
-  position: relative;
-  left: -5px;
-  top: -2px;
-  margin-right: 0.5rem;
-  margin-left: 1rem;
-  border-right: 0.2rem solid #000;
-  border-top: 0.2rem solid #000;
-  display: inline-block;
-  width: 0.5rem;
-  height: 0.5rem;
-  transform: rotate(135deg);
-  content: "";
-}
-.pivot__caret:hover::after {
-  top: 0;
-}
 
 @media (max-width: 768px) {
   .pivot {
     align-items: center;
   }
-}`, "",{"version":3,"sources":["webpack://./src/styles/variables.scss","webpack://./src/styles/pivot.scss"],"names":[],"mappings":"AAAA,wEAAA;AAEA,YAAA;AAWA,aAAA;AAKA,yEAAA;AAGA,yEAAA;AAEA,+DAAA;AACA,uBAAA;AAMA,aAAA;AAMA,+DAAA;AACA,cAAA;AAMA,gEAAA;AACA,YAAA;AAOA,YAAA;AAOA,yEAAA;AAGA,yEAAA;AAOA,yEAAA;AAGA,yEAAA;AA4EA,yEAAA;AAGA,yEAAA;AAEA;EACI,qBAAA;EACA,oBAAA;EACA,eAAA;EACA,oDA9GM;EA+GN,gBAAA;AC/HJ;;ADkIA;EACI,WA9JI;EA+JJ,qBAAA;AC/HJ;;ADkIA;EACI,kBAAA;EACA,SAAA;EACA,UAAA;EACA,iBAAA;EACA,eAAA;AC/HJ;ADiII;EAjCA,oBAAA;EACA,qBAAA;EACA,oDAxFM;EAyFN,kBAAA;EACA,gBAAA;EACA,WA7II;EA2KA,kBAAA;EACA,UAAA;EACA,gBAAA;EACA,qBAAA;EACA,gBAAA;EACA,WA/KA;EAgLA,kBAAA;EACA,qBAAA;AC1HR;AD4HQ;EACI,WArLJ;AC2DR;AD8HI;EACI,kBAAA;EACA,MAAA;EACA,OAAA;EACA,QAAA;EACA,YAAA;EACA,+BA1LO;EA2LP,oBAAA;EACA,WAAA;AC5HR;ADgIQ;EACI,WAAA;AC9HZ;;ADmIA;EACI,+BAAA;EACA,wBAAA;EACA,qBAAA;AChIJ;;ADmIA,yEAAA;AClNgC;EAC5B,mBAAA;EACA,wBAAA;EACA,qFDSK;AC0ET;ADbQ;ECzEwB;IAMxB,gBAAA;EAoFN;AACF;AAlFI;EACI,qBAAA;EACA,eAAA;EACA,cAAA;AAoFR;AAjFI;ED0HA,oBAAA;EACA,qBAAA;EACA,oDAxFM;EAyFN,kBAAA;EACA,gBAAA;EACA,WA7II;ECgBA,qBAAA;EACA,yCAAA;EACA,sCAAA;EACA,OAAA;EACA,sBDpBA;ECqBA,WDpBA;ECqBA,yBAAA;AAwFR;AAtFQ;EACI,yCAAA;EACA,yBDvBH;ECwBG,+BAAA;AAwFZ;AArFQ;ED6FJ,aAAA;EACA,8BC7F0B;ED8F1B,oBC9FyC;EACjC,cAAA;EACA,eAAA;EACA,WAAA;AAyFZ;ADnDQ;EC1CA;IAOQ,sBAAA;EA0Fd;AACF;AAvFQ;ED+FJ,oBAAA;EACA,qBAAA;EACA,oDAxFM;EAyFN,kBAAA;EACA,gBAAA;EACA,WA7II;EC2CI,mBAAA;EACA,cAAA;EACA,eAAA;EACA,gBAAA;EACA,WD9CJ;EC+CI,4BAAA;AA8FZ;AA1FY;EACI,sBAAA;AA4FhB;AA1FgB;EACI,2BAAA;AA4FpB;AAtFI;ED0EA,oBAAA;EACA,qBAAA;EACA,oDAxFM;EAyFN,kBAAA;EACA,gBAAA;EACA,WA7II;EAiIJ,aAAA;EACA,sBAAA;EACA,uBCnEyB;EDoEzB,mBCpEiC;EAC7B,kBAAA;EACA,sBAAA;EACA,eAAA;EACA,WAAA;EACA,mBDlEC;ECmED,gBAAA;EACA,WDtEA;ECuEA,eAAA;AAgGR;ADhGQ;ECVJ;IAaQ,aAAA;EAiGV;AACF;AA/FQ;EACI,yBAAA;EACA,mBAAA;AAiGZ;AA9FQ;EACI,kBAAA;EACA,UAAA;EACA,SAAA;EACA,oBAAA;EACA,iBAAA;EACA,+BAAA;EACA,6BAAA;EACA,qBAAA;EACA,aAAA;EACA,cAAA;EACA,yBAAA;EACA,WAAA;AAgGZ;AA5FY;EACI,MAAA;AA8FhB;;AAvFA;EACI;IACI,mBAAA;EA0FN;AACF","sourceRoot":""}]);
+}`, "",{"version":3,"sources":["webpack://./src/styles/variables.scss","webpack://./src/styles/pivot.scss"],"names":[],"mappings":"AAAA,wEAAA;AAEA,YAAA;AAWA,aAAA;AAKA,yEAAA;AAGA,yEAAA;AAEA,+DAAA;AACA,uBAAA;AAMA,aAAA;AAMA,+DAAA;AACA,cAAA;AAMA,gEAAA;AACA,YAAA;AAOA,YAAA;AAOA,yEAAA;AAGA,yEAAA;AAOA,yEAAA;AAGA,yEAAA;AA4EA,yEAAA;AAGA,yEAAA;AAEA;EACI,qBAAA;EACA,oBAAA;EACA,eAAA;EACA,oDA9GM;EA+GN,gBAAA;AC/HJ;;ADkIA;EACI,WA9JI;EA+JJ,qBAAA;AC/HJ;;ADkIA;EACI,kBAAA;EACA,SAAA;EACA,UAAA;EACA,iBAAA;EACA,eAAA;AC/HJ;ADiII;EAjCA,oBAAA;EACA,qBAAA;EACA,oDAxFM;EAyFN,kBAAA;EACA,gBAAA;EACA,WA7II;EA2KA,kBAAA;EACA,UAAA;EACA,gBAAA;EACA,qBAAA;EACA,gBAAA;EACA,WA/KA;EAgLA,kBAAA;EACA,qBAAA;AC1HR;AD4HQ;EACI,WArLJ;AC2DR;AD8HI;EACI,kBAAA;EACA,MAAA;EACA,OAAA;EACA,QAAA;EACA,YAAA;EACA,+BA1LO;EA2LP,oBAAA;EACA,WAAA;AC5HR;ADgIQ;EACI,WAAA;AC9HZ;;ADmIA;EACI,+BAAA;EACA,wBAAA;EACA,qBAAA;AChIJ;;ADmIA,yEAAA;AClNgC;EDkI5B,aAAA;EACA,sBAAA;EACA,uBCnIqB;EDoIrB,oBCpI6B;EAC7B,eAAA;EACA,SAAA;EACA,yDAAA;EACA,sBAAA;EACA,2BAAA;EACA,4BAAA;AAsFJ;;AAnFA;EACI,mBAAA;EACA,qBAAA;EACA,0CAAA;EACA,aAAA;EACA,wBAAA;EACA,sBDfI;ECgBJ,WDfI;ACqGR;AD9BQ;EC/DR;IAUQ,gBAAA;EAuFN;AACF;AArFI;EACI,qBAAA;EACA,eAAA;EACA,cAAA;AAuFR;AApFI;ED4GA,oBAAA;EACA,qBAAA;EACA,oDAxFM;EAyFN,kBAAA;EACA,gBAAA;EACA,WA7II;EC8BA,iBAAA;EACA,OAAA;EACA,WD/BA;AC0HR;AAzFQ;EACI,0CAAA;AA2FZ;ADtDQ;ECtCA;IAIQ,cAAA;IACA,eAAA;IACA,yCAAA;IACA,iBAAA;EA4Fd;AACF;AAzFQ;ED8EJ,aAAA;EACA,8BC9E0B;ED+E1B,oBC/EyC;EACjC,cAAA;EACA,eAAA;EACA,WAAA;AA6FZ;ADtEQ;EC3BA;IAOQ,sBAAA;EA8Fd;AACF;AA3FQ;EDgFJ,oBAAA;EACA,qBAAA;EACA,oDAxFM;EAyFN,kBAAA;EACA,gBAAA;EACA,WA7II;EC0DI,mBAAA;EACA,cAAA;EACA,eAAA;EACA,gBAAA;EACA,WD7DJ;EC8DI,4BAAA;AAkGZ;AA9FY;EACI,sBAAA;AAgGhB;;AAzFA;EACI;IACI,mBAAA;EA4FN;AACF","sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -1455,15 +1810,20 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
 /* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../node_modules/css-loader/dist/runtime/getUrl.js */ "./node_modules/css-loader/dist/runtime/getUrl.js");
+/* harmony import */ var _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2__);
 // Imports
 
 
+
+var ___CSS_LOADER_URL_IMPORT_0___ = new URL(/* asset import */ __webpack_require__(/*! ../assets/background/Piet_Mondriaan,_1921_-_Composition_en_rouge,_jaune,_bleu_et_noir.jpg */ "./src/assets/background/Piet_Mondriaan,_1921_-_Composition_en_rouge,_jaune,_bleu_et_noir.jpg"), __webpack_require__.b);
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
 ___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap);"]);
 ___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Arizonia&display=swap);"]);
 ___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Italianno&display=swap);"]);
 ___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap);"]);
 ___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Spartan:wght@100;200;300;400;500;600;700;800;900&display=swap);"]);
+var ___CSS_LOADER_URL_REPLACEMENT_0___ = _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2___default()(___CSS_LOADER_URL_IMPORT_0___);
 // Module
 ___CSS_LOADER_EXPORT___.push([module.id, `/*--------------------------- Theme Colours ---------------------------*/
 /* Colours */
@@ -1547,27 +1907,27 @@ button:hover::after {
 .skills {
   display: flex;
   flex-direction: column;
-  justify-content: unset;
+  justify-content: center;
   align-items: center;
-  margin: 0 auto 3rem;
+  padding: 4rem 0;
+  background-image: url(${___CSS_LOADER_URL_REPLACEMENT_0___});
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.skills__panel {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.35);
   padding: 1.5rem;
   width: calc(100% - 15vw);
-  max-height: 40rem;
-  background: rgba(255, 255, 255, 0.1);
-  opacity: 1;
+  background: #fff;
+  color: #000;
   gap: 1.5rem;
-  transition: max-height 0.3s ease-in-out;
-}
-@media (min-width: 576px) {
-  .skills.d-none {
-    margin: 0;
-    padding: 0;
-    max-height: 0;
-    opacity: 0;
-  }
-  .skills.d-none table {
-    display: none;
-  }
 }
 .skills__download .fa {
   margin-right: 0.25rem;
@@ -1581,6 +1941,7 @@ button:hover::after {
   color: #fff;
   font-size: 1.25rem;
   font-weight: 500;
+  color: #000;
 }
 @media (max-width: 576px) {
   .skills__text {
@@ -1595,6 +1956,7 @@ button:hover::after {
   font-weight: 300;
   color: #fff;
   text-align: left;
+  color: #000;
 }
 @media (max-width: 576px) {
   .skills__list {
@@ -1603,11 +1965,11 @@ button:hover::after {
 }
 .skills__list th,
 .skills__list td {
-  border: 1px solid rgba(255, 255, 0, 0.25);
+  border: 1px solid rgba(0, 0, 0, 0.15);
   padding: 0.5rem;
   width: 25%;
   vertical-align: middle;
-}`, "",{"version":3,"sources":["webpack://./src/styles/variables.scss","webpack://./src/styles/skills.scss"],"names":[],"mappings":"AAAA,wEAAA;AAEA,YAAA;AAWA,aAAA;AAKA,yEAAA;AAGA,yEAAA;AAEA,+DAAA;AACA,uBAAA;AAMA,aAAA;AAMA,+DAAA;AACA,cAAA;AAMA,gEAAA;AACA,YAAA;AAOA,YAAA;AAOA,yEAAA;AAGA,yEAAA;AAOA,yEAAA;AAGA,yEAAA;AA4EA,yEAAA;AAGA,yEAAA;AAEA;EACI,qBAAA;EACA,oBAAA;EACA,eAAA;EACA,oDA9GM;EA+GN,gBAAA;AC/HJ;;ADkIA;EACI,WA9JI;EA+JJ,qBAAA;AC/HJ;;ADkIA;EACI,kBAAA;EACA,SAAA;EACA,UAAA;EACA,iBAAA;EACA,eAAA;AC/HJ;ADiII;EAjCA,oBAAA;EACA,qBAAA;EACA,oDAxFM;EAyFN,kBAAA;EACA,gBAAA;EACA,WA7II;EA2KA,kBAAA;EACA,UAAA;EACA,gBAAA;EACA,qBAAA;EACA,gBAAA;EACA,WA/KA;EAgLA,kBAAA;EACA,qBAAA;AC1HR;AD4HQ;EACI,WArLJ;AC2DR;AD8HI;EACI,kBAAA;EACA,MAAA;EACA,OAAA;EACA,QAAA;EACA,YAAA;EACA,+BA1LO;EA2LP,oBAAA;EACA,WAAA;AC5HR;ADgIQ;EACI,WAAA;AC9HZ;;ADmIA;EACI,+BAAA;EACA,wBAAA;EACA,qBAAA;AChIJ;;ADmIA,yEAAA;AClNgC;EDkI5B,aAAA;EACA,sBAAA;EACA,sBCnIqB;EDoIrB,mBCpI4B;EAC5B,mBAAA;EACA,eAAA;EACA,wBAAA;EACA,iBAAA;EACA,oCDEY;ECDZ,UAAA;EACA,WAAA;EACA,uCAAA;AAsFJ;ADIQ;ECxFJ;IAEQ,SAAA;IACA,UAAA;IACA,aAAA;IACA,UAAA;EAsFV;EApFU;IACI,aAAA;EAsFd;AACF;AAlFI;EACI,qBAAA;AAoFR;AAjFI;ED6GA,oBAAA;EACA,qBAAA;EACA,oDAxFM;EAyFN,kBAAA;EACA,gBAAA;EACA,WA7II;EC6BA,kBAAA;EACA,gBAAA;AAwFR;AD9CQ;EC7CJ;IAMQ,aAAA;EAyFV;AACF;AAtFI;EDmGA,oBAAA;EACA,qBAAA;EACA,oDAxFM;EAyFN,kBAAA;EACA,gBAAA;EACA,WA7II;ECuCA,gBAAA;AA6FR;AD5DQ;ECnCJ;IAKQ,aAAA;EA8FV;AACF;AA5FQ;;EAEI,yCAAA;EACA,eAAA;EACA,UAAA;EACA,sBAAA;AA8FZ","sourceRoot":""}]);
+}`, "",{"version":3,"sources":["webpack://./src/styles/variables.scss","webpack://./src/styles/skills.scss"],"names":[],"mappings":"AAAA,wEAAA;AAEA,YAAA;AAWA,aAAA;AAKA,yEAAA;AAGA,yEAAA;AAEA,+DAAA;AACA,uBAAA;AAMA,aAAA;AAMA,+DAAA;AACA,cAAA;AAMA,gEAAA;AACA,YAAA;AAOA,YAAA;AAOA,yEAAA;AAGA,yEAAA;AAOA,yEAAA;AAGA,yEAAA;AA4EA,yEAAA;AAGA,yEAAA;AAEA;EACI,qBAAA;EACA,oBAAA;EACA,eAAA;EACA,oDA9GM;EA+GN,gBAAA;AC/HJ;;ADkIA;EACI,WA9JI;EA+JJ,qBAAA;AC/HJ;;ADkIA;EACI,kBAAA;EACA,SAAA;EACA,UAAA;EACA,iBAAA;EACA,eAAA;AC/HJ;ADiII;EAjCA,oBAAA;EACA,qBAAA;EACA,oDAxFM;EAyFN,kBAAA;EACA,gBAAA;EACA,WA7II;EA2KA,kBAAA;EACA,UAAA;EACA,gBAAA;EACA,qBAAA;EACA,gBAAA;EACA,WA/KA;EAgLA,kBAAA;EACA,qBAAA;AC1HR;AD4HQ;EACI,WArLJ;AC2DR;AD8HI;EACI,kBAAA;EACA,MAAA;EACA,OAAA;EACA,QAAA;EACA,YAAA;EACA,+BA1LO;EA2LP,oBAAA;EACA,WAAA;AC5HR;ADgIQ;EACI,WAAA;AC9HZ;;ADmIA;EACI,+BAAA;EACA,wBAAA;EACA,qBAAA;AChIJ;;ADmIA,yEAAA;AClNgC;EDkI5B,aAAA;EACA,sBAAA;EACA,uBCnIqB;EDoIrB,mBCpI6B;EAC7B,eAAA;EACA,yDAAA;EACA,sBAAA;EACA,2BAAA;EACA,4BAAA;AAsFJ;AApFI;ED0HA,aAAA;EACA,sBAAA;EACA,uBC3HyB;ED4HzB,mBC5HiC;EAC7B,cAAA;EACA,qBAAA;EACA,0CAAA;EACA,eAAA;EACA,wBAAA;EACA,gBDdA;ECeA,WDdA;ECeA,WAAA;AAyFR;AAtFI;EACI,qBAAA;AAwFR;AArFI;EDiHA,oBAAA;EACA,qBAAA;EACA,oDAxFM;EAyFN,kBAAA;EACA,gBAAA;EACA,WA7II;ECyBA,kBAAA;EACA,gBAAA;EACA,WD1BA;ACsHR;AD/CQ;ECjDJ;IAOQ,aAAA;EA6FV;AACF;AA1FI;EDsGA,oBAAA;EACA,qBAAA;EACA,oDAxFM;EAyFN,kBAAA;EACA,gBAAA;EACA,WA7II;ECoCA,gBAAA;EACA,WDpCA;ACqIR;AD9DQ;ECtCJ;IAMQ,aAAA;EAkGV;AACF;AAhGQ;;EAEI,qCAAA;EACA,eAAA;EACA,UAAA;EACA,sBAAA;AAkGZ","sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -1829,6 +2191,8 @@ button:hover::after {
 
 /*---------------------------- Common Ends -----------------------------*/
 .work {
+  margin: 0 auto;
+  width: calc(100% - 15vw);
   overflow: hidden;
 }
 @media (max-width: 576px) {
@@ -1879,7 +2243,7 @@ button:hover::after {
   margin-top: 0.75rem;
   color: #fff;
   text-align: center;
-}`, "",{"version":3,"sources":["webpack://./src/styles/variables.scss","webpack://./src/styles/work.scss"],"names":[],"mappings":"AAAA,wEAAA;AAEA,YAAA;AAWA,aAAA;AAKA,yEAAA;AAGA,yEAAA;AAEA,+DAAA;AACA,uBAAA;AAMA,aAAA;AAMA,+DAAA;AACA,cAAA;AAMA,gEAAA;AACA,YAAA;AAOA,YAAA;AAOA,yEAAA;AAGA,yEAAA;AAOA,yEAAA;AAGA,yEAAA;AA4EA,yEAAA;AAGA,yEAAA;AAEA;EACI,qBAAA;EACA,oBAAA;EACA,eAAA;EACA,oDA9GM;EA+GN,gBAAA;AC/HJ;;ADkIA;EACI,WA9JI;EA+JJ,qBAAA;AC/HJ;;ADkIA;EACI,kBAAA;EACA,SAAA;EACA,UAAA;EACA,iBAAA;EACA,eAAA;AC/HJ;ADiII;EAjCA,oBAAA;EACA,qBAAA;EACA,oDAxFM;EAyFN,kBAAA;EACA,gBAAA;EACA,WA7II;EA2KA,kBAAA;EACA,UAAA;EACA,gBAAA;EACA,qBAAA;EACA,gBAAA;EACA,WA/KA;EAgLA,kBAAA;EACA,qBAAA;AC1HR;AD4HQ;EACI,WArLJ;AC2DR;AD8HI;EACI,kBAAA;EACA,MAAA;EACA,OAAA;EACA,QAAA;EACA,YAAA;EACA,+BA1LO;EA2LP,oBAAA;EACA,WAAA;AC5HR;ADgIQ;EACI,WAAA;AC9HZ;;ADmIA;EACI,+BAAA;EACA,wBAAA;EACA,qBAAA;AChIJ;;ADmIA,yEAAA;AClNgC;EAC5B,gBAAA;AAmFJ;ADXQ;ECzEwB;IAIxB,aAAA;EAoFN;AACF;AAlFI;EACI,wBAAA;EACA,cAAA;EACA,eAAA;EACA,sBDVA;AC8FR;AAlFQ;EACI,sBAAA;EACA,YAAA;EACA,iBAAA;AAoFZ;AAjFQ;EACI,gBAAA;AAmFZ;AAhFQ;EDqGJ,aAAA;EACA,sBCrG0B;EDsG1B,mBCtGiC;EACzB,iBAAA;AAoFZ;AAjFQ;EACI,cAAA;EACA,YAAA;AAmFZ;AAjFY;EACI,YAAA;EACA,gBAAA;EACA,aAAA;AAmFhB;AA/EQ;;EAEI,wBAAA;AAiFZ;AA7EI;ED4FA,oBAAA;EACA,qBAAA;EACA,oDAxFM;EAyFN,kBAAA;EACA,gBAAA;EACA,WA7II;EC8CA,mBAAA;EACA,WD/CA;ECgDA,kBAAA;AAoFR","sourceRoot":""}]);
+}`, "",{"version":3,"sources":["webpack://./src/styles/variables.scss","webpack://./src/styles/work.scss"],"names":[],"mappings":"AAAA,wEAAA;AAEA,YAAA;AAWA,aAAA;AAKA,yEAAA;AAGA,yEAAA;AAEA,+DAAA;AACA,uBAAA;AAMA,aAAA;AAMA,+DAAA;AACA,cAAA;AAMA,gEAAA;AACA,YAAA;AAOA,YAAA;AAOA,yEAAA;AAGA,yEAAA;AAOA,yEAAA;AAGA,yEAAA;AA4EA,yEAAA;AAGA,yEAAA;AAEA;EACI,qBAAA;EACA,oBAAA;EACA,eAAA;EACA,oDA9GM;EA+GN,gBAAA;AC/HJ;;ADkIA;EACI,WA9JI;EA+JJ,qBAAA;AC/HJ;;ADkIA;EACI,kBAAA;EACA,SAAA;EACA,UAAA;EACA,iBAAA;EACA,eAAA;AC/HJ;ADiII;EAjCA,oBAAA;EACA,qBAAA;EACA,oDAxFM;EAyFN,kBAAA;EACA,gBAAA;EACA,WA7II;EA2KA,kBAAA;EACA,UAAA;EACA,gBAAA;EACA,qBAAA;EACA,gBAAA;EACA,WA/KA;EAgLA,kBAAA;EACA,qBAAA;AC1HR;AD4HQ;EACI,WArLJ;AC2DR;AD8HI;EACI,kBAAA;EACA,MAAA;EACA,OAAA;EACA,QAAA;EACA,YAAA;EACA,+BA1LO;EA2LP,oBAAA;EACA,WAAA;AC5HR;ADgIQ;EACI,WAAA;AC9HZ;;ADmIA;EACI,+BAAA;EACA,wBAAA;EACA,qBAAA;AChIJ;;ADmIA,yEAAA;AClNgC;EAC5B,cAAA;EACA,wBAAA;EACA,gBAAA;AAmFJ;ADbQ;ECzEwB;IAMxB,aAAA;EAoFN;AACF;AAlFI;EACI,wBAAA;EACA,cAAA;EACA,eAAA;EACA,sBDZA;ACgGR;AAlFQ;EACI,sBAAA;EACA,YAAA;EACA,iBAAA;AAoFZ;AAjFQ;EACI,gBAAA;AAmFZ;AAhFQ;EDmGJ,aAAA;EACA,sBCnG0B;EDoG1B,mBCpGiC;EACzB,iBAAA;AAoFZ;AAjFQ;EACI,cAAA;EACA,YAAA;AAmFZ;AAjFY;EACI,YAAA;EACA,gBAAA;EACA,aAAA;AAmFhB;AA/EQ;;EAEI,wBAAA;AAiFZ;AA7EI;ED0FA,oBAAA;EACA,qBAAA;EACA,oDAxFM;EAyFN,kBAAA;EACA,gBAAA;EACA,WA7II;ECgDA,mBAAA;EACA,WDjDA;ECkDA,kBAAA;AAoFR","sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -1977,6 +2341,42 @@ module.exports = function (cssWithMappingToString) {
     }
   };
   return list;
+};
+
+/***/ },
+
+/***/ "./node_modules/css-loader/dist/runtime/getUrl.js"
+/*!********************************************************!*\
+  !*** ./node_modules/css-loader/dist/runtime/getUrl.js ***!
+  \********************************************************/
+(module) {
+
+"use strict";
+
+
+module.exports = function (url, options) {
+  if (!options) {
+    options = {};
+  }
+  if (!url) {
+    return url;
+  }
+  url = String(url.__esModule ? url.default : url);
+
+  // If url is already wrapped in quotes, remove them
+  if (/^['"].*['"]$/.test(url)) {
+    url = url.slice(1, -1);
+  }
+  if (options.hash) {
+    url += options.hash;
+  }
+
+  // Should url be wrapped?
+  // See https://drafts.csswg.org/css-values-3/#urls
+  if (/["'() \t\n]|(%20)/.test(url) || options.needQuotes) {
+    return "\"".concat(url.replace(/"/g, '\\"').replace(/\n/g, "\\n"), "\"");
+  }
+  return url;
 };
 
 /***/ },
@@ -15865,6 +16265,61 @@ var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js
 
 /***/ },
 
+/***/ "./src/styles/fun.scss"
+/*!*****************************!*\
+  !*** ./src/styles/fun.scss ***!
+  \*****************************/
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js");
+/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _node_modules_style_loader_dist_runtime_styleDomAPI_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! !../../node_modules/style-loader/dist/runtime/styleDomAPI.js */ "./node_modules/style-loader/dist/runtime/styleDomAPI.js");
+/* harmony import */ var _node_modules_style_loader_dist_runtime_styleDomAPI_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_styleDomAPI_js__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _node_modules_style_loader_dist_runtime_insertBySelector_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! !../../node_modules/style-loader/dist/runtime/insertBySelector.js */ "./node_modules/style-loader/dist/runtime/insertBySelector.js");
+/* harmony import */ var _node_modules_style_loader_dist_runtime_insertBySelector_js__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_insertBySelector_js__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _node_modules_style_loader_dist_runtime_setAttributesWithoutAttributes_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! !../../node_modules/style-loader/dist/runtime/setAttributesWithoutAttributes.js */ "./node_modules/style-loader/dist/runtime/setAttributesWithoutAttributes.js");
+/* harmony import */ var _node_modules_style_loader_dist_runtime_setAttributesWithoutAttributes_js__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_setAttributesWithoutAttributes_js__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _node_modules_style_loader_dist_runtime_insertStyleElement_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! !../../node_modules/style-loader/dist/runtime/insertStyleElement.js */ "./node_modules/style-loader/dist/runtime/insertStyleElement.js");
+/* harmony import */ var _node_modules_style_loader_dist_runtime_insertStyleElement_js__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_insertStyleElement_js__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _node_modules_style_loader_dist_runtime_styleTagTransform_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! !../../node_modules/style-loader/dist/runtime/styleTagTransform.js */ "./node_modules/style-loader/dist/runtime/styleTagTransform.js");
+/* harmony import */ var _node_modules_style_loader_dist_runtime_styleTagTransform_js__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_styleTagTransform_js__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var _node_modules_css_loader_dist_cjs_js_node_modules_sass_loader_dist_cjs_js_ruleSet_1_rules_0_use_2_fun_scss__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! !!../../node_modules/css-loader/dist/cjs.js!../../node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[0].use[2]!./fun.scss */ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[0].use[2]!./src/styles/fun.scss");
+
+      
+      
+      
+      
+      
+      
+      
+      
+      
+
+var options = {};
+
+options.styleTagTransform = (_node_modules_style_loader_dist_runtime_styleTagTransform_js__WEBPACK_IMPORTED_MODULE_5___default());
+options.setAttributes = (_node_modules_style_loader_dist_runtime_setAttributesWithoutAttributes_js__WEBPACK_IMPORTED_MODULE_3___default());
+
+      options.insert = _node_modules_style_loader_dist_runtime_insertBySelector_js__WEBPACK_IMPORTED_MODULE_2___default().bind(null, "head");
+    
+options.domAPI = (_node_modules_style_loader_dist_runtime_styleDomAPI_js__WEBPACK_IMPORTED_MODULE_1___default());
+options.insertStyleElement = (_node_modules_style_loader_dist_runtime_insertStyleElement_js__WEBPACK_IMPORTED_MODULE_4___default());
+
+var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default()(_node_modules_css_loader_dist_cjs_js_node_modules_sass_loader_dist_cjs_js_ruleSet_1_rules_0_use_2_fun_scss__WEBPACK_IMPORTED_MODULE_6__["default"], options);
+
+
+
+
+       /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_css_loader_dist_cjs_js_node_modules_sass_loader_dist_cjs_js_ruleSet_1_rules_0_use_2_fun_scss__WEBPACK_IMPORTED_MODULE_6__["default"] && _node_modules_css_loader_dist_cjs_js_node_modules_sass_loader_dist_cjs_js_ruleSet_1_rules_0_use_2_fun_scss__WEBPACK_IMPORTED_MODULE_6__["default"].locals ? _node_modules_css_loader_dist_cjs_js_node_modules_sass_loader_dist_cjs_js_ruleSet_1_rules_0_use_2_fun_scss__WEBPACK_IMPORTED_MODULE_6__["default"].locals : undefined);
+
+
+/***/ },
+
 /***/ "./src/styles/header.scss"
 /*!********************************!*\
   !*** ./src/styles/header.scss ***!
@@ -16589,6 +17044,61 @@ module.exports = __webpack_require__.p + "Nithila_Resume.pdf";
 
 /***/ },
 
+/***/ "./src/assets/background/1665_Girl_with_a_Pearl_Earring.jpg"
+/*!******************************************************************!*\
+  !*** ./src/assets/background/1665_Girl_with_a_Pearl_Earring.jpg ***!
+  \******************************************************************/
+(module, __unused_webpack_exports, __webpack_require__) {
+
+"use strict";
+module.exports = __webpack_require__.p + "1665_Girl_with_a_Pearl_Earring.jpg";
+
+/***/ },
+
+/***/ "./src/assets/background/Irises-Vincent_van_Gogh-web.jpg"
+/*!***************************************************************!*\
+  !*** ./src/assets/background/Irises-Vincent_van_Gogh-web.jpg ***!
+  \***************************************************************/
+(module, __unused_webpack_exports, __webpack_require__) {
+
+"use strict";
+module.exports = __webpack_require__.p + "Irises-Vincent_van_Gogh-web.jpg";
+
+/***/ },
+
+/***/ "./src/assets/background/Michelangelo_-_Creation_of_Adam_(cropped).jpg"
+/*!*****************************************************************************!*\
+  !*** ./src/assets/background/Michelangelo_-_Creation_of_Adam_(cropped).jpg ***!
+  \*****************************************************************************/
+(module, __unused_webpack_exports, __webpack_require__) {
+
+"use strict";
+module.exports = __webpack_require__.p + "Michelangelo_-_Creation_of_Adam_(cropped).jpg";
+
+/***/ },
+
+/***/ "./src/assets/background/Piet_Mondriaan,_1921_-_Composition_en_rouge,_jaune,_bleu_et_noir.jpg"
+/*!****************************************************************************************************!*\
+  !*** ./src/assets/background/Piet_Mondriaan,_1921_-_Composition_en_rouge,_jaune,_bleu_et_noir.jpg ***!
+  \****************************************************************************************************/
+(module, __unused_webpack_exports, __webpack_require__) {
+
+"use strict";
+module.exports = __webpack_require__.p + "Piet_Mondriaan,_1921_-_Composition_en_rouge,_jaune,_bleu_et_noir.jpg";
+
+/***/ },
+
+/***/ "./src/assets/background/The_Great_Wave_off_Kanagawa.jpg"
+/*!***************************************************************!*\
+  !*** ./src/assets/background/The_Great_Wave_off_Kanagawa.jpg ***!
+  \***************************************************************/
+(module, __unused_webpack_exports, __webpack_require__) {
+
+"use strict";
+module.exports = __webpack_require__.p + "The_Great_Wave_off_Kanagawa.jpg";
+
+/***/ },
+
 /***/ "./src/assets/personal-pictures/1.png"
 /*!********************************************!*\
   !*** ./src/assets/personal-pictures/1.png ***!
@@ -16797,6 +17307,9 @@ module.exports = __webpack_require__.p + "linkedin.png";
 /******/ 		return module.exports;
 /******/ 	}
 /******/ 	
+/******/ 	// expose the modules object (__webpack_modules__)
+/******/ 	__webpack_require__.m = __webpack_modules__;
+/******/ 	
 /************************************************************************/
 /******/ 	/* webpack/runtime/compat get default export */
 /******/ 	(() => {
@@ -16888,6 +17401,32 @@ module.exports = __webpack_require__.p + "linkedin.png";
 /******/ 		__webpack_require__.p = scriptUrl;
 /******/ 	})();
 /******/ 	
+/******/ 	/* webpack/runtime/jsonp chunk loading */
+/******/ 	(() => {
+/******/ 		__webpack_require__.b = (typeof document !== 'undefined' && document.baseURI) || self.location.href;
+/******/ 		
+/******/ 		// object to store loaded and loading chunks
+/******/ 		// undefined = chunk not loaded, null = chunk preloaded/prefetched
+/******/ 		// [resolve, reject, Promise] = chunk loading, 0 = chunk loaded
+/******/ 		const installedChunks = {
+/******/ 			"bundle": 0
+/******/ 		};
+/******/ 		
+/******/ 		// no chunk on demand loading
+/******/ 		
+/******/ 		// no prefetching
+/******/ 		
+/******/ 		// no preloaded
+/******/ 		
+/******/ 		// no HMR
+/******/ 		
+/******/ 		// no HMR manifest
+/******/ 		
+/******/ 		// no on chunks loaded
+/******/ 		
+/******/ 		// no jsonp function
+/******/ 	})();
+/******/ 	
 /******/ 	/* webpack/runtime/nonce */
 /******/ 	(() => {
 /******/ 		__webpack_require__.nc = undefined;
@@ -16912,30 +17451,34 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _styles_skills_scss__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./styles/skills.scss */ "./src/styles/skills.scss");
 /* harmony import */ var _styles_contact_scss__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./styles/contact.scss */ "./src/styles/contact.scss");
 /* harmony import */ var _styles_work_scss__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./styles/work.scss */ "./src/styles/work.scss");
-/* harmony import */ var _javascript_carousel_js__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./javascript/carousel.js */ "./src/javascript/carousel.js");
-/* harmony import */ var _javascript_menu_js__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./javascript/menu.js */ "./src/javascript/menu.js");
-/* harmony import */ var _javascript_menu_js__WEBPACK_IMPORTED_MODULE_11___default = /*#__PURE__*/__webpack_require__.n(_javascript_menu_js__WEBPACK_IMPORTED_MODULE_11__);
-/* harmony import */ var _javascript_download_js__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./javascript/download.js */ "./src/javascript/download.js");
-/* harmony import */ var _javascript_download_js__WEBPACK_IMPORTED_MODULE_12___default = /*#__PURE__*/__webpack_require__.n(_javascript_download_js__WEBPACK_IMPORTED_MODULE_12__);
-/* harmony import */ var _javascript_form_js__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./javascript/form.js */ "./src/javascript/form.js");
-/* harmony import */ var _javascript_form_js__WEBPACK_IMPORTED_MODULE_13___default = /*#__PURE__*/__webpack_require__.n(_javascript_form_js__WEBPACK_IMPORTED_MODULE_13__);
-/* harmony import */ var _assets_personal_pictures_1_png__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./assets/personal-pictures/1.png */ "./src/assets/personal-pictures/1.png");
-/* harmony import */ var _assets_personal_pictures_2_jpg__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./assets/personal-pictures/2.jpg */ "./src/assets/personal-pictures/2.jpg");
-/* harmony import */ var _assets_personal_pictures_sp1_png__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./assets/personal-pictures/sp1.png */ "./src/assets/personal-pictures/sp1.png");
-/* harmony import */ var _assets_social_logos_instagram_png__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./assets/social-logos/instagram.png */ "./src/assets/social-logos/instagram.png");
-/* harmony import */ var _assets_social_logos_letterboxd_svg__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./assets/social-logos/letterboxd.svg */ "./src/assets/social-logos/letterboxd.svg");
-/* harmony import */ var _assets_social_logos_linkedin_png__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./assets/social-logos/linkedin.png */ "./src/assets/social-logos/linkedin.png");
-/* harmony import */ var _assets_project_logos_canopygrowth_png__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./assets/project-logos/canopygrowth.png */ "./src/assets/project-logos/canopygrowth.png");
-/* harmony import */ var _assets_project_logos_dupont_png__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./assets/project-logos/dupont.png */ "./src/assets/project-logos/dupont.png");
-/* harmony import */ var _assets_project_logos_eon_png__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./assets/project-logos/eon.png */ "./src/assets/project-logos/eon.png");
-/* harmony import */ var _assets_project_logos_equinix_png__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ./assets/project-logos/equinix.png */ "./src/assets/project-logos/equinix.png");
-/* harmony import */ var _assets_project_logos_myntra_png__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ./assets/project-logos/myntra.png */ "./src/assets/project-logos/myntra.png");
-/* harmony import */ var _assets_project_logos_tadigital_png__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ./assets/project-logos/tadigital.png */ "./src/assets/project-logos/tadigital.png");
-/* harmony import */ var _assets_project_logos_thoughtworks_png__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! ./assets/project-logos/thoughtworks.png */ "./src/assets/project-logos/thoughtworks.png");
-/* harmony import */ var _assets_project_logos_accenture_png__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! ./assets/project-logos/accenture.png */ "./src/assets/project-logos/accenture.png");
-/* harmony import */ var _assets_project_logos_bt_png__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! ./assets/project-logos/bt.png */ "./src/assets/project-logos/bt.png");
-/* harmony import */ var _assets_project_logos_logo_png__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(/*! ./assets/project-logos/logo.png */ "./src/assets/project-logos/logo.png");
-/* harmony import */ var _assets_Nithila_Resume_pdf__WEBPACK_IMPORTED_MODULE_30__ = __webpack_require__(/*! ./assets/Nithila_Resume.pdf */ "./src/assets/Nithila_Resume.pdf");
+/* harmony import */ var _styles_fun_scss__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./styles/fun.scss */ "./src/styles/fun.scss");
+/* harmony import */ var _javascript_carousel_js__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./javascript/carousel.js */ "./src/javascript/carousel.js");
+/* harmony import */ var _javascript_menu_js__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./javascript/menu.js */ "./src/javascript/menu.js");
+/* harmony import */ var _javascript_menu_js__WEBPACK_IMPORTED_MODULE_12___default = /*#__PURE__*/__webpack_require__.n(_javascript_menu_js__WEBPACK_IMPORTED_MODULE_12__);
+/* harmony import */ var _javascript_download_js__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./javascript/download.js */ "./src/javascript/download.js");
+/* harmony import */ var _javascript_download_js__WEBPACK_IMPORTED_MODULE_13___default = /*#__PURE__*/__webpack_require__.n(_javascript_download_js__WEBPACK_IMPORTED_MODULE_13__);
+/* harmony import */ var _javascript_form_js__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./javascript/form.js */ "./src/javascript/form.js");
+/* harmony import */ var _javascript_form_js__WEBPACK_IMPORTED_MODULE_14___default = /*#__PURE__*/__webpack_require__.n(_javascript_form_js__WEBPACK_IMPORTED_MODULE_14__);
+/* harmony import */ var _javascript_fun_js__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./javascript/fun.js */ "./src/javascript/fun.js");
+/* harmony import */ var _javascript_fun_js__WEBPACK_IMPORTED_MODULE_15___default = /*#__PURE__*/__webpack_require__.n(_javascript_fun_js__WEBPACK_IMPORTED_MODULE_15__);
+/* harmony import */ var _assets_background_Irises_Vincent_van_Gogh_web_jpg__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./assets/background/Irises-Vincent_van_Gogh-web.jpg */ "./src/assets/background/Irises-Vincent_van_Gogh-web.jpg");
+/* harmony import */ var _assets_personal_pictures_1_png__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./assets/personal-pictures/1.png */ "./src/assets/personal-pictures/1.png");
+/* harmony import */ var _assets_personal_pictures_2_jpg__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./assets/personal-pictures/2.jpg */ "./src/assets/personal-pictures/2.jpg");
+/* harmony import */ var _assets_personal_pictures_sp1_png__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./assets/personal-pictures/sp1.png */ "./src/assets/personal-pictures/sp1.png");
+/* harmony import */ var _assets_social_logos_instagram_png__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./assets/social-logos/instagram.png */ "./src/assets/social-logos/instagram.png");
+/* harmony import */ var _assets_social_logos_letterboxd_svg__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./assets/social-logos/letterboxd.svg */ "./src/assets/social-logos/letterboxd.svg");
+/* harmony import */ var _assets_social_logos_linkedin_png__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./assets/social-logos/linkedin.png */ "./src/assets/social-logos/linkedin.png");
+/* harmony import */ var _assets_project_logos_canopygrowth_png__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ./assets/project-logos/canopygrowth.png */ "./src/assets/project-logos/canopygrowth.png");
+/* harmony import */ var _assets_project_logos_dupont_png__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ./assets/project-logos/dupont.png */ "./src/assets/project-logos/dupont.png");
+/* harmony import */ var _assets_project_logos_eon_png__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ./assets/project-logos/eon.png */ "./src/assets/project-logos/eon.png");
+/* harmony import */ var _assets_project_logos_equinix_png__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! ./assets/project-logos/equinix.png */ "./src/assets/project-logos/equinix.png");
+/* harmony import */ var _assets_project_logos_myntra_png__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! ./assets/project-logos/myntra.png */ "./src/assets/project-logos/myntra.png");
+/* harmony import */ var _assets_project_logos_tadigital_png__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! ./assets/project-logos/tadigital.png */ "./src/assets/project-logos/tadigital.png");
+/* harmony import */ var _assets_project_logos_thoughtworks_png__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(/*! ./assets/project-logos/thoughtworks.png */ "./src/assets/project-logos/thoughtworks.png");
+/* harmony import */ var _assets_project_logos_accenture_png__WEBPACK_IMPORTED_MODULE_30__ = __webpack_require__(/*! ./assets/project-logos/accenture.png */ "./src/assets/project-logos/accenture.png");
+/* harmony import */ var _assets_project_logos_bt_png__WEBPACK_IMPORTED_MODULE_31__ = __webpack_require__(/*! ./assets/project-logos/bt.png */ "./src/assets/project-logos/bt.png");
+/* harmony import */ var _assets_project_logos_logo_png__WEBPACK_IMPORTED_MODULE_32__ = __webpack_require__(/*! ./assets/project-logos/logo.png */ "./src/assets/project-logos/logo.png");
+/* harmony import */ var _assets_Nithila_Resume_pdf__WEBPACK_IMPORTED_MODULE_33__ = __webpack_require__(/*! ./assets/Nithila_Resume.pdf */ "./src/assets/Nithila_Resume.pdf");
 /* Styles */
 
 
@@ -16948,7 +17491,9 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
 /* JavaScript */
+
 
 
 
@@ -16972,8 +17517,9 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
 })();
 
 /******/ })()
 ;
-//# sourceMappingURL=bundle6d1d50d6964d47851e91.js.map
+//# sourceMappingURL=bundle873dc0a6c8ffbf5e2d23.js.map

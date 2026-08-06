@@ -1,3 +1,13 @@
+.contact-section {
+    @include flex-column(center, stretch);
+    padding: 4rem 0;
+    gap: 1.5rem;
+    background-image: url('../assets/background/Michelangelo_-_Creation_of_Adam_(cropped).jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
 .contact {
     margin: 3rem auto 1.5rem;
     padding: 1.5rem 7.5vw;

@@ -1,4 +1,6 @@
 .work {
+    margin: 0 auto;
+    width: calc(100% - 15vw);
     overflow: hidden;
 
     @include media-breakpoint-down($sm) {

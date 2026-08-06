@@ -9,14 +9,18 @@ import './styles/pivot.scss'
 import './styles/skills.scss'
 import './styles/contact.scss'
 import './styles/work.scss'
+import './styles/fun.scss'
 
 /* JavaScript */
 import './javascript/carousel.js'
 import './javascript/menu.js'
 import './javascript/download.js'
 import './javascript/form.js'
+import './javascript/fun.js'
 
 /* Assets */
+import './assets/background/Irises-Vincent_van_Gogh-web.jpg'
+
 import './assets/personal-pictures/1.png'
 import './assets/personal-pictures/2.jpg'
 import './assets/personal-pictures/sp1.png'

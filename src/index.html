@@ -26,7 +26,9 @@
                 <ul class="header__navigation-links d-none">
                     <li><a href="#home">Home</a></li>
                     <li><a href="#work">Work</a></li>
+                    <li><a href="#skills">Skills</a></li>
                     <li><a href="#contact">Contact</a></li>
+                    <li><a href="#fun">Fun</a></li>
                 </ul>
             </div>
         </header>
@@ -50,114 +52,153 @@
                 <div class="home__bio-picture"><img src="sp1.png"></div>
             </div>
         </section>
-        <section class="empty" id="work"></section>
-        <section class="pivot">
-            <h2 class="pivot__text">From concept to execution, driving results and not just output!</h2>
-            <div class="pivot__card-wrapper">
-                <div class="pivot__card">
-                    <p class="pivot__card__text">How I lead change</p>
-                    <ul class="pivot__card__bullets">
-                        <li>Align product vision with business & market goals</li>
-                        <li>Develop user-centric, scalable solutions</li>
-                        <li>Lead cross-functional teams</li>
-                    </ul>
+        <section class="work-section" id="work">
+            <div class="pivot">
+                <h2 class="pivot__text">From concept to execution, driving results and not just output!</h2>
+                <div class="pivot__card-wrapper">
+                    <div class="pivot__card">
+                        <p class="pivot__card__text">How I lead change</p>
+                        <ul class="pivot__card__bullets">
+                            <li>Align product vision with business & market goals</li>
+                            <li>Develop user-centric, scalable solutions</li>
+                            <li>Lead cross-functional teams</li>
+                        </ul>
+                    </div>
+                    <div class="pivot__card">
+                        <p class="pivot__card__text">How I leverage expertise</p>
+                        <ul class="pivot__card__bullets">
+                            <li>Agile Scrum + JIRA</li>
+                            <li>UI/UX experience</li>
+                            <li>Business intelligence tools</li>
+                        </ul>
+                    </div>
+                    <div class="pivot__card">
+                        <p class="pivot__card__text">How you'll thrive</p>
+                        <ul class="pivot__card__bullets">
+                            <li>Increased user engagement & retention</li>
+                            <li>Fast, iterative releases</li>
+                            <li>Data-driven decision making</li>
+                        </ul>
+                    </div>
                 </div>
-                <div class="pivot__card">
-                    <p class="pivot__card__text">How I leverage expertise</p>
-                    <ul class="pivot__card__bullets">
-                        <li>Agile Scrum + JIRA</li>
-                        <li>UI/UX experience</li>
-                        <li>Business intelligence tools</li>
-                    </ul>
+            </div>
+
+            <div class="work">
+                <div class="work__carousel">
+                    <img src="bt.png">
+                    <img src="accenture.png">
+                    <img src="canopygrowth.png">
+                    <img src="dupont.png">
+                    <img src="eon.png">
+                    <img src="equinix.png">
+                    <img src="myntra.png">
+                    <img src="tadigital.png">
+                    <img src="thoughtworks.png">
                 </div>
-                <div class="pivot__card">
-                    <p class="pivot__card__text">How you'll thrive</p>
-                    <ul class="pivot__card__bullets">
-                        <li>Increased user engagement & retention</li>
-                        <li>Fast, iterative releases</li>
-                        <li>Data-driven decision making</li>
-                    </ul>
+                <p>Projects I've worked on</p>
+            </div>
+        </section>
+
+        <section class="skills" id="skills">
+            <div class="skills__panel">
+                <h3 class="skills__text">My skills</h3>
+                <table class="skills__list">
+                    <tr>
+                        <th>Product management</th>
+                        <th>Stakeholder management</th>
+                        <th>Feature prioritization & backlog management</th>
+                        <th>Risk management</th>
+                    </tr>
+                    <tr>
+                        <th>Root cause analysis</th>
+                        <th>Cross-functional collaboration</th>
+                        <th>Sprint planning & exceution</th>
+                        <th>Conflict resolution</th>
+                    </tr>
+                    <tr>
+                        <th>Roadmap planning</th>
+                        <th>Agile Scrum</th>
+                        <th>User story creation, mapping & refinement</th>
+                        <th>Analytics & KPIs, SQL</th>
+                    </tr>
+                    <tr>
+                        <th>Go-to-market strategy</th>
+                        <th>Jira & Confluence</th>
+                        <th>Continuous & iterative improvement</th>
+                        <th>Reports + dashboards: PowerBI, Tableau</th>
+                    </tr>
+                    <tr>
+                        <th>Customer research</th>
+                        <th>Figma, Adobe XD, InVision</th>
+                        <th>Quality assurance</th>
+                        <th>Frontend developer expertise</th>
+                    </tr>
+                </table>
+
+                <button class="skills__download"><span><i class="fa fa-download"></i>Download resume</span></button>
+            </div>
+        </section>
+
+        <section class="contact-section" id="contact">
+            <div class="contact">
+                <h2 class="contact__text">Get in touch!</h2>
+                <div class="contact__input-wrapper">
+                    <input type="text" id="contactName" class="contact__input__name" placeholder="Name">
+                    <input type="email" id="contactEmail" class="contact__input__name" placeholder="E-mail">
+                    <input type="tel" id="contactPhone" class="contact__input__name" placeholder="Phone number">
+                </div>
+                <div class="contact__input-wrapper">
+                    <textarea id="contactQuery" class="contact__input__query"
+                        placeholder="Enter your query and I shall reach out to you!"></textarea>
+                    <button class="contact__input__button"><span>Contact me :D</span></button>
                 </div>
             </div>
-            <div class="pivot__caret">
-                <p>Learn more</p>
-            </div>
+
+            <footer class="footer">
+                <p>You can also reach out to me on LinkedIn</p>
+                <ul class="footer__social-links">
+                    <li><a href="https://www.linkedin.com/in/nithilareddygaddam/" target="_blank" rel="noopener noreferrer"><img src="linkedin.png"></a></li>
+                </ul>
+            </footer>
         </section>
 
-        <section class="skills d-none">
-            <h3 class="skills__text">My skills</h3>
-            <table class="skills__list">
-                <tr>
-                    <th>Product management</th>
-                    <th>Stakeholder management</th>
-                    <th>Feature prioritization & backlog management</th>
-                    <th>Risk management</th>
-                </tr>
-                <tr>
-                    <th>Root cause analysis</th>
-                    <th>Cross-functional collaboration</th>
-                    <th>Sprint planning & exceution</th>
-                    <th>Conflict resolution</th>
-                </tr>
-                <tr>
-                    <th>Roadmap planning</th>
-                    <th>Agile Scrum</th>
-                    <th>User story creation, mapping & refinement</th>
-                    <th>Analytics & KPIs, SQL</th>
-                </tr>
-                <tr>
-                    <th>Go-to-market strategy</th>
-                    <th>Jira & Confluence</th>
-                    <th>Continuous & iterative improvement</th>
-                    <th>Reports + dashboards: PowerBI, Tableau</th>
-                </tr>
-                <tr>
-                    <th>Customer research</th>
-                    <th>Figma, Adobe XD, InVision</th>
-                    <th>Quality assurance</th>
-                    <th>Frontend developer expertise</th>
-                </tr>
-            </table>
-
-            <button class="skills__download"><span><i class="fa fa-download"></i>Download resume</span></button>
-        </section>
-
-        <section class="work">
-            <div class="work__carousel">
-                <img src="bt.png">
-                <img src="accenture.png">
-                <img src="canopygrowth.png">
-                <img src="dupont.png">
-                <img src="eon.png">
-                <img src="equinix.png">
-                <img src="myntra.png">
-                <img src="tadigital.png">
-                <img src="thoughtworks.png">
-            </div>
-            <p>Projects I've worked on</p>
-            <div class="work__download-resume"></div>
-        </section>
-
-        <section class="contact" id="contact">
-            <h2 class="contact__text">Get in touch!</h2>
-            <div class="contact__input-wrapper">
-                <input type="text" id="contactName" class="contact__input__name" placeholder="Name">
-                <input type="email" id="contactEmail" class="contact__input__name" placeholder="E-mail">
-                <input type="tel" id="contactPhone" class="contact__input__name" placeholder="Phone number">
-            </div>
-            <div class="contact__input-wrapper">
-                <textarea id="contactQuery" class="contact__input__query"
-                    placeholder="Enter your query and I shall reach out to you!"></textarea>
-                <button class="contact__input__button"><span>Contact me :D</span></button>
-            </div>
-        </section>
-
-        <footer class="footer">
-            <p>You can also reach out to me on LinkedIn</p>
-            <ul class="footer__social-links">
-                <li><a href="https://www.linkedin.com/in/nithilareddygaddam/" target="_blank" rel="noopener noreferrer"><img src="linkedin.png"></a></li>
+        <section class="fun" id="fun">
+            <h2 class="fun__text">A few things I love</h2>
+            <ul class="fun__links">
+                <li>
+                    <a class="fun__link" href="#" target="_blank" rel="noopener noreferrer">
+                        <img src="letterboxd.svg">
+                        <span>Movies</span>
+                    </a>
+                </li>
+                <li>
+                    <a class="fun__link" href="#" target="_blank" rel="noopener noreferrer">
+                        <i class="fa-brands fa-spotify"></i>
+                        <span>Music</span>
+                    </a>
+                </li>
+                <li>
+                    <a class="fun__link" href="#" target="_blank" rel="noopener noreferrer">
+                        <img src="instagram.png">
+                        <span>Instagram</span>
+                    </a>
+                </li>
             </ul>
-        </footer>
+
+            <div class="fun__section">
+                <h3 class="fun__subheading">Top movies of all time</h3>
+                <ul class="fun__movies" id="funMovies">
+                    <li class="fun__status">Loading&hellip;</li>
+                </ul>
+            </div>
+
+            <div class="fun__section">
+                <h3 class="fun__subheading">Most played songs (last ~4 weeks)</h3>
+                <ul class="fun__tracks" id="funTracks">
+                    <li class="fun__status">Loading&hellip;</li>
+                </ul>
+            </div>
+        </section>
     </div>
 </body>
 

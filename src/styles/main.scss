@@ -5,8 +5,7 @@ html {
 }
 
 body {
-    background: $sunset;
-    background-attachment: fixed;
+    background: $black;
     color: $white;
     overflow-x: hidden;
 
@@ -15,7 +14,7 @@ body {
     }
 
     &::-webkit-scrollbar-track {
-        background: $sunset;
+        background: $black;
     }
 
     &::-webkit-scrollbar-thumb {
@@ -26,14 +25,16 @@ body {
 
 .main {
     min-height: 100vh;
+
+    @include media-breakpoint-up($sm) {
+        padding-right: 8rem;
+    }
 }
 
-.empty {
-    margin: 0 auto;
-    width: calc(100% - 15vw);
-    height: 3rem;
-
-    @include media-breakpoint-down($sm) {
-        height: 1.5rem;
-    }
+.home,
+.work-section,
+.skills,
+.contact-section,
+.fun {
+    min-height: 100vh;
 }
