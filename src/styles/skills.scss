@@ -1,6 +1,6 @@
 .skills {
     @include flex-column(center, center);
-    padding: 4rem 0;
+    padding: var(--section-padding);
     background-image: url('../assets/background/Piet_Mondriaan,_1921_-_Composition_en_rouge,_jaune,_bleu_et_noir.jpg');
     background-size: cover;
     background-position: center;
@@ -8,11 +8,10 @@
 
     &__panel {
         @include flex-column(center, center);
-        margin: 0 auto;
+        width: 100%;
         border-radius: 0.5rem;
         box-shadow: 0 4px 24px rgba(0, 0, 0, 0.35);
         padding: 1.5rem;
-        width: calc(100% - 15vw);
         background: $white;
         color: $black;
         gap: 1.5rem;

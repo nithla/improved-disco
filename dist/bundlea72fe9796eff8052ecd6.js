@@ -234,9 +234,11 @@ var ___CSS_LOADER_URL_IMPORT_0___ = new URL(/* asset import */ __webpack_require
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
 ___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap);"]);
 ___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Arizonia&display=swap);"]);
+___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Simonetta:ital,wght@0,400;0,900;1,400;1,900&display=swap);"]);
 ___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Italianno&display=swap);"]);
 ___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap);"]);
 ___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Spartan:wght@100;200;300;400;500;600;700;800;900&display=swap);"]);
+___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&display=swap);"]);
 var ___CSS_LOADER_URL_REPLACEMENT_0___ = _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2___default()(___CSS_LOADER_URL_IMPORT_0___);
 // Module
 ___CSS_LOADER_EXPORT___.push([module.id, `/*--------------------------- Theme Colours ---------------------------*/
@@ -247,14 +249,22 @@ ___CSS_LOADER_EXPORT___.push([module.id, `/*--------------------------- Theme Co
 /******************** Serif Fonts *****************************/
 /* Cormorant Garamond */
 /* Arizonia */
+/* Simonetta */
 /********************** Cursive Fonts *************************/
 /* Italianno */
 /********************* Sans-serif Fonts ************************/
 /* Raleway */
 /* Spartan */
+/* Jost */
 /*------------------------------ Fonts End -----------------------------*/
 /*----------------------------- Breakpoints ----------------------------*/
 /*--------------------------- Breakpoints End --------------------------*/
+/*------------------------------- Layout --------------------------------*/
+:root {
+  --section-padding: 4rem 7.5vw;
+}
+
+/*----------------------------- Layout End ------------------------------*/
 /*------------------------------- Mixins -------------------------------*/
 /*----------------------------- Mixins End -----------------------------*/
 /*------------------------------- Common -------------------------------*/
@@ -262,7 +272,7 @@ h2 {
   margin-bottom: 1.5rem;
   line-height: 3.25rem;
   font-size: 4rem;
-  font-family: "Raleway", Arial, Helvetica, sans-serif;
+  font-family: "Simonetta", Cambria, serif;
   font-weight: 500;
 }
 
@@ -279,10 +289,10 @@ button {
   cursor: pointer;
 }
 button span {
-  line-height: 1.25rem;
+  line-height: 1.4rem;
   word-spacing: 0.25rem;
-  font-family: "Spartan", Arial, Helvetica, sans-serif;
-  font-size: 0.75rem;
+  font-family: "Jost", Futura, Arial, sans-serif;
+  font-size: 1.125rem;
   font-weight: 300;
   color: #fff;
   position: relative;
@@ -312,9 +322,12 @@ button:hover::after {
 }
 
 .underline {
-  border-bottom: 2px solid yellow;
-  padding-bottom: 0.125rem;
+  background-color: #508A80;
+  color: white;
+  padding: 0 0.5rem;
   text-decoration: none;
+  font-style: italic;
+  font-weight: 600;
 }
 
 /*---------------------------- Common Ends -----------------------------*/
@@ -337,10 +350,10 @@ button:hover::after {
   display: flex;
 }
 .contact .error {
-  line-height: 1.25rem;
+  line-height: 1.4rem;
   word-spacing: 0.25rem;
-  font-family: "Spartan", Arial, Helvetica, sans-serif;
-  font-size: 0.75rem;
+  font-family: "Jost", Futura, Arial, sans-serif;
+  font-size: 1.125rem;
   font-weight: 300;
   color: #fff;
   position: relative;
@@ -385,10 +398,10 @@ button:hover::after {
   }
 }
 .contact__input__name, .contact__input__query {
-  line-height: 1.25rem;
+  line-height: 1.4rem;
   word-spacing: 0.25rem;
-  font-family: "Spartan", Arial, Helvetica, sans-serif;
-  font-size: 0.75rem;
+  font-family: "Jost", Futura, Arial, sans-serif;
+  font-size: 1.125rem;
   font-weight: 300;
   color: #fff;
   border: 0;
@@ -408,7 +421,7 @@ button:hover::after {
 }
 .contact__input__query {
   height: 5rem;
-}`, "",{"version":3,"sources":["webpack://./src/styles/variables.scss","webpack://./src/styles/contact.scss"],"names":[],"mappings":"AAAA,wEAAA;AAEA,YAAA;AAWA,aAAA;AAKA,yEAAA;AAGA,yEAAA;AAEA,+DAAA;AACA,uBAAA;AAMA,aAAA;AAMA,+DAAA;AACA,cAAA;AAMA,gEAAA;AACA,YAAA;AAOA,YAAA;AAOA,yEAAA;AAGA,yEAAA;AAOA,yEAAA;AAGA,yEAAA;AA4EA,yEAAA;AAGA,yEAAA;AAEA;EACI,qBAAA;EACA,oBAAA;EACA,eAAA;EACA,oDA9GM;EA+GN,gBAAA;AC/HJ;;ADkIA;EACI,WA9JI;EA+JJ,qBAAA;AC/HJ;;ADkIA;EACI,kBAAA;EACA,SAAA;EACA,UAAA;EACA,iBAAA;EACA,eAAA;AC/HJ;ADiII;EAjCA,oBAAA;EACA,qBAAA;EACA,oDAxFM;EAyFN,kBAAA;EACA,gBAAA;EACA,WA7II;EA2KA,kBAAA;EACA,UAAA;EACA,gBAAA;EACA,qBAAA;EACA,gBAAA;EACA,WA/KA;EAgLA,kBAAA;EACA,qBAAA;AC1HR;AD4HQ;EACI,WArLJ;AC2DR;AD8HI;EACI,kBAAA;EACA,MAAA;EACA,OAAA;EACA,QAAA;EACA,YAAA;EACA,+BA1LO;EA2LP,oBAAA;EACA,WAAA;AC5HR;ADgIQ;EACI,WAAA;AC9HZ;;ADmIA;EACI,+BAAA;EACA,wBAAA;EACA,qBAAA;AChIJ;;ADmIA,yEAAA;AClNgC;EDkI5B,aAAA;EACA,sBAAA;EACA,uBCnIqB;EDoIrB,oBCpI6B;EAC7B,eAAA;EACA,WAAA;EACA,yDAAA;EACA,sBAAA;EACA,2BAAA;EACA,4BAAA;AAsFJ;;AAnFA;EACI,wBAAA;EACA,qBAAA;EACA,aAAA;AAsFJ;AApFI;ED0HA,oBAAA;EACA,qBAAA;EACA,oDAxFM;EAyFN,kBAAA;EACA,gBAAA;EACA,WA7II;ECgBA,kBAAA;EACA,aAAA;EACA,iBAAA;EACA,gBAAA;EACA,UAAA;AA2FR;ADjCQ;ECrER;IAeQ,qBAAA;IACA,sBAAA;IACA,SAAA;EA2FN;AACF;AAzFI;EDoGA,aAAA;EACA,sBAAA;EACA,uBCrGyB;EDsGzB,mBCtGiC;EAC7B,gBAAA;EACA,eAAA;EACA,mBD9BC;EC+BD,0BAAA;EACA,kBAAA;EACA,0BAAA;AA8FR;AAzFQ;EDwFJ,aAAA;EACA,sBAAA;EACA,8BCzF6B;ED0F7B,mBC1F4C;EACpC,gBAAA;EACA,eAAA;EACA,WD7CJ;EC8CI,8BAAA;EACA,SAAA;AA8FZ;AD/DQ;ECrCA;IASQ,sBAAA;EA+Fd;AACF;AA5FQ;EDkFJ,oBAAA;EACA,qBAAA;EACA,oDAxFM;EAyFN,kBAAA;EACA,gBAAA;EACA,WA7II;ECyDI,SAAA;EACA,gDAAA;EACA,eAAA;EACA,cAAA;EACA,WAAA;EACA,cAAA;EACA,gBAAA;AAkGZ;AAhGY;EAEI,UAAA;EACA,gCAAA;AAiGhB;AA9FY;EACI,+BAAA;AAgGhB;AA5FQ;EACI,YAAA;AA8FZ","sourceRoot":""}]);
+}`, "",{"version":3,"sources":["webpack://./src/styles/variables.scss","webpack://./src/styles/contact.scss"],"names":[],"mappings":"AAAA,wEAAA;AAEA,YAAA;AAWA,aAAA;AAKA,yEAAA;AAGA,yEAAA;AAEA,+DAAA;AACA,uBAAA;AAMA,aAAA;AAMA,cAAA;AAMA,+DAAA;AACA,cAAA;AAMA,gEAAA;AACA,YAAA;AAOA,YAAA;AAOA,SAAA;AAOA,yEAAA;AAGA,yEAAA;AAOA,yEAAA;AAGA,0EAAA;AAMA;EACI,6BAAA;AC/DJ;;ADkEA,0EAAA;AAGA,yEAAA;AA4EA,yEAAA;AAGA,yEAAA;AAEA;EACI,qBAAA;EACA,oBAAA;EACA,eAAA;EACA,wCAhJQ;EAiJR,gBAAA;AC/IJ;;ADkJA;EACI,WAxLI;EAyLJ,qBAAA;AC/IJ;;ADkJA;EACI,kBAAA;EACA,SAAA;EACA,UAAA;EACA,iBAAA;EACA,eAAA;AC/IJ;ADiJI;EAjCA,mBAAA;EACA,qBAAA;EACA,8CArGG;EAsGH,mBAAA;EACA,gBAAA;EACA,WAvKI;EAqMA,kBAAA;EACA,UAAA;EACA,gBAAA;EACA,qBAAA;EACA,gBAAA;EACA,WAzMA;EA0MA,kBAAA;EACA,qBAAA;AC1IR;AD4IQ;EACI,WA/MJ;ACqER;AD8II;EACI,kBAAA;EACA,MAAA;EACA,OAAA;EACA,QAAA;EACA,YAAA;EACA,+BApNO;EAqNP,oBAAA;EACA,WAAA;AC5IR;ADgJQ;EACI,WAAA;AC9IZ;;ADmJA;EACI,yBAAA;EACA,YAAA;EACA,iBAAA;EACA,qBAAA;EACA,kBAAA;EACA,gBAAA;AChJJ;;ADmJA,yEAAA;AC/OgC;ED4J5B,aAAA;EACA,sBAAA;EACA,uBC7JqB;ED8JrB,oBC9J6B;EAC7B,eAAA;EACA,WAAA;EACA,yDAAA;EACA,sBAAA;EACA,2BAAA;EACA,4BAAA;AAmGJ;;AAhGA;EACI,wBAAA;EACA,qBAAA;EACA,aAAA;AAmGJ;AAjGI;EDoJA,mBAAA;EACA,qBAAA;EACA,8CArGG;EAsGH,mBAAA;EACA,gBAAA;EACA,WAvKI;ECgBA,kBAAA;EACA,aAAA;EACA,iBAAA;EACA,gBAAA;EACA,UAAA;AAwGR;ADpBQ;EC/FR;IAeQ,qBAAA;IACA,sBAAA;IACA,SAAA;EAwGN;AACF;AAtGI;ED8HA,aAAA;EACA,sBAAA;EACA,uBC/HyB;EDgIzB,mBChIiC;EAC7B,gBAAA;EACA,eAAA;EACA,mBD9BC;EC+BD,0BAAA;EACA,kBAAA;EACA,0BAAA;AA2GR;AAtGQ;EDkHJ,aAAA;EACA,sBAAA;EACA,8BCnH6B;EDoH7B,mBCpH4C;EACpC,gBAAA;EACA,eAAA;EACA,WD7CJ;EC8CI,8BAAA;EACA,SAAA;AA2GZ;ADlDQ;EC/DA;IASQ,sBAAA;EA4Gd;AACF;AAzGQ;ED4GJ,mBAAA;EACA,qBAAA;EACA,8CArGG;EAsGH,mBAAA;EACA,gBAAA;EACA,WAvKI;ECyDI,SAAA;EACA,gDAAA;EACA,eAAA;EACA,cAAA;EACA,WAAA;EACA,cAAA;EACA,gBAAA;AA+GZ;AA7GY;EAEI,UAAA;EACA,gCAAA;AA8GhB;AA3GY;EACI,+BAAA;AA6GhB;AAzGQ;EACI,YAAA;AA2GZ","sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -436,9 +449,11 @@ __webpack_require__.r(__webpack_exports__);
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
 ___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap);"]);
 ___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Arizonia&display=swap);"]);
+___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Simonetta:ital,wght@0,400;0,900;1,400;1,900&display=swap);"]);
 ___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Italianno&display=swap);"]);
 ___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap);"]);
 ___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Spartan:wght@100;200;300;400;500;600;700;800;900&display=swap);"]);
+___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&display=swap);"]);
 // Module
 ___CSS_LOADER_EXPORT___.push([module.id, `/*--------------------------- Theme Colours ---------------------------*/
 /* Colours */
@@ -448,14 +463,22 @@ ___CSS_LOADER_EXPORT___.push([module.id, `/*--------------------------- Theme Co
 /******************** Serif Fonts *****************************/
 /* Cormorant Garamond */
 /* Arizonia */
+/* Simonetta */
 /********************** Cursive Fonts *************************/
 /* Italianno */
 /********************* Sans-serif Fonts ************************/
 /* Raleway */
 /* Spartan */
+/* Jost */
 /*------------------------------ Fonts End -----------------------------*/
 /*----------------------------- Breakpoints ----------------------------*/
 /*--------------------------- Breakpoints End --------------------------*/
+/*------------------------------- Layout --------------------------------*/
+:root {
+  --section-padding: 4rem 7.5vw;
+}
+
+/*----------------------------- Layout End ------------------------------*/
 /*------------------------------- Mixins -------------------------------*/
 /*----------------------------- Mixins End -----------------------------*/
 /*------------------------------- Common -------------------------------*/
@@ -463,7 +486,7 @@ h2 {
   margin-bottom: 1.5rem;
   line-height: 3.25rem;
   font-size: 4rem;
-  font-family: "Raleway", Arial, Helvetica, sans-serif;
+  font-family: "Simonetta", Cambria, serif;
   font-weight: 500;
 }
 
@@ -480,10 +503,10 @@ button {
   cursor: pointer;
 }
 button span {
-  line-height: 1.25rem;
+  line-height: 1.4rem;
   word-spacing: 0.25rem;
-  font-family: "Spartan", Arial, Helvetica, sans-serif;
-  font-size: 0.75rem;
+  font-family: "Jost", Futura, Arial, sans-serif;
+  font-size: 1.125rem;
   font-weight: 300;
   color: #fff;
   position: relative;
@@ -513,9 +536,12 @@ button:hover::after {
 }
 
 .underline {
-  border-bottom: 2px solid yellow;
-  padding-bottom: 0.125rem;
+  background-color: #508A80;
+  color: white;
+  padding: 0 0.5rem;
   text-decoration: none;
+  font-style: italic;
+  font-weight: 600;
 }
 
 /*---------------------------- Common Ends -----------------------------*/
@@ -523,10 +549,10 @@ button:hover::after {
   padding: 0 7.5vw;
 }
 .footer p {
-  line-height: 1.25rem;
+  line-height: 1.4rem;
   word-spacing: 0.25rem;
-  font-family: "Spartan", Arial, Helvetica, sans-serif;
-  font-size: 0.75rem;
+  font-family: "Jost", Futura, Arial, sans-serif;
+  font-size: 1.125rem;
   font-weight: 300;
   color: #fff;
   margin-top: 0.75rem;
@@ -549,7 +575,7 @@ button:hover::after {
   .footer__social-links img {
     width: 2rem;
   }
-}`, "",{"version":3,"sources":["webpack://./src/styles/variables.scss","webpack://./src/styles/footer.scss"],"names":[],"mappings":"AAAA,wEAAA;AAEA,YAAA;AAWA,aAAA;AAKA,yEAAA;AAGA,yEAAA;AAEA,+DAAA;AACA,uBAAA;AAMA,aAAA;AAMA,+DAAA;AACA,cAAA;AAMA,gEAAA;AACA,YAAA;AAOA,YAAA;AAOA,yEAAA;AAGA,yEAAA;AAOA,yEAAA;AAGA,yEAAA;AA4EA,yEAAA;AAGA,yEAAA;AAEA;EACI,qBAAA;EACA,oBAAA;EACA,eAAA;EACA,oDA9GM;EA+GN,gBAAA;AC/HJ;;ADkIA;EACI,WA9JI;EA+JJ,qBAAA;AC/HJ;;ADkIA;EACI,kBAAA;EACA,SAAA;EACA,UAAA;EACA,iBAAA;EACA,eAAA;AC/HJ;ADiII;EAjCA,oBAAA;EACA,qBAAA;EACA,oDAxFM;EAyFN,kBAAA;EACA,gBAAA;EACA,WA7II;EA2KA,kBAAA;EACA,UAAA;EACA,gBAAA;EACA,qBAAA;EACA,gBAAA;EACA,WA/KA;EAgLA,kBAAA;EACA,qBAAA;AC1HR;AD4HQ;EACI,WArLJ;AC2DR;AD8HI;EACI,kBAAA;EACA,MAAA;EACA,OAAA;EACA,QAAA;EACA,YAAA;EACA,+BA1LO;EA2LP,oBAAA;EACA,WAAA;AC5HR;ADgIQ;EACI,WAAA;AC9HZ;;ADmIA;EACI,+BAAA;EACA,wBAAA;EACA,qBAAA;AChIJ;;ADmIA,yEAAA;AClNgC;EAC5B,gBAAA;AAmFJ;AAjFI;EDsIA,oBAAA;EACA,qBAAA;EACA,oDAxFM;EAyFN,kBAAA;EACA,gBAAA;EACA,WA7II;ECIA,mBAAA;EACA,WDLA;ECMA,kBAAA;AAwFR;AArFI;EDkHA,aAAA;EACA,uBClHsB;EDmHtB,kBCnH8B;EAC1B,mBAAA;EACA,mBAAA;EACA,WAAA;AAyFR;AAvFQ;EACI,WAAA;EACA,YAAA;AAyFZ;AD5BQ;EC/DA;IAKQ,WAAA;EA0Fd;AACF","sourceRoot":""}]);
+}`, "",{"version":3,"sources":["webpack://./src/styles/variables.scss","webpack://./src/styles/footer.scss"],"names":[],"mappings":"AAAA,wEAAA;AAEA,YAAA;AAWA,aAAA;AAKA,yEAAA;AAGA,yEAAA;AAEA,+DAAA;AACA,uBAAA;AAMA,aAAA;AAMA,cAAA;AAMA,+DAAA;AACA,cAAA;AAMA,gEAAA;AACA,YAAA;AAOA,YAAA;AAOA,SAAA;AAOA,yEAAA;AAGA,yEAAA;AAOA,yEAAA;AAGA,0EAAA;AAMA;EACI,6BAAA;AC/DJ;;ADkEA,0EAAA;AAGA,yEAAA;AA4EA,yEAAA;AAGA,yEAAA;AAEA;EACI,qBAAA;EACA,oBAAA;EACA,eAAA;EACA,wCAhJQ;EAiJR,gBAAA;AC/IJ;;ADkJA;EACI,WAxLI;EAyLJ,qBAAA;AC/IJ;;ADkJA;EACI,kBAAA;EACA,SAAA;EACA,UAAA;EACA,iBAAA;EACA,eAAA;AC/IJ;ADiJI;EAjCA,mBAAA;EACA,qBAAA;EACA,8CArGG;EAsGH,mBAAA;EACA,gBAAA;EACA,WAvKI;EAqMA,kBAAA;EACA,UAAA;EACA,gBAAA;EACA,qBAAA;EACA,gBAAA;EACA,WAzMA;EA0MA,kBAAA;EACA,qBAAA;AC1IR;AD4IQ;EACI,WA/MJ;ACqER;AD8II;EACI,kBAAA;EACA,MAAA;EACA,OAAA;EACA,QAAA;EACA,YAAA;EACA,+BApNO;EAqNP,oBAAA;EACA,WAAA;AC5IR;ADgJQ;EACI,WAAA;AC9IZ;;ADmJA;EACI,yBAAA;EACA,YAAA;EACA,iBAAA;EACA,qBAAA;EACA,kBAAA;EACA,gBAAA;AChJJ;;ADmJA,yEAAA;AC/OgC;EAC5B,gBAAA;AAgGJ;AA9FI;EDgKA,mBAAA;EACA,qBAAA;EACA,8CArGG;EAsGH,mBAAA;EACA,gBAAA;EACA,WAvKI;ECIA,mBAAA;EACA,WDLA;ECMA,kBAAA;AAqGR;AAlGI;ED4IA,aAAA;EACA,uBC5IsB;ED6ItB,kBC7I8B;EAC1B,mBAAA;EACA,mBAAA;EACA,WAAA;AAsGR;AApGQ;EACI,WAAA;EACA,YAAA;AAsGZ;ADfQ;ECzFA;IAKQ,WAAA;EAuGd;AACF","sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -581,9 +607,11 @@ var ___CSS_LOADER_URL_IMPORT_0___ = new URL(/* asset import */ __webpack_require
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
 ___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap);"]);
 ___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Arizonia&display=swap);"]);
+___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Simonetta:ital,wght@0,400;0,900;1,400;1,900&display=swap);"]);
 ___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Italianno&display=swap);"]);
 ___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap);"]);
 ___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Spartan:wght@100;200;300;400;500;600;700;800;900&display=swap);"]);
+___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&display=swap);"]);
 var ___CSS_LOADER_URL_REPLACEMENT_0___ = _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2___default()(___CSS_LOADER_URL_IMPORT_0___);
 // Module
 ___CSS_LOADER_EXPORT___.push([module.id, `/*--------------------------- Theme Colours ---------------------------*/
@@ -594,14 +622,22 @@ ___CSS_LOADER_EXPORT___.push([module.id, `/*--------------------------- Theme Co
 /******************** Serif Fonts *****************************/
 /* Cormorant Garamond */
 /* Arizonia */
+/* Simonetta */
 /********************** Cursive Fonts *************************/
 /* Italianno */
 /********************* Sans-serif Fonts ************************/
 /* Raleway */
 /* Spartan */
+/* Jost */
 /*------------------------------ Fonts End -----------------------------*/
 /*----------------------------- Breakpoints ----------------------------*/
 /*--------------------------- Breakpoints End --------------------------*/
+/*------------------------------- Layout --------------------------------*/
+:root {
+  --section-padding: 4rem 7.5vw;
+}
+
+/*----------------------------- Layout End ------------------------------*/
 /*------------------------------- Mixins -------------------------------*/
 /*----------------------------- Mixins End -----------------------------*/
 /*------------------------------- Common -------------------------------*/
@@ -609,7 +645,7 @@ h2 {
   margin-bottom: 1.5rem;
   line-height: 3.25rem;
   font-size: 4rem;
-  font-family: "Raleway", Arial, Helvetica, sans-serif;
+  font-family: "Simonetta", Cambria, serif;
   font-weight: 500;
 }
 
@@ -626,10 +662,10 @@ button {
   cursor: pointer;
 }
 button span {
-  line-height: 1.25rem;
+  line-height: 1.4rem;
   word-spacing: 0.25rem;
-  font-family: "Spartan", Arial, Helvetica, sans-serif;
-  font-size: 0.75rem;
+  font-family: "Jost", Futura, Arial, sans-serif;
+  font-size: 1.125rem;
   font-weight: 300;
   color: #fff;
   position: relative;
@@ -659,9 +695,12 @@ button:hover::after {
 }
 
 .underline {
-  border-bottom: 2px solid yellow;
-  padding-bottom: 0.125rem;
+  background-color: #508A80;
+  color: white;
+  padding: 0 0.5rem;
   text-decoration: none;
+  font-style: italic;
+  font-weight: 600;
 }
 
 /*---------------------------- Common Ends -----------------------------*/
@@ -718,10 +757,10 @@ button:hover::after {
   font-size: 2.5rem;
 }
 .fun__link span {
-  line-height: 1.25rem;
+  line-height: 1.4rem;
   word-spacing: 0.25rem;
-  font-family: "Spartan", Arial, Helvetica, sans-serif;
-  font-size: 0.75rem;
+  font-family: "Jost", Futura, Arial, sans-serif;
+  font-size: 1.125rem;
   font-weight: 300;
   color: #fff;
   font-weight: 600;
@@ -736,10 +775,10 @@ button:hover::after {
   width: 100%;
 }
 .fun__subheading {
-  line-height: 1.25rem;
+  line-height: 1.4rem;
   word-spacing: 0.25rem;
-  font-family: "Spartan", Arial, Helvetica, sans-serif;
-  font-size: 0.75rem;
+  font-family: "Jost", Futura, Arial, sans-serif;
+  font-size: 1.125rem;
   font-weight: 300;
   color: #fff;
   margin-bottom: 1rem;
@@ -748,10 +787,10 @@ button:hover::after {
   text-align: center;
 }
 .fun__status {
-  line-height: 1.25rem;
+  line-height: 1.4rem;
   word-spacing: 0.25rem;
-  font-family: "Spartan", Arial, Helvetica, sans-serif;
-  font-size: 0.75rem;
+  font-family: "Jost", Futura, Arial, sans-serif;
+  font-size: 1.125rem;
   font-weight: 300;
   color: #fff;
   opacity: 0.6;
@@ -787,10 +826,10 @@ button:hover::after {
   object-fit: cover;
 }
 .fun__movies span {
-  line-height: 1.25rem;
+  line-height: 1.4rem;
   word-spacing: 0.25rem;
-  font-family: "Spartan", Arial, Helvetica, sans-serif;
-  font-size: 0.75rem;
+  font-family: "Jost", Futura, Arial, sans-serif;
+  font-size: 1.125rem;
   font-weight: 300;
   color: #fff;
 }
@@ -832,25 +871,25 @@ button:hover::after {
   align-items: flex-start;
 }
 .fun__track-name {
-  line-height: 1.25rem;
+  line-height: 1.4rem;
   word-spacing: 0.25rem;
-  font-family: "Spartan", Arial, Helvetica, sans-serif;
-  font-size: 0.75rem;
+  font-family: "Jost", Futura, Arial, sans-serif;
+  font-size: 1.125rem;
   font-weight: 300;
   color: #fff;
   font-weight: 600;
   color: #000;
 }
 .fun__track-artist {
-  line-height: 1.25rem;
+  line-height: 1.4rem;
   word-spacing: 0.25rem;
-  font-family: "Spartan", Arial, Helvetica, sans-serif;
-  font-size: 0.75rem;
+  font-family: "Jost", Futura, Arial, sans-serif;
+  font-size: 1.125rem;
   font-weight: 300;
   color: #fff;
   font-size: 0.65rem;
   color: rgba(0, 0, 0, 0.6);
-}`, "",{"version":3,"sources":["webpack://./src/styles/variables.scss","webpack://./src/styles/fun.scss"],"names":[],"mappings":"AAAA,wEAAA;AAEA,YAAA;AAWA,aAAA;AAKA,yEAAA;AAGA,yEAAA;AAEA,+DAAA;AACA,uBAAA;AAMA,aAAA;AAMA,+DAAA;AACA,cAAA;AAMA,gEAAA;AACA,YAAA;AAOA,YAAA;AAOA,yEAAA;AAGA,yEAAA;AAOA,yEAAA;AAGA,yEAAA;AA4EA,yEAAA;AAGA,yEAAA;AAEA;EACI,qBAAA;EACA,oBAAA;EACA,eAAA;EACA,oDA9GM;EA+GN,gBAAA;AC/HJ;;ADkIA;EACI,WA9JI;EA+JJ,qBAAA;AC/HJ;;ADkIA;EACI,kBAAA;EACA,SAAA;EACA,UAAA;EACA,iBAAA;EACA,eAAA;AC/HJ;ADiII;EAjCA,oBAAA;EACA,qBAAA;EACA,oDAxFM;EAyFN,kBAAA;EACA,gBAAA;EACA,WA7II;EA2KA,kBAAA;EACA,UAAA;EACA,gBAAA;EACA,qBAAA;EACA,gBAAA;EACA,WA/KA;EAgLA,kBAAA;EACA,qBAAA;AC1HR;AD4HQ;EACI,WArLJ;AC2DR;AD8HI;EACI,kBAAA;EACA,MAAA;EACA,OAAA;EACA,QAAA;EACA,YAAA;EACA,+BA1LO;EA2LP,oBAAA;EACA,WAAA;AC5HR;ADgIQ;EACI,WAAA;AC9HZ;;ADmIA;EACI,+BAAA;EACA,wBAAA;EACA,qBAAA;AChIJ;;ADmIA,yEAAA;AClNgC;EDkI5B,aAAA;EACA,sBAAA;EACA,uBCnIqB;EDoIrB,mBCpI6B;EAC7B,cAAA;EACA,mBAAA;EACA,WAAA;EACA,SAAA;EACA,yDAAA;EACA,sBAAA;EACA,2BAAA;EACA,4BAAA;AAsFJ;AApFI;EACI,gBAAA;AAsFR;AAnFI;ED6GA,aAAA;EACA,uBC7GsB;ED8GtB,oBC9G8B;EAC1B,eAAA;EACA,WAAA;AAuFR;ADhCQ;EC1DJ;IAMQ,sBAAA;IACA,mBAAA;EAwFV;AACF;AArFI;EDwGA,aAAA;EACA,sBAAA;EACA,uBCzGyB;ED0GzB,mBC1GiC;EAC7B,qBAAA;EACA,yCAAA;EACA,aAAA;EACA,YAAA;EACA,sBD/BA;ECgCA,WD/BA;ECgCA,kBAAA;EACA,yBAAA;EACA,YAAA;AA0FR;AAxFQ;EACI,aAAA;EACA,cAAA;AA0FZ;AAvFQ;EACI,iBAAA;AAyFZ;AAtFQ;ED0FJ,oBAAA;EACA,qBAAA;EACA,oDAxFM;EAyFN,kBAAA;EACA,gBAAA;EACA,WA7II;ECgDI,gBAAA;EACA,WDhDJ;AC6IR;AA1FQ;EACI,yCAAA;EACA,yBDnDH;ECoDG,+BAAA;AA4FZ;AAxFI;EACI,WAAA;AA0FR;AAvFI;EDyEA,oBAAA;EACA,qBAAA;EACA,oDAxFM;EAyFN,kBAAA;EACA,gBAAA;EACA,WA7II;ECiEA,mBAAA;EACA,eAAA;EACA,gBAAA;EACA,kBAAA;AA8FR;AA3FI;EDiEA,oBAAA;EACA,qBAAA;EACA,oDAxFM;EAyFN,kBAAA;EACA,gBAAA;EACA,WA7II;ECyEA,YAAA;AAkGR;AA/FI;ED+CA,aAAA;EACA,uBC/CsB;EDgDtB,oBChD8B;EAC1B,eAAA;EACA,WAAA;AAmGR;AAjGQ;EACI,WAAA;AAmGZ;AAhGQ;ED4CJ,aAAA;EACA,sBAAA;EACA,2BC7C6B;ED8C7B,mBC9CyC;EACjC,WAAA;EACA,WDxFJ;ECyFI,kBAAA;EACA,+BAAA;AAqGZ;AAnGY;EACI,+BAAA;AAqGhB;AAjGQ;EACI,qBAAA;EACA,yCAAA;EACA,WAAA;EACA,aAAA;EACA,iBAAA;AAmGZ;AAhGQ;ED+BJ,oBAAA;EACA,qBAAA;EACA,oDAxFM;EAyFN,kBAAA;EACA,gBAAA;EACA,WA7II;ACiNR;AAnGI;EDmBA,aAAA;EACA,sBAAA;EACA,2BCpByB;EDqBzB,oBCrBqC;EACjC,cAAA;EACA,gBAAA;EACA,YAAA;AAwGR;AAtGQ;EDOJ,aAAA;EACA,2BCP0B;EDQ1B,mBCRsC;EAC9B,qBAAA;EACA,yCAAA;EACA,gBAAA;EACA,sBDzHJ;EC0HI,WDzHJ;EC0HI,SAAA;EACA,yBAAA;AA0GZ;AAxGY;EACI,yBD5HP;EC6HO,+BAAA;AA0GhB;AAtGQ;EACI,sBAAA;EACA,WAAA;EACA,YAAA;EACA,iBAAA;AAwGZ;AArGQ;EDVJ,aAAA;EACA,sBAAA;EACA,uBCS6B;EDR7B,uBCQqC;AA0GzC;AArGQ;EDTJ,oBAAA;EACA,qBAAA;EACA,oDAxFM;EAyFN,kBAAA;EACA,gBAAA;EACA,WA7II;ECmJI,gBAAA;EACA,WDnJJ;AC+PR;AAzGQ;EDfJ,oBAAA;EACA,qBAAA;EACA,oDAxFM;EAyFN,kBAAA;EACA,gBAAA;EACA,WA7II;ECyJI,kBAAA;EACA,yBAAA;AAgHZ","sourceRoot":""}]);
+}`, "",{"version":3,"sources":["webpack://./src/styles/variables.scss","webpack://./src/styles/fun.scss"],"names":[],"mappings":"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","sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -878,9 +917,11 @@ __webpack_require__.r(__webpack_exports__);
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
 ___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap);"]);
 ___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Arizonia&display=swap);"]);
+___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Simonetta:ital,wght@0,400;0,900;1,400;1,900&display=swap);"]);
 ___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Italianno&display=swap);"]);
 ___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap);"]);
 ___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Spartan:wght@100;200;300;400;500;600;700;800;900&display=swap);"]);
+___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&display=swap);"]);
 // Module
 ___CSS_LOADER_EXPORT___.push([module.id, `/*--------------------------- Theme Colours ---------------------------*/
 /* Colours */
@@ -890,14 +931,22 @@ ___CSS_LOADER_EXPORT___.push([module.id, `/*--------------------------- Theme Co
 /******************** Serif Fonts *****************************/
 /* Cormorant Garamond */
 /* Arizonia */
+/* Simonetta */
 /********************** Cursive Fonts *************************/
 /* Italianno */
 /********************* Sans-serif Fonts ************************/
 /* Raleway */
 /* Spartan */
+/* Jost */
 /*------------------------------ Fonts End -----------------------------*/
 /*----------------------------- Breakpoints ----------------------------*/
 /*--------------------------- Breakpoints End --------------------------*/
+/*------------------------------- Layout --------------------------------*/
+:root {
+  --section-padding: 4rem 7.5vw;
+}
+
+/*----------------------------- Layout End ------------------------------*/
 /*------------------------------- Mixins -------------------------------*/
 /*----------------------------- Mixins End -----------------------------*/
 /*------------------------------- Common -------------------------------*/
@@ -905,7 +954,7 @@ h2 {
   margin-bottom: 1.5rem;
   line-height: 3.25rem;
   font-size: 4rem;
-  font-family: "Raleway", Arial, Helvetica, sans-serif;
+  font-family: "Simonetta", Cambria, serif;
   font-weight: 500;
 }
 
@@ -922,10 +971,10 @@ button {
   cursor: pointer;
 }
 button span {
-  line-height: 1.25rem;
+  line-height: 1.4rem;
   word-spacing: 0.25rem;
-  font-family: "Spartan", Arial, Helvetica, sans-serif;
-  font-size: 0.75rem;
+  font-family: "Jost", Futura, Arial, sans-serif;
+  font-size: 1.125rem;
   font-weight: 300;
   color: #fff;
   position: relative;
@@ -955,9 +1004,12 @@ button:hover::after {
 }
 
 .underline {
-  border-bottom: 2px solid yellow;
-  padding-bottom: 0.125rem;
+  background-color: #508A80;
+  color: white;
+  padding: 0 0.5rem;
   text-decoration: none;
+  font-style: italic;
+  font-weight: 600;
 }
 
 /*---------------------------- Common Ends -----------------------------*/
@@ -1025,10 +1077,10 @@ button:hover::after {
   margin-top: 0.25rem;
 }
 .header__logo-caret p {
-  line-height: 1.25rem;
+  line-height: 1.4rem;
   word-spacing: 0.25rem;
-  font-family: "Spartan", Arial, Helvetica, sans-serif;
-  font-size: 0.75rem;
+  font-family: "Jost", Futura, Arial, sans-serif;
+  font-size: 1.125rem;
   font-weight: 300;
   color: #fff;
   font-size: 0.5rem;
@@ -1092,10 +1144,10 @@ button:hover::after {
   }
 }
 .header__navigation-links li {
-  line-height: 1.25rem;
+  line-height: 1.4rem;
   word-spacing: 0.25rem;
-  font-family: "Spartan", Arial, Helvetica, sans-serif;
-  font-size: 0.75rem;
+  font-family: "Jost", Futura, Arial, sans-serif;
+  font-size: 1.125rem;
   font-weight: 300;
   color: #fff;
   display: inline-block;
@@ -1112,7 +1164,7 @@ button:hover::after {
     font-size: 0.75rem;
     text-transform: none;
   }
-}`, "",{"version":3,"sources":["webpack://./src/styles/variables.scss","webpack://./src/styles/header.scss"],"names":[],"mappings":"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","sourceRoot":""}]);
+}`, "",{"version":3,"sources":["webpack://./src/styles/variables.scss","webpack://./src/styles/header.scss"],"names":[],"mappings":"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","sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -1144,9 +1196,11 @@ var ___CSS_LOADER_URL_IMPORT_0___ = new URL(/* asset import */ __webpack_require
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
 ___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap);"]);
 ___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Arizonia&display=swap);"]);
+___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Simonetta:ital,wght@0,400;0,900;1,400;1,900&display=swap);"]);
 ___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Italianno&display=swap);"]);
 ___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap);"]);
 ___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Spartan:wght@100;200;300;400;500;600;700;800;900&display=swap);"]);
+___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&display=swap);"]);
 var ___CSS_LOADER_URL_REPLACEMENT_0___ = _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2___default()(___CSS_LOADER_URL_IMPORT_0___);
 // Module
 ___CSS_LOADER_EXPORT___.push([module.id, `/*--------------------------- Theme Colours ---------------------------*/
@@ -1157,14 +1211,22 @@ ___CSS_LOADER_EXPORT___.push([module.id, `/*--------------------------- Theme Co
 /******************** Serif Fonts *****************************/
 /* Cormorant Garamond */
 /* Arizonia */
+/* Simonetta */
 /********************** Cursive Fonts *************************/
 /* Italianno */
 /********************* Sans-serif Fonts ************************/
 /* Raleway */
 /* Spartan */
+/* Jost */
 /*------------------------------ Fonts End -----------------------------*/
 /*----------------------------- Breakpoints ----------------------------*/
 /*--------------------------- Breakpoints End --------------------------*/
+/*------------------------------- Layout --------------------------------*/
+:root {
+  --section-padding: 4rem 7.5vw;
+}
+
+/*----------------------------- Layout End ------------------------------*/
 /*------------------------------- Mixins -------------------------------*/
 /*----------------------------- Mixins End -----------------------------*/
 /*------------------------------- Common -------------------------------*/
@@ -1172,7 +1234,7 @@ h2 {
   margin-bottom: 1.5rem;
   line-height: 3.25rem;
   font-size: 4rem;
-  font-family: "Raleway", Arial, Helvetica, sans-serif;
+  font-family: "Simonetta", Cambria, serif;
   font-weight: 500;
 }
 
@@ -1189,10 +1251,10 @@ button {
   cursor: pointer;
 }
 button span {
-  line-height: 1.25rem;
+  line-height: 1.4rem;
   word-spacing: 0.25rem;
-  font-family: "Spartan", Arial, Helvetica, sans-serif;
-  font-size: 0.75rem;
+  font-family: "Jost", Futura, Arial, sans-serif;
+  font-size: 1.125rem;
   font-weight: 300;
   color: #fff;
   position: relative;
@@ -1222,9 +1284,12 @@ button:hover::after {
 }
 
 .underline {
-  border-bottom: 2px solid yellow;
-  padding-bottom: 0.125rem;
+  background-color: #508A80;
+  color: white;
+  padding: 0 0.5rem;
   text-decoration: none;
+  font-style: italic;
+  font-weight: 600;
 }
 
 /*---------------------------- Common Ends -----------------------------*/
@@ -1233,17 +1298,17 @@ button:hover::after {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 6rem 7.5vw;
+  padding: var(--section-padding);
   background-image: url(${___CSS_LOADER_URL_REPLACEMENT_0___});
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
 }
 .home__bio {
-  line-height: 1.25rem;
+  line-height: 1.4rem;
   word-spacing: 0.25rem;
-  font-family: "Spartan", Arial, Helvetica, sans-serif;
-  font-size: 0.75rem;
+  font-family: "Jost", Futura, Arial, sans-serif;
+  font-size: 1.125rem;
   font-weight: 300;
   color: #fff;
   display: flex;
@@ -1252,7 +1317,7 @@ button:hover::after {
   border-radius: 0.5rem;
   box-shadow: 0 4px 24px rgba(0, 0, 0, 0.35);
   padding: 1.5rem 1.5rem 0 1.5rem;
-  max-width: 50rem;
+  width: 100%;
   background: #fff;
   color: #000;
 }
@@ -1271,12 +1336,12 @@ button:hover::after {
 }
 .home__bio-picture img {
   position: relative;
-  bottom: -8px;
+  bottom: -6px;
   right: -1.75rem;
   margin-top: 0.5rem;
   width: 15rem;
   height: auto;
-}`, "",{"version":3,"sources":["webpack://./src/styles/variables.scss","webpack://./src/styles/home.scss"],"names":[],"mappings":"AAAA,wEAAA;AAEA,YAAA;AAWA,aAAA;AAKA,yEAAA;AAGA,yEAAA;AAEA,+DAAA;AACA,uBAAA;AAMA,aAAA;AAMA,+DAAA;AACA,cAAA;AAMA,gEAAA;AACA,YAAA;AAOA,YAAA;AAOA,yEAAA;AAGA,yEAAA;AAOA,yEAAA;AAGA,yEAAA;AA4EA,yEAAA;AAGA,yEAAA;AAEA;EACI,qBAAA;EACA,oBAAA;EACA,eAAA;EACA,oDA9GM;EA+GN,gBAAA;AC/HJ;;ADkIA;EACI,WA9JI;EA+JJ,qBAAA;AC/HJ;;ADkIA;EACI,kBAAA;EACA,SAAA;EACA,UAAA;EACA,iBAAA;EACA,eAAA;AC/HJ;ADiII;EAjCA,oBAAA;EACA,qBAAA;EACA,oDAxFM;EAyFN,kBAAA;EACA,gBAAA;EACA,WA7II;EA2KA,kBAAA;EACA,UAAA;EACA,gBAAA;EACA,qBAAA;EACA,gBAAA;EACA,WA/KA;EAgLA,kBAAA;EACA,qBAAA;AC1HR;AD4HQ;EACI,WArLJ;AC2DR;AD8HI;EACI,kBAAA;EACA,MAAA;EACA,OAAA;EACA,QAAA;EACA,YAAA;EACA,+BA1LO;EA2LP,oBAAA;EACA,WAAA;AC5HR;ADgIQ;EACI,WAAA;AC9HZ;;ADmIA;EACI,+BAAA;EACA,wBAAA;EACA,qBAAA;AChIJ;;ADmIA,yEAAA;AClNgC;EDkI5B,aAAA;EACA,sBAAA;EACA,uBCnIqB;EDoIrB,mBCpI6B;EAC7B,mBAAA;EACA,yDAAA;EACA,sBAAA;EACA,2BAAA;EACA,4BAAA;AAsFJ;AApFI;EDiIA,oBAAA;EACA,qBAAA;EACA,oDAxFM;EAyFN,kBAAA;EACA,gBAAA;EACA,WA7II;EA2HJ,aAAA;EACA,sBCnHsB;EDoHtB,qBCpH6B;EACzB,qBAAA;EACA,0CAAA;EACA,+BAAA;EACA,gBAAA;EACA,gBDdA;ECeA,WDdA;AC2GR;ADpCQ;ECjEJ;IAWQ,sBAAA;EA8FV;AACF;AA5FQ;EACI,qBAAA;AA8FZ;AA3FQ;EACI,YAAA;EACA,YAAA;EACA,4CAAA;AA6FZ;AA3FY;EACI,kBAAA;EACA,YAAA;EACA,eAAA;EACA,kBAAA;EACA,YAAA;EACA,YAAA;AA6FhB","sourceRoot":""}]);
+}`, "",{"version":3,"sources":["webpack://./src/styles/variables.scss","webpack://./src/styles/home.scss"],"names":[],"mappings":"AAAA,wEAAA;AAEA,YAAA;AAWA,aAAA;AAKA,yEAAA;AAGA,yEAAA;AAEA,+DAAA;AACA,uBAAA;AAMA,aAAA;AAMA,cAAA;AAMA,+DAAA;AACA,cAAA;AAMA,gEAAA;AACA,YAAA;AAOA,YAAA;AAOA,SAAA;AAOA,yEAAA;AAGA,yEAAA;AAOA,yEAAA;AAGA,0EAAA;AAMA;EACI,6BAAA;AC/DJ;;ADkEA,0EAAA;AAGA,yEAAA;AA4EA,yEAAA;AAGA,yEAAA;AAEA;EACI,qBAAA;EACA,oBAAA;EACA,eAAA;EACA,wCAhJQ;EAiJR,gBAAA;AC/IJ;;ADkJA;EACI,WAxLI;EAyLJ,qBAAA;AC/IJ;;ADkJA;EACI,kBAAA;EACA,SAAA;EACA,UAAA;EACA,iBAAA;EACA,eAAA;AC/IJ;ADiJI;EAjCA,mBAAA;EACA,qBAAA;EACA,8CArGG;EAsGH,mBAAA;EACA,gBAAA;EACA,WAvKI;EAqMA,kBAAA;EACA,UAAA;EACA,gBAAA;EACA,qBAAA;EACA,gBAAA;EACA,WAzMA;EA0MA,kBAAA;EACA,qBAAA;AC1IR;AD4IQ;EACI,WA/MJ;ACqER;AD8II;EACI,kBAAA;EACA,MAAA;EACA,OAAA;EACA,QAAA;EACA,YAAA;EACA,+BApNO;EAqNP,oBAAA;EACA,WAAA;AC5IR;ADgJQ;EACI,WAAA;AC9IZ;;ADmJA;EACI,yBAAA;EACA,YAAA;EACA,iBAAA;EACA,qBAAA;EACA,kBAAA;EACA,gBAAA;AChJJ;;ADmJA,yEAAA;AC/OgC;ED4J5B,aAAA;EACA,sBAAA;EACA,uBC7JqB;ED8JrB,mBC9J6B;EAC7B,+BAAA;EACA,yDAAA;EACA,sBAAA;EACA,2BAAA;EACA,4BAAA;AAmGJ;AAjGI;ED2JA,mBAAA;EACA,qBAAA;EACA,8CArGG;EAsGH,mBAAA;EACA,gBAAA;EACA,WAvKI;EAqJJ,aAAA;EACA,sBC7IsB;ED8ItB,qBC9I6B;EACzB,qBAAA;EACA,0CAAA;EACA,+BAAA;EACA,WAAA;EACA,gBDdA;ECeA,WDdA;ACwHR;ADvBQ;EC3FJ;IAWQ,sBAAA;EA2GV;AACF;AAzGQ;EACI,qBAAA;AA2GZ;AAxGQ;EACI,YAAA;EACA,YAAA;EACA,4CAAA;AA0GZ;AAxGY;EACI,kBAAA;EACA,YAAA;EACA,eAAA;EACA,kBAAA;EACA,YAAA;EACA,YAAA;AA0GhB","sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -1298,15 +1363,22 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
 /* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../node_modules/css-loader/dist/runtime/getUrl.js */ "./node_modules/css-loader/dist/runtime/getUrl.js");
+/* harmony import */ var _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2__);
 // Imports
 
 
+
+var ___CSS_LOADER_URL_IMPORT_0___ = new URL(/* asset import */ __webpack_require__(/*! ../assets/background/Van_Gogh_-_Starry_Night_-_Google_Art_Project.jpg */ "./src/assets/background/Van_Gogh_-_Starry_Night_-_Google_Art_Project.jpg"), __webpack_require__.b);
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
 ___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap);"]);
 ___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Arizonia&display=swap);"]);
+___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Simonetta:ital,wght@0,400;0,900;1,400;1,900&display=swap);"]);
 ___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Italianno&display=swap);"]);
 ___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap);"]);
 ___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Spartan:wght@100;200;300;400;500;600;700;800;900&display=swap);"]);
+___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&display=swap);"]);
+var ___CSS_LOADER_URL_REPLACEMENT_0___ = _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2___default()(___CSS_LOADER_URL_IMPORT_0___);
 // Module
 ___CSS_LOADER_EXPORT___.push([module.id, `/*--------------------------- Theme Colours ---------------------------*/
 /* Colours */
@@ -1316,14 +1388,22 @@ ___CSS_LOADER_EXPORT___.push([module.id, `/*--------------------------- Theme Co
 /******************** Serif Fonts *****************************/
 /* Cormorant Garamond */
 /* Arizonia */
+/* Simonetta */
 /********************** Cursive Fonts *************************/
 /* Italianno */
 /********************* Sans-serif Fonts ************************/
 /* Raleway */
 /* Spartan */
+/* Jost */
 /*------------------------------ Fonts End -----------------------------*/
 /*----------------------------- Breakpoints ----------------------------*/
 /*--------------------------- Breakpoints End --------------------------*/
+/*------------------------------- Layout --------------------------------*/
+:root {
+  --section-padding: 4rem 7.5vw;
+}
+
+/*----------------------------- Layout End ------------------------------*/
 /*------------------------------- Mixins -------------------------------*/
 /*----------------------------- Mixins End -----------------------------*/
 /*------------------------------- Common -------------------------------*/
@@ -1331,7 +1411,7 @@ h2 {
   margin-bottom: 1.5rem;
   line-height: 3.25rem;
   font-size: 4rem;
-  font-family: "Raleway", Arial, Helvetica, sans-serif;
+  font-family: "Simonetta", Cambria, serif;
   font-weight: 500;
 }
 
@@ -1348,10 +1428,10 @@ button {
   cursor: pointer;
 }
 button span {
-  line-height: 1.25rem;
+  line-height: 1.4rem;
   word-spacing: 0.25rem;
-  font-family: "Spartan", Arial, Helvetica, sans-serif;
-  font-size: 0.75rem;
+  font-family: "Jost", Futura, Arial, sans-serif;
+  font-size: 1.125rem;
   font-weight: 300;
   color: #fff;
   position: relative;
@@ -1381,9 +1461,12 @@ button:hover::after {
 }
 
 .underline {
-  border-bottom: 2px solid yellow;
-  padding-bottom: 0.125rem;
+  background-color: #508A80;
+  color: white;
+  padding: 0 0.5rem;
   text-decoration: none;
+  font-style: italic;
+  font-weight: 600;
 }
 
 /*---------------------------- Common Ends -----------------------------*/
@@ -1399,14 +1482,17 @@ body {
   overflow-x: hidden;
 }
 body::-webkit-scrollbar {
-  width: 0.75rem;
+  width: 1rem;
 }
 body::-webkit-scrollbar-track {
   background: #000;
 }
 body::-webkit-scrollbar-thumb {
   border: 1px solid #000;
-  background: #ffff00;
+  background-image: url(${___CSS_LOADER_URL_REPLACEMENT_0___});
+  background-size: 300% auto;
+  background-position: 50% 15%;
+  background-repeat: no-repeat;
 }
 
 .main {
@@ -1424,7 +1510,7 @@ body::-webkit-scrollbar-thumb {
 .contact-section,
 .fun {
   min-height: 100vh;
-}`, "",{"version":3,"sources":["webpack://./src/styles/variables.scss","webpack://./src/styles/main.scss"],"names":[],"mappings":"AAAA,wEAAA;AAEA,YAAA;AAWA,aAAA;AAKA,yEAAA;AAGA,yEAAA;AAEA,+DAAA;AACA,uBAAA;AAMA,aAAA;AAMA,+DAAA;AACA,cAAA;AAMA,gEAAA;AACA,YAAA;AAOA,YAAA;AAOA,yEAAA;AAGA,yEAAA;AAOA,yEAAA;AAGA,yEAAA;AA4EA,yEAAA;AAGA,yEAAA;AAEA;EACI,qBAAA;EACA,oBAAA;EACA,eAAA;EACA,oDA9GM;EA+GN,gBAAA;AC/HJ;;ADkIA;EACI,WA9JI;EA+JJ,qBAAA;AC/HJ;;ADkIA;EACI,kBAAA;EACA,SAAA;EACA,UAAA;EACA,iBAAA;EACA,eAAA;AC/HJ;ADiII;EAjCA,oBAAA;EACA,qBAAA;EACA,oDAxFM;EAyFN,kBAAA;EACA,gBAAA;EACA,WA7II;EA2KA,kBAAA;EACA,UAAA;EACA,gBAAA;EACA,qBAAA;EACA,gBAAA;EACA,WA/KA;EAgLA,kBAAA;EACA,qBAAA;AC1HR;AD4HQ;EACI,WArLJ;AC2DR;AD8HI;EACI,kBAAA;EACA,MAAA;EACA,OAAA;EACA,QAAA;EACA,YAAA;EACA,+BA1LO;EA2LP,oBAAA;EACA,WAAA;AC5HR;ADgIQ;EACI,WAAA;AC9HZ;;ADmIA;EACI,+BAAA;EACA,wBAAA;EACA,qBAAA;AChIJ;;ADmIA,yEAAA;AClNgC;;EAE5B,sBAAA;EACA,kCAAA;AAmFJ;;AAhFA;EACI,gBDLI;ECMJ,WDPI;ECQJ,kBAAA;AAmFJ;AAjFI;EACI,cAAA;AAmFR;AAhFI;EACI,gBDdA;ACgGR;AA/EI;EACI,sBAAA;EACA,mBDjBC;ACkGT;;AA7EA;EACI,iBAAA;AAgFJ;ADPQ;EC1ER;IAIQ,mBAAA;EAiFN;AACF;;AA9EA;;;;;EAKI,iBAAA;AAiFJ","sourceRoot":""}]);
+}`, "",{"version":3,"sources":["webpack://./src/styles/variables.scss","webpack://./src/styles/main.scss"],"names":[],"mappings":"AAAA,wEAAA;AAEA,YAAA;AAWA,aAAA;AAKA,yEAAA;AAGA,yEAAA;AAEA,+DAAA;AACA,uBAAA;AAMA,aAAA;AAMA,cAAA;AAMA,+DAAA;AACA,cAAA;AAMA,gEAAA;AACA,YAAA;AAOA,YAAA;AAOA,SAAA;AAOA,yEAAA;AAGA,yEAAA;AAOA,yEAAA;AAGA,0EAAA;AAMA;EACI,6BAAA;AC/DJ;;ADkEA,0EAAA;AAGA,yEAAA;AA4EA,yEAAA;AAGA,yEAAA;AAEA;EACI,qBAAA;EACA,oBAAA;EACA,eAAA;EACA,wCAhJQ;EAiJR,gBAAA;AC/IJ;;ADkJA;EACI,WAxLI;EAyLJ,qBAAA;AC/IJ;;ADkJA;EACI,kBAAA;EACA,SAAA;EACA,UAAA;EACA,iBAAA;EACA,eAAA;AC/IJ;ADiJI;EAjCA,mBAAA;EACA,qBAAA;EACA,8CArGG;EAsGH,mBAAA;EACA,gBAAA;EACA,WAvKI;EAqMA,kBAAA;EACA,UAAA;EACA,gBAAA;EACA,qBAAA;EACA,gBAAA;EACA,WAzMA;EA0MA,kBAAA;EACA,qBAAA;AC1IR;AD4IQ;EACI,WA/MJ;ACqER;AD8II;EACI,kBAAA;EACA,MAAA;EACA,OAAA;EACA,QAAA;EACA,YAAA;EACA,+BApNO;EAqNP,oBAAA;EACA,WAAA;AC5IR;ADgJQ;EACI,WAAA;AC9IZ;;ADmJA;EACI,yBAAA;EACA,YAAA;EACA,iBAAA;EACA,qBAAA;EACA,kBAAA;EACA,gBAAA;AChJJ;;ADmJA,yEAAA;AC/OgC;;EAE5B,sBAAA;EACA,kCAAA;AAgGJ;;AA7FA;EACI,gBDLI;ECMJ,WDPI;ECQJ,kBAAA;AAgGJ;AA9FI;EACI,WAAA;AAgGR;AA7FI;EACI,gBDdA;AC6GR;AA5FI;EACI,sBAAA;EACA,yDAAA;EACA,0BAAA;EACA,4BAAA;EACA,4BAAA;AA8FR;;AAzFA;EACI,iBAAA;AA4FJ;ADGQ;EChGR;IAIQ,mBAAA;EA6FN;AACF;;AA1FA;;;;;EAKI,iBAAA;AA6FJ","sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -1456,9 +1542,11 @@ var ___CSS_LOADER_URL_IMPORT_0___ = new URL(/* asset import */ __webpack_require
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
 ___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap);"]);
 ___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Arizonia&display=swap);"]);
+___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Simonetta:ital,wght@0,400;0,900;1,400;1,900&display=swap);"]);
 ___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Italianno&display=swap);"]);
 ___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap);"]);
 ___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Spartan:wght@100;200;300;400;500;600;700;800;900&display=swap);"]);
+___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&display=swap);"]);
 var ___CSS_LOADER_URL_REPLACEMENT_0___ = _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2___default()(___CSS_LOADER_URL_IMPORT_0___);
 // Module
 ___CSS_LOADER_EXPORT___.push([module.id, `/*--------------------------- Theme Colours ---------------------------*/
@@ -1469,14 +1557,22 @@ ___CSS_LOADER_EXPORT___.push([module.id, `/*--------------------------- Theme Co
 /******************** Serif Fonts *****************************/
 /* Cormorant Garamond */
 /* Arizonia */
+/* Simonetta */
 /********************** Cursive Fonts *************************/
 /* Italianno */
 /********************* Sans-serif Fonts ************************/
 /* Raleway */
 /* Spartan */
+/* Jost */
 /*------------------------------ Fonts End -----------------------------*/
 /*----------------------------- Breakpoints ----------------------------*/
 /*--------------------------- Breakpoints End --------------------------*/
+/*------------------------------- Layout --------------------------------*/
+:root {
+  --section-padding: 4rem 7.5vw;
+}
+
+/*----------------------------- Layout End ------------------------------*/
 /*------------------------------- Mixins -------------------------------*/
 /*----------------------------- Mixins End -----------------------------*/
 /*------------------------------- Common -------------------------------*/
@@ -1484,7 +1580,7 @@ h2 {
   margin-bottom: 1.5rem;
   line-height: 3.25rem;
   font-size: 4rem;
-  font-family: "Raleway", Arial, Helvetica, sans-serif;
+  font-family: "Simonetta", Cambria, serif;
   font-weight: 500;
 }
 
@@ -1501,10 +1597,10 @@ button {
   cursor: pointer;
 }
 button span {
-  line-height: 1.25rem;
+  line-height: 1.4rem;
   word-spacing: 0.25rem;
-  font-family: "Spartan", Arial, Helvetica, sans-serif;
-  font-size: 0.75rem;
+  font-family: "Jost", Futura, Arial, sans-serif;
+  font-size: 1.125rem;
   font-weight: 300;
   color: #fff;
   position: relative;
@@ -1534,9 +1630,12 @@ button:hover::after {
 }
 
 .underline {
-  border-bottom: 2px solid yellow;
-  padding-bottom: 0.125rem;
+  background-color: #508A80;
+  color: white;
+  padding: 0 0.5rem;
   text-decoration: none;
+  font-style: italic;
+  font-weight: 600;
 }
 
 /*---------------------------- Common Ends -----------------------------*/
@@ -1545,7 +1644,7 @@ button:hover::after {
   flex-direction: column;
   justify-content: center;
   align-items: stretch;
-  padding: 4rem 0;
+  padding: var(--section-padding);
   gap: 3rem;
   background-image: url(${___CSS_LOADER_URL_REPLACEMENT_0___});
   background-size: cover;
@@ -1554,11 +1653,10 @@ button:hover::after {
 }
 
 .pivot {
-  margin: 0 auto 2rem;
+  margin-bottom: 2rem;
   border-radius: 0.5rem;
   box-shadow: 0 4px 24px rgba(0, 0, 0, 0.35);
   padding: 2rem;
-  width: calc(100% - 15vw);
   background-color: #fff;
   color: #000;
 }
@@ -1573,10 +1671,10 @@ button:hover::after {
   line-height: 1;
 }
 .pivot__card {
-  line-height: 1.25rem;
+  line-height: 1.4rem;
   word-spacing: 0.25rem;
-  font-family: "Spartan", Arial, Helvetica, sans-serif;
-  font-size: 0.75rem;
+  font-family: "Jost", Futura, Arial, sans-serif;
+  font-size: 1.125rem;
   font-weight: 300;
   color: #fff;
   padding: 0 1.5rem;
@@ -1608,10 +1706,10 @@ button:hover::after {
   }
 }
 .pivot__card__text {
-  line-height: 1.25rem;
+  line-height: 1.4rem;
   word-spacing: 0.25rem;
-  font-family: "Spartan", Arial, Helvetica, sans-serif;
-  font-size: 0.75rem;
+  font-family: "Jost", Futura, Arial, sans-serif;
+  font-size: 1.125rem;
   font-weight: 300;
   color: #fff;
   margin-bottom: 1rem;
@@ -1629,7 +1727,7 @@ button:hover::after {
   .pivot {
     align-items: center;
   }
-}`, "",{"version":3,"sources":["webpack://./src/styles/variables.scss","webpack://./src/styles/pivot.scss"],"names":[],"mappings":"AAAA,wEAAA;AAEA,YAAA;AAWA,aAAA;AAKA,yEAAA;AAGA,yEAAA;AAEA,+DAAA;AACA,uBAAA;AAMA,aAAA;AAMA,+DAAA;AACA,cAAA;AAMA,gEAAA;AACA,YAAA;AAOA,YAAA;AAOA,yEAAA;AAGA,yEAAA;AAOA,yEAAA;AAGA,yEAAA;AA4EA,yEAAA;AAGA,yEAAA;AAEA;EACI,qBAAA;EACA,oBAAA;EACA,eAAA;EACA,oDA9GM;EA+GN,gBAAA;AC/HJ;;ADkIA;EACI,WA9JI;EA+JJ,qBAAA;AC/HJ;;ADkIA;EACI,kBAAA;EACA,SAAA;EACA,UAAA;EACA,iBAAA;EACA,eAAA;AC/HJ;ADiII;EAjCA,oBAAA;EACA,qBAAA;EACA,oDAxFM;EAyFN,kBAAA;EACA,gBAAA;EACA,WA7II;EA2KA,kBAAA;EACA,UAAA;EACA,gBAAA;EACA,qBAAA;EACA,gBAAA;EACA,WA/KA;EAgLA,kBAAA;EACA,qBAAA;AC1HR;AD4HQ;EACI,WArLJ;AC2DR;AD8HI;EACI,kBAAA;EACA,MAAA;EACA,OAAA;EACA,QAAA;EACA,YAAA;EACA,+BA1LO;EA2LP,oBAAA;EACA,WAAA;AC5HR;ADgIQ;EACI,WAAA;AC9HZ;;ADmIA;EACI,+BAAA;EACA,wBAAA;EACA,qBAAA;AChIJ;;ADmIA,yEAAA;AClNgC;EDkI5B,aAAA;EACA,sBAAA;EACA,uBCnIqB;EDoIrB,oBCpI6B;EAC7B,eAAA;EACA,SAAA;EACA,yDAAA;EACA,sBAAA;EACA,2BAAA;EACA,4BAAA;AAsFJ;;AAnFA;EACI,mBAAA;EACA,qBAAA;EACA,0CAAA;EACA,aAAA;EACA,wBAAA;EACA,sBDfI;ECgBJ,WDfI;ACqGR;AD9BQ;EC/DR;IAUQ,gBAAA;EAuFN;AACF;AArFI;EACI,qBAAA;EACA,eAAA;EACA,cAAA;AAuFR;AApFI;ED4GA,oBAAA;EACA,qBAAA;EACA,oDAxFM;EAyFN,kBAAA;EACA,gBAAA;EACA,WA7II;EC8BA,iBAAA;EACA,OAAA;EACA,WD/BA;AC0HR;AAzFQ;EACI,0CAAA;AA2FZ;ADtDQ;ECtCA;IAIQ,cAAA;IACA,eAAA;IACA,yCAAA;IACA,iBAAA;EA4Fd;AACF;AAzFQ;ED8EJ,aAAA;EACA,8BC9E0B;ED+E1B,oBC/EyC;EACjC,cAAA;EACA,eAAA;EACA,WAAA;AA6FZ;ADtEQ;EC3BA;IAOQ,sBAAA;EA8Fd;AACF;AA3FQ;EDgFJ,oBAAA;EACA,qBAAA;EACA,oDAxFM;EAyFN,kBAAA;EACA,gBAAA;EACA,WA7II;EC0DI,mBAAA;EACA,cAAA;EACA,eAAA;EACA,gBAAA;EACA,WD7DJ;EC8DI,4BAAA;AAkGZ;AA9FY;EACI,sBAAA;AAgGhB;;AAzFA;EACI;IACI,mBAAA;EA4FN;AACF","sourceRoot":""}]);
+}`, "",{"version":3,"sources":["webpack://./src/styles/variables.scss","webpack://./src/styles/pivot.scss"],"names":[],"mappings":"AAAA,wEAAA;AAEA,YAAA;AAWA,aAAA;AAKA,yEAAA;AAGA,yEAAA;AAEA,+DAAA;AACA,uBAAA;AAMA,aAAA;AAMA,cAAA;AAMA,+DAAA;AACA,cAAA;AAMA,gEAAA;AACA,YAAA;AAOA,YAAA;AAOA,SAAA;AAOA,yEAAA;AAGA,yEAAA;AAOA,yEAAA;AAGA,0EAAA;AAMA;EACI,6BAAA;AC/DJ;;ADkEA,0EAAA;AAGA,yEAAA;AA4EA,yEAAA;AAGA,yEAAA;AAEA;EACI,qBAAA;EACA,oBAAA;EACA,eAAA;EACA,wCAhJQ;EAiJR,gBAAA;AC/IJ;;ADkJA;EACI,WAxLI;EAyLJ,qBAAA;AC/IJ;;ADkJA;EACI,kBAAA;EACA,SAAA;EACA,UAAA;EACA,iBAAA;EACA,eAAA;AC/IJ;ADiJI;EAjCA,mBAAA;EACA,qBAAA;EACA,8CArGG;EAsGH,mBAAA;EACA,gBAAA;EACA,WAvKI;EAqMA,kBAAA;EACA,UAAA;EACA,gBAAA;EACA,qBAAA;EACA,gBAAA;EACA,WAzMA;EA0MA,kBAAA;EACA,qBAAA;AC1IR;AD4IQ;EACI,WA/MJ;ACqER;AD8II;EACI,kBAAA;EACA,MAAA;EACA,OAAA;EACA,QAAA;EACA,YAAA;EACA,+BApNO;EAqNP,oBAAA;EACA,WAAA;AC5IR;ADgJQ;EACI,WAAA;AC9IZ;;ADmJA;EACI,yBAAA;EACA,YAAA;EACA,iBAAA;EACA,qBAAA;EACA,kBAAA;EACA,gBAAA;AChJJ;;ADmJA,yEAAA;AC/OgC;ED4J5B,aAAA;EACA,sBAAA;EACA,uBC7JqB;ED8JrB,oBC9J6B;EAC7B,+BAAA;EACA,SAAA;EACA,yDAAA;EACA,sBAAA;EACA,2BAAA;EACA,4BAAA;AAmGJ;;AAhGA;EACI,mBAAA;EACA,qBAAA;EACA,0CAAA;EACA,aAAA;EACA,sBDdI;ECeJ,WDdI;ACiHR;ADhBQ;ECzFR;IASQ,gBAAA;EAoGN;AACF;AAlGI;EACI,qBAAA;EACA,eAAA;EACA,cAAA;AAoGR;AAjGI;EDuIA,mBAAA;EACA,qBAAA;EACA,8CArGG;EAsGH,mBAAA;EACA,gBAAA;EACA,WAvKI;EC6BA,iBAAA;EACA,OAAA;EACA,WD9BA;ACsIR;AAtGQ;EACI,0CAAA;AAwGZ;ADxCQ;ECjEA;IAIQ,cAAA;IACA,eAAA;IACA,yCAAA;IACA,iBAAA;EAyGd;AACF;AAtGQ;EDyGJ,aAAA;EACA,8BCzG0B;ED0G1B,oBC1GyC;EACjC,cAAA;EACA,eAAA;EACA,WAAA;AA0GZ;ADxDQ;ECtDA;IAOQ,sBAAA;EA2Gd;AACF;AAxGQ;ED2GJ,mBAAA;EACA,qBAAA;EACA,8CArGG;EAsGH,mBAAA;EACA,gBAAA;EACA,WAvKI;ECyDI,mBAAA;EACA,cAAA;EACA,eAAA;EACA,gBAAA;EACA,WD5DJ;EC6DI,4BAAA;AA+GZ;AA3GY;EACI,sBAAA;AA6GhB;;AAtGA;EACI;IACI,mBAAA;EAyGN;AACF","sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -1657,9 +1755,11 @@ __webpack_require__.r(__webpack_exports__);
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
 ___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap);"]);
 ___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Arizonia&display=swap);"]);
+___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Simonetta:ital,wght@0,400;0,900;1,400;1,900&display=swap);"]);
 ___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Italianno&display=swap);"]);
 ___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap);"]);
 ___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Spartan:wght@100;200;300;400;500;600;700;800;900&display=swap);"]);
+___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&display=swap);"]);
 // Module
 ___CSS_LOADER_EXPORT___.push([module.id, `/*--------------------------- Theme Colours ---------------------------*/
 /* Colours */
@@ -1669,14 +1769,22 @@ ___CSS_LOADER_EXPORT___.push([module.id, `/*--------------------------- Theme Co
 /******************** Serif Fonts *****************************/
 /* Cormorant Garamond */
 /* Arizonia */
+/* Simonetta */
 /********************** Cursive Fonts *************************/
 /* Italianno */
 /********************* Sans-serif Fonts ************************/
 /* Raleway */
 /* Spartan */
+/* Jost */
 /*------------------------------ Fonts End -----------------------------*/
 /*----------------------------- Breakpoints ----------------------------*/
 /*--------------------------- Breakpoints End --------------------------*/
+/*------------------------------- Layout --------------------------------*/
+:root {
+  --section-padding: 4rem 7.5vw;
+}
+
+/*----------------------------- Layout End ------------------------------*/
 /*------------------------------- Mixins -------------------------------*/
 /*----------------------------- Mixins End -----------------------------*/
 /*------------------------------- Common -------------------------------*/
@@ -1684,7 +1792,7 @@ h2 {
   margin-bottom: 1.5rem;
   line-height: 3.25rem;
   font-size: 4rem;
-  font-family: "Raleway", Arial, Helvetica, sans-serif;
+  font-family: "Simonetta", Cambria, serif;
   font-weight: 500;
 }
 
@@ -1701,10 +1809,10 @@ button {
   cursor: pointer;
 }
 button span {
-  line-height: 1.25rem;
+  line-height: 1.4rem;
   word-spacing: 0.25rem;
-  font-family: "Spartan", Arial, Helvetica, sans-serif;
-  font-size: 0.75rem;
+  font-family: "Jost", Futura, Arial, sans-serif;
+  font-size: 1.125rem;
   font-weight: 300;
   color: #fff;
   position: relative;
@@ -1734,9 +1842,12 @@ button:hover::after {
 }
 
 .underline {
-  border-bottom: 2px solid yellow;
-  padding-bottom: 0.125rem;
+  background-color: #508A80;
+  color: white;
+  padding: 0 0.5rem;
   text-decoration: none;
+  font-style: italic;
+  font-weight: 600;
 }
 
 /*---------------------------- Common Ends -----------------------------*/
@@ -1788,7 +1899,7 @@ q:before, q:after {
 table {
   border-collapse: collapse;
   border-spacing: 0;
-}`, "",{"version":3,"sources":["webpack://./src/styles/variables.scss","webpack://./src/styles/reset.scss"],"names":[],"mappings":"AAAA,wEAAA;AAEA,YAAA;AAWA,aAAA;AAKA,yEAAA;AAGA,yEAAA;AAEA,+DAAA;AACA,uBAAA;AAMA,aAAA;AAMA,+DAAA;AACA,cAAA;AAMA,gEAAA;AACA,YAAA;AAOA,YAAA;AAOA,yEAAA;AAGA,yEAAA;AAOA,yEAAA;AAGA,yEAAA;AA4EA,yEAAA;AAGA,yEAAA;AAEA;EACI,qBAAA;EACA,oBAAA;EACA,eAAA;EACA,oDA9GM;EA+GN,gBAAA;AC/HJ;;ADkIA;EACI,WA9JI;EA+JJ,qBAAA;AC/HJ;;ADkIA;EACI,kBAAA;EACA,SAAA;EACA,UAAA;EACA,iBAAA;EACA,eAAA;AC/HJ;ADiII;EAjCA,oBAAA;EACA,qBAAA;EACA,oDAxFM;EAyFN,kBAAA;EACA,gBAAA;EACA,WA7II;EA2KA,kBAAA;EACA,UAAA;EACA,gBAAA;EACA,qBAAA;EACA,gBAAA;EACA,WA/KA;EAgLA,kBAAA;EACA,qBAAA;AC1HR;AD4HQ;EACI,WArLJ;AC2DR;AD8HI;EACI,kBAAA;EACA,MAAA;EACA,OAAA;EACA,QAAA;EACA,YAAA;EACA,+BA1LO;EA2LP,oBAAA;EACA,WAAA;AC5HR;ADgIQ;EACI,WAAA;AC9HZ;;ADmIA;EACI,+BAAA;EACA,wBAAA;EACA,qBAAA;AChIJ;;ADmIA,yEAAA;AClNgC;;;;;;;;;;;;;EAa/B,SAAA;EACA,UAAA;EACA,SAAA;EACA,eAAA;EACA,aAAA;EACA,wBAAA;AAmFD;;AAjFA,gDAAA;AACA;;EAEC,cAAA;AAoFD;;AAlFA;EACC,cAAA;AAqFD;;AAnFA;EACC,gBAAA;AAsFD;;AApFA;EACC,YAAA;AAuFD;;AArFA;;EAEC,WAAA;EACA,aAAA;AAwFD;;AAtFA;EACC,yBAAA;EACA,iBAAA;AAyFD","sourceRoot":""}]);
+}`, "",{"version":3,"sources":["webpack://./src/styles/variables.scss","webpack://./src/styles/reset.scss"],"names":[],"mappings":"AAAA,wEAAA;AAEA,YAAA;AAWA,aAAA;AAKA,yEAAA;AAGA,yEAAA;AAEA,+DAAA;AACA,uBAAA;AAMA,aAAA;AAMA,cAAA;AAMA,+DAAA;AACA,cAAA;AAMA,gEAAA;AACA,YAAA;AAOA,YAAA;AAOA,SAAA;AAOA,yEAAA;AAGA,yEAAA;AAOA,yEAAA;AAGA,0EAAA;AAMA;EACI,6BAAA;AC/DJ;;ADkEA,0EAAA;AAGA,yEAAA;AA4EA,yEAAA;AAGA,yEAAA;AAEA;EACI,qBAAA;EACA,oBAAA;EACA,eAAA;EACA,wCAhJQ;EAiJR,gBAAA;AC/IJ;;ADkJA;EACI,WAxLI;EAyLJ,qBAAA;AC/IJ;;ADkJA;EACI,kBAAA;EACA,SAAA;EACA,UAAA;EACA,iBAAA;EACA,eAAA;AC/IJ;ADiJI;EAjCA,mBAAA;EACA,qBAAA;EACA,8CArGG;EAsGH,mBAAA;EACA,gBAAA;EACA,WAvKI;EAqMA,kBAAA;EACA,UAAA;EACA,gBAAA;EACA,qBAAA;EACA,gBAAA;EACA,WAzMA;EA0MA,kBAAA;EACA,qBAAA;AC1IR;AD4IQ;EACI,WA/MJ;ACqER;AD8II;EACI,kBAAA;EACA,MAAA;EACA,OAAA;EACA,QAAA;EACA,YAAA;EACA,+BApNO;EAqNP,oBAAA;EACA,WAAA;AC5IR;ADgJQ;EACI,WAAA;AC9IZ;;ADmJA;EACI,yBAAA;EACA,YAAA;EACA,iBAAA;EACA,qBAAA;EACA,kBAAA;EACA,gBAAA;AChJJ;;ADmJA,yEAAA;AC/OgC;;;;;;;;;;;;;EAa/B,SAAA;EACA,UAAA;EACA,SAAA;EACA,eAAA;EACA,aAAA;EACA,wBAAA;AAgGD;;AA9FA,gDAAA;AACA;;EAEC,cAAA;AAiGD;;AA/FA;EACC,cAAA;AAkGD;;AAhGA;EACC,gBAAA;AAmGD;;AAjGA;EACC,YAAA;AAoGD;;AAlGA;;EAEC,WAAA;EACA,aAAA;AAqGD;;AAnGA;EACC,yBAAA;EACA,iBAAA;AAsGD","sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -1820,9 +1931,11 @@ var ___CSS_LOADER_URL_IMPORT_0___ = new URL(/* asset import */ __webpack_require
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
 ___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap);"]);
 ___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Arizonia&display=swap);"]);
+___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Simonetta:ital,wght@0,400;0,900;1,400;1,900&display=swap);"]);
 ___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Italianno&display=swap);"]);
 ___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap);"]);
 ___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Spartan:wght@100;200;300;400;500;600;700;800;900&display=swap);"]);
+___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&display=swap);"]);
 var ___CSS_LOADER_URL_REPLACEMENT_0___ = _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2___default()(___CSS_LOADER_URL_IMPORT_0___);
 // Module
 ___CSS_LOADER_EXPORT___.push([module.id, `/*--------------------------- Theme Colours ---------------------------*/
@@ -1833,14 +1946,22 @@ ___CSS_LOADER_EXPORT___.push([module.id, `/*--------------------------- Theme Co
 /******************** Serif Fonts *****************************/
 /* Cormorant Garamond */
 /* Arizonia */
+/* Simonetta */
 /********************** Cursive Fonts *************************/
 /* Italianno */
 /********************* Sans-serif Fonts ************************/
 /* Raleway */
 /* Spartan */
+/* Jost */
 /*------------------------------ Fonts End -----------------------------*/
 /*----------------------------- Breakpoints ----------------------------*/
 /*--------------------------- Breakpoints End --------------------------*/
+/*------------------------------- Layout --------------------------------*/
+:root {
+  --section-padding: 4rem 7.5vw;
+}
+
+/*----------------------------- Layout End ------------------------------*/
 /*------------------------------- Mixins -------------------------------*/
 /*----------------------------- Mixins End -----------------------------*/
 /*------------------------------- Common -------------------------------*/
@@ -1848,7 +1969,7 @@ h2 {
   margin-bottom: 1.5rem;
   line-height: 3.25rem;
   font-size: 4rem;
-  font-family: "Raleway", Arial, Helvetica, sans-serif;
+  font-family: "Simonetta", Cambria, serif;
   font-weight: 500;
 }
 
@@ -1865,10 +1986,10 @@ button {
   cursor: pointer;
 }
 button span {
-  line-height: 1.25rem;
+  line-height: 1.4rem;
   word-spacing: 0.25rem;
-  font-family: "Spartan", Arial, Helvetica, sans-serif;
-  font-size: 0.75rem;
+  font-family: "Jost", Futura, Arial, sans-serif;
+  font-size: 1.125rem;
   font-weight: 300;
   color: #fff;
   position: relative;
@@ -1898,9 +2019,12 @@ button:hover::after {
 }
 
 .underline {
-  border-bottom: 2px solid yellow;
-  padding-bottom: 0.125rem;
+  background-color: #508A80;
+  color: white;
+  padding: 0 0.5rem;
   text-decoration: none;
+  font-style: italic;
+  font-weight: 600;
 }
 
 /*---------------------------- Common Ends -----------------------------*/
@@ -1909,7 +2033,7 @@ button:hover::after {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 4rem 0;
+  padding: var(--section-padding);
   background-image: url(${___CSS_LOADER_URL_REPLACEMENT_0___});
   background-size: cover;
   background-position: center;
@@ -1920,11 +2044,10 @@ button:hover::after {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin: 0 auto;
+  width: 100%;
   border-radius: 0.5rem;
   box-shadow: 0 4px 24px rgba(0, 0, 0, 0.35);
   padding: 1.5rem;
-  width: calc(100% - 15vw);
   background: #fff;
   color: #000;
   gap: 1.5rem;
@@ -1933,10 +2056,10 @@ button:hover::after {
   margin-right: 0.25rem;
 }
 .skills__text {
-  line-height: 1.25rem;
+  line-height: 1.4rem;
   word-spacing: 0.25rem;
-  font-family: "Spartan", Arial, Helvetica, sans-serif;
-  font-size: 0.75rem;
+  font-family: "Jost", Futura, Arial, sans-serif;
+  font-size: 1.125rem;
   font-weight: 300;
   color: #fff;
   font-size: 1.25rem;
@@ -1949,10 +2072,10 @@ button:hover::after {
   }
 }
 .skills__list {
-  line-height: 1.25rem;
+  line-height: 1.4rem;
   word-spacing: 0.25rem;
-  font-family: "Spartan", Arial, Helvetica, sans-serif;
-  font-size: 0.75rem;
+  font-family: "Jost", Futura, Arial, sans-serif;
+  font-size: 1.125rem;
   font-weight: 300;
   color: #fff;
   text-align: left;
@@ -1969,7 +2092,7 @@ button:hover::after {
   padding: 0.5rem;
   width: 25%;
   vertical-align: middle;
-}`, "",{"version":3,"sources":["webpack://./src/styles/variables.scss","webpack://./src/styles/skills.scss"],"names":[],"mappings":"AAAA,wEAAA;AAEA,YAAA;AAWA,aAAA;AAKA,yEAAA;AAGA,yEAAA;AAEA,+DAAA;AACA,uBAAA;AAMA,aAAA;AAMA,+DAAA;AACA,cAAA;AAMA,gEAAA;AACA,YAAA;AAOA,YAAA;AAOA,yEAAA;AAGA,yEAAA;AAOA,yEAAA;AAGA,yEAAA;AA4EA,yEAAA;AAGA,yEAAA;AAEA;EACI,qBAAA;EACA,oBAAA;EACA,eAAA;EACA,oDA9GM;EA+GN,gBAAA;AC/HJ;;ADkIA;EACI,WA9JI;EA+JJ,qBAAA;AC/HJ;;ADkIA;EACI,kBAAA;EACA,SAAA;EACA,UAAA;EACA,iBAAA;EACA,eAAA;AC/HJ;ADiII;EAjCA,oBAAA;EACA,qBAAA;EACA,oDAxFM;EAyFN,kBAAA;EACA,gBAAA;EACA,WA7II;EA2KA,kBAAA;EACA,UAAA;EACA,gBAAA;EACA,qBAAA;EACA,gBAAA;EACA,WA/KA;EAgLA,kBAAA;EACA,qBAAA;AC1HR;AD4HQ;EACI,WArLJ;AC2DR;AD8HI;EACI,kBAAA;EACA,MAAA;EACA,OAAA;EACA,QAAA;EACA,YAAA;EACA,+BA1LO;EA2LP,oBAAA;EACA,WAAA;AC5HR;ADgIQ;EACI,WAAA;AC9HZ;;ADmIA;EACI,+BAAA;EACA,wBAAA;EACA,qBAAA;AChIJ;;ADmIA,yEAAA;AClNgC;EDkI5B,aAAA;EACA,sBAAA;EACA,uBCnIqB;EDoIrB,mBCpI6B;EAC7B,eAAA;EACA,yDAAA;EACA,sBAAA;EACA,2BAAA;EACA,4BAAA;AAsFJ;AApFI;ED0HA,aAAA;EACA,sBAAA;EACA,uBC3HyB;ED4HzB,mBC5HiC;EAC7B,cAAA;EACA,qBAAA;EACA,0CAAA;EACA,eAAA;EACA,wBAAA;EACA,gBDdA;ECeA,WDdA;ECeA,WAAA;AAyFR;AAtFI;EACI,qBAAA;AAwFR;AArFI;EDiHA,oBAAA;EACA,qBAAA;EACA,oDAxFM;EAyFN,kBAAA;EACA,gBAAA;EACA,WA7II;ECyBA,kBAAA;EACA,gBAAA;EACA,WD1BA;ACsHR;AD/CQ;ECjDJ;IAOQ,aAAA;EA6FV;AACF;AA1FI;EDsGA,oBAAA;EACA,qBAAA;EACA,oDAxFM;EAyFN,kBAAA;EACA,gBAAA;EACA,WA7II;ECoCA,gBAAA;EACA,WDpCA;ACqIR;AD9DQ;ECtCJ;IAMQ,aAAA;EAkGV;AACF;AAhGQ;;EAEI,qCAAA;EACA,eAAA;EACA,UAAA;EACA,sBAAA;AAkGZ","sourceRoot":""}]);
+}`, "",{"version":3,"sources":["webpack://./src/styles/variables.scss","webpack://./src/styles/skills.scss"],"names":[],"mappings":"AAAA,wEAAA;AAEA,YAAA;AAWA,aAAA;AAKA,yEAAA;AAGA,yEAAA;AAEA,+DAAA;AACA,uBAAA;AAMA,aAAA;AAMA,cAAA;AAMA,+DAAA;AACA,cAAA;AAMA,gEAAA;AACA,YAAA;AAOA,YAAA;AAOA,SAAA;AAOA,yEAAA;AAGA,yEAAA;AAOA,yEAAA;AAGA,0EAAA;AAMA;EACI,6BAAA;AC/DJ;;ADkEA,0EAAA;AAGA,yEAAA;AA4EA,yEAAA;AAGA,yEAAA;AAEA;EACI,qBAAA;EACA,oBAAA;EACA,eAAA;EACA,wCAhJQ;EAiJR,gBAAA;AC/IJ;;ADkJA;EACI,WAxLI;EAyLJ,qBAAA;AC/IJ;;ADkJA;EACI,kBAAA;EACA,SAAA;EACA,UAAA;EACA,iBAAA;EACA,eAAA;AC/IJ;ADiJI;EAjCA,mBAAA;EACA,qBAAA;EACA,8CArGG;EAsGH,mBAAA;EACA,gBAAA;EACA,WAvKI;EAqMA,kBAAA;EACA,UAAA;EACA,gBAAA;EACA,qBAAA;EACA,gBAAA;EACA,WAzMA;EA0MA,kBAAA;EACA,qBAAA;AC1IR;AD4IQ;EACI,WA/MJ;ACqER;AD8II;EACI,kBAAA;EACA,MAAA;EACA,OAAA;EACA,QAAA;EACA,YAAA;EACA,+BApNO;EAqNP,oBAAA;EACA,WAAA;AC5IR;ADgJQ;EACI,WAAA;AC9IZ;;ADmJA;EACI,yBAAA;EACA,YAAA;EACA,iBAAA;EACA,qBAAA;EACA,kBAAA;EACA,gBAAA;AChJJ;;ADmJA,yEAAA;AC/OgC;ED4J5B,aAAA;EACA,sBAAA;EACA,uBC7JqB;ED8JrB,mBC9J6B;EAC7B,+BAAA;EACA,yDAAA;EACA,sBAAA;EACA,2BAAA;EACA,4BAAA;AAmGJ;AAjGI;EDoJA,aAAA;EACA,sBAAA;EACA,uBCrJyB;EDsJzB,mBCtJiC;EAC7B,WAAA;EACA,qBAAA;EACA,0CAAA;EACA,eAAA;EACA,gBDbA;ECcA,WDbA;ECcA,WAAA;AAsGR;AAnGI;EACI,qBAAA;AAqGR;AAlGI;ED4IA,mBAAA;EACA,qBAAA;EACA,8CArGG;EAsGH,mBAAA;EACA,gBAAA;EACA,WAvKI;ECwBA,kBAAA;EACA,gBAAA;EACA,WDzBA;ACkIR;ADjCQ;EC5EJ;IAOQ,aAAA;EA0GV;AACF;AAvGI;EDiIA,mBAAA;EACA,qBAAA;EACA,8CArGG;EAsGH,mBAAA;EACA,gBAAA;EACA,WAvKI;ECmCA,gBAAA;EACA,WDnCA;ACiJR;ADhDQ;ECjEJ;IAMQ,aAAA;EA+GV;AACF;AA7GQ;;EAEI,qCAAA;EACA,eAAA;EACA,UAAA;EACA,sBAAA;AA+GZ","sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -1997,9 +2120,11 @@ __webpack_require__.r(__webpack_exports__);
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
 ___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap);"]);
 ___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Arizonia&display=swap);"]);
+___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Simonetta:ital,wght@0,400;0,900;1,400;1,900&display=swap);"]);
 ___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Italianno&display=swap);"]);
 ___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap);"]);
 ___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Spartan:wght@100;200;300;400;500;600;700;800;900&display=swap);"]);
+___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&display=swap);"]);
 // Module
 ___CSS_LOADER_EXPORT___.push([module.id, `/*--------------------------- Theme Colours ---------------------------*/
 /* Colours */
@@ -2009,14 +2134,22 @@ ___CSS_LOADER_EXPORT___.push([module.id, `/*--------------------------- Theme Co
 /******************** Serif Fonts *****************************/
 /* Cormorant Garamond */
 /* Arizonia */
+/* Simonetta */
 /********************** Cursive Fonts *************************/
 /* Italianno */
 /********************* Sans-serif Fonts ************************/
 /* Raleway */
 /* Spartan */
+/* Jost */
 /*------------------------------ Fonts End -----------------------------*/
 /*----------------------------- Breakpoints ----------------------------*/
 /*--------------------------- Breakpoints End --------------------------*/
+/*------------------------------- Layout --------------------------------*/
+:root {
+  --section-padding: 4rem 7.5vw;
+}
+
+/*----------------------------- Layout End ------------------------------*/
 /*------------------------------- Mixins -------------------------------*/
 /*----------------------------- Mixins End -----------------------------*/
 /*------------------------------- Common -------------------------------*/
@@ -2024,7 +2157,7 @@ h2 {
   margin-bottom: 1.5rem;
   line-height: 3.25rem;
   font-size: 4rem;
-  font-family: "Raleway", Arial, Helvetica, sans-serif;
+  font-family: "Simonetta", Cambria, serif;
   font-weight: 500;
 }
 
@@ -2041,10 +2174,10 @@ button {
   cursor: pointer;
 }
 button span {
-  line-height: 1.25rem;
+  line-height: 1.4rem;
   word-spacing: 0.25rem;
-  font-family: "Spartan", Arial, Helvetica, sans-serif;
-  font-size: 0.75rem;
+  font-family: "Jost", Futura, Arial, sans-serif;
+  font-size: 1.125rem;
   font-weight: 300;
   color: #fff;
   position: relative;
@@ -2074,12 +2207,15 @@ button:hover::after {
 }
 
 .underline {
-  border-bottom: 2px solid yellow;
-  padding-bottom: 0.125rem;
+  background-color: #508A80;
+  color: white;
+  padding: 0 0.5rem;
   text-decoration: none;
+  font-style: italic;
+  font-weight: 600;
 }
 
-/*---------------------------- Common Ends -----------------------------*/`, "",{"version":3,"sources":["webpack://./src/styles/variables.scss"],"names":[],"mappings":"AAAA,wEAAA;AAEA,YAAA;AAWA,aAAA;AAKA,yEAAA;AAGA,yEAAA;AAEA,+DAAA;AACA,uBAAA;AAMA,aAAA;AAMA,+DAAA;AACA,cAAA;AAMA,gEAAA;AACA,YAAA;AAOA,YAAA;AAOA,yEAAA;AAGA,yEAAA;AAOA,yEAAA;AAGA,yEAAA;AA4EA,yEAAA;AAGA,yEAAA;AAEA;EACI,qBAAA;EACA,oBAAA;EACA,eAAA;EACA,oDA9GM;EA+GN,gBAAA;AA/HJ;;AAkIA;EACI,WA9JI;EA+JJ,qBAAA;AA/HJ;;AAkIA;EACI,kBAAA;EACA,SAAA;EACA,UAAA;EACA,iBAAA;EACA,eAAA;AA/HJ;AAiII;EAjCA,oBAAA;EACA,qBAAA;EACA,oDAxFM;EAyFN,kBAAA;EACA,gBAAA;EACA,WA7II;EA2KA,kBAAA;EACA,UAAA;EACA,gBAAA;EACA,qBAAA;EACA,gBAAA;EACA,WA/KA;EAgLA,kBAAA;EACA,qBAAA;AA1HR;AA4HQ;EACI,WArLJ;AA2DR;AA8HI;EACI,kBAAA;EACA,MAAA;EACA,OAAA;EACA,QAAA;EACA,YAAA;EACA,+BA1LO;EA2LP,oBAAA;EACA,WAAA;AA5HR;AAgIQ;EACI,WAAA;AA9HZ;;AAmIA;EACI,+BAAA;EACA,wBAAA;EACA,qBAAA;AAhIJ;;AAmIA,yEAAA","sourceRoot":""}]);
+/*---------------------------- Common Ends -----------------------------*/`, "",{"version":3,"sources":["webpack://./src/styles/variables.scss"],"names":[],"mappings":"AAAA,wEAAA;AAEA,YAAA;AAWA,aAAA;AAKA,yEAAA;AAGA,yEAAA;AAEA,+DAAA;AACA,uBAAA;AAMA,aAAA;AAMA,cAAA;AAMA,+DAAA;AACA,cAAA;AAMA,gEAAA;AACA,YAAA;AAOA,YAAA;AAOA,SAAA;AAOA,yEAAA;AAGA,yEAAA;AAOA,yEAAA;AAGA,0EAAA;AAMA;EACI,6BAAA;AA/DJ;;AAkEA,0EAAA;AAGA,yEAAA;AA4EA,yEAAA;AAGA,yEAAA;AAEA;EACI,qBAAA;EACA,oBAAA;EACA,eAAA;EACA,wCAhJQ;EAiJR,gBAAA;AA/IJ;;AAkJA;EACI,WAxLI;EAyLJ,qBAAA;AA/IJ;;AAkJA;EACI,kBAAA;EACA,SAAA;EACA,UAAA;EACA,iBAAA;EACA,eAAA;AA/IJ;AAiJI;EAjCA,mBAAA;EACA,qBAAA;EACA,8CArGG;EAsGH,mBAAA;EACA,gBAAA;EACA,WAvKI;EAqMA,kBAAA;EACA,UAAA;EACA,gBAAA;EACA,qBAAA;EACA,gBAAA;EACA,WAzMA;EA0MA,kBAAA;EACA,qBAAA;AA1IR;AA4IQ;EACI,WA/MJ;AAqER;AA8II;EACI,kBAAA;EACA,MAAA;EACA,OAAA;EACA,QAAA;EACA,YAAA;EACA,+BApNO;EAqNP,oBAAA;EACA,WAAA;AA5IR;AAgJQ;EACI,WAAA;AA9IZ;;AAmJA;EACI,yBAAA;EACA,YAAA;EACA,iBAAA;EACA,qBAAA;EACA,kBAAA;EACA,gBAAA;AAhJJ;;AAmJA,yEAAA","sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -2107,9 +2243,11 @@ __webpack_require__.r(__webpack_exports__);
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
 ___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap);"]);
 ___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Arizonia&display=swap);"]);
+___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Simonetta:ital,wght@0,400;0,900;1,400;1,900&display=swap);"]);
 ___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Italianno&display=swap);"]);
 ___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap);"]);
 ___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Spartan:wght@100;200;300;400;500;600;700;800;900&display=swap);"]);
+___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&display=swap);"]);
 // Module
 ___CSS_LOADER_EXPORT___.push([module.id, `/*--------------------------- Theme Colours ---------------------------*/
 /* Colours */
@@ -2119,14 +2257,22 @@ ___CSS_LOADER_EXPORT___.push([module.id, `/*--------------------------- Theme Co
 /******************** Serif Fonts *****************************/
 /* Cormorant Garamond */
 /* Arizonia */
+/* Simonetta */
 /********************** Cursive Fonts *************************/
 /* Italianno */
 /********************* Sans-serif Fonts ************************/
 /* Raleway */
 /* Spartan */
+/* Jost */
 /*------------------------------ Fonts End -----------------------------*/
 /*----------------------------- Breakpoints ----------------------------*/
 /*--------------------------- Breakpoints End --------------------------*/
+/*------------------------------- Layout --------------------------------*/
+:root {
+  --section-padding: 4rem 7.5vw;
+}
+
+/*----------------------------- Layout End ------------------------------*/
 /*------------------------------- Mixins -------------------------------*/
 /*----------------------------- Mixins End -----------------------------*/
 /*------------------------------- Common -------------------------------*/
@@ -2134,7 +2280,7 @@ h2 {
   margin-bottom: 1.5rem;
   line-height: 3.25rem;
   font-size: 4rem;
-  font-family: "Raleway", Arial, Helvetica, sans-serif;
+  font-family: "Simonetta", Cambria, serif;
   font-weight: 500;
 }
 
@@ -2151,10 +2297,10 @@ button {
   cursor: pointer;
 }
 button span {
-  line-height: 1.25rem;
+  line-height: 1.4rem;
   word-spacing: 0.25rem;
-  font-family: "Spartan", Arial, Helvetica, sans-serif;
-  font-size: 0.75rem;
+  font-family: "Jost", Futura, Arial, sans-serif;
+  font-size: 1.125rem;
   font-weight: 300;
   color: #fff;
   position: relative;
@@ -2184,21 +2330,17 @@ button:hover::after {
 }
 
 .underline {
-  border-bottom: 2px solid yellow;
-  padding-bottom: 0.125rem;
+  background-color: #508A80;
+  color: white;
+  padding: 0 0.5rem;
   text-decoration: none;
+  font-style: italic;
+  font-weight: 600;
 }
 
 /*---------------------------- Common Ends -----------------------------*/
 .work {
-  margin: 0 auto;
-  width: calc(100% - 15vw);
   overflow: hidden;
-}
-@media (max-width: 576px) {
-  .work {
-    margin-top: 0;
-  }
 }
 .work__carousel {
   border: 2px solid yellow;
@@ -2234,16 +2376,16 @@ button:hover::after {
   display: none !important;
 }
 .work p {
-  line-height: 1.25rem;
+  line-height: 1.4rem;
   word-spacing: 0.25rem;
-  font-family: "Spartan", Arial, Helvetica, sans-serif;
-  font-size: 0.75rem;
+  font-family: "Jost", Futura, Arial, sans-serif;
+  font-size: 1.125rem;
   font-weight: 300;
   color: #fff;
   margin-top: 0.75rem;
   color: #fff;
   text-align: center;
-}`, "",{"version":3,"sources":["webpack://./src/styles/variables.scss","webpack://./src/styles/work.scss"],"names":[],"mappings":"AAAA,wEAAA;AAEA,YAAA;AAWA,aAAA;AAKA,yEAAA;AAGA,yEAAA;AAEA,+DAAA;AACA,uBAAA;AAMA,aAAA;AAMA,+DAAA;AACA,cAAA;AAMA,gEAAA;AACA,YAAA;AAOA,YAAA;AAOA,yEAAA;AAGA,yEAAA;AAOA,yEAAA;AAGA,yEAAA;AA4EA,yEAAA;AAGA,yEAAA;AAEA;EACI,qBAAA;EACA,oBAAA;EACA,eAAA;EACA,oDA9GM;EA+GN,gBAAA;AC/HJ;;ADkIA;EACI,WA9JI;EA+JJ,qBAAA;AC/HJ;;ADkIA;EACI,kBAAA;EACA,SAAA;EACA,UAAA;EACA,iBAAA;EACA,eAAA;AC/HJ;ADiII;EAjCA,oBAAA;EACA,qBAAA;EACA,oDAxFM;EAyFN,kBAAA;EACA,gBAAA;EACA,WA7II;EA2KA,kBAAA;EACA,UAAA;EACA,gBAAA;EACA,qBAAA;EACA,gBAAA;EACA,WA/KA;EAgLA,kBAAA;EACA,qBAAA;AC1HR;AD4HQ;EACI,WArLJ;AC2DR;AD8HI;EACI,kBAAA;EACA,MAAA;EACA,OAAA;EACA,QAAA;EACA,YAAA;EACA,+BA1LO;EA2LP,oBAAA;EACA,WAAA;AC5HR;ADgIQ;EACI,WAAA;AC9HZ;;ADmIA;EACI,+BAAA;EACA,wBAAA;EACA,qBAAA;AChIJ;;ADmIA,yEAAA;AClNgC;EAC5B,cAAA;EACA,wBAAA;EACA,gBAAA;AAmFJ;ADbQ;ECzEwB;IAMxB,aAAA;EAoFN;AACF;AAlFI;EACI,wBAAA;EACA,cAAA;EACA,eAAA;EACA,sBDZA;ACgGR;AAlFQ;EACI,sBAAA;EACA,YAAA;EACA,iBAAA;AAoFZ;AAjFQ;EACI,gBAAA;AAmFZ;AAhFQ;EDmGJ,aAAA;EACA,sBCnG0B;EDoG1B,mBCpGiC;EACzB,iBAAA;AAoFZ;AAjFQ;EACI,cAAA;EACA,YAAA;AAmFZ;AAjFY;EACI,YAAA;EACA,gBAAA;EACA,aAAA;AAmFhB;AA/EQ;;EAEI,wBAAA;AAiFZ;AA7EI;ED0FA,oBAAA;EACA,qBAAA;EACA,oDAxFM;EAyFN,kBAAA;EACA,gBAAA;EACA,WA7II;ECgDA,mBAAA;EACA,WDjDA;ECkDA,kBAAA;AAoFR","sourceRoot":""}]);
+}`, "",{"version":3,"sources":["webpack://./src/styles/variables.scss","webpack://./src/styles/work.scss"],"names":[],"mappings":"AAAA,wEAAA;AAEA,YAAA;AAWA,aAAA;AAKA,yEAAA;AAGA,yEAAA;AAEA,+DAAA;AACA,uBAAA;AAMA,aAAA;AAMA,cAAA;AAMA,+DAAA;AACA,cAAA;AAMA,gEAAA;AACA,YAAA;AAOA,YAAA;AAOA,SAAA;AAOA,yEAAA;AAGA,yEAAA;AAOA,yEAAA;AAGA,0EAAA;AAMA;EACI,6BAAA;AC/DJ;;ADkEA,0EAAA;AAGA,yEAAA;AA4EA,yEAAA;AAGA,yEAAA;AAEA;EACI,qBAAA;EACA,oBAAA;EACA,eAAA;EACA,wCAhJQ;EAiJR,gBAAA;AC/IJ;;ADkJA;EACI,WAxLI;EAyLJ,qBAAA;AC/IJ;;ADkJA;EACI,kBAAA;EACA,SAAA;EACA,UAAA;EACA,iBAAA;EACA,eAAA;AC/IJ;ADiJI;EAjCA,mBAAA;EACA,qBAAA;EACA,8CArGG;EAsGH,mBAAA;EACA,gBAAA;EACA,WAvKI;EAqMA,kBAAA;EACA,UAAA;EACA,gBAAA;EACA,qBAAA;EACA,gBAAA;EACA,WAzMA;EA0MA,kBAAA;EACA,qBAAA;AC1IR;AD4IQ;EACI,WA/MJ;ACqER;AD8II;EACI,kBAAA;EACA,MAAA;EACA,OAAA;EACA,QAAA;EACA,YAAA;EACA,+BApNO;EAqNP,oBAAA;EACA,WAAA;AC5IR;ADgJQ;EACI,WAAA;AC9IZ;;ADmJA;EACI,yBAAA;EACA,YAAA;EACA,iBAAA;EACA,qBAAA;EACA,kBAAA;EACA,gBAAA;AChJJ;;ADmJA,yEAAA;AC/OgC;EAC5B,gBAAA;AAgGJ;AA9FI;EACI,wBAAA;EACA,cAAA;EACA,eAAA;EACA,sBDNA;ACsGR;AA9FQ;EACI,sBAAA;EACA,YAAA;EACA,iBAAA;AAgGZ;AA7FQ;EACI,gBAAA;AA+FZ;AA5FQ;EDmIJ,aAAA;EACA,sBCnI0B;EDoI1B,mBCpIiC;EACzB,iBAAA;AAgGZ;AA7FQ;EACI,cAAA;EACA,YAAA;AA+FZ;AA7FY;EACI,YAAA;EACA,gBAAA;EACA,aAAA;AA+FhB;AA3FQ;;EAEI,wBAAA;AA6FZ;AAzFI;ED0HA,mBAAA;EACA,qBAAA;EACA,8CArGG;EAsGH,mBAAA;EACA,gBAAA;EACA,WAvKI;EC0CA,mBAAA;EACA,WD3CA;EC4CA,kBAAA;AAgGR","sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -17099,6 +17241,17 @@ module.exports = __webpack_require__.p + "The_Great_Wave_off_Kanagawa.jpg";
 
 /***/ },
 
+/***/ "./src/assets/background/Van_Gogh_-_Starry_Night_-_Google_Art_Project.jpg"
+/*!********************************************************************************!*\
+  !*** ./src/assets/background/Van_Gogh_-_Starry_Night_-_Google_Art_Project.jpg ***!
+  \********************************************************************************/
+(module, __unused_webpack_exports, __webpack_require__) {
+
+"use strict";
+module.exports = __webpack_require__.p + "Van_Gogh_-_Starry_Night_-_Google_Art_Project.jpg";
+
+/***/ },
+
 /***/ "./src/assets/personal-pictures/1.png"
 /*!********************************************!*\
   !*** ./src/assets/personal-pictures/1.png ***!
@@ -17522,4 +17675,4 @@ __webpack_require__.r(__webpack_exports__);
 
 /******/ })()
 ;
-//# sourceMappingURL=bundle873dc0a6c8ffbf5e2d23.js.map
+//# sourceMappingURL=bundlea72fe9796eff8052ecd6.js.map

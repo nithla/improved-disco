@@ -4,23 +4,16 @@ html {
     scroll-behavior: smooth !important;
 }
 
+html {
+    @include media-breakpoint-up($sm) {
+        scroll-snap-type: y proximity;
+    }
+}
+
 body {
     background: $black;
     color: $white;
     overflow-x: hidden;
-
-    &::-webkit-scrollbar {
-        width: 0.75rem;
-    }
-
-    &::-webkit-scrollbar-track {
-        background: $black;
-    }
-
-    &::-webkit-scrollbar-thumb {
-        border: 1px solid $black;
-        background: $yellow;
-    }
 }
 
 .main {
@@ -37,4 +30,10 @@ body {
 .contact-section,
 .fun {
     min-height: 100vh;
+
+    @include media-breakpoint-up($sm) {
+        height: 100vh;
+        overflow-y: auto;
+        scroll-snap-align: start;
+    }
 }

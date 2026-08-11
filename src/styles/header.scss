@@ -9,7 +9,11 @@
         right: 0;
         margin: 0;
         padding: 2rem 1rem;
-        background: $sunset-header;
+        // background-color: #8A743D;
+        background-image: url('../assets/background/The_Kiss_-_Gustav_Klimt_-_Google_Cultural_Institute.jpg');
+        background-repeat: no-repeat;
+        // background-position: bottom center;
+        background-size: cover;
         width: 8rem;
         height: 100vh;
         gap: 2.5rem;
@@ -127,7 +131,7 @@
             li {
                 @include default-text;
                 display: inline-block;
-                font-size: 0.75rem;
+                font-size: 1.1rem;
                 color: $white;
                 transition: all 0.3s ease-in-out;
                 cursor: pointer;

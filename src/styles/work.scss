@@ -1,11 +1,5 @@
 .work {
-    margin: 0 auto;
-    width: calc(100% - 15vw);
     overflow: hidden;
-
-    @include media-breakpoint-down($sm) {
-        margin-top: 0;
-    }
 
     &__carousel {
         border: 2px solid yellow;

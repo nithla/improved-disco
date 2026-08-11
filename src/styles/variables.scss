@@ -34,6 +34,12 @@ $Arizonia: 'Arizonia',
 Times,
 serif;
 
+/* Simonetta */
+@import url('https://fonts.googleapis.com/css2?family=Simonetta:ital,wght@0,400;0,900;1,400;1,900&display=swap');
+$Simonetta: 'Simonetta',
+Cambria,
+serif;
+
 /********************** Cursive Fonts *************************/
 /* Italianno */
 @import url('https://fonts.googleapis.com/css2?family=Italianno&display=swap');
@@ -56,6 +62,13 @@ Arial,
 Helvetica,
 sans-serif;
 
+/* Jost */
+@import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&display=swap');
+$Jost: 'Jost',
+Futura,
+Arial,
+sans-serif;
+
 /*------------------------------ Fonts End -----------------------------*/
 
 
@@ -67,6 +80,19 @@ $lg: 992px;
 $xl: 1200px;
 
 /*--------------------------- Breakpoints End --------------------------*/
+
+
+/*------------------------------- Layout --------------------------------*/
+
+// Shared padding for the section wrappers that contain a full-width white
+// panel (.home, .work-section, .skills). Redefine this in one place
+// (e.g. inside a media-breakpoint-down($sm) block below) to change the
+// padding on mobile everywhere at once.
+:root {
+    --section-padding: 4rem 7.5vw;
+}
+
+/*----------------------------- Layout End ------------------------------*/
 
 
 /*------------------------------- Mixins -------------------------------*/
@@ -137,10 +163,10 @@ $xl: 1200px;
 }
 
 @mixin default-text {
-    line-height: 1.25rem;
+    line-height: 1.4rem;
     word-spacing: 0.25rem;
-    font-family: $Spartan;
-    font-size: 0.75rem;
+    font-family: $Jost;
+    font-size: 1.125rem;
     font-weight: 300;
     color: $white;
 }
@@ -154,7 +180,7 @@ h2 {
     margin-bottom: 1.5rem;
     line-height: 3.25rem;
     font-size: 4rem;
-    font-family: $Raleway;
+    font-family: $Simonetta;
     font-weight: 500;
 }
 
@@ -205,9 +231,12 @@ button {
 }
 
 .underline {
-    border-bottom: 2px solid yellow;
-    padding-bottom: 0.125rem;
+    background-color: #508A80;
+    color: white;
+    padding: 0 .5rem;
     text-decoration: none;
+    font-style: italic;
+    font-weight: 600;
 }
 
 /*---------------------------- Common Ends -----------------------------*/

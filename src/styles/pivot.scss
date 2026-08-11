@@ -1,6 +1,6 @@
 .work-section {
     @include flex-column(center, stretch);
-    padding: 4rem 0;
+    padding: var(--section-padding);
     gap: 3rem;
     background-image: url('../assets/background/The_Great_Wave_off_Kanagawa.jpg');
     background-size: cover;
@@ -9,11 +9,10 @@
 }
 
 .pivot {
-    margin: 0 auto 2rem;
+    margin-bottom: 2rem;
     border-radius: 0.5rem;
     box-shadow: 0 4px 24px rgba(0, 0, 0, 0.35);
     padding: 2rem;
-    width: calc(100% - 15vw);
     background-color: $white;
     color: $black;
 
