@@ -1,5 +1,9 @@
 
 const contactButton = $('.contact__input__button span');
+const nameInput = $('#contactName');
+const emailInput = $('#contactEmail');
+const messageInput = $('#contactQuery');
+const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 contactButton.on('click', function (e) {
     let formDetails = formValidate();
@@ -8,7 +12,6 @@ contactButton.on('click', function (e) {
         const formData = JSON.stringify({
             name: formDetails.nameValue,
             email: formDetails.emailValue,
-            phone: formDetails.phoneValue,
             message: formDetails.messageValue,
         });
 
@@ -27,57 +30,60 @@ contactButton.on('click', function (e) {
     }
 });
 
+[nameInput, emailInput, messageInput].forEach(($input) => {
+    $input.on('input', function () {
+        if (isFieldValid($input)) {
+            clearError($input);
+        }
+    });
+});
+
 function formValidate() {
-    const name = $('#contactName');
-    const email = $('#contactEmail');
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    const phone = $('#contactPhone');
-    const phoneRegex = /^[0-9]{10}$/;
-    const message = $('#contactQuery');
     let isValid = true;
 
-    // Remove all errors and check again
-    $('.error').remove();
+    clearError(nameInput);
+    clearError(emailInput);
+    clearError(messageInput);
 
     // Name validation
-    if (name.val().trim() === '') {
+    if (nameInput.val().trim() === '') {
         isValid = false;
-        showError(name, 'Name is required');
+        showError(nameInput, 'Name is required');
     }
 
     // Email validation
-    if (email.val().trim() === '') {
+    if (emailInput.val().trim() === '') {
         isValid = false;
-        showError(email, 'Email is required');
-    } else if (!emailRegex.test(email.val().trim())) {
+        showError(emailInput, 'Email is required');
+    } else if (!emailRegex.test(emailInput.val().trim())) {
         isValid = false;
-        showError(email, 'Please enter a valid email address.');
-    }
-
-    // Phone validation
-    if (phone.val().trim() === '') {
-        isValid = false;
-        showError(phone, 'Phone number is required');
-    } else if (!phoneRegex.test(phone.val().trim())) {
-        isValid = false;
-        showError(phone, 'Please enter a valid 10-digit phone number.');
+        showError(emailInput, 'Please enter a valid email address.');
     }
 
     // Message validation
-    if (message.val().trim() === '') {
+    if (messageInput.val().trim() === '') {
         isValid = false;
-        showError(message, 'Message is required.');
+        showError(messageInput, 'Message is required.');
     }
 
     if (isValid) {
-        let nameValue = name.val();
-        let emailValue = email.val();
-        let phoneValue = phone.val();
-        let messageValue = message.val();
-        let contactDetails = {nameValue, emailValue, phoneValue, messageValue};
+        let nameValue = nameInput.val();
+        let emailValue = emailInput.val();
+        let messageValue = messageInput.val();
+        let contactDetails = {nameValue, emailValue, messageValue};
         resetForm();
         return contactDetails;
     }
+}
+
+function isFieldValid($input) {
+    const value = $input.val().trim();
+
+    if ($input.is(emailInput)) {
+        return value !== '' && emailRegex.test(value);
+    }
+
+    return value !== '';
 }
 
 function showError(input, message) {
@@ -85,9 +91,12 @@ function showError(input, message) {
     errorElement.insertAfter(input);
 }
 
+function clearError($input) {
+    $input.next('.error').remove();
+}
+
 function resetForm() {
-    $('#contactName').val('');
-    $('#contactEmail').val('');
-    $('#contactPhone').val('');
-    $('#contactQuery').val('');
+    nameInput.val('');
+    emailInput.val('');
+    messageInput.val('');
 }

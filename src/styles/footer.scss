@@ -15,11 +15,12 @@
         gap: 1.5rem;
 
         img {
-            width: 2rem;
-            height: 2rem;
+            width: 2.5rem;
+            height: 2.5rem;
 
             @include media-breakpoint-down($md) {
-                width: 2rem;
+                width: 2.25rem;
+                height: 2.25rem;
             }
         }
     }

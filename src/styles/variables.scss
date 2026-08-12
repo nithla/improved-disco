@@ -231,12 +231,10 @@ button {
 }
 
 .underline {
-    background-color: #508A80;
-    color: white;
+    background-color: $yellow;
     padding: 0 .5rem;
     text-decoration: none;
     font-style: italic;
-    font-weight: 600;
 }
 
 /*---------------------------- Common Ends -----------------------------*/
