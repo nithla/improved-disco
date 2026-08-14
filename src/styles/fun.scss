@@ -1,7 +1,7 @@
 .fun {
     @include flex-column(center, center);
     margin: 0 auto;
-    padding: 4rem 7.5vw;
+    padding: var(--section-padding);
     width: 100%;
     gap: 3rem;
     background-image: url('../assets/background/1665_Girl_with_a_Pearl_Earring.jpg');
@@ -11,63 +11,41 @@
 
     &__text {
         margin-bottom: 0;
+        font-size: 2rem;
+        line-height: 1;
     }
 
-    &__links {
-        @include flex-row(center, stretch);
-        flex-wrap: wrap;
-        gap: 1.5rem;
-
-        @include media-breakpoint-down($sm) {
-            flex-direction: column;
-            align-items: center;
-        }
-    }
-
-    &__link {
-        @include flex-column(center, center);
+    &__split {
+        @include flex-row(stretch, flex-start);
         border-radius: 0.5rem;
-        box-shadow: 0 2px 12px $shadow-color;
-        padding: 2rem;
-        width: 12rem;
-        background-color: $white;
-        color: $black;
-        text-align: center;
-        transition: all 0.3s ease;
-        gap: 0.75rem;
+        box-shadow: 0 4px 24px rgba(0, 0, 0, 0.35);
+        padding: 0 0 0 var(--card-padding);
+        width: 100%;
+        gap: 3rem;
+        background: rgba(0, 0, 0, 0.4);
 
-        img {
-            width: 2.5rem;
-            height: 2.5rem;
-        }
-
-        i {
-            font-size: 2.5rem;
-        }
-
-        span {
-            @include default-text;
-            font-weight: 600;
-            color: $black;
-        }
-
-        &:hover {
-            box-shadow: 0 4px 20px $shadow-color;
-            background-color: $yellow;
-            transform: translateY(-0.25rem);
+        @include media-breakpoint-down($md) {
+            flex-direction: column;
         }
     }
 
     &__section {
-        width: 100%;
+        flex: 1;
+        min-width: 0;
+
+        &:first-child {
+            padding: var(--card-padding) 0;
+        }
     }
 
-    &__subheading {
+    &__label {
         @include default-text;
         margin-bottom: 1rem;
         font-size: 1rem;
         font-weight: 600;
         text-align: center;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
     }
 
     &__status {
@@ -76,11 +54,14 @@
     }
 
     &__movies {
-        @include flex-row(center, stretch);
-        flex-wrap: wrap;
+        @include flex-row(flex-start, stretch);
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        padding-bottom: 0.5rem;
         gap: 1.5rem;
 
         li {
+            flex-shrink: 0;
             width: 8rem;
         }
 
@@ -93,6 +74,10 @@
 
             &:hover {
                 transform: translateY(-0.25rem);
+
+                img {
+                    box-shadow: 0 0 0 2px $yellow, 0 4px 20px $shadow-color;
+                }
             }
         }
 
@@ -102,58 +87,23 @@
             width: 8rem;
             height: 12rem;
             object-fit: cover;
+            transition: box-shadow 0.3s ease;
         }
 
         span {
             @include default-text;
+            font-size: 0.85rem;
+            line-height: 1.3;
+        }
+
+        &-rating {
+            color: $yellow;
+            font-size: 0.75rem;
         }
     }
 
-    &__tracks {
-        @include flex-column(flex-start, stretch);
-        margin: 0 auto;
-        max-width: 30rem;
-        gap: 0.75rem;
-
-        a {
-            @include flex-row(flex-start, center);
-            border-radius: 0.5rem;
-            box-shadow: 0 2px 12px $shadow-color;
-            padding: 0.75rem;
-            background-color: $white;
-            color: $black;
-            gap: 1rem;
-            transition: all 0.3s ease;
-
-            &:hover {
-                background-color: $yellow;
-                transform: translateY(-0.25rem);
-            }
-        }
-
-        img {
-            border-radius: 0.25rem;
-            width: 3rem;
-            height: 3rem;
-            object-fit: cover;
-        }
-
-        span {
-            @include flex-column(center, flex-start);
-        }
-    }
-
-    &__track {
-        &-name {
-            @include default-text;
-            font-weight: 600;
-            color: $black;
-        }
-
-        &-artist {
-            @include default-text;
-            font-size: 0.65rem;
-            color: rgba(0, 0, 0, 0.6);
-        }
+    &__tracks-embed {
+        border-radius: 0.75rem;
+        box-shadow: 0 2px 12px $shadow-color;
     }
 }

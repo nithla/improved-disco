@@ -16,7 +16,7 @@ contactButton.on('click', function (e) {
         });
 
         $.ajax({
-            url: 'https://j6c6jbp3r8.execute-api.ap-southeast-2.amazonaws.com/prod/portfolio',
+            url: 'https://j6c6jbp3r8.execute-api.ap-southeast-2.amazonaws.com/prod/emailSend',
             type: 'POST',
             data: formData,
             contentType: 'application/json',

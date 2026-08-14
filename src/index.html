@@ -161,41 +161,36 @@
         </section>
 
         <section class="fun" id="fun">
-            <h2 class="fun__text">A few things I love</h2>
-            <ul class="fun__links">
-                <li>
-                    <a class="fun__link" href="#" target="_blank" rel="noopener noreferrer">
-                        <img src="letterboxd.svg">
-                        <span>Movies</span>
-                    </a>
-                </li>
-                <li>
-                    <a class="fun__link" href="#" target="_blank" rel="noopener noreferrer">
-                        <i class="fa-brands fa-spotify"></i>
-                        <span>Music</span>
-                    </a>
-                </li>
-                <li>
-                    <a class="fun__link" href="#" target="_blank" rel="noopener noreferrer">
-                        <img src="instagram.png">
-                        <span>Instagram</span>
-                    </a>
-                </li>
-            </ul>
+            <h2 class="fun__text">Because it's not all just work</h2>
 
-            <div class="fun__section">
-                <h3 class="fun__subheading">Top movies of all time</h3>
-                <ul class="fun__movies" id="funMovies">
-                    <li class="fun__status">Loading&hellip;</li>
-                </ul>
+            <div class="fun__split">
+                <div class="fun__section">
+                    <h3 class="fun__label">My top films</h3>
+                    <ul class="fun__movies" id="funMovies">
+                        <li class="fun__status">Loading&hellip;</li>
+                    </ul>
+                </div>
+
+                <div class="fun__section">
+                    <iframe
+                        class="fun__tracks-embed"
+                        title="Spotify Embed: Most played songs"
+                        src="https://open.spotify.com/embed/playlist/6A9MEzxuJ9D0qvNJPmQHZv?theme=0"
+                        width="100%"
+                        height="380"
+                        frameborder="0"
+                        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                        loading="lazy"
+                    ></iframe>
+                </div>
             </div>
 
-            <div class="fun__section">
-                <h3 class="fun__subheading">Most played songs (last ~4 weeks)</h3>
-                <ul class="fun__tracks" id="funTracks">
-                    <li class="fun__status">Loading&hellip;</li>
+            <footer class="footer">
+                <p>You can also find me on Instagram</p>
+                <ul class="footer__social-links">
+                    <li><a href="#" target="_blank" rel="noopener noreferrer"><img src="instagram.png"></a></li>
                 </ul>
-            </div>
+            </footer>
         </section>
     </div>
 </body>

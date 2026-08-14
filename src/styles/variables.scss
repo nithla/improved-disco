@@ -85,11 +85,15 @@ $xl: 1200px;
 /*------------------------------- Layout --------------------------------*/
 
 // Shared padding for the section wrappers that contain a full-width white
-// panel (.home, .work-section, .skills). Redefine this in one place
+// panel (.home, .work-section, .skills, .fun). Redefine this in one place
 // (e.g. inside a media-breakpoint-down($sm) block below) to change the
 // padding on mobile everywhere at once.
+//
+// --card-padding is the shared inset for the panel/card *inside* each
+// section (.home__bio, .skills__panel, .pivot, .fun__split).
 :root {
     --section-padding: 4rem 7.5vw;
+    --card-padding: 2rem;
 }
 
 /*----------------------------- Layout End ------------------------------*/
