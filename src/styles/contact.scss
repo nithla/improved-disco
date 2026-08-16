@@ -1,6 +1,8 @@
 .contact-section {
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-between;
+    padding: 0;
+    gap: var(--card-padding);
     background-image: url('../assets/background/creationofadam.png');
     background-size: cover;
     background-position: center;
@@ -14,36 +16,32 @@
         @include flex-column(flex-start, flex-end);
         flex: 1;
         margin: 0;
-        padding: 6.5rem 3rem 0;
-        font-family: $Simonetta;
+        padding-top: 6.5rem;
         font-style: italic;
-        font-size: 2.75rem;
-        line-height: 1.15;
         color: $white;
         text-shadow: 0 2px 12px rgba(0, 0, 0, 0.6);
 
         @include media-breakpoint-down($md) {
-            padding: 2.5rem 1.5rem 0;
-            font-size: 2rem;
+            padding-top: 2.5rem;
         }
     }
 
     &__content {
         @include flex-column(flex-start, stretch);
-        flex-basis: 50%;
-        padding: 4rem 0;
+        flex: 1;
+        padding: 4rem var(--card-padding);
         gap: 1.5rem;
         background: rgba(0, 0, 0, 0.4);
 
         @include media-breakpoint-down($md) {
-            flex-basis: auto;
+            flex: unset;
         }
     }
 }
 
 .contact {
     margin: 0 auto 1.5rem;
-    padding: 1.5rem 7.5vw;
+    padding: 1.5rem 0;
     @include flex-column(center, stretch);
     gap: 1rem;
 

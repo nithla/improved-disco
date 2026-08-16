@@ -1,5 +1,5 @@
 .work-section {
-    @include flex-column(center, stretch);
+    @include flex-column(space-between, stretch);
     padding: var(--section-padding);
     gap: 3rem;
     background-image: url('../assets/background/The_Great_Wave_off_Kanagawa.jpg');
@@ -22,8 +22,6 @@
 
     &__text {
         margin-bottom: 1.5rem;
-        font-size: 2rem;
-        line-height: 1;
     }
 
     &__card {

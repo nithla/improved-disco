@@ -1,5 +1,5 @@
 .skills {
-    @include flex-column(center, center);
+    @include flex-column(space-between, center);
     padding: var(--section-padding);
     background-image: url('../assets/background/Piet_Mondriaan,_1921_-_Composition_en_rouge,_jaune,_bleu_et_noir.jpg');
     background-size: cover;
@@ -22,9 +22,6 @@
     }
 
     &__text {
-        @include default-text;
-        font-size: 1rem;
-        font-weight: 600;
         color: $black;
         text-align: center;
         text-transform: uppercase;

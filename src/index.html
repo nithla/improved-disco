@@ -36,7 +36,7 @@
         <section class="home" >
             <div class="home__bio">
                 <div class="home__bio-text-wrapper">
-                    <h2 class="home__title">Hi, I’m <u class="underline">Nithila</u>!</h2>
+                    <h1 class="home__title">Hi, I’m <u class="underline">Nithila</u>!</h1>
                     <p class="home__bio-text">I've become the person the room calls on when engineering says one
                         thing and the business wants another, because I've sat on both sides of that argument enough
                         times to know how it goes. How something gets built and why it's worth building have always
@@ -51,7 +51,7 @@
         </section>
         <section class="work-section" id="work">
             <div class="pivot">
-                <h2 class="pivot__text">From concept to execution, driving results and not just output!</h2>
+                <h3 class="pivot__text">From concept to execution, driving results and not just output!</h3>
                 <div class="pivot__card-wrapper">
                     <div class="pivot__card">
                         <p class="pivot__card__text">How I lead change</p>
@@ -137,7 +137,7 @@
         </section>
 
         <section class="contact-section" id="contact">
-            <p class="contact-section__tagline">Close the distance and...</p>
+            <h2 class="contact-section__tagline">Close the distance and...</h2>
 
             <div class="contact-section__content">
                 <div class="contact">
@@ -165,10 +165,14 @@
 
             <div class="fun__split">
                 <div class="fun__section">
-                    <h3 class="fun__label">My top films</h3>
-                    <ul class="fun__movies" id="funMovies">
-                        <li class="fun__status">Loading&hellip;</li>
-                    </ul>
+                    <h3 class="fun__label">My Top Films</h3>
+                    <div class="fun__carousel">
+                        <button class="fun__carousel-arrow fun__carousel-arrow--prev" id="funPrev" aria-label="Scroll left"><i class="fa fa-chevron-left"></i></button>
+                        <ul class="fun__movies" id="funMovies">
+                            <li class="fun__status">Loading&hellip;</li>
+                        </ul>
+                        <button class="fun__carousel-arrow fun__carousel-arrow--next" id="funNext" aria-label="Scroll right"><i class="fa fa-chevron-right"></i></button>
+                    </div>
                 </div>
 
                 <div class="fun__section">
@@ -177,7 +181,6 @@
                         title="Spotify Embed: Most played songs"
                         src="https://open.spotify.com/embed/playlist/6A9MEzxuJ9D0qvNJPmQHZv?theme=0"
                         width="100%"
-                        height="380"
                         frameborder="0"
                         allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
                         loading="lazy"
@@ -188,7 +191,7 @@
             <footer class="footer">
                 <p>You can also find me on Instagram</p>
                 <ul class="footer__social-links">
-                    <li><a href="#" target="_blank" rel="noopener noreferrer"><img src="instagram.png"></a></li>
+                    <li><a href="https://www.instagram.com/red_dyvelvet/" target="_blank" rel="noopener noreferrer"><img src="instagram.png"></a></li>
                 </ul>
             </footer>
         </section>

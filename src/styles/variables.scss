@@ -69,6 +69,13 @@ Futura,
 Arial,
 sans-serif;
 
+/* Poppins */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+$Poppins: 'Poppins',
+Arial,
+Helvetica,
+sans-serif;
+
 /*------------------------------ Fonts End -----------------------------*/
 
 
@@ -180,10 +187,26 @@ $xl: 1200px;
 
 /*------------------------------- Common -------------------------------*/
 
-h2 {
+h1 {
     margin-bottom: 1.5rem;
     line-height: 3.25rem;
     font-size: 4rem;
+    font-family: $Simonetta;
+    font-weight: 500;
+}
+
+h2 {
+    margin-bottom: 1.5rem;
+    line-height: 3.25rem;
+    font-size: 3rem;
+    font-family: $Simonetta;
+    font-weight: 500;
+}
+
+h3 {
+    margin-bottom: 1.5rem;
+    line-height: 3.25rem;
+    font-size: 2.5rem;
     font-family: $Simonetta;
     font-weight: 500;
 }
