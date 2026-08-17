@@ -66,7 +66,7 @@ module.exports = {
     },
     plugins: [
         new HtmlWebpackPlugin({
-            title: 'Nithila welcomes you!',
+            title: 'Product, Design & Engineering',
             filename: 'index.html',
             template: 'src/index.html',
         }),

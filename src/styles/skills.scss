@@ -1,52 +1,32 @@
-.skills {
-    @include flex-column(space-between, center);
-    padding: var(--section-padding);
-    background-image: url('../assets/background/Piet_Mondriaan,_1921_-_Composition_en_rouge,_jaune,_bleu_et_noir.jpg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+.skills__groups {
+    @include flex-column(flex-start, stretch);
+    gap: 1.25rem;
+}
 
-    &__panel {
-        @include flex-column(center, center);
-        width: 100%;
-        border-radius: 0.5rem;
-        box-shadow: 0 4px 24px rgba(0, 0, 0, 0.35);
-        padding: var(--card-padding);
-        background: $white;
-        color: $black;
-        gap: 1.5rem;
-    }
+.skills__group-title {
+    margin-bottom: 0.6rem;
+    font-family: $Jost;
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: rgba(0, 0, 0, 0.55);
+}
 
-    &__download .fa {
-        margin-right: 0.25rem;
-    }
+.skills__chips {
+    @include flex-row(flex-start, center);
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
 
-    &__text {
-        color: $black;
-        text-align: center;
-        text-transform: uppercase;
-        letter-spacing: 0.05em;
-
-        @include media-breakpoint-down($sm) {
-            display: none;
-        }
-    }
-
-    &__list {
-        @include default-text;
-        text-align: left;
-        color: $black;
-
-        @include media-breakpoint-down($sm) {
-            display: none;
-        }
-
-        th,
-        td {
-            border: 1px solid rgba(0, 0, 0, 0.15);
-            padding: 0.5rem;
-            width: 25%;
-            vertical-align: middle;
-        }
-    }
+.skills__chip {
+    @include default-text;
+    border: 1px solid rgba(0, 24, 72, 0.35);
+    border-radius: 999px;
+    padding: 0.4rem 0.85rem;
+    background: rgba(216, 192, 144, 0.18);
+    color: #001848;
+    font-size: 0.9rem;
+    line-height: 1.2;
+    word-spacing: normal;
 }

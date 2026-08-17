@@ -8,9 +8,6 @@
         <%=htmlWebpackPlugin.options.title %>
     </title>
     <link rel="icon" href="logo.png" type="image/png">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
 <body>
@@ -26,114 +23,82 @@
                 <ul class="header__navigation-links d-none">
                     <li><a href="#home">Home</a></li>
                     <li><a href="#work">Work</a></li>
-                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#projects">Projects</a></li>
                     <li><a href="#contact">Contact</a></li>
                     <li><a href="#fun">Fun</a></li>
                 </ul>
             </div>
         </header>
 
-        <section class="home" >
+        <section class="home">
+            <h1>Hi, I’m <u class="underline">Nithila</u>!</h1>
             <div class="home__bio">
-                <div class="home__bio-text-wrapper">
-                    <h1 class="home__title">Hi, I’m <u class="underline">Nithila</u>!</h1>
-                    <p class="home__bio-text">I've become the person the room calls on when engineering says one
+                <div class="home__bio__text">
+                    <p>I've become the person the room calls on when engineering says one
                         thing and the business wants another, because I've sat on both sides of that argument enough
                         times to know how it goes. How something gets built and why it's worth building have always
                         felt like the same question to me, anyway. I've never had to choose.</p>
-                    <p class="home__bio-text">So I'm an engineer with an MBA. I've shipped rebrands and migrations, sites built from scratch.
+                    <p>So I'm an engineer with an MBA. I've shipped rebrands and migrations, sites built from scratch.
                         These days, <u class="underline">I work in product</u> &mdash; figuring out what gets built next,
                         and making the case for it. Six years in now, split pretty evenly between the two. Front-end
                         to back-end, brand to data, I've been somewhere in most of it.</p>
                 </div>
-                <div class="home__bio-picture"><img src="sp1.png"></div>
+                <div class="home__bio__picture"><img src="sp1.png"></div>
             </div>
         </section>
         <section class="work-section" id="work">
-            <div class="pivot">
-                <h3 class="pivot__text">From concept to execution, driving results and not just output!</h3>
-                <div class="pivot__card-wrapper">
-                    <div class="pivot__card">
-                        <p class="pivot__card__text">How I lead change</p>
-                        <ul class="pivot__card__bullets">
-                            <li>Align product vision with business & market goals</li>
-                            <li>Develop user-centric, scalable solutions</li>
-                            <li>Lead cross-functional teams</li>
-                        </ul>
-                    </div>
-                    <div class="pivot__card">
-                        <p class="pivot__card__text">How I leverage expertise</p>
-                        <ul class="pivot__card__bullets">
-                            <li>Agile Scrum + JIRA</li>
-                            <li>UI/UX experience</li>
-                            <li>Business intelligence tools</li>
-                        </ul>
-                    </div>
-                    <div class="pivot__card">
-                        <p class="pivot__card__text">How you'll thrive</p>
-                        <ul class="pivot__card__bullets">
-                            <li>Increased user engagement & retention</li>
-                            <li>Fast, iterative releases</li>
-                            <li>Data-driven decision making</li>
-                        </ul>
+            <div class="work__split">
+                <h3 class="work-section__text">From concept to execution, driving results and not just output!</h3>
+                <div class="work__panes">
+                <div class="work__pane work__pane--pivot">
+                    <div class="pivot__card-wrapper">
+                        <div class="pivot__card" data-id="lead" tabindex="0" role="button">
+                            <p class="pivot__card__text">How I lead change</p>
+                            <ul class="pivot__card__bullets">
+                                <li>Align product vision with business & market goals</li>
+                                <li>Develop user-centric, scalable solutions</li>
+                                <li>Lead cross-functional teams</li>
+                            </ul>
+                        </div>
+                        <div class="pivot__card" data-id="leverage" tabindex="0" role="button">
+                            <p class="pivot__card__text">How I leverage expertise</p>
+                            <ul class="pivot__card__bullets">
+                                <li>Agile Scrum + JIRA</li>
+                                <li>UI/UX experience</li>
+                                <li>Business intelligence tools</li>
+                            </ul>
+                        </div>
+                        <div class="pivot__card" data-id="thrive" tabindex="0" role="button">
+                            <p class="pivot__card__text">How you'll thrive</p>
+                            <ul class="pivot__card__bullets">
+                                <li>Increased user engagement & retention</li>
+                                <li>Fast, iterative releases</li>
+                                <li>Data-driven decision making</li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
-            </div>
 
-            <div class="work">
-                <div class="work__carousel">
-                    <img src="bt.png">
-                    <img src="accenture.png">
-                    <img src="canopygrowth.png">
-                    <img src="dupont.png">
-                    <img src="eon.png">
-                    <img src="equinix.png">
-                    <img src="myntra.png">
-                    <img src="tadigital.png">
-                    <img src="thoughtworks.png">
+                <div class="work__pane work__pane--skills">
+                    <div class="skills__groups" id="skillsGroups"></div>
                 </div>
-                <p>Projects I've worked on</p>
+                </div>
             </div>
         </section>
 
-        <section class="skills" id="skills">
-            <div class="skills__panel">
-                <h3 class="skills__text">My skills</h3>
-                <table class="skills__list">
-                    <tr>
-                        <th>Product management</th>
-                        <th>Stakeholder management</th>
-                        <th>Feature prioritization & backlog management</th>
-                        <th>Risk management</th>
-                    </tr>
-                    <tr>
-                        <th>Root cause analysis</th>
-                        <th>Cross-functional collaboration</th>
-                        <th>Sprint planning & exceution</th>
-                        <th>Conflict resolution</th>
-                    </tr>
-                    <tr>
-                        <th>Roadmap planning</th>
-                        <th>Agile Scrum</th>
-                        <th>User story creation, mapping & refinement</th>
-                        <th>Analytics & KPIs, SQL</th>
-                    </tr>
-                    <tr>
-                        <th>Go-to-market strategy</th>
-                        <th>Jira & Confluence</th>
-                        <th>Continuous & iterative improvement</th>
-                        <th>Reports + dashboards: PowerBI, Tableau</th>
-                    </tr>
-                    <tr>
-                        <th>Customer research</th>
-                        <th>Figma, Adobe XD, InVision</th>
-                        <th>Quality assurance</th>
-                        <th>Frontend developer expertise</th>
-                    </tr>
-                </table>
-
-                <button class="skills__download"><span><i class="fa fa-download"></i>Download resume</span></button>
+        <section class="showcase" id="projects">
+            <div class="projects">
+                <h2 class="projects__text">Projects I've Worked On</h2>
+                <div class="projects__split">
+                    <div class="projects__grid" id="projectsGrid"></div>
+                    <div class="projects__detail" id="projectsDetail"></div>
+                </div>
             </div>
+
+            <button class="resume" type="button">
+                <span class="resume__label">Want the full picture?</span>
+                <span class="resume__download"><svg class="icon icon--download" viewBox="0 0 512 512" fill="currentColor" aria-hidden="true"><path d="M288 32c0-17.7-14.3-32-32-32s-32 14.3-32 32V274.7l-73.4-73.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l128 128c12.5 12.5 32.8 12.5 45.3 0l128-128c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L288 274.7V32zM64 352c-35.3 0-64 28.7-64 64v32c0 35.3 28.7 64 64 64H448c35.3 0 64-28.7 64-64V416c0-35.3-28.7-64-64-64H346.5l-45.3 45.3c-25 25-65.5 25-90.5 0L165.5 352H64zm368 56a24 24 0 1 1 0 48 24 24 0 1 1 0-48z"/></svg>Download resume</span>
+            </button>
         </section>
 
         <section class="contact-section" id="contact">
@@ -167,11 +132,11 @@
                 <div class="fun__section">
                     <h3 class="fun__label">My Top Films</h3>
                     <div class="fun__carousel">
-                        <button class="fun__carousel-arrow fun__carousel-arrow--prev" id="funPrev" aria-label="Scroll left"><i class="fa fa-chevron-left"></i></button>
+                        <button class="fun__carousel-arrow fun__carousel-arrow--prev" id="funPrev" aria-label="Scroll left"><svg class="icon icon--chevron" viewBox="0 0 320 512" fill="currentColor" aria-hidden="true"><path d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l192 192c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256 246.6 86.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-192 192z"/></svg></button>
                         <ul class="fun__movies" id="funMovies">
                             <li class="fun__status">Loading&hellip;</li>
                         </ul>
-                        <button class="fun__carousel-arrow fun__carousel-arrow--next" id="funNext" aria-label="Scroll right"><i class="fa fa-chevron-right"></i></button>
+                        <button class="fun__carousel-arrow fun__carousel-arrow--next" id="funNext" aria-label="Scroll right"><svg class="icon icon--chevron" viewBox="0 0 320 512" fill="currentColor" aria-hidden="true"><path d="M310.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-192 192c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L242.7 256 73.4 86.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l192 192z"/></svg></button>
                     </div>
                 </div>
 

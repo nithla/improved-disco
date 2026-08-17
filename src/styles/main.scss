@@ -4,12 +4,6 @@ html {
     scroll-behavior: smooth !important;
 }
 
-html {
-    @include media-breakpoint-up($sm) {
-        scroll-snap-type: y proximity;
-    }
-}
-
 body {
     background: $black;
     color: $white;
@@ -19,21 +13,96 @@ body {
 .main {
     min-height: 100vh;
 
-    @include media-breakpoint-up($sm) {
+    @include media-breakpoint-up($md) {
         padding-right: 8rem;
     }
 }
 
 .home,
 .work-section,
-.skills,
+.showcase,
 .contact-section,
 .fun {
+    padding: $sectionPadding;
     min-height: 100vh;
 
-    @include media-breakpoint-up($sm) {
-        height: 100vh;
-        overflow-y: auto;
-        scroll-snap-align: start;
+    @include media-breakpoint-down ($sm) {
+        min-height: 100vh;
     }
 }
+
+p {
+    @include default-text;
+    margin-bottom: 1.5rem;
+}
+
+/*------------------------------- Common -------------------------------*/
+
+h1 {
+    --size: 4rem;
+    font-size: var(--size);
+    text-align: center;
+}
+
+h2 {
+    --size: 3rem;
+    font-size: var(--size);
+}
+
+h3 {
+    --size: 2.5rem;
+    font-size: var(--size);
+}
+
+h1, h2, h3 {
+    margin-bottom: 1.5rem;
+    line-height: 3.25rem;
+    font-family: $Simonetta;
+    font-weight: 500;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+    @include media-breakpoint-down($sm) {
+        font-size: calc(var(--size) * 0.75);
+    }
+
+}
+
+a {
+    color: $white;
+    text-decoration: none;
+}
+
+button {
+    position: relative;
+    border: 0;
+    padding: 0;
+    background: white;
+    cursor: pointer;
+    transform: translateY(0);
+    transition: transform .25s ease;
+
+    span {
+        @include default-text;
+        position: relative;
+        z-index: 2;
+        padding: 0.75rem;
+        display: inline-block;
+        font-weight: 400;
+        color: $black;
+        text-align: center;
+    }
+
+    &:hover {
+        transform: translateY(-1px);
+    }
+}
+
+.underline {
+    background-color: $yellow;
+    padding: 0 .5rem;
+    text-decoration: none;
+    font-style: italic;
+    color: rgba(0, 0, 0, 0.5);
+    text-shadow: none;
+}
+
+/*---------------------------- Common Ends -----------------------------*/

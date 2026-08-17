@@ -1,48 +1,152 @@
-.work {
-    overflow: hidden;
+.showcase {
+    @include flex-column(center, stretch);
+    padding: $sectionPadding;
+    gap: 0;
+    background-image: url('../assets/background/Piet_Mondriaan,_1921_-_Composition_en_rouge,_jaune,_bleu_et_noir.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
 
-    &__carousel {
-        border: 2px solid $yellow;
-        border-left: 0;
-        border-right: 0;
-        background-color: $white;
+.projects {
+    width: 100%;
 
-        & img {
-            width: auto !important;
-            height: 2rem;
-            object-fit: cover;
-        }
+    &__text {
+        color: $white;
+        text-align: center;
+    }
 
-        .slick-list {
-            overflow: hidden;
-        }
+    &__split {
+        @include flex-row(stretch, stretch);
+        border-radius: 0.5rem 0.5rem 0 0;
+        box-shadow: $boxShadow;
+        overflow: hidden;
+        background: $white;
 
-        .slick-track {
-            @include flex-row(unset, center);
-            padding: 1.5rem 0;
-        }
-
-        .slick-slide {
-            margin: 0 3rem;
-            height: 2rem;
-
-            & >div {
-                height: 2rem;
-                max-width: 13rem;  
-                display: flex;
-            }
-        }
-
-        .slick-prev,
-        .slick-next {
-            display: none !important;
+        @include media-breakpoint-down($md) {
+            flex-direction: column;
         }
     }
 
-    p {
+    &__grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        flex: 0 0 34%;
+        border-right: 1px solid rgba(0, 0, 0, 0.15);
+
+        @include media-breakpoint-down($md) {
+            flex-basis: auto;
+            grid-template-columns: repeat(auto-fit, minmax(4rem, 1fr));
+            border-right: 0;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+        }
+    }
+
+    &__grid-item {
+        @include flex-row(center, center);
+        aspect-ratio: 1;
+        padding: 0.5rem;
+        background: $white;
+        border: 1px solid rgba(0, 0, 0, 0.08);
+        cursor: pointer;
+        transition: background 0.2s ease;
+
+        &::after {
+            content: none;
+        }
+
+        img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+            filter: grayscale(1);
+            opacity: 0.55;
+            transition: opacity 0.2s ease, filter 0.2s ease;
+        }
+
+        &:hover,
+        &--active {
+            background: rgba(255, 255, 0, 0.12);
+
+            img {
+                filter: grayscale(0);
+                opacity: 1;
+            }
+        }
+    }
+
+    &__detail {
+        @include flex-column(center, flex-start);
+        flex: 1;
+        padding: $cardPadding;
+        color: $black;
+
+        &-name {
+            margin-bottom: 0.5rem;
+            font-family: $Jost;
+            line-height: 1.2;
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+
+        &-role {
+            @include default-text;
+            margin-bottom: 1rem;
+            color: rgba(0, 0, 0, 0.6);
+            font-size: 1rem;
+        }
+
+        &-bullets {
+            @include default-text;
+            color: $black;
+
+            li {
+                margin-bottom: 0.75rem;
+            }
+        }
+
+        &-empty {
+            @include default-text;
+            color: rgba(0, 0, 0, 0.5);
+            font-style: italic;
+        }
+    }
+}
+
+.resume {
+    @include flex-row(center, center);
+    width: 100%;
+    gap: 1.5rem;
+    border-radius: 0 0 0.5rem 0.5rem;
+    box-shadow: none;
+    border-top: 1px solid rgba(0, 0, 0, 0.15);
+    padding: 1rem $cardPadding;
+    background: $white;
+    color: $black;
+
+    @include media-breakpoint-down($sm) {
+        flex-direction: column;
+        gap: 0.35rem;
+    }
+
+    &__label {
         @include default-text;
-        margin-top: 0.75rem;
-        color: $white;
-        text-align: center;
+        margin: 0;
+        padding: 0;
+        color: $black;
+    }
+
+    &__download {
+        @include default-text;
+        padding: 0;
+        font-weight: 400;
+        color: $black;
+
+        .icon--download {
+            width: 0.9em;
+            height: 0.9em;
+            margin-right: 0.35rem;
+            vertical-align: -0.1em;
+        }
     }
 }

@@ -12,11 +12,13 @@ import './styles/work.scss'
 import './styles/fun.scss'
 
 /* JavaScript */
-import './javascript/carousel.js'
+import './javascript/jquery.js'
 import './javascript/menu.js'
 import './javascript/download.js'
 import './javascript/form.js'
 import './javascript/fun.js'
+import './javascript/projects.js'
+import './javascript/pivot.js'
 
 /* Assets */
 import './assets/background/Irises-Vincent_van_Gogh-web.jpg'
@@ -24,6 +26,7 @@ import './assets/background/Irises-Vincent_van_Gogh-web.jpg'
 import './assets/personal-pictures/1.png'
 import './assets/personal-pictures/2.jpg'
 import './assets/personal-pictures/sp1.png'
+import './assets/personal-pictures/full-picture-cropped.png'
 
 import './assets/social-logos/instagram.png'
 import './assets/social-logos/letterboxd.svg'

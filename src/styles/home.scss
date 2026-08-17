@@ -1,41 +1,38 @@
 .home {
     @include flex-column(center, center);
-    padding: var(--section-padding);
-    background-image: url('../assets/background/Irises-Vincent_van_Gogh-web.jpg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+    background: url('../assets/background/Irises-Vincent_van_Gogh-web.jpg') center / cover no-repeat;
 
     &__bio {
-        @include default-text;
         @include flex-row(unset, flex-end);
         border-radius: 0.5rem;
-        box-shadow: 0 4px 24px rgba(0, 0, 0, 0.35);
-        padding: var(--card-padding) var(--card-padding) 0 var(--card-padding);
+        box-shadow: $boxShadow;
+        padding: $cardPadding $cardPadding 0;
         width: 100%;
         background: $white;
         color: $black;
 
-        @include media-breakpoint-down($sm) {
+        @include media-breakpoint-down($md) {
             flex-direction: column;
         }
 
-        &-text {
-            margin-bottom: 1.5rem;
-        }
-
-        &-picture {
+        &__picture {
             float: right;
-            height: 100%;
-            shape-outside: inset(calc(100% - 12rem) 0 0);
 
             img {
                 position: relative;
-                bottom: -5.25rem;
-                right: -1.75rem;
+                right: -$cardPadding;
                 margin-top: 0.5rem;
+                display: block;
                 width: 15rem;
                 height: auto;
+
+                @include media-breakpoint-down($lg) {
+                    content: url('../assets/personal-pictures/full-picture-cropped.png');
+                }
+
+                @include media-breakpoint-down($md) {
+                    content: url('../assets/personal-pictures/sp1.png');
+                }
             }
         }
     }

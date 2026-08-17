@@ -3,7 +3,7 @@
 .fun {
     @include flex-column(space-between, center);
     margin: 0 auto;
-    padding: var(--section-padding);
+    padding: $sectionPadding;
     width: 100%;
     gap: 2rem;
     background-image: url('../assets/background/1665_Girl_with_a_Pearl_Earring.jpg');
@@ -18,8 +18,8 @@
     &__split {
         @include flex-row(stretch, stretch);
         border-radius: 0.5rem;
-        box-shadow: 0 4px 24px rgba(0, 0, 0, 0.35);
-        padding: 0 0 0 var(--card-padding);
+        box-shadow: $boxShadow;
+        padding: 0 0 0 $cardPadding;
         width: 100%;
         gap: 3rem;
         background: rgba(0, 0, 0, 0.4);
@@ -34,7 +34,7 @@
         min-width: 0;
 
         &:first-child {
-            padding: 1.25rem 0;
+            padding: 3rem 0 2rem;
         }
     }
 
@@ -46,8 +46,7 @@
         font-weight: 600;
         letter-spacing: -0.02em;
         word-spacing: normal;
-        text-align: center;
-    }
+        }
 
     &__status {
         @include default-text;
@@ -90,6 +89,11 @@
         &:focus-visible {
             outline: 2px solid $yellow;
             outline-offset: 2px;
+        }
+
+        .icon--chevron {
+            width: 0.85em;
+            height: 0.85em;
         }
 
         &--hidden {
