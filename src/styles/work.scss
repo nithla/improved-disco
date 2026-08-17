@@ -32,13 +32,13 @@
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         flex: 0 0 34%;
-        border-right: 1px solid rgba(0, 0, 0, 0.15);
+        border-right: 1px solid $black-p15;
 
         @include media-breakpoint-down($md) {
             flex-basis: auto;
             grid-template-columns: repeat(auto-fit, minmax(4rem, 1fr));
             border-right: 0;
-            border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+            border-bottom: 1px solid $black-p15;
         }
     }
 
@@ -47,7 +47,7 @@
         aspect-ratio: 1;
         padding: 0.5rem;
         background: $white;
-        border: 1px solid rgba(0, 0, 0, 0.08);
+        border: 1px solid $black-p15;
         cursor: pointer;
         transition: background 0.2s ease;
 
@@ -92,7 +92,7 @@
         &-role {
             @include default-text;
             margin-bottom: 1rem;
-            color: rgba(0, 0, 0, 0.6);
+            color: $black-p5;
             font-size: 1rem;
         }
 
@@ -107,7 +107,7 @@
 
         &-empty {
             @include default-text;
-            color: rgba(0, 0, 0, 0.5);
+            color: $black-p5;
             font-style: italic;
         }
     }
@@ -119,7 +119,7 @@
     gap: 1.5rem;
     border-radius: 0 0 0.5rem 0.5rem;
     box-shadow: none;
-    border-top: 1px solid rgba(0, 0, 0, 0.15);
+    border-top: 1px solid $black-p15;
     padding: 1rem $cardPadding;
     background: $white;
     color: $black;

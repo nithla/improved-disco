@@ -382,116 +382,34 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_URL_IMPORT_0___ = new URL(/* asset import */ __webpack_require__(/*! ../assets/background/creationofadam.png */ "./src/assets/background/creationofadam.png"), __webpack_require__.b);
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
-___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap);"]);
 ___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Arizonia&display=swap);"]);
 ___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Simonetta:ital,wght@0,400;0,900;1,400;1,900&display=swap);"]);
-___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Italianno&display=swap);"]);
-___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap);"]);
-___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Spartan:wght@100;200;300;400;500;600;700;800;900&display=swap);"]);
 ___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&display=swap);"]);
 ___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap);"]);
 var ___CSS_LOADER_URL_REPLACEMENT_0___ = _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2___default()(___CSS_LOADER_URL_IMPORT_0___);
 // Module
 ___CSS_LOADER_EXPORT___.push([module.id, `/*--------------------------- Theme Colours ---------------------------*/
 /* Colours */
-/* Gradient */
 /*-------------------------- Theme Colours End -------------------------*/
 /*-------------------------------- Fonts -------------------------------*/
 /******************** Serif Fonts *****************************/
-/* Cormorant Garamond */
 /* Arizonia */
 /* Simonetta */
-/********************** Cursive Fonts *************************/
-/* Italianno */
 /********************* Sans-serif Fonts ************************/
-/* Raleway */
-/* Spartan */
 /* Jost */
 /* Poppins */
 /*------------------------------ Fonts End -----------------------------*/
 /*----------------------------- Breakpoints ----------------------------*/
 /*--------------------------- Breakpoints End --------------------------*/
 /*------------------------------- Layout --------------------------------*/
-:root {
-  --section-padding: 4rem 7.5vw;
-  --card-padding: 2rem;
-}
-
 /*----------------------------- Layout End ------------------------------*/
 /*------------------------------- Mixins -------------------------------*/
 /*----------------------------- Mixins End -----------------------------*/
-/*------------------------------- Common -------------------------------*/
-h1 {
-  margin-bottom: 1.5rem;
-  line-height: 3.25rem;
-  font-size: 4rem;
-  font-family: "Simonetta", Cambria, serif;
-  font-weight: 500;
-}
-
-h2 {
-  margin-bottom: 1.5rem;
-  line-height: 3.25rem;
-  font-size: 3rem;
-  font-family: "Simonetta", Cambria, serif;
-  font-weight: 500;
-}
-
-h3 {
-  margin-bottom: 1.5rem;
-  line-height: 3.25rem;
-  font-size: 2.5rem;
-  font-family: "Simonetta", Cambria, serif;
-  font-weight: 500;
-}
-
-a {
-  color: #fff;
-  text-decoration: none;
-}
-
-button {
-  position: relative;
-  border: 0;
-  padding: 0;
-  background: white;
-  cursor: pointer;
-  transform: translateY(0);
-  transition: transform 0.25s ease;
-}
-button span {
-  line-height: 1.4rem;
-  word-spacing: 0.25rem;
-  font-family: "Jost", Futura, Arial, sans-serif;
-  font-size: 1.125rem;
-  font-weight: 300;
-  color: #fff;
-  position: relative;
-  z-index: 2;
-  padding: 0.75rem;
-  display: inline-block;
-  font-weight: 400;
-  color: #000;
-  text-align: center;
-}
-button:hover {
-  transform: translateY(-1px);
-}
-
-.underline {
-  background-color: #ffff00;
-  padding: 0 0.5rem;
-  text-decoration: none;
-  font-style: italic;
-  color: #000;
-}
-
-/*---------------------------- Common Ends -----------------------------*/
 .contact-section {
   display: flex;
   justify-content: space-between;
   padding: 0;
-  gap: var(--card-padding);
+  gap: 2rem;
   background-image: url(${___CSS_LOADER_URL_REPLACEMENT_0___});
   background-size: cover;
   background-position: center;
@@ -525,7 +443,7 @@ button:hover {
   justify-content: flex-start;
   align-items: stretch;
   flex: 1;
-  padding: 4rem var(--card-padding);
+  padding: 4rem 2rem;
   gap: 1.5rem;
   background: rgba(0, 0, 0, 0.4);
 }
@@ -550,7 +468,6 @@ button:hover {
   font-family: "Jost", Futura, Arial, sans-serif;
   font-size: 1.125rem;
   font-weight: 300;
-  color: #fff;
   margin: -1.1rem 0 0;
   font-size: 0.85rem;
   font-weight: 400;
@@ -585,7 +502,6 @@ button:hover {
   font-family: "Jost", Futura, Arial, sans-serif;
   font-size: 1.125rem;
   font-weight: 300;
-  color: #fff;
   border: 0;
   border-bottom: 1px solid rgba(255, 255, 0, 0.25);
   padding: 0.5rem;
@@ -613,164 +529,7 @@ button:hover {
 .contact__input__query {
   height: 5rem;
   padding: 0 0.5rem 0.5rem;
-}`, "",{"version":3,"sources":["webpack://./src/styles/variables.scss","webpack://./src/styles/contact.scss"],"names":[],"mappings":"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","sourceRoot":""}]);
-// Exports
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
-
-
-/***/ },
-
-/***/ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[0].use[2]!./src/styles/footer.scss"
-/*!*****************************************************************************************************************************************!*\
-  !*** ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[0].use[2]!./src/styles/footer.scss ***!
-  \*****************************************************************************************************************************************/
-(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var _node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../node_modules/css-loader/dist/runtime/sourceMaps.js */ "./node_modules/css-loader/dist/runtime/sourceMaps.js");
-/* harmony import */ var _node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
-/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__);
-// Imports
-
-
-var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
-___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap);"]);
-___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Arizonia&display=swap);"]);
-___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Simonetta:ital,wght@0,400;0,900;1,400;1,900&display=swap);"]);
-___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Italianno&display=swap);"]);
-___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap);"]);
-___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Spartan:wght@100;200;300;400;500;600;700;800;900&display=swap);"]);
-___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&display=swap);"]);
-___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap);"]);
-// Module
-___CSS_LOADER_EXPORT___.push([module.id, `/*--------------------------- Theme Colours ---------------------------*/
-/* Colours */
-/* Gradient */
-/*-------------------------- Theme Colours End -------------------------*/
-/*-------------------------------- Fonts -------------------------------*/
-/******************** Serif Fonts *****************************/
-/* Cormorant Garamond */
-/* Arizonia */
-/* Simonetta */
-/********************** Cursive Fonts *************************/
-/* Italianno */
-/********************* Sans-serif Fonts ************************/
-/* Raleway */
-/* Spartan */
-/* Jost */
-/* Poppins */
-/*------------------------------ Fonts End -----------------------------*/
-/*----------------------------- Breakpoints ----------------------------*/
-/*--------------------------- Breakpoints End --------------------------*/
-/*------------------------------- Layout --------------------------------*/
-:root {
-  --section-padding: 4rem 7.5vw;
-  --card-padding: 2rem;
-}
-
-/*----------------------------- Layout End ------------------------------*/
-/*------------------------------- Mixins -------------------------------*/
-/*----------------------------- Mixins End -----------------------------*/
-/*------------------------------- Common -------------------------------*/
-h1 {
-  margin-bottom: 1.5rem;
-  line-height: 3.25rem;
-  font-size: 4rem;
-  font-family: "Simonetta", Cambria, serif;
-  font-weight: 500;
-}
-
-h2 {
-  margin-bottom: 1.5rem;
-  line-height: 3.25rem;
-  font-size: 3rem;
-  font-family: "Simonetta", Cambria, serif;
-  font-weight: 500;
-}
-
-h3 {
-  margin-bottom: 1.5rem;
-  line-height: 3.25rem;
-  font-size: 2.5rem;
-  font-family: "Simonetta", Cambria, serif;
-  font-weight: 500;
-}
-
-a {
-  color: #fff;
-  text-decoration: none;
-}
-
-button {
-  position: relative;
-  border: 0;
-  padding: 0;
-  background: white;
-  cursor: pointer;
-  transform: translateY(0);
-  transition: transform 0.25s ease;
-}
-button span {
-  line-height: 1.4rem;
-  word-spacing: 0.25rem;
-  font-family: "Jost", Futura, Arial, sans-serif;
-  font-size: 1.125rem;
-  font-weight: 300;
-  color: #fff;
-  position: relative;
-  z-index: 2;
-  padding: 0.75rem;
-  display: inline-block;
-  font-weight: 400;
-  color: #000;
-  text-align: center;
-}
-button:hover {
-  transform: translateY(-1px);
-}
-
-.underline {
-  background-color: #ffff00;
-  padding: 0 0.5rem;
-  text-decoration: none;
-  font-style: italic;
-  color: #000;
-}
-
-/*---------------------------- Common Ends -----------------------------*/
-.footer p {
-  line-height: 1.4rem;
-  word-spacing: 0.25rem;
-  font-family: "Jost", Futura, Arial, sans-serif;
-  font-size: 1.125rem;
-  font-weight: 300;
-  color: #fff;
-  margin-top: 0.75rem;
-  color: #fff;
-  text-align: center;
-}
-.footer__social-links {
-  display: flex;
-  justify-content: center;
-  align-items: unset;
-  padding: 0.5rem 0 0;
-  gap: 1.5rem;
-}
-.footer__social-links img {
-  width: 2.5rem;
-  height: 2.5rem;
-}
-@media (max-width: 768px) {
-  .footer__social-links img {
-    width: 2.25rem;
-    height: 2.25rem;
-  }
-}`, "",{"version":3,"sources":["webpack://./src/styles/variables.scss","webpack://./src/styles/footer.scss"],"names":[],"mappings":"AAAA,wEAAA;AAEA,YAAA;AAWA,aAAA;AAKA,yEAAA;AAGA,yEAAA;AAEA,+DAAA;AACA,uBAAA;AAMA,aAAA;AAMA,cAAA;AAMA,+DAAA;AACA,cAAA;AAMA,gEAAA;AACA,YAAA;AAOA,YAAA;AAOA,SAAA;AAOA,YAAA;AAOA,yEAAA;AAGA,yEAAA;AAOA,yEAAA;AAGA,0EAAA;AASA;EACI,6BAAA;EACA,oBAAA;ACvEJ;;AD0EA,0EAAA;AAGA,yEAAA;AA4EA,yEAAA;AAGA,yEAAA;AAEA;EACI,qBAAA;EACA,oBAAA;EACA,eAAA;EACA,wCA3JQ;EA4JR,gBAAA;ACvJJ;;AD0JA;EACI,qBAAA;EACA,oBAAA;EACA,eAAA;EACA,wCAnKQ;EAoKR,gBAAA;ACvJJ;;AD0JA;EACI,qBAAA;EACA,oBAAA;EACA,iBAAA;EACA,wCA3KQ;EA4KR,gBAAA;ACvJJ;;AD0JA;EACI,WAnNI;EAoNJ,qBAAA;ACvJJ;;AD0JA;EACI,kBAAA;EACA,SAAA;EACA,UAAA;EACA,iBAAA;EACA,eAAA;EACA,wBAAA;EACA,gCAAA;ACvJJ;ADyJI;EAnDA,mBAAA;EACA,qBAAA;EACA,8CAhHG;EAiHH,mBAAA;EACA,gBAAA;EACA,WAlLI;EAkOA,kBAAA;EACA,UAAA;EACA,gBAAA;EACA,qBAAA;EACA,gBAAA;EACA,WAtOA;EAuOA,kBAAA;AClJR;ADqJI;EACI,2BAAA;ACnJR;;ADuJA;EACI,yBA9OK;EA+OL,iBAAA;EACA,qBAAA;EACA,kBAAA;EACA,WApPI;ACgGR;;ADuJA,yEAAA;ACxPI;ED6KA,mBAAA;EACA,qBAAA;EACA,8CAhHG;EAiHH,mBAAA;EACA,gBAAA;EACA,WAlLI;ECEA,mBAAA;EACA,WDHA;ECIA,kBAAA;AA0GR;AAvGI;EDyJA,aAAA;EACA,uBCzJsB;ED0JtB,kBC1J8B;EAC1B,mBAAA;EACA,WAAA;AA2GR;AAzGQ;EACI,aAAA;EACA,cAAA;AA2GZ;ADNQ;ECvGA;IAKQ,cAAA;IACA,eAAA;EA4Gd;AACF","sourceRoot":""}]);
+}`, "",{"version":3,"sources":["webpack://./src/styles/variables.scss","webpack://./src/styles/contact.scss"],"names":[],"mappings":"AAAA,wEAAA;AAEA,YAAA;AAWA,yEAAA;AAGA,yEAAA;AACA,+DAAA;AACA,aAAA;AAMA,cAAA;AAMA,gEAAA;AACA,SAAA;AAOA,YAAA;AAMA,yEAAA;AAGA,yEAAA;AAOA,yEAAA;AAGA,0EAAA;AAOA,0EAAA;AAGA,yEAAA;AA2EA,yEAAA;AC5IgC;EAC5B,aAAA;EACA,8BAAA;EACA,UAAA;EACA,SDsDU;ECrDV,yDAAA;EACA,sBAAA;EACA,2BAAA;EACA,4BAAA;AAoBJ;AD+CQ;EC3EwB;IAWxB,sBAAA;EAqBN;AACF;AAnBI;EDgHA,aAAA;EACA,sBAAA;EACA,2BCjHyB;EDkHzB,qBClHqC;EACjC,OAAA;EACA,SAAA;EACA,mBAAA;EACA,kBAAA;EACA,WDnBA;ECoBA,0CAAA;AAwBR;AD8BQ;EC7DJ;IAUQ,mBAAA;EAyBV;AACF;AAtBI;EDkGA,aAAA;EACA,sBAAA;EACA,2BCnGyB;EDoGzB,oBCpGqC;EACjC,OAAA;EACA,kBAAA;EACA,WAAA;EACA,8BAAA;AA2BR;ADeQ;EC/CJ;IAQQ,WAAA;EA4BV;AACF;;AAxBA;EACI,qBAAA;EACA,iBAAA;EDmFA,aAAA;EACA,sBAAA;EACA,uBCpFqB;EDqFrB,oBCrF6B;EAC7B,SAAA;AA8BJ;AA5BI;EDsFA,mBAAA;EACA,qBAAA;EACA,8CAxGG;EAyGH,mBAAA;EACA,gBAAA;ECxFI,mBAAA;EACA,kBAAA;EACA,gBAAA;EACA,gBAAA;EACA,cAAA;EACA,yCAAA;AAkCR;AA/BI;EDqEA,aAAA;EACA,sBAAA;EACA,uBCtEyB;EDuEzB,mBCvEiC;EAC7B,gBAAA;EACA,aAAA;EACA,mBDzDC;EC0DD,0BAAA;EACA,kBAAA;EACA,0BAAA;AAoCR;AA/BQ;EDyDJ,aAAA;EACA,sBAAA;EACA,uBC1D6B;ED2D7B,mBC3DqC;EAC7B,gBAAA;EACA,WDvEJ;ECwEI,WAAA;AAoCZ;AAjCQ;EDyDJ,mBAAA;EACA,qBAAA;EACA,8CAxGG;EAyGH,mBAAA;EACA,gBAAA;EC1DQ,SAAA;EACA,gDAAA;EACA,eAAA;EACA,cAAA;EACA,WAAA;EACA,cAAA;EACA,gBAAA;AAsCZ;AApCY;EAEI,UAAA;EACA,gCAAA;AAqChB;AAlCY;EACI,+BAAA;AAoChB;AAjCY;EAGI,6BDnGR;ECoGQ,iBDpGR;ECqGQ,yDAAA;AAiChB;AA9BY;EACI,6BAAA;EACA,WD1GR;AC0IR;AA5BQ;EACI,YAAA;EACA,wBAAA;AA8BZ","sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -800,118 +559,34 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_URL_IMPORT_0___ = new URL(/* asset import */ __webpack_require__(/*! ../assets/background/1665_Girl_with_a_Pearl_Earring.jpg */ "./src/assets/background/1665_Girl_with_a_Pearl_Earring.jpg"), __webpack_require__.b);
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
-___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap);"]);
 ___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Arizonia&display=swap);"]);
 ___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Simonetta:ital,wght@0,400;0,900;1,400;1,900&display=swap);"]);
-___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Italianno&display=swap);"]);
-___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap);"]);
-___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Spartan:wght@100;200;300;400;500;600;700;800;900&display=swap);"]);
 ___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&display=swap);"]);
 ___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap);"]);
 var ___CSS_LOADER_URL_REPLACEMENT_0___ = _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2___default()(___CSS_LOADER_URL_IMPORT_0___);
 // Module
 ___CSS_LOADER_EXPORT___.push([module.id, `/*--------------------------- Theme Colours ---------------------------*/
 /* Colours */
-/* Gradient */
 /*-------------------------- Theme Colours End -------------------------*/
 /*-------------------------------- Fonts -------------------------------*/
 /******************** Serif Fonts *****************************/
-/* Cormorant Garamond */
 /* Arizonia */
 /* Simonetta */
-/********************** Cursive Fonts *************************/
-/* Italianno */
 /********************* Sans-serif Fonts ************************/
-/* Raleway */
-/* Spartan */
 /* Jost */
 /* Poppins */
 /*------------------------------ Fonts End -----------------------------*/
 /*----------------------------- Breakpoints ----------------------------*/
 /*--------------------------- Breakpoints End --------------------------*/
 /*------------------------------- Layout --------------------------------*/
-:root {
-  --section-padding: 4rem 7.5vw;
-  --card-padding: 2rem;
-}
-
 /*----------------------------- Layout End ------------------------------*/
 /*------------------------------- Mixins -------------------------------*/
 /*----------------------------- Mixins End -----------------------------*/
-/*------------------------------- Common -------------------------------*/
-h1 {
-  margin-bottom: 1.5rem;
-  line-height: 3.25rem;
-  font-size: 4rem;
-  font-family: "Simonetta", Cambria, serif;
-  font-weight: 500;
-}
-
-h2 {
-  margin-bottom: 1.5rem;
-  line-height: 3.25rem;
-  font-size: 3rem;
-  font-family: "Simonetta", Cambria, serif;
-  font-weight: 500;
-}
-
-h3 {
-  margin-bottom: 1.5rem;
-  line-height: 3.25rem;
-  font-size: 2.5rem;
-  font-family: "Simonetta", Cambria, serif;
-  font-weight: 500;
-}
-
-a {
-  color: #fff;
-  text-decoration: none;
-}
-
-button {
-  position: relative;
-  border: 0;
-  padding: 0;
-  background: white;
-  cursor: pointer;
-  transform: translateY(0);
-  transition: transform 0.25s ease;
-}
-button span {
-  line-height: 1.4rem;
-  word-spacing: 0.25rem;
-  font-family: "Jost", Futura, Arial, sans-serif;
-  font-size: 1.125rem;
-  font-weight: 300;
-  color: #fff;
-  position: relative;
-  z-index: 2;
-  padding: 0.75rem;
-  display: inline-block;
-  font-weight: 400;
-  color: #000;
-  text-align: center;
-}
-button:hover {
-  transform: translateY(-1px);
-}
-
-.underline {
-  background-color: #ffff00;
-  padding: 0 0.5rem;
-  text-decoration: none;
-  font-style: italic;
-  color: #000;
-}
-
-/*---------------------------- Common Ends -----------------------------*/
 .fun {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  margin: 0 auto;
-  padding: var(--section-padding);
   width: 100%;
   gap: 2rem;
   background-image: url(${___CSS_LOADER_URL_REPLACEMENT_0___});
@@ -919,7 +594,7 @@ button:hover {
   background-position: center;
   background-repeat: no-repeat;
 }
-.fun__text {
+.fun h2 {
   margin-bottom: 0;
 }
 .fun__split {
@@ -928,7 +603,7 @@ button:hover {
   align-items: stretch;
   border-radius: 0.5rem;
   box-shadow: 0 4px 24px rgba(0, 0, 0, 0.35);
-  padding: 0 0 0 var(--card-padding);
+  padding: 0 0 0 2rem;
   width: 100%;
   gap: 3rem;
   background: rgba(0, 0, 0, 0.4);
@@ -951,7 +626,6 @@ button:hover {
   font-family: "Jost", Futura, Arial, sans-serif;
   font-size: 1.125rem;
   font-weight: 300;
-  color: #fff;
   margin-bottom: 1rem;
   font-family: "Poppins", Arial, Helvetica, sans-serif;
   font-size: 1.5rem;
@@ -965,7 +639,6 @@ button:hover {
   font-family: "Jost", Futura, Arial, sans-serif;
   font-size: 1.125rem;
   font-weight: 300;
-  color: #fff;
   opacity: 0.6;
 }
 .fun__carousel {
@@ -1000,6 +673,10 @@ button:hover {
 .fun__carousel-arrow:focus-visible {
   outline: 2px solid #ffff00;
   outline-offset: 2px;
+}
+.fun__carousel-arrow .icon--chevron {
+  width: 0.85em;
+  height: 0.85em;
 }
 .fun__carousel-arrow--hidden {
   opacity: 0;
@@ -1091,7 +768,6 @@ button:hover {
   font-family: "Jost", Futura, Arial, sans-serif;
   font-size: 1.125rem;
   font-weight: 300;
-  color: #fff;
   margin-top: 0.5rem;
   font-family: "Poppins", Arial, Helvetica, sans-serif;
   font-size: 0.85rem;
@@ -1110,7 +786,29 @@ button:hover {
   min-height: 380px;
   border-radius: 0.75rem;
   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
-}`, "",{"version":3,"sources":["webpack://./src/styles/variables.scss","webpack://./src/styles/fun.scss"],"names":[],"mappings":"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","sourceRoot":""}]);
+}
+.fun__social p {
+  margin-top: 0.75rem;
+  color: #fff;
+  text-align: center;
+}
+.fun__social ul {
+  display: flex;
+  justify-content: center;
+  align-items: unset;
+  padding: 0.5rem 0 0;
+  gap: 1.5rem;
+}
+.fun__social ul img {
+  width: 2.5rem;
+  height: 2.5rem;
+}
+@media (max-width: 768px) {
+  .fun__social ul img {
+    width: 2.25rem;
+    height: 2.25rem;
+  }
+}`, "",{"version":3,"sources":["webpack://./src/styles/variables.scss","webpack://./src/styles/fun.scss"],"names":[],"mappings":"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","sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -1140,116 +838,34 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_URL_IMPORT_0___ = new URL(/* asset import */ __webpack_require__(/*! ../assets/background/The_Kiss_-_Gustav_Klimt_-_Google_Cultural_Institute.jpg */ "./src/assets/background/The_Kiss_-_Gustav_Klimt_-_Google_Cultural_Institute.jpg"), __webpack_require__.b);
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
-___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap);"]);
 ___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Arizonia&display=swap);"]);
 ___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Simonetta:ital,wght@0,400;0,900;1,400;1,900&display=swap);"]);
-___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Italianno&display=swap);"]);
-___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap);"]);
-___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Spartan:wght@100;200;300;400;500;600;700;800;900&display=swap);"]);
 ___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&display=swap);"]);
 ___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap);"]);
 var ___CSS_LOADER_URL_REPLACEMENT_0___ = _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2___default()(___CSS_LOADER_URL_IMPORT_0___);
 // Module
 ___CSS_LOADER_EXPORT___.push([module.id, `/*--------------------------- Theme Colours ---------------------------*/
 /* Colours */
-/* Gradient */
 /*-------------------------- Theme Colours End -------------------------*/
 /*-------------------------------- Fonts -------------------------------*/
 /******************** Serif Fonts *****************************/
-/* Cormorant Garamond */
 /* Arizonia */
 /* Simonetta */
-/********************** Cursive Fonts *************************/
-/* Italianno */
 /********************* Sans-serif Fonts ************************/
-/* Raleway */
-/* Spartan */
 /* Jost */
 /* Poppins */
 /*------------------------------ Fonts End -----------------------------*/
 /*----------------------------- Breakpoints ----------------------------*/
 /*--------------------------- Breakpoints End --------------------------*/
 /*------------------------------- Layout --------------------------------*/
-:root {
-  --section-padding: 4rem 7.5vw;
-  --card-padding: 2rem;
-}
-
 /*----------------------------- Layout End ------------------------------*/
 /*------------------------------- Mixins -------------------------------*/
 /*----------------------------- Mixins End -----------------------------*/
-/*------------------------------- Common -------------------------------*/
-h1 {
-  margin-bottom: 1.5rem;
-  line-height: 3.25rem;
-  font-size: 4rem;
-  font-family: "Simonetta", Cambria, serif;
-  font-weight: 500;
-}
-
-h2 {
-  margin-bottom: 1.5rem;
-  line-height: 3.25rem;
-  font-size: 3rem;
-  font-family: "Simonetta", Cambria, serif;
-  font-weight: 500;
-}
-
-h3 {
-  margin-bottom: 1.5rem;
-  line-height: 3.25rem;
-  font-size: 2.5rem;
-  font-family: "Simonetta", Cambria, serif;
-  font-weight: 500;
-}
-
-a {
-  color: #fff;
-  text-decoration: none;
-}
-
-button {
-  position: relative;
-  border: 0;
-  padding: 0;
-  background: white;
-  cursor: pointer;
-  transform: translateY(0);
-  transition: transform 0.25s ease;
-}
-button span {
-  line-height: 1.4rem;
-  word-spacing: 0.25rem;
-  font-family: "Jost", Futura, Arial, sans-serif;
-  font-size: 1.125rem;
-  font-weight: 300;
-  color: #fff;
-  position: relative;
-  z-index: 2;
-  padding: 0.75rem;
-  display: inline-block;
-  font-weight: 400;
-  color: #000;
-  text-align: center;
-}
-button:hover {
-  transform: translateY(-1px);
-}
-
-.underline {
-  background-color: #ffff00;
-  padding: 0 0.5rem;
-  text-decoration: none;
-  font-style: italic;
-  color: #000;
-}
-
-/*---------------------------- Common Ends -----------------------------*/
 .header {
   padding: 0 7.5vw;
   text-align: center;
 }
-@media (min-width: 576px) {
+@media (min-width: 768px) {
   .header {
     display: flex;
     flex-direction: column;
@@ -1269,7 +885,7 @@ button:hover {
     z-index: 4;
   }
 }
-@media (max-width: 576px) {
+@media (max-width: 768px) {
   .header {
     flex-direction: column;
     margin-top: 1rem;
@@ -1281,7 +897,7 @@ button:hover {
   justify-content: center;
   align-items: center;
 }
-@media (max-width: 576px) {
+@media (max-width: 768px) {
   .header__logo {
     width: 100%;
   }
@@ -1301,7 +917,7 @@ button:hover {
   margin: 0.75rem 0 0.25rem;
   cursor: pointer;
 }
-@media (min-width: 576px) {
+@media (min-width: 768px) {
   .header__logo-caret {
     display: none;
   }
@@ -1316,7 +932,6 @@ button:hover {
   font-family: "Jost", Futura, Arial, sans-serif;
   font-size: 1.125rem;
   font-weight: 300;
-  color: #fff;
   font-size: 0.5rem;
   color: #fff;
 }
@@ -1343,7 +958,7 @@ button:hover {
 .header__navigation {
   width: fit-content;
 }
-@media (max-width: 576px) {
+@media (max-width: 768px) {
   .header__navigation {
     width: 100%;
   }
@@ -1354,7 +969,7 @@ button:hover {
   row-gap: 1.5rem;
   cursor: default;
 }
-@media (max-width: 576px) {
+@media (max-width: 768px) {
   .header__navigation-links {
     margin-bottom: 1.5rem;
     border: 1px solid rgba(255, 255, 0, 0.25);
@@ -1383,7 +998,6 @@ button:hover {
   font-family: "Jost", Futura, Arial, sans-serif;
   font-size: 1.125rem;
   font-weight: 300;
-  color: #fff;
   display: inline-block;
   font-size: 1.1rem;
   color: #fff;
@@ -1393,12 +1007,12 @@ button:hover {
 .header__navigation-links li:hover a {
   color: #ffff00;
 }
-@media (max-width: 576px) {
+@media (max-width: 768px) {
   .header__navigation-links li {
     font-size: 0.75rem;
     text-transform: none;
   }
-}`, "",{"version":3,"sources":["webpack://./src/styles/variables.scss","webpack://./src/styles/header.scss"],"names":[],"mappings":"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","sourceRoot":""}]);
+}`, "",{"version":3,"sources":["webpack://./src/styles/variables.scss","webpack://./src/styles/header.scss"],"names":[],"mappings":"AAAA,wEAAA;AAEA,YAAA;AAWA,yEAAA;AAGA,yEAAA;AACA,+DAAA;AACA,aAAA;AAMA,cAAA;AAMA,gEAAA;AACA,SAAA;AAOA,YAAA;AAMA,yEAAA;AAGA,yEAAA;AAOA,yEAAA;AAGA,0EAAA;AAOA,0EAAA;AAGA,yEAAA;AA2EA,yEAAA;AC5IgC;EAC5B,gBAAA;EACA,kBAAA;AAoBJ;AD+EQ;ECrGwB;ID8H5B,aAAA;IACA,sBAAA;IACA,uBC3HyB;ID4HzB,mBC5HiC;IAC7B,eAAA;IACA,MAAA;IACA,QAAA;IACA,SAAA;IACA,kBAAA;IACA,yDAAA;IACA,4BAAA;IACA,sBAAA;IACA,WAAA;IACA,aAAA;IACA,WAAA;IACA,UAAA;EAwBN;AACF;ADiCQ;EC3EwB;IAqBxB,sBAAA;IACA,gBAAA;EAyBN;AACF;AAvBI;EDqGA,aAAA;EACA,sBAAA;EACA,uBCtGyB;EDuGzB,mBCvGiC;AA4BrC;ADqBQ;EClDJ;IAIQ,WAAA;EA6BV;AACF;AA3BQ;EACI,qBAAA;EACA,qCDhBD;ECiBC,eAAA;EACA,WDnCJ;ECoCI,yBAAA;EACA,eAAA;AA6BZ;AA3BY;EACI,cDrCP;ACkET;AAzBQ;EACI,yBAAA;EACA,eAAA;AA2BZ;AD2BQ;ECxDA;IAKQ,aAAA;EA4Bd;AACF;AA1BY;EACI,yBAAA;EACA,mBAAA;AA4BhB;AAzBY;ED2ER,mBAAA;EACA,qBAAA;EACA,8CAxGG;EAyGH,mBAAA;EACA,gBAAA;EC7EY,iBAAA;EACA,WD5DR;AC2FR;AA5BY;EACI,kBAAA;EACA,UAAA;EACA,SAAA;EACA,oBAAA;EACA,iBAAA;EACA,+BAAA;EACA,6BAAA;EACA,qBAAA;EACA,cAAA;EACA,eAAA;EACA,yBAAA;EACA,WAAA;AA8BhB;AA1BgB;EACI,cD7EX;ACyGT;AAzBgB;EACI,qBDjFX;AC4GT;AArBI;EACI,kBAAA;AAuBR;ADxCQ;ECgBJ;IAIQ,WAAA;EAwBV;AACF;AAtBQ;EACI,aAAA;EACA,sBAAA;EACA,eAAA;EACA,eAAA;AAwBZ;ADnDQ;ECuBA;IAOQ,qBAAA;IACA,yCAAA;IACA,aAAA;IACA,oCDpGA;ICqGA,sBAAA;IACA,gBAAA;IACA,iBAAA;IACA,UAAA;IACA,uCAAA;EAyBd;EAvBc;IACI,SAAA;IACA,UAAA;IACA,aAAA;IACA,UAAA;IACA,MAAA;EAyBlB;EAvBkB;IACI,SAAA;EAyBtB;AACF;AArBY;EDKR,mBAAA;EACA,qBAAA;EACA,8CAxGG;EAyGH,mBAAA;EACA,gBAAA;ECPY,qBAAA;EACA,iBAAA;EACA,WDnIR;ECoIQ,gCAAA;EACA,eAAA;AA2BhB;AAzBgB;EACI,cDrIX;ACgKT;ADzFQ;ECqDI;IAaQ,kBAAA;IACA,oBAAA;EA2BlB;AACF","sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -1427,161 +1041,78 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var ___CSS_LOADER_URL_IMPORT_0___ = new URL(/* asset import */ __webpack_require__(/*! ../assets/background/Irises-Vincent_van_Gogh-web.jpg */ "./src/assets/background/Irises-Vincent_van_Gogh-web.jpg"), __webpack_require__.b);
+var ___CSS_LOADER_URL_IMPORT_1___ = new URL(/* asset import */ __webpack_require__(/*! ../assets/personal-pictures/full-picture-cropped.png */ "./src/assets/personal-pictures/full-picture-cropped.png"), __webpack_require__.b);
+var ___CSS_LOADER_URL_IMPORT_2___ = new URL(/* asset import */ __webpack_require__(/*! ../assets/personal-pictures/sp1.png */ "./src/assets/personal-pictures/sp1.png"), __webpack_require__.b);
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
-___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap);"]);
 ___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Arizonia&display=swap);"]);
 ___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Simonetta:ital,wght@0,400;0,900;1,400;1,900&display=swap);"]);
-___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Italianno&display=swap);"]);
-___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap);"]);
-___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Spartan:wght@100;200;300;400;500;600;700;800;900&display=swap);"]);
 ___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&display=swap);"]);
 ___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap);"]);
 var ___CSS_LOADER_URL_REPLACEMENT_0___ = _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2___default()(___CSS_LOADER_URL_IMPORT_0___);
+var ___CSS_LOADER_URL_REPLACEMENT_1___ = _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2___default()(___CSS_LOADER_URL_IMPORT_1___);
+var ___CSS_LOADER_URL_REPLACEMENT_2___ = _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2___default()(___CSS_LOADER_URL_IMPORT_2___);
 // Module
 ___CSS_LOADER_EXPORT___.push([module.id, `/*--------------------------- Theme Colours ---------------------------*/
 /* Colours */
-/* Gradient */
 /*-------------------------- Theme Colours End -------------------------*/
 /*-------------------------------- Fonts -------------------------------*/
 /******************** Serif Fonts *****************************/
-/* Cormorant Garamond */
 /* Arizonia */
 /* Simonetta */
-/********************** Cursive Fonts *************************/
-/* Italianno */
 /********************* Sans-serif Fonts ************************/
-/* Raleway */
-/* Spartan */
 /* Jost */
 /* Poppins */
 /*------------------------------ Fonts End -----------------------------*/
 /*----------------------------- Breakpoints ----------------------------*/
 /*--------------------------- Breakpoints End --------------------------*/
 /*------------------------------- Layout --------------------------------*/
-:root {
-  --section-padding: 4rem 7.5vw;
-  --card-padding: 2rem;
-}
-
 /*----------------------------- Layout End ------------------------------*/
 /*------------------------------- Mixins -------------------------------*/
 /*----------------------------- Mixins End -----------------------------*/
-/*------------------------------- Common -------------------------------*/
-h1 {
-  margin-bottom: 1.5rem;
-  line-height: 3.25rem;
-  font-size: 4rem;
-  font-family: "Simonetta", Cambria, serif;
-  font-weight: 500;
-}
-
-h2 {
-  margin-bottom: 1.5rem;
-  line-height: 3.25rem;
-  font-size: 3rem;
-  font-family: "Simonetta", Cambria, serif;
-  font-weight: 500;
-}
-
-h3 {
-  margin-bottom: 1.5rem;
-  line-height: 3.25rem;
-  font-size: 2.5rem;
-  font-family: "Simonetta", Cambria, serif;
-  font-weight: 500;
-}
-
-a {
-  color: #fff;
-  text-decoration: none;
-}
-
-button {
-  position: relative;
-  border: 0;
-  padding: 0;
-  background: white;
-  cursor: pointer;
-  transform: translateY(0);
-  transition: transform 0.25s ease;
-}
-button span {
-  line-height: 1.4rem;
-  word-spacing: 0.25rem;
-  font-family: "Jost", Futura, Arial, sans-serif;
-  font-size: 1.125rem;
-  font-weight: 300;
-  color: #fff;
-  position: relative;
-  z-index: 2;
-  padding: 0.75rem;
-  display: inline-block;
-  font-weight: 400;
-  color: #000;
-  text-align: center;
-}
-button:hover {
-  transform: translateY(-1px);
-}
-
-.underline {
-  background-color: #ffff00;
-  padding: 0 0.5rem;
-  text-decoration: none;
-  font-style: italic;
-  color: #000;
-}
-
-/*---------------------------- Common Ends -----------------------------*/
 .home {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: var(--section-padding);
-  background-image: url(${___CSS_LOADER_URL_REPLACEMENT_0___});
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+  background: url(${___CSS_LOADER_URL_REPLACEMENT_0___}) center/cover no-repeat;
 }
 .home__bio {
-  line-height: 1.4rem;
-  word-spacing: 0.25rem;
-  font-family: "Jost", Futura, Arial, sans-serif;
-  font-size: 1.125rem;
-  font-weight: 300;
-  color: #fff;
   display: flex;
   justify-content: unset;
   align-items: flex-end;
   border-radius: 0.5rem;
   box-shadow: 0 4px 24px rgba(0, 0, 0, 0.35);
-  padding: var(--card-padding) var(--card-padding) 0 var(--card-padding);
+  padding: 2rem 2rem 0;
   width: 100%;
   background: #fff;
   color: #000;
 }
-@media (max-width: 576px) {
+@media (max-width: 768px) {
   .home__bio {
     flex-direction: column;
   }
 }
-.home__bio-text {
-  margin-bottom: 1.5rem;
-}
-.home__bio-picture {
+.home__bio__picture {
   float: right;
-  height: 100%;
-  shape-outside: inset(calc(100% - 12rem) 0 0);
 }
-.home__bio-picture img {
+.home__bio__picture img {
   position: relative;
-  bottom: -5.25rem;
-  right: -1.75rem;
+  right: -2rem;
   margin-top: 0.5rem;
+  display: block;
   width: 15rem;
   height: auto;
-}`, "",{"version":3,"sources":["webpack://./src/styles/variables.scss","webpack://./src/styles/home.scss"],"names":[],"mappings":"AAAA,wEAAA;AAEA,YAAA;AAWA,aAAA;AAKA,yEAAA;AAGA,yEAAA;AAEA,+DAAA;AACA,uBAAA;AAMA,aAAA;AAMA,cAAA;AAMA,+DAAA;AACA,cAAA;AAMA,gEAAA;AACA,YAAA;AAOA,YAAA;AAOA,SAAA;AAOA,YAAA;AAOA,yEAAA;AAGA,yEAAA;AAOA,yEAAA;AAGA,0EAAA;AASA;EACI,6BAAA;EACA,oBAAA;ACvEJ;;AD0EA,0EAAA;AAGA,yEAAA;AA4EA,yEAAA;AAGA,yEAAA;AAEA;EACI,qBAAA;EACA,oBAAA;EACA,eAAA;EACA,wCA3JQ;EA4JR,gBAAA;ACvJJ;;AD0JA;EACI,qBAAA;EACA,oBAAA;EACA,eAAA;EACA,wCAnKQ;EAoKR,gBAAA;ACvJJ;;AD0JA;EACI,qBAAA;EACA,oBAAA;EACA,iBAAA;EACA,wCA3KQ;EA4KR,gBAAA;ACvJJ;;AD0JA;EACI,WAnNI;EAoNJ,qBAAA;ACvJJ;;AD0JA;EACI,kBAAA;EACA,SAAA;EACA,UAAA;EACA,iBAAA;EACA,eAAA;EACA,wBAAA;EACA,gCAAA;ACvJJ;ADyJI;EAnDA,mBAAA;EACA,qBAAA;EACA,8CAhHG;EAiHH,mBAAA;EACA,gBAAA;EACA,WAlLI;EAkOA,kBAAA;EACA,UAAA;EACA,gBAAA;EACA,qBAAA;EACA,gBAAA;EACA,WAtOA;EAuOA,kBAAA;AClJR;ADqJI;EACI,2BAAA;ACnJR;;ADuJA;EACI,yBA9OK;EA+OL,iBAAA;EACA,qBAAA;EACA,kBAAA;EACA,WApPI;ACgGR;;ADuJA,yEAAA;ACzPgC;EDuK5B,aAAA;EACA,sBAAA;EACA,uBCxKqB;EDyKrB,mBCzK6B;EAC7B,+BAAA;EACA,yDAAA;EACA,sBAAA;EACA,2BAAA;EACA,4BAAA;AAyGJ;AAvGI;EDsKA,mBAAA;EACA,qBAAA;EACA,8CAhHG;EAiHH,mBAAA;EACA,gBAAA;EACA,WAlLI;EAgKJ,aAAA;EACA,sBCxJsB;EDyJtB,qBCzJ6B;EACzB,qBAAA;EACA,0CAAA;EACA,sEAAA;EACA,WAAA;EACA,gBDdA;ECeA,WDdA;AC8HR;ADlBQ;ECtGJ;IAWQ,sBAAA;EAiHV;AACF;AA/GQ;EACI,qBAAA;AAiHZ;AA9GQ;EACI,YAAA;EACA,YAAA;EACA,4CAAA;AAgHZ;AA9GY;EACI,kBAAA;EACA,gBAAA;EACA,eAAA;EACA,kBAAA;EACA,YAAA;EACA,YAAA;AAgHhB","sourceRoot":""}]);
+}
+@media (max-width: 992px) {
+  .home__bio__picture img {
+    content: url(${___CSS_LOADER_URL_REPLACEMENT_1___});
+  }
+}
+@media (max-width: 768px) {
+  .home__bio__picture img {
+    content: url(${___CSS_LOADER_URL_REPLACEMENT_2___});
+  }
+}`, "",{"version":3,"sources":["webpack://./src/styles/variables.scss","webpack://./src/styles/home.scss"],"names":[],"mappings":"AAAA,wEAAA;AAEA,YAAA;AAWA,yEAAA;AAGA,yEAAA;AACA,+DAAA;AACA,aAAA;AAMA,cAAA;AAMA,gEAAA;AACA,SAAA;AAOA,YAAA;AAMA,yEAAA;AAGA,yEAAA;AAOA,yEAAA;AAGA,0EAAA;AAOA,0EAAA;AAGA,yEAAA;AA2EA,yEAAA;AC5IgC;ED8H5B,aAAA;EACA,sBAAA;EACA,uBC/HqB;EDgIrB,mBChI6B;EAC7B,0EAAA;AAuBJ;AArBI;EDoHA,aAAA;EACA,sBCpHsB;EDqHtB,qBCrH6B;EACzB,qBAAA;EACA,0CDoDI;ECnDJ,oBAAA;EACA,WAAA;EACA,gBDTA;ECUA,WDTA;ACkCR;ADuCQ;ECvEJ;IAUQ,sBAAA;EA0BV;AACF;AAxBQ;EACI,YAAA;AA0BZ;AAxBY;EACI,kBAAA;EACA,YAAA;EACA,kBAAA;EACA,cAAA;EACA,YAAA;EACA,YAAA;AA0BhB;AD6BQ;EC7DI;IASQ,gDAAA;EA2BlB;AACF;ADkBQ;ECvDI;IAaQ,gDAAA;EA4BlB;AACF","sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -1607,66 +1138,104 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
-___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap);"]);
 ___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Arizonia&display=swap);"]);
 ___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Simonetta:ital,wght@0,400;0,900;1,400;1,900&display=swap);"]);
-___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Italianno&display=swap);"]);
-___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap);"]);
-___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Spartan:wght@100;200;300;400;500;600;700;800;900&display=swap);"]);
 ___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&display=swap);"]);
 ___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap);"]);
 // Module
 ___CSS_LOADER_EXPORT___.push([module.id, `/*--------------------------- Theme Colours ---------------------------*/
 /* Colours */
-/* Gradient */
 /*-------------------------- Theme Colours End -------------------------*/
 /*-------------------------------- Fonts -------------------------------*/
 /******************** Serif Fonts *****************************/
-/* Cormorant Garamond */
 /* Arizonia */
 /* Simonetta */
-/********************** Cursive Fonts *************************/
-/* Italianno */
 /********************* Sans-serif Fonts ************************/
-/* Raleway */
-/* Spartan */
 /* Jost */
 /* Poppins */
 /*------------------------------ Fonts End -----------------------------*/
 /*----------------------------- Breakpoints ----------------------------*/
 /*--------------------------- Breakpoints End --------------------------*/
 /*------------------------------- Layout --------------------------------*/
-:root {
-  --section-padding: 4rem 7.5vw;
-  --card-padding: 2rem;
-}
-
 /*----------------------------- Layout End ------------------------------*/
 /*------------------------------- Mixins -------------------------------*/
 /*----------------------------- Mixins End -----------------------------*/
+*,
+html {
+  box-sizing: border-box;
+  scroll-behavior: smooth !important;
+}
+
+body {
+  background: #000;
+  color: #fff;
+  overflow-x: hidden;
+}
+
+.main {
+  min-height: 100vh;
+}
+@media (min-width: 768px) {
+  .main {
+    padding-right: 8rem;
+  }
+}
+
+.home,
+.work-section,
+.showcase,
+.contact-section,
+.fun {
+  padding: 4rem 7.5vw;
+  min-height: 100vh;
+}
+@media (max-width: 576px) {
+  .home,
+  .work-section,
+  .showcase,
+  .contact-section,
+  .fun {
+    min-height: 100vh;
+  }
+}
+
+p {
+  line-height: 1.4rem;
+  word-spacing: 0.25rem;
+  font-family: "Jost", Futura, Arial, sans-serif;
+  font-size: 1.125rem;
+  font-weight: 300;
+  margin-bottom: 1.5rem;
+}
+
 /*------------------------------- Common -------------------------------*/
 h1 {
-  margin-bottom: 1.5rem;
-  line-height: 3.25rem;
-  font-size: 4rem;
-  font-family: "Simonetta", Cambria, serif;
-  font-weight: 500;
+  --size: 4rem;
+  font-size: var(--size);
+  text-align: center;
 }
 
 h2 {
-  margin-bottom: 1.5rem;
-  line-height: 3.25rem;
-  font-size: 3rem;
-  font-family: "Simonetta", Cambria, serif;
-  font-weight: 500;
+  --size: 3rem;
+  font-size: var(--size);
 }
 
 h3 {
+  --size: 2.5rem;
+  font-size: var(--size);
+}
+
+h1, h2, h3 {
   margin-bottom: 1.5rem;
   line-height: 3.25rem;
-  font-size: 2.5rem;
   font-family: "Simonetta", Cambria, serif;
   font-weight: 500;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+}
+@media (max-width: 576px) {
+  h1, h2, h3 {
+    font-size: calc(var(--size) * 0.75);
+  }
 }
 
 a {
@@ -1689,7 +1258,6 @@ button span {
   font-family: "Jost", Futura, Arial, sans-serif;
   font-size: 1.125rem;
   font-weight: 300;
-  color: #fff;
   position: relative;
   z-index: 2;
   padding: 0.75rem;
@@ -1707,47 +1275,11 @@ button:hover {
   padding: 0 0.5rem;
   text-decoration: none;
   font-style: italic;
-  color: #000;
+  color: rgba(0, 0, 0, 0.5);
+  text-shadow: none;
 }
 
-/*---------------------------- Common Ends -----------------------------*/
-*,
-html {
-  box-sizing: border-box;
-  scroll-behavior: smooth !important;
-}
-
-body {
-  background: #000;
-  color: #fff;
-  overflow-x: hidden;
-}
-
-.main {
-  min-height: 100vh;
-}
-@media (min-width: 576px) {
-  .main {
-    padding-right: 8rem;
-  }
-}
-
-.home,
-.work-section,
-.showcase,
-.contact-section,
-.fun {
-  min-height: 100vh;
-}
-@media (min-width: 576px) {
-  .home,
-  .work-section,
-  .showcase,
-  .contact-section,
-  .fun {
-    height: 100vh;
-  }
-}`, "",{"version":3,"sources":["webpack://./src/styles/variables.scss","webpack://./src/styles/main.scss"],"names":[],"mappings":"AAAA,wEAAA;AAEA,YAAA;AAWA,aAAA;AAKA,yEAAA;AAGA,yEAAA;AAEA,+DAAA;AACA,uBAAA;AAMA,aAAA;AAMA,cAAA;AAMA,+DAAA;AACA,cAAA;AAMA,gEAAA;AACA,YAAA;AAOA,YAAA;AAOA,SAAA;AAOA,YAAA;AAOA,yEAAA;AAGA,yEAAA;AAOA,yEAAA;AAGA,0EAAA;AASA;EACI,6BAAA;EACA,oBAAA;ACvEJ;;AD0EA,0EAAA;AAGA,yEAAA;AA4EA,yEAAA;AAGA,yEAAA;AAEA;EACI,qBAAA;EACA,oBAAA;EACA,eAAA;EACA,wCA3JQ;EA4JR,gBAAA;ACvJJ;;AD0JA;EACI,qBAAA;EACA,oBAAA;EACA,eAAA;EACA,wCAnKQ;EAoKR,gBAAA;ACvJJ;;AD0JA;EACI,qBAAA;EACA,oBAAA;EACA,iBAAA;EACA,wCA3KQ;EA4KR,gBAAA;ACvJJ;;AD0JA;EACI,WAnNI;EAoNJ,qBAAA;ACvJJ;;AD0JA;EACI,kBAAA;EACA,SAAA;EACA,UAAA;EACA,iBAAA;EACA,eAAA;EACA,wBAAA;EACA,gCAAA;ACvJJ;ADyJI;EAnDA,mBAAA;EACA,qBAAA;EACA,8CAhHG;EAiHH,mBAAA;EACA,gBAAA;EACA,WAlLI;EAkOA,kBAAA;EACA,UAAA;EACA,gBAAA;EACA,qBAAA;EACA,gBAAA;EACA,WAtOA;EAuOA,kBAAA;AClJR;ADqJI;EACI,2BAAA;ACnJR;;ADuJA;EACI,yBA9OK;EA+OL,iBAAA;EACA,qBAAA;EACA,kBAAA;EACA,WApPI;ACgGR;;ADuJA,yEAAA;ACzPgC;;EAE5B,sBAAA;EACA,kCAAA;AAsGJ;;AAnGA;EACI,gBDLI;ECMJ,WDPI;ECQJ,kBAAA;AAsGJ;;AAnGA;EACI,iBAAA;AAsGJ;ADqBQ;EC5HR;IAIQ,mBAAA;EAuGN;AACF;;AApGA;;;;;EAKI,iBAAA;AAuGJ;ADQQ;ECpHR;;;;;IAQQ,aAAA;EA4GN;AACF","sourceRoot":""}]);
+/*---------------------------- Common Ends -----------------------------*/`, "",{"version":3,"sources":["webpack://./src/styles/variables.scss","webpack://./src/styles/main.scss"],"names":[],"mappings":"AAAA,wEAAA;AAEA,YAAA;AAWA,yEAAA;AAGA,yEAAA;AACA,+DAAA;AACA,aAAA;AAMA,cAAA;AAMA,gEAAA;AACA,SAAA;AAOA,YAAA;AAMA,yEAAA;AAGA,yEAAA;AAOA,yEAAA;AAGA,0EAAA;AAOA,0EAAA;AAGA,yEAAA;AA2EA,yEAAA;AC5IgC;;EAE5B,sBAAA;EACA,kCAAA;AAoBJ;;AAjBA;EACI,gBDLI;ECMJ,WDPI;ECQJ,kBAAA;AAoBJ;;AAjBA;EACI,iBAAA;AAoBJ;ADoEQ;ECzFR;IAIQ,mBAAA;EAqBN;AACF;;AAlBA;;;;;EAKI,mBDgCa;EC/Bb,iBAAA;AAqBJ;ADsBQ;ECjDR;;;;;IASQ,iBAAA;EA0BN;AACF;;AAvBA;EDoGI,mBAAA;EACA,qBAAA;EACA,8CAxGG;EAyGH,mBAAA;EACA,gBAAA;ECtGA,qBAAA;AA8BJ;;AA3BA,yEAAA;AAEA;EACI,YAAA;EACA,sBAAA;EACA,kBAAA;AA6BJ;;AA1BA;EACI,YAAA;EACA,sBAAA;AA6BJ;;AA1BA;EACI,cAAA;EACA,sBAAA;AA6BJ;;AA1BA;EACI,qBAAA;EACA,oBAAA;EACA,wCDnCQ;ECoCR,gBAAA;EACA,yCAAA;AA6BJ;ADrBQ;ECbR;IAOQ,mCAAA;EA+BN;AACF;;AA3BA;EACI,WDpEI;ECqEJ,qBAAA;AA8BJ;;AA3BA;EACI,kBAAA;EACA,SAAA;EACA,UAAA;EACA,iBAAA;EACA,eAAA;EACA,wBAAA;EACA,gCAAA;AA8BJ;AA5BI;EDmDA,mBAAA;EACA,qBAAA;EACA,8CAxGG;EAyGH,mBAAA;EACA,gBAAA;ECrDI,kBAAA;EACA,UAAA;EACA,gBAAA;EACA,qBAAA;EACA,gBAAA;EACA,WDvFA;ECwFA,kBAAA;AAkCR;AA/BI;EACI,2BAAA;AAiCR;;AA7BA;EACI,yBD/FK;ECgGL,iBAAA;EACA,qBAAA;EACA,kBAAA;EACA,yBAAA;EACA,iBAAA;AAgCJ;;AA7BA,yEAAA","sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -1777,117 +1309,35 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_URL_IMPORT_0___ = new URL(/* asset import */ __webpack_require__(/*! ../assets/background/The_Great_Wave_off_Kanagawa.jpg */ "./src/assets/background/The_Great_Wave_off_Kanagawa.jpg"), __webpack_require__.b);
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
-___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap);"]);
 ___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Arizonia&display=swap);"]);
 ___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Simonetta:ital,wght@0,400;0,900;1,400;1,900&display=swap);"]);
-___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Italianno&display=swap);"]);
-___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap);"]);
-___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Spartan:wght@100;200;300;400;500;600;700;800;900&display=swap);"]);
 ___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&display=swap);"]);
 ___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap);"]);
 var ___CSS_LOADER_URL_REPLACEMENT_0___ = _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2___default()(___CSS_LOADER_URL_IMPORT_0___);
 // Module
 ___CSS_LOADER_EXPORT___.push([module.id, `/*--------------------------- Theme Colours ---------------------------*/
 /* Colours */
-/* Gradient */
 /*-------------------------- Theme Colours End -------------------------*/
 /*-------------------------------- Fonts -------------------------------*/
 /******************** Serif Fonts *****************************/
-/* Cormorant Garamond */
 /* Arizonia */
 /* Simonetta */
-/********************** Cursive Fonts *************************/
-/* Italianno */
 /********************* Sans-serif Fonts ************************/
-/* Raleway */
-/* Spartan */
 /* Jost */
 /* Poppins */
 /*------------------------------ Fonts End -----------------------------*/
 /*----------------------------- Breakpoints ----------------------------*/
 /*--------------------------- Breakpoints End --------------------------*/
 /*------------------------------- Layout --------------------------------*/
-:root {
-  --section-padding: 4rem 7.5vw;
-  --card-padding: 2rem;
-}
-
 /*----------------------------- Layout End ------------------------------*/
 /*------------------------------- Mixins -------------------------------*/
 /*----------------------------- Mixins End -----------------------------*/
-/*------------------------------- Common -------------------------------*/
-h1 {
-  margin-bottom: 1.5rem;
-  line-height: 3.25rem;
-  font-size: 4rem;
-  font-family: "Simonetta", Cambria, serif;
-  font-weight: 500;
-}
-
-h2 {
-  margin-bottom: 1.5rem;
-  line-height: 3.25rem;
-  font-size: 3rem;
-  font-family: "Simonetta", Cambria, serif;
-  font-weight: 500;
-}
-
-h3 {
-  margin-bottom: 1.5rem;
-  line-height: 3.25rem;
-  font-size: 2.5rem;
-  font-family: "Simonetta", Cambria, serif;
-  font-weight: 500;
-}
-
-a {
-  color: #fff;
-  text-decoration: none;
-}
-
-button {
-  position: relative;
-  border: 0;
-  padding: 0;
-  background: white;
-  cursor: pointer;
-  transform: translateY(0);
-  transition: transform 0.25s ease;
-}
-button span {
-  line-height: 1.4rem;
-  word-spacing: 0.25rem;
-  font-family: "Jost", Futura, Arial, sans-serif;
-  font-size: 1.125rem;
-  font-weight: 300;
-  color: #fff;
-  position: relative;
-  z-index: 2;
-  padding: 0.75rem;
-  display: inline-block;
-  font-weight: 400;
-  color: #000;
-  text-align: center;
-}
-button:hover {
-  transform: translateY(-1px);
-}
-
-.underline {
-  background-color: #ffff00;
-  padding: 0 0.5rem;
-  text-decoration: none;
-  font-style: italic;
-  color: #000;
-}
-
-/*---------------------------- Common Ends -----------------------------*/
 .work-section {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: var(--section-padding);
+  padding: 4rem 7.5vw;
   background-image: url(${___CSS_LOADER_URL_REPLACEMENT_0___});
   background-size: cover;
   background-position: center;
@@ -1913,7 +1363,7 @@ button:hover {
   overflow: hidden;
   background: #fff;
   color: #000;
-  padding: var(--card-padding) 0;
+  padding: 2rem 0;
 }
 
 .work__panes {
@@ -1947,8 +1397,7 @@ button:hover {
 }
 .work__pane--skills {
   flex: 2;
-  padding-left: var(--card-padding);
-  padding-right: 2rem;
+  padding: 0 2rem;
 }
 
 .pivot__card-wrapper {
@@ -1966,7 +1415,6 @@ button:hover {
   font-family: "Jost", Futura, Arial, sans-serif;
   font-size: 1.125rem;
   font-weight: 300;
-  color: #fff;
   color: #000;
   cursor: pointer;
   border-radius: 0.375rem;
@@ -1991,7 +1439,6 @@ button:hover {
   font-family: "Jost", Futura, Arial, sans-serif;
   font-size: 1.125rem;
   font-weight: 300;
-  color: #fff;
   margin-bottom: 1rem;
   line-height: 1;
   font-size: 1rem;
@@ -2000,7 +1447,7 @@ button:hover {
 }
 .pivot__card ul li {
   margin-bottom: 0.75rem;
-}`, "",{"version":3,"sources":["webpack://./src/styles/variables.scss","webpack://./src/styles/pivot.scss"],"names":[],"mappings":"AAAA,wEAAA;AAEA,YAAA;AAWA,aAAA;AAKA,yEAAA;AAGA,yEAAA;AAEA,+DAAA;AACA,uBAAA;AAMA,aAAA;AAMA,cAAA;AAMA,+DAAA;AACA,cAAA;AAMA,gEAAA;AACA,YAAA;AAOA,YAAA;AAOA,SAAA;AAOA,YAAA;AAOA,yEAAA;AAGA,yEAAA;AAOA,yEAAA;AAGA,0EAAA;AASA;EACI,6BAAA;EACA,oBAAA;ACvEJ;;AD0EA,0EAAA;AAGA,yEAAA;AA4EA,yEAAA;AAGA,yEAAA;AAEA;EACI,qBAAA;EACA,oBAAA;EACA,eAAA;EACA,wCA3JQ;EA4JR,gBAAA;ACvJJ;;AD0JA;EACI,qBAAA;EACA,oBAAA;EACA,eAAA;EACA,wCAnKQ;EAoKR,gBAAA;ACvJJ;;AD0JA;EACI,qBAAA;EACA,oBAAA;EACA,iBAAA;EACA,wCA3KQ;EA4KR,gBAAA;ACvJJ;;AD0JA;EACI,WAnNI;EAoNJ,qBAAA;ACvJJ;;AD0JA;EACI,kBAAA;EACA,SAAA;EACA,UAAA;EACA,iBAAA;EACA,eAAA;EACA,wBAAA;EACA,gCAAA;ACvJJ;ADyJI;EAnDA,mBAAA;EACA,qBAAA;EACA,8CAhHG;EAiHH,mBAAA;EACA,gBAAA;EACA,WAlLI;EAkOA,kBAAA;EACA,UAAA;EACA,gBAAA;EACA,qBAAA;EACA,gBAAA;EACA,WAtOA;EAuOA,kBAAA;AClJR;ADqJI;EACI,2BAAA;ACnJR;;ADuJA;EACI,yBA9OK;EA+OL,iBAAA;EACA,qBAAA;EACA,kBAAA;EACA,WApPI;ACgGR;;ADuJA,yEAAA;ACzPgC;EDuK5B,aAAA;EACA,sBAAA;EACA,uBCxKqB;EDyKrB,mBCzK6B;EAC7B,+BAAA;EACA,yDAAA;EACA,sBAAA;EACA,2BAAA;EACA,4BAAA;AAyGJ;AAvGI;EACI,WAAA;EACA,gBAAA;EACA,eAAA;EACA,WDVA;ECWA,gBAAA;AAyGR;;AArGA;EDsJI,aAAA;EACA,sBAAA;EACA,2BCvJqB;EDwJrB,oBCxJiC;EACjC,WAAA;EACA,SAAA;EACA,qBAAA;EACA,0CAAA;EACA,gBAAA;EACA,gBDvBI;ECwBJ,WDvBI;ECwBJ,8BAAA;AA2GJ;;AAxGA;EDoII,aAAA;EACA,wBCpIkB;EDqIlB,oBCrI2B;AA6G/B;ADvBQ;ECvFR;IAIQ,sBAAA;EA8GN;AACF;;AA3GA;EACI,OAAA;EACA,YAAA;EACA,mBAAA;EACA,mBAAA;AA8GJ;AA5GI;EACI,2CAAA;AA8GR;ADtCQ;ECzEJ;IAIQ,eAAA;IACA,4CAAA;EA+GV;AACF;AA5GI;EACI,OAAA;AA8GR;AA3GI;EACI,OAAA;EACA,iCAAA;EACA,mBAAA;AA6GR;;AAxGI;EDuGA,aAAA;EACA,sBAAA;EACA,2BCxGyB;EDyGzB,oBCzGqC;EACjC,WAAA;EACA,kBAAA;EACA,sBAAA;AA8GR;AA3GI;EDuGA,mBAAA;EACA,qBAAA;EACA,8CAhHG;EAiHH,mBAAA;EACA,gBAAA;EACA,WAlLI;ECwEA,WDvEA;ECwEA,eAAA;EACA,uBAAA;EACA,mCAAA;EACA,iCAAA;EACA,gCAAA;AAkHR;AAhHQ;EACI,yCAAA;EACA,oBAAA;AAkHZ;AA/GQ;EAEI,mCAAA;AAgHZ;AA7GQ;EACI,0BAAA;EACA,mBAAA;AA+GZ;AA5GQ;ED+EJ,mBAAA;EACA,qBAAA;EACA,8CAhHG;EAiHH,mBAAA;EACA,gBAAA;EACA,WAlLI;ECgGI,mBAAA;EACA,cAAA;EACA,eAAA;EACA,gBAAA;EACA,WDnGJ;ACsNR;AAhHQ;EACI,sBAAA;AAkHZ","sourceRoot":""}]);
+}`, "",{"version":3,"sources":["webpack://./src/styles/variables.scss","webpack://./src/styles/pivot.scss"],"names":[],"mappings":"AAAA,wEAAA;AAEA,YAAA;AAWA,yEAAA;AAGA,yEAAA;AACA,+DAAA;AACA,aAAA;AAMA,cAAA;AAMA,gEAAA;AACA,SAAA;AAOA,YAAA;AAMA,yEAAA;AAGA,yEAAA;AAOA,yEAAA;AAGA,0EAAA;AAOA,0EAAA;AAGA,yEAAA;AA2EA,yEAAA;AC5IgC;ED8H5B,aAAA;EACA,sBAAA;EACA,uBC/HqB;EDgIrB,mBChI6B;EAC7B,mBDuDa;ECtDb,yDAAA;EACA,sBAAA;EACA,2BAAA;EACA,4BAAA;AAuBJ;AArBI;EACI,WAAA;EACA,gBAAA;EACA,eAAA;EACA,WDVA;ECWA,gBAAA;AAuBR;;AAnBA;ED6GI,aAAA;EACA,sBAAA;EACA,2BC9GqB;ED+GrB,oBC/GiC;EACjC,WAAA;EACA,SAAA;EACA,qBAAA;EACA,0CDqCQ;ECpCR,gBAAA;EACA,gBDvBI;ECwBJ,WDvBI;ECwBJ,eAAA;AAyBJ;;AAtBA;ED2FI,aAAA;EACA,wBC3FkB;ED4FlB,oBC5F2B;AA2B/B;ADkBQ;EC9CR;IAIQ,sBAAA;EA4BN;AACF;;AAzBA;EACI,OAAA;EACA,YAAA;EACA,mBAAA;EACA,mBAAA;AA4BJ;AA1BI;EACI,2CAAA;AA4BR;ADGQ;EChCJ;IAIQ,eAAA;IACA,4CAAA;EA6BV;AACF;AA1BI;EACI,OAAA;AA4BR;AAzBI;EACI,OAAA;EACA,eAAA;AA2BR;;AAtBI;ED+DA,aAAA;EACA,sBAAA;EACA,2BChEyB;EDiEzB,oBCjEqC;EACjC,WAAA;EACA,kBAAA;EACA,sBAAA;AA4BR;AAzBI;ED+DA,mBAAA;EACA,qBAAA;EACA,8CAxGG;EAyGH,mBAAA;EACA,gBAAA;ECjEI,WDtEA;ECuEA,eAAA;EACA,uBAAA;EACA,mCAAA;EACA,iCAAA;EACA,gCAAA;AA+BR;AA7BQ;EACI,yCAAA;EACA,oBAAA;AA+BZ;AA5BQ;EAEI,mCAAA;AA6BZ;AA1BQ;EACI,0BAAA;EACA,mBAAA;AA4BZ;AAzBQ;EDuCJ,mBAAA;EACA,qBAAA;EACA,8CAxGG;EAyGH,mBAAA;EACA,gBAAA;ECzCQ,mBAAA;EACA,cAAA;EACA,eAAA;EACA,gBAAA;EACA,WDlGJ;ACiIR;AA5BQ;EACI,sBAAA;AA8BZ","sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -2026,110 +1473,28 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
-___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap);"]);
 ___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Arizonia&display=swap);"]);
 ___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Simonetta:ital,wght@0,400;0,900;1,400;1,900&display=swap);"]);
-___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Italianno&display=swap);"]);
-___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap);"]);
-___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Spartan:wght@100;200;300;400;500;600;700;800;900&display=swap);"]);
 ___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&display=swap);"]);
 ___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap);"]);
 // Module
 ___CSS_LOADER_EXPORT___.push([module.id, `/*--------------------------- Theme Colours ---------------------------*/
 /* Colours */
-/* Gradient */
 /*-------------------------- Theme Colours End -------------------------*/
 /*-------------------------------- Fonts -------------------------------*/
 /******************** Serif Fonts *****************************/
-/* Cormorant Garamond */
 /* Arizonia */
 /* Simonetta */
-/********************** Cursive Fonts *************************/
-/* Italianno */
 /********************* Sans-serif Fonts ************************/
-/* Raleway */
-/* Spartan */
 /* Jost */
 /* Poppins */
 /*------------------------------ Fonts End -----------------------------*/
 /*----------------------------- Breakpoints ----------------------------*/
 /*--------------------------- Breakpoints End --------------------------*/
 /*------------------------------- Layout --------------------------------*/
-:root {
-  --section-padding: 4rem 7.5vw;
-  --card-padding: 2rem;
-}
-
 /*----------------------------- Layout End ------------------------------*/
 /*------------------------------- Mixins -------------------------------*/
 /*----------------------------- Mixins End -----------------------------*/
-/*------------------------------- Common -------------------------------*/
-h1 {
-  margin-bottom: 1.5rem;
-  line-height: 3.25rem;
-  font-size: 4rem;
-  font-family: "Simonetta", Cambria, serif;
-  font-weight: 500;
-}
-
-h2 {
-  margin-bottom: 1.5rem;
-  line-height: 3.25rem;
-  font-size: 3rem;
-  font-family: "Simonetta", Cambria, serif;
-  font-weight: 500;
-}
-
-h3 {
-  margin-bottom: 1.5rem;
-  line-height: 3.25rem;
-  font-size: 2.5rem;
-  font-family: "Simonetta", Cambria, serif;
-  font-weight: 500;
-}
-
-a {
-  color: #fff;
-  text-decoration: none;
-}
-
-button {
-  position: relative;
-  border: 0;
-  padding: 0;
-  background: white;
-  cursor: pointer;
-  transform: translateY(0);
-  transition: transform 0.25s ease;
-}
-button span {
-  line-height: 1.4rem;
-  word-spacing: 0.25rem;
-  font-family: "Jost", Futura, Arial, sans-serif;
-  font-size: 1.125rem;
-  font-weight: 300;
-  color: #fff;
-  position: relative;
-  z-index: 2;
-  padding: 0.75rem;
-  display: inline-block;
-  font-weight: 400;
-  color: #000;
-  text-align: center;
-}
-button:hover {
-  transform: translateY(-1px);
-}
-
-.underline {
-  background-color: #ffff00;
-  padding: 0 0.5rem;
-  text-decoration: none;
-  font-style: italic;
-  color: #000;
-}
-
-/*---------------------------- Common Ends -----------------------------*/
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -2178,7 +1543,7 @@ q:before, q:after {
 table {
   border-collapse: collapse;
   border-spacing: 0;
-}`, "",{"version":3,"sources":["webpack://./src/styles/variables.scss","webpack://./src/styles/reset.scss"],"names":[],"mappings":"AAAA,wEAAA;AAEA,YAAA;AAWA,aAAA;AAKA,yEAAA;AAGA,yEAAA;AAEA,+DAAA;AACA,uBAAA;AAMA,aAAA;AAMA,cAAA;AAMA,+DAAA;AACA,cAAA;AAMA,gEAAA;AACA,YAAA;AAOA,YAAA;AAOA,SAAA;AAOA,YAAA;AAOA,yEAAA;AAGA,yEAAA;AAOA,yEAAA;AAGA,0EAAA;AASA;EACI,6BAAA;EACA,oBAAA;ACvEJ;;AD0EA,0EAAA;AAGA,yEAAA;AA4EA,yEAAA;AAGA,yEAAA;AAEA;EACI,qBAAA;EACA,oBAAA;EACA,eAAA;EACA,wCA3JQ;EA4JR,gBAAA;ACvJJ;;AD0JA;EACI,qBAAA;EACA,oBAAA;EACA,eAAA;EACA,wCAnKQ;EAoKR,gBAAA;ACvJJ;;AD0JA;EACI,qBAAA;EACA,oBAAA;EACA,iBAAA;EACA,wCA3KQ;EA4KR,gBAAA;ACvJJ;;AD0JA;EACI,WAnNI;EAoNJ,qBAAA;ACvJJ;;AD0JA;EACI,kBAAA;EACA,SAAA;EACA,UAAA;EACA,iBAAA;EACA,eAAA;EACA,wBAAA;EACA,gCAAA;ACvJJ;ADyJI;EAnDA,mBAAA;EACA,qBAAA;EACA,8CAhHG;EAiHH,mBAAA;EACA,gBAAA;EACA,WAlLI;EAkOA,kBAAA;EACA,UAAA;EACA,gBAAA;EACA,qBAAA;EACA,gBAAA;EACA,WAtOA;EAuOA,kBAAA;AClJR;ADqJI;EACI,2BAAA;ACnJR;;ADuJA;EACI,yBA9OK;EA+OL,iBAAA;EACA,qBAAA;EACA,kBAAA;EACA,WApPI;ACgGR;;ADuJA,yEAAA;ACzPgC;;;;;;;;;;;;;EAa/B,SAAA;EACA,UAAA;EACA,SAAA;EACA,eAAA;EACA,aAAA;EACA,wBAAA;AAsGD;;AApGA,gDAAA;AACA;;EAEC,cAAA;AAuGD;;AArGA;EACC,cAAA;AAwGD;;AAtGA;EACC,gBAAA;AAyGD;;AAvGA;EACC,YAAA;AA0GD;;AAxGA;;EAEC,WAAA;EACA,aAAA;AA2GD;;AAzGA;EACC,yBAAA;EACA,iBAAA;AA4GD","sourceRoot":""}]);
+}`, "",{"version":3,"sources":["webpack://./src/styles/variables.scss","webpack://./src/styles/reset.scss"],"names":[],"mappings":"AAAA,wEAAA;AAEA,YAAA;AAWA,yEAAA;AAGA,yEAAA;AACA,+DAAA;AACA,aAAA;AAMA,cAAA;AAMA,gEAAA;AACA,SAAA;AAOA,YAAA;AAMA,yEAAA;AAGA,yEAAA;AAOA,yEAAA;AAGA,0EAAA;AAOA,0EAAA;AAGA,yEAAA;AA2EA,yEAAA;AC5IgC;;;;;;;;;;;;;EAa/B,SAAA;EACA,UAAA;EACA,SAAA;EACA,eAAA;EACA,aAAA;EACA,wBAAA;AAoBD;;AAlBA,gDAAA;AACA;;EAEC,cAAA;AAqBD;;AAnBA;EACC,cAAA;AAsBD;;AApBA;EACC,gBAAA;AAuBD;;AArBA;EACC,YAAA;AAwBD;;AAtBA;;EAEC,WAAA;EACA,aAAA;AAyBD;;AAvBA;EACC,yBAAA;EACA,iBAAA;AA0BD","sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -2204,110 +1569,28 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
-___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap);"]);
 ___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Arizonia&display=swap);"]);
 ___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Simonetta:ital,wght@0,400;0,900;1,400;1,900&display=swap);"]);
-___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Italianno&display=swap);"]);
-___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap);"]);
-___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Spartan:wght@100;200;300;400;500;600;700;800;900&display=swap);"]);
 ___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&display=swap);"]);
 ___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap);"]);
 // Module
 ___CSS_LOADER_EXPORT___.push([module.id, `/*--------------------------- Theme Colours ---------------------------*/
 /* Colours */
-/* Gradient */
 /*-------------------------- Theme Colours End -------------------------*/
 /*-------------------------------- Fonts -------------------------------*/
 /******************** Serif Fonts *****************************/
-/* Cormorant Garamond */
 /* Arizonia */
 /* Simonetta */
-/********************** Cursive Fonts *************************/
-/* Italianno */
 /********************* Sans-serif Fonts ************************/
-/* Raleway */
-/* Spartan */
 /* Jost */
 /* Poppins */
 /*------------------------------ Fonts End -----------------------------*/
 /*----------------------------- Breakpoints ----------------------------*/
 /*--------------------------- Breakpoints End --------------------------*/
 /*------------------------------- Layout --------------------------------*/
-:root {
-  --section-padding: 4rem 7.5vw;
-  --card-padding: 2rem;
-}
-
 /*----------------------------- Layout End ------------------------------*/
 /*------------------------------- Mixins -------------------------------*/
 /*----------------------------- Mixins End -----------------------------*/
-/*------------------------------- Common -------------------------------*/
-h1 {
-  margin-bottom: 1.5rem;
-  line-height: 3.25rem;
-  font-size: 4rem;
-  font-family: "Simonetta", Cambria, serif;
-  font-weight: 500;
-}
-
-h2 {
-  margin-bottom: 1.5rem;
-  line-height: 3.25rem;
-  font-size: 3rem;
-  font-family: "Simonetta", Cambria, serif;
-  font-weight: 500;
-}
-
-h3 {
-  margin-bottom: 1.5rem;
-  line-height: 3.25rem;
-  font-size: 2.5rem;
-  font-family: "Simonetta", Cambria, serif;
-  font-weight: 500;
-}
-
-a {
-  color: #fff;
-  text-decoration: none;
-}
-
-button {
-  position: relative;
-  border: 0;
-  padding: 0;
-  background: white;
-  cursor: pointer;
-  transform: translateY(0);
-  transition: transform 0.25s ease;
-}
-button span {
-  line-height: 1.4rem;
-  word-spacing: 0.25rem;
-  font-family: "Jost", Futura, Arial, sans-serif;
-  font-size: 1.125rem;
-  font-weight: 300;
-  color: #fff;
-  position: relative;
-  z-index: 2;
-  padding: 0.75rem;
-  display: inline-block;
-  font-weight: 400;
-  color: #000;
-  text-align: center;
-}
-button:hover {
-  transform: translateY(-1px);
-}
-
-.underline {
-  background-color: #ffff00;
-  padding: 0 0.5rem;
-  text-decoration: none;
-  font-style: italic;
-  color: #000;
-}
-
-/*---------------------------- Common Ends -----------------------------*/
 .skills__groups {
   display: flex;
   flex-direction: column;
@@ -2340,7 +1623,6 @@ button:hover {
   font-family: "Jost", Futura, Arial, sans-serif;
   font-size: 1.125rem;
   font-weight: 300;
-  color: #fff;
   border: 1px solid rgba(0, 24, 72, 0.35);
   border-radius: 999px;
   padding: 0.4rem 0.85rem;
@@ -2349,7 +1631,7 @@ button:hover {
   font-size: 0.9rem;
   line-height: 1.2;
   word-spacing: normal;
-}`, "",{"version":3,"sources":["webpack://./src/styles/variables.scss","webpack://./src/styles/skills.scss"],"names":[],"mappings":"AAAA,wEAAA;AAEA,YAAA;AAWA,aAAA;AAKA,yEAAA;AAGA,yEAAA;AAEA,+DAAA;AACA,uBAAA;AAMA,aAAA;AAMA,cAAA;AAMA,+DAAA;AACA,cAAA;AAMA,gEAAA;AACA,YAAA;AAOA,YAAA;AAOA,SAAA;AAOA,YAAA;AAOA,yEAAA;AAGA,yEAAA;AAOA,yEAAA;AAGA,0EAAA;AASA;EACI,6BAAA;EACA,oBAAA;ACvEJ;;AD0EA,0EAAA;AAGA,yEAAA;AA4EA,yEAAA;AAGA,yEAAA;AAEA;EACI,qBAAA;EACA,oBAAA;EACA,eAAA;EACA,wCA3JQ;EA4JR,gBAAA;ACvJJ;;AD0JA;EACI,qBAAA;EACA,oBAAA;EACA,eAAA;EACA,wCAnKQ;EAoKR,gBAAA;ACvJJ;;AD0JA;EACI,qBAAA;EACA,oBAAA;EACA,iBAAA;EACA,wCA3KQ;EA4KR,gBAAA;ACvJJ;;AD0JA;EACI,WAnNI;EAoNJ,qBAAA;ACvJJ;;AD0JA;EACI,kBAAA;EACA,SAAA;EACA,UAAA;EACA,iBAAA;EACA,eAAA;EACA,wBAAA;EACA,gCAAA;ACvJJ;ADyJI;EAnDA,mBAAA;EACA,qBAAA;EACA,8CAhHG;EAiHH,mBAAA;EACA,gBAAA;EACA,WAlLI;EAkOA,kBAAA;EACA,UAAA;EACA,gBAAA;EACA,qBAAA;EACA,gBAAA;EACA,WAtOA;EAuOA,kBAAA;AClJR;ADqJI;EACI,2BAAA;ACnJR;;ADuJA;EACI,yBA9OK;EA+OL,iBAAA;EACA,qBAAA;EACA,kBAAA;EACA,WApPI;ACgGR;;ADuJA,yEAAA;ACzPgC;EDuK5B,aAAA;EACA,sBAAA;EACA,2BCxKqB;EDyKrB,oBCzKiC;EACjC,YAAA;AAyGJ;;AAtGA;EACI,qBAAA;EACA,8CDyDG;ECxDH,kBAAA;EACA,gBAAA;EACA,sBAAA;EACA,yBAAA;EACA,0BAAA;AAyGJ;;AAtGA;EDkJI,aAAA;EACA,2BClJkB;EDmJlB,mBCnJ8B;EAC9B,eAAA;EACA,WAAA;AA2GJ;;AAxGA;EDyJI,mBAAA;EACA,qBAAA;EACA,8CAhHG;EAiHH,mBAAA;EACA,gBAAA;EACA,WAlLI;ECsBJ,uCAAA;EACA,oBAAA;EACA,uBAAA;EACA,qCAAA;EACA,cAAA;EACA,iBAAA;EACA,gBAAA;EACA,oBAAA;AAgHJ","sourceRoot":""}]);
+}`, "",{"version":3,"sources":["webpack://./src/styles/variables.scss","webpack://./src/styles/skills.scss"],"names":[],"mappings":"AAAA,wEAAA;AAEA,YAAA;AAWA,yEAAA;AAGA,yEAAA;AACA,+DAAA;AACA,aAAA;AAMA,cAAA;AAMA,gEAAA;AACA,SAAA;AAOA,YAAA;AAMA,yEAAA;AAGA,yEAAA;AAOA,yEAAA;AAGA,0EAAA;AAOA,0EAAA;AAGA,yEAAA;AA2EA,yEAAA;AC5IgC;ED8H5B,aAAA;EACA,sBAAA;EACA,2BC/HqB;EDgIrB,oBChIiC;EACjC,YAAA;AAuBJ;;AApBA;EACI,qBAAA;EACA,8CDwBG;ECvBH,kBAAA;EACA,gBAAA;EACA,sBAAA;EACA,yBAAA;EACA,0BAAA;AAuBJ;;AApBA;EDyGI,aAAA;EACA,2BCzGkB;ED0GlB,mBC1G8B;EAC9B,eAAA;EACA,WAAA;AAyBJ;;AAtBA;EDgHI,mBAAA;EACA,qBAAA;EACA,8CAxGG;EAyGH,mBAAA;EACA,gBAAA;EClHA,uCAAA;EACA,oBAAA;EACA,uBAAA;EACA,qCAAA;EACA,cAAA;EACA,iBAAA;EACA,gBAAA;EACA,oBAAA;AA6BJ","sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -2375,110 +1657,28 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
-___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap);"]);
 ___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Arizonia&display=swap);"]);
 ___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Simonetta:ital,wght@0,400;0,900;1,400;1,900&display=swap);"]);
-___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Italianno&display=swap);"]);
-___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap);"]);
-___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Spartan:wght@100;200;300;400;500;600;700;800;900&display=swap);"]);
 ___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&display=swap);"]);
 ___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap);"]);
 // Module
 ___CSS_LOADER_EXPORT___.push([module.id, `/*--------------------------- Theme Colours ---------------------------*/
 /* Colours */
-/* Gradient */
 /*-------------------------- Theme Colours End -------------------------*/
 /*-------------------------------- Fonts -------------------------------*/
 /******************** Serif Fonts *****************************/
-/* Cormorant Garamond */
 /* Arizonia */
 /* Simonetta */
-/********************** Cursive Fonts *************************/
-/* Italianno */
 /********************* Sans-serif Fonts ************************/
-/* Raleway */
-/* Spartan */
 /* Jost */
 /* Poppins */
 /*------------------------------ Fonts End -----------------------------*/
 /*----------------------------- Breakpoints ----------------------------*/
 /*--------------------------- Breakpoints End --------------------------*/
 /*------------------------------- Layout --------------------------------*/
-:root {
-  --section-padding: 4rem 7.5vw;
-  --card-padding: 2rem;
-}
-
 /*----------------------------- Layout End ------------------------------*/
 /*------------------------------- Mixins -------------------------------*/
-/*----------------------------- Mixins End -----------------------------*/
-/*------------------------------- Common -------------------------------*/
-h1 {
-  margin-bottom: 1.5rem;
-  line-height: 3.25rem;
-  font-size: 4rem;
-  font-family: "Simonetta", Cambria, serif;
-  font-weight: 500;
-}
-
-h2 {
-  margin-bottom: 1.5rem;
-  line-height: 3.25rem;
-  font-size: 3rem;
-  font-family: "Simonetta", Cambria, serif;
-  font-weight: 500;
-}
-
-h3 {
-  margin-bottom: 1.5rem;
-  line-height: 3.25rem;
-  font-size: 2.5rem;
-  font-family: "Simonetta", Cambria, serif;
-  font-weight: 500;
-}
-
-a {
-  color: #fff;
-  text-decoration: none;
-}
-
-button {
-  position: relative;
-  border: 0;
-  padding: 0;
-  background: white;
-  cursor: pointer;
-  transform: translateY(0);
-  transition: transform 0.25s ease;
-}
-button span {
-  line-height: 1.4rem;
-  word-spacing: 0.25rem;
-  font-family: "Jost", Futura, Arial, sans-serif;
-  font-size: 1.125rem;
-  font-weight: 300;
-  color: #fff;
-  position: relative;
-  z-index: 2;
-  padding: 0.75rem;
-  display: inline-block;
-  font-weight: 400;
-  color: #000;
-  text-align: center;
-}
-button:hover {
-  transform: translateY(-1px);
-}
-
-.underline {
-  background-color: #ffff00;
-  padding: 0 0.5rem;
-  text-decoration: none;
-  font-style: italic;
-  color: #000;
-}
-
-/*---------------------------- Common Ends -----------------------------*/`, "",{"version":3,"sources":["webpack://./src/styles/variables.scss"],"names":[],"mappings":"AAAA,wEAAA;AAEA,YAAA;AAWA,aAAA;AAKA,yEAAA;AAGA,yEAAA;AAEA,+DAAA;AACA,uBAAA;AAMA,aAAA;AAMA,cAAA;AAMA,+DAAA;AACA,cAAA;AAMA,gEAAA;AACA,YAAA;AAOA,YAAA;AAOA,SAAA;AAOA,YAAA;AAOA,yEAAA;AAGA,yEAAA;AAOA,yEAAA;AAGA,0EAAA;AASA;EACI,6BAAA;EACA,oBAAA;AAvEJ;;AA0EA,0EAAA;AAGA,yEAAA;AA4EA,yEAAA;AAGA,yEAAA;AAEA;EACI,qBAAA;EACA,oBAAA;EACA,eAAA;EACA,wCA3JQ;EA4JR,gBAAA;AAvJJ;;AA0JA;EACI,qBAAA;EACA,oBAAA;EACA,eAAA;EACA,wCAnKQ;EAoKR,gBAAA;AAvJJ;;AA0JA;EACI,qBAAA;EACA,oBAAA;EACA,iBAAA;EACA,wCA3KQ;EA4KR,gBAAA;AAvJJ;;AA0JA;EACI,WAnNI;EAoNJ,qBAAA;AAvJJ;;AA0JA;EACI,kBAAA;EACA,SAAA;EACA,UAAA;EACA,iBAAA;EACA,eAAA;EACA,wBAAA;EACA,gCAAA;AAvJJ;AAyJI;EAnDA,mBAAA;EACA,qBAAA;EACA,8CAhHG;EAiHH,mBAAA;EACA,gBAAA;EACA,WAlLI;EAkOA,kBAAA;EACA,UAAA;EACA,gBAAA;EACA,qBAAA;EACA,gBAAA;EACA,WAtOA;EAuOA,kBAAA;AAlJR;AAqJI;EACI,2BAAA;AAnJR;;AAuJA;EACI,yBA9OK;EA+OL,iBAAA;EACA,qBAAA;EACA,kBAAA;EACA,WApPI;AAgGR;;AAuJA,yEAAA","sourceRoot":""}]);
+/*----------------------------- Mixins End -----------------------------*/`, "",{"version":3,"sources":["webpack://./src/styles/variables.scss"],"names":[],"mappings":"AAAA,wEAAA;AAEA,YAAA;AAWA,yEAAA;AAGA,yEAAA;AACA,+DAAA;AACA,aAAA;AAMA,cAAA;AAMA,gEAAA;AACA,SAAA;AAOA,YAAA;AAMA,yEAAA;AAGA,yEAAA;AAOA,yEAAA;AAGA,0EAAA;AAOA,0EAAA;AAGA,yEAAA;AA2EA,yEAAA","sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -2508,117 +1708,35 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_URL_IMPORT_0___ = new URL(/* asset import */ __webpack_require__(/*! ../assets/background/Piet_Mondriaan,_1921_-_Composition_en_rouge,_jaune,_bleu_et_noir.jpg */ "./src/assets/background/Piet_Mondriaan,_1921_-_Composition_en_rouge,_jaune,_bleu_et_noir.jpg"), __webpack_require__.b);
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
-___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap);"]);
 ___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Arizonia&display=swap);"]);
 ___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Simonetta:ital,wght@0,400;0,900;1,400;1,900&display=swap);"]);
-___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Italianno&display=swap);"]);
-___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap);"]);
-___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Spartan:wght@100;200;300;400;500;600;700;800;900&display=swap);"]);
 ___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&display=swap);"]);
 ___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap);"]);
 var ___CSS_LOADER_URL_REPLACEMENT_0___ = _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2___default()(___CSS_LOADER_URL_IMPORT_0___);
 // Module
 ___CSS_LOADER_EXPORT___.push([module.id, `/*--------------------------- Theme Colours ---------------------------*/
 /* Colours */
-/* Gradient */
 /*-------------------------- Theme Colours End -------------------------*/
 /*-------------------------------- Fonts -------------------------------*/
 /******************** Serif Fonts *****************************/
-/* Cormorant Garamond */
 /* Arizonia */
 /* Simonetta */
-/********************** Cursive Fonts *************************/
-/* Italianno */
 /********************* Sans-serif Fonts ************************/
-/* Raleway */
-/* Spartan */
 /* Jost */
 /* Poppins */
 /*------------------------------ Fonts End -----------------------------*/
 /*----------------------------- Breakpoints ----------------------------*/
 /*--------------------------- Breakpoints End --------------------------*/
 /*------------------------------- Layout --------------------------------*/
-:root {
-  --section-padding: 4rem 7.5vw;
-  --card-padding: 2rem;
-}
-
 /*----------------------------- Layout End ------------------------------*/
 /*------------------------------- Mixins -------------------------------*/
 /*----------------------------- Mixins End -----------------------------*/
-/*------------------------------- Common -------------------------------*/
-h1 {
-  margin-bottom: 1.5rem;
-  line-height: 3.25rem;
-  font-size: 4rem;
-  font-family: "Simonetta", Cambria, serif;
-  font-weight: 500;
-}
-
-h2 {
-  margin-bottom: 1.5rem;
-  line-height: 3.25rem;
-  font-size: 3rem;
-  font-family: "Simonetta", Cambria, serif;
-  font-weight: 500;
-}
-
-h3 {
-  margin-bottom: 1.5rem;
-  line-height: 3.25rem;
-  font-size: 2.5rem;
-  font-family: "Simonetta", Cambria, serif;
-  font-weight: 500;
-}
-
-a {
-  color: #fff;
-  text-decoration: none;
-}
-
-button {
-  position: relative;
-  border: 0;
-  padding: 0;
-  background: white;
-  cursor: pointer;
-  transform: translateY(0);
-  transition: transform 0.25s ease;
-}
-button span {
-  line-height: 1.4rem;
-  word-spacing: 0.25rem;
-  font-family: "Jost", Futura, Arial, sans-serif;
-  font-size: 1.125rem;
-  font-weight: 300;
-  color: #fff;
-  position: relative;
-  z-index: 2;
-  padding: 0.75rem;
-  display: inline-block;
-  font-weight: 400;
-  color: #000;
-  text-align: center;
-}
-button:hover {
-  transform: translateY(-1px);
-}
-
-.underline {
-  background-color: #ffff00;
-  padding: 0 0.5rem;
-  text-decoration: none;
-  font-style: italic;
-  color: #000;
-}
-
-/*---------------------------- Common Ends -----------------------------*/
 .showcase {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: stretch;
-  padding: var(--section-padding);
+  padding: 4rem 7.5vw;
   gap: 0;
   background-image: url(${___CSS_LOADER_URL_REPLACEMENT_0___});
   background-size: cover;
@@ -2696,7 +1814,7 @@ button:hover {
   justify-content: center;
   align-items: flex-start;
   flex: 1;
-  padding: var(--card-padding);
+  padding: 2rem;
   color: #000;
 }
 .projects__detail-name {
@@ -2712,7 +1830,6 @@ button:hover {
   font-family: "Jost", Futura, Arial, sans-serif;
   font-size: 1.125rem;
   font-weight: 300;
-  color: #fff;
   margin-bottom: 1rem;
   color: rgba(0, 0, 0, 0.6);
   font-size: 1rem;
@@ -2723,7 +1840,6 @@ button:hover {
   font-family: "Jost", Futura, Arial, sans-serif;
   font-size: 1.125rem;
   font-weight: 300;
-  color: #fff;
   color: #000;
 }
 .projects__detail-bullets li {
@@ -2735,7 +1851,6 @@ button:hover {
   font-family: "Jost", Futura, Arial, sans-serif;
   font-size: 1.125rem;
   font-weight: 300;
-  color: #fff;
   color: rgba(0, 0, 0, 0.5);
   font-style: italic;
 }
@@ -2749,7 +1864,7 @@ button:hover {
   border-radius: 0 0 0.5rem 0.5rem;
   box-shadow: none;
   border-top: 1px solid rgba(0, 0, 0, 0.15);
-  padding: 1rem var(--card-padding);
+  padding: 1rem 2rem;
   background: #fff;
   color: #000;
 }
@@ -2765,7 +1880,6 @@ button:hover {
   font-family: "Jost", Futura, Arial, sans-serif;
   font-size: 1.125rem;
   font-weight: 300;
-  color: #fff;
   margin: 0;
   padding: 0;
   color: #000;
@@ -2776,14 +1890,16 @@ button:hover {
   font-family: "Jost", Futura, Arial, sans-serif;
   font-size: 1.125rem;
   font-weight: 300;
-  color: #fff;
   padding: 0;
   font-weight: 400;
   color: #000;
 }
-.resume__download .fa {
+.resume__download .icon--download {
+  width: 0.9em;
+  height: 0.9em;
   margin-right: 0.35rem;
-}`, "",{"version":3,"sources":["webpack://./src/styles/variables.scss","webpack://./src/styles/work.scss"],"names":[],"mappings":"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","sourceRoot":""}]);
+  vertical-align: -0.1em;
+}`, "",{"version":3,"sources":["webpack://./src/styles/variables.scss","webpack://./src/styles/work.scss"],"names":[],"mappings":"AAAA,wEAAA;AAEA,YAAA;AAWA,yEAAA;AAGA,yEAAA;AACA,+DAAA;AACA,aAAA;AAMA,cAAA;AAMA,gEAAA;AACA,SAAA;AAOA,YAAA;AAMA,yEAAA;AAGA,yEAAA;AAOA,yEAAA;AAGA,0EAAA;AAOA,0EAAA;AAGA,yEAAA;AA2EA,yEAAA;AC5IgC;ED8H5B,aAAA;EACA,sBAAA;EACA,uBC/HqB;EDgIrB,oBChI6B;EAC7B,mBDuDa;ECtDb,MAAA;EACA,yDAAA;EACA,sBAAA;EACA,2BAAA;EACA,4BAAA;AAuBJ;;AApBA;EACI,WAAA;AAuBJ;AArBI;EACI,WDbA;ECcA,kBAAA;AAuBR;AApBI;EDsGA,aAAA;EACA,wBCtGsB;EDuGtB,oBCvG+B;EAC3B,gCAAA;EACA,0CDsCI;ECrCJ,gBAAA;EACA,gBDtBA;AC8CR;AD4BQ;ECzDJ;IAQQ,sBAAA;EAyBV;AACF;AAtBI;EACI,aAAA;EACA,qCAAA;EACA,aAAA;EACA,2CAAA;AAwBR;ADiBQ;EC7CJ;IAOQ,gBAAA;IACA,0DAAA;IACA,eAAA;IACA,4CAAA;EAyBV;AACF;AAtBI;ED4EA,aAAA;EACA,uBC5EsB;ED6EtB,mBC7E8B;EAC1B,eAAA;EACA,eAAA;EACA,gBD/CA;ECgDA,qCAAA;EACA,eAAA;EACA,gCAAA;AA0BR;AAxBQ;EACI,aAAA;AA0BZ;AAvBQ;EACI,eAAA;EACA,gBAAA;EACA,mBAAA;EACA,oBAAA;EACA,aAAA;EACA,+CAAA;AAyBZ;AAtBQ;EAEI,mCAAA;AAuBZ;AArBY;EACI,oBAAA;EACA,UAAA;AAuBhB;AAlBI;EDiDA,aAAA;EACA,sBAAA;EACA,uBClDyB;EDmDzB,uBCnDiC;EAC7B,OAAA;EACA,aDtBM;ECuBN,WD/EA;ACsGR;AArBQ;EACI,qBAAA;EACA,8CDtDL;ECuDK,gBAAA;EACA,iBAAA;EACA,gBAAA;AAuBZ;AApBQ;ED0CJ,mBAAA;EACA,qBAAA;EACA,8CAxGG;EAyGH,mBAAA;EACA,gBAAA;EC5CQ,mBAAA;EACA,yBAAA;EACA,eAAA;AA0BZ;AAvBQ;EDmCJ,mBAAA;EACA,qBAAA;EACA,8CAxGG;EAyGH,mBAAA;EACA,gBAAA;ECrCQ,WDlGJ;AC+HR;AA3BY;EACI,sBAAA;AA6BhB;AAzBQ;ED0BJ,mBAAA;EACA,qBAAA;EACA,8CAxGG;EAyGH,mBAAA;EACA,gBAAA;EC5BQ,yBAAA;EACA,kBAAA;AA+BZ;;AA1BA;EDKI,aAAA;EACA,uBCLkB;EDMlB,mBCN0B;EAC1B,WAAA;EACA,WAAA;EACA,gCAAA;EACA,gBAAA;EACA,yCAAA;EACA,kBAAA;EACA,gBD1HI;EC2HJ,WD1HI;ACyJR;ADtFQ;EC8CR;IAYQ,sBAAA;IACA,YAAA;EAgCN;AACF;AA9BI;EDEA,mBAAA;EACA,qBAAA;EACA,8CAxGG;EAyGH,mBAAA;EACA,gBAAA;ECJI,SAAA;EACA,UAAA;EACA,WDrIA;ACyKR;AAjCI;EDLA,mBAAA;EACA,qBAAA;EACA,8CAxGG;EAyGH,mBAAA;EACA,gBAAA;ECGI,UAAA;EACA,gBAAA;EACA,WD5IA;ACmLR;AArCQ;EACI,YAAA;EACA,aAAA;EACA,qBAAA;EACA,sBAAA;AAuCZ","sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -13729,61 +12845,6 @@ var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js
 
 /***/ },
 
-/***/ "./src/styles/footer.scss"
-/*!********************************!*\
-  !*** ./src/styles/footer.scss ***!
-  \********************************/
-(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js");
-/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _node_modules_style_loader_dist_runtime_styleDomAPI_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! !../../node_modules/style-loader/dist/runtime/styleDomAPI.js */ "./node_modules/style-loader/dist/runtime/styleDomAPI.js");
-/* harmony import */ var _node_modules_style_loader_dist_runtime_styleDomAPI_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_styleDomAPI_js__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _node_modules_style_loader_dist_runtime_insertBySelector_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! !../../node_modules/style-loader/dist/runtime/insertBySelector.js */ "./node_modules/style-loader/dist/runtime/insertBySelector.js");
-/* harmony import */ var _node_modules_style_loader_dist_runtime_insertBySelector_js__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_insertBySelector_js__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _node_modules_style_loader_dist_runtime_setAttributesWithoutAttributes_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! !../../node_modules/style-loader/dist/runtime/setAttributesWithoutAttributes.js */ "./node_modules/style-loader/dist/runtime/setAttributesWithoutAttributes.js");
-/* harmony import */ var _node_modules_style_loader_dist_runtime_setAttributesWithoutAttributes_js__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_setAttributesWithoutAttributes_js__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var _node_modules_style_loader_dist_runtime_insertStyleElement_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! !../../node_modules/style-loader/dist/runtime/insertStyleElement.js */ "./node_modules/style-loader/dist/runtime/insertStyleElement.js");
-/* harmony import */ var _node_modules_style_loader_dist_runtime_insertStyleElement_js__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_insertStyleElement_js__WEBPACK_IMPORTED_MODULE_4__);
-/* harmony import */ var _node_modules_style_loader_dist_runtime_styleTagTransform_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! !../../node_modules/style-loader/dist/runtime/styleTagTransform.js */ "./node_modules/style-loader/dist/runtime/styleTagTransform.js");
-/* harmony import */ var _node_modules_style_loader_dist_runtime_styleTagTransform_js__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_styleTagTransform_js__WEBPACK_IMPORTED_MODULE_5__);
-/* harmony import */ var _node_modules_css_loader_dist_cjs_js_node_modules_sass_loader_dist_cjs_js_ruleSet_1_rules_0_use_2_footer_scss__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! !!../../node_modules/css-loader/dist/cjs.js!../../node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[0].use[2]!./footer.scss */ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[0].use[2]!./src/styles/footer.scss");
-
-      
-      
-      
-      
-      
-      
-      
-      
-      
-
-var options = {};
-
-options.styleTagTransform = (_node_modules_style_loader_dist_runtime_styleTagTransform_js__WEBPACK_IMPORTED_MODULE_5___default());
-options.setAttributes = (_node_modules_style_loader_dist_runtime_setAttributesWithoutAttributes_js__WEBPACK_IMPORTED_MODULE_3___default());
-
-      options.insert = _node_modules_style_loader_dist_runtime_insertBySelector_js__WEBPACK_IMPORTED_MODULE_2___default().bind(null, "head");
-    
-options.domAPI = (_node_modules_style_loader_dist_runtime_styleDomAPI_js__WEBPACK_IMPORTED_MODULE_1___default());
-options.insertStyleElement = (_node_modules_style_loader_dist_runtime_insertStyleElement_js__WEBPACK_IMPORTED_MODULE_4___default());
-
-var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default()(_node_modules_css_loader_dist_cjs_js_node_modules_sass_loader_dist_cjs_js_ruleSet_1_rules_0_use_2_footer_scss__WEBPACK_IMPORTED_MODULE_6__["default"], options);
-
-
-
-
-       /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_css_loader_dist_cjs_js_node_modules_sass_loader_dist_cjs_js_ruleSet_1_rules_0_use_2_footer_scss__WEBPACK_IMPORTED_MODULE_6__["default"] && _node_modules_css_loader_dist_cjs_js_node_modules_sass_loader_dist_cjs_js_ruleSet_1_rules_0_use_2_footer_scss__WEBPACK_IMPORTED_MODULE_6__["default"].locals ? _node_modules_css_loader_dist_cjs_js_node_modules_sass_loader_dist_cjs_js_ruleSet_1_rules_0_use_2_footer_scss__WEBPACK_IMPORTED_MODULE_6__["default"].locals : undefined);
-
-
-/***/ },
-
 /***/ "./src/styles/fun.scss"
 /*!*****************************!*\
   !*** ./src/styles/fun.scss ***!
@@ -14651,6 +13712,17 @@ module.exports = __webpack_require__.p + "2.jpg";
 
 /***/ },
 
+/***/ "./src/assets/personal-pictures/full-picture-cropped.png"
+/*!***************************************************************!*\
+  !*** ./src/assets/personal-pictures/full-picture-cropped.png ***!
+  \***************************************************************/
+(module, __unused_webpack_exports, __webpack_require__) {
+
+"use strict";
+module.exports = __webpack_require__.p + "full-picture-cropped.png";
+
+/***/ },
+
 /***/ "./src/assets/personal-pictures/sp1.png"
 /*!**********************************************!*\
   !*** ./src/assets/personal-pictures/sp1.png ***!
@@ -14975,30 +14047,30 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _styles_variables_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./styles/variables.scss */ "./src/styles/variables.scss");
 /* harmony import */ var _styles_main_scss__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./styles/main.scss */ "./src/styles/main.scss");
 /* harmony import */ var _styles_header_scss__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./styles/header.scss */ "./src/styles/header.scss");
-/* harmony import */ var _styles_footer_scss__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./styles/footer.scss */ "./src/styles/footer.scss");
-/* harmony import */ var _styles_home_scss__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./styles/home.scss */ "./src/styles/home.scss");
-/* harmony import */ var _styles_pivot_scss__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./styles/pivot.scss */ "./src/styles/pivot.scss");
-/* harmony import */ var _styles_skills_scss__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./styles/skills.scss */ "./src/styles/skills.scss");
-/* harmony import */ var _styles_contact_scss__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./styles/contact.scss */ "./src/styles/contact.scss");
-/* harmony import */ var _styles_work_scss__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./styles/work.scss */ "./src/styles/work.scss");
-/* harmony import */ var _styles_fun_scss__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./styles/fun.scss */ "./src/styles/fun.scss");
-/* harmony import */ var _javascript_jquery_js__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./javascript/jquery.js */ "./src/javascript/jquery.js");
-/* harmony import */ var _javascript_menu_js__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./javascript/menu.js */ "./src/javascript/menu.js");
-/* harmony import */ var _javascript_menu_js__WEBPACK_IMPORTED_MODULE_12___default = /*#__PURE__*/__webpack_require__.n(_javascript_menu_js__WEBPACK_IMPORTED_MODULE_12__);
-/* harmony import */ var _javascript_download_js__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./javascript/download.js */ "./src/javascript/download.js");
-/* harmony import */ var _javascript_download_js__WEBPACK_IMPORTED_MODULE_13___default = /*#__PURE__*/__webpack_require__.n(_javascript_download_js__WEBPACK_IMPORTED_MODULE_13__);
-/* harmony import */ var _javascript_form_js__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./javascript/form.js */ "./src/javascript/form.js");
-/* harmony import */ var _javascript_form_js__WEBPACK_IMPORTED_MODULE_14___default = /*#__PURE__*/__webpack_require__.n(_javascript_form_js__WEBPACK_IMPORTED_MODULE_14__);
-/* harmony import */ var _javascript_fun_js__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./javascript/fun.js */ "./src/javascript/fun.js");
-/* harmony import */ var _javascript_fun_js__WEBPACK_IMPORTED_MODULE_15___default = /*#__PURE__*/__webpack_require__.n(_javascript_fun_js__WEBPACK_IMPORTED_MODULE_15__);
-/* harmony import */ var _javascript_projects_js__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./javascript/projects.js */ "./src/javascript/projects.js");
-/* harmony import */ var _javascript_projects_js__WEBPACK_IMPORTED_MODULE_16___default = /*#__PURE__*/__webpack_require__.n(_javascript_projects_js__WEBPACK_IMPORTED_MODULE_16__);
-/* harmony import */ var _javascript_pivot_js__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./javascript/pivot.js */ "./src/javascript/pivot.js");
-/* harmony import */ var _javascript_pivot_js__WEBPACK_IMPORTED_MODULE_17___default = /*#__PURE__*/__webpack_require__.n(_javascript_pivot_js__WEBPACK_IMPORTED_MODULE_17__);
-/* harmony import */ var _assets_background_Irises_Vincent_van_Gogh_web_jpg__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./assets/background/Irises-Vincent_van_Gogh-web.jpg */ "./src/assets/background/Irises-Vincent_van_Gogh-web.jpg");
-/* harmony import */ var _assets_personal_pictures_1_png__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./assets/personal-pictures/1.png */ "./src/assets/personal-pictures/1.png");
-/* harmony import */ var _assets_personal_pictures_2_jpg__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./assets/personal-pictures/2.jpg */ "./src/assets/personal-pictures/2.jpg");
-/* harmony import */ var _assets_personal_pictures_sp1_png__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./assets/personal-pictures/sp1.png */ "./src/assets/personal-pictures/sp1.png");
+/* harmony import */ var _styles_home_scss__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./styles/home.scss */ "./src/styles/home.scss");
+/* harmony import */ var _styles_pivot_scss__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./styles/pivot.scss */ "./src/styles/pivot.scss");
+/* harmony import */ var _styles_skills_scss__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./styles/skills.scss */ "./src/styles/skills.scss");
+/* harmony import */ var _styles_contact_scss__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./styles/contact.scss */ "./src/styles/contact.scss");
+/* harmony import */ var _styles_work_scss__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./styles/work.scss */ "./src/styles/work.scss");
+/* harmony import */ var _styles_fun_scss__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./styles/fun.scss */ "./src/styles/fun.scss");
+/* harmony import */ var _javascript_jquery_js__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./javascript/jquery.js */ "./src/javascript/jquery.js");
+/* harmony import */ var _javascript_menu_js__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./javascript/menu.js */ "./src/javascript/menu.js");
+/* harmony import */ var _javascript_menu_js__WEBPACK_IMPORTED_MODULE_11___default = /*#__PURE__*/__webpack_require__.n(_javascript_menu_js__WEBPACK_IMPORTED_MODULE_11__);
+/* harmony import */ var _javascript_download_js__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./javascript/download.js */ "./src/javascript/download.js");
+/* harmony import */ var _javascript_download_js__WEBPACK_IMPORTED_MODULE_12___default = /*#__PURE__*/__webpack_require__.n(_javascript_download_js__WEBPACK_IMPORTED_MODULE_12__);
+/* harmony import */ var _javascript_form_js__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./javascript/form.js */ "./src/javascript/form.js");
+/* harmony import */ var _javascript_form_js__WEBPACK_IMPORTED_MODULE_13___default = /*#__PURE__*/__webpack_require__.n(_javascript_form_js__WEBPACK_IMPORTED_MODULE_13__);
+/* harmony import */ var _javascript_fun_js__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./javascript/fun.js */ "./src/javascript/fun.js");
+/* harmony import */ var _javascript_fun_js__WEBPACK_IMPORTED_MODULE_14___default = /*#__PURE__*/__webpack_require__.n(_javascript_fun_js__WEBPACK_IMPORTED_MODULE_14__);
+/* harmony import */ var _javascript_projects_js__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./javascript/projects.js */ "./src/javascript/projects.js");
+/* harmony import */ var _javascript_projects_js__WEBPACK_IMPORTED_MODULE_15___default = /*#__PURE__*/__webpack_require__.n(_javascript_projects_js__WEBPACK_IMPORTED_MODULE_15__);
+/* harmony import */ var _javascript_pivot_js__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./javascript/pivot.js */ "./src/javascript/pivot.js");
+/* harmony import */ var _javascript_pivot_js__WEBPACK_IMPORTED_MODULE_16___default = /*#__PURE__*/__webpack_require__.n(_javascript_pivot_js__WEBPACK_IMPORTED_MODULE_16__);
+/* harmony import */ var _assets_background_Irises_Vincent_van_Gogh_web_jpg__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./assets/background/Irises-Vincent_van_Gogh-web.jpg */ "./src/assets/background/Irises-Vincent_van_Gogh-web.jpg");
+/* harmony import */ var _assets_personal_pictures_1_png__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./assets/personal-pictures/1.png */ "./src/assets/personal-pictures/1.png");
+/* harmony import */ var _assets_personal_pictures_2_jpg__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./assets/personal-pictures/2.jpg */ "./src/assets/personal-pictures/2.jpg");
+/* harmony import */ var _assets_personal_pictures_sp1_png__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./assets/personal-pictures/sp1.png */ "./src/assets/personal-pictures/sp1.png");
+/* harmony import */ var _assets_personal_pictures_full_picture_cropped_png__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./assets/personal-pictures/full-picture-cropped.png */ "./src/assets/personal-pictures/full-picture-cropped.png");
 /* harmony import */ var _assets_social_logos_instagram_png__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./assets/social-logos/instagram.png */ "./src/assets/social-logos/instagram.png");
 /* harmony import */ var _assets_social_logos_letterboxd_svg__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ./assets/social-logos/letterboxd.svg */ "./src/assets/social-logos/letterboxd.svg");
 /* harmony import */ var _assets_social_logos_linkedin_png__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ./assets/social-logos/linkedin.png */ "./src/assets/social-logos/linkedin.png");
@@ -15014,7 +14086,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _assets_project_logos_logo_png__WEBPACK_IMPORTED_MODULE_34__ = __webpack_require__(/*! ./assets/project-logos/logo.png */ "./src/assets/project-logos/logo.png");
 /* harmony import */ var _assets_Nithila_Resume_pdf__WEBPACK_IMPORTED_MODULE_35__ = __webpack_require__(/*! ./assets/Nithila_Resume.pdf */ "./src/assets/Nithila_Resume.pdf");
 /* Styles */
-
 
 
 
@@ -15054,8 +14125,9 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
 })();
 
 /******/ })()
 ;
-//# sourceMappingURL=bundlec2f67e2d17241b241e43.js.map
+//# sourceMappingURL=bundle46f03fc0fa0ec14f7e37.js.map

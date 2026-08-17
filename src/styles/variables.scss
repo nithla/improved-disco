@@ -3,13 +3,14 @@
 /* Colours */
 $white: #fff;
 $black: #000;
+$black-p15: rgba(0, 0, 0, 0.15);
+$black-p4: rgba(0, 0, 0, 0.4);
+$black-p5: rgba(0, 0, 0, 0.55);
+$black-p8: rgba(0, 0, 0, 0.8);
+
 $dark-blue: #000033;
 $yellow: #ffff00;
-$purple: rgba(131, 58, 180, 1);
-$dark-blue-50: rgba(0, 0, 51, 0.50);
-$border-yellow: rgba(255, 255, 0, 0.25);
-$transwhite-bg: rgba(255, 255, 255, 0.1);
-$shadow-color: rgba(0, 0, 0, 0.1);
+$yellow-p25: rgba(255, 255, 0, 0.25);
 
 /*-------------------------- Theme Colours End -------------------------*/
 
@@ -59,7 +60,7 @@ $xl: 1200px;
 
 $sectionPadding: 4rem 7.5vw;
 $cardPadding: 2rem;
-$boxShadow: 0 4px 24px rgba(0, 0, 0, 0.35);
+$boxShadow: 0 4px 24px $black-p4;
 
 
 /*----------------------------- Layout End ------------------------------*/

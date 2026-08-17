@@ -42,11 +42,11 @@
     padding-right: 1rem;
 
     &:first-child {
-        border-right: 1px solid rgba(0, 0, 0, 0.15);
+        border-right: 1px solid $black-p15;
 
         @include media-breakpoint-down($md) {
             border-right: 0;
-            border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+            border-bottom: 1px solid $black-p15;
         }
     }
 
@@ -78,7 +78,7 @@
         transition: background 0.2s ease;
 
         &:not(:first-child) {
-            border-top: 1px solid rgba(0, 0, 0, 0.15);
+            border-top: 1px solid $black-p15;
             padding-top: 1.25rem;
         }
 
