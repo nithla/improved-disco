@@ -11,8 +11,13 @@
         background: $white;
         color: $black;
 
+        @include media-breakpoint-down($lg) {
+            align-items: unset;
+        }
+
         @include media-breakpoint-down($md) {
             flex-direction: column;
+            align-items: flex-end;
         }
 
         &__picture {

@@ -2,7 +2,7 @@
     padding: 0 7.5vw;
     text-align: center;
 
-    @include media-breakpoint-up($md) {
+    @include media-breakpoint-up($lg) {
         @include flex-column(center, center);
         position: fixed;
         top: 0;
@@ -18,7 +18,7 @@
         z-index: 4;
     }
 
-    @include media-breakpoint-down($md) {
+    @include media-breakpoint-down($lg) {
         flex-direction: column;
         margin-top: 1rem;
     }
@@ -26,7 +26,7 @@
     &__logo {
         @include flex-column(center, center);
 
-        @include media-breakpoint-down($md) {
+        @include media-breakpoint-down($lg) {
             width: 100%;
         }
 
@@ -47,7 +47,7 @@
             margin: 0.75rem 0 0.25rem;
             cursor: pointer;
 
-            @include media-breakpoint-up($md) {
+            @include media-breakpoint-up($lg) {
                 display: none;
             }
 
@@ -92,7 +92,7 @@
     &__navigation {
         width: fit-content;
 
-        @include media-breakpoint-down($md) {
+        @include media-breakpoint-down($lg) {
             width: 100%;
         }
 
@@ -102,7 +102,7 @@
             row-gap: 1.5rem;
             cursor: default;
 
-            @include media-breakpoint-down($md) {
+            @include media-breakpoint-down($lg) {
                 margin-bottom: 1.5rem;
                 border: 1px solid $yellow-p25;
                 padding: 1rem;
@@ -137,7 +137,7 @@
                     color: $yellow;
                 }
 
-                @include media-breakpoint-down($md) {
+                @include media-breakpoint-down($lg) {
                     font-size: 0.75rem;
                     text-transform: none;
                 }

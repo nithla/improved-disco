@@ -1,20 +1,20 @@
 @use 'sass:color';
 
 .fun {
-    @include flex-column(space-between, center);
+    @include flex-column(center, center);
     background: url('../assets/background/1665_Girl_with_a_Pearl_Earring.jpg') center / cover no-repeat;
 
     &__subsection {
         &-wrapper {
             @include flex-row(stretch, stretch);
-            margin-bottom: 2rem;
+            margin-bottom: 1.5rem;
             box-shadow: $boxShadow;
             border-radius: 0.5rem;
-            padding: 0 0 0 $cardPadding;
+            padding: 0;
             width: 100%;
             background: $black-p4;
 
-            @include media-breakpoint-down($md) {
+            @include media-breakpoint-down($lg) {
                 flex-direction: column;
             }
         }
@@ -23,7 +23,8 @@
         min-width: 0;
 
         &:first-child {
-            padding: 3rem 2rem 2rem 0;
+            order: 2;
+            padding: 3rem 2rem;
         }
 
         iframe {
@@ -194,29 +195,6 @@
                 margin-top: 0.15rem;
                 color: color.adjust($yellow, $lightness: -15%);
                 font-size: 0.75rem;
-            }
-        }
-    }
-
-    &__social {
-        p {
-            margin: 0;
-            font-weight: 300;
-        }
-
-        ul {
-            @include flex-row(center, unset);
-            padding: 0.5rem 0 0;
-            gap: 1.5rem;
-
-            img {
-                width: 2.5rem;
-                height: 2.5rem;
-
-                @include media-breakpoint-down($md) {
-                    width: 2.25rem;
-                    height: 2.25rem;
-                }
             }
         }
     }

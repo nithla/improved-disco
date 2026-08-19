@@ -63,7 +63,7 @@ function formValidate() {
     // Message validation
     if (messageInput.val().trim() === '') {
         isValid = false;
-        showError(messageInput, 'Message is required.');
+        showError(messageInput, 'Message is required');
     }
 
     if (isValid) {
