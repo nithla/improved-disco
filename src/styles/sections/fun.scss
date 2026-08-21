@@ -1,18 +1,20 @@
 @use 'sass:color';
 
 .fun {
-    @include flex-column(center, center);
-    background: url('../assets/background/1665_Girl_with_a_Pearl_Earring.jpg') center / cover no-repeat;
+    @include flex();
+    background: url('../../assets/background/1665-girl-with-a-pearl-earring-vermeer.jpg') center / cover no-repeat;
+
+    h2 {
+        text-align: center;
+    }
 
     &__subsection {
         &-wrapper {
-            @include flex-row(stretch, stretch);
+            @include flex(row, stretch, stretch);
+            @include card(0.5rem, $black-p4);
             margin-bottom: 1.5rem;
-            box-shadow: $boxShadow;
-            border-radius: 0.5rem;
             padding: 0;
             width: 100%;
-            background: $black-p4;
 
             @include media-breakpoint-down($lg) {
                 flex-direction: column;
@@ -24,51 +26,72 @@
 
         &:first-child {
             order: 2;
-            padding: 3rem 2rem;
+            padding: 3rem 1.5rem 1.5rem;
+
+            @include media-breakpoint-down($lg) {
+                padding: 1.5rem;
+            }
         }
 
         iframe {
-            height: 100%;
-            min-height: 380px;
-            border-radius: 0.75rem;
             box-shadow: 0 2px 12px $black-p15;
+            border-radius: 0.75rem;
+            height: 100%;
+            min-height: 23.75rem;
         }
 
         p {
-            font-weight: 500;
-            font-size: 1.5rem;
-            letter-spacing: -0.02em;
             word-spacing: normal;
+            font-size: 1.5rem;
+            font-weight: 500;
+            letter-spacing: -0.02rem;
         }
     }
 
     &__carousel {
         position: relative;
 
+        @include media-breakpoint-down($sm) {
+            @include flex(row);
+            flex-wrap: wrap;
+            row-gap: 0.5rem;
+        }
+
         &-arrow {
+            @include flex(row);
             position: absolute;
             top: 45%;
-            z-index: 2;
             transform: translateY(-50%);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 2.25rem;
-            height: 2.25rem;
+            z-index: 2;
             border: 0;
             border-radius: 50%;
+            width: 2.25rem;
+            height: 2.25rem;
             background: $black-p5;
             color: $white;
             cursor: pointer;
             transition: background 0.2s ease, opacity 0.2s ease;
+
+            @include media-breakpoint-down($sm) {
+                position: static;
+                order: 2;
+                transform: none;
+                margin: 0 0.375rem;
+                overflow: hidden;
+                transition: background 0.2s ease, opacity 0.25s ease, width 0.25s ease, margin 0.25s ease;
+            }
 
             &::after {
                 content: none;
             }
 
             &:hover {
-                background: $black-p8;
                 transform: translateY(-50%);
+                background: $black-p8;
+
+                @include media-breakpoint-down($sm) {
+                    transform: none;
+                }
             }
 
             &:focus {
@@ -76,18 +99,22 @@
             }
 
             &:focus-visible {
-                outline: 2px solid $yellow;
-                outline-offset: 2px;
+                @include focus-ring;
             }
 
             .icon--chevron {
-                width: 0.85em;
-                height: 0.85em;
+                width: 0.85rem;
+                height: 0.85rem;
             }
 
             &--hidden {
                 opacity: 0;
                 pointer-events: none;
+
+                @include media-breakpoint-down($sm) {
+                    width: 0;
+                    margin: 0;
+                }
             }
 
             &--prev {
@@ -100,12 +127,17 @@
         }
 
         ul {
-            @include flex-row(flex-start, stretch);
+            @include flex(row, flex-start, stretch);
             flex-wrap: nowrap;
             overflow-x: auto;
-            padding: 1rem 1rem 1.25rem;
+            padding: 1rem 1rem 0;
             gap: 1.75rem;
             scrollbar-width: none;
+
+            @include media-breakpoint-down($sm) {
+                order: 1;
+                flex: 1 1 100%;
+            }
 
             &::-webkit-scrollbar {
                 height: 0;
@@ -124,31 +156,21 @@
                 flex-shrink: 0;
                 width: 9rem;
 
-                &:nth-child(4n+1) a {
-                    transform: rotate(-4deg);
-                }
-
-                &:nth-child(4n+2) a {
-                    transform: rotate(3deg);
-                }
-
-                &:nth-child(4n+3) a {
-                    transform: rotate(-2deg);
-                }
-
-                &:nth-child(4n+4) a {
-                    transform: rotate(4deg);
+                @each $n, $deg in (1 -4deg), (2 3deg), (3 -2deg), (4 4deg) {
+                    &:nth-child(4n+#{$n}) a {
+                        transform: rotate($deg);
+                    }
                 }
             }
 
             a {
-                @include flex-column(flex-start, center);
+                @include flex(column, flex-start, center);
                 position: relative;
                 gap: 0;
+                box-shadow: 0 4px 14px $black-p4;
+                border-radius: 0.15rem;
                 padding: 0.6rem 0.6rem 0.9rem;
                 background: $white;
-                border-radius: 0.15rem;
-                box-shadow: 0 4px 14px $black-p4;
                 color: $black;
                 text-align: center;
                 transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -158,18 +180,18 @@
                     position: absolute;
                     top: -0.6rem;
                     left: 50%;
+                    box-shadow: 0 2px 4px $black-p4;
+                    border-radius: 50%;
                     width: 1.4rem;
                     height: 1.4rem;
-                    border-radius: 50%;
                     background: radial-gradient(circle at 35% 35%, #fff8b0, $yellow 70%);
-                    box-shadow: 0 2px 4px $black-p4;
                     transform: translateX(-50%);
                 }
 
                 &:hover {
-                    transform: rotate(0deg) translateY(-0.35rem) scale(1.04);
-                    box-shadow: 0 10px 24px $black-p5;
                     z-index: 1;
+                    box-shadow: 0 10px 24px $black-p5;
+                    transform: rotate(0deg) translateY(-0.35rem) scale(1.04);
                 }
             }
 
@@ -181,11 +203,8 @@
             }
 
             span {
-                @include default-text;
                 margin-top: 0.5rem;
-                font-family: $Poppins;
-                font-size: 0.75rem;
-                font-weight: 300;
+                font: 300 0.75rem $Poppins;
                 line-height: 1.25;
                 word-spacing: normal;
                 color: $black;

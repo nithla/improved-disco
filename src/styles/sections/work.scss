@@ -1,8 +1,8 @@
 .showcase {
-    @include flex-column(center, stretch);
+    @include flex(column, center, stretch);
     padding: $sectionPadding;
     gap: 0;
-    background-image: url('../assets/background/Piet_Mondriaan,_1921_-_Composition_en_rouge,_jaune,_bleu_et_noir.jpg');
+    background-image: url('../../assets/background/1921-composition-in-red-yellow-blue-and-black-mondrian.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -17,11 +17,9 @@
     }
 
     &__split {
-        @include flex-row(stretch, stretch);
-        border-radius: 0.5rem 0.5rem 0 0;
-        box-shadow: $boxShadow;
+        @include flex(row, stretch, stretch);
+        @include card(0.5rem 0.5rem 0 0);
         overflow: hidden;
-        background: $white;
 
         @include media-breakpoint-down($md) {
             flex-direction: column;
@@ -43,7 +41,7 @@
     }
 
     &__grid-item {
-        @include flex-row(center, center);
+        @include flex(row, center, center);
         aspect-ratio: 1;
         padding: 0.5rem;
         background: $white;
@@ -76,17 +74,14 @@
     }
 
     &__detail {
-        @include flex-column(center, flex-start);
+        @include flex(column, center, flex-start);
         flex: 1;
         padding: $cardPadding;
         color: $black;
 
         &-name {
             margin-bottom: 0.5rem;
-            font-family: $Jost;
-            line-height: 1.2;
-            font-size: 1.5rem;
-            font-weight: 700;
+            font: 700 1.5rem/1.2 $Jost;
         }
 
         &-role {
@@ -114,14 +109,13 @@
 }
 
 .resume {
-    @include flex-row(center, center);
+    @include flex(row, center, center);
     width: 100%;
     gap: 1.5rem;
-    border-radius: 0 0 0.5rem 0.5rem;
+    @include card(0 0 0.5rem 0.5rem);
     box-shadow: none;
     border-top: 1px solid $black-p15;
     padding: 1rem $cardPadding;
-    background: $white;
     color: $black;
 
     @include media-breakpoint-down($sm) {
@@ -143,10 +137,10 @@
         color: $black;
 
         .icon--download {
-            width: 0.9em;
-            height: 0.9em;
+            width: 0.9rem;
+            height: 0.9rem;
             margin-right: 0.35rem;
-            vertical-align: -0.1em;
+            vertical-align: -0.1rem;
         }
     }
 }

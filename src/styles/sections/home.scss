@@ -1,14 +1,12 @@
 .home {
-    @include flex-column(center, center);
-    background: url('../assets/background/Irises-Vincent_van_Gogh-web.jpg') center / cover no-repeat;
+    @include flex();
+    background: url('../../assets/background/1889-irises-van-gogh.jpg') center / cover no-repeat;
 
     &__bio {
-        @include flex-row(unset, flex-end);
-        border-radius: 0.5rem;
-        box-shadow: $boxShadow;
+        @include flex(row, unset, flex-end);
+        @include card;
         padding: $cardPadding $cardPadding 0;
         width: 100%;
-        background: $white;
         color: $black;
 
         @include media-breakpoint-down($lg) {
@@ -21,8 +19,6 @@
         }
 
         &__picture {
-            float: right;
-
             img {
                 position: relative;
                 right: -$cardPadding;
@@ -32,11 +28,11 @@
                 height: auto;
 
                 @include media-breakpoint-down($lg) {
-                    content: url('../assets/personal-pictures/full-picture-cropped.png');
+                    content: url('../../assets/personal-pictures/home-full-picture.png');
                 }
 
                 @include media-breakpoint-down($md) {
-                    content: url('../assets/personal-pictures/sp1.png');
+                    content: url('../../assets/personal-pictures/home-picture.png');
                 }
             }
         }

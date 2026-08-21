@@ -3,6 +3,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 module.exports = {
     mode: 'development',
+    context: path.resolve(__dirname, 'src'),
     entry: {
         bundle: path.resolve(__dirname, 'src/index.js'),
     },
@@ -10,7 +11,7 @@ module.exports = {
         path: path.resolve(__dirname, 'dist'),
         filename: '[name][contenthash].js',
         clean: true,
-        assetModuleFilename: '[name][ext]',
+        assetModuleFilename: '[path][name][ext]',
     },
     devtool: 'source-map',
     devServer: {
@@ -34,6 +35,9 @@ module.exports = {
                         loader: 'sass-loader',
                         options: {
                             api: 'modern',
+                            sassOptions: {
+                                loadPaths: [path.resolve(__dirname, 'src/styles/global')],
+                            },
                             additionalData: (content, loaderContext) => {
                                 if (loaderContext.resourcePath.endsWith('variables.scss')) {
                                     return content;
@@ -68,7 +72,7 @@ module.exports = {
         new HtmlWebpackPlugin({
             title: 'Product, Design & Engineering',
             filename: 'index.html',
-            template: 'src/index.html',
+            template: 'index.html',
         }),
     ],
 }

@@ -3,13 +3,13 @@
     text-align: center;
 
     @include media-breakpoint-up($lg) {
-        @include flex-column(center, center);
+        @include flex();
         position: fixed;
         top: 0;
         right: 0;
         margin: 0;
         padding: 2rem 1rem;
-        background-image: url('../assets/background/The_Kiss_-_Gustav_Klimt_-_Google_Cultural_Institute.jpg');
+        background-image: url('../../assets/background/1908-the-kiss-klimt.jpg');
         background-repeat: no-repeat;
         background-size: cover;
         width: 8rem;
@@ -24,7 +24,7 @@
     }
 
     &__logo {
-        @include flex-column(center, center);
+        @include flex();
 
         @include media-breakpoint-down($lg) {
             width: 100%;
@@ -32,8 +32,7 @@
 
         &-text {
             display: inline-block;
-            font-family: $Arizonia;
-            font-size: 3rem;
+            font: 3rem $Arizonia;
             color: $white;
             text-transform: lowercase;
             cursor: pointer;
@@ -97,8 +96,7 @@
         }
 
         &-links {
-            display: flex;
-            flex-direction: column;
+            @include flex(column, flex-start, stretch);
             row-gap: 1.5rem;
             cursor: default;
 

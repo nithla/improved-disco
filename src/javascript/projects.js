@@ -2,7 +2,7 @@ const PROJECTS = [
     {
         id: 'accenture',
         name: 'Accenture',
-        logo: 'accenture.png',
+        logo: 'assets/project-logos/accenture.png',
         role: 'Business Analyst, Product Strategy · Expert Assist',
         bullets: [
             'Delivered an 88% GenAI accuracy gain by owning metadata strategy & driving structural alignment of the index',
@@ -13,7 +13,7 @@ const PROJECTS = [
     {
         id: 'bt',
         name: 'British Telecom',
-        logo: 'bt.png',
+        logo: 'assets/project-logos/bt.png',
         role: 'Product Owner, Technical Business Analyst · Everything Everywhere',
         bullets: [
             'Streamlined data flow, enabling a 15% faster feature rollout between backend services & PDP–PLP pages',
@@ -24,7 +24,7 @@ const PROJECTS = [
     {
         id: 'thoughtworks',
         name: 'Thoughtworks',
-        logo: 'thoughtworks.png',
+        logo: 'assets/project-logos/thoughtworks.png',
         role: 'Frontend Lead',
         bullets: [
             'Facilitated a $0.77 billion IPO on the NASDAQ by spearheading the rebranding & full visual refresh campaign',
@@ -34,7 +34,7 @@ const PROJECTS = [
     {
         id: 'equinix',
         name: 'Equinix',
-        logo: 'equinix.png',
+        logo: 'assets/project-logos/equinix.png',
         role: 'Frontend Developer',
         bullets: [
             'Seamlessly integrated 1000s of results into the UI, optimizing complex API data handled from database requests',
@@ -44,7 +44,7 @@ const PROJECTS = [
     {
         id: 'tadigital',
         name: 'TA Digital',
-        logo: 'tadigital.png',
+        logo: 'assets/project-logos/tadigital.png',
         role: 'Frontend Developer · Corporate website rebuild',
         bullets: [
             'Created global styles & 10+ reusable functions, streamlining the design of 100+ pages in the site’s redesign',
@@ -54,7 +54,7 @@ const PROJECTS = [
     {
         id: 'dupont',
         name: 'DuPont',
-        logo: 'dupont.png',
+        logo: 'assets/project-logos/dupont.png',
         role: 'Full-stack Developer',
         bullets: [
             'Spearheaded a platform migration of 624 HTML pages from AEM to BigCommerce, saving $40,000 annually',
@@ -64,7 +64,7 @@ const PROJECTS = [
     {
         id: 'myntra',
         name: 'Myntra',
-        logo: 'myntra.png',
+        logo: 'assets/project-logos/myntra.png',
         role: 'Summer Intern · B-School Internship',
         bullets: [
             'Identified key growth opportunities by leveraging insights from 50+ stakeholders & 2,500+ global programs',
@@ -75,14 +75,14 @@ const PROJECTS = [
     {
         id: 'canopygrowth',
         name: 'Canopy Growth',
-        logo: 'canopygrowth.png',
+        logo: 'assets/project-logos/canopygrowth.png',
         role: null,
         bullets: [],
     },
     {
         id: 'eon',
         name: 'E.ON',
-        logo: 'eon.png',
+        logo: 'assets/project-logos/eon.png',
         role: null,
         bullets: [],
     },

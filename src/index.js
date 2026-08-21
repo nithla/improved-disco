@@ -1,14 +1,14 @@
 /* Styles */
-import './styles/reset.scss'
-import './styles/variables.scss'
-import './styles/main.scss'
-import './styles/header.scss'
-import './styles/home.scss'
-import './styles/pivot.scss'
-import './styles/skills.scss'
-import './styles/contact.scss'
-import './styles/work.scss'
-import './styles/fun.scss'
+import './styles/global/reset.scss'
+import './styles/global/variables.scss'
+import './styles/global/main.scss'
+import './styles/sections/header.scss'
+import './styles/sections/home.scss'
+import './styles/sections/pivot.scss'
+import './styles/sections/skills.scss'
+import './styles/sections/contact.scss'
+import './styles/sections/work.scss'
+import './styles/sections/fun.scss'
 
 /* JavaScript */
 import './javascript/jquery.js'
@@ -20,12 +20,9 @@ import './javascript/projects.js'
 import './javascript/pivot.js'
 
 /* Assets */
-import './assets/background/Irises-Vincent_van_Gogh-web.jpg'
 
-import './assets/personal-pictures/1.png'
-import './assets/personal-pictures/2.jpg'
-import './assets/personal-pictures/sp1.png'
-import './assets/personal-pictures/full-picture-cropped.png'
+import './assets/personal-pictures/home-picture.png'
+import './assets/personal-pictures/home-full-picture.png'
 
 import './assets/social-logos/instagram.png'
 import './assets/social-logos/letterboxd.svg'
@@ -43,4 +40,4 @@ import './assets/project-logos/bt.png'
 
 import './assets/project-logos/logo.png'
 
-import './assets/Nithila_Resume.pdf'
+import './assets/resume/Nithila_Resume.pdf'

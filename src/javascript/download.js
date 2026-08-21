@@ -1,3 +1,3 @@
 $('.resume').on('click', function(e) {
-    window.open('./Nithila_Resume.pdf');
+    window.open('./assets/resume/Nithila_Resume.pdf');
 })

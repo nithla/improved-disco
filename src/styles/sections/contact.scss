@@ -1,7 +1,7 @@
 .contact {
-    @include flex-row(space-between, unset);
+    @include flex(row, space-between, unset);
     padding: 0;
-    background: url('../assets/background/creationofadam.png') center / cover no-repeat;
+    background: url('../../assets/background/1512-creation-of-adam-michelangelo.png') center / cover no-repeat;
 
     &__tagline {
         margin: 4rem 1.5rem 0;
@@ -17,7 +17,7 @@
     &__form {
 
         &-wrapper {
-            @include flex-column(flex-start, stretch);
+            @include flex(column, flex-start, stretch);
             flex: 1;
             padding: 4rem $cardPadding;
             background: $black-p4;
@@ -28,35 +28,34 @@
             }
         }
 
-        @include flex-column(center, stretch);
+        @include flex(column, center, stretch);
         margin: 0 auto;
 
         @include media-breakpoint-down($sm) {
             margin: 0;
             text-align: center;
         }
-
-        .error {
-            @include default-text;
-            margin: -1.2rem 0 0;
-            padding: 0 0.25rem;
-            background: $black-p8;
-            font-size: 1rem;
-            color: $red;
-        }
     }
 
     &__input {
 
         &-wrapper {
-            @include flex-column(center, center);
+            @include flex();
             padding: 0;
-            color: $white;
             gap: 1.5rem;
+
+            .error {
+                @include default-text;
+                margin: -1.2rem 0 0;
+                padding: 0 0.25rem;
+                background: $black;
+                font-size: 1rem;
+                color: $red;
+            }
         }
 
-        &__name,
-        &__query {
+        &__text,
+        &__textarea {
             @include default-text;
             border: 0;
             border-bottom: 1px solid $yellow-p25;
@@ -91,7 +90,7 @@
             }
         }
 
-        &__query {
+        &__textarea {
             padding: 0 0.5rem 0.5rem;
             height: 6rem;
             scrollbar-color: $yellow-p25 transparent;

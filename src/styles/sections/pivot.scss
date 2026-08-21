@@ -1,7 +1,7 @@
 .work-section {
-    @include flex-column(center, center);
+    @include flex();
     padding: $sectionPadding;
-    background-image: url('../assets/background/The_Great_Wave_off_Kanagawa.jpg');
+    background-image: url('../../assets/background/1831-the-great-wave-off-kanagawa-hokusai.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -16,19 +16,17 @@
 }
 
 .work__split {
-    @include flex-column(flex-start, stretch);
+    @include flex(column, flex-start, stretch);
     width: 100%;
     gap: 1rem;
-    border-radius: 0.5rem;
-    box-shadow: $boxShadow;
+    @include card;
     overflow: hidden;
-    background: $white;
     color: $black;
     padding: $cardPadding 0;
 }
 
 .work__panes {
-    @include flex-row(stretch, stretch);
+    @include flex(row, stretch, stretch);
 
     @include media-breakpoint-down($md) {
         flex-direction: column;
@@ -62,7 +60,7 @@
 
 .pivot {
     &__card-wrapper {
-        @include flex-column(flex-start, stretch);
+        @include flex(column, flex-start, stretch);
         gap: 1.5rem;
         padding-left: 1rem;
         padding-right: 0.25rem;
@@ -88,8 +86,7 @@
         }
 
         &:focus-visible {
-            outline: 2px solid $yellow;
-            outline-offset: 2px;
+            @include focus-ring;
         }
 
         &__text {

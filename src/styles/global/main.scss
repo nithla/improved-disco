@@ -38,7 +38,7 @@ body {
     &__social {
         text-align: center;
 
-        ul img {
+        a img {
             width: 2.5rem;
             height: 2.5rem;
 
@@ -115,7 +115,7 @@ button {
     }
 }
 
-.underline {
+.highlight {
     background-color: $yellow;
     padding: 0 .5rem;
     text-decoration: none;

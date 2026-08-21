@@ -1,20 +1,18 @@
 .skills__groups {
-    @include flex-column(flex-start, stretch);
+    @include flex(column, flex-start, stretch);
     gap: 1.25rem;
 }
 
 .skills__group-title {
     margin-bottom: 0.6rem;
-    font-family: $Jost;
-    font-size: 0.85rem;
-    font-weight: 700;
-    letter-spacing: 0.05em;
+    font: 700 0.85rem $Jost;
+    letter-spacing: 0.05rem;
     text-transform: uppercase;
     color: $black-p5;
 }
 
 .skills__chips {
-    @include flex-row(flex-start, center);
+    @include flex(row, flex-start, center);
     flex-wrap: wrap;
     gap: 0.5rem;
 }
