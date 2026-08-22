@@ -1,30 +1,167 @@
-.skills__groups {
-    @include flex(column, flex-start, stretch);
-    gap: 1.25rem;
-}
+.skills {
+    @include flex();
+    padding: $sectionPadding;
+    background: url('../../assets/background/1831-the-great-wave-off-kanagawa-hokusai.jpg') center / cover no-repeat;
+    color: $black;
 
-.skills__group-title {
-    margin-bottom: 0.6rem;
-    font: 700 0.85rem $Jost;
-    letter-spacing: 0.05rem;
-    text-transform: uppercase;
-    color: $black-p5;
-}
+    h3 {
+        margin-bottom: 0;
+        padding: 0 2rem;
+        text-align: left;
+        text-shadow: none;
+    }
 
-.skills__chips {
-    @include flex(row, flex-start, center);
-    flex-wrap: wrap;
-    gap: 0.5rem;
-}
+    &__wrapper {
+        @include flex(column, flex-start, stretch);
+        @include card;
+        gap: 1.5rem;
+        padding: $cardPadding 0;
+    }
 
-.skills__chip {
-    @include default-text;
-    border: 1px solid rgba(0, 24, 72, 0.35);
-    border-radius: 999px;
-    padding: 0.4rem 0.85rem;
-    background: rgba(216, 192, 144, 0.18);
-    color: #001848;
-    font-size: 0.9rem;
-    line-height: 1.2;
-    word-spacing: normal;
+    &__subsection {
+
+        &-wrapper {
+            @include flex(row, stretch, stretch);
+
+            @include media-breakpoint-down($md) {
+                flex-direction: column;
+                gap: 1.5rem;
+            }
+        }
+
+        min-width: 0;
+        padding: 0 $cardPadding;
+
+        &:first-child {
+            border-right: 1px solid $black-p15;
+
+            @include media-breakpoint-down($md) {
+                border-right: 0;
+                border-bottom: 1px solid $black-p15;
+            }
+        }
+
+        &--pivot {
+            flex: 3;
+        }
+
+        &--skills {
+            flex: 2;
+            padding: 0 $cardPadding
+        }
+    }
+
+    &__card {
+        &-wrapper {
+            @include flex(column, flex-start, stretch);
+            gap: 1rem;
+
+            @include media-breakpoint-down($md) {
+                gap: 0
+            }
+        }
+
+        @include default-text;
+        position: relative;
+        cursor: pointer;
+        margin: 0 -0.75rem;
+        border-left: 3px solid transparent;
+        border-radius: 0.375rem;
+        padding: 0.75rem;
+        transition: background 0.2s ease, border-color 0.2s ease;
+
+        &:not(:first-child) {
+            border-top: 1px solid $black-p15;
+            // padding-top: 1.25rem;
+        }
+
+        &:hover {
+            background: $blue-p18;
+        }
+
+        &:focus-visible {
+            @include focus-ring;
+        }
+
+        p {
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+        }
+
+        ul {
+            @include media-breakpoint-down($md) {
+                max-height: 0;
+                overflow: hidden;
+                transition: max-height 0.3s ease;
+            }
+
+            li {
+                margin-bottom: 0.75rem;
+            }
+        }
+
+        &--active {
+            background: $blue-p35;
+            border-left-color: $blue;
+
+            &::before {
+                content: '';
+                position: absolute;
+                left: 0;
+                right: 0;
+                bottom: -2px;
+                height: 2px;
+                background: $yellow;
+            }
+
+            @include media-breakpoint-down($md) {
+                ul {
+                    max-height: 20rem;
+                }
+            }
+        }
+    }
+
+    &__groups {
+        @include flex(column, flex-start, stretch);
+        gap: 1.25rem;
+
+        p {
+            margin-bottom: 0;
+            font: 700 0.85rem $Jost;
+            letter-spacing: 0.05rem;
+            text-transform: uppercase;
+            color: $black-p5;
+        }
+
+        ul {
+            @include flex(row, flex-start, center);
+            flex-wrap: wrap;
+            gap: 0.5rem;
+
+            li {
+                @include default-text;
+                border: 1px solid $black-p4;
+                border-radius: 999px;
+                padding: 0.4rem 0.85rem;
+                background: $tan-p18;
+                color: #001848;
+                font-size: 0.9rem;
+                line-height: 1.2;
+                word-spacing: normal;
+
+                &:nth-child(4n+2) {
+                    background: $blue-p18;
+                }
+
+                &:nth-child(4n+3) {
+                    background: $tan-p35;
+                }
+
+                &:nth-child(4n) {
+                    background: $blue-p35;
+                }
+            }
+        }
+    }
 }

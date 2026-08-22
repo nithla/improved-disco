@@ -4,10 +4,9 @@ import './styles/global/variables.scss'
 import './styles/global/main.scss'
 import './styles/sections/header.scss'
 import './styles/sections/home.scss'
-import './styles/sections/pivot.scss'
 import './styles/sections/skills.scss'
 import './styles/sections/contact.scss'
-import './styles/sections/work.scss'
+import './styles/sections/projects.scss'
 import './styles/sections/fun.scss'
 
 /* JavaScript */

@@ -36,7 +36,7 @@ const PIVOT_SKILLS = {
     },
 };
 
-const cards = document.querySelectorAll('.pivot__card');
+const cards = document.querySelectorAll('.skills__card');
 const skillsGroups = document.getElementById('skillsGroups');
 
 function renderSkills(id) {
@@ -47,18 +47,16 @@ function renderSkills(id) {
     }
 
     skillsGroups.innerHTML = `
-        <div class="skills__group">
-            <p class="skills__group-title">${group.title}</p>
-            <ul class="skills__chips">
-                ${group.chips.map((chip) => `<li class="skills__chip">${chip}</li>`).join('')}
-            </ul>
-        </div>
+        <p>${group.title}</p>
+        <ul>
+            ${group.chips.map((chip) => `<li>${chip}</li>`).join('')}
+        </ul>
     `;
 }
 
 function selectCard(id) {
     cards.forEach((card) => {
-        card.classList.toggle('pivot__card--active', card.dataset.id === id);
+        card.classList.toggle('skills__card--active', card.dataset.id === id);
     });
 
     renderSkills(id);

@@ -100,8 +100,8 @@
             overflow-y: auto;
 
             &--has-overflow {
-                mask-image: linear-gradient(to bottom, $black calc(100% - 5rem), rgba(0, 0, 0, 0.4) calc(100% - 2rem), transparent);
-                -webkit-mask-image: linear-gradient(to bottom, $black calc(100% - 5rem), rgba(0, 0, 0, 0.4) calc(100% - 2rem), transparent);
+                mask-image: linear-gradient(to bottom, $black calc(100% - 5rem), $black-p4 calc(100% - 2rem), transparent);
+                -webkit-mask-image: linear-gradient(to bottom, $black calc(100% - 5rem), $black-p4 calc(100% - 2rem), transparent);
             }
         }
 
@@ -113,7 +113,6 @@
         &-role {
             @include default-text;
             margin-bottom: 1rem;
-            color: $dark-blue;
             font-size: 1rem;
         }
 
