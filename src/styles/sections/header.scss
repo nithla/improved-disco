@@ -1,133 +1,137 @@
 .header {
-    padding: 0 7.5vw;
-    text-align: center;
-
     @include media-breakpoint-up($lg) {
         @include flex();
         position: fixed;
-        top: 0;
         right: 0;
-        margin: 0;
+        z-index: 4;
         padding: 2rem 1rem;
-        background-image: url('../../assets/background/1908-the-kiss-klimt.jpg');
-        background-repeat: no-repeat;
-        background-size: cover;
         width: 8rem;
         height: 100vh;
-        gap: 2.5rem;
-        z-index: 4;
+        background: url('../../assets/background/1908-the-kiss-klimt.jpg') no-repeat 0 0/cover;
+        text-align: center;
     }
 
-    @include media-breakpoint-down($lg) {
-        flex-direction: column;
-        margin-top: 1rem;
-    }
+    &__menu {
+        --bar-width: 1.5rem;
+        --bar-height: 0.15rem;
+        --bar-gap: 0.45rem;
 
-    &__logo {
-        @include flex();
+        border-radius: 0.5rem;
+        padding: 1.25rem 0.75rem;
+        background: url('../../assets/background/1889-the-starry-night-van-gogh.jpg') center / cover no-repeat;
+        cursor: pointer;
+
+        @include media-breakpoint-up($lg) {
+            display: none;
+        }
 
         @include media-breakpoint-down($lg) {
-            width: 100%;
+            position: fixed;
+            top: 1.25rem;
+            right: 1.25rem;
+            z-index: 6;
         }
 
-        &-text {
-            display: inline-block;
-            font: 3rem $Arizonia;
-            color: $white;
-            text-transform: lowercase;
-            cursor: pointer;
+        &:focus-visible {
+            @include focus-ring;
+        }
 
-            a:hover {
-                color: $yellow;
+        &:hover &-bar {
+            background: $yellow;
+
+            &::before,
+            &::after {
+                background: $yellow;
             }
         }
 
-        &-caret {
-            margin: 0.75rem 0 0.25rem;
-            cursor: pointer;
+        &-bar {
+            position: relative;
+            display: block;
+            width: var(--bar-width);
+            height: var(--bar-height);
+            background: $white;
+            transition: background 0.3s ease-in-out;
 
-            @include media-breakpoint-up($lg) {
-                display: none;
+            &::before,
+            &::after {
+                position: absolute;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: $white;
+                content: "";
+                transition: transform 0.3s ease-in-out, background 0.3s ease-in-out;
             }
 
-            &.inverse::after {
-                transform: rotate(315deg);
-                margin-top: 0.25rem;
-            }
-
-            p {
-                @include default-text;
-                font-size: 0.5rem;
-                color: $white;
+            &::before {
+                top: calc(var(--bar-gap) * -1);
             }
 
             &::after {
-                position: relative;
-                left: -4px;
-                top: -7px;
-                margin-right: 0.5rem;
-                margin-left: 1.0rem;
-                border-right: 0.2rem solid $white;
-                border-top: 0.2rem solid $white;
-                display: inline-block;
-                width: 0.35rem;
-                height: 0.35rem;
-                transform: rotate(135deg);
-                content: "";
+                top: var(--bar-gap);
+            }
+        }
+
+        &.open {
+            background: none;
+        }
+
+        &.open &-bar {
+            background: transparent;
+
+            &::before {
+                transform: translateY(var(--bar-gap)) rotate(45deg);
             }
 
-            &:hover {
-                p {
-                    color: $yellow;
-                }
-
-                &::after {
-                    border-color: $yellow;
-                }
+            &::after {
+                transform: translateY(calc(var(--bar-gap) * -1)) rotate(-45deg);
             }
+        }
+    }
+
+    &__logo {
+        font: 3rem/0.5 $Arizonia;
+        color: $white;
+        text-transform: lowercase;
+        cursor: pointer;
+
+        a:hover {
+            color: $yellow;
         }
     }
 
     &__navigation {
-        width: fit-content;
+        @include flex(column, center, center);
+        gap: 1.5rem;
 
         @include media-breakpoint-down($lg) {
-            width: 100%;
+            position: fixed;
+            right: 0;
+            z-index: 5;
+            border-left: 1px solid $yellow-p25;
+            padding: 4.5rem 2rem 2rem;
+            width: min(14rem, 65vw);
+            height: 100vh;
+            background: linear-gradient($black-p5, $black-p5) center / cover no-repeat, url('../../assets/background/1908-the-kiss-klimt.jpg') center / cover no-repeat;
+            justify-content: flex-start;
+            align-items: flex-start;
+            transition: transform 0.35s ease-in-out, visibility 0s;
+
+            &.d-none {
+                transform: translateX(100%);
+                visibility: hidden;
+                transition: transform 0.35s ease-in-out, visibility 0s 0.35s;
+            }
         }
 
         &-links {
             @include flex(column, flex-start, stretch);
-            row-gap: 1.5rem;
+            row-gap: 1.75rem;
             cursor: default;
-
-            @include media-breakpoint-down($lg) {
-                margin-bottom: 1.5rem;
-                border: 1px solid $yellow-p25;
-                padding: 1rem;
-                flex-direction: column;
-                row-gap: 0.75rem;
-                max-height: 40rem;
-                opacity: 1;
-                transition: max-height 0.3s ease-in-out;
-
-                &.d-none {
-                    margin: 0;
-                    padding: 0;
-                    max-height: 0;
-                    opacity: 0;
-                    gap: 0;
-
-                    li {
-                        height: 0;
-                    }
-                }
-            }
 
             li {
                 @include default-text;
-                display: inline-block;
-                font-size: 1.1rem;
-                color: $white;
                 transition: all 0.3s ease-in-out;
                 cursor: pointer;
 
@@ -136,8 +140,7 @@
                 }
 
                 @include media-breakpoint-down($lg) {
-                    font-size: 0.75rem;
-                    text-transform: none;
+                    font-size: 1rem;
                 }
             }
         }
