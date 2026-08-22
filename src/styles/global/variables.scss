@@ -11,6 +11,7 @@ $black-p8: rgba(0, 0, 0, 0.8);
 
 $dark-blue: #000033;
 $yellow: #ffff00;
+$yellow-p12: rgba(255, 255, 0, 0.12);
 $yellow-p25: rgba(255, 255, 0, 0.25);
 $red: #c9333f;
 
@@ -72,25 +73,25 @@ $boxShadow: 0 4px 24px $black-p4;
 
 @mixin media-breakpoint-down($breakpoint) {
     @if $breakpoint==$sm {
-        @media (max-width: $sm) {
+        @media (max-width: calc($sm - 0.02px)) {
             @content;
         }
     }
 
     @else if $breakpoint==$md {
-        @media (max-width: $md) {
+        @media (max-width: calc($md - 0.02px)) {
             @content;
         }
     }
 
     @else if $breakpoint==$lg {
-        @media (max-width: $lg) {
+        @media (max-width: calc($lg - 0.02px)) {
             @content;
         }
     }
 
     @else {
-        @media (max-width: $xl) {
+        @media (max-width: calc($xl - 0.02px)) {
             @content;
         }
     }

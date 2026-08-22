@@ -1,85 +1,111 @@
 .showcase {
     @include flex(column, center, stretch);
+    max-height: 100vh;
     padding: $sectionPadding;
     gap: 0;
-    background-image: url('../../assets/background/1921-composition-in-red-yellow-blue-and-black-mondrian.jpg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-}
+    background: url('../../assets/background/1921-composition-in-red-yellow-blue-and-black-mondrian.jpg') center / cover no-repeat;
 
-.projects {
-    width: 100%;
+    &__projects-wrapper {
+        @include flex(column, flex-start, stretch);
+        flex: 1 1 auto;
+        min-height: 0;
+        width: 100%;
 
-    &__text {
-        color: $white;
-        text-align: center;
+        h2 {
+            flex: 0 0 auto;
+            color: $white;
+            text-align: center;
+        }
     }
 
-    &__split {
+    &__projects {
         @include flex(row, stretch, stretch);
         @include card(0.5rem 0.5rem 0 0);
+        flex: 1 1 auto;
+        min-height: 0;
         overflow: hidden;
 
         @include media-breakpoint-down($md) {
             flex-direction: column;
         }
-    }
 
-    &__grid {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        flex: 0 0 34%;
-        border-right: 1px solid $black-p15;
+        &-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            align-content: start;
+            flex: 0 0 34%;
+            border-right: 1px solid $black-p15;
+            overflow-y: auto;
 
-        @include media-breakpoint-down($md) {
-            flex-basis: auto;
-            grid-template-columns: repeat(auto-fit, minmax(4rem, 1fr));
-            border-right: 0;
-            border-bottom: 1px solid $black-p15;
-        }
-    }
+            @include media-breakpoint-down($lg) {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
 
-    &__grid-item {
-        @include flex(row, center, center);
-        aspect-ratio: 1;
-        padding: 0.5rem;
-        background: $white;
-        border: 1px solid $black-p15;
-        cursor: pointer;
-        transition: background 0.2s ease;
+            @include media-breakpoint-down($md) {
+                display: flex;
+                flex: 0 0 auto;
+                border-right: 0;
+                border-bottom: 1px solid $black;
+                overflow-x: auto;
+                overflow-y: hidden;
+                scrollbar-width: none;
+                mask-image: linear-gradient(to right, $black calc(100% - 2.5rem), transparent);
+                -webkit-mask-image: linear-gradient(to right, $black calc(100% - 2.5rem), transparent);
 
-        &::after {
-            content: none;
-        }
-
-        img {
-            max-width: 100%;
-            max-height: 100%;
-            object-fit: contain;
-            filter: grayscale(1);
-            opacity: 0.55;
-            transition: opacity 0.2s ease, filter 0.2s ease;
-        }
-
-        &:hover,
-        &--active {
-            background: rgba(255, 255, 0, 0.12);
-
-            img {
-                filter: grayscale(0);
-                opacity: 1;
+                &::-webkit-scrollbar {
+                    height: 0;
+                    background: transparent;
+                }
             }
         }
-    }
 
-    &__detail {
-        @include flex(column, center, flex-start);
-        flex: 1;
-        padding: $cardPadding;
-        color: $black;
+        &-logo {
+            @include flex(row, center, center);
+            position: relative;
+            aspect-ratio: 1;
+            padding: 0.5rem;
+            background: $white;
+            border: 1px solid $black-p15;
+            cursor: pointer;
+            transition: box-shadow 0.2s ease;
 
-        &-name {
+            @include media-breakpoint-down($md) {
+                flex: 0 0 5.5rem;
+                width: 5.5rem;
+            }
+
+            &::after {
+                content: none;
+            }
+
+            img {
+                max-width: 100%;
+                max-height: 100%;
+                object-fit: contain;
+            }
+
+            &--active {
+                z-index: 1;
+                background: $yellow-p12;
+                box-shadow: 0 0 18px $black-p4;
+            }
+        }
+
+        &-detail {
+            @include flex(column, flex-start, flex-start);
+            flex: 1;
+            min-width: 0;
+            padding: $cardPadding;
+            color: $black;
+            overflow-y: auto;
+
+            &--has-overflow {
+                mask-image: linear-gradient(to bottom, $black calc(100% - 5rem), rgba(0, 0, 0, 0.4) calc(100% - 2rem), transparent);
+                -webkit-mask-image: linear-gradient(to bottom, $black calc(100% - 5rem), rgba(0, 0, 0, 0.4) calc(100% - 2rem), transparent);
+            }
+        }
+
+        &-title {
             margin-bottom: 0.5rem;
             font: 700 1.5rem/1.2 $Jost;
         }
@@ -87,60 +113,70 @@
         &-role {
             @include default-text;
             margin-bottom: 1rem;
-            color: $black-p5;
+            color: $dark-blue;
             font-size: 1rem;
         }
 
-        &-bullets {
+        &-details {
             @include default-text;
             color: $black;
 
             li {
+                position: relative;
                 margin-bottom: 0.75rem;
+                padding-left: 1.25rem;
+
+                &::before {
+                    content: '';
+                    position: absolute;
+                    top: 0.45rem;
+                    left: 0;
+                    width: 0.5rem;
+                    height: 0.5rem;
+                    background: $red;
+                }
             }
         }
+    }
 
-        &-empty {
-            @include default-text;
-            color: $black-p5;
-            font-style: italic;
+    &__resume {
+        @include flex(row, center, center);
+        width: 100%;
+        gap: 1.5rem;
+        @include card(0 0 0.5rem 0.5rem);
+        box-shadow: none;
+        border-top: 1px solid $black-p15;
+        padding: 1rem $cardPadding;
+        color: $black;
+
+        @include media-breakpoint-down($md) {
+            border-top: 1px solid $black;
         }
-    }
-}
 
-.resume {
-    @include flex(row, center, center);
-    width: 100%;
-    gap: 1.5rem;
-    @include card(0 0 0.5rem 0.5rem);
-    box-shadow: none;
-    border-top: 1px solid $black-p15;
-    padding: 1rem $cardPadding;
-    color: $black;
+        @include media-breakpoint-down($sm) {
+            flex-direction: column;
+            gap: 0.35rem;
+        }
 
-    @include media-breakpoint-down($sm) {
-        flex-direction: column;
-        gap: 0.35rem;
-    }
+        &-label {
+            @include default-text;
+            margin: 0;
+            padding: 0;
+            color: $black;
+        }
 
-    &__label {
-        @include default-text;
-        margin: 0;
-        padding: 0;
-        color: $black;
-    }
+        &-download {
+            @include default-text;
+            padding: 0;
+            font-weight: 400;
+            color: $black;
 
-    &__download {
-        @include default-text;
-        padding: 0;
-        font-weight: 400;
-        color: $black;
-
-        .icon--download {
-            width: 0.9rem;
-            height: 0.9rem;
-            margin-right: 0.35rem;
-            vertical-align: -0.1rem;
+            .icon--download {
+                width: 0.9rem;
+                height: 0.9rem;
+                margin-right: 0.35rem;
+                vertical-align: -0.1rem;
+            }
         }
     }
 }

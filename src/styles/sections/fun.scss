@@ -130,6 +130,7 @@
             @include flex(row, flex-start, stretch);
             flex-wrap: nowrap;
             overflow-x: auto;
+            overflow-y: hidden;
             padding: 1rem 1rem 0;
             gap: 1.75rem;
             scrollbar-width: none;
