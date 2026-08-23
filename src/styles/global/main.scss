@@ -12,49 +12,6 @@ body {
     overflow-x: hidden;
 }
 
-.main {
-    min-height: 100vh;
-
-    @include media-breakpoint-up($lg) {
-        padding-right: 8rem;
-    }
-}
-
-.home,
-.skills,
-.showcase,
-.contact,
-.fun {
-    padding: $sectionPadding;
-    min-height: 100vh;
-
-    @include media-breakpoint-down ($sm) {
-        min-height: 100vh;
-    }
-}
-
-.fun,
-.contact {
-    &__social {
-        text-align: center;
-
-        a img {
-            width: 2.5rem;
-            height: 2.5rem;
-
-            @include media-breakpoint-down($md) {
-                width: 2.25rem;
-                height: 2.25rem;
-            }
-        }
-    }
-}
-
-p {
-    @include default-text;
-    margin-bottom: 1.5rem;
-}
-
 h1 {
     --size: 4rem;
     font-size: var(--size);
@@ -75,7 +32,7 @@ h1,
 h2,
 h3 {
     margin-bottom: 1.5rem;
-    line-height: 3.25rem;
+    line-height: 1;
     font-family: $Simonetta;
     font-weight: 500;
     text-shadow: 0 2px 8px $black-p5;
@@ -84,6 +41,11 @@ h3 {
     @include media-breakpoint-down($sm) {
         font-size: calc(var(--size) * 0.75);
     }
+}
+
+p {
+    @include default-text;
+    margin-bottom: 1.5rem;
 }
 
 a {
@@ -110,13 +72,56 @@ button {
     }
 }
 
+/*---------------------------- Common Ends -----------------------------*/
+
+/*------------------------- Sectios, classes ---------------------------*/
+
+.main {
+    @include media-breakpoint-up($lg) {
+        padding-right: 8rem;
+    }
+}
+
+.home,
+.skills,
+.showcase,
+.contact,
+.fun {
+    padding: $sectionPadding;
+    height: 100vh;
+    height: 100dvh;
+
+    @include media-breakpoint-down ($lg) {
+        height: auto;
+        min-height: 100vh;
+        min-height: 100dvh;
+    }
+}
+
+.fun,
+.contact {
+    &__social {
+        text-align: center;
+
+        a img {
+            width: 2.5rem;
+            height: 2.5rem;
+
+            @include media-breakpoint-down($md) {
+                width: 2.25rem;
+                height: 2.25rem;
+            }
+        }
+    }
+}
+
 .highlight {
-    background-color: $yellow;
     padding: 0 .5rem;
+    background-color: $yellow;
     text-decoration: none;
     font-style: italic;
     color: $black-p5;
     text-shadow: none;
 }
 
-/*---------------------------- Common Ends -----------------------------*/
+/*----------------------- Sectios, classes ends -------------------------*/

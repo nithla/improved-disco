@@ -11,6 +11,7 @@
         text-align: center;
     }
 
+    /* header__menu */
     &__menu {
         --bar-width: 1.5rem;
         --bar-height: 0.15rem;
@@ -45,6 +46,7 @@
             }
         }
 
+        /* header__menu-bar - This is the hamburger menu and the cross icon */
         &-bar {
             position: relative;
             display: block;
@@ -90,6 +92,7 @@
         }
     }
 
+    /* header__logo */
     &__logo {
         font: 3rem/0.5 $Arizonia;
         color: $white;
@@ -101,6 +104,7 @@
         }
     }
 
+    /* header__navigation */
     &__navigation {
         @include flex(column, center, center);
         gap: 1.5rem;
@@ -125,6 +129,7 @@
             }
         }
 
+        /* header__navigation-links */
         &-links {
             @include flex(column, flex-start, stretch);
             row-gap: 1.75rem;

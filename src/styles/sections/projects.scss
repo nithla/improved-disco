@@ -1,24 +1,34 @@
 .showcase {
     @include flex(column, center, stretch);
-    max-height: 100vh;
     padding: $sectionPadding;
     gap: 0;
     background: url('../../assets/background/1921-composition-in-red-yellow-blue-and-black-mondrian.jpg') center / cover no-repeat;
 
-    &__projects-wrapper {
-        @include flex(column, flex-start, stretch);
-        flex: 1 1 auto;
-        min-height: 0;
-        width: 100%;
-
-        h2 {
-            flex: 0 0 auto;
-            color: $white;
-            text-align: center;
-        }
+    @include media-breakpoint-down($lg) {
+        height: 180vh;
     }
 
+    @media (orientation: portrait) {
+        height: 100vh;
+    } 
+
+    /* showcase__projects */
     &__projects {
+
+        /* showcase__projects-wrapper */
+        &-wrapper {
+            @include flex(column, flex-start, stretch);
+            flex: 1 1 auto;
+            min-height: 0;
+            width: 100%;
+    
+            h2 {
+                flex: 0 0 auto;
+                color: $white;
+                text-align: center;
+            }
+        }
+
         @include flex(row, stretch, stretch);
         @include card(0.5rem 0.5rem 0 0);
         flex: 1 1 auto;
@@ -29,12 +39,13 @@
             flex-direction: column;
         }
 
+        /* showcase__projects-grid */
         &-grid {
+            border-right: 1px solid $black-p15;
             display: grid;
             grid-template-columns: repeat(3, minmax(0, 1fr));
             align-content: start;
-            flex: 0 0 34%;
-            border-right: 1px solid $black-p15;
+            flex: 1;
             overflow-y: auto;
 
             @include media-breakpoint-down($lg) {
@@ -42,10 +53,10 @@
             }
 
             @include media-breakpoint-down($md) {
-                display: flex;
-                flex: 0 0 auto;
                 border-right: 0;
                 border-bottom: 1px solid $black;
+                display: flex;
+                flex: 0 0 auto;
                 overflow-x: auto;
                 overflow-y: hidden;
                 scrollbar-width: none;
@@ -59,14 +70,15 @@
             }
         }
 
+        /* showcase__projects-logo */
         &-logo {
             @include flex(row, center, center);
             position: relative;
-            aspect-ratio: 1;
+            border: 1px solid $black-p15;
             padding: 0.5rem;
             background: $white;
-            border: 1px solid $black-p15;
             cursor: pointer;
+            aspect-ratio: 1;
             transition: box-shadow 0.2s ease;
 
             @include media-breakpoint-down($md) {
@@ -86,11 +98,12 @@
 
             &--active {
                 z-index: 1;
-                background: $yellow-p12;
                 box-shadow: 0 0 18px $black-p4;
+                background: $yellow-p12;
             }
         }
 
+        /* showcase__projects-detail */
         &-detail {
             @include flex(column, flex-start, flex-start);
             flex: 1;
@@ -105,17 +118,20 @@
             }
         }
 
+        /* showcase__projects-title */
         &-title {
             margin-bottom: 0.5rem;
-            font: 700 1.5rem/1.2 $Jost;
+            font: 700 1.5rem/1 $Jost;
         }
 
+        /* showcase__projects-role */
         &-role {
             @include default-text;
             margin-bottom: 1rem;
             font-size: 1rem;
         }
 
+        /* showcase__projects-details */
         &-details {
             @include default-text;
             color: $black;
@@ -126,26 +142,27 @@
                 padding-left: 1.25rem;
 
                 &::before {
-                    content: '';
                     position: absolute;
                     top: 0.45rem;
                     left: 0;
                     width: 0.5rem;
                     height: 0.5rem;
                     background: $red;
+                    content: '';
                 }
             }
         }
     }
 
+    /* showcase__resume */
     &__resume {
         @include flex(row, center, center);
-        width: 100%;
-        gap: 1.5rem;
         @include card(0 0 0.5rem 0.5rem);
         box-shadow: none;
         border-top: 1px solid $black-p15;
         padding: 1rem $cardPadding;
+        width: 100%;
+        gap: 1.5rem;
         color: $black;
 
         @include media-breakpoint-down($md) {
@@ -157,6 +174,7 @@
             gap: 0.35rem;
         }
 
+        /* showcase__resume-label */
         &-label {
             @include default-text;
             margin: 0;
@@ -164,6 +182,7 @@
             color: $black;
         }
 
+        /* showcase__resume-download */
         &-download {
             @include default-text;
             padding: 0;
@@ -171,9 +190,9 @@
             color: $black;
 
             .icon--download {
+                margin-right: 0.35rem;
                 width: 0.9rem;
                 height: 0.9rem;
-                margin-right: 0.35rem;
                 vertical-align: -0.1rem;
             }
         }

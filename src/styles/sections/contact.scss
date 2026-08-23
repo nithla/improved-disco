@@ -3,8 +3,9 @@
     padding: 0;
     background: url('../../assets/background/1512-creation-of-adam-michelangelo.png') center / cover no-repeat;
 
+    /* contact__tagline */
     &__tagline {
-        margin: 4rem 1.5rem 0;
+        margin: auto 1.5rem;
         flex: 1;
         text-align: end;
 
@@ -13,18 +14,16 @@
         }
     }
 
+    /* contact__form */
     &__form {
 
+        /* contact__form-wrapper */
         &-wrapper {
-            @include flex(column, flex-start, stretch);
+            @include flex(column, center, stretch);
             flex: 1;
             padding: 4rem $cardPadding;
             background: $black-p4;
             gap: 3rem;
-
-            @include media-breakpoint-down($md) {
-                justify-content: center;
-            }
         }
 
         @include flex(column, center, stretch);
@@ -36,8 +35,10 @@
         }
     }
 
+    /* contact__input */
     &__input {
 
+        /* contact__input-wrapper */
         &-wrapper {
             @include flex();
             padding: 0;
@@ -53,6 +54,7 @@
             }
         }
 
+        /* contact__text, contact__textarea */
         &__text,
         &__textarea {
             @include default-text;
@@ -89,6 +91,7 @@
             }
         }
 
+        /* contact__textarea */
         &__textarea {
             padding: 0 0.5rem 0.5rem;
             height: 6rem;

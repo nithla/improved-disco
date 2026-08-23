@@ -2,6 +2,7 @@
     @include flex();
     background: url('../../assets/background/1889-irises-van-gogh.jpg') center / cover no-repeat;
 
+    /* home__bio */
     &__bio {
         @include flex(row, unset, flex-end);
         @include card;
@@ -18,6 +19,7 @@
             align-items: flex-end;
         }
 
+        /* home__picture */
         &__picture {
             img {
                 position: relative;

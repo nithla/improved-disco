@@ -10,13 +10,13 @@ import './styles/sections/projects.scss'
 import './styles/sections/fun.scss'
 
 /* JavaScript */
-import './javascript/jquery.js'
-import './javascript/menu.js'
-import './javascript/download.js'
-import './javascript/form.js'
-import './javascript/fun.js'
-import './javascript/projects.js'
-import './javascript/pivot.js'
+import './javascript/site/jquery.js'
+import './javascript/site/menu.js'
+import './javascript/site/download.js'
+import './javascript/site/form.js'
+import './javascript/site/fun.js'
+import './javascript/site/projects.js'
+import './javascript/site/pivot.js'
 
 /* Assets */
 
@@ -24,7 +24,6 @@ import './assets/personal-pictures/home-picture.png'
 import './assets/personal-pictures/home-full-picture.png'
 
 import './assets/social-logos/instagram.png'
-import './assets/social-logos/letterboxd.svg'
 import './assets/social-logos/linkedin.png'
 
 import './assets/project-logos/canopygrowth.png'

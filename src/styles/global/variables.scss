@@ -72,7 +72,6 @@ $sectionPadding: 4rem 7.5vw;
 $cardPadding: 2rem;
 $boxShadow: 0 4px 24px $black-p4;
 
-
 /*----------------------------- Layout End ------------------------------*/
 
 
@@ -143,8 +142,8 @@ $boxShadow: 0 4px 24px $black-p4;
 }
 
 @mixin card($radius: 0.5rem, $bg: $white) {
-    border-radius: $radius;
     box-shadow: $boxShadow;
+    border-radius: $radius;
     background: $bg;
 }
 

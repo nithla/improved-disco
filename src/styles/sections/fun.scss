@@ -8,7 +8,9 @@
         text-align: center;
     }
 
+    /* fun__subsection */
     &__subsection {
+        /* fun__subsection-wrapper */
         &-wrapper {
             @include flex(row, stretch, stretch);
             @include card(0.5rem, $black-p4);
@@ -34,10 +36,10 @@
         }
 
         iframe {
-            box-shadow: 0 2px 12px $black-p15;
+            box-shadow: $boxShadow;
             border-radius: 0.75rem;
             height: 100%;
-            min-height: 23.75rem;
+            min-height: 26.25rem;
         }
 
         p {
@@ -48,6 +50,7 @@
         }
     }
 
+    /* fun__carousel */
     &__carousel {
         position: relative;
 
@@ -57,6 +60,7 @@
             row-gap: 0.5rem;
         }
 
+        /* fun__carousel-arrow */
         &-arrow {
             @include flex(row);
             position: absolute;
@@ -107,6 +111,7 @@
                 height: 0.85rem;
             }
 
+            /* fun__carousel-arrow--hidden */
             &--hidden {
                 opacity: 0;
                 pointer-events: none;
@@ -117,10 +122,12 @@
                 }
             }
 
+            /* fun__carousel-arrow--prev */
             &--prev {
                 left: 0.25rem;
             }
 
+            /* fun__carousel-arrow--next */
             &--next {
                 right: 0.25rem;
             }
@@ -181,11 +188,11 @@
                     position: absolute;
                     top: -0.6rem;
                     left: 50%;
-                    box-shadow: 0 2px 4px $black-p4;
+                    box-shadow: $boxShadow;
                     border-radius: 50%;
                     width: 1.4rem;
                     height: 1.4rem;
-                    background: radial-gradient(circle at 35% 35%, #fff8b0, $yellow 70%);
+                    background: radial-gradient(circle at 35% 35%, $white, $yellow 70%);
                     transform: translateX(-50%);
                 }
 
@@ -209,12 +216,6 @@
                 line-height: 1.25;
                 word-spacing: normal;
                 color: $black;
-            }
-
-            &-rating {
-                margin-top: 0.15rem;
-                color: color.adjust($yellow, $lightness: -15%);
-                font-size: 0.75rem;
             }
         }
     }
