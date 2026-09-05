@@ -2,7 +2,7 @@ const PROJECTS = [
     {
         id: 'nrg',
         name: 'nrg',
-        logo: 'assets/project-logos/logo.png',
+        logo: 'assets/project-logos/logo.svg',
         role: 'Personal Portfolio · This Site',
         summary: 'A personal portfolio built from scratch to showcase my work across product and engineering.',
         bullets: [

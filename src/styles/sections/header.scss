@@ -92,15 +92,19 @@
         }
     }
 
-    /* header__logo */
+    /* header__logo — the comet mark (assets/project-logos/logo.svg),
+       also used for the favicon and the "this site" project tile */
     &__logo {
-        font: 3rem/0.5 $Arizonia;
-        color: $white;
-        text-transform: lowercase;
         cursor: pointer;
 
-        a:hover {
-            color: $yellow;
+        a {
+            display: block;
+        }
+
+        img {
+            display: block;
+            width: 4rem;
+            height: 4rem;
         }
     }
 

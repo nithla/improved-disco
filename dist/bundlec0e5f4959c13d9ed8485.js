@@ -282,7 +282,7 @@ if (cards.length) {
 var PROJECTS = [{
   id: 'nrg',
   name: 'nrg',
-  logo: 'assets/project-logos/logo.png',
+  logo: 'assets/project-logos/logo.svg',
   role: 'Personal Portfolio · This Site',
   summary: 'A personal portfolio built from scratch to showcase my work across product and engineering.',
   bullets: ['Built with webpack 5, SCSS (sass-loader/css-loader/style-loader), and Babel + jQuery, templated via html-webpack-plugin from a single index.html entry point', 'npm run dev starts a live-reload dev server on port 3000; npm run build bundles the site into dist/', 'Organized per-section — styles, JS behavior, and assets (backgrounds, photos, logos, resume) mirrored into dist/ on build']
@@ -403,7 +403,6 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
-___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Arizonia&display=swap);"]);
 ___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Simonetta:ital,wght@0,400;0,900;1,400;1,900&display=swap);"]);
 ___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&display=swap);"]);
 ___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap);"]);
@@ -413,7 +412,6 @@ ___CSS_LOADER_EXPORT___.push([module.id, `/*--------------------------- Theme Co
 /*-------------------------- Theme Colours End -------------------------*/
 /*-------------------------------- Fonts -------------------------------*/
 /******************** Serif Fonts *****************************/
-/* Arizonia */
 /* Simonetta */
 /********************* Sans-serif Fonts ************************/
 /* Jost */
@@ -557,7 +555,7 @@ button span {
   text-shadow: none;
 }
 
-/*----------------------- Sectios, classes ends -------------------------*/`, "",{"version":3,"sources":["webpack://./styles/global/variables.scss","webpack://./styles/global/main.scss"],"names":[],"mappings":"AAAA,wEAAA;AAEA,YAAA;AAsBA,yEAAA;AAGA,yEAAA;AACA,+DAAA;AACA,aAAA;AAMA,cAAA;AAMA,gEAAA;AACA,SAAA;AAOA,YAAA;AAMA,yEAAA;AAGA,yEAAA;AAOA,yEAAA;AAGA,0EAAA;AAMA,0EAAA;AAGA,yEAAA;AA6EA,yEAAA;ACxJgC,yEAAA;AAEhC;;EAEI,sBAAA;EACA,kCAAA;AAmBJ;;AAhBA;EACI,gBDNI;ECOJ,WDTI;ECUJ,kBAAA;AAmBJ;;AAhBA;EACI,YAAA;EACA,sBAAA;EACA,kBAAA;AAmBJ;;AAhBA;EACI,YAAA;EACA,sBAAA;AAmBJ;;AAhBA;EACI,cAAA;EACA,sBAAA;AAmBJ;;AAhBA;;;EAGI,qBAAA;EACA,cAAA;EACA,wCAAA;EACA,gBAAA;EACA,0CAAA;EACA,kBAAA;AAmBJ;ADsBQ;ECjDR;;;IAWQ,mCAAA;EAsBN;AACF;;AAnBA;ED4FI,2DAAA;EACA,qBAAA;EC3FA,qBAAA;AAuBJ;;AApBA;EACI,WDlDI;ECmDJ,qBAAA;AAuBJ;;AApBA;EACI,kBAAA;EACA,SAAA;EACA,UAAA;EACA,gBD1DI;EC2DJ,eAAA;AAuBJ;AArBI;ED2EA,2DAAA;EACA,qBAAA;EC1EI,kBAAA;EACA,UAAA;EACA,gBAAA;EACA,qBAAA;EACA,gBAAA;EACA,WDlEA;ECmEA,kBAAA;AAwBR;;AApBA,yEAAA;AAEA,yEAAA;ADyCQ;ECvCR;IAEQ,mBAAA;EAqBN;AACF;;AAlBA;;;;;EAKI,mBDrBa;ECsBb,aAAA;EACA,cAAA;AAqBJ;ADrBQ;ECPR;;;;;IAUQ,YAAA;IACA,iBAAA;IACA,kBAAA;EA0BN;AACF;;AArBI;;EACI,kBAAA;AAyBR;AAvBQ;;EACI,aAAA;EACA,cAAA;AA0BZ;ADhDQ;ECoBA;;IAKQ,cAAA;IACA,eAAA;EA4Bd;AACF;;AAvBA;EACI,iBAAA;EACA,yBD9GK;EC+GL,qBAAA;EACA,kBAAA;EACA,0BDpHO;ECqHP,iBAAA;AA0BJ;;AAvBA,0EAAA","sourceRoot":""}]);
+/*----------------------- Sectios, classes ends -------------------------*/`, "",{"version":3,"sources":["webpack://./styles/global/variables.scss","webpack://./styles/global/main.scss"],"names":[],"mappings":"AAAA,wEAAA;AAEA,YAAA;AAsBA,yEAAA;AAGA,yEAAA;AACA,+DAAA;AACA,cAAA;AAMA,gEAAA;AACA,SAAA;AAOA,YAAA;AAMA,yEAAA;AAGA,yEAAA;AAOA,yEAAA;AAGA,0EAAA;AAMA,0EAAA;AAGA,yEAAA;AA6EA,yEAAA;AClJgC,yEAAA;AAEhC;;EAEI,sBAAA;EACA,kCAAA;AAiBJ;;AAdA;EACI,gBDNI;ECOJ,WDTI;ECUJ,kBAAA;AAiBJ;;AAdA;EACI,YAAA;EACA,sBAAA;EACA,kBAAA;AAiBJ;;AAdA;EACI,YAAA;EACA,sBAAA;AAiBJ;;AAdA;EACI,cAAA;EACA,sBAAA;AAiBJ;;AAdA;;;EAGI,qBAAA;EACA,cAAA;EACA,wCDNQ;ECOR,gBAAA;EACA,0CAAA;EACA,kBAAA;AAiBJ;ADkBQ;EC3CR;;;IAWQ,mCAAA;EAoBN;AACF;;AAjBA;EDsFI,2DAAA;EACA,qBAAA;ECrFA,qBAAA;AAqBJ;;AAlBA;EACI,WDlDI;ECmDJ,qBAAA;AAqBJ;;AAlBA;EACI,kBAAA;EACA,SAAA;EACA,UAAA;EACA,gBD1DI;EC2DJ,eAAA;AAqBJ;AAnBI;EDqEA,2DAAA;EACA,qBAAA;ECpEI,kBAAA;EACA,UAAA;EACA,gBAAA;EACA,qBAAA;EACA,gBAAA;EACA,WDlEA;ECmEA,kBAAA;AAsBR;;AAlBA,yEAAA;AAEA,yEAAA;ADmCQ;ECjCR;IAEQ,mBAAA;EAmBN;AACF;;AAhBA;;;;;EAKI,mBD3Ba;EC4Bb,aAAA;EACA,cAAA;AAmBJ;ADzBQ;ECDR;;;;;IAUQ,YAAA;IACA,iBAAA;IACA,kBAAA;EAwBN;AACF;;AAnBI;;EACI,kBAAA;AAuBR;AArBQ;;EACI,aAAA;EACA,cAAA;AAwBZ;ADpDQ;EC0BA;;IAKQ,cAAA;IACA,eAAA;EA0Bd;AACF;;AArBA;EACI,iBAAA;EACA,yBD9GK;EC+GL,qBAAA;EACA,kBAAA;EACA,0BDpHO;ECqHP,iBAAA;AAwBJ;;AArBA,0EAAA","sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -583,7 +581,6 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
-___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Arizonia&display=swap);"]);
 ___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Simonetta:ital,wght@0,400;0,900;1,400;1,900&display=swap);"]);
 ___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&display=swap);"]);
 ___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap);"]);
@@ -593,7 +590,6 @@ ___CSS_LOADER_EXPORT___.push([module.id, `/*--------------------------- Theme Co
 /*-------------------------- Theme Colours End -------------------------*/
 /*-------------------------------- Fonts -------------------------------*/
 /******************** Serif Fonts *****************************/
-/* Arizonia */
 /* Simonetta */
 /********************* Sans-serif Fonts ************************/
 /* Jost */
@@ -653,7 +649,7 @@ q:before, q:after {
 table {
   border-collapse: collapse;
   border-spacing: 0;
-}`, "",{"version":3,"sources":["webpack://./styles/global/variables.scss","webpack://./styles/global/reset.scss"],"names":[],"mappings":"AAAA,wEAAA;AAEA,YAAA;AAsBA,yEAAA;AAGA,yEAAA;AACA,+DAAA;AACA,aAAA;AAMA,cAAA;AAMA,gEAAA;AACA,SAAA;AAOA,YAAA;AAMA,yEAAA;AAGA,yEAAA;AAOA,yEAAA;AAGA,0EAAA;AAMA,0EAAA;AAGA,yEAAA;AA6EA,yEAAA;ACxJgC;;;;;;;;;;;;;EAa/B,SAAA;EACA,UAAA;EACA,SAAA;EACA,eAAA;EACA,aAAA;EACA,wBAAA;AAoBD;;AAlBA,gDAAA;AACA;;EAEC,cAAA;AAqBD;;AAnBA;EACC,cAAA;AAsBD;;AApBA;EACC,gBAAA;AAuBD;;AArBA;EACC,YAAA;AAwBD;;AAtBA;;EAEC,WAAA;EACA,aAAA;AAyBD;;AAvBA;EACC,yBAAA;EACA,iBAAA;AA0BD","sourceRoot":""}]);
+}`, "",{"version":3,"sources":["webpack://./styles/global/variables.scss","webpack://./styles/global/reset.scss"],"names":[],"mappings":"AAAA,wEAAA;AAEA,YAAA;AAsBA,yEAAA;AAGA,yEAAA;AACA,+DAAA;AACA,cAAA;AAMA,gEAAA;AACA,SAAA;AAOA,YAAA;AAMA,yEAAA;AAGA,yEAAA;AAOA,yEAAA;AAGA,0EAAA;AAMA,0EAAA;AAGA,yEAAA;AA6EA,yEAAA;AClJgC;;;;;;;;;;;;;EAa/B,SAAA;EACA,UAAA;EACA,SAAA;EACA,eAAA;EACA,aAAA;EACA,wBAAA;AAkBD;;AAhBA,gDAAA;AACA;;EAEC,cAAA;AAmBD;;AAjBA;EACC,cAAA;AAoBD;;AAlBA;EACC,gBAAA;AAqBD;;AAnBA;EACC,YAAA;AAsBD;;AApBA;;EAEC,WAAA;EACA,aAAA;AAuBD;;AArBA;EACC,yBAAA;EACA,iBAAA;AAwBD","sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -679,7 +675,6 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
-___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Arizonia&display=swap);"]);
 ___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Simonetta:ital,wght@0,400;0,900;1,400;1,900&display=swap);"]);
 ___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&display=swap);"]);
 ___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap);"]);
@@ -689,7 +684,6 @@ ___CSS_LOADER_EXPORT___.push([module.id, `/*--------------------------- Theme Co
 /*-------------------------- Theme Colours End -------------------------*/
 /*-------------------------------- Fonts -------------------------------*/
 /******************** Serif Fonts *****************************/
-/* Arizonia */
 /* Simonetta */
 /********************* Sans-serif Fonts ************************/
 /* Jost */
@@ -700,7 +694,7 @@ ___CSS_LOADER_EXPORT___.push([module.id, `/*--------------------------- Theme Co
 /*------------------------------- Layout --------------------------------*/
 /*----------------------------- Layout End ------------------------------*/
 /*------------------------------- Mixins -------------------------------*/
-/*----------------------------- Mixins End -----------------------------*/`, "",{"version":3,"sources":["webpack://./styles/global/variables.scss"],"names":[],"mappings":"AAAA,wEAAA;AAEA,YAAA;AAsBA,yEAAA;AAGA,yEAAA;AACA,+DAAA;AACA,aAAA;AAMA,cAAA;AAMA,gEAAA;AACA,SAAA;AAOA,YAAA;AAMA,yEAAA;AAGA,yEAAA;AAOA,yEAAA;AAGA,0EAAA;AAMA,0EAAA;AAGA,yEAAA;AA6EA,yEAAA","sourceRoot":""}]);
+/*----------------------------- Mixins End -----------------------------*/`, "",{"version":3,"sources":["webpack://./styles/global/variables.scss"],"names":[],"mappings":"AAAA,wEAAA;AAEA,YAAA;AAsBA,yEAAA;AAGA,yEAAA;AACA,+DAAA;AACA,cAAA;AAMA,gEAAA;AACA,SAAA;AAOA,YAAA;AAMA,yEAAA;AAGA,yEAAA;AAOA,yEAAA;AAGA,0EAAA;AAMA,0EAAA;AAGA,yEAAA;AA6EA,yEAAA","sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -730,7 +724,6 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_URL_IMPORT_0___ = new URL(/* asset import */ __webpack_require__(/*! ../../assets/background/1512-creation-of-adam-michelangelo.png */ "./assets/background/1512-creation-of-adam-michelangelo.png"), __webpack_require__.b);
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
-___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Arizonia&display=swap);"]);
 ___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Simonetta:ital,wght@0,400;0,900;1,400;1,900&display=swap);"]);
 ___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&display=swap);"]);
 ___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap);"]);
@@ -741,7 +734,6 @@ ___CSS_LOADER_EXPORT___.push([module.id, `/*--------------------------- Theme Co
 /*-------------------------- Theme Colours End -------------------------*/
 /*-------------------------------- Fonts -------------------------------*/
 /******************** Serif Fonts *****************************/
-/* Arizonia */
 /* Simonetta */
 /********************* Sans-serif Fonts ************************/
 /* Jost */
@@ -862,7 +854,7 @@ ___CSS_LOADER_EXPORT___.push([module.id, `/*--------------------------- Theme Co
   padding: 0 0.5rem 0.5rem;
   height: 6rem;
   scrollbar-color: rgba(255, 255, 0, 0.25) transparent;
-}`, "",{"version":3,"sources":["webpack://./styles/global/variables.scss","webpack://./styles/sections/contact.scss"],"names":[],"mappings":"AAAA,wEAAA;AAEA,YAAA;AAsBA,yEAAA;AAGA,yEAAA;AACA,+DAAA;AACA,aAAA;AAMA,cAAA;AAMA,gEAAA;AACA,SAAA;AAOA,YAAA;AAMA,yEAAA;AAGA,yEAAA;AAOA,yEAAA;AAGA,0EAAA;AAMA,0EAAA;AAGA,yEAAA;AA6EA,yEAAA;ACxJgC;EDkI5B,aAAA;EACA,mBClIc;EDmId,8BCnImB;EDoInB,kBCpIkC;EAClC,UAAA;EACA,0EAAA;EAEA,qBAAA;AAsBJ;AArBI;EACI,mBAAA;EACA,OAAA;EACA,eAAA;AAuBR;ADqDQ;EC/EJ;IAMQ,aAAA;EAwBV;AACF;AArCgC;EAgB5B,kBAAA;AAwBJ;AAvBI;EAEI,0BAAA;AAwBR;AAvBQ;ED8GJ,aAAA;EACA,sBC9GsB;ED+GtB,uBC/G8B;EDgH9B,oBChHsC;EAC9B,OAAA;EACA,kBAAA;EACA,8BDnBD;ECoBC,SAAA;AA4BZ;AApCI;EDiHA,aAAA;EACA,sBCvGkB;EDwGlB,uBCxG0B;EDyG1B,oBCzGkC;EAC9B,cAAA;AA+BR;ADmBQ;EC9DJ;IAeQ,SAAA;IACA,kBAAA;EAgCV;AACF;AAlEgC;EAqC5B,mBAAA;AAgCJ;AA/BI;EAEI,2BAAA;AAgCR;AA/BQ;EDyFJ,aAAA;EACA,sBAFoB;EAGpB,uBAH8C;EAI9C,mBAJoE;ECtF5D,UAAA;EACA,WAAA;AAoCZ;AAlCY;ED2FR,2DAAA;EACA,qBAAA;EC1FY,mBAAA;EACA,kBAAA;EACA,gBD/CR;ECgDQ,eAAA;EACA,cDxCV;AC6EN;AAnDI;EAkBI,qCAAA;AAoCR;AAnCQ;EDgFJ,2DAAA;EACA,qBAAA;EC9EQ,SAAA;EACA,gDAAA;EACA,cAAA;EACA,eAAA;EACA,WAAA;EACA,cAAA;EACA,gBAAA;EACA,WDlEJ;ACuGR;AAnCY;EAEI,UAAA;EACA,gCAAA;AAoChB;AAjCY;EACI,+BD1EL;AC6GX;AAhCY;EAGI,6BDjFR;ECkFQ,iBDlFR;ECmFQ,yDAAA;AAgChB;AA7BY;EACI,6BAAA;EACA,WDxFR;ACuHR;AAlFI;EAuDI,sBAAA;AA8BR;AA7BQ;EACI,wBAAA;EACA,YAAA;EACA,oDAAA;AA+BZ","sourceRoot":""}]);
+}`, "",{"version":3,"sources":["webpack://./styles/global/variables.scss","webpack://./styles/sections/contact.scss"],"names":[],"mappings":"AAAA,wEAAA;AAEA,YAAA;AAsBA,yEAAA;AAGA,yEAAA;AACA,+DAAA;AACA,cAAA;AAMA,gEAAA;AACA,SAAA;AAOA,YAAA;AAMA,yEAAA;AAGA,yEAAA;AAOA,yEAAA;AAGA,0EAAA;AAMA,0EAAA;AAGA,yEAAA;AA6EA,yEAAA;AClJgC;ED4H5B,aAAA;EACA,mBC5Hc;ED6Hd,8BC7HmB;ED8HnB,kBC9HkC;EAClC,UAAA;EACA,0EAAA;EAEA,qBAAA;AAoBJ;AAnBI;EACI,mBAAA;EACA,OAAA;EACA,eAAA;AAqBR;ADiDQ;ECzEJ;IAMQ,aAAA;EAsBV;AACF;AAnCgC;EAgB5B,kBAAA;AAsBJ;AArBI;EAEI,0BAAA;AAsBR;AArBQ;EDwGJ,aAAA;EACA,sBCxGsB;EDyGtB,uBCzG8B;ED0G9B,oBC1GsC;EAC9B,OAAA;EACA,kBAAA;EACA,8BDnBD;ECoBC,SAAA;AA0BZ;AAlCI;ED2GA,aAAA;EACA,sBCjGkB;EDkGlB,uBClG0B;EDmG1B,oBCnGkC;EAC9B,cAAA;AA6BR;ADeQ;ECxDJ;IAeQ,SAAA;IACA,kBAAA;EA8BV;AACF;AAhEgC;EAqC5B,mBAAA;AA8BJ;AA7BI;EAEI,2BAAA;AA8BR;AA7BQ;EDmFJ,aAAA;EACA,sBAFoB;EAGpB,uBAH8C;EAI9C,mBAJoE;EChF5D,UAAA;EACA,WAAA;AAkCZ;AAhCY;EDqFR,2DAAA;EACA,qBAAA;ECpFY,mBAAA;EACA,kBAAA;EACA,gBD/CR;ECgDQ,eAAA;EACA,cDxCV;AC2EN;AAjDI;EAkBI,qCAAA;AAkCR;AAjCQ;ED0EJ,2DAAA;EACA,qBAAA;ECxEQ,SAAA;EACA,gDAAA;EACA,cAAA;EACA,eAAA;EACA,WAAA;EACA,cAAA;EACA,gBAAA;EACA,WDlEJ;ACqGR;AAjCY;EAEI,UAAA;EACA,gCAAA;AAkChB;AA/BY;EACI,+BD1EL;AC2GX;AA9BY;EAGI,6BDjFR;ECkFQ,iBDlFR;ECmFQ,yDAAA;AA8BhB;AA3BY;EACI,6BAAA;EACA,WDxFR;ACqHR;AAhFI;EAuDI,sBAAA;AA4BR;AA3BQ;EACI,wBAAA;EACA,YAAA;EACA,oDAAA;AA6BZ","sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -892,7 +884,6 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_URL_IMPORT_0___ = new URL(/* asset import */ __webpack_require__(/*! ../../assets/background/1665-girl-with-a-pearl-earring-vermeer.jpg */ "./assets/background/1665-girl-with-a-pearl-earring-vermeer.jpg"), __webpack_require__.b);
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
-___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Arizonia&display=swap);"]);
 ___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Simonetta:ital,wght@0,400;0,900;1,400;1,900&display=swap);"]);
 ___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&display=swap);"]);
 ___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap);"]);
@@ -903,7 +894,6 @@ ___CSS_LOADER_EXPORT___.push([module.id, `/*--------------------------- Theme Co
 /*-------------------------- Theme Colours End -------------------------*/
 /*-------------------------------- Fonts -------------------------------*/
 /******************** Serif Fonts *****************************/
-/* Arizonia */
 /* Simonetta */
 /********************* Sans-serif Fonts ************************/
 /* Jost */
@@ -1156,7 +1146,7 @@ ___CSS_LOADER_EXPORT___.push([module.id, `/*--------------------------- Theme Co
   line-height: 1.25;
   word-spacing: normal;
   color: #000;
-}`, "",{"version":3,"sources":["webpack://./styles/global/variables.scss","webpack://./styles/sections/fun.scss"],"names":[],"mappings":"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","sourceRoot":""}]);
+}`, "",{"version":3,"sources":["webpack://./styles/global/variables.scss","webpack://./styles/sections/fun.scss"],"names":[],"mappings":"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","sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -1187,19 +1177,18 @@ __webpack_require__.r(__webpack_exports__);
 var ___CSS_LOADER_URL_IMPORT_0___ = new URL(/* asset import */ __webpack_require__(/*! ../../assets/background/1908-the-kiss-klimt.jpg */ "./assets/background/1908-the-kiss-klimt.jpg"), __webpack_require__.b);
 var ___CSS_LOADER_URL_IMPORT_1___ = new URL(/* asset import */ __webpack_require__(/*! ../../assets/background/1889-the-starry-night-van-gogh.jpg */ "./assets/background/1889-the-starry-night-van-gogh.jpg"), __webpack_require__.b);
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
-___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Arizonia&display=swap);"]);
 ___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Simonetta:ital,wght@0,400;0,900;1,400;1,900&display=swap);"]);
 ___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&display=swap);"]);
 ___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap);"]);
 var ___CSS_LOADER_URL_REPLACEMENT_0___ = _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2___default()(___CSS_LOADER_URL_IMPORT_0___);
 var ___CSS_LOADER_URL_REPLACEMENT_1___ = _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2___default()(___CSS_LOADER_URL_IMPORT_1___);
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, `/*--------------------------- Theme Colours ---------------------------*/
+___CSS_LOADER_EXPORT___.push([module.id, `@charset "UTF-8";
+/*--------------------------- Theme Colours ---------------------------*/
 /* Colours */
 /*-------------------------- Theme Colours End -------------------------*/
 /*-------------------------------- Fonts -------------------------------*/
 /******************** Serif Fonts *****************************/
-/* Arizonia */
 /* Simonetta */
 /********************* Sans-serif Fonts ************************/
 /* Jost */
@@ -1301,16 +1290,19 @@ ___CSS_LOADER_EXPORT___.push([module.id, `/*--------------------------- Theme Co
   transform: translateY(calc(var(--bar-gap) * -1)) rotate(-45deg);
 }
 .header {
-  /* header__logo */
+  /* header__logo — the comet mark (assets/project-logos/logo.svg),
+     also used for the favicon and the "this site" project tile */
 }
 .header__logo {
-  font: 3rem/0.5 "Arizonia", Times, serif;
-  color: #fff;
-  text-transform: lowercase;
   cursor: pointer;
 }
-.header__logo a:hover {
-  color: #ffff00;
+.header__logo a {
+  display: block;
+}
+.header__logo img {
+  display: block;
+  width: 4rem;
+  height: 4rem;
 }
 .header {
   /* header__navigation */
@@ -1335,12 +1327,12 @@ ___CSS_LOADER_EXPORT___.push([module.id, `/*--------------------------- Theme Co
     justify-content: flex-start;
     align-items: flex-start;
     opacity: 1;
-    transform: translateX(0) scale(1);
+    transform: translateX(0);
     transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease-out, visibility 0s;
   }
   .header__navigation.d-none {
     opacity: 0;
-    transform: translateX(2.5rem) scale(0.94);
+    transform: translateX(100%);
     visibility: hidden;
     transition: transform 0.3s ease-in, opacity 0.25s ease-in, visibility 0s 0.35s;
   }
@@ -1391,7 +1383,7 @@ ___CSS_LOADER_EXPORT___.push([module.id, `/*--------------------------- Theme Co
   .header__navigation-links li {
     font-size: 1rem;
   }
-}`, "",{"version":3,"sources":["webpack://./styles/global/variables.scss","webpack://./styles/sections/header.scss"],"names":[],"mappings":"AAAA,wEAAA;AAEA,YAAA;AAsBA,yEAAA;AAGA,yEAAA;AACA,+DAAA;AACA,aAAA;AAMA,cAAA;AAMA,gEAAA;AACA,SAAA;AAOA,YAAA;AAMA,yEAAA;AAGA,yEAAA;AAOA,yEAAA;AAGA,0EAAA;AAMA,0EAAA;AAGA,yEAAA;AA6EA,yEAAA;AAnCQ;ECrHwB;IDkI5B,aAAA;IACA,sBAFoB;IAGpB,uBAH8C;IAI9C,mBAJoE;IC9HhE,eAAA;IACA,QAAA;IACA,UAAA;IACA,kBAAA;IACA,WAAA;IACA,aAAA;IACA,uEAAA;IACA,kBAAA;EAuBN;AACF;AAlCgC;EAa5B,iBAAA;AAwBJ;AAvBI;EACI,mBAAA;EACA,qBAAA;EACA,kBAAA;EAEA,qBAAA;EACA,wBAAA;EACA,0EAAA;EACA,eAAA;AAwBR;ADuEQ;ECvGJ;IAWQ,aAAA;EAyBV;AACF;ADwCQ;EC7EJ;IAeQ,eAAA;IACA,YAAA;IACA,cAAA;IACA,UAAA;EA0BV;AACF;AAxBQ;EDiHJ,0BAAA;EACA,mBAAA;ACtFJ;AAxBQ;EACI,mBD/BH;ACyDT;AAxBY;EAEI,mBDnCP;AC4DT;AAvDI;EAkCI,qEAAA;AAwBR;AAvBQ;EACI,kBAAA;EACA,cAAA;EACA,uBAAA;EACA,yBAAA;EACA,gBDrDJ;ECsDI,uCAAA;AAyBZ;AAvBY;EAEI,kBAAA;EACA,OAAA;EACA,WAAA;EACA,YAAA;EACA,gBD9DR;EC+DQ,WAAA;EACA,mEAAA;AAwBhB;AArBY;EACI,8BAAA;AAuBhB;AApBY;EACI,mBAAA;AAsBhB;AAlBQ;EACI,gBAAA;AAoBZ;AAjBQ;EACI,uBAAA;AAmBZ;AAjBY;EACI,mDAAA;AAmBhB;AAhBY;EACI,+DAAA;AAkBhB;AA3GgC;EA8F5B,iBAAA;AAgBJ;AAfI;EACI,uCAAA;EACA,WDhGA;ECiGA,yBAAA;EACA,eAAA;AAiBR;AAfQ;EACI,cD7FH;AC8GT;AAvHgC;EA0G5B,uBAAA;AAgBJ;AAfI;EDuBA,aAAA;EACA,sBCvBkB;EDwBlB,uBCxB0B;EDyB1B,mBCzBkC;EAC9B,WAAA;AAoBR;ADtCQ;ECgBJ;IAKQ,eAAA;IACA,QAAA;IACA,UAAA;IACA,8CAAA;IACA,yBAAA;IACA,uBAAA;IACA,aAAA;IACA,4JAAA;IACA,2BAAA;IACA,uBAAA;IACA,UAAA;IACA,iCAAA;IACA,8FAAA;EAqBV;EAnBU;IACI,UAAA;IACA,yCAAA;IACA,kBAAA;IACA,8EAAA;EAqBd;EAnBc;IACI,UAAA;IACA,8BAAA;IACA,oBAAA;EAqBlB;AACF;AAlDI;EAiCI,6BAAA;AAoBR;AAnBQ;EDXJ,aAAA;EACA,sBCWsB;EDVtB,2BCU8B;EDT9B,oBCS0C;EAClC,gBAAA;EACA,eAAA;AAwBZ;AAtBY;EDTR,2DAAA;EACA,qBAAA;ECUY,UAAA;EACA,wBAAA;EACA,oFAAA;EACA,eAAA;AAyBhB;AAtBoB;EACI,uBAAA;AAwBxB;AAzBoB;EACI,uBAAA;AA2BxB;AA5BoB;EACI,uBAAA;AA8BxB;AA/BoB;EACI,uBAAA;AAiCxB;AAlCoB;EACI,uBAAA;AAoCxB;AAhCgB;EACI,cDvJX;ACyLT;ADvGQ;ECuDI;IAkBQ,eAAA;EAkClB;AACF","sourceRoot":""}]);
+}`, "",{"version":3,"sources":["webpack://./styles/sections/header.scss","webpack://./styles/global/variables.scss"],"names":[],"mappings":"AAAA,gBAAgB;ACAhB,wEAAA;AAEA,YAAA;AAsBA,yEAAA;AAGA,yEAAA;AACA,+DAAA;AACA,cAAA;AAMA,gEAAA;AACA,SAAA;AAOA,YAAA;AAMA,yEAAA;AAGA,yEAAA;AAOA,yEAAA;AAGA,0EAAA;AAMA,0EAAA;AAGA,yEAAA;AA6EA,yEAAA;AAnCQ;ED/GwB;IC4H5B,aAAA;IACA,sBAFoB;IAGpB,uBAH8C;IAI9C,mBAJoE;IDxHhE,eAAA;IACA,QAAA;IACA,UAAA;IACA,kBAAA;IACA,WAAA;IACA,aAAA;IACA,uEAAA;IACA,kBAAA;EAsBN;AACF;AAjCgC;EAa5B,iBAAA;AAuBJ;AAtBI;EACI,mBAAA;EACA,qBAAA;EACA,kBAAA;EAEA,qBAAA;EACA,wBAAA;EACA,0EAAA;EACA,eAAA;AAuBR;ACkEQ;EDjGJ;IAWQ,aAAA;EAwBV;AACF;ACmCQ;EDvEJ;IAeQ,eAAA;IACA,YAAA;IACA,cAAA;IACA,UAAA;EAyBV;AACF;AAvBQ;EC2GJ,0BAAA;EACA,mBAAA;ADjFJ;AAvBQ;EACI,mBC/BH;ADwDT;AAvBY;EAEI,mBCnCP;AD2DT;AAtDI;EAkCI,qEAAA;AAuBR;AAtBQ;EACI,kBAAA;EACA,cAAA;EACA,uBAAA;EACA,yBAAA;EACA,gBCrDJ;EDsDI,uCAAA;AAwBZ;AAtBY;EAEI,kBAAA;EACA,OAAA;EACA,WAAA;EACA,YAAA;EACA,gBC9DR;ED+DQ,WAAA;EACA,mEAAA;AAuBhB;AApBY;EACI,8BAAA;AAsBhB;AAnBY;EACI,mBAAA;AAqBhB;AAjBQ;EACI,gBAAA;AAmBZ;AAhBQ;EACI,uBAAA;AAkBZ;AAhBY;EACI,mDAAA;AAkBhB;AAfY;EACI,+DAAA;AAiBhB;AA1GgC;EA8F5B;iEAAA;AAgBJ;AAdI;EACI,eAAA;AAgBR;AAdQ;EACI,cAAA;AAgBZ;AAbQ;EACI,cAAA;EACA,WAAA;EACA,YAAA;AAeZ;AAzHgC;EA8G5B,uBAAA;AAcJ;AAbI;ECaA,aAAA;EACA,sBDbkB;ECclB,uBDd0B;ECe1B,mBDfkC;EAC9B,WAAA;AAkBR;AC9CQ;ED0BJ;IAKQ,eAAA;IACA,QAAA;IACA,UAAA;IACA,8CAAA;IACA,yBAAA;IACA,uBAAA;IACA,aAAA;IACA,4JAAA;IACA,2BAAA;IACA,uBAAA;IACA,UAAA;IACA,wBAAA;IACA,8FAAA;EAmBV;EAjBU;IACI,UAAA;IACA,2BAAA;IACA,kBAAA;IACA,8EAAA;EAmBd;EAjBc;IACI,UAAA;IACA,8BAAA;IACA,oBAAA;EAmBlB;AACF;AAhDI;EAiCI,6BAAA;AAkBR;AAjBQ;ECrBJ,aAAA;EACA,sBDqBsB;ECpBtB,2BDoB8B;ECnB9B,oBDmB0C;EAClC,gBAAA;EACA,eAAA;AAsBZ;AApBY;ECnBR,2DAAA;EACA,qBAAA;EDoBY,UAAA;EACA,wBAAA;EACA,oFAAA;EACA,eAAA;AAuBhB;AApBoB;EACI,uBAAA;AAsBxB;AAvBoB;EACI,uBAAA;AAyBxB;AA1BoB;EACI,uBAAA;AA4BxB;AA7BoB;EACI,uBAAA;AA+BxB;AAhCoB;EACI,uBAAA;AAkCxB;AA9BgB;EACI,cC3JX;AD2LT;AC/GQ;EDiEI;IAkBQ,eAAA;EAgClB;AACF","sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -1423,7 +1415,6 @@ var ___CSS_LOADER_URL_IMPORT_0___ = new URL(/* asset import */ __webpack_require
 var ___CSS_LOADER_URL_IMPORT_1___ = new URL(/* asset import */ __webpack_require__(/*! ../../assets/personal-pictures/home-full-picture.png */ "./assets/personal-pictures/home-full-picture.png"), __webpack_require__.b);
 var ___CSS_LOADER_URL_IMPORT_2___ = new URL(/* asset import */ __webpack_require__(/*! ../../assets/personal-pictures/home-picture.png */ "./assets/personal-pictures/home-picture.png"), __webpack_require__.b);
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
-___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Arizonia&display=swap);"]);
 ___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Simonetta:ital,wght@0,400;0,900;1,400;1,900&display=swap);"]);
 ___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&display=swap);"]);
 ___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap);"]);
@@ -1436,7 +1427,6 @@ ___CSS_LOADER_EXPORT___.push([module.id, `/*--------------------------- Theme Co
 /*-------------------------- Theme Colours End -------------------------*/
 /*-------------------------------- Fonts -------------------------------*/
 /******************** Serif Fonts *****************************/
-/* Arizonia */
 /* Simonetta */
 /********************* Sans-serif Fonts ************************/
 /* Jost */
@@ -1499,7 +1489,7 @@ ___CSS_LOADER_EXPORT___.push([module.id, `/*--------------------------- Theme Co
   .home__bio__picture img {
     content: url(${___CSS_LOADER_URL_REPLACEMENT_2___});
   }
-}`, "",{"version":3,"sources":["webpack://./styles/global/variables.scss","webpack://./styles/sections/home.scss"],"names":[],"mappings":"AAAA,wEAAA;AAEA,YAAA;AAsBA,yEAAA;AAGA,yEAAA;AACA,+DAAA;AACA,aAAA;AAMA,cAAA;AAMA,gEAAA;AACA,SAAA;AAOA,YAAA;AAMA,yEAAA;AAGA,yEAAA;AAOA,yEAAA;AAGA,0EAAA;AAMA,0EAAA;AAGA,yEAAA;AA6EA,yEAAA;ACxJgC;EDkI5B,aAAA;EACA,sBAFoB;EAGpB,uBAH8C;EAI9C,mBAJoE;EC/HpE,0EAAA;EAEA,cAAA;AAsBJ;AArBI;ED6HA,aAAA;EACA,mBC7HkB;ED8HlB,sBC9HuB;ED+HvB,qBC/H8B;EDwI9B,yCAxEQ;EAyER,qBAFiB;EAGjB,gBA/II;ECOA,oBAAA;EACA,WAAA;EACA,WDPA;ACmCR;ADqDQ;ECtFJ;IAQQ,kBAAA;EA6BV;AACF;AD0CQ;EChFJ;IAYQ,sBAAA;IACA,qBAAA;EA8BV;AACF;AA5CI;EAgBI,kBAAA;AA+BR;AA7BY;EACI,kBAAA;EACA,YAAA;EACA,kBAAA;EACA,cAAA;EACA,YAAA;EACA,YAAA;AA+BhB;AD+BQ;ECpEI;IASQ,gDAAA;EAgClB;AACF;ADoBQ;EC9DI;IAaQ,gDAAA;EAiClB;AACF","sourceRoot":""}]);
+}`, "",{"version":3,"sources":["webpack://./styles/global/variables.scss","webpack://./styles/sections/home.scss"],"names":[],"mappings":"AAAA,wEAAA;AAEA,YAAA;AAsBA,yEAAA;AAGA,yEAAA;AACA,+DAAA;AACA,cAAA;AAMA,gEAAA;AACA,SAAA;AAOA,YAAA;AAMA,yEAAA;AAGA,yEAAA;AAOA,yEAAA;AAGA,0EAAA;AAMA,0EAAA;AAGA,yEAAA;AA6EA,yEAAA;AClJgC;ED4H5B,aAAA;EACA,sBAFoB;EAGpB,uBAH8C;EAI9C,mBAJoE;ECzHpE,0EAAA;EAEA,cAAA;AAoBJ;AAnBI;EDuHA,aAAA;EACA,mBCvHkB;EDwHlB,sBCxHuB;EDyHvB,qBCzH8B;EDkI9B,yCAxEQ;EAyER,qBAFiB;EAGjB,gBAzII;ECOA,oBAAA;EACA,WAAA;EACA,WDPA;ACiCR;ADiDQ;EChFJ;IAQQ,kBAAA;EA2BV;AACF;ADsCQ;EC1EJ;IAYQ,sBAAA;IACA,qBAAA;EA4BV;AACF;AA1CI;EAgBI,kBAAA;AA6BR;AA3BY;EACI,kBAAA;EACA,YAAA;EACA,kBAAA;EACA,cAAA;EACA,YAAA;EACA,YAAA;AA6BhB;AD2BQ;EC9DI;IASQ,gDAAA;EA8BlB;AACF;ADgBQ;ECxDI;IAaQ,gDAAA;EA+BlB;AACF","sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -1529,7 +1519,6 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_URL_IMPORT_0___ = new URL(/* asset import */ __webpack_require__(/*! ../../assets/background/1921-composition-in-red-yellow-blue-and-black-mondrian.jpg */ "./assets/background/1921-composition-in-red-yellow-blue-and-black-mondrian.jpg"), __webpack_require__.b);
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
-___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Arizonia&display=swap);"]);
 ___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Simonetta:ital,wght@0,400;0,900;1,400;1,900&display=swap);"]);
 ___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&display=swap);"]);
 ___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap);"]);
@@ -1540,7 +1529,6 @@ ___CSS_LOADER_EXPORT___.push([module.id, `/*--------------------------- Theme Co
 /*-------------------------- Theme Colours End -------------------------*/
 /*-------------------------------- Fonts -------------------------------*/
 /******************** Serif Fonts *****************************/
-/* Arizonia */
 /* Simonetta */
 /********************* Sans-serif Fonts ************************/
 /* Jost */
@@ -1786,7 +1774,7 @@ ___CSS_LOADER_EXPORT___.push([module.id, `/*--------------------------- Theme Co
   width: 0.9rem;
   height: 0.9rem;
   vertical-align: -0.1rem;
-}`, "",{"version":3,"sources":["webpack://./styles/global/variables.scss","webpack://./styles/sections/projects.scss"],"names":[],"mappings":"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","sourceRoot":""}]);
+}`, "",{"version":3,"sources":["webpack://./styles/global/variables.scss","webpack://./styles/sections/projects.scss"],"names":[],"mappings":"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","sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -1816,7 +1804,6 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_URL_IMPORT_0___ = new URL(/* asset import */ __webpack_require__(/*! ../../assets/background/1831-the-great-wave-off-kanagawa-hokusai.jpg */ "./assets/background/1831-the-great-wave-off-kanagawa-hokusai.jpg"), __webpack_require__.b);
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
-___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Arizonia&display=swap);"]);
 ___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Simonetta:ital,wght@0,400;0,900;1,400;1,900&display=swap);"]);
 ___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&display=swap);"]);
 ___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap);"]);
@@ -1827,7 +1814,6 @@ ___CSS_LOADER_EXPORT___.push([module.id, `/*--------------------------- Theme Co
 /*-------------------------- Theme Colours End -------------------------*/
 /*-------------------------------- Fonts -------------------------------*/
 /******************** Serif Fonts *****************************/
-/* Arizonia */
 /* Simonetta */
 /********************* Sans-serif Fonts ************************/
 /* Jost */
@@ -2058,7 +2044,7 @@ ___CSS_LOADER_EXPORT___.push([module.id, `/*--------------------------- Theme Co
 }
 .skills__groups ul li:nth-child(4n+4) {
   background: rgba(111, 143, 181, 0.35);
-}`, "",{"version":3,"sources":["webpack://./styles/global/variables.scss","webpack://./styles/sections/skills.scss"],"names":[],"mappings":"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","sourceRoot":""}]);
+}`, "",{"version":3,"sources":["webpack://./styles/global/variables.scss","webpack://./styles/sections/skills.scss"],"names":[],"mappings":"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","sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -13882,14 +13868,14 @@ module.exports = __webpack_require__.p + "assets/project-logos/equinix.png";
 
 /***/ },
 
-/***/ "./assets/project-logos/logo.png"
+/***/ "./assets/project-logos/logo.svg"
 /*!***************************************!*\
-  !*** ./assets/project-logos/logo.png ***!
+  !*** ./assets/project-logos/logo.svg ***!
   \***************************************/
 (module, __unused_webpack_exports, __webpack_require__) {
 
 "use strict";
-module.exports = __webpack_require__.p + "assets/project-logos/logo.png";
+module.exports = __webpack_require__.p + "assets/project-logos/logo.svg";
 
 /***/ },
 
@@ -14160,7 +14146,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _assets_project_logos_thoughtworks_png__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! ./assets/project-logos/thoughtworks.png */ "./assets/project-logos/thoughtworks.png");
 /* harmony import */ var _assets_project_logos_accenture_png__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! ./assets/project-logos/accenture.png */ "./assets/project-logos/accenture.png");
 /* harmony import */ var _assets_project_logos_bt_png__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! ./assets/project-logos/bt.png */ "./assets/project-logos/bt.png");
-/* harmony import */ var _assets_project_logos_logo_png__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(/*! ./assets/project-logos/logo.png */ "./assets/project-logos/logo.png");
+/* harmony import */ var _assets_project_logos_logo_svg__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(/*! ./assets/project-logos/logo.svg */ "./assets/project-logos/logo.svg");
 /* harmony import */ var _assets_resume_Nithila_Resume_pdf__WEBPACK_IMPORTED_MODULE_30__ = __webpack_require__(/*! ./assets/resume/Nithila_Resume.pdf */ "./assets/resume/Nithila_Resume.pdf");
 /* Styles */
 
@@ -14203,4 +14189,4 @@ __webpack_require__.r(__webpack_exports__);
 
 /******/ })()
 ;
-//# sourceMappingURL=bundledca26780da121ec1ca3e.js.map
+//# sourceMappingURL=bundlec0e5f4959c13d9ed8485.js.map
