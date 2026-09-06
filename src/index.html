@@ -48,45 +48,106 @@
         </section>
         <section class="skills" id="skills">
             <div class="skills__wrapper">
-                <h3>From concept to execution...</h3>
-                <div class="skills__subsection-wrapper">
-                    <div class="skills__subsection skills__subsection--pivot">
-                        <div class="skills__card-wrapper">
-                            <div class="skills__card" data-id="lead" tabindex="0" role="button">
-                                <p>How I lead change</p>
-                                <ul>
-                                    <li>Align product vision with business & market goals</li>
-                                    <li>Develop user-centric, scalable solutions</li>
-                                    <li>Lead cross-functional teams</li>
-                                </ul>
-                            </div>
-                            <div class="skills__card" data-id="leverage" tabindex="0" role="button">
-                                <p>How I leverage expertise</p>
-                                <ul>
-                                    <li>Agile Scrum + JIRA</li>
-                                    <li>UI/UX experience</li>
-                                    <li>Business intelligence tools</li>
-                                </ul>
-                            </div>
-                            <div class="skills__card" data-id="thrive" tabindex="0" role="button">
-                                <p>How you'll thrive</p>
-                                <ul>
-                                    <li>Increased user engagement & retention</li>
-                                    <li>Fast, iterative releases</li>
-                                    <li>Data-driven decision making</li>
-                                </ul>
-                            </div>
+                <div class="skills__roadmap">
+                    <svg class="skills__roadmap-path" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
+                        <path class="skills__roadmap-road" d="M50,0 C55,4 52,7 50,10 C50,17 22,20 22,30 C22,40 68,40 68,50 C68,60 30,60 30,70 C30,80 55,83 55,90 C52,93 58,96 55,100" />
+                        <path class="skills__roadmap-lane" d="M50,0 C55,4 52,7 50,10 C50,17 22,20 22,30 C22,40 68,40 68,50 C68,60 30,60 30,70 C30,80 55,83 55,90 C52,93 58,96 55,100" />
+                    </svg>
+                    <div class="skills__roadmap-item">
+                        <span class="skills__roadmap-marker">1</span>
+                        <div class="skills__roadmap-content">
+                            <p class="skills__card-title">Leading change</p>
+                            <!-- <ul class="skills__card-points">
+                                <li>Align product vision with business & market goals</li>
+                                <li>Develop user-centric, scalable solutions</li>
+                                <li>Lead cross-functional teams</li>
+                            </ul>
+                            <ul class="skills__card-skills">
+                                <li>Product management</li>
+                                <li>Roadmap planning</li>
+                                <li>Go-to-market strategy</li>
+                                <li>Stakeholder management</li>
+                                <li>Cross-functional collaboration</li>
+                                <li>Conflict resolution</li>
+                            </ul> -->
                         </div>
                     </div>
-                    <div class="skills__subsection skills__subsection--skills">
-                        <div class="skills__groups" id="skillsGroups"></div>
+                    <div class="skills__roadmap-item">
+                        <span class="skills__roadmap-marker">2</span>
+                        <div class="skills__roadmap-content">
+                            <p class="skills__card-title">Process & execution</p>
+                            <!-- <ul class="skills__card-points">
+                                <li>Agile Scrum + JIRA</li>
+                            </ul>
+                            <ul class="skills__card-skills">
+                                <li>Agile Scrum</li>
+                                <li>Jira & Confluence</li>
+                                <li>Sprint planning & execution</li>
+                                <li>User story creation, mapping & refinement</li>
+                            </ul> -->
+                        </div>
+                    </div>
+                    <div class="skills__roadmap-item">
+                        <span class="skills__roadmap-marker">3</span>
+                        <div class="skills__roadmap-content">
+                            <p class="skills__card-title">Design & build</p>
+                            <!-- <ul class="skills__card-points">
+                                <li>UI/UX experience</li>
+                                <li>Business intelligence tools</li>
+                            </ul>
+                            <ul class="skills__card-skills">
+                                <li>Figma, Adobe XD, InVision</li>
+                                <li>Frontend developer expertise</li>
+                            </ul> -->
+                        </div>
+                    </div>
+                    <div class="skills__roadmap-item">
+                        <span class="skills__roadmap-marker">4</span>
+                        <div class="skills__roadmap-content">
+                            <p class="skills__card-title">Measuring outcomes</p>
+                            <!-- <ul class="skills__card-points">
+                                <li>Increased user engagement & retention</li>
+                                <li>Fast, iterative releases</li>
+                            </ul>
+                            <ul class="skills__card-skills">
+                                <li>Analytics & KPIs, SQL</li>
+                                <li>Reports + dashboards: PowerBI, Tableau</li>
+                                <li>Customer research</li>
+                            </ul> -->
+                        </div>
+                    </div>
+                    <div class="skills__roadmap-item">
+                        <span class="skills__roadmap-marker">5</span>
+                        <div class="skills__roadmap-content">
+                            <p class="skills__card-title">Quality & delivery</p>
+                            <!-- <ul class="skills__card-points">
+                                <li>Data-driven decision making</li>
+                            </ul>
+                            <ul class="skills__card-skills">
+                                <li>Root cause analysis</li>
+                                <li>Risk management</li>
+                                <li>Quality assurance</li>
+                                <li>Continuous & iterative improvement</li>
+                                <li>Feature prioritization & backlog management</li>
+                            </ul> -->
+                        </div>
                     </div>
                 </div>
             </div>
+
+            <div class="skills__portrait">
+                <img class="skills__portrait-img" src="assets/background/1665-girl-with-a-pearl-earring-vermeer-cutout.png" alt="">
+                <h2 class="skills__title">From concept to execution...</h2>
+                <button class="skills__pearl" type="button" aria-haspopup="dialog" aria-controls="pearlDialog" aria-label="A little secret about the pearl"></button>
+                <dialog class="skills__pearl-dialog" id="pearlDialog">
+                    <button class="skills__pearl-dialog-close" type="button" aria-label="Close">&times;</button>
+                    <p>The name Nithila means &lsquo;beautiful, like a pearl,&rsquo; or simply, &lsquo;a pearl.&rsquo; So the pearl here is me, or rather, it is the girl, and I&rsquo;m looking right at you.</p>
+                </dialog>
+            </div>
         </section>
-        
+
         <section class="showcase" id="projects">
-            <div class="showcase__projects-wrapper">
+            <!-- <div class="showcase__projects-wrapper">
                 <h2>My Projects</h2>
                 <div class="showcase__projects">
                     <div class="showcase__projects-grid" id="projectsGrid"></div>
@@ -101,10 +162,11 @@
                         <path d="M288 32c0-17.7-14.3-32-32-32s-32 14.3-32 32V274.7l-73.4-73.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l128 128c12.5 12.5 32.8 12.5 45.3 0l128-128c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L288 274.7V32zM64 352c-35.3 0-64 28.7-64 64v32c0 35.3 28.7 64 64 64H448c35.3 0 64-28.7 64-64V416c0-35.3-28.7-64-64-64H346.5l-45.3 45.3c-25 25-65.5 25-90.5 0L165.5 352H64zm368 56a24 24 0 1 1 0 48 24 24 0 1 1 0-48z" />
                     </svg>Download resume
                 </span>
-            </button>
+            </button> -->
         </section>
 
         <section class="contact" id="contact">
+            <img class="contact__portrait-img" src="assets/background/1512-creation-of-adam-michelangelo-cutout.png" alt="">
             <h2 class="contact__tagline">Close the distance and...</h2>
             <div class="contact__form-wrapper">
                 <div class="contact__form">

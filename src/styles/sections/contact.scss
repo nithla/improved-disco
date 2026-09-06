@@ -1,7 +1,29 @@
 .contact {
     @include flex(row, space-between, unset);
+    position: relative;
+    z-index: 1;
     padding: 0;
-    background: url('../../assets/background/1512-creation-of-adam-michelangelo.png') center / cover no-repeat;
+
+    @include media-breakpoint-down($md) {
+        background: url('../../assets/background/1512-creation-of-adam-michelangelo.png') center / cover no-repeat;
+    }
+
+    /* contact__portrait-img — Adam, sized/positioned so his leg bleeds past
+       the section's own bottom edge into the Fun section below. z-index:1 on
+       .contact itself (above) makes that overflow paint over Fun rather than
+       being hidden behind it, since Fun comes later in the document. */
+    &__portrait-img {
+        position: absolute;
+        bottom: -3rem;
+        left: -3rem;
+        z-index: -1;
+        width: 125%;
+        height: auto;
+
+        @include media-breakpoint-down($md) {
+            display: none;
+        }
+    }
 
     /* contact__tagline */
     &__tagline {

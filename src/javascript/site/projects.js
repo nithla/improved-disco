@@ -140,20 +140,22 @@ function selectProject(id) {
     renderDetail(project);
 }
 
-grid.innerHTML = PROJECTS.map((project) => `
-    <button type="button" class="showcase__projects-logo" data-id="${project.id}" aria-label="${project.name}">
-        <img src="${project.logo}" alt="${project.name}">
-    </button>
-`).join('');
+if (grid && detail) {
+    grid.innerHTML = PROJECTS.map((project) => `
+        <button type="button" class="showcase__projects-logo" data-id="${project.id}" aria-label="${project.name}">
+            <img src="${project.logo}" alt="${project.name}">
+        </button>
+    `).join('');
 
-grid.addEventListener('click', (event) => {
-    const tile = event.target.closest('.showcase__projects-logo');
+    grid.addEventListener('click', (event) => {
+        const tile = event.target.closest('.showcase__projects-logo');
 
-    if (!tile) {
-        return;
-    }
+        if (!tile) {
+            return;
+        }
 
-    selectProject(tile.dataset.id);
-});
+        selectProject(tile.dataset.id);
+    });
 
-selectProject(PROJECTS[0].id);
+    selectProject(PROJECTS[0].id);
+}

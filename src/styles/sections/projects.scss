@@ -2,7 +2,7 @@
     @include flex(column, center, stretch);
     padding: $sectionPadding;
     gap: 0;
-    background: url('../../assets/background/1921-composition-in-red-yellow-blue-and-black-mondrian.jpg') center / cover no-repeat;
+    background: url('../../assets/background/1831-the-great-wave-off-kanagawa-hokusai.jpg') center / cover no-repeat;
 
     @include media-breakpoint-down($lg) {
         height: 180vh;
