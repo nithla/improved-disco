@@ -16,6 +16,7 @@ import './javascript/site/download.js'
 import './javascript/site/form.js'
 import './javascript/site/fun.js'
 import './javascript/site/projects.js'
+import './javascript/site/roadmap.js'
 import './javascript/site/pearl.js'
 
 /* Assets */

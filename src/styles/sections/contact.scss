@@ -4,7 +4,12 @@
     z-index: 1;
     padding: 0;
 
-    @include media-breakpoint-down($md) {
+    /* contain the Adam image's horizontal spill (it's 125% wide) so it can't
+       push a page-wide x-scroll. clip only the x axis — y stays visible so his
+       leg still bleeds down into Fun (see contact__portrait-img). */
+    overflow-x: clip;
+
+    @include media-breakpoint-down($lg) {
         background: url('../../assets/background/1512-creation-of-adam-michelangelo.png') center / cover no-repeat;
     }
 
@@ -14,13 +19,13 @@
        being hidden behind it, since Fun comes later in the document. */
     &__portrait-img {
         position: absolute;
-        bottom: -3rem;
-        left: -3rem;
+        bottom: -4rem;
+        left: -4rem;
         z-index: -1;
         width: 125%;
         height: auto;
 
-        @include media-breakpoint-down($md) {
+        @include media-breakpoint-down($lg) {
             display: none;
         }
     }
@@ -31,7 +36,7 @@
         flex: 1;
         text-align: end;
 
-        @include media-breakpoint-down($md) {
+        @include media-breakpoint-down($lg) {
             display: none;
         }
     }

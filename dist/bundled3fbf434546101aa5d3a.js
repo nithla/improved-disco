@@ -227,13 +227,12 @@ headerNavigation.on('click', 'a', function () {
 
 var pearlButton = document.querySelector('.skills__pearl');
 var pearlDialog = document.getElementById('pearlDialog');
-var pearlDialogClose = pearlDialog === null || pearlDialog === void 0 ? void 0 : pearlDialog.querySelector('.skills__pearl-dialog-close');
 var portraitImg = document.querySelector('.skills__portrait-img');
 
 /* Where the pearl earring sits within 1665-girl-with-a-pearl-earring-vermeer-cutout.png, as a fraction of the
    image's own width/height. Measured directly against the cropped image, so
    this stays correct regardless of how big the portrait is styled to be. */
-var PEARL_REL_X = 0.52;
+var PEARL_REL_X = 0.49;
 var PEARL_REL_Y = 0.488;
 function positionPearlButton() {
   var anchor = pearlButton.closest('.skills__portrait');
@@ -264,9 +263,6 @@ if (pearlButton && pearlDialog && portraitImg) {
   pearlButton.addEventListener('click', function () {
     positionPearlDialog();
     pearlDialog.show();
-  });
-  pearlDialogClose.addEventListener('click', function () {
-    return pearlDialog.close();
   });
   document.addEventListener('click', function (event) {
     if (!pearlDialog.open || event.target === pearlButton || pearlDialog.contains(event.target)) {
@@ -387,6 +383,102 @@ if (grid && detail) {
     selectProject(tile.dataset.id);
   });
   selectProject(PROJECTS[0].id);
+}
+
+/***/ },
+
+/***/ "./javascript/site/roadmap.js"
+/*!************************************!*\
+  !*** ./javascript/site/roadmap.js ***!
+  \************************************/
+() {
+
+/* The five numbered stops on the Skills ("Work") roadmap. Each marker is a
+   button that opens the shared overlay (#roadmapOverlay) with that phase's
+   detail — the overlay is styled to sit inside the section, inset by the
+   standard section padding. Mirrors the pearl-dialog pattern in pearl.js:
+   a non-modal <dialog> shown with .show(), closed on the X, Esc, or an
+   outside click. */
+
+var ROADMAP = {
+  1: {
+    title: 'The product bet',
+    points: ['Align product vision with business & market goals', 'Develop user-centric, scalable solutions', 'Lead cross-functional teams'],
+    skills: ['Product management', 'Roadmap planning', 'Go-to-market strategy', 'Stakeholder management', 'Cross-functional collaboration', 'Conflict resolution']
+  },
+  2: {
+    title: 'Mise en Place',
+    points: ['Agile Scrum + JIRA'],
+    skills: ['Agile Scrum', 'Jira & Confluence', 'Sprint planning & execution', 'User story creation, mapping & refinement']
+  },
+  3: {
+    title: 'The build',
+    points: ['UI/UX experience', 'Business intelligence tools'],
+    skills: ['Figma, Adobe XD, InVision', 'Frontend developer expertise']
+  },
+  4: {
+    title: 'Delivery & rigor',
+    points: ['Fast, iterative releases', 'Data-driven decision making'],
+    skills: ['Root cause analysis', 'Risk management', 'Quality assurance', 'Continuous & iterative improvement', 'Feature prioritization & backlog management']
+  },
+  5: {
+    title: 'The part that pays off',
+    points: ['Increased user engagement & retention'],
+    skills: ['Analytics & KPIs, SQL', 'Reports + dashboards: PowerBI, Tableau', 'Customer research']
+  }
+};
+var overlay = document.getElementById('roadmapOverlay');
+var overlayBody = overlay === null || overlay === void 0 ? void 0 : overlay.querySelector('.skills__roadmap-overlay-body');
+var overlayClose = overlay === null || overlay === void 0 ? void 0 : overlay.querySelector('.skills__roadmap-overlay-close');
+var markers = Array.from(document.querySelectorAll('.skills__roadmap-marker'));
+function list(className, items) {
+  return items.length ? "<ul class=\"".concat(className, "\">").concat(items.map(function (item) {
+    return "<li>".concat(item, "</li>");
+  }).join(''), "</ul>") : '';
+}
+function renderPhase(phase) {
+  var data = ROADMAP[phase];
+  if (!data) {
+    return;
+  }
+  overlayBody.innerHTML = "\n        <p class=\"skills__roadmap-overlay-step\">Phase ".concat(phase, " of ").concat(markers.length, "</p>\n        <p class=\"skills__card-title\">").concat(data.title, "</p>\n        ").concat(list('skills__card-points', data.points), "\n        ").concat(list('skills__card-skills', data.skills), "\n    ");
+  overlay.scrollTop = 0;
+}
+function openPhase(phase) {
+  renderPhase(phase);
+  markers.forEach(function (marker) {
+    marker.classList.toggle('skills__roadmap-marker--active', marker.dataset.phase === String(phase));
+  });
+  if (!overlay.open) {
+    overlay.show();
+  }
+}
+function closeOverlay() {
+  if (overlay.open) {
+    overlay.close();
+  }
+  markers.forEach(function (marker) {
+    return marker.classList.remove('skills__roadmap-marker--active');
+  });
+}
+if (overlay && overlayBody && markers.length) {
+  markers.forEach(function (marker) {
+    marker.addEventListener('click', function () {
+      return openPhase(marker.dataset.phase);
+    });
+  });
+  overlayClose === null || overlayClose === void 0 || overlayClose.addEventListener('click', closeOverlay);
+  document.addEventListener('keydown', function (event) {
+    if (event.key === 'Escape' && overlay.open) {
+      closeOverlay();
+    }
+  });
+  document.addEventListener('click', function (event) {
+    if (!overlay.open || overlay.contains(event.target) || event.target.closest('.skills__roadmap-marker')) {
+      return;
+    }
+    closeOverlay();
+  });
 }
 
 /***/ },
@@ -761,8 +853,12 @@ ___CSS_LOADER_EXPORT___.push([module.id, `@charset "UTF-8";
   position: relative;
   z-index: 1;
   padding: 0;
+  /* contain the Adam image's horizontal spill (it's 125% wide) so it can't
+     push a page-wide x-scroll. clip only the x axis — y stays visible so his
+     leg still bleeds down into Fun (see contact__portrait-img). */
+  overflow-x: clip;
 }
-@media (max-width: 767.98px) {
+@media (max-width: 991.98px) {
   .contact {
     background: url(${___CSS_LOADER_URL_REPLACEMENT_0___}) center/cover no-repeat;
   }
@@ -775,13 +871,13 @@ ___CSS_LOADER_EXPORT___.push([module.id, `@charset "UTF-8";
 }
 .contact__portrait-img {
   position: absolute;
-  bottom: -3rem;
-  left: -3rem;
+  bottom: -4rem;
+  left: -4rem;
   z-index: -1;
   width: 125%;
   height: auto;
 }
-@media (max-width: 767.98px) {
+@media (max-width: 991.98px) {
   .contact__portrait-img {
     display: none;
   }
@@ -794,7 +890,7 @@ ___CSS_LOADER_EXPORT___.push([module.id, `@charset "UTF-8";
   flex: 1;
   text-align: end;
 }
-@media (max-width: 767.98px) {
+@media (max-width: 991.98px) {
   .contact__tagline {
     display: none;
   }
@@ -889,7 +985,7 @@ ___CSS_LOADER_EXPORT___.push([module.id, `@charset "UTF-8";
   padding: 0 0.5rem 0.5rem;
   height: 6rem;
   scrollbar-color: rgba(255, 255, 0, 0.25) transparent;
-}`, "",{"version":3,"sources":["webpack://./styles/sections/contact.scss","webpack://./styles/global/variables.scss"],"names":[],"mappings":"AAAA,gBAAgB;ACAhB,wEAAA;AAEA,YAAA;AAsBA,yEAAA;AAGA,yEAAA;AACA,+DAAA;AACA,cAAA;AAMA,gEAAA;AACA,SAAA;AAOA,YAAA;AAMA,yEAAA;AAGA,yEAAA;AAOA,yEAAA;AAGA,0EAAA;AAMA,0EAAA;AAGA,yEAAA;AA6EA,yEAAA;ADlJgC;EC4H5B,aAAA;EACA,mBD5Hc;EC6Hd,8BD7HmB;EC8HnB,kBD9HkC;EAClC,kBAAA;EACA,UAAA;EACA,UAAA;AAsBJ;ACqDQ;ED/EwB;IAOxB,0EAAA;EAuBN;AACF;AA/BgC;EAU5B;;;qEAAA;AA2BJ;AAvBI;EACI,kBAAA;EACA,aAAA;EACA,WAAA;EACA,WAAA;EACA,WAAA;EACA,YAAA;AAyBR;ACkCQ;EDjEJ;IASQ,aAAA;EA0BV;AACF;AAlDgC;EA2B5B,qBAAA;AA0BJ;AAzBI;EACI,mBAAA;EACA,OAAA;EACA,eAAA;AA2BR;ACqBQ;EDnDJ;IAMQ,aAAA;EA4BV;AACF;AA/DgC;EAsC5B,kBAAA;AA4BJ;AA3BI;EAEI,0BAAA;AA4BR;AA3BQ;ECkFJ,aAAA;EACA,sBDlFsB;ECmFtB,uBDnF8B;ECoF9B,oBDpFsC;EAC9B,OAAA;EACA,kBAAA;EACA,8BCzCD;ED0CC,SAAA;AAgCZ;AAxCI;ECqFA,aAAA;EACA,sBD3EkB;EC4ElB,uBD5E0B;EC6E1B,oBD7EkC;EAC9B,cAAA;AAmCR;ACbQ;EDlCJ;IAeQ,SAAA;IACA,kBAAA;EAoCV;AACF;AA5FgC;EA2D5B,mBAAA;AAoCJ;AAnCI;EAEI,2BAAA;AAoCR;AAnCQ;EC6DJ,aAAA;EACA,sBAFoB;EAGpB,uBAH8C;EAI9C,mBAJoE;ED1D5D,UAAA;EACA,WAAA;AAwCZ;AAtCY;EC+DR,2DAAA;EACA,qBAAA;ED9DY,mBAAA;EACA,kBAAA;EACA,gBCrER;EDsEQ,eAAA;EACA,cC9DV;ADuGN;AAvDI;EAkBI,qCAAA;AAwCR;AAvCQ;ECoDJ,2DAAA;EACA,qBAAA;EDlDQ,SAAA;EACA,gDAAA;EACA,cAAA;EACA,eAAA;EACA,WAAA;EACA,cAAA;EACA,gBAAA;EACA,WCxFJ;ADiIR;AAvCY;EAEI,UAAA;EACA,gCAAA;AAwChB;AArCY;EACI,+BChGL;ADuIX;AApCY;EAGI,6BCvGR;EDwGQ,iBCxGR;EDyGQ,yDAAA;AAoChB;AAjCY;EACI,6BAAA;EACA,WC9GR;ADiJR;AAtFI;EAuDI,sBAAA;AAkCR;AAjCQ;EACI,wBAAA;EACA,YAAA;EACA,oDAAA;AAmCZ","sourceRoot":""}]);
+}`, "",{"version":3,"sources":["webpack://./styles/sections/contact.scss","webpack://./styles/global/variables.scss"],"names":[],"mappings":"AAAA,gBAAgB;ACAhB,wEAAA;AAEA,YAAA;AAsBA,yEAAA;AAGA,yEAAA;AACA,+DAAA;AACA,cAAA;AAMA,gEAAA;AACA,SAAA;AAOA,YAAA;AAMA,yEAAA;AAGA,yEAAA;AAOA,yEAAA;AAGA,0EAAA;AAMA,0EAAA;AAGA,yEAAA;AA6EA,yEAAA;ADlJgC;EC4H5B,aAAA;EACA,mBD5Hc;EC6Hd,8BD7HmB;EC8HnB,kBD9HkC;EAClC,kBAAA;EACA,UAAA;EACA,UAAA;EAEA;;kEAAA;EAGA,gBAAA;AAqBJ;ACuDQ;EDrFwB;IAYxB,0EAAA;EAsBN;AACF;AAnCgC;EAe5B;;;qEAAA;AA0BJ;AAtBI;EACI,kBAAA;EACA,aAAA;EACA,WAAA;EACA,WAAA;EACA,WAAA;EACA,YAAA;AAwBR;ACoCQ;EDlEJ;IASQ,aAAA;EAyBV;AACF;AAtDgC;EAgC5B,qBAAA;AAyBJ;AAxBI;EACI,mBAAA;EACA,OAAA;EACA,eAAA;AA0BR;ACuBQ;EDpDJ;IAMQ,aAAA;EA2BV;AACF;AAnEgC;EA2C5B,kBAAA;AA2BJ;AA1BI;EAEI,0BAAA;AA2BR;AA1BQ;EC6EJ,aAAA;EACA,sBD7EsB;EC8EtB,uBD9E8B;EC+E9B,oBD/EsC;EAC9B,OAAA;EACA,kBAAA;EACA,8BC9CD;ED+CC,SAAA;AA+BZ;AAvCI;ECgFA,aAAA;EACA,sBDtEkB;ECuElB,uBDvE0B;ECwE1B,oBDxEkC;EAC9B,cAAA;AAkCR;ACjBQ;ED7BJ;IAeQ,SAAA;IACA,kBAAA;EAmCV;AACF;AAhGgC;EAgE5B,mBAAA;AAmCJ;AAlCI;EAEI,2BAAA;AAmCR;AAlCQ;ECwDJ,aAAA;EACA,sBAFoB;EAGpB,uBAH8C;EAI9C,mBAJoE;EDrD5D,UAAA;EACA,WAAA;AAuCZ;AArCY;EC0DR,2DAAA;EACA,qBAAA;EDzDY,mBAAA;EACA,kBAAA;EACA,gBC1ER;ED2EQ,eAAA;EACA,cCnEV;AD2GN;AAtDI;EAkBI,qCAAA;AAuCR;AAtCQ;EC+CJ,2DAAA;EACA,qBAAA;ED7CQ,SAAA;EACA,gDAAA;EACA,cAAA;EACA,eAAA;EACA,WAAA;EACA,cAAA;EACA,gBAAA;EACA,WC7FJ;ADqIR;AAtCY;EAEI,UAAA;EACA,gCAAA;AAuChB;AApCY;EACI,+BCrGL;AD2IX;AAnCY;EAGI,6BC5GR;ED6GQ,iBC7GR;ED8GQ,yDAAA;AAmChB;AAhCY;EACI,6BAAA;EACA,WCnHR;ADqJR;AArFI;EAuDI,sBAAA;AAiCR;AAhCQ;EACI,wBAAA;EACA,YAAA;EACA,oDAAA;AAkCZ","sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -1942,12 +2038,13 @@ ___CSS_LOADER_EXPORT___.push([module.id, `@charset "UTF-8";
 }
 .skills__pearl-dialog {
   position: absolute;
+  z-index: 3;
   margin: 0;
   border: 0;
   border-radius: 1rem;
   padding: 1.25rem 1.5rem;
   max-width: 15rem;
-  background: rgba(0, 0, 0, 0.4);
+  background: #6f8fb5;
   box-shadow: 0 4px 24px rgba(0, 0, 0, 0.4);
   color: #fff;
 }
@@ -1957,28 +2054,9 @@ ___CSS_LOADER_EXPORT___.push([module.id, `@charset "UTF-8";
   left: 1.5rem;
   width: 0.85rem;
   height: 0.85rem;
-  background: rgba(0, 0, 0, 0.4);
+  background: #6f8fb5;
   content: "";
   transform: rotate(45deg);
-}
-.skills__pearl-dialog-close {
-  position: absolute;
-  top: 0.35rem;
-  right: 0.6rem;
-  width: 1.5rem;
-  height: 1.5rem;
-  border-radius: 50%;
-  background: transparent;
-  font: 400 1.1rem/1 "Jost", Futura, Arial, sans-serif;
-  color: #d8c090;
-  cursor: pointer;
-}
-.skills__pearl-dialog-close:hover {
-  color: #ffff00;
-}
-.skills__pearl-dialog-close:focus-visible {
-  outline: 2px solid #ffff00;
-  outline-offset: 2px;
 }
 .skills__pearl-dialog p {
   font: italic 400 1.05rem/1.55 "Simonetta", Cambria, serif;
@@ -2076,6 +2154,32 @@ ___CSS_LOADER_EXPORT___.push([module.id, `@charset "UTF-8";
   top: 10%;
   left: 50%;
 }
+.skills__roadmap-item {
+  /* skills__roadmap-start — a 'you are here' tag on stop 1, sitting
+     left of the marker with a tail pointing at it, so it reads as
+     where the road begins */
+}
+.skills__roadmap-item .skills__roadmap-start {
+  position: absolute;
+  top: 0;
+  right: calc(100% + 2rem);
+  transform: translateY(-50%);
+  padding: 0.35rem 0.7rem;
+  background: #ffff00;
+  color: rgba(0, 0, 0, 0.55);
+  font: italic 500 0.9rem/1 "Jost", Futura, Arial, sans-serif;
+  white-space: nowrap;
+  animation: roadmap-start-pulse 2.4s ease-in-out infinite;
+}
+.skills__roadmap-item .skills__roadmap-start::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 100%;
+  border: 0.4rem solid transparent;
+  border-left-color: #ffff00;
+  transform: translateY(-50%);
+}
 .skills__roadmap-item:nth-of-type(2) {
   top: 30%;
   left: 22%;
@@ -2083,6 +2187,13 @@ ___CSS_LOADER_EXPORT___.push([module.id, `@charset "UTF-8";
 .skills__roadmap-item:nth-of-type(3) {
   top: 50%;
   left: 68%;
+  /* sits at the far-right bend of the road, so its label runs
+     left of the marker instead of right — away from the portrait */
+}
+.skills__roadmap-item:nth-of-type(3) .skills__roadmap-content {
+  left: auto;
+  right: calc(100% + 2.5rem);
+  text-align: right;
 }
 .skills__roadmap-item:nth-of-type(4) {
   top: 70%;
@@ -2093,7 +2204,8 @@ ___CSS_LOADER_EXPORT___.push([module.id, `@charset "UTF-8";
   left: 55%;
 }
 .skills__roadmap {
-  /* skills__roadmap-marker */
+  /* skills__roadmap-marker — a button: click a number to open the
+     phase overlay */
 }
 .skills__roadmap-marker {
   display: flex;
@@ -2108,7 +2220,21 @@ ___CSS_LOADER_EXPORT___.push([module.id, `@charset "UTF-8";
   background: #6f8fb5;
   font: 400 1.35rem "Jost", Futura, Arial, sans-serif;
   color: #fff;
+  cursor: pointer;
   transform: translate(-50%, -50%);
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+.skills__roadmap-marker:hover {
+  box-shadow: 0 0 0 0.4rem rgba(111, 143, 181, 0.18);
+  transform: translate(-50%, -50%) scale(1.06);
+}
+.skills__roadmap-marker:focus-visible {
+  outline: 2px solid #ffff00;
+  outline-offset: 2px;
+}
+.skills__roadmap-marker--active {
+  box-shadow: 0 0 0 0.4rem rgba(111, 143, 181, 0.35);
+  transform: translate(-50%, -50%) scale(1.06);
 }
 .skills__roadmap {
   /* skills__roadmap-content */
@@ -2127,6 +2253,84 @@ ___CSS_LOADER_EXPORT___.push([module.id, `@charset "UTF-8";
 }
 .skills__roadmap-content .skills__card-title {
   margin-bottom: 0;
+}
+.skills__roadmap {
+  /* skills__roadmap-overlay — the phase detail panel. Sits inside the
+     section, inset from every edge by the standard section padding, so
+     it lines up with where content sits in the other sections. */
+}
+.skills__roadmap-overlay {
+  position: absolute;
+  z-index: 5;
+  inset: 4rem 7.5vw;
+  width: auto;
+  height: auto;
+  max-width: none;
+  max-height: none;
+  margin: 0;
+  border: 0;
+  border-radius: 0.5rem;
+  padding: 2rem;
+  overflow-y: auto;
+  background: #fff;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.4);
+  color: #000;
+}
+.skills__roadmap-overlay:not([open]) {
+  display: none;
+}
+@media (max-width: 991.98px) {
+  .skills__roadmap-overlay {
+    inset: 2rem 7.5vw;
+  }
+}
+.skills__roadmap-overlay {
+  /* skills__roadmap-overlay-close */
+}
+.skills__roadmap-overlay-close {
+  position: absolute;
+  top: 0.75rem;
+  right: 1rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  background: transparent;
+  font: 400 1.6rem/1 "Jost", Futura, Arial, sans-serif;
+  color: rgba(0, 0, 0, 0.4);
+  cursor: pointer;
+}
+.skills__roadmap-overlay-close:hover {
+  color: #000;
+}
+.skills__roadmap-overlay-close:focus-visible {
+  outline: 2px solid #ffff00;
+  outline-offset: 2px;
+}
+.skills__roadmap-overlay {
+  /* skills__roadmap-overlay-step */
+}
+.skills__roadmap-overlay-step {
+  font: 300 1.125rem/1.4rem "Jost", Futura, Arial, sans-serif;
+  word-spacing: 0.25rem;
+  margin-bottom: 0.5rem;
+  font-size: 0.95rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #6f8fb5;
+}
+.skills__roadmap-overlay {
+  /* skills__roadmap-overlay-body */
+}
+.skills__roadmap-overlay-body {
+  max-width: 44rem;
+}
+.skills__roadmap-overlay-body .skills__card-title {
+  margin-bottom: 1.5rem;
+  font: italic 500 2rem/1 "Simonetta", Cambria, serif;
 }
 .skills {
   /* skills__card-title, skills__card-points, skills__card-skills —
@@ -2196,7 +2400,21 @@ ___CSS_LOADER_EXPORT___.push([module.id, `@charset "UTF-8";
 }
 .skills__card-skills li:nth-child(4n+4) {
   background: rgba(111, 143, 181, 0.35);
-}`, "",{"version":3,"sources":["webpack://./styles/sections/skills.scss","webpack://./styles/global/variables.scss"],"names":[],"mappings":"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","sourceRoot":""}]);
+}
+
+@keyframes roadmap-start-pulse {
+  0%, 100% {
+    transform: translateY(-50%) scale(1);
+  }
+  50% {
+    transform: translateY(-50%) scale(1.06);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .skills__roadmap-start {
+    animation: none;
+  }
+}`, "",{"version":3,"sources":["webpack://./styles/sections/skills.scss","webpack://./styles/global/variables.scss"],"names":[],"mappings":"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","sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -14294,25 +14512,27 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _javascript_site_fun_js__WEBPACK_IMPORTED_MODULE_13___default = /*#__PURE__*/__webpack_require__.n(_javascript_site_fun_js__WEBPACK_IMPORTED_MODULE_13__);
 /* harmony import */ var _javascript_site_projects_js__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./javascript/site/projects.js */ "./javascript/site/projects.js");
 /* harmony import */ var _javascript_site_projects_js__WEBPACK_IMPORTED_MODULE_14___default = /*#__PURE__*/__webpack_require__.n(_javascript_site_projects_js__WEBPACK_IMPORTED_MODULE_14__);
-/* harmony import */ var _javascript_site_pearl_js__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./javascript/site/pearl.js */ "./javascript/site/pearl.js");
-/* harmony import */ var _javascript_site_pearl_js__WEBPACK_IMPORTED_MODULE_15___default = /*#__PURE__*/__webpack_require__.n(_javascript_site_pearl_js__WEBPACK_IMPORTED_MODULE_15__);
-/* harmony import */ var _assets_personal_pictures_home_picture_png__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./assets/personal-pictures/home-picture.png */ "./assets/personal-pictures/home-picture.png");
-/* harmony import */ var _assets_personal_pictures_home_full_picture_png__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./assets/personal-pictures/home-full-picture.png */ "./assets/personal-pictures/home-full-picture.png");
-/* harmony import */ var _assets_background_1665_girl_with_a_pearl_earring_vermeer_cutout_png__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./assets/background/1665-girl-with-a-pearl-earring-vermeer-cutout.png */ "./assets/background/1665-girl-with-a-pearl-earring-vermeer-cutout.png");
-/* harmony import */ var _assets_background_1512_creation_of_adam_michelangelo_cutout_png__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./assets/background/1512-creation-of-adam-michelangelo-cutout.png */ "./assets/background/1512-creation-of-adam-michelangelo-cutout.png");
-/* harmony import */ var _assets_social_logos_instagram_png__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./assets/social-logos/instagram.png */ "./assets/social-logos/instagram.png");
-/* harmony import */ var _assets_social_logos_linkedin_png__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./assets/social-logos/linkedin.png */ "./assets/social-logos/linkedin.png");
-/* harmony import */ var _assets_project_logos_canopygrowth_png__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./assets/project-logos/canopygrowth.png */ "./assets/project-logos/canopygrowth.png");
-/* harmony import */ var _assets_project_logos_dupont_png__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ./assets/project-logos/dupont.png */ "./assets/project-logos/dupont.png");
-/* harmony import */ var _assets_project_logos_eon_png__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ./assets/project-logos/eon.png */ "./assets/project-logos/eon.png");
-/* harmony import */ var _assets_project_logos_equinix_png__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ./assets/project-logos/equinix.png */ "./assets/project-logos/equinix.png");
-/* harmony import */ var _assets_project_logos_myntra_png__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! ./assets/project-logos/myntra.png */ "./assets/project-logos/myntra.png");
-/* harmony import */ var _assets_project_logos_tadigital_png__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! ./assets/project-logos/tadigital.png */ "./assets/project-logos/tadigital.png");
-/* harmony import */ var _assets_project_logos_thoughtworks_png__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! ./assets/project-logos/thoughtworks.png */ "./assets/project-logos/thoughtworks.png");
-/* harmony import */ var _assets_project_logos_accenture_png__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(/*! ./assets/project-logos/accenture.png */ "./assets/project-logos/accenture.png");
-/* harmony import */ var _assets_project_logos_bt_png__WEBPACK_IMPORTED_MODULE_30__ = __webpack_require__(/*! ./assets/project-logos/bt.png */ "./assets/project-logos/bt.png");
-/* harmony import */ var _assets_project_logos_logo_svg__WEBPACK_IMPORTED_MODULE_31__ = __webpack_require__(/*! ./assets/project-logos/logo.svg */ "./assets/project-logos/logo.svg");
-/* harmony import */ var _assets_resume_Nithila_Resume_pdf__WEBPACK_IMPORTED_MODULE_32__ = __webpack_require__(/*! ./assets/resume/Nithila_Resume.pdf */ "./assets/resume/Nithila_Resume.pdf");
+/* harmony import */ var _javascript_site_roadmap_js__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./javascript/site/roadmap.js */ "./javascript/site/roadmap.js");
+/* harmony import */ var _javascript_site_roadmap_js__WEBPACK_IMPORTED_MODULE_15___default = /*#__PURE__*/__webpack_require__.n(_javascript_site_roadmap_js__WEBPACK_IMPORTED_MODULE_15__);
+/* harmony import */ var _javascript_site_pearl_js__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./javascript/site/pearl.js */ "./javascript/site/pearl.js");
+/* harmony import */ var _javascript_site_pearl_js__WEBPACK_IMPORTED_MODULE_16___default = /*#__PURE__*/__webpack_require__.n(_javascript_site_pearl_js__WEBPACK_IMPORTED_MODULE_16__);
+/* harmony import */ var _assets_personal_pictures_home_picture_png__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./assets/personal-pictures/home-picture.png */ "./assets/personal-pictures/home-picture.png");
+/* harmony import */ var _assets_personal_pictures_home_full_picture_png__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./assets/personal-pictures/home-full-picture.png */ "./assets/personal-pictures/home-full-picture.png");
+/* harmony import */ var _assets_background_1665_girl_with_a_pearl_earring_vermeer_cutout_png__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./assets/background/1665-girl-with-a-pearl-earring-vermeer-cutout.png */ "./assets/background/1665-girl-with-a-pearl-earring-vermeer-cutout.png");
+/* harmony import */ var _assets_background_1512_creation_of_adam_michelangelo_cutout_png__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./assets/background/1512-creation-of-adam-michelangelo-cutout.png */ "./assets/background/1512-creation-of-adam-michelangelo-cutout.png");
+/* harmony import */ var _assets_social_logos_instagram_png__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./assets/social-logos/instagram.png */ "./assets/social-logos/instagram.png");
+/* harmony import */ var _assets_social_logos_linkedin_png__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./assets/social-logos/linkedin.png */ "./assets/social-logos/linkedin.png");
+/* harmony import */ var _assets_project_logos_canopygrowth_png__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ./assets/project-logos/canopygrowth.png */ "./assets/project-logos/canopygrowth.png");
+/* harmony import */ var _assets_project_logos_dupont_png__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ./assets/project-logos/dupont.png */ "./assets/project-logos/dupont.png");
+/* harmony import */ var _assets_project_logos_eon_png__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ./assets/project-logos/eon.png */ "./assets/project-logos/eon.png");
+/* harmony import */ var _assets_project_logos_equinix_png__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! ./assets/project-logos/equinix.png */ "./assets/project-logos/equinix.png");
+/* harmony import */ var _assets_project_logos_myntra_png__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! ./assets/project-logos/myntra.png */ "./assets/project-logos/myntra.png");
+/* harmony import */ var _assets_project_logos_tadigital_png__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! ./assets/project-logos/tadigital.png */ "./assets/project-logos/tadigital.png");
+/* harmony import */ var _assets_project_logos_thoughtworks_png__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(/*! ./assets/project-logos/thoughtworks.png */ "./assets/project-logos/thoughtworks.png");
+/* harmony import */ var _assets_project_logos_accenture_png__WEBPACK_IMPORTED_MODULE_30__ = __webpack_require__(/*! ./assets/project-logos/accenture.png */ "./assets/project-logos/accenture.png");
+/* harmony import */ var _assets_project_logos_bt_png__WEBPACK_IMPORTED_MODULE_31__ = __webpack_require__(/*! ./assets/project-logos/bt.png */ "./assets/project-logos/bt.png");
+/* harmony import */ var _assets_project_logos_logo_svg__WEBPACK_IMPORTED_MODULE_32__ = __webpack_require__(/*! ./assets/project-logos/logo.svg */ "./assets/project-logos/logo.svg");
+/* harmony import */ var _assets_resume_Nithila_Resume_pdf__WEBPACK_IMPORTED_MODULE_33__ = __webpack_require__(/*! ./assets/resume/Nithila_Resume.pdf */ "./assets/resume/Nithila_Resume.pdf");
 /* Styles */
 
 
@@ -14325,6 +14545,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 /* JavaScript */
+
 
 
 
@@ -14356,4 +14577,4 @@ __webpack_require__.r(__webpack_exports__);
 
 /******/ })()
 ;
-//# sourceMappingURL=bundle5c34ce3642e2120c1310.js.map
+//# sourceMappingURL=bundled3fbf434546101aa5d3a.js.map

@@ -62,12 +62,13 @@
     /* skills__pearl-dialog — a small note anchored to the pearl, not a modal */
     &__pearl-dialog {
         position: absolute;
+        z-index: 3;
         margin: 0;
         border: 0;
         border-radius: 1rem;
         padding: 1.25rem 1.5rem;
         max-width: 15rem;
-        background: $black-p4;
+        background: $blue;
         box-shadow: $boxShadow;
         color: $white;
 
@@ -77,30 +78,9 @@
             left: 1.5rem;
             width: 0.85rem;
             height: 0.85rem;
-            background: $black-p4;
+            background: $blue;
             content: '';
             transform: rotate(45deg);
-        }
-
-        &-close {
-            position: absolute;
-            top: 0.35rem;
-            right: 0.6rem;
-            width: 1.5rem;
-            height: 1.5rem;
-            border-radius: 50%;
-            background: transparent;
-            font: 400 1.1rem/1 $Jost;
-            color: $tan;
-            cursor: pointer;
-
-            &:hover {
-                color: $yellow;
-            }
-
-            &:focus-visible {
-                @include focus-ring;
-            }
         }
 
         p {
@@ -193,6 +173,31 @@
                 left: 50%;
             }
 
+            /* skills__roadmap-start — fixed tag on stop 1, sitting left of the
+               marker with a tail pointing at it: where the road begins */
+            .skills__roadmap-start {
+                position: absolute;
+                top: 0;
+                right: calc(100% + 2rem);
+                transform: translateY(-50%);
+                padding: 0.35rem 0.7rem;
+                background: $yellow;
+                color: $black-p5;
+                font: italic 500 0.9rem/1 $Jost;
+                white-space: nowrap;
+                animation: roadmap-start-pulse 2.4s ease-in-out infinite;
+
+                &::after {
+                    content: '';
+                    position: absolute;
+                    top: 50%;
+                    left: 100%;
+                    border: 0.4rem solid transparent;
+                    border-left-color: $yellow;
+                    transform: translateY(-50%);
+                }
+            }
+
             &:nth-of-type(2) {
                 top: 30%;
                 left: 22%;
@@ -201,6 +206,14 @@
             &:nth-of-type(3) {
                 top: 50%;
                 left: 68%;
+
+                /* sits at the far-right bend of the road, so its label runs
+                   left of the marker instead of right — away from the portrait */
+                .skills__roadmap-content {
+                    left: auto;
+                    right: calc(100% + 2.5rem);
+                    text-align: right;
+                }
             }
 
             &:nth-of-type(4) {
@@ -214,7 +227,8 @@
             }
         }
 
-        /* skills__roadmap-marker */
+        /* skills__roadmap-marker — a button: click a number to open the
+           phase overlay */
         &-marker {
             @include flex(row, center, center);
             position: relative;
@@ -225,7 +239,23 @@
             background: $blue;
             font: 400 1.35rem $Jost;
             color: $white;
+            cursor: pointer;
             transform: translate(-50%, -50%);
+            transition: box-shadow 0.2s ease, transform 0.2s ease;
+
+            &:hover {
+                box-shadow: 0 0 0 0.4rem $blue-p18;
+                transform: translate(-50%, -50%) scale(1.06);
+            }
+
+            &:focus-visible {
+                @include focus-ring;
+            }
+
+            &--active {
+                box-shadow: 0 0 0 0.4rem $blue-p35;
+                transform: translate(-50%, -50%) scale(1.06);
+            }
         }
 
         /* skills__roadmap-content */
@@ -242,6 +272,109 @@
 
             .skills__card-title {
                 margin-bottom: 0;
+            }
+        }
+
+        /* skills__roadmap-here — a travelling 'you are here' pin. roadmap.js
+           sets its top/left to the centre of whichever stop is open (stop 1 on
+           load); the transition makes it glide the road between stops. */
+        &-here {
+            position: absolute;
+            z-index: 2;
+            padding: 0.35rem 0.7rem;
+            background: $red;
+            color: $white;
+            font: italic 500 0.9rem/1 $Jost;
+            white-space: nowrap;
+            /* lift above the 3rem marker, centred on it */
+            transform: translate(-50%, calc(-100% - 1.75rem));
+            animation: roadmap-here-bob 1.8s ease-in-out infinite;
+
+            &--travelling {
+                transition: top 0.5s cubic-bezier(0.65, 0, 0.35, 1),
+                            left 0.5s cubic-bezier(0.65, 0, 0.35, 1);
+            }
+
+            &::after {
+                content: '';
+                position: absolute;
+                top: 100%;
+                left: 50%;
+                margin-left: -0.4rem;
+                border: 0.4rem solid transparent;
+                border-top-color: $red;
+            }
+        }
+
+        /* skills__roadmap-overlay — the phase detail panel. Sits inside the
+           section, inset from every edge by the standard section padding, so
+           it lines up with where content sits in the other sections. */
+        &-overlay {
+            position: absolute;
+            z-index: 5;
+            inset: $sectionPadding;
+            width: auto;
+            height: auto;
+            max-width: none;
+            max-height: none;
+            margin: 0;
+            border: 0;
+            border-radius: 0.5rem;
+            padding: $cardPadding;
+            overflow-y: auto;
+            background: $white;
+            box-shadow: $boxShadow;
+            color: $black;
+
+            &:not([open]) {
+                display: none;
+            }
+
+            @include media-breakpoint-down($lg) {
+                inset: 2rem 7.5vw;
+            }
+
+            /* skills__roadmap-overlay-close */
+            &-close {
+                position: absolute;
+                top: 0.75rem;
+                right: 1rem;
+                @include flex(row, center, center);
+                width: 2rem;
+                height: 2rem;
+                border-radius: 50%;
+                background: transparent;
+                font: 400 1.6rem/1 $Jost;
+                color: $black-p4;
+                cursor: pointer;
+
+                &:hover {
+                    color: $black;
+                }
+
+                &:focus-visible {
+                    @include focus-ring;
+                }
+            }
+
+            /* skills__roadmap-overlay-step */
+            &-step {
+                @include default-text;
+                margin-bottom: 0.5rem;
+                font-size: 0.95rem;
+                letter-spacing: 0.08em;
+                text-transform: uppercase;
+                color: $blue;
+            }
+
+            /* skills__roadmap-overlay-body */
+            &-body {
+                max-width: 44rem;
+
+                .skills__card-title {
+                    margin-bottom: 1.5rem;
+                    font: italic 500 2rem/1 $Simonetta;
+                }
             }
         }
     }
@@ -301,5 +434,22 @@
                 }
             }
         }
+    }
+}
+
+@keyframes roadmap-start-pulse {
+    0%, 100% { transform: translateY(-50%) scale(1); }
+    50% { transform: translateY(-50%) scale(1.06); }
+}
+
+@keyframes roadmap-here-bob {
+    0%, 100% { transform: translate(-50%, calc(-100% - 1.75rem)); }
+    50% { transform: translate(-50%, calc(-100% - 2.15rem)); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .skills__roadmap-start,
+    .skills__roadmap-here {
+        animation: none;
     }
 }
