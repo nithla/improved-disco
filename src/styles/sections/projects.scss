@@ -1,200 +1,513 @@
+/* The Projects section is a horizontal reel on plain white. It pins to the
+   viewport on desktop and projects.js drives the track sideways off the
+   page's own vertical scroll; on small screens, no-JS and
+   prefers-reduced-motion it is a native horizontal scroll strip instead.
+
+   There is no single card template — every project gets one of four
+   compositions (band / billboard / column / ghost), assigned in
+   projects.js, so the reel reads like an editorial spread rather than a
+   deck of identical cards. The company logos do the work images would:
+   blown up, set in a tint band, or dropped in huge and faint as a
+   watermark. */
 .showcase {
-    @include flex(column, center, stretch);
-    padding: $sectionPadding;
-    gap: 0;
-    background: url('../../assets/background/1831-the-great-wave-off-kanagawa-hokusai.jpg') center / cover no-repeat;
+    position: relative;
+    padding: 0;
+    /* clip, not hidden: `overflow: hidden` here would become the scroll
+       container for .showcase__sticky and kill the pin. */
+    overflow-x: clip;
+    background: $white;
+    color: $black;
 
     @include media-breakpoint-down($lg) {
-        height: 180vh;
+        height: auto;
+        min-height: 100vh;
+        min-height: 100dvh;
     }
 
-    @media (orientation: portrait) {
-        height: 100vh;
-    } 
+    /* showcase__sticky — default: a native horizontal scroll strip. projects.js
+       adds --pin on desktop to turn it into the pinned viewport window. */
+    &__sticky {
+        @include flex(row, flex-start, center);
+        position: relative;
+        min-height: 100vh;
+        min-height: 100dvh;
+        background: $white;
+        overflow-x: auto;
+        overflow-y: hidden;
+        scroll-snap-type: x proximity;
+        scrollbar-width: none;
+        -webkit-overflow-scrolling: touch;
 
-    /* showcase__projects */
-    &__projects {
+        &::-webkit-scrollbar {
+            height: 0;
+            background: transparent;
+        }
 
-        /* showcase__projects-wrapper */
-        &-wrapper {
-            @include flex(column, flex-start, stretch);
-            flex: 1 1 auto;
+        &--pin {
+            position: sticky;
+            top: 0;
+            height: 100vh;
+            height: 100dvh;
             min-height: 0;
-            width: 100%;
-    
-            h2 {
-                flex: 0 0 auto;
-                color: $white;
-                text-align: center;
-            }
+            overflow: hidden;
+            scroll-snap-type: none;
+        }
+    }
+
+    /* showcase__track — the reel: one wide flex row. Wide gaps and side
+       padding give it the airy, spaced-out rhythm. position: relative so
+       panel.offsetLeft (read by projects.js) is always measured against it. */
+    &__track {
+        @include flex(row, flex-start, center);
+        position: relative;
+        flex: 0 0 auto;
+        gap: 5rem;
+        padding: 4rem 10vw;
+
+        .showcase__sticky--pin & {
+            height: 100%;
         }
 
-        @include flex(row, stretch, stretch);
-        @include card(0.5rem 0.5rem 0 0);
-        flex: 1 1 auto;
-        min-height: 0;
-        overflow: hidden;
-
-        @include media-breakpoint-down($md) {
-            flex-direction: column;
+        @include media-breakpoint-down($lg) {
+            gap: 2.5rem;
+            padding: 6rem 8vw;
         }
 
-        /* showcase__projects-grid */
-        &-grid {
-            border-right: 1px solid $black-p15;
-            display: grid;
-            grid-template-columns: repeat(3, minmax(0, 1fr));
-            align-content: start;
-            flex: 1;
-            overflow-y: auto;
+        @include media-breakpoint-down($sm) {
+            gap: 1.5rem;
+            padding: 5rem 6vw;
+        }
+    }
 
-            @include media-breakpoint-down($lg) {
-                grid-template-columns: repeat(2, minmax(0, 1fr));
-            }
+    /* showcase__panel — the reveal target. projects.js writes transform +
+       opacity on every panel each frame (content lifts and fades in as it
+       nears the centre of the window). No surface, no chrome — just content
+       on white. */
+    &__panel {
+        position: relative;
+        flex: 0 0 auto;
+        color: $black;
 
-            @include media-breakpoint-down($md) {
-                border-right: 0;
-                border-bottom: 1px solid $black;
-                display: flex;
-                flex: 0 0 auto;
-                overflow-x: auto;
-                overflow-y: hidden;
-                scrollbar-width: none;
-                mask-image: linear-gradient(to right, $black calc(100% - 2.5rem), transparent);
-                -webkit-mask-image: linear-gradient(to right, $black calc(100% - 2.5rem), transparent);
+        .showcase__sticky--pin & {
+            will-change: transform, opacity;
+        }
+    }
 
-                &::-webkit-scrollbar {
-                    height: 0;
-                    background: transparent;
-                }
-            }
+    /* showcase__intro / showcase__outro — the bookends */
+    &__intro,
+    &__outro {
+        @include flex(column, center, flex-start);
+        align-self: center;
+        width: 20rem;
+
+        p {
+            @include default-text;
+            margin: 0;
+            color: $black;
+            word-spacing: normal;
+        }
+    }
+
+    &__intro {
+        gap: 1rem;
+
+        h2 {
+            margin: 0;
+            font-size: 3.25rem;
+            text-align: left;
+            text-shadow: none;
+            color: $black;
+        }
+    }
+
+    &__outro {
+        gap: 1.5rem;
+    }
+
+    /* showcase__cue — the "keep going" nudge, in the site's highlight style */
+    &__cue {
+        align-self: flex-start;
+        margin-top: 0.25rem;
+        padding: 0.25rem 0.6rem;
+        background: $yellow;
+        font: italic 500 0.95rem/1 $Jost;
+        color: $black-p5;
+    }
+
+    &__cue-arrow {
+        display: inline-block;
+        animation: showcase-cue 1.6s ease-in-out infinite;
+    }
+
+    /* showcase__road — the Work-section roadmap doesn't stop at the section
+       break. This picks the road up exactly where the skills SVG drops it
+       (its viewBox x=55 ≈ 28.6% across, heading straight down at the section
+       edge) and carries it on into the reel, curving left to land at the
+       "My Projects" heading. It sits in the track, not the sticky, so it
+       travels — and leaves — with the intro rather than hanging over the
+       cards. Same build as the skills road: a paved stroke plus a dashed
+       centre lane, both non-scaling so the width holds under the viewBox's
+       non-uniform stretch. Desktop only — the small-screen strip has no
+       pinned viewport for it to bridge.
+       width/left are the untransformed geometry: calc(100vw - 8rem) is the
+       real sticky width (the .main side-nav padding), and at translate 0 the
+       track's box starts at the viewport's left edge, so viewBox x lines up
+       1:1 with the skills road's own coordinate space. */
+    &__road {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 0;
+        width: calc(100vw - 8rem);
+        height: 100%;
+        pointer-events: none;
+
+        @include media-breakpoint-down($lg) {
+            display: none;
         }
 
-        /* showcase__projects-logo */
+        &-paving {
+            fill: none;
+            stroke: $tan-p35;
+            stroke-width: 18;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            vector-effect: non-scaling-stroke;
+        }
+
+        &-lane {
+            fill: none;
+            stroke: $white;
+            stroke-width: 1.5;
+            stroke-linecap: round;
+            stroke-dasharray: 4 5;
+            vector-effect: non-scaling-stroke;
+        }
+    }
+
+    /* ============================ cards ============================ */
+
+    &__card {
+        display: flex;
+
+        /* the global `p` rule carries word-spacing: 0.25rem, too loose in these
+           narrow measures — reset it for everything inside a card */
+        p,
+        li {
+            word-spacing: normal;
+        }
+
+        /* showcase__card-logo — the recurring graphic element. These are the
+           brand *marks* (symbol only), most cropped from small source PNGs,
+           so keep them near their native size everywhere except --ghost,
+           where scale doesn't matter because they're a faint watermark. */
         &-logo {
             @include flex(row, center, center);
-            position: relative;
-            border: 1px solid $black-p15;
-            padding: 0.5rem;
-            background: $white;
-            cursor: pointer;
-            aspect-ratio: 1;
-            transition: box-shadow 0.2s ease;
-
-            @include media-breakpoint-down($md) {
-                flex: 0 0 5.5rem;
-                width: 5.5rem;
-            }
-
-            &::after {
-                content: none;
-            }
+            margin: 0;
 
             img {
-                max-width: 100%;
-                max-height: 100%;
+                display: block;
+                width: auto;
+                height: 2.75rem;
                 object-fit: contain;
             }
-
-            &--active {
-                z-index: 1;
-                box-shadow: 0 0 18px $black-p4;
-                background: $yellow-p12;
-            }
         }
 
-        /* showcase__projects-detail */
-        &-detail {
-            @include flex(column, flex-start, flex-start);
-            flex: 1;
-            min-width: 0;
-            padding: $cardPadding;
+        /* showcase__card-num — the numeral motif; placed differently per layout */
+        &-num {
+            margin: 0 0 0.75rem;
+            font: italic 700 2.4rem/1 $Simonetta;
             color: $black;
-            overflow-y: auto;
-
-            &--has-overflow {
-                mask-image: linear-gradient(to bottom, $black calc(100% - 5rem), $black-p4 calc(100% - 2rem), transparent);
-                -webkit-mask-image: linear-gradient(to bottom, $black calc(100% - 5rem), $black-p4 calc(100% - 2rem), transparent);
-            }
         }
 
-        /* showcase__projects-title */
-        &-title {
-            margin-bottom: 0.5rem;
-            font: 700 1.5rem/1 $Jost;
+        &-name {
+            margin: 0 0 0.6rem;
+            font: 700 1.7rem/1.05 $Jost;
+            text-shadow: none;
+            color: $black;
         }
 
-        /* showcase__projects-role */
         &-role {
-            @include default-text;
-            margin-bottom: 1rem;
-            font-size: 1rem;
+            margin: 0 0 1.1rem;
+            font: italic 400 1rem/1.4 $Jost;
+            color: rgba(0, 0, 0, 0.62);
         }
 
-        /* showcase__projects-details */
-        &-details {
+        &-summary {
+            @include default-text;
+            margin: 0 0 1.1rem;
+            color: $black;
+            word-spacing: normal;
+        }
+
+        &-bullets {
             @include default-text;
             color: $black;
+            word-spacing: normal;
 
             li {
                 position: relative;
-                margin-bottom: 0.75rem;
-                padding-left: 1.25rem;
+                margin-bottom: 0.7rem;
+                padding-left: 1.1rem;
+
+                &:last-child {
+                    margin-bottom: 0;
+                }
 
                 &::before {
                     position: absolute;
-                    top: 0.45rem;
+                    top: 0.55rem;
                     left: 0;
-                    width: 0.5rem;
-                    height: 0.5rem;
-                    background: $red;
+                    width: 0.4rem;
+                    height: 0.4rem;
+                    background: $yellow;
                     content: '';
                 }
             }
         }
     }
 
-    /* showcase__resume */
-    &__resume {
-        @include flex(row, center, center);
-        @include card(0 0 0.5rem 0.5rem);
-        box-shadow: none;
-        border-top: 1px solid $black-p15;
-        padding: 1rem $cardPadding;
-        width: 100%;
-        gap: 1.5rem;
-        color: $black;
+    /* ---- band: mark set in a tint block across the top, content below ---- */
+    &__card--band {
+        flex-direction: column;
+        align-self: flex-start;
+        width: 25rem;
 
-        @include media-breakpoint-down($md) {
-            border-top: 1px solid $black;
-        }
+        .showcase__card-logo {
+            justify-content: flex-start;
+            width: 100%;
+            height: 6rem;
+            margin-bottom: 2rem;
+            padding: 0 1.75rem;
+            background: #f2efe7;
+            border-bottom: 2px solid $yellow;
 
-        @include media-breakpoint-down($sm) {
-            flex-direction: column;
-            gap: 0.35rem;
-        }
-
-        /* showcase__resume-label */
-        &-label {
-            @include default-text;
-            margin: 0;
-            padding: 0;
-            color: $black;
-        }
-
-        /* showcase__resume-download */
-        &-download {
-            @include default-text;
-            padding: 0;
-            font-weight: 400;
-            color: $black;
-
-            .icon--download {
-                margin-right: 0.35rem;
-                width: 0.9rem;
-                height: 0.9rem;
-                vertical-align: -0.1rem;
+            img {
+                height: 3.5rem;
             }
         }
+
+        .showcase__card-num {
+            position: absolute;
+            top: 1.5rem;
+            right: 1.5rem;
+            font-size: 1.4rem;
+            color: $black-p4;
+        }
+    }
+
+    /* ---- billboard: a wide spread — the mark on the left behind a full-height
+           rule, an oversized numeral leading the detail column on the right ---- */
+    &__card--billboard {
+        flex-direction: row;
+        align-self: center;
+        gap: 4rem;
+        width: 43rem;
+
+        .showcase__card-logo {
+            flex: 0 0 auto;
+            padding-right: 4rem;
+            border-right: 1px solid $black-p15;
+
+            img {
+                height: 5.5rem;
+            }
+        }
+
+        .showcase__card-text {
+            flex: 1;
+            align-self: center;
+        }
+
+        .showcase__card-num {
+            margin: 0 0 0.5rem;
+            font-size: 4.5rem;
+            line-height: 0.9;
+            color: $black;
+        }
+
+        .showcase__card-name {
+            font: italic 500 1.9rem/1.05 $Simonetta;
+        }
+    }
+
+    /* ---- column: narrow, vertical, serif headline — a page ---- */
+    &__card--column {
+        flex-direction: column;
+        align-self: flex-start;
+        width: 19rem;
+
+        .showcase__card-logo {
+            justify-content: flex-start;
+            margin-bottom: 2.5rem;
+
+            img {
+                height: 2.25rem;
+            }
+        }
+
+        .showcase__card-num {
+            margin-bottom: 0.4rem;
+            font: 500 1rem/1 $Jost;
+            letter-spacing: 0.2em;
+            color: $black-p4;
+        }
+
+        .showcase__card-name {
+            margin-bottom: 1rem;
+            font: italic 500 2.2rem/1.02 $Simonetta;
+        }
+    }
+
+    /* ---- ghost: the mark blown up huge and faint, bleeding off a corner;
+           text sits at full contrast over it ---- */
+    &__card--ghost {
+        flex-direction: column;
+        justify-content: flex-end;
+        align-self: flex-end;
+        width: 29rem;
+        min-height: 22rem;
+        overflow: hidden;
+
+        .showcase__card-logo {
+            position: absolute;
+            top: -3rem;
+            right: -4rem;
+            width: 22rem;
+            height: auto;
+            opacity: 0.13;
+
+            img {
+                width: 100%;
+                height: auto;
+                filter: grayscale(1);
+            }
+        }
+
+        .showcase__card-text {
+            position: relative;
+            z-index: 1;
+        }
+
+        .showcase__card-num {
+            margin-bottom: 0.5rem;
+            font-size: 3.5rem;
+            color: $black;
+        }
+    }
+
+    /* ---- small screens: flatten every layout to one readable stack ---- */
+    @include media-breakpoint-down($lg) {
+        &__card,
+        &__card--band,
+        &__card--billboard,
+        &__card--column,
+        &__card--ghost {
+            flex-direction: column;
+            align-self: center;
+            width: min(84vw, 24rem);
+            min-height: 0;
+            gap: 0;
+            overflow: visible;
+
+            .showcase__card-logo {
+                position: static;
+                justify-content: flex-start;
+                width: auto;
+                height: auto;
+                margin-bottom: 1.5rem;
+                padding: 0;
+                background: none;
+                border: 0;
+                opacity: 1;
+
+                img {
+                    width: auto;
+                    height: 2.5rem;
+                    max-width: 100%;
+                    filter: none;
+                }
+            }
+
+            .showcase__card-text {
+                position: static;
+            }
+
+            .showcase__card-num {
+                position: static;
+                display: block;
+                margin: 0 0 0.5rem;
+                border: 0;
+                font: italic 700 2rem/1 $Simonetta;
+                letter-spacing: 0;
+                color: $black;
+            }
+
+            .showcase__card-name {
+                font: 700 1.6rem/1.1 $Jost;
+            }
+        }
+    }
+
+    /* showcase__rail — scroll-progress bar, pinned low in the window (desktop) */
+    &__rail {
+        position: absolute;
+        left: 10vw;
+        right: 10vw;
+        bottom: 2.25rem;
+        z-index: 2;
+        display: none;
+        height: 2px;
+        background: $black-p15;
+
+        .showcase__sticky--pin & {
+            display: block;
+        }
+
+        &-fill {
+            display: block;
+            width: 0;
+            height: 100%;
+            background: $black;
+        }
+    }
+
+    /* showcase__resume — opens the résumé PDF (see download.js) */
+    &__resume {
+        @include flex(row, center, center);
+        align-self: flex-start;
+        gap: 0.5rem;
+        border: 1px solid $black;
+        border-radius: 999px;
+        padding: 0.8rem 1.6rem;
+        background: transparent;
+        font: 500 1rem/1 $Jost;
+        color: $black;
+        transition: background 0.2s ease, color 0.2s ease;
+
+        .icon--download {
+            width: 0.9rem;
+            height: 0.9rem;
+        }
+
+        &:hover {
+            background: $black;
+            color: $white;
+        }
+
+        &:focus-visible {
+            @include focus-ring;
+        }
+    }
+}
+
+@keyframes showcase-cue {
+    0%, 100% { transform: translateX(0); }
+    50% { transform: translateX(0.35rem); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .showcase__cue-arrow {
+        animation: none;
     }
 }

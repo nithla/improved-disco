@@ -14,7 +14,7 @@ const PROJECTS = [
     {
         id: 'accenture',
         name: 'Accenture',
-        logo: 'assets/project-logos/accenture.png',
+        logo: 'assets/project-logos/accenture-mark.svg',
         role: 'Business Analyst, Product Strategy · Expert Assist',
         summary: 'Owned the metadata and content strategy for Accenture’s GenAI-powered Expert Assist platform.',
         bullets: [
@@ -38,7 +38,7 @@ const PROJECTS = [
     {
         id: 'thoughtworks',
         name: 'Thoughtworks',
-        logo: 'assets/project-logos/thoughtworks.png',
+        logo: 'assets/project-logos/thoughtworks-mark.svg',
         role: 'Frontend Lead',
         summary: 'Led the frontend rebrand and repository cleanup ahead of Thoughtworks’ NASDAQ IPO.',
         bullets: [
@@ -49,7 +49,7 @@ const PROJECTS = [
     {
         id: 'equinix',
         name: 'Equinix',
-        logo: 'assets/project-logos/equinix.png',
+        logo: 'assets/project-logos/equinix-mark.png',
         role: 'Frontend Developer',
         summary: 'Built the UI layer handling large-scale API result sets for Equinix’s product surfaces.',
         bullets: [
@@ -60,7 +60,7 @@ const PROJECTS = [
     {
         id: 'tadigital',
         name: 'TA Digital',
-        logo: 'assets/project-logos/tadigital.png',
+        logo: 'assets/project-logos/tadigital-mark.png',
         role: 'Frontend Developer · Corporate website rebuild',
         summary: 'Rebuilt TA Digital’s corporate site with a shared design system and reusable component library.',
         bullets: [
@@ -82,7 +82,7 @@ const PROJECTS = [
     {
         id: 'myntra',
         name: 'Myntra',
-        logo: 'assets/project-logos/myntra.png',
+        logo: 'assets/project-logos/myntra-mark.png',
         role: 'Summer Intern · B-School Internship',
         summary: 'A B-school summer internship analyzing growth opportunities across Myntra’s D2C partner network.',
         bullets: [
@@ -107,55 +107,178 @@ const PROJECTS = [
     },
 ];
 
-const grid = document.getElementById('projectsGrid');
-const detail = document.getElementById('projectsDetail');
+/* --- render the reel --------------------------------------------------- */
 
-function renderDetail(project) {
-    const bulletsHtml = project.bullets.length
-        ? `<ul class="showcase__projects-details">${project.bullets.map((bullet) => `<li>${bullet}</li>`).join('')}</ul>`
-        : `<p>Case study coming soon.</p>`;
+const track = document.getElementById('projectsTrack');
+const section = document.getElementById('projects');
+const sticky = section && section.querySelector('.showcase__sticky');
+const progress = document.getElementById('projectsProgress');
 
-    detail.innerHTML = `
-        <p class="showcase__projects-title">${project.name}</p>
-        ${project.role ? `<p class="showcase__projects-role">${project.role}</p>` : ''}
-        ${project.summary ? `<p class="showcase__projects-summary">${project.summary}</p>` : ''}
-        ${bulletsHtml}
+/* one of four compositions per project, in a deliberate order so no two
+   neighbours share a layout — see projects.scss for each */
+const LAYOUTS = ['band', 'billboard', 'column', 'ghost', 'band', 'column', 'billboard', 'ghost'];
+
+function cardMarkup(project, position, layout) {
+    const num = String(position).padStart(2, '0');
+    const bullets = project.bullets.map((bullet) => `<li>${bullet}</li>`).join('');
+
+    return `
+        <article class="showcase__panel showcase__card showcase__card--${layout}">
+            <figure class="showcase__card-logo"><img src="${project.logo}" alt="${project.name}"></figure>
+            <div class="showcase__card-text">
+                <p class="showcase__card-num" aria-hidden="true">${num}</p>
+                <h3 class="showcase__card-name">${project.name}</h3>
+                ${project.role ? `<p class="showcase__card-role">${project.role}</p>` : ''}
+                ${project.summary ? `<p class="showcase__card-summary">${project.summary}</p>` : ''}
+                <ul class="showcase__card-bullets">${bullets}</ul>
+            </div>
+        </article>
     `;
-
-    detail.scrollTop = 0;
-    detail.classList.toggle('showcase__projects-detail--has-overflow', detail.scrollHeight > detail.clientHeight);
 }
 
-function selectProject(id) {
-    const project = PROJECTS.find((item) => item.id === id);
+if (track && section && sticky) {
+    const featured = PROJECTS.filter((project) => project.bullets.length);
+    const intro = track.querySelector('.showcase__intro');
 
-    if (!project) {
-        return;
+    intro.insertAdjacentHTML(
+        'afterend',
+        featured.map((project, index) =>
+            cardMarkup(project, index + 1, LAYOUTS[index % LAYOUTS.length])).join('')
+    );
+
+    /* only .showcase__panel children take the reveal — this lets other things
+       (e.g. a decorative SVG) live in the track without being stomped */
+    const panels = Array.from(track.querySelectorAll('.showcase__panel'));
+
+    const canPin = window.matchMedia('(min-width: 992px)');
+    const reduced = window.matchMedia('(prefers-reduced-motion: reduce)');
+    const pinned = () => canPin.matches && !reduced.matches;
+
+    const LIFT = 26; /* px each panel's content rises from as it enters */
+
+    let centres = []; /* each panel's mid-x within the track, transform-free */
+    let maxShift = 0;
+    let target = 0;
+    let currentX = 0;
+    let ticking = false;
+
+    function cachePanels() {
+        centres = panels.map((panel) => panel.offsetLeft + panel.offsetWidth / 2);
     }
 
-    Array.from(grid.children).forEach((tile) => {
-        tile.classList.toggle('showcase__projects-logo--active', tile.dataset.id === id);
-    });
+    /* the shared reveal: each panel's content lifts and fades in as it nears
+       the centre of the window — driven by translate on desktop, by scrollLeft
+       on the native strip. offset is the reel's current horizontal position. */
+    function reel(offset) {
+        const viewCentre = offset + sticky.clientWidth / 2;
+        const falloff = sticky.clientWidth * 0.85 || 1;
+        const ratio = maxShift ? Math.min(Math.max(offset / maxShift, 0), 1) : 0;
 
-    renderDetail(project);
-}
+        panels.forEach((panel, i) => {
+            if (reduced.matches) {
+                panel.style.transform = '';
+                panel.style.opacity = '';
+                return;
+            }
 
-if (grid && detail) {
-    grid.innerHTML = PROJECTS.map((project) => `
-        <button type="button" class="showcase__projects-logo" data-id="${project.id}" aria-label="${project.name}">
-            <img src="${project.logo}" alt="${project.name}">
-        </button>
-    `).join('');
+            const near = Math.max(0, 1 - Math.abs(centres[i] - viewCentre) / falloff);
+            const eased = near * near * (3 - 2 * near);
 
-    grid.addEventListener('click', (event) => {
-        const tile = event.target.closest('.showcase__projects-logo');
+            panel.style.transform = `translate3d(0, ${((1 - eased) * LIFT).toFixed(1)}px, 0)`;
+            panel.style.opacity = (0.28 + 0.72 * eased).toFixed(3);
+        });
 
-        if (!tile) {
+        if (progress) {
+            progress.style.width = `${(ratio * 100).toFixed(2)}%`;
+        }
+    }
+
+    /* --- desktop: pinned section, page scroll drives the track --- */
+
+    function render() {
+        currentX += (target - currentX) * 0.12;
+
+        const settled = Math.abs(target - currentX) < 0.4;
+
+        if (settled) {
+            currentX = target;
+        }
+
+        track.style.transform = `translate3d(${-currentX}px, 0, 0)`;
+        reel(currentX);
+
+        if (settled) {
+            ticking = false;
+        } else {
+            requestAnimationFrame(render);
+        }
+    }
+
+    function onScroll() {
+        if (!pinned() || maxShift === 0) {
             return;
         }
 
-        selectProject(tile.dataset.id);
-    });
+        target = Math.min(Math.max(-section.getBoundingClientRect().top, 0), maxShift);
 
-    selectProject(PROJECTS[0].id);
+        if (!ticking) {
+            ticking = true;
+            requestAnimationFrame(render);
+        }
+    }
+
+    /* --- native strip: mobile / no-pin / reduced motion --- */
+
+    let stripQueued = false;
+
+    function paintStrip() {
+        stripQueued = false;
+        reel(sticky.scrollLeft);
+    }
+
+    function onStripScroll() {
+        if (pinned() || stripQueued) {
+            return;
+        }
+
+        stripQueued = true;
+        requestAnimationFrame(paintStrip);
+    }
+
+    function measure() {
+        sticky.classList.toggle('showcase__sticky--pin', pinned());
+        cachePanels();
+
+        if (!pinned()) {
+            section.style.height = '';
+            track.style.transform = '';
+            maxShift = Math.max(0, sticky.scrollWidth - sticky.clientWidth);
+            reel(sticky.scrollLeft);
+            return;
+        }
+
+        /* runway = one pinned viewport + however far the track has to travel.
+           sticky.clientWidth is the real visible window (accounts for the
+           fixed side-nav padding on .main and the scrollbar). */
+        maxShift = Math.max(0, track.scrollWidth - sticky.clientWidth);
+        section.style.height = `${window.innerHeight + maxShift}px`;
+        target = 0;
+        currentX = 0;
+        track.style.transform = 'translate3d(0, 0, 0)';
+        reel(0);
+        onScroll();
+    }
+
+    window.addEventListener('scroll', onScroll, { passive: true });
+    sticky.addEventListener('scroll', onStripScroll, { passive: true });
+    window.addEventListener('resize', measure);
+    window.addEventListener('load', measure);
+    canPin.addEventListener('change', measure);
+    reduced.addEventListener('change', measure);
+
+    if (document.fonts && document.fonts.ready) {
+        document.fonts.ready.then(measure);
+    }
+
+    measure();
 }

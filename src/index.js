@@ -33,12 +33,15 @@ import './assets/social-logos/linkedin.png'
 import './assets/project-logos/canopygrowth.png'
 import './assets/project-logos/dupont.png'
 import './assets/project-logos/eon.png'
-import './assets/project-logos/equinix.png'
-import './assets/project-logos/myntra.png'
-import './assets/project-logos/tadigital.png'
-import './assets/project-logos/thoughtworks.png'
-import './assets/project-logos/accenture.png'
 import './assets/project-logos/bt.png'
+
+/* project marks — the brand symbol only, cropped from the full wordmark
+   logos, since the project name is already the card title */
+import './assets/project-logos/accenture-mark.svg'
+import './assets/project-logos/thoughtworks-mark.svg'
+import './assets/project-logos/myntra-mark.png'
+import './assets/project-logos/equinix-mark.png'
+import './assets/project-logos/tadigital-mark.png'
 
 import './assets/project-logos/logo.svg'
 

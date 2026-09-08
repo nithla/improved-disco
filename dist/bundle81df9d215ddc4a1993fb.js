@@ -290,7 +290,7 @@ var PROJECTS = [{
 }, {
   id: 'accenture',
   name: 'Accenture',
-  logo: 'assets/project-logos/accenture.png',
+  logo: 'assets/project-logos/accenture-mark.svg',
   role: 'Business Analyst, Product Strategy · Expert Assist',
   summary: 'Owned the metadata and content strategy for Accenture’s GenAI-powered Expert Assist platform.',
   bullets: ['Delivered an 88% GenAI accuracy gain by owning metadata strategy & driving structural alignment of the index', 'Spearheaded the product roadmap for multi-tenant scalability, powering content team operations in 25+ regions', 'Overhauled UX for 10+ CMS features, transforming navigation, workflows, & in-app usability']
@@ -304,21 +304,21 @@ var PROJECTS = [{
 }, {
   id: 'thoughtworks',
   name: 'Thoughtworks',
-  logo: 'assets/project-logos/thoughtworks.png',
+  logo: 'assets/project-logos/thoughtworks-mark.svg',
   role: 'Frontend Lead',
   summary: 'Led the frontend rebrand and repository cleanup ahead of Thoughtworks’ NASDAQ IPO.',
   bullets: ['Facilitated a $0.77 billion IPO on the NASDAQ by spearheading the rebranding & full visual refresh campaign', 'Expanded website traffic by 15% & eliminated redundancy in under 4 weeks through repository restructuring']
 }, {
   id: 'equinix',
   name: 'Equinix',
-  logo: 'assets/project-logos/equinix.png',
+  logo: 'assets/project-logos/equinix-mark.png',
   role: 'Frontend Developer',
   summary: 'Built the UI layer handling large-scale API result sets for Equinix’s product surfaces.',
   bullets: ['Seamlessly integrated 1000s of results into the UI, optimizing complex API data handled from database requests', 'Reduced development effort by 25% by building versatile, modular, & reusable UI components for scalability']
 }, {
   id: 'tadigital',
   name: 'TA Digital',
-  logo: 'assets/project-logos/tadigital.png',
+  logo: 'assets/project-logos/tadigital-mark.png',
   role: 'Frontend Developer · Corporate website rebuild',
   summary: 'Rebuilt TA Digital’s corporate site with a shared design system and reusable component library.',
   bullets: ['Created global styles & 10+ reusable functions, streamlining the design of 100+ pages in the site’s redesign', 'Developed 15+ dynamic components, enabling data analytics & powering essential site-level functionalities']
@@ -332,7 +332,7 @@ var PROJECTS = [{
 }, {
   id: 'myntra',
   name: 'Myntra',
-  logo: 'assets/project-logos/myntra.png',
+  logo: 'assets/project-logos/myntra-mark.png',
   role: 'Summer Intern · B-School Internship',
   summary: 'A B-school summer internship analyzing growth opportunities across Myntra’s D2C partner network.',
   bullets: ['Identified key growth opportunities by leveraging insights from 50+ stakeholders & 2,500+ global programs', 'Collaborated with 10+ D2C entrepreneurs & 15+ categories to identify & introduce strategic improvements', 'Designed an onboarding roadmap using data from 5 partner brands to streamline & advance program entry']
@@ -349,40 +349,149 @@ var PROJECTS = [{
   role: null,
   bullets: []
 }];
-var grid = document.getElementById('projectsGrid');
-var detail = document.getElementById('projectsDetail');
-function renderDetail(project) {
-  var bulletsHtml = project.bullets.length ? "<ul class=\"showcase__projects-details\">".concat(project.bullets.map(function (bullet) {
+
+/* --- render the reel --------------------------------------------------- */
+
+var track = document.getElementById('projectsTrack');
+var section = document.getElementById('projects');
+var sticky = section && section.querySelector('.showcase__sticky');
+var progress = document.getElementById('projectsProgress');
+
+/* one of four compositions per project, in a deliberate order so no two
+   neighbours share a layout — see projects.scss for each */
+var LAYOUTS = ['band', 'billboard', 'column', 'ghost', 'band', 'column', 'billboard', 'ghost'];
+function cardMarkup(project, position, layout) {
+  var num = String(position).padStart(2, '0');
+  var bullets = project.bullets.map(function (bullet) {
     return "<li>".concat(bullet, "</li>");
-  }).join(''), "</ul>") : "<p>Case study coming soon.</p>";
-  detail.innerHTML = "\n        <p class=\"showcase__projects-title\">".concat(project.name, "</p>\n        ").concat(project.role ? "<p class=\"showcase__projects-role\">".concat(project.role, "</p>") : '', "\n        ").concat(project.summary ? "<p class=\"showcase__projects-summary\">".concat(project.summary, "</p>") : '', "\n        ").concat(bulletsHtml, "\n    ");
-  detail.scrollTop = 0;
-  detail.classList.toggle('showcase__projects-detail--has-overflow', detail.scrollHeight > detail.clientHeight);
-}
-function selectProject(id) {
-  var project = PROJECTS.find(function (item) {
-    return item.id === id;
-  });
-  if (!project) {
-    return;
-  }
-  Array.from(grid.children).forEach(function (tile) {
-    tile.classList.toggle('showcase__projects-logo--active', tile.dataset.id === id);
-  });
-  renderDetail(project);
-}
-if (grid && detail) {
-  grid.innerHTML = PROJECTS.map(function (project) {
-    return "\n        <button type=\"button\" class=\"showcase__projects-logo\" data-id=\"".concat(project.id, "\" aria-label=\"").concat(project.name, "\">\n            <img src=\"").concat(project.logo, "\" alt=\"").concat(project.name, "\">\n        </button>\n    ");
   }).join('');
-  grid.addEventListener('click', function (event) {
-    var tile = event.target.closest('.showcase__projects-logo');
-    if (!tile) {
+  return "\n        <article class=\"showcase__panel showcase__card showcase__card--".concat(layout, "\">\n            <figure class=\"showcase__card-logo\"><img src=\"").concat(project.logo, "\" alt=\"").concat(project.name, "\"></figure>\n            <div class=\"showcase__card-text\">\n                <p class=\"showcase__card-num\" aria-hidden=\"true\">").concat(num, "</p>\n                <h3 class=\"showcase__card-name\">").concat(project.name, "</h3>\n                ").concat(project.role ? "<p class=\"showcase__card-role\">".concat(project.role, "</p>") : '', "\n                ").concat(project.summary ? "<p class=\"showcase__card-summary\">".concat(project.summary, "</p>") : '', "\n                <ul class=\"showcase__card-bullets\">").concat(bullets, "</ul>\n            </div>\n        </article>\n    ");
+}
+if (track && section && sticky) {
+  var cachePanels = function cachePanels() {
+    centres = panels.map(function (panel) {
+      return panel.offsetLeft + panel.offsetWidth / 2;
+    });
+  };
+  /* the shared reveal: each panel's content lifts and fades in as it nears
+     the centre of the window — driven by translate on desktop, by scrollLeft
+     on the native strip. offset is the reel's current horizontal position. */
+  var reel = function reel(offset) {
+    var viewCentre = offset + sticky.clientWidth / 2;
+    var falloff = sticky.clientWidth * 0.85 || 1;
+    var ratio = maxShift ? Math.min(Math.max(offset / maxShift, 0), 1) : 0;
+    panels.forEach(function (panel, i) {
+      if (reduced.matches) {
+        panel.style.transform = '';
+        panel.style.opacity = '';
+        return;
+      }
+      var near = Math.max(0, 1 - Math.abs(centres[i] - viewCentre) / falloff);
+      var eased = near * near * (3 - 2 * near);
+      panel.style.transform = "translate3d(0, ".concat(((1 - eased) * LIFT).toFixed(1), "px, 0)");
+      panel.style.opacity = (0.28 + 0.72 * eased).toFixed(3);
+    });
+    if (progress) {
+      progress.style.width = "".concat((ratio * 100).toFixed(2), "%");
+    }
+  };
+  /* --- desktop: pinned section, page scroll drives the track --- */
+  var _render = function render() {
+    currentX += (target - currentX) * 0.12;
+    var settled = Math.abs(target - currentX) < 0.4;
+    if (settled) {
+      currentX = target;
+    }
+    track.style.transform = "translate3d(".concat(-currentX, "px, 0, 0)");
+    reel(currentX);
+    if (settled) {
+      ticking = false;
+    } else {
+      requestAnimationFrame(_render);
+    }
+  };
+  var onScroll = function onScroll() {
+    if (!pinned() || maxShift === 0) {
       return;
     }
-    selectProject(tile.dataset.id);
+    target = Math.min(Math.max(-section.getBoundingClientRect().top, 0), maxShift);
+    if (!ticking) {
+      ticking = true;
+      requestAnimationFrame(_render);
+    }
+  };
+  /* --- native strip: mobile / no-pin / reduced motion --- */
+  var paintStrip = function paintStrip() {
+    stripQueued = false;
+    reel(sticky.scrollLeft);
+  };
+  var onStripScroll = function onStripScroll() {
+    if (pinned() || stripQueued) {
+      return;
+    }
+    stripQueued = true;
+    requestAnimationFrame(paintStrip);
+  };
+  var measure = function measure() {
+    sticky.classList.toggle('showcase__sticky--pin', pinned());
+    cachePanels();
+    if (!pinned()) {
+      section.style.height = '';
+      track.style.transform = '';
+      maxShift = Math.max(0, sticky.scrollWidth - sticky.clientWidth);
+      reel(sticky.scrollLeft);
+      return;
+    }
+
+    /* runway = one pinned viewport + however far the track has to travel.
+       sticky.clientWidth is the real visible window (accounts for the
+       fixed side-nav padding on .main and the scrollbar). */
+    maxShift = Math.max(0, track.scrollWidth - sticky.clientWidth);
+    section.style.height = "".concat(window.innerHeight + maxShift, "px");
+    target = 0;
+    currentX = 0;
+    track.style.transform = 'translate3d(0, 0, 0)';
+    reel(0);
+    onScroll();
+  };
+  var featured = PROJECTS.filter(function (project) {
+    return project.bullets.length;
   });
-  selectProject(PROJECTS[0].id);
+  var intro = track.querySelector('.showcase__intro');
+  intro.insertAdjacentHTML('afterend', featured.map(function (project, index) {
+    return cardMarkup(project, index + 1, LAYOUTS[index % LAYOUTS.length]);
+  }).join(''));
+
+  /* only .showcase__panel children take the reveal — this lets other things
+     (e.g. a decorative SVG) live in the track without being stomped */
+  var panels = Array.from(track.querySelectorAll('.showcase__panel'));
+  var canPin = window.matchMedia('(min-width: 992px)');
+  var reduced = window.matchMedia('(prefers-reduced-motion: reduce)');
+  var pinned = function pinned() {
+    return canPin.matches && !reduced.matches;
+  };
+  var LIFT = 26; /* px each panel's content rises from as it enters */
+
+  var centres = []; /* each panel's mid-x within the track, transform-free */
+  var maxShift = 0;
+  var target = 0;
+  var currentX = 0;
+  var ticking = false;
+  var stripQueued = false;
+  window.addEventListener('scroll', onScroll, {
+    passive: true
+  });
+  sticky.addEventListener('scroll', onStripScroll, {
+    passive: true
+  });
+  window.addEventListener('resize', measure);
+  window.addEventListener('load', measure);
+  canPin.addEventListener('change', measure);
+  reduced.addEventListener('change', measure);
+  if (document.fonts && document.fonts.ready) {
+    document.fonts.ready.then(measure);
+  }
+  measure();
 }
 
 /***/ },
@@ -431,6 +540,23 @@ var overlay = document.getElementById('roadmapOverlay');
 var overlayBody = overlay === null || overlay === void 0 ? void 0 : overlay.querySelector('.skills__roadmap-overlay-body');
 var overlayClose = overlay === null || overlay === void 0 ? void 0 : overlay.querySelector('.skills__roadmap-overlay-close');
 var markers = Array.from(document.querySelectorAll('.skills__roadmap-marker'));
+
+/* the travelling "you are here" pin — parks on stop 1, then follows whichever
+   stop the reader opens; a little payoff once it reaches the last stop */
+var hereTag = document.querySelector('.skills__roadmap-here');
+var HERE_LABEL = 'You are here';
+var HERE_LABEL_END = 'Woo hoo!';
+var currentPhase = 1;
+function moveHere(phase) {
+  var _markers;
+  var item = (_markers = markers[Number(phase) - 1]) === null || _markers === void 0 ? void 0 : _markers.closest('.skills__roadmap-item');
+  if (!hereTag || !item) {
+    return;
+  }
+  hereTag.textContent = Number(phase) === markers.length ? HERE_LABEL_END : HERE_LABEL;
+  hereTag.style.top = "".concat(item.offsetTop, "px");
+  hereTag.style.left = "".concat(item.offsetLeft, "px");
+}
 function list(className, items) {
   return items.length ? "<ul class=\"".concat(className, "\">").concat(items.map(function (item) {
     return "<li>".concat(item, "</li>");
@@ -446,6 +572,8 @@ function renderPhase(phase) {
 }
 function openPhase(phase) {
   renderPhase(phase);
+  currentPhase = Number(phase);
+  moveHere(currentPhase);
   markers.forEach(function (marker) {
     marker.classList.toggle('skills__roadmap-marker--active', marker.dataset.phase === String(phase));
   });
@@ -462,6 +590,14 @@ function closeOverlay() {
   });
 }
 if (overlay && overlayBody && markers.length) {
+  /* park the pin on stop 1, then let it transition on later moves */
+  moveHere(currentPhase);
+  requestAnimationFrame(function () {
+    return hereTag === null || hereTag === void 0 ? void 0 : hereTag.classList.add('skills__roadmap-here--travelling');
+  });
+  window.addEventListener('resize', function () {
+    return moveHere(currentPhase);
+  });
   markers.forEach(function (marker) {
     marker.addEventListener('click', function () {
       return openPhase(marker.dataset.phase);
@@ -883,19 +1019,6 @@ ___CSS_LOADER_EXPORT___.push([module.id, `@charset "UTF-8";
   }
 }
 .contact {
-  /* contact__tagline */
-}
-.contact__tagline {
-  margin: auto 1.5rem;
-  flex: 1;
-  text-align: end;
-}
-@media (max-width: 991.98px) {
-  .contact__tagline {
-    display: none;
-  }
-}
-.contact {
   /* contact__form */
 }
 .contact__form {
@@ -910,6 +1033,9 @@ ___CSS_LOADER_EXPORT___.push([module.id, `@charset "UTF-8";
   padding: 4rem 2rem;
   background: rgba(0, 0, 0, 0.4);
   gap: 3rem;
+  max-height: fit-content;
+  max-width: fit-content;
+  margin: auto auto;
 }
 .contact__form {
   display: flex;
@@ -984,8 +1110,10 @@ ___CSS_LOADER_EXPORT___.push([module.id, `@charset "UTF-8";
 .contact__input__textarea {
   padding: 0 0.5rem 0.5rem;
   height: 6rem;
+  max-width: 100%;
+  resize: vertical;
   scrollbar-color: rgba(255, 255, 0, 0.25) transparent;
-}`, "",{"version":3,"sources":["webpack://./styles/sections/contact.scss","webpack://./styles/global/variables.scss"],"names":[],"mappings":"AAAA,gBAAgB;ACAhB,wEAAA;AAEA,YAAA;AAsBA,yEAAA;AAGA,yEAAA;AACA,+DAAA;AACA,cAAA;AAMA,gEAAA;AACA,SAAA;AAOA,YAAA;AAMA,yEAAA;AAGA,yEAAA;AAOA,yEAAA;AAGA,0EAAA;AAMA,0EAAA;AAGA,yEAAA;AA6EA,yEAAA;ADlJgC;EC4H5B,aAAA;EACA,mBD5Hc;EC6Hd,8BD7HmB;EC8HnB,kBD9HkC;EAClC,kBAAA;EACA,UAAA;EACA,UAAA;EAEA;;kEAAA;EAGA,gBAAA;AAqBJ;ACuDQ;EDrFwB;IAYxB,0EAAA;EAsBN;AACF;AAnCgC;EAe5B;;;qEAAA;AA0BJ;AAtBI;EACI,kBAAA;EACA,aAAA;EACA,WAAA;EACA,WAAA;EACA,WAAA;EACA,YAAA;AAwBR;ACoCQ;EDlEJ;IASQ,aAAA;EAyBV;AACF;AAtDgC;EAgC5B,qBAAA;AAyBJ;AAxBI;EACI,mBAAA;EACA,OAAA;EACA,eAAA;AA0BR;ACuBQ;EDpDJ;IAMQ,aAAA;EA2BV;AACF;AAnEgC;EA2C5B,kBAAA;AA2BJ;AA1BI;EAEI,0BAAA;AA2BR;AA1BQ;EC6EJ,aAAA;EACA,sBD7EsB;EC8EtB,uBD9E8B;EC+E9B,oBD/EsC;EAC9B,OAAA;EACA,kBAAA;EACA,8BC9CD;ED+CC,SAAA;AA+BZ;AAvCI;ECgFA,aAAA;EACA,sBDtEkB;ECuElB,uBDvE0B;ECwE1B,oBDxEkC;EAC9B,cAAA;AAkCR;ACjBQ;ED7BJ;IAeQ,SAAA;IACA,kBAAA;EAmCV;AACF;AAhGgC;EAgE5B,mBAAA;AAmCJ;AAlCI;EAEI,2BAAA;AAmCR;AAlCQ;ECwDJ,aAAA;EACA,sBAFoB;EAGpB,uBAH8C;EAI9C,mBAJoE;EDrD5D,UAAA;EACA,WAAA;AAuCZ;AArCY;EC0DR,2DAAA;EACA,qBAAA;EDzDY,mBAAA;EACA,kBAAA;EACA,gBC1ER;ED2EQ,eAAA;EACA,cCnEV;AD2GN;AAtDI;EAkBI,qCAAA;AAuCR;AAtCQ;EC+CJ,2DAAA;EACA,qBAAA;ED7CQ,SAAA;EACA,gDAAA;EACA,cAAA;EACA,eAAA;EACA,WAAA;EACA,cAAA;EACA,gBAAA;EACA,WC7FJ;ADqIR;AAtCY;EAEI,UAAA;EACA,gCAAA;AAuChB;AApCY;EACI,+BCrGL;AD2IX;AAnCY;EAGI,6BC5GR;ED6GQ,iBC7GR;ED8GQ,yDAAA;AAmChB;AAhCY;EACI,6BAAA;EACA,WCnHR;ADqJR;AArFI;EAuDI,sBAAA;AAiCR;AAhCQ;EACI,wBAAA;EACA,YAAA;EACA,oDAAA;AAkCZ","sourceRoot":""}]);
+}`, "",{"version":3,"sources":["webpack://./styles/sections/contact.scss","webpack://./styles/global/variables.scss"],"names":[],"mappings":"AAAA,gBAAgB;ACAhB,wEAAA;AAEA,YAAA;AAsBA,yEAAA;AAGA,yEAAA;AACA,+DAAA;AACA,cAAA;AAMA,gEAAA;AACA,SAAA;AAOA,YAAA;AAMA,yEAAA;AAGA,yEAAA;AAOA,yEAAA;AAGA,0EAAA;AAMA,0EAAA;AAGA,yEAAA;AA6EA,yEAAA;ADlJgC;EC4H5B,aAAA;EACA,mBD5Hc;EC6Hd,8BD7HmB;EC8HnB,kBD9HkC;EAClC,kBAAA;EACA,UAAA;EACA,UAAA;EAEA;;kEAAA;EAGA,gBAAA;AAqBJ;ACuDQ;EDrFwB;IAYxB,0EAAA;EAsBN;AACF;AAnCgC;EAe5B;;;qEAAA;AA0BJ;AAtBI;EACI,kBAAA;EACA,aAAA;EACA,WAAA;EACA,WAAA;EACA,WAAA;EACA,YAAA;AAwBR;ACoCQ;EDlEJ;IASQ,aAAA;EAyBV;AACF;AAtDgC;EAgC5B,kBAAA;AAyBJ;AAxBI;EAEI,0BAAA;AAyBR;AAxBQ;ECwFJ,aAAA;EACA,sBDxFsB;ECyFtB,uBDzF8B;EC0F9B,oBD1FsC;EAC9B,OAAA;EACA,kBAAA;EACA,8BCnCD;EDoCC,SAAA;EACA,uBAAA;EACA,sBAAA;EACA,iBAAA;AA6BZ;AAxCI;EC2FA,aAAA;EACA,sBD9EkB;EC+ElB,uBD/E0B;ECgF1B,oBDhFkC;EAC9B,cAAA;AAgCR;ACPQ;EDxCJ;IAkBQ,SAAA;IACA,kBAAA;EAiCV;AACF;AAtFgC;EAwD5B,mBAAA;AAiCJ;AAhCI;EAEI,2BAAA;AAiCR;AAhCQ;ECgEJ,aAAA;EACA,sBAFoB;EAGpB,uBAH8C;EAI9C,mBAJoE;ED7D5D,UAAA;EACA,WAAA;AAqCZ;AAnCY;ECkER,2DAAA;EACA,qBAAA;EDjEY,mBAAA;EACA,kBAAA;EACA,gBClER;EDmEQ,eAAA;EACA,cC3DV;ADiGN;AApDI;EAkBI,qCAAA;AAqCR;AApCQ;ECuDJ,2DAAA;EACA,qBAAA;EDrDQ,SAAA;EACA,gDAAA;EACA,cAAA;EACA,eAAA;EACA,WAAA;EACA,cAAA;EACA,gBAAA;EACA,WCrFJ;AD2HR;AApCY;EAEI,UAAA;EACA,gCAAA;AAqChB;AAlCY;EACI,+BC7FL;ADiIX;AAjCY;EAGI,6BCpGR;EDqGQ,iBCrGR;EDsGQ,yDAAA;AAiChB;AA9BY;EACI,6BAAA;EACA,WC3GR;AD2IR;AAnFI;EAuDI,sBAAA;AA+BR;AA9BQ;EACI,wBAAA;EACA,YAAA;EACA,eAAA;EACA,gBAAA;EACA,oDAAA;AAgCZ","sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -1643,20 +1771,16 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../node_modules/css-loader/dist/runtime/api.js */ "../node_modules/css-loader/dist/runtime/api.js");
 /* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../node_modules/css-loader/dist/runtime/getUrl.js */ "../node_modules/css-loader/dist/runtime/getUrl.js");
-/* harmony import */ var _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2__);
 // Imports
 
 
-
-var ___CSS_LOADER_URL_IMPORT_0___ = new URL(/* asset import */ __webpack_require__(/*! ../../assets/background/1831-the-great-wave-off-kanagawa-hokusai.jpg */ "./assets/background/1831-the-great-wave-off-kanagawa-hokusai.jpg"), __webpack_require__.b);
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
 ___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Simonetta:ital,wght@0,400;0,900;1,400;1,900&display=swap);"]);
 ___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&display=swap);"]);
 ___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap);"]);
-var ___CSS_LOADER_URL_REPLACEMENT_0___ = _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2___default()(___CSS_LOADER_URL_IMPORT_0___);
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, `/*--------------------------- Theme Colours ---------------------------*/
+___CSS_LOADER_EXPORT___.push([module.id, `@charset "UTF-8";
+/*--------------------------- Theme Colours ---------------------------*/
 /* Colours */
 /*-------------------------- Theme Colours End -------------------------*/
 /*-------------------------------- Fonts -------------------------------*/
@@ -1672,241 +1796,509 @@ ___CSS_LOADER_EXPORT___.push([module.id, `/*--------------------------- Theme Co
 /*----------------------------- Layout End ------------------------------*/
 /*------------------------------- Mixins -------------------------------*/
 /*----------------------------- Mixins End -----------------------------*/
+/* The Projects section is a horizontal reel on plain white. It pins to the
+viewport on desktop and projects.js drives the track sideways off the
+page's own vertical scroll; on small screens, no-JS and
+prefers-reduced-motion it is a native horizontal scroll strip instead.
+
+There is no single card template — every project gets one of four
+compositions (band / billboard / column / ghost), assigned in
+projects.js, so the reel reads like an editorial spread rather than a
+deck of identical cards. The company logos do the work images would:
+blown up, set in a tint band, or dropped in huge and faint as a
+watermark. */
 .showcase {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: stretch;
-  padding: 4rem 7.5vw;
-  gap: 0;
-  background: url(${___CSS_LOADER_URL_REPLACEMENT_0___}) center/cover no-repeat;
+  position: relative;
+  padding: 0;
+  /* clip, not hidden: \`overflow: hidden\` here would become the scroll
+     container for .showcase__sticky and kill the pin. */
+  overflow-x: clip;
+  background: #fff;
+  color: #000;
 }
 @media (max-width: 991.98px) {
   .showcase {
-    height: 180vh;
-  }
-}
-@media (orientation: portrait) {
-  .showcase {
-    height: 100vh;
+    height: auto;
+    min-height: 100vh;
+    min-height: 100dvh;
   }
 }
 .showcase {
-  /* showcase__projects */
+  /* showcase__sticky — default: a native horizontal scroll strip. projects.js
+     adds --pin on desktop to turn it into the pinned viewport window. */
 }
-.showcase__projects {
-  /* showcase__projects-wrapper */
-}
-.showcase__projects-wrapper {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: stretch;
-  flex: 1 1 auto;
-  min-height: 0;
-  width: 100%;
-}
-.showcase__projects-wrapper h2 {
-  flex: 0 0 auto;
-  color: #fff;
-  text-align: center;
-}
-.showcase__projects {
+.showcase__sticky {
   display: flex;
   flex-direction: row;
-  justify-content: stretch;
-  align-items: stretch;
-  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.4);
-  border-radius: 0.5rem 0.5rem 0 0;
+  justify-content: flex-start;
+  align-items: center;
+  position: relative;
+  min-height: 100vh;
+  min-height: 100dvh;
   background: #fff;
-  flex: 1 1 auto;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-snap-type: x proximity;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+}
+.showcase__sticky::-webkit-scrollbar {
+  height: 0;
+  background: transparent;
+}
+.showcase__sticky--pin {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  height: 100dvh;
   min-height: 0;
   overflow: hidden;
-}
-@media (max-width: 767.98px) {
-  .showcase__projects {
-    flex-direction: column;
-  }
-}
-.showcase__projects {
-  /* showcase__projects-grid */
-}
-.showcase__projects-grid {
-  border-right: 1px solid rgba(0, 0, 0, 0.15);
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  align-content: start;
-  flex: 1;
-  overflow-y: auto;
-}
-@media (max-width: 991.98px) {
-  .showcase__projects-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-}
-@media (max-width: 767.98px) {
-  .showcase__projects-grid {
-    border-right: 0;
-    border-bottom: 1px solid #000;
-    display: flex;
-    flex: 0 0 auto;
-    overflow-x: auto;
-    overflow-y: hidden;
-    scrollbar-width: none;
-    mask-image: linear-gradient(to right, #000 calc(100% - 2.5rem), transparent);
-    -webkit-mask-image: linear-gradient(to right, #000 calc(100% - 2.5rem), transparent);
-  }
-  .showcase__projects-grid::-webkit-scrollbar {
-    height: 0;
-    background: transparent;
-  }
-}
-.showcase__projects {
-  /* showcase__projects-logo */
-}
-.showcase__projects-logo {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-  border: 1px solid rgba(0, 0, 0, 0.15);
-  padding: 0.5rem;
-  background: #fff;
-  cursor: pointer;
-  aspect-ratio: 1;
-  transition: box-shadow 0.2s ease;
-}
-@media (max-width: 767.98px) {
-  .showcase__projects-logo {
-    flex: 0 0 5.5rem;
-    width: 5.5rem;
-  }
-}
-.showcase__projects-logo::after {
-  content: none;
-}
-.showcase__projects-logo img {
-  max-width: 100%;
-  max-height: 100%;
-  object-fit: contain;
-}
-.showcase__projects-logo--active {
-  z-index: 1;
-  box-shadow: 0 0 18px rgba(0, 0, 0, 0.4);
-  background: rgba(255, 255, 0, 0.12);
-}
-.showcase__projects {
-  /* showcase__projects-detail */
-}
-.showcase__projects-detail {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: flex-start;
-  flex: 1;
-  min-width: 0;
-  padding: 2rem;
-  color: #000;
-  overflow-y: auto;
-}
-.showcase__projects-detail--has-overflow {
-  mask-image: linear-gradient(to bottom, #000 calc(100% - 5rem), rgba(0, 0, 0, 0.4) calc(100% - 2rem), transparent);
-  -webkit-mask-image: linear-gradient(to bottom, #000 calc(100% - 5rem), rgba(0, 0, 0, 0.4) calc(100% - 2rem), transparent);
-}
-.showcase__projects {
-  /* showcase__projects-title */
-}
-.showcase__projects-title {
-  margin-bottom: 0.5rem;
-  font: 700 1.5rem/1 "Jost", Futura, Arial, sans-serif;
-}
-.showcase__projects {
-  /* showcase__projects-role */
-}
-.showcase__projects-role {
-  font: 300 1.125rem/1.4rem "Jost", Futura, Arial, sans-serif;
-  word-spacing: 0.25rem;
-  margin-bottom: 1rem;
-  font-size: 1rem;
-}
-.showcase__projects {
-  /* showcase__projects-details */
-}
-.showcase__projects-details {
-  font: 300 1.125rem/1.4rem "Jost", Futura, Arial, sans-serif;
-  word-spacing: 0.25rem;
-  color: #000;
-}
-.showcase__projects-details li {
-  position: relative;
-  margin-bottom: 0.75rem;
-  padding-left: 1.25rem;
-}
-.showcase__projects-details li::before {
-  position: absolute;
-  top: 0.45rem;
-  left: 0;
-  width: 0.5rem;
-  height: 0.5rem;
-  background: #c9333f;
-  content: "";
+  scroll-snap-type: none;
 }
 .showcase {
-  /* showcase__resume */
+  /* showcase__track — the reel: one wide flex row. Wide gaps and side
+     padding give it the airy, spaced-out rhythm. position: relative so
+     panel.offsetLeft (read by projects.js) is always measured against it. */
 }
-.showcase__resume {
+.showcase__track {
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
-  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.4);
-  border-radius: 0 0 0.5rem 0.5rem;
-  background: #fff;
-  box-shadow: none;
-  border-top: 1px solid rgba(0, 0, 0, 0.15);
-  padding: 1rem 2rem;
-  width: 100%;
-  gap: 1.5rem;
-  color: #000;
+  position: relative;
+  flex: 0 0 auto;
+  gap: 5rem;
+  padding: 4rem 10vw;
 }
-@media (max-width: 767.98px) {
-  .showcase__resume {
-    border-top: 1px solid #000;
+.showcase__sticky--pin .showcase__track {
+  height: 100%;
+}
+@media (max-width: 991.98px) {
+  .showcase__track {
+    gap: 2.5rem;
+    padding: 6rem 8vw;
   }
 }
 @media (max-width: 575.98px) {
-  .showcase__resume {
-    flex-direction: column;
-    gap: 0.35rem;
+  .showcase__track {
+    gap: 1.5rem;
+    padding: 5rem 6vw;
   }
 }
-.showcase__resume {
-  /* showcase__resume-label */
+.showcase {
+  /* showcase__panel — the reveal target. projects.js writes transform +
+     opacity on every panel each frame (content lifts and fades in as it
+     nears the centre of the window). No surface, no chrome — just content
+     on white. */
 }
-.showcase__resume-label {
+.showcase__panel {
+  position: relative;
+  flex: 0 0 auto;
+  color: #000;
+}
+.showcase__sticky--pin .showcase__panel {
+  will-change: transform, opacity;
+}
+.showcase {
+  /* showcase__intro / showcase__outro — the bookends */
+}
+.showcase__intro, .showcase__outro {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  align-self: center;
+  width: 20rem;
+}
+.showcase__intro p, .showcase__outro p {
   font: 300 1.125rem/1.4rem "Jost", Futura, Arial, sans-serif;
   word-spacing: 0.25rem;
   margin: 0;
-  padding: 0;
+  color: #000;
+  word-spacing: normal;
+}
+.showcase__intro {
+  gap: 1rem;
+}
+.showcase__intro h2 {
+  margin: 0;
+  font-size: 3.25rem;
+  text-align: left;
+  text-shadow: none;
   color: #000;
 }
-.showcase__resume {
-  /* showcase__resume-download */
+.showcase__outro {
+  gap: 1.5rem;
 }
-.showcase__resume-download {
+.showcase {
+  /* showcase__cue — the "keep going" nudge, in the site's highlight style */
+}
+.showcase__cue {
+  align-self: flex-start;
+  margin-top: 0.25rem;
+  padding: 0.25rem 0.6rem;
+  background: #ffff00;
+  font: italic 500 0.95rem/1 "Jost", Futura, Arial, sans-serif;
+  color: rgba(0, 0, 0, 0.55);
+}
+.showcase__cue-arrow {
+  display: inline-block;
+  animation: showcase-cue 1.6s ease-in-out infinite;
+}
+.showcase {
+  /* showcase__road — the Work-section roadmap doesn't stop at the section
+     break. This picks the road up exactly where the skills SVG drops it
+     (its viewBox x=55 ≈ 28.6% across, heading straight down at the section
+     edge) and carries it on into the reel, curving left to land at the
+     "My Projects" heading. It sits in the track, not the sticky, so it
+     travels — and leaves — with the intro rather than hanging over the
+     cards. Same build as the skills road: a paved stroke plus a dashed
+     centre lane, both non-scaling so the width holds under the viewBox's
+     non-uniform stretch. Desktop only — the small-screen strip has no
+     pinned viewport for it to bridge.
+     width/left are the untransformed geometry: calc(100vw - 8rem) is the
+     real sticky width (the .main side-nav padding), and at translate 0 the
+     track's box starts at the viewport's left edge, so viewBox x lines up
+     1:1 with the skills road's own coordinate space. */
+}
+.showcase__road {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  width: calc(100vw - 8rem);
+  height: 100%;
+  pointer-events: none;
+}
+@media (max-width: 991.98px) {
+  .showcase__road {
+    display: none;
+  }
+}
+.showcase__road-paving {
+  fill: none;
+  stroke: rgba(216, 192, 144, 0.35);
+  stroke-width: 18;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  vector-effect: non-scaling-stroke;
+}
+.showcase__road-lane {
+  fill: none;
+  stroke: #fff;
+  stroke-width: 1.5;
+  stroke-linecap: round;
+  stroke-dasharray: 4 5;
+  vector-effect: non-scaling-stroke;
+}
+.showcase {
+  /* ============================ cards ============================ */
+}
+.showcase__card {
+  display: flex;
+  /* the global \`p\` rule carries word-spacing: 0.25rem, too loose in these
+     narrow measures — reset it for everything inside a card */
+}
+.showcase__card p,
+.showcase__card li {
+  word-spacing: normal;
+}
+.showcase__card {
+  /* showcase__card-logo — the recurring graphic element. These are the
+     brand *marks* (symbol only), most cropped from small source PNGs,
+     so keep them near their native size everywhere except --ghost,
+     where scale doesn't matter because they're a faint watermark. */
+}
+.showcase__card-logo {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+}
+.showcase__card-logo img {
+  display: block;
+  width: auto;
+  height: 2.75rem;
+  object-fit: contain;
+}
+.showcase__card {
+  /* showcase__card-num — the numeral motif; placed differently per layout */
+}
+.showcase__card-num {
+  margin: 0 0 0.75rem;
+  font: italic 700 2.4rem/1 "Simonetta", Cambria, serif;
+  color: #000;
+}
+.showcase__card-name {
+  margin: 0 0 0.6rem;
+  font: 700 1.7rem/1.05 "Jost", Futura, Arial, sans-serif;
+  text-shadow: none;
+  color: #000;
+}
+.showcase__card-role {
+  margin: 0 0 1.1rem;
+  font: italic 400 1rem/1.4 "Jost", Futura, Arial, sans-serif;
+  color: rgba(0, 0, 0, 0.62);
+}
+.showcase__card-summary {
   font: 300 1.125rem/1.4rem "Jost", Futura, Arial, sans-serif;
   word-spacing: 0.25rem;
-  padding: 0;
-  font-weight: 400;
+  margin: 0 0 1.1rem;
+  color: #000;
+  word-spacing: normal;
+}
+.showcase__card-bullets {
+  font: 300 1.125rem/1.4rem "Jost", Futura, Arial, sans-serif;
+  word-spacing: 0.25rem;
+  color: #000;
+  word-spacing: normal;
+}
+.showcase__card-bullets li {
+  position: relative;
+  margin-bottom: 0.7rem;
+  padding-left: 1.1rem;
+}
+.showcase__card-bullets li:last-child {
+  margin-bottom: 0;
+}
+.showcase__card-bullets li::before {
+  position: absolute;
+  top: 0.55rem;
+  left: 0;
+  width: 0.4rem;
+  height: 0.4rem;
+  background: #ffff00;
+  content: "";
+}
+.showcase {
+  /* ---- band: mark set in a tint block across the top, content below ---- */
+}
+.showcase__card--band {
+  flex-direction: column;
+  align-self: flex-start;
+  width: 25rem;
+}
+.showcase__card--band .showcase__card-logo {
+  justify-content: flex-start;
+  width: 100%;
+  height: 6rem;
+  margin-bottom: 2rem;
+  padding: 0 1.75rem;
+  background: #f2efe7;
+  border-bottom: 2px solid #ffff00;
+}
+.showcase__card--band .showcase__card-logo img {
+  height: 3.5rem;
+}
+.showcase__card--band .showcase__card-num {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  font-size: 1.4rem;
+  color: rgba(0, 0, 0, 0.4);
+}
+.showcase {
+  /* ---- billboard: a wide spread — the mark on the left behind a full-height
+         rule, an oversized numeral leading the detail column on the right ---- */
+}
+.showcase__card--billboard {
+  flex-direction: row;
+  align-self: center;
+  gap: 4rem;
+  width: 43rem;
+}
+.showcase__card--billboard .showcase__card-logo {
+  flex: 0 0 auto;
+  padding-right: 4rem;
+  border-right: 1px solid rgba(0, 0, 0, 0.15);
+}
+.showcase__card--billboard .showcase__card-logo img {
+  height: 5.5rem;
+}
+.showcase__card--billboard .showcase__card-text {
+  flex: 1;
+  align-self: center;
+}
+.showcase__card--billboard .showcase__card-num {
+  margin: 0 0 0.5rem;
+  font-size: 4.5rem;
+  line-height: 0.9;
   color: #000;
 }
-.showcase__resume-download .icon--download {
-  margin-right: 0.35rem;
+.showcase__card--billboard .showcase__card-name {
+  font: italic 500 1.9rem/1.05 "Simonetta", Cambria, serif;
+}
+.showcase {
+  /* ---- column: narrow, vertical, serif headline — a page ---- */
+}
+.showcase__card--column {
+  flex-direction: column;
+  align-self: flex-start;
+  width: 19rem;
+}
+.showcase__card--column .showcase__card-logo {
+  justify-content: flex-start;
+  margin-bottom: 2.5rem;
+}
+.showcase__card--column .showcase__card-logo img {
+  height: 2.25rem;
+}
+.showcase__card--column .showcase__card-num {
+  margin-bottom: 0.4rem;
+  font: 500 1rem/1 "Jost", Futura, Arial, sans-serif;
+  letter-spacing: 0.2em;
+  color: rgba(0, 0, 0, 0.4);
+}
+.showcase__card--column .showcase__card-name {
+  margin-bottom: 1rem;
+  font: italic 500 2.2rem/1.02 "Simonetta", Cambria, serif;
+}
+.showcase {
+  /* ---- ghost: the mark blown up huge and faint, bleeding off a corner;
+         text sits at full contrast over it ---- */
+}
+.showcase__card--ghost {
+  flex-direction: column;
+  justify-content: flex-end;
+  align-self: flex-end;
+  width: 29rem;
+  min-height: 22rem;
+  overflow: hidden;
+}
+.showcase__card--ghost .showcase__card-logo {
+  position: absolute;
+  top: -3rem;
+  right: -4rem;
+  width: 22rem;
+  height: auto;
+  opacity: 0.13;
+}
+.showcase__card--ghost .showcase__card-logo img {
+  width: 100%;
+  height: auto;
+  filter: grayscale(1);
+}
+.showcase__card--ghost .showcase__card-text {
+  position: relative;
+  z-index: 1;
+}
+.showcase__card--ghost .showcase__card-num {
+  margin-bottom: 0.5rem;
+  font-size: 3.5rem;
+  color: #000;
+}
+.showcase {
+  /* ---- small screens: flatten every layout to one readable stack ---- */
+}
+@media (max-width: 991.98px) {
+  .showcase__card, .showcase__card--band, .showcase__card--billboard, .showcase__card--column, .showcase__card--ghost {
+    flex-direction: column;
+    align-self: center;
+    width: min(84vw, 24rem);
+    min-height: 0;
+    gap: 0;
+    overflow: visible;
+  }
+  .showcase__card .showcase__card-logo, .showcase__card--band .showcase__card-logo, .showcase__card--billboard .showcase__card-logo, .showcase__card--column .showcase__card-logo, .showcase__card--ghost .showcase__card-logo {
+    position: static;
+    justify-content: flex-start;
+    width: auto;
+    height: auto;
+    margin-bottom: 1.5rem;
+    padding: 0;
+    background: none;
+    border: 0;
+    opacity: 1;
+  }
+  .showcase__card .showcase__card-logo img, .showcase__card--band .showcase__card-logo img, .showcase__card--billboard .showcase__card-logo img, .showcase__card--column .showcase__card-logo img, .showcase__card--ghost .showcase__card-logo img {
+    width: auto;
+    height: 2.5rem;
+    max-width: 100%;
+    filter: none;
+  }
+  .showcase__card .showcase__card-text, .showcase__card--band .showcase__card-text, .showcase__card--billboard .showcase__card-text, .showcase__card--column .showcase__card-text, .showcase__card--ghost .showcase__card-text {
+    position: static;
+  }
+  .showcase__card .showcase__card-num, .showcase__card--band .showcase__card-num, .showcase__card--billboard .showcase__card-num, .showcase__card--column .showcase__card-num, .showcase__card--ghost .showcase__card-num {
+    position: static;
+    display: block;
+    margin: 0 0 0.5rem;
+    border: 0;
+    font: italic 700 2rem/1 "Simonetta", Cambria, serif;
+    letter-spacing: 0;
+    color: #000;
+  }
+  .showcase__card .showcase__card-name, .showcase__card--band .showcase__card-name, .showcase__card--billboard .showcase__card-name, .showcase__card--column .showcase__card-name, .showcase__card--ghost .showcase__card-name {
+    font: 700 1.6rem/1.1 "Jost", Futura, Arial, sans-serif;
+  }
+}
+.showcase {
+  /* showcase__rail — scroll-progress bar, pinned low in the window (desktop) */
+}
+.showcase__rail {
+  position: absolute;
+  left: 10vw;
+  right: 10vw;
+  bottom: 2.25rem;
+  z-index: 2;
+  display: none;
+  height: 2px;
+  background: rgba(0, 0, 0, 0.15);
+}
+.showcase__sticky--pin .showcase__rail {
+  display: block;
+}
+.showcase__rail-fill {
+  display: block;
+  width: 0;
+  height: 100%;
+  background: #000;
+}
+.showcase {
+  /* showcase__resume — opens the résumé PDF (see download.js) */
+}
+.showcase__resume {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  align-self: flex-start;
+  gap: 0.5rem;
+  border: 1px solid #000;
+  border-radius: 999px;
+  padding: 0.8rem 1.6rem;
+  background: transparent;
+  font: 500 1rem/1 "Jost", Futura, Arial, sans-serif;
+  color: #000;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+.showcase__resume .icon--download {
   width: 0.9rem;
   height: 0.9rem;
-  vertical-align: -0.1rem;
-}`, "",{"version":3,"sources":["webpack://./styles/global/variables.scss","webpack://./styles/sections/projects.scss"],"names":[],"mappings":"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","sourceRoot":""}]);
+}
+.showcase__resume:hover {
+  background: #000;
+  color: #fff;
+}
+.showcase__resume:focus-visible {
+  outline: 2px solid #ffff00;
+  outline-offset: 2px;
+}
+
+@keyframes showcase-cue {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(0.35rem);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .showcase__cue-arrow {
+    animation: none;
+  }
+}`, "",{"version":3,"sources":["webpack://./styles/sections/projects.scss","webpack://./styles/global/variables.scss"],"names":[],"mappings":"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","sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -1999,9 +2391,17 @@ ___CSS_LOADER_EXPORT___.push([module.id, `@charset "UTF-8";
     align-items: flex-end;
   }
 }
+.skills__portrait {
+  /* below \$lg the portrait image and pearl are hidden (see below), but
+     the section title rides along here — keep the box in flow and hoist
+     it above the vertical roadmap */
+}
 @media (max-width: 991.98px) {
   .skills__portrait {
-    display: none;
+    position: static;
+    order: -1;
+    width: 100%;
+    padding-top: 4.5rem;
   }
 }
 .skills__portrait-img {
@@ -2009,6 +2409,11 @@ ___CSS_LOADER_EXPORT___.push([module.id, `@charset "UTF-8";
   height: 110%;
   width: auto;
   max-width: none;
+}
+@media (max-width: 991.98px) {
+  .skills__portrait-img {
+    display: none;
+  }
 }
 .skills {
   /* skills__pearl — position is set by pearl.js from the portrait image's
@@ -2079,6 +2484,18 @@ ___CSS_LOADER_EXPORT___.push([module.id, `@charset "UTF-8";
     transform: translateY(-50%);
   }
 }
+.skills__title {
+  /* 992–1199: a vertically-centred title lands right on stop 3, the
+     road's widest bend (~68% across) — lift it to the top-right,
+     clear of every stop, and trim it so it doesn't crowd the portrait */
+}
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  .skills__title {
+    top: 2.5rem;
+    font-size: 2rem;
+    transform: none;
+  }
+}
 @media (max-width: 991.98px) {
   .skills__title {
     padding: 0 2rem;
@@ -2095,6 +2512,7 @@ ___CSS_LOADER_EXPORT___.push([module.id, `@charset "UTF-8";
   align-items: stretch;
   gap: 0.5rem;
   height: 100%;
+  width: 100%;
 }
 @media (min-width: 992px) {
   .skills__wrapper {
@@ -2155,9 +2573,8 @@ ___CSS_LOADER_EXPORT___.push([module.id, `@charset "UTF-8";
   left: 50%;
 }
 .skills__roadmap-item {
-  /* skills__roadmap-start — a 'you are here' tag on stop 1, sitting
-     left of the marker with a tail pointing at it, so it reads as
-     where the road begins */
+  /* skills__roadmap-start — fixed tag on stop 1, sitting left of the
+     marker with a tail pointing at it: where the road begins */
 }
 .skills__roadmap-item .skills__roadmap-start {
   position: absolute;
@@ -2255,6 +2672,35 @@ ___CSS_LOADER_EXPORT___.push([module.id, `@charset "UTF-8";
   margin-bottom: 0;
 }
 .skills__roadmap {
+  /* skills__roadmap-here — a travelling 'you are here' pin. roadmap.js
+     sets its top/left to the centre of whichever stop is open (stop 1 on
+     load); the transition makes it glide the road between stops. */
+}
+.skills__roadmap-here {
+  position: absolute;
+  z-index: 2;
+  padding: 0.35rem 0.7rem;
+  background: #c9333f;
+  color: #fff;
+  font: italic 500 0.9rem/1 "Jost", Futura, Arial, sans-serif;
+  white-space: nowrap;
+  /* lift above the 3rem marker, centred on it */
+  transform: translate(-50%, calc(-100% - 1.75rem));
+  animation: roadmap-here-bob 1.8s ease-in-out infinite;
+}
+.skills__roadmap-here--travelling {
+  transition: top 0.5s cubic-bezier(0.65, 0, 0.35, 1), left 0.5s cubic-bezier(0.65, 0, 0.35, 1);
+}
+.skills__roadmap-here::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -0.4rem;
+  border: 0.4rem solid transparent;
+  border-top-color: #c9333f;
+}
+.skills__roadmap {
   /* skills__roadmap-overlay — the phase detail panel. Sits inside the
      section, inset from every edge by the standard section padding, so
      it lines up with where content sits in the other sections. */
@@ -2281,7 +2727,16 @@ ___CSS_LOADER_EXPORT___.push([module.id, `@charset "UTF-8";
 }
 @media (max-width: 991.98px) {
   .skills__roadmap-overlay {
-    inset: 2rem 7.5vw;
+    position: fixed;
+    top: 1.5rem;
+    right: 1.25rem;
+    bottom: auto;
+    left: 1.25rem;
+    z-index: 100;
+    max-height: calc(100vh - 3rem);
+    /* stand-in for a real ::backdrop — .show() (non-modal) has none,
+       and an outside tap on this shadow still reaches the close handler */
+    box-shadow: 0 0 0 100vmax rgba(0, 0, 0, 0.6);
   }
 }
 .skills__roadmap-overlay {
@@ -2331,6 +2786,72 @@ ___CSS_LOADER_EXPORT___.push([module.id, `@charset "UTF-8";
 .skills__roadmap-overlay-body .skills__card-title {
   margin-bottom: 1.5rem;
   font: italic 500 2rem/1 "Simonetta", Cambria, serif;
+}
+.skills__roadmap {
+  /* --- small screens: the winding road needs a wide column to read,
+     so below \$lg the roadmap folds into a vertical timeline — one
+     straight run of road down the left with the five stops threaded
+     onto it, each still a button that opens the same phase overlay. --- */
+}
+@media (max-width: 991.98px) {
+  .skills__roadmap {
+    display: flex;
+    flex-direction: column;
+    gap: 2.75rem;
+    height: auto;
+    padding: 2.5rem 1.5rem 4rem;
+  }
+  .skills__roadmap .skills__roadmap-path,
+  .skills__roadmap .skills__roadmap-here,
+  .skills__roadmap .skills__roadmap-start {
+    display: none;
+  }
+  .skills__roadmap .skills__roadmap-item {
+    position: relative;
+    top: auto;
+    left: auto;
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+    /* road + dashed lane, drawn stop-to-stop so the line runs
+       exactly from one marker's centre to the next */
+  }
+  .skills__roadmap .skills__roadmap-item:not(:last-of-type)::before, .skills__roadmap .skills__roadmap-item:not(:last-of-type)::after {
+    content: "";
+    position: absolute;
+    left: 1.5rem;
+    top: 50%;
+    height: calc(100% + 2.75rem);
+    transform: translateX(-50%);
+  }
+  .skills__roadmap .skills__roadmap-item:not(:last-of-type)::before {
+    width: 18px;
+    background: rgba(216, 192, 144, 0.35);
+  }
+  .skills__roadmap .skills__roadmap-item:not(:last-of-type)::after {
+    width: 2px;
+    background: repeating-linear-gradient(to bottom, #fff 0 4px, transparent 4px 9px);
+  }
+  .skills__roadmap .skills__roadmap-item:nth-of-type(3) .skills__roadmap-content {
+    left: auto;
+    right: auto;
+    text-align: left;
+  }
+  .skills__roadmap .skills__roadmap-marker {
+    z-index: 1;
+    flex: none;
+    transform: none;
+  }
+  .skills__roadmap .skills__roadmap-marker:hover, .skills__roadmap .skills__roadmap-marker--active {
+    transform: scale(1.06);
+  }
+  .skills__roadmap .skills__roadmap-content {
+    position: static;
+    left: auto;
+    right: auto;
+    transform: none;
+    white-space: normal;
+  }
 }
 .skills {
   /* skills__card-title, skills__card-points, skills__card-skills —
@@ -2410,11 +2931,20 @@ ___CSS_LOADER_EXPORT___.push([module.id, `@charset "UTF-8";
     transform: translateY(-50%) scale(1.06);
   }
 }
+@keyframes roadmap-here-bob {
+  0%, 100% {
+    transform: translate(-50%, calc(-100% - 1.75rem));
+  }
+  50% {
+    transform: translate(-50%, calc(-100% - 2.15rem));
+  }
+}
 @media (prefers-reduced-motion: reduce) {
-  .skills__roadmap-start {
+  .skills__roadmap-start,
+  .skills__roadmap-here {
     animation: none;
   }
-}`, "",{"version":3,"sources":["webpack://./styles/sections/skills.scss","webpack://./styles/global/variables.scss"],"names":[],"mappings":"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","sourceRoot":""}]);
+}`, "",{"version":3,"sources":["webpack://./styles/sections/skills.scss","webpack://./styles/global/variables.scss"],"names":[],"mappings":"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","sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -14117,17 +14647,6 @@ module.exports = __webpack_require__.p + "assets/background/1665-girl-with-a-pea
 
 /***/ },
 
-/***/ "./assets/background/1831-the-great-wave-off-kanagawa-hokusai.jpg"
-/*!************************************************************************!*\
-  !*** ./assets/background/1831-the-great-wave-off-kanagawa-hokusai.jpg ***!
-  \************************************************************************/
-(module, __unused_webpack_exports, __webpack_require__) {
-
-"use strict";
-module.exports = __webpack_require__.p + "assets/background/1831-the-great-wave-off-kanagawa-hokusai.jpg";
-
-/***/ },
-
 /***/ "./assets/background/1889-irises-van-gogh.jpg"
 /*!****************************************************!*\
   !*** ./assets/background/1889-irises-van-gogh.jpg ***!
@@ -14183,14 +14702,14 @@ module.exports = __webpack_require__.p + "assets/personal-pictures/home-picture.
 
 /***/ },
 
-/***/ "./assets/project-logos/accenture.png"
-/*!********************************************!*\
-  !*** ./assets/project-logos/accenture.png ***!
-  \********************************************/
+/***/ "./assets/project-logos/accenture-mark.svg"
+/*!*************************************************!*\
+  !*** ./assets/project-logos/accenture-mark.svg ***!
+  \*************************************************/
 (module, __unused_webpack_exports, __webpack_require__) {
 
 "use strict";
-module.exports = __webpack_require__.p + "assets/project-logos/accenture.png";
+module.exports = __webpack_require__.p + "assets/project-logos/accenture-mark.svg";
 
 /***/ },
 
@@ -14238,14 +14757,14 @@ module.exports = __webpack_require__.p + "assets/project-logos/eon.png";
 
 /***/ },
 
-/***/ "./assets/project-logos/equinix.png"
-/*!******************************************!*\
-  !*** ./assets/project-logos/equinix.png ***!
-  \******************************************/
+/***/ "./assets/project-logos/equinix-mark.png"
+/*!***********************************************!*\
+  !*** ./assets/project-logos/equinix-mark.png ***!
+  \***********************************************/
 (module, __unused_webpack_exports, __webpack_require__) {
 
 "use strict";
-module.exports = __webpack_require__.p + "assets/project-logos/equinix.png";
+module.exports = __webpack_require__.p + "assets/project-logos/equinix-mark.png";
 
 /***/ },
 
@@ -14260,36 +14779,36 @@ module.exports = __webpack_require__.p + "assets/project-logos/logo.svg";
 
 /***/ },
 
-/***/ "./assets/project-logos/myntra.png"
-/*!*****************************************!*\
-  !*** ./assets/project-logos/myntra.png ***!
-  \*****************************************/
+/***/ "./assets/project-logos/myntra-mark.png"
+/*!**********************************************!*\
+  !*** ./assets/project-logos/myntra-mark.png ***!
+  \**********************************************/
 (module, __unused_webpack_exports, __webpack_require__) {
 
 "use strict";
-module.exports = __webpack_require__.p + "assets/project-logos/myntra.png";
+module.exports = __webpack_require__.p + "assets/project-logos/myntra-mark.png";
 
 /***/ },
 
-/***/ "./assets/project-logos/tadigital.png"
-/*!********************************************!*\
-  !*** ./assets/project-logos/tadigital.png ***!
-  \********************************************/
+/***/ "./assets/project-logos/tadigital-mark.png"
+/*!*************************************************!*\
+  !*** ./assets/project-logos/tadigital-mark.png ***!
+  \*************************************************/
 (module, __unused_webpack_exports, __webpack_require__) {
 
 "use strict";
-module.exports = __webpack_require__.p + "assets/project-logos/tadigital.png";
+module.exports = __webpack_require__.p + "assets/project-logos/tadigital-mark.png";
 
 /***/ },
 
-/***/ "./assets/project-logos/thoughtworks.png"
-/*!***********************************************!*\
-  !*** ./assets/project-logos/thoughtworks.png ***!
-  \***********************************************/
+/***/ "./assets/project-logos/thoughtworks-mark.svg"
+/*!****************************************************!*\
+  !*** ./assets/project-logos/thoughtworks-mark.svg ***!
+  \****************************************************/
 (module, __unused_webpack_exports, __webpack_require__) {
 
 "use strict";
-module.exports = __webpack_require__.p + "assets/project-logos/thoughtworks.png";
+module.exports = __webpack_require__.p + "assets/project-logos/thoughtworks-mark.svg";
 
 /***/ },
 
@@ -14525,12 +15044,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _assets_project_logos_canopygrowth_png__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ./assets/project-logos/canopygrowth.png */ "./assets/project-logos/canopygrowth.png");
 /* harmony import */ var _assets_project_logos_dupont_png__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ./assets/project-logos/dupont.png */ "./assets/project-logos/dupont.png");
 /* harmony import */ var _assets_project_logos_eon_png__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ./assets/project-logos/eon.png */ "./assets/project-logos/eon.png");
-/* harmony import */ var _assets_project_logos_equinix_png__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! ./assets/project-logos/equinix.png */ "./assets/project-logos/equinix.png");
-/* harmony import */ var _assets_project_logos_myntra_png__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! ./assets/project-logos/myntra.png */ "./assets/project-logos/myntra.png");
-/* harmony import */ var _assets_project_logos_tadigital_png__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! ./assets/project-logos/tadigital.png */ "./assets/project-logos/tadigital.png");
-/* harmony import */ var _assets_project_logos_thoughtworks_png__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(/*! ./assets/project-logos/thoughtworks.png */ "./assets/project-logos/thoughtworks.png");
-/* harmony import */ var _assets_project_logos_accenture_png__WEBPACK_IMPORTED_MODULE_30__ = __webpack_require__(/*! ./assets/project-logos/accenture.png */ "./assets/project-logos/accenture.png");
-/* harmony import */ var _assets_project_logos_bt_png__WEBPACK_IMPORTED_MODULE_31__ = __webpack_require__(/*! ./assets/project-logos/bt.png */ "./assets/project-logos/bt.png");
+/* harmony import */ var _assets_project_logos_bt_png__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! ./assets/project-logos/bt.png */ "./assets/project-logos/bt.png");
+/* harmony import */ var _assets_project_logos_accenture_mark_svg__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! ./assets/project-logos/accenture-mark.svg */ "./assets/project-logos/accenture-mark.svg");
+/* harmony import */ var _assets_project_logos_thoughtworks_mark_svg__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! ./assets/project-logos/thoughtworks-mark.svg */ "./assets/project-logos/thoughtworks-mark.svg");
+/* harmony import */ var _assets_project_logos_myntra_mark_png__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(/*! ./assets/project-logos/myntra-mark.png */ "./assets/project-logos/myntra-mark.png");
+/* harmony import */ var _assets_project_logos_equinix_mark_png__WEBPACK_IMPORTED_MODULE_30__ = __webpack_require__(/*! ./assets/project-logos/equinix-mark.png */ "./assets/project-logos/equinix-mark.png");
+/* harmony import */ var _assets_project_logos_tadigital_mark_png__WEBPACK_IMPORTED_MODULE_31__ = __webpack_require__(/*! ./assets/project-logos/tadigital-mark.png */ "./assets/project-logos/tadigital-mark.png");
 /* harmony import */ var _assets_project_logos_logo_svg__WEBPACK_IMPORTED_MODULE_32__ = __webpack_require__(/*! ./assets/project-logos/logo.svg */ "./assets/project-logos/logo.svg");
 /* harmony import */ var _assets_resume_Nithila_Resume_pdf__WEBPACK_IMPORTED_MODULE_33__ = __webpack_require__(/*! ./assets/resume/Nithila_Resume.pdf */ "./assets/resume/Nithila_Resume.pdf");
 /* Styles */
@@ -14567,6 +15086,9 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+/* project marks — the brand symbol only, cropped from the full wordmark
+   logos, since the project name is already the card title */
+
 
 
 
@@ -14577,4 +15099,4 @@ __webpack_require__.r(__webpack_exports__);
 
 /******/ })()
 ;
-//# sourceMappingURL=bundled3fbf434546101aa5d3a.js.map
+//# sourceMappingURL=bundle81df9d215ddc4a1993fb.js.map

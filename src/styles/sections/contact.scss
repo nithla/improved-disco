@@ -30,17 +30,6 @@
         }
     }
 
-    /* contact__tagline */
-    &__tagline {
-        margin: auto 1.5rem;
-        flex: 1;
-        text-align: end;
-
-        @include media-breakpoint-down($lg) {
-            display: none;
-        }
-    }
-
     /* contact__form */
     &__form {
 
@@ -51,6 +40,9 @@
             padding: 4rem $cardPadding;
             background: $black-p4;
             gap: 3rem;
+            max-height: fit-content;
+            max-width: fit-content;
+            margin: auto auto;
         }
 
         @include flex(column, center, stretch);
@@ -122,6 +114,8 @@
         &__textarea {
             padding: 0 0.5rem 0.5rem;
             height: 6rem;
+            max-width: 100%;
+            resize: vertical;
             scrollbar-color: $yellow-p25 transparent;
         }
     }
