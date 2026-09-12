@@ -21,12 +21,10 @@
         padding: 1.25rem 0.75rem;
         background: url('../../assets/background/1889-the-starry-night-van-gogh.jpg') center / cover no-repeat;
         cursor: pointer;
-
-        @include media-breakpoint-up($lg) {
-            display: none;
-        }
+        display: none;
 
         @include media-breakpoint-down($lg) {
+            display: block;
             position: fixed;
             top: 1.25rem;
             right: 1.25rem;
@@ -92,33 +90,32 @@
         }
     }
 
-    /* header__logo — the comet mark (assets/project-logos/logo.svg),
-       also used for the favicon and the "this site" project tile */
+    /* header__logo */
     &__logo {
+        display: block;
         cursor: pointer;
-
-        a {
-            display: block;
-        }
 
         img {
             display: block;
             width: 4rem;
             height: 4rem;
-            filter: drop-shadow(0 0 3px $black-p8) drop-shadow(0 0 8px $black-p5);
+
+            @include media-breakpoint-up($lg) {
+                filter: drop-shadow(0 0 3px $black) drop-shadow(0 0 8px $black);
+            }
         }
     }
 
     /* header__navigation */
     &__navigation {
-        @include flex(column, center, center);
+        @include flex;
         gap: 1.5rem;
 
         @include media-breakpoint-down($lg) {
             position: fixed;
             right: 0;
+            transform: translateX(0);
             z-index: 5;
-            border-left: 1px solid $yellow-p25;
             padding: 4.5rem 2rem 2rem;
             width: min(14rem, 65vw);
             height: 100vh;
@@ -126,7 +123,6 @@
             justify-content: flex-start;
             align-items: flex-start;
             opacity: 1;
-            transform: translateX(0);
             transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease-out, visibility 0s;
 
             &.d-none {

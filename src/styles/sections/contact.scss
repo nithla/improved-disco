@@ -2,28 +2,25 @@
     @include flex(row, space-between, unset);
     position: relative;
     z-index: 1;
-    padding: 0;
-
-    /* contain the Adam image's horizontal spill (it's 125% wide) so it can't
-       push a page-wide x-scroll. clip only the x axis — y stays visible so his
-       leg still bleeds down into Fun (see contact__portrait-img). */
+    padding: 2rem 0;
+    height: auto;
+    min-height: 100vh;
+    min-height: 100dvh;
     overflow-x: clip;
 
     @include media-breakpoint-down($lg) {
+        padding: 0;
         background: url('../../assets/background/1512-creation-of-adam-michelangelo.png') center / cover no-repeat;
     }
 
-    /* contact__portrait-img — Adam, sized/positioned so his leg bleeds past
-       the section's own bottom edge into the Fun section below. z-index:1 on
-       .contact itself (above) makes that overflow paint over Fun rather than
-       being hidden behind it, since Fun comes later in the document. */
-    &__portrait-img {
+    img {
         position: absolute;
         bottom: -4rem;
         left: -4rem;
         z-index: -1;
         width: 125%;
         height: auto;
+        content: url('../../assets/background/1512-creation-of-adam-michelangelo-cutout.png');
 
         @include media-breakpoint-down($lg) {
             display: none;
@@ -36,13 +33,21 @@
         /* contact__form-wrapper */
         &-wrapper {
             @include flex(column, center, stretch);
-            flex: 1;
+            margin: auto auto;
             padding: 4rem $cardPadding;
+            flex: 1;
+            max-width: fit-content;
+            max-height: fit-content;
             background: $black-p4;
             gap: 3rem;
-            max-height: fit-content;
-            max-width: fit-content;
-            margin: auto auto;
+
+            @include media-breakpoint-down($lg) {
+                margin: 0;
+                width: 100%;
+                max-width: none;
+                max-height: none;
+                min-height: 100%;
+            }
         }
 
         @include flex(column, center, stretch);

@@ -290,7 +290,7 @@ var PROJECTS = [{
 }, {
   id: 'accenture',
   name: 'Accenture',
-  logo: 'assets/project-logos/accenture-mark.svg',
+  logo: 'assets/project-logos/accenture.svg',
   role: 'Business Analyst, Product Strategy · Expert Assist',
   summary: 'Owned the metadata and content strategy for Accenture’s GenAI-powered Expert Assist platform.',
   bullets: ['Delivered an 88% GenAI accuracy gain by owning metadata strategy & driving structural alignment of the index', 'Spearheaded the product roadmap for multi-tenant scalability, powering content team operations in 25+ regions', 'Overhauled UX for 10+ CMS features, transforming navigation, workflows, & in-app usability']
@@ -304,21 +304,21 @@ var PROJECTS = [{
 }, {
   id: 'thoughtworks',
   name: 'Thoughtworks',
-  logo: 'assets/project-logos/thoughtworks-mark.svg',
+  logo: 'assets/project-logos/thoughtworks.svg',
   role: 'Frontend Lead',
   summary: 'Led the frontend rebrand and repository cleanup ahead of Thoughtworks’ NASDAQ IPO.',
   bullets: ['Facilitated a $0.77 billion IPO on the NASDAQ by spearheading the rebranding & full visual refresh campaign', 'Expanded website traffic by 15% & eliminated redundancy in under 4 weeks through repository restructuring']
 }, {
   id: 'equinix',
   name: 'Equinix',
-  logo: 'assets/project-logos/equinix-mark.png',
+  logo: 'assets/project-logos/equinix.png',
   role: 'Frontend Developer',
   summary: 'Built the UI layer handling large-scale API result sets for Equinix’s product surfaces.',
   bullets: ['Seamlessly integrated 1000s of results into the UI, optimizing complex API data handled from database requests', 'Reduced development effort by 25% by building versatile, modular, & reusable UI components for scalability']
 }, {
   id: 'tadigital',
   name: 'TA Digital',
-  logo: 'assets/project-logos/tadigital-mark.png',
+  logo: 'assets/project-logos/tadigital.png',
   role: 'Frontend Developer · Corporate website rebuild',
   summary: 'Rebuilt TA Digital’s corporate site with a shared design system and reusable component library.',
   bullets: ['Created global styles & 10+ reusable functions, streamlining the design of 100+ pages in the site’s redesign', 'Developed 15+ dynamic components, enabling data analytics & powering essential site-level functionalities']
@@ -332,7 +332,7 @@ var PROJECTS = [{
 }, {
   id: 'myntra',
   name: 'Myntra',
-  logo: 'assets/project-logos/myntra-mark.png',
+  logo: 'assets/project-logos/myntra.png',
   role: 'Summer Intern · B-School Internship',
   summary: 'A B-school summer internship analyzing growth opportunities across Myntra’s D2C partner network.',
   bullets: ['Identified key growth opportunities by leveraging insights from 50+ stakeholders & 2,500+ global programs', 'Collaborated with 10+ D2C entrepreneurs & 15+ categories to identify & introduce strategic improvements', 'Designed an onboarding roadmap using data from 5 partner brands to streamline & advance program entry']
@@ -367,6 +367,13 @@ function cardMarkup(project, position, layout) {
   }).join('');
   return "\n        <article class=\"showcase__panel showcase__card showcase__card--".concat(layout, "\">\n            <figure class=\"showcase__card-logo\"><img src=\"").concat(project.logo, "\" alt=\"").concat(project.name, "\"></figure>\n            <div class=\"showcase__card-text\">\n                <p class=\"showcase__card-num\" aria-hidden=\"true\">").concat(num, "</p>\n                <h3 class=\"showcase__card-name\">").concat(project.name, "</h3>\n                ").concat(project.role ? "<p class=\"showcase__card-role\">".concat(project.role, "</p>") : '', "\n                ").concat(project.summary ? "<p class=\"showcase__card-summary\">".concat(project.summary, "</p>") : '', "\n                <ul class=\"showcase__card-bullets\">").concat(bullets, "</ul>\n            </div>\n        </article>\n    ");
 }
+
+/* projects with no copy to show (no role/summary/bullets) get no desktop
+   layout — see showcase__card--bare in projects.scss, hidden in the pinned
+   reel and shown only as a plain tile in the <992px logo grid. */
+function bareCardMarkup(project) {
+  return "\n        <article class=\"showcase__panel showcase__card showcase__card--bare\">\n            <figure class=\"showcase__card-logo\"><img src=\"".concat(project.logo, "\" alt=\"").concat(project.name, "\"></figure>\n        </article>\n    ");
+}
 if (track && section && sticky) {
   var cachePanels = function cachePanels() {
     centres = panels.map(function (panel) {
@@ -381,7 +388,12 @@ if (track && section && sticky) {
     var falloff = sticky.clientWidth * 0.85 || 1;
     var ratio = maxShift ? Math.min(Math.max(offset / maxShift, 0), 1) : 0;
     panels.forEach(function (panel, i) {
-      if (reduced.matches) {
+      /* the lift/fade is a function of the reel's *horizontal* scroll
+         position — meaningful only in pinned mode. Below 992px there's
+         no reel (projects.scss lays the cards out as a static grid
+         instead), so distance-from-centre is just noise; leave every
+         panel at rest rather than reading it as a reveal cue. */
+      if (!pinned()) {
         panel.style.transform = '';
         panel.style.opacity = '';
         return;
@@ -457,10 +469,21 @@ if (track && section && sticky) {
   var featured = PROJECTS.filter(function (project) {
     return project.bullets.length;
   });
+  var bare = PROJECTS.filter(function (project) {
+    return !project.bullets.length;
+  });
   var intro = track.querySelector('.showcase__intro');
-  intro.insertAdjacentHTML('afterend', featured.map(function (project, index) {
+
+  /* the cards are wrapped in their own showcase__grid — see projects.scss:
+     display:contents on desktop keeps them direct flex items of the reel
+     (untouched from before), and only becomes a real grid container
+     below 992px, so the <992px white background sits behind the cards
+     alone rather than the whole track (intro/outro included). */
+  intro.insertAdjacentHTML('afterend', '<div class="showcase__grid">' + featured.map(function (project, index) {
     return cardMarkup(project, index + 1, LAYOUTS[index % LAYOUTS.length]);
-  }).join(''));
+  }).join('') + bare.map(function (project) {
+    return bareCardMarkup(project);
+  }).join('') + '</div>');
 
   /* only .showcase__panel children take the reveal — this lets other things
      (e.g. a decorative SVG) live in the track without being stomped */
@@ -958,14 +981,15 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var ___CSS_LOADER_URL_IMPORT_0___ = new URL(/* asset import */ __webpack_require__(/*! ../../assets/background/1512-creation-of-adam-michelangelo.png */ "./assets/background/1512-creation-of-adam-michelangelo.png"), __webpack_require__.b);
+var ___CSS_LOADER_URL_IMPORT_1___ = new URL(/* asset import */ __webpack_require__(/*! ../../assets/background/1512-creation-of-adam-michelangelo-cutout.png */ "./assets/background/1512-creation-of-adam-michelangelo-cutout.png"), __webpack_require__.b);
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
 ___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Simonetta:ital,wght@0,400;0,900;1,400;1,900&display=swap);"]);
 ___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&display=swap);"]);
 ___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap);"]);
 var ___CSS_LOADER_URL_REPLACEMENT_0___ = _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2___default()(___CSS_LOADER_URL_IMPORT_0___);
+var ___CSS_LOADER_URL_REPLACEMENT_1___ = _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2___default()(___CSS_LOADER_URL_IMPORT_1___);
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, `@charset "UTF-8";
-/*--------------------------- Theme Colours ---------------------------*/
+___CSS_LOADER_EXPORT___.push([module.id, `/*--------------------------- Theme Colours ---------------------------*/
 /* Colours */
 /*-------------------------- Theme Colours End -------------------------*/
 /*-------------------------------- Fonts -------------------------------*/
@@ -988,33 +1012,29 @@ ___CSS_LOADER_EXPORT___.push([module.id, `@charset "UTF-8";
   align-items: unset;
   position: relative;
   z-index: 1;
-  padding: 0;
-  /* contain the Adam image's horizontal spill (it's 125% wide) so it can't
-     push a page-wide x-scroll. clip only the x axis — y stays visible so his
-     leg still bleeds down into Fun (see contact__portrait-img). */
+  padding: 2rem 0;
+  height: auto;
+  min-height: 100vh;
+  min-height: 100dvh;
   overflow-x: clip;
 }
 @media (max-width: 991.98px) {
   .contact {
+    padding: 0;
     background: url(${___CSS_LOADER_URL_REPLACEMENT_0___}) center/cover no-repeat;
   }
 }
-.contact {
-  /* contact__portrait-img — Adam, sized/positioned so his leg bleeds past
-     the section's own bottom edge into the Fun section below. z-index:1 on
-     .contact itself (above) makes that overflow paint over Fun rather than
-     being hidden behind it, since Fun comes later in the document. */
-}
-.contact__portrait-img {
+.contact img {
   position: absolute;
   bottom: -4rem;
   left: -4rem;
   z-index: -1;
   width: 125%;
   height: auto;
+  content: url(${___CSS_LOADER_URL_REPLACEMENT_1___});
 }
 @media (max-width: 991.98px) {
-  .contact__portrait-img {
+  .contact img {
     display: none;
   }
 }
@@ -1029,13 +1049,22 @@ ___CSS_LOADER_EXPORT___.push([module.id, `@charset "UTF-8";
   flex-direction: column;
   justify-content: center;
   align-items: stretch;
-  flex: 1;
+  margin: auto auto;
   padding: 4rem 2rem;
+  flex: 1;
+  max-width: fit-content;
+  max-height: fit-content;
   background: rgba(0, 0, 0, 0.4);
   gap: 3rem;
-  max-height: fit-content;
-  max-width: fit-content;
-  margin: auto auto;
+}
+@media (max-width: 991.98px) {
+  .contact__form-wrapper {
+    margin: 0;
+    width: 100%;
+    max-width: none;
+    max-height: none;
+    min-height: 100%;
+  }
 }
 .contact__form {
   display: flex;
@@ -1113,7 +1142,7 @@ ___CSS_LOADER_EXPORT___.push([module.id, `@charset "UTF-8";
   max-width: 100%;
   resize: vertical;
   scrollbar-color: rgba(255, 255, 0, 0.25) transparent;
-}`, "",{"version":3,"sources":["webpack://./styles/sections/contact.scss","webpack://./styles/global/variables.scss"],"names":[],"mappings":"AAAA,gBAAgB;ACAhB,wEAAA;AAEA,YAAA;AAsBA,yEAAA;AAGA,yEAAA;AACA,+DAAA;AACA,cAAA;AAMA,gEAAA;AACA,SAAA;AAOA,YAAA;AAMA,yEAAA;AAGA,yEAAA;AAOA,yEAAA;AAGA,0EAAA;AAMA,0EAAA;AAGA,yEAAA;AA6EA,yEAAA;ADlJgC;EC4H5B,aAAA;EACA,mBD5Hc;EC6Hd,8BD7HmB;EC8HnB,kBD9HkC;EAClC,kBAAA;EACA,UAAA;EACA,UAAA;EAEA;;kEAAA;EAGA,gBAAA;AAqBJ;ACuDQ;EDrFwB;IAYxB,0EAAA;EAsBN;AACF;AAnCgC;EAe5B;;;qEAAA;AA0BJ;AAtBI;EACI,kBAAA;EACA,aAAA;EACA,WAAA;EACA,WAAA;EACA,WAAA;EACA,YAAA;AAwBR;ACoCQ;EDlEJ;IASQ,aAAA;EAyBV;AACF;AAtDgC;EAgC5B,kBAAA;AAyBJ;AAxBI;EAEI,0BAAA;AAyBR;AAxBQ;ECwFJ,aAAA;EACA,sBDxFsB;ECyFtB,uBDzF8B;EC0F9B,oBD1FsC;EAC9B,OAAA;EACA,kBAAA;EACA,8BCnCD;EDoCC,SAAA;EACA,uBAAA;EACA,sBAAA;EACA,iBAAA;AA6BZ;AAxCI;EC2FA,aAAA;EACA,sBD9EkB;EC+ElB,uBD/E0B;ECgF1B,oBDhFkC;EAC9B,cAAA;AAgCR;ACPQ;EDxCJ;IAkBQ,SAAA;IACA,kBAAA;EAiCV;AACF;AAtFgC;EAwD5B,mBAAA;AAiCJ;AAhCI;EAEI,2BAAA;AAiCR;AAhCQ;ECgEJ,aAAA;EACA,sBAFoB;EAGpB,uBAH8C;EAI9C,mBAJoE;ED7D5D,UAAA;EACA,WAAA;AAqCZ;AAnCY;ECkER,2DAAA;EACA,qBAAA;EDjEY,mBAAA;EACA,kBAAA;EACA,gBClER;EDmEQ,eAAA;EACA,cC3DV;ADiGN;AApDI;EAkBI,qCAAA;AAqCR;AApCQ;ECuDJ,2DAAA;EACA,qBAAA;EDrDQ,SAAA;EACA,gDAAA;EACA,cAAA;EACA,eAAA;EACA,WAAA;EACA,cAAA;EACA,gBAAA;EACA,WCrFJ;AD2HR;AApCY;EAEI,UAAA;EACA,gCAAA;AAqChB;AAlCY;EACI,+BC7FL;ADiIX;AAjCY;EAGI,6BCpGR;EDqGQ,iBCrGR;EDsGQ,yDAAA;AAiChB;AA9BY;EACI,6BAAA;EACA,WC3GR;AD2IR;AAnFI;EAuDI,sBAAA;AA+BR;AA9BQ;EACI,wBAAA;EACA,YAAA;EACA,eAAA;EACA,gBAAA;EACA,oDAAA;AAgCZ","sourceRoot":""}]);
+}`, "",{"version":3,"sources":["webpack://./styles/global/variables.scss","webpack://./styles/sections/contact.scss"],"names":[],"mappings":"AAAA,wEAAA;AAEA,YAAA;AAsBA,yEAAA;AAGA,yEAAA;AACA,+DAAA;AACA,cAAA;AAMA,gEAAA;AACA,SAAA;AAOA,YAAA;AAMA,yEAAA;AAGA,yEAAA;AAOA,yEAAA;AAGA,0EAAA;AAMA,0EAAA;AAGA,yEAAA;AA6EA,yEAAA;AClJgC;ED4H5B,aAAA;EACA,mBC5Hc;ED6Hd,8BC7HmB;ED8HnB,kBC9HkC;EAClC,kBAAA;EACA,UAAA;EACA,eAAA;EACA,YAAA;EACA,iBAAA;EACA,kBAAA;EACA,gBAAA;AAqBJ;ADwDQ;ECrFwB;IAWxB,UAAA;IACA,0EAAA;EAsBN;AACF;AApBI;EACI,kBAAA;EACA,aAAA;EACA,WAAA;EACA,WAAA;EACA,WAAA;EACA,YAAA;EACA,gDAAA;AAsBR;ADyCQ;ECtEJ;IAUQ,aAAA;EAuBV;AACF;AAjDgC;EA6B5B,kBAAA;AAuBJ;AAtBI;EAEI,0BAAA;AAuBR;AAtBQ;ED2FJ,aAAA;EACA,sBC3FsB;ED4FtB,uBC5F8B;ED6F9B,oBC7FsC;EAC9B,iBAAA;EACA,kBAAA;EACA,OAAA;EACA,sBAAA;EACA,uBAAA;EACA,8BDnCD;ECoCC,SAAA;AA2BZ;ADiBQ;ECpDA;IAWQ,SAAA;IACA,WAAA;IACA,eAAA;IACA,gBAAA;IACA,gBAAA;EA4Bd;AACF;AA/CI;ED8FA,aAAA;EACA,sBCzEkB;ED0ElB,uBC1E0B;ED2E1B,oBC3EkC;EAC9B,cAAA;AA+BR;ADXQ;EC3CJ;IA0BQ,SAAA;IACA,kBAAA;EAgCV;AACF;AA1FgC;EA6D5B,mBAAA;AAgCJ;AA/BI;EAEI,2BAAA;AAgCR;AA/BQ;ED2DJ,aAAA;EACA,sBAFoB;EAGpB,uBAH8C;EAI9C,mBAJoE;ECxD5D,UAAA;EACA,WAAA;AAoCZ;AAlCY;ED6DR,2DAAA;EACA,qBAAA;EC5DY,mBAAA;EACA,kBAAA;EACA,gBDvER;ECwEQ,eAAA;EACA,cDhEV;ACqGN;AAnDI;EAkBI,qCAAA;AAoCR;AAnCQ;EDkDJ,2DAAA;EACA,qBAAA;EChDQ,SAAA;EACA,gDAAA;EACA,cAAA;EACA,eAAA;EACA,WAAA;EACA,cAAA;EACA,gBAAA;EACA,WD1FJ;AC+HR;AAnCY;EAEI,UAAA;EACA,gCAAA;AAoChB;AAjCY;EACI,+BDlGL;ACqIX;AAhCY;EAGI,6BDzGR;EC0GQ,iBD1GR;EC2GQ,yDAAA;AAgChB;AA7BY;EACI,6BAAA;EACA,WDhHR;AC+IR;AAlFI;EAuDI,sBAAA;AA8BR;AA7BQ;EACI,wBAAA;EACA,YAAA;EACA,eAAA;EACA,gBAAA;EACA,oDAAA;AA+BZ","sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -1169,12 +1198,11 @@ ___CSS_LOADER_EXPORT___.push([module.id, `/*--------------------------- Theme Co
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding: 4rem 7.5vw;
+  height: auto;
+  min-height: 100vh;
+  min-height: 100dvh;
   background: url(${___CSS_LOADER_URL_REPLACEMENT_0___}) center/cover no-repeat;
-}
-.fun h2 {
-  text-align: center;
-}
-.fun {
   /* fun__subsection */
 }
 .fun__subsection {
@@ -1405,7 +1433,7 @@ ___CSS_LOADER_EXPORT___.push([module.id, `/*--------------------------- Theme Co
   line-height: 1.25;
   word-spacing: normal;
   color: #000;
-}`, "",{"version":3,"sources":["webpack://./styles/global/variables.scss","webpack://./styles/sections/fun.scss"],"names":[],"mappings":"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","sourceRoot":""}]);
+}`, "",{"version":3,"sources":["webpack://./styles/global/variables.scss","webpack://./styles/sections/fun.scss"],"names":[],"mappings":"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","sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -1442,8 +1470,7 @@ ___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.c
 var ___CSS_LOADER_URL_REPLACEMENT_0___ = _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2___default()(___CSS_LOADER_URL_IMPORT_0___);
 var ___CSS_LOADER_URL_REPLACEMENT_1___ = _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2___default()(___CSS_LOADER_URL_IMPORT_1___);
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, `@charset "UTF-8";
-/*--------------------------- Theme Colours ---------------------------*/
+___CSS_LOADER_EXPORT___.push([module.id, `/*--------------------------- Theme Colours ---------------------------*/
 /* Colours */
 /*-------------------------- Theme Colours End -------------------------*/
 /*-------------------------------- Fonts -------------------------------*/
@@ -1486,14 +1513,11 @@ ___CSS_LOADER_EXPORT___.push([module.id, `@charset "UTF-8";
   padding: 1.25rem 0.75rem;
   background: url(${___CSS_LOADER_URL_REPLACEMENT_1___}) center/cover no-repeat;
   cursor: pointer;
-}
-@media (min-width: 992px) {
-  .header__menu {
-    display: none;
-  }
+  display: none;
 }
 @media (max-width: 991.98px) {
   .header__menu {
+    display: block;
     position: fixed;
     top: 1.25rem;
     right: 1.25rem;
@@ -1549,20 +1573,21 @@ ___CSS_LOADER_EXPORT___.push([module.id, `@charset "UTF-8";
   transform: translateY(calc(var(--bar-gap) * -1)) rotate(-45deg);
 }
 .header {
-  /* header__logo — the comet mark (assets/project-logos/logo.svg),
-     also used for the favicon and the "this site" project tile */
+  /* header__logo */
 }
 .header__logo {
-  cursor: pointer;
-}
-.header__logo a {
   display: block;
+  cursor: pointer;
 }
 .header__logo img {
   display: block;
   width: 4rem;
   height: 4rem;
-  filter: drop-shadow(0 0 3px rgba(0, 0, 0, 0.8)) drop-shadow(0 0 8px rgba(0, 0, 0, 0.55));
+}
+@media (min-width: 992px) {
+  .header__logo img {
+    filter: drop-shadow(0 0 3px #000) drop-shadow(0 0 8px #000);
+  }
 }
 .header {
   /* header__navigation */
@@ -1578,8 +1603,8 @@ ___CSS_LOADER_EXPORT___.push([module.id, `@charset "UTF-8";
   .header__navigation {
     position: fixed;
     right: 0;
+    transform: translateX(0);
     z-index: 5;
-    border-left: 1px solid rgba(255, 255, 0, 0.25);
     padding: 4.5rem 2rem 2rem;
     width: min(14rem, 65vw);
     height: 100vh;
@@ -1587,7 +1612,6 @@ ___CSS_LOADER_EXPORT___.push([module.id, `@charset "UTF-8";
     justify-content: flex-start;
     align-items: flex-start;
     opacity: 1;
-    transform: translateX(0);
     transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease-out, visibility 0s;
   }
   .header__navigation.d-none {
@@ -1643,7 +1667,7 @@ ___CSS_LOADER_EXPORT___.push([module.id, `@charset "UTF-8";
   .header__navigation-links li {
     font-size: 1rem;
   }
-}`, "",{"version":3,"sources":["webpack://./styles/sections/header.scss","webpack://./styles/global/variables.scss"],"names":[],"mappings":"AAAA,gBAAgB;ACAhB,wEAAA;AAEA,YAAA;AAsBA,yEAAA;AAGA,yEAAA;AACA,+DAAA;AACA,cAAA;AAMA,gEAAA;AACA,SAAA;AAOA,YAAA;AAMA,yEAAA;AAGA,yEAAA;AAOA,yEAAA;AAGA,0EAAA;AAMA,0EAAA;AAGA,yEAAA;AA6EA,yEAAA;AAnCQ;ED/GwB;IC4H5B,aAAA;IACA,sBAFoB;IAGpB,uBAH8C;IAI9C,mBAJoE;IDxHhE,eAAA;IACA,QAAA;IACA,UAAA;IACA,kBAAA;IACA,WAAA;IACA,aAAA;IACA,uEAAA;IACA,kBAAA;EAsBN;AACF;AAjCgC;EAa5B,iBAAA;AAuBJ;AAtBI;EACI,mBAAA;EACA,qBAAA;EACA,kBAAA;EAEA,qBAAA;EACA,wBAAA;EACA,0EAAA;EACA,eAAA;AAuBR;ACkEQ;EDjGJ;IAWQ,aAAA;EAwBV;AACF;ACmCQ;EDvEJ;IAeQ,eAAA;IACA,YAAA;IACA,cAAA;IACA,UAAA;EAyBV;AACF;AAvBQ;EC2GJ,0BAAA;EACA,mBAAA;ADjFJ;AAvBQ;EACI,mBC/BH;ADwDT;AAvBY;EAEI,mBCnCP;AD2DT;AAtDI;EAkCI,qEAAA;AAuBR;AAtBQ;EACI,kBAAA;EACA,cAAA;EACA,uBAAA;EACA,yBAAA;EACA,gBCrDJ;EDsDI,uCAAA;AAwBZ;AAtBY;EAEI,kBAAA;EACA,OAAA;EACA,WAAA;EACA,YAAA;EACA,gBC9DR;ED+DQ,WAAA;EACA,mEAAA;AAuBhB;AApBY;EACI,8BAAA;AAsBhB;AAnBY;EACI,mBAAA;AAqBhB;AAjBQ;EACI,gBAAA;AAmBZ;AAhBQ;EACI,uBAAA;AAkBZ;AAhBY;EACI,mDAAA;AAkBhB;AAfY;EACI,+DAAA;AAiBhB;AA1GgC;EA8F5B;iEAAA;AAgBJ;AAdI;EACI,eAAA;AAgBR;AAdQ;EACI,cAAA;AAgBZ;AAbQ;EACI,cAAA;EACA,WAAA;EACA,YAAA;EACA,wFAAA;AAeZ;AA1HgC;EA+G5B,uBAAA;AAcJ;AAbI;ECYA,aAAA;EACA,sBDZkB;ECalB,uBDb0B;ECc1B,mBDdkC;EAC9B,WAAA;AAkBR;AC/CQ;ED2BJ;IAKQ,eAAA;IACA,QAAA;IACA,UAAA;IACA,8CAAA;IACA,yBAAA;IACA,uBAAA;IACA,aAAA;IACA,4JAAA;IACA,2BAAA;IACA,uBAAA;IACA,UAAA;IACA,wBAAA;IACA,8FAAA;EAmBV;EAjBU;IACI,UAAA;IACA,2BAAA;IACA,kBAAA;IACA,8EAAA;EAmBd;EAjBc;IACI,UAAA;IACA,8BAAA;IACA,oBAAA;EAmBlB;AACF;AAhDI;EAiCI,6BAAA;AAkBR;AAjBQ;ECtBJ,aAAA;EACA,sBDsBsB;ECrBtB,2BDqB8B;ECpB9B,oBDoB0C;EAClC,gBAAA;EACA,eAAA;AAsBZ;AApBY;ECpBR,2DAAA;EACA,qBAAA;EDqBY,UAAA;EACA,wBAAA;EACA,oFAAA;EACA,eAAA;AAuBhB;AApBoB;EACI,uBAAA;AAsBxB;AAvBoB;EACI,uBAAA;AAyBxB;AA1BoB;EACI,uBAAA;AA4BxB;AA7BoB;EACI,uBAAA;AA+BxB;AAhCoB;EACI,uBAAA;AAkCxB;AA9BgB;EACI,cC5JX;AD4LT;AChHQ;EDkEI;IAkBQ,eAAA;EAgClB;AACF","sourceRoot":""}]);
+}`, "",{"version":3,"sources":["webpack://./styles/global/variables.scss","webpack://./styles/sections/header.scss"],"names":[],"mappings":"AAAA,wEAAA;AAEA,YAAA;AAsBA,yEAAA;AAGA,yEAAA;AACA,+DAAA;AACA,cAAA;AAMA,gEAAA;AACA,SAAA;AAOA,YAAA;AAMA,yEAAA;AAGA,yEAAA;AAOA,yEAAA;AAGA,0EAAA;AAMA,0EAAA;AAGA,yEAAA;AA6EA,yEAAA;AAnCQ;EC/GwB;ID4H5B,aAAA;IACA,sBAFoB;IAGpB,uBAH8C;IAI9C,mBAJoE;ICxHhE,eAAA;IACA,QAAA;IACA,UAAA;IACA,kBAAA;IACA,WAAA;IACA,aAAA;IACA,uEAAA;IACA,kBAAA;EAqBN;AACF;AAhCgC;EAa5B,iBAAA;AAsBJ;AArBI;EACI,mBAAA;EACA,qBAAA;EACA,kBAAA;EAEA,qBAAA;EACA,wBAAA;EACA,0EAAA;EACA,eAAA;EACA,aAAA;AAsBR;ADwCQ;ECvEJ;IAYQ,cAAA;IACA,eAAA;IACA,YAAA;IACA,cAAA;IACA,UAAA;EAuBV;AACF;AArBQ;ED6GJ,0BAAA;EACA,mBAAA;ACrFJ;AArBQ;EACI,mBD7BH;ACoDT;AArBY;EAEI,mBDjCP;ACuDT;AAlDI;EAgCI,qEAAA;AAqBR;AApBQ;EACI,kBAAA;EACA,cAAA;EACA,uBAAA;EACA,yBAAA;EACA,gBDnDJ;ECoDI,uCAAA;AAsBZ;AApBY;EAEI,kBAAA;EACA,OAAA;EACA,WAAA;EACA,YAAA;EACA,gBD5DR;EC6DQ,WAAA;EACA,mEAAA;AAqBhB;AAlBY;EACI,8BAAA;AAoBhB;AAjBY;EACI,mBAAA;AAmBhB;AAfQ;EACI,gBAAA;AAiBZ;AAdQ;EACI,uBAAA;AAgBZ;AAdY;EACI,mDAAA;AAgBhB;AAbY;EACI,+DAAA;AAehB;AAtGgC;EA4F5B,iBAAA;AAaJ;AAZI;EACI,cAAA;EACA,eAAA;AAcR;AAZQ;EACI,cAAA;EACA,WAAA;EACA,YAAA;AAcZ;ADHQ;ECdA;IAMQ,2DAAA;EAed;AACF;AAvHgC;EA4G5B,uBAAA;AAcJ;AAbI;EDeA,aAAA;EACA,sBAFoB;EAGpB,uBAH8C;EAI9C,mBAJoE;ECZhE,WAAA;AAkBR;AD5CQ;ECwBJ;IAKQ,eAAA;IACA,QAAA;IACA,wBAAA;IACA,UAAA;IACA,yBAAA;IACA,uBAAA;IACA,aAAA;IACA,4JAAA;IACA,2BAAA;IACA,uBAAA;IACA,UAAA;IACA,8FAAA;EAmBV;EAjBU;IACI,UAAA;IACA,2BAAA;IACA,kBAAA;IACA,8EAAA;EAmBd;EAjBc;IACI,UAAA;IACA,8BAAA;IACA,oBAAA;EAmBlB;AACF;AA/CI;EAgCI,6BAAA;AAkBR;AAjBQ;EDlBJ,aAAA;EACA,sBCkBsB;EDjBtB,2BCiB8B;EDhB9B,oBCgB0C;EAClC,gBAAA;EACA,eAAA;AAsBZ;AApBY;EDhBR,2DAAA;EACA,qBAAA;ECiBY,UAAA;EACA,wBAAA;EACA,oFAAA;EACA,eAAA;AAuBhB;AApBoB;EACI,uBAAA;AAsBxB;AAvBoB;EACI,uBAAA;AAyBxB;AA1BoB;EACI,uBAAA;AA4BxB;AA7BoB;EACI,uBAAA;AA+BxB;AAhCoB;EACI,uBAAA;AAkCxB;AA9BgB;EACI,cDxJX;ACwLT;AD5GQ;EC8DI;IAkBQ,eAAA;EAgClB;AACF","sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -1672,8 +1696,8 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var ___CSS_LOADER_URL_IMPORT_0___ = new URL(/* asset import */ __webpack_require__(/*! ../../assets/background/1889-irises-van-gogh.jpg */ "./assets/background/1889-irises-van-gogh.jpg"), __webpack_require__.b);
-var ___CSS_LOADER_URL_IMPORT_1___ = new URL(/* asset import */ __webpack_require__(/*! ../../assets/personal-pictures/home-full-picture.png */ "./assets/personal-pictures/home-full-picture.png"), __webpack_require__.b);
-var ___CSS_LOADER_URL_IMPORT_2___ = new URL(/* asset import */ __webpack_require__(/*! ../../assets/personal-pictures/home-picture.png */ "./assets/personal-pictures/home-picture.png"), __webpack_require__.b);
+var ___CSS_LOADER_URL_IMPORT_1___ = new URL(/* asset import */ __webpack_require__(/*! ../../assets/personal-pictures/home-picture.png */ "./assets/personal-pictures/home-picture.png"), __webpack_require__.b);
+var ___CSS_LOADER_URL_IMPORT_2___ = new URL(/* asset import */ __webpack_require__(/*! ../../assets/personal-pictures/home-picture-full.png */ "./assets/personal-pictures/home-picture-full.png"), __webpack_require__.b);
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
 ___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Simonetta:ital,wght@0,400;0,900;1,400;1,900&display=swap);"]);
 ___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&display=swap);"]);
@@ -1735,21 +1759,21 @@ ___CSS_LOADER_EXPORT___.push([module.id, `/*--------------------------- Theme Co
 .home__bio__picture img {
   position: relative;
   right: -2rem;
-  margin-top: 0.5rem;
   display: block;
   width: 15rem;
   height: auto;
+  content: url(${___CSS_LOADER_URL_REPLACEMENT_1___});
 }
 @media (max-width: 991.98px) {
   .home__bio__picture img {
-    content: url(${___CSS_LOADER_URL_REPLACEMENT_1___});
+    content: url(${___CSS_LOADER_URL_REPLACEMENT_2___});
   }
 }
 @media (max-width: 767.98px) {
   .home__bio__picture img {
-    content: url(${___CSS_LOADER_URL_REPLACEMENT_2___});
+    content: url(${___CSS_LOADER_URL_REPLACEMENT_1___});
   }
-}`, "",{"version":3,"sources":["webpack://./styles/global/variables.scss","webpack://./styles/sections/home.scss"],"names":[],"mappings":"AAAA,wEAAA;AAEA,YAAA;AAsBA,yEAAA;AAGA,yEAAA;AACA,+DAAA;AACA,cAAA;AAMA,gEAAA;AACA,SAAA;AAOA,YAAA;AAMA,yEAAA;AAGA,yEAAA;AAOA,yEAAA;AAGA,0EAAA;AAMA,0EAAA;AAGA,yEAAA;AA6EA,yEAAA;AClJgC;ED4H5B,aAAA;EACA,sBAFoB;EAGpB,uBAH8C;EAI9C,mBAJoE;ECzHpE,0EAAA;EAEA,cAAA;AAoBJ;AAnBI;EDuHA,aAAA;EACA,mBCvHkB;EDwHlB,sBCxHuB;EDyHvB,qBCzH8B;EDkI9B,yCAxEQ;EAyER,qBAFiB;EAGjB,gBAzII;ECOA,oBAAA;EACA,WAAA;EACA,WDPA;ACiCR;ADiDQ;EChFJ;IAQQ,kBAAA;EA2BV;AACF;ADsCQ;EC1EJ;IAYQ,sBAAA;IACA,qBAAA;EA4BV;AACF;AA1CI;EAgBI,kBAAA;AA6BR;AA3BY;EACI,kBAAA;EACA,YAAA;EACA,kBAAA;EACA,cAAA;EACA,YAAA;EACA,YAAA;AA6BhB;AD2BQ;EC9DI;IASQ,gDAAA;EA8BlB;AACF;ADgBQ;ECxDI;IAaQ,gDAAA;EA+BlB;AACF","sourceRoot":""}]);
+}`, "",{"version":3,"sources":["webpack://./styles/global/variables.scss","webpack://./styles/sections/home.scss"],"names":[],"mappings":"AAAA,wEAAA;AAEA,YAAA;AAsBA,yEAAA;AAGA,yEAAA;AACA,+DAAA;AACA,cAAA;AAMA,gEAAA;AACA,SAAA;AAOA,YAAA;AAMA,yEAAA;AAGA,yEAAA;AAOA,yEAAA;AAGA,0EAAA;AAMA,0EAAA;AAGA,yEAAA;AA6EA,yEAAA;AClJgC;ED4H5B,aAAA;EACA,sBAFoB;EAGpB,uBAH8C;EAI9C,mBAJoE;ECzHpE,0EAAA;EAEA,cAAA;AAoBJ;AAnBI;EDuHA,aAAA;EACA,mBCvHkB;EDwHlB,sBCxHuB;EDyHvB,qBCzH8B;EDkI9B,yCAxEQ;EAyER,qBAFiB;EAGjB,gBAzII;ECOA,oBAAA;EACA,WAAA;EACA,WDPA;ACiCR;ADiDQ;EChFJ;IAQQ,kBAAA;EA2BV;AACF;ADsCQ;EC1EJ;IAYQ,sBAAA;IACA,qBAAA;EA4BV;AACF;AA1CI;EAgBI,kBAAA;AA6BR;AA3BY;EACI,kBAAA;EACA,YAAA;EACA,cAAA;EACA,YAAA;EACA,YAAA;EACA,gDAAA;AA6BhB;AD2BQ;EC9DI;IASQ,gDAAA;EA8BlB;AACF;ADgBQ;ECxDI;IAaQ,gDAAA;EA+BlB;AACF","sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -1771,16 +1795,20 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../node_modules/css-loader/dist/runtime/api.js */ "../node_modules/css-loader/dist/runtime/api.js");
 /* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../node_modules/css-loader/dist/runtime/getUrl.js */ "../node_modules/css-loader/dist/runtime/getUrl.js");
+/* harmony import */ var _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2__);
 // Imports
 
 
+
+var ___CSS_LOADER_URL_IMPORT_0___ = new URL(/* asset import */ __webpack_require__(/*! ../../assets/background/1831-the-great-wave-off-kanagawa-hokusai.jpg */ "./assets/background/1831-the-great-wave-off-kanagawa-hokusai.jpg"), __webpack_require__.b);
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
 ___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Simonetta:ital,wght@0,400;0,900;1,400;1,900&display=swap);"]);
 ___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&display=swap);"]);
 ___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap);"]);
+var ___CSS_LOADER_URL_REPLACEMENT_0___ = _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2___default()(___CSS_LOADER_URL_IMPORT_0___);
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, `@charset "UTF-8";
-/*--------------------------- Theme Colours ---------------------------*/
+___CSS_LOADER_EXPORT___.push([module.id, `/*--------------------------- Theme Colours ---------------------------*/
 /* Colours */
 /*-------------------------- Theme Colours End -------------------------*/
 /*-------------------------------- Fonts -------------------------------*/
@@ -1796,36 +1824,28 @@ ___CSS_LOADER_EXPORT___.push([module.id, `@charset "UTF-8";
 /*----------------------------- Layout End ------------------------------*/
 /*------------------------------- Mixins -------------------------------*/
 /*----------------------------- Mixins End -----------------------------*/
-/* The Projects section is a horizontal reel on plain white. It pins to the
-viewport on desktop and projects.js drives the track sideways off the
-page's own vertical scroll; on small screens, no-JS and
-prefers-reduced-motion it is a native horizontal scroll strip instead.
-
-There is no single card template — every project gets one of four
-compositions (band / billboard / column / ghost), assigned in
-projects.js, so the reel reads like an editorial spread rather than a
-deck of identical cards. The company logos do the work images would:
-blown up, set in a tint band, or dropped in huge and faint as a
-watermark. */
 .showcase {
   position: relative;
   padding: 0;
-  /* clip, not hidden: \`overflow: hidden\` here would become the scroll
-     container for .showcase__sticky and kill the pin. */
   overflow-x: clip;
+  min-height: 100vh;
+  min-height: 100dvh;
   background: #fff;
   color: #000;
 }
 @media (max-width: 991.98px) {
   .showcase {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: stretch;
     height: auto;
-    min-height: 100vh;
-    min-height: 100dvh;
+    padding: 4rem 7.5vw;
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(${___CSS_LOADER_URL_REPLACEMENT_0___}) center/cover no-repeat;
   }
 }
 .showcase {
-  /* showcase__sticky — default: a native horizontal scroll strip. projects.js
-     adds --pin on desktop to turn it into the pinned viewport window. */
+  /* showcase__sticky */
 }
 .showcase__sticky {
   display: flex;
@@ -1833,8 +1853,6 @@ watermark. */
   justify-content: flex-start;
   align-items: center;
   position: relative;
-  min-height: 100vh;
-  min-height: 100dvh;
   background: #fff;
   overflow-x: auto;
   overflow-y: hidden;
@@ -1855,10 +1873,13 @@ watermark. */
   overflow: hidden;
   scroll-snap-type: none;
 }
+@media (max-width: 991.98px) {
+  .showcase__sticky {
+    background: transparent;
+  }
+}
 .showcase {
-  /* showcase__track — the reel: one wide flex row. Wide gaps and side
-     padding give it the airy, spaced-out rhythm. position: relative so
-     panel.offsetLeft (read by projects.js) is always measured against it. */
+  /* showcase__track */
 }
 .showcase__track {
   display: flex;
@@ -1875,21 +1896,43 @@ watermark. */
 }
 @media (max-width: 991.98px) {
   .showcase__track {
-    gap: 2.5rem;
-    padding: 6rem 8vw;
-  }
-}
-@media (max-width: 575.98px) {
-  .showcase__track {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex: 1 1 auto;
+    width: 100%;
     gap: 1.5rem;
-    padding: 5rem 6vw;
+    padding: 0;
   }
 }
 .showcase {
-  /* showcase__panel — the reveal target. projects.js writes transform +
-     opacity on every panel each frame (content lifts and fades in as it
-     nears the centre of the window). No surface, no chrome — just content
-     on white. */
+  /* showcase__grid */
+}
+.showcase__grid {
+  display: contents;
+}
+@media (max-width: 991.98px) {
+  .showcase__grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    align-items: center;
+    width: 100%;
+    gap: 0.5rem;
+  }
+}
+@media (max-width: 991.98px) and (max-width: 767.98px) {
+  .showcase__grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media (max-width: 991.98px) and (max-width: 539.98px) {
+  .showcase__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+.showcase {
+  /* showcase__panel */
 }
 .showcase__panel {
   position: relative;
@@ -1900,7 +1943,7 @@ watermark. */
   will-change: transform, opacity;
 }
 .showcase {
-  /* showcase__intro / showcase__outro — the bookends */
+  /* showcase__intro / showcase__outro */
 }
 .showcase__intro, .showcase__outro {
   display: flex;
@@ -1917,6 +1960,17 @@ watermark. */
   color: #000;
   word-spacing: normal;
 }
+@media (max-width: 991.98px) {
+  .showcase__intro, .showcase__outro {
+    width: 100%;
+    max-width: none;
+    align-items: center;
+  }
+  .showcase__intro p, .showcase__outro p {
+    color: #fff;
+    text-align: center;
+  }
+}
 .showcase__intro {
   gap: 1rem;
 }
@@ -1927,11 +1981,29 @@ watermark. */
   text-shadow: none;
   color: #000;
 }
+@media (max-width: 991.98px) {
+  .showcase__intro h2 {
+    text-align: center;
+    color: #fff;
+  }
+}
+@media (max-width: 991.98px) {
+  .showcase__intro {
+    align-items: center;
+    gap: 0;
+  }
+}
 .showcase__outro {
   gap: 1.5rem;
 }
+@media (max-width: 991.98px) {
+  .showcase__outro {
+    align-items: center;
+    gap: 0.5rem;
+  }
+}
 .showcase {
-  /* showcase__cue — the "keep going" nudge, in the site's highlight style */
+  /* showcase__cue */
 }
 .showcase__cue {
   align-self: flex-start;
@@ -1941,25 +2013,17 @@ watermark. */
   font: italic 500 0.95rem/1 "Jost", Futura, Arial, sans-serif;
   color: rgba(0, 0, 0, 0.55);
 }
+@media (max-width: 991.98px) {
+  .showcase__cue {
+    display: none;
+  }
+}
 .showcase__cue-arrow {
   display: inline-block;
   animation: showcase-cue 1.6s ease-in-out infinite;
 }
 .showcase {
-  /* showcase__road — the Work-section roadmap doesn't stop at the section
-     break. This picks the road up exactly where the skills SVG drops it
-     (its viewBox x=55 ≈ 28.6% across, heading straight down at the section
-     edge) and carries it on into the reel, curving left to land at the
-     "My Projects" heading. It sits in the track, not the sticky, so it
-     travels — and leaves — with the intro rather than hanging over the
-     cards. Same build as the skills road: a paved stroke plus a dashed
-     centre lane, both non-scaling so the width holds under the viewBox's
-     non-uniform stretch. Desktop only — the small-screen strip has no
-     pinned viewport for it to bridge.
-     width/left are the untransformed geometry: calc(100vw - 8rem) is the
-     real sticky width (the .main side-nav padding), and at translate 0 the
-     track's box starts at the viewport's left edge, so viewBox x lines up
-     1:1 with the skills road's own coordinate space. */
+  /* showcase__road */
 }
 .showcase__road {
   position: absolute;
@@ -1991,23 +2055,15 @@ watermark. */
   stroke-dasharray: 4 5;
   vector-effect: non-scaling-stroke;
 }
-.showcase {
-  /* ============================ cards ============================ */
-}
 .showcase__card {
   display: flex;
-  /* the global \`p\` rule carries word-spacing: 0.25rem, too loose in these
-     narrow measures — reset it for everything inside a card */
 }
 .showcase__card p,
 .showcase__card li {
   word-spacing: normal;
 }
 .showcase__card {
-  /* showcase__card-logo — the recurring graphic element. These are the
-     brand *marks* (symbol only), most cropped from small source PNGs,
-     so keep them near their native size everywhere except --ghost,
-     where scale doesn't matter because they're a faint watermark. */
+  /* showcase__card-logo */
 }
 .showcase__card-logo {
   display: flex;
@@ -2023,7 +2079,7 @@ watermark. */
   object-fit: contain;
 }
 .showcase__card {
-  /* showcase__card-num — the numeral motif; placed differently per layout */
+  /* showcase__card-num */
 }
 .showcase__card-num {
   margin: 0 0 0.75rem;
@@ -2072,7 +2128,7 @@ watermark. */
   content: "";
 }
 .showcase {
-  /* ---- band: mark set in a tint block across the top, content below ---- */
+  /* showcase__card--band */
 }
 .showcase__card--band {
   flex-direction: column;
@@ -2099,8 +2155,7 @@ watermark. */
   color: rgba(0, 0, 0, 0.4);
 }
 .showcase {
-  /* ---- billboard: a wide spread — the mark on the left behind a full-height
-         rule, an oversized numeral leading the detail column on the right ---- */
+  /* showcase__card--billboard */
 }
 .showcase__card--billboard {
   flex-direction: row;
@@ -2130,7 +2185,7 @@ watermark. */
   font: italic 500 1.9rem/1.05 "Simonetta", Cambria, serif;
 }
 .showcase {
-  /* ---- column: narrow, vertical, serif headline — a page ---- */
+  /* showcase__card--column */
 }
 .showcase__card--column {
   flex-direction: column;
@@ -2155,8 +2210,7 @@ watermark. */
   font: italic 500 2.2rem/1.02 "Simonetta", Cambria, serif;
 }
 .showcase {
-  /* ---- ghost: the mark blown up huge and faint, bleeding off a corner;
-         text sits at full contrast over it ---- */
+  /* showcase__card--ghost */
 }
 .showcase__card--ghost {
   flex-direction: column;
@@ -2189,52 +2243,53 @@ watermark. */
   color: #000;
 }
 .showcase {
-  /* ---- small screens: flatten every layout to one readable stack ---- */
+  /* showcase__card--bare */
+}
+.showcase__card--bare {
+  display: none;
 }
 @media (max-width: 991.98px) {
-  .showcase__card, .showcase__card--band, .showcase__card--billboard, .showcase__card--column, .showcase__card--ghost {
-    flex-direction: column;
-    align-self: center;
-    width: min(84vw, 24rem);
-    min-height: 0;
-    gap: 0;
-    overflow: visible;
+  .showcase__card, .showcase__card--band, .showcase__card--billboard, .showcase__card--column, .showcase__card--ghost, .showcase__card--bare {
+    all: revert;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
   }
-  .showcase__card .showcase__card-logo, .showcase__card--band .showcase__card-logo, .showcase__card--billboard .showcase__card-logo, .showcase__card--column .showcase__card-logo, .showcase__card--ghost .showcase__card-logo {
-    position: static;
-    justify-content: flex-start;
+  .showcase__card .showcase__card-logo, .showcase__card--band .showcase__card-logo, .showcase__card--billboard .showcase__card-logo, .showcase__card--column .showcase__card-logo, .showcase__card--ghost .showcase__card-logo, .showcase__card--bare .showcase__card-logo {
+    all: revert;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 1rem;
+    width: 100%;
+    border-radius: 0.5rem;
+  }
+  .showcase__card .showcase__card-logo img, .showcase__card--band .showcase__card-logo img, .showcase__card--billboard .showcase__card-logo img, .showcase__card--column .showcase__card-logo img, .showcase__card--ghost .showcase__card-logo img, .showcase__card--bare .showcase__card-logo img {
+    all: revert;
+    display: block;
     width: auto;
     height: auto;
-    margin-bottom: 1.5rem;
-    padding: 0;
-    background: none;
-    border: 0;
-    opacity: 1;
+    max-width: 6rem;
+    max-height: 2.75rem;
+    object-fit: contain;
+    filter: brightness(0) invert(1) drop-shadow(0 4px 8px rgba(0, 0, 0, 0.4));
   }
-  .showcase__card .showcase__card-logo img, .showcase__card--band .showcase__card-logo img, .showcase__card--billboard .showcase__card-logo img, .showcase__card--column .showcase__card-logo img, .showcase__card--ghost .showcase__card-logo img {
-    width: auto;
-    height: 2.5rem;
-    max-width: 100%;
-    filter: none;
+}
+@media (max-width: 991.98px) and (max-width: 575.98px) {
+  .showcase__card .showcase__card-logo img, .showcase__card--band .showcase__card-logo img, .showcase__card--billboard .showcase__card-logo img, .showcase__card--column .showcase__card-logo img, .showcase__card--ghost .showcase__card-logo img, .showcase__card--bare .showcase__card-logo img {
+    max-width: 4rem;
+    max-height: 1.75rem;
   }
-  .showcase__card .showcase__card-text, .showcase__card--band .showcase__card-text, .showcase__card--billboard .showcase__card-text, .showcase__card--column .showcase__card-text, .showcase__card--ghost .showcase__card-text {
-    position: static;
-  }
-  .showcase__card .showcase__card-num, .showcase__card--band .showcase__card-num, .showcase__card--billboard .showcase__card-num, .showcase__card--column .showcase__card-num, .showcase__card--ghost .showcase__card-num {
-    position: static;
-    display: block;
-    margin: 0 0 0.5rem;
-    border: 0;
-    font: italic 700 2rem/1 "Simonetta", Cambria, serif;
-    letter-spacing: 0;
-    color: #000;
-  }
-  .showcase__card .showcase__card-name, .showcase__card--band .showcase__card-name, .showcase__card--billboard .showcase__card-name, .showcase__card--column .showcase__card-name, .showcase__card--ghost .showcase__card-name {
-    font: 700 1.6rem/1.1 "Jost", Futura, Arial, sans-serif;
+}
+@media (max-width: 991.98px) {
+  .showcase__card .showcase__card-text, .showcase__card--band .showcase__card-text, .showcase__card--billboard .showcase__card-text, .showcase__card--column .showcase__card-text, .showcase__card--ghost .showcase__card-text, .showcase__card--bare .showcase__card-text {
+    display: none;
   }
 }
 .showcase {
-  /* showcase__rail — scroll-progress bar, pinned low in the window (desktop) */
+  /* showcase__rail */
 }
 .showcase__rail {
   position: absolute;
@@ -2256,7 +2311,7 @@ watermark. */
   background: #000;
 }
 .showcase {
-  /* showcase__resume — opens the résumé PDF (see download.js) */
+  /* showcase__resume */
 }
 .showcase__resume {
   display: flex;
@@ -2281,6 +2336,13 @@ watermark. */
   background: #000;
   color: #fff;
 }
+@media (max-width: 991.98px) {
+  .showcase__resume {
+    align-self: center;
+    background: #fff;
+    color: #000;
+  }
+}
 .showcase__resume:focus-visible {
   outline: 2px solid #ffff00;
   outline-offset: 2px;
@@ -2298,7 +2360,7 @@ watermark. */
   .showcase__cue-arrow {
     animation: none;
   }
-}`, "",{"version":3,"sources":["webpack://./styles/sections/projects.scss","webpack://./styles/global/variables.scss"],"names":[],"mappings":"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","sourceRoot":""}]);
+}`, "",{"version":3,"sources":["webpack://./styles/global/variables.scss","webpack://./styles/sections/projects.scss"],"names":[],"mappings":"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","sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -2373,11 +2435,7 @@ ___CSS_LOADER_EXPORT___.push([module.id, `@charset "UTF-8";
   }
 }
 .skills {
-  /* skills__portrait — the girl, as a real image in her own column, not a
-     stretched background; this is what lets the pearl marker be positioned
-     from the image's actual rendered box (see pearl.js) instead of guessed math.
-     Positioned absolutely (not a flex child of .skills) so it can be freely
-     adjusted with its own top/right/bottom/left independent of the roadmap column. */
+  /* skills__portrait */
 }
 .skills__portrait {
   position: absolute;
@@ -2391,17 +2449,11 @@ ___CSS_LOADER_EXPORT___.push([module.id, `@charset "UTF-8";
     align-items: flex-end;
   }
 }
-.skills__portrait {
-  /* below \$lg the portrait image and pearl are hidden (see below), but
-     the section title rides along here — keep the box in flow and hoist
-     it above the vertical roadmap */
-}
 @media (max-width: 991.98px) {
   .skills__portrait {
     position: static;
     order: -1;
     width: 100%;
-    padding-top: 4.5rem;
   }
 }
 .skills__portrait-img {
@@ -2416,8 +2468,7 @@ ___CSS_LOADER_EXPORT___.push([module.id, `@charset "UTF-8";
   }
 }
 .skills {
-  /* skills__pearl — position is set by pearl.js from the portrait image's
-     real rendered box, not CSS math, so it always lands on the pearl */
+  /* skills__pearl */
 }
 .skills__pearl {
   position: absolute;
@@ -2439,7 +2490,7 @@ ___CSS_LOADER_EXPORT___.push([module.id, `@charset "UTF-8";
   outline-offset: 2px;
 }
 .skills {
-  /* skills__pearl-dialog — a small note anchored to the pearl, not a modal */
+  /* skills__pearl-dialog */
 }
 .skills__pearl-dialog {
   position: absolute;
@@ -2468,7 +2519,7 @@ ___CSS_LOADER_EXPORT___.push([module.id, `@charset "UTF-8";
   margin: 0;
 }
 .skills {
-  /* skills__title — sits over on the right, where the girl portrait is */
+  /* skills__title */
 }
 .skills__title {
   margin-bottom: 0;
@@ -2484,11 +2535,6 @@ ___CSS_LOADER_EXPORT___.push([module.id, `@charset "UTF-8";
     transform: translateY(-50%);
   }
 }
-.skills__title {
-  /* 992–1199: a vertically-centred title lands right on stop 3, the
-     road's widest bend (~68% across) — lift it to the top-right,
-     clear of every stop, and trim it so it doesn't crowd the portrait */
-}
 @media (min-width: 992px) and (max-width: 1199.98px) {
   .skills__title {
     top: 2.5rem;
@@ -2496,10 +2542,24 @@ ___CSS_LOADER_EXPORT___.push([module.id, `@charset "UTF-8";
     transform: none;
   }
 }
+.skills__title {
+  /* pulled out of flow so it stops reserving its own row in
+     .skills__portrait, ahead of stop 1 — positioned relative to
+     .skills itself for now, roughly where it sat in flow. */
+}
 @media (max-width: 991.98px) {
   .skills__title {
-    padding: 0 2rem;
+    position: absolute;
+    top: 48%;
+    left: -11rem;
+    z-index: 1;
     text-align: left;
+    transform: rotate(90deg);
+  }
+}
+@media (max-width: 575.98px) {
+  .skills__title {
+    display: none;
   }
 }
 .skills {
@@ -2520,23 +2580,14 @@ ___CSS_LOADER_EXPORT___.push([module.id, `@charset "UTF-8";
   }
 }
 .skills {
-  /* skills__roadmap — five stops sitting directly on the curved path.
-     Each item's top/left below matches a point the path's "d" attribute
-     actually passes through (see the svg in index.html), so the marker
-     sits exactly on the line by construction rather than by eyeballing it.
-     width is explicit because every child here is position:absolute, so
-     without it the roadmap has no normal-flow content to size itself by
-     and collapses to near-zero width. */
+  /* skills__roadmap */
 }
 .skills__roadmap {
   position: relative;
   width: 100%;
   height: 100%;
   padding: 0 2rem;
-  /* skills__roadmap-path — a road, not just a line: a thick paved
-     stroke plus a dashed lane marking down the middle. Both use
-     non-scaling-stroke so the width stays consistent in pixels even
-     though the viewBox is stretched non-uniformly to fill the column. */
+  /* skills__roadmap-path */
 }
 .skills__roadmap-path {
   position: absolute;
@@ -2544,6 +2595,11 @@ ___CSS_LOADER_EXPORT___.push([module.id, `@charset "UTF-8";
   z-index: 0;
   width: 100%;
   height: 100%;
+}
+@media (max-width: 575.98px) {
+  .skills__roadmap-path {
+    transform: translateX(-2.75rem);
+  }
 }
 .skills__roadmap-path .skills__roadmap-road {
   fill: none;
@@ -2567,14 +2623,22 @@ ___CSS_LOADER_EXPORT___.push([module.id, `@charset "UTF-8";
 .skills__roadmap-item {
   position: absolute;
   z-index: 1;
+  /* margin, not transform — roadmap.js positions .skills__roadmap-here
+     (the "you are here" tag) from item.offsetLeft, which a transform
+     doesn't touch (it's paint-only). margin-left actually shifts the
+     item's layout position, so the JS-computed tag stays in sync. */
+}
+@media (max-width: 575.98px) {
+  .skills__roadmap-item {
+    margin-left: -2.75rem;
+  }
 }
 .skills__roadmap-item:nth-of-type(1) {
   top: 10%;
   left: 50%;
 }
 .skills__roadmap-item {
-  /* skills__roadmap-start — fixed tag on stop 1, sitting left of the
-     marker with a tail pointing at it: where the road begins */
+  /* skills__roadmap-start */
 }
 .skills__roadmap-item .skills__roadmap-start {
   position: absolute;
@@ -2604,8 +2668,6 @@ ___CSS_LOADER_EXPORT___.push([module.id, `@charset "UTF-8";
 .skills__roadmap-item:nth-of-type(3) {
   top: 50%;
   left: 68%;
-  /* sits at the far-right bend of the road, so its label runs
-     left of the marker instead of right — away from the portrait */
 }
 .skills__roadmap-item:nth-of-type(3) .skills__roadmap-content {
   left: auto;
@@ -2621,8 +2683,7 @@ ___CSS_LOADER_EXPORT___.push([module.id, `@charset "UTF-8";
   left: 55%;
 }
 .skills__roadmap {
-  /* skills__roadmap-marker — a button: click a number to open the
-     phase overlay */
+  /* skills__roadmap-marker */
 }
 .skills__roadmap-marker {
   display: flex;
@@ -2672,9 +2733,7 @@ ___CSS_LOADER_EXPORT___.push([module.id, `@charset "UTF-8";
   margin-bottom: 0;
 }
 .skills__roadmap {
-  /* skills__roadmap-here — a travelling 'you are here' pin. roadmap.js
-     sets its top/left to the centre of whichever stop is open (stop 1 on
-     load); the transition makes it glide the road between stops. */
+  /* skills__roadmap-here */
 }
 .skills__roadmap-here {
   position: absolute;
@@ -2684,7 +2743,6 @@ ___CSS_LOADER_EXPORT___.push([module.id, `@charset "UTF-8";
   color: #fff;
   font: italic 500 0.9rem/1 "Jost", Futura, Arial, sans-serif;
   white-space: nowrap;
-  /* lift above the 3rem marker, centred on it */
   transform: translate(-50%, calc(-100% - 1.75rem));
   animation: roadmap-here-bob 1.8s ease-in-out infinite;
 }
@@ -2701,9 +2759,7 @@ ___CSS_LOADER_EXPORT___.push([module.id, `@charset "UTF-8";
   border-top-color: #c9333f;
 }
 .skills__roadmap {
-  /* skills__roadmap-overlay — the phase detail panel. Sits inside the
-     section, inset from every edge by the standard section padding, so
-     it lines up with where content sits in the other sections. */
+  /* skills__roadmap-overlay */
 }
 .skills__roadmap-overlay {
   position: absolute;
@@ -2734,8 +2790,6 @@ ___CSS_LOADER_EXPORT___.push([module.id, `@charset "UTF-8";
     left: 1.25rem;
     z-index: 100;
     max-height: calc(100vh - 3rem);
-    /* stand-in for a real ::backdrop — .show() (non-modal) has none,
-       and an outside tap on this shadow still reaches the close handler */
     box-shadow: 0 0 0 100vmax rgba(0, 0, 0, 0.6);
   }
 }
@@ -2788,74 +2842,37 @@ ___CSS_LOADER_EXPORT___.push([module.id, `@charset "UTF-8";
   font: italic 500 2rem/1 "Simonetta", Cambria, serif;
 }
 .skills__roadmap {
-  /* --- small screens: the winding road needs a wide column to read,
-     so below \$lg the roadmap folds into a vertical timeline — one
-     straight run of road down the left with the five stops threaded
-     onto it, each still a button that opens the same phase overlay. --- */
+  /* below 992px the road keeps its shape — same %-based points on the
+     same curved path — in a taller, narrower box instead of the wide
+     desktop column. height:100vh/100dvh direct on this box (not a
+     percentage of some ancestor) is deliberate: a percentage height
+     here depends on skills__wrapper actually growing to fill
+     .skills's min-height, which going through flex-grow on an
+     auto-height ancestor turned out not to reliably happen — the
+     result was a *shorter* box than before, not taller, so every
+     stop packed in closer together and overlapped. A direct
+     viewport unit doesn't have that dependency at all. */
 }
 @media (max-width: 991.98px) {
   .skills__roadmap {
-    display: flex;
-    flex-direction: column;
-    gap: 2.75rem;
-    height: auto;
-    padding: 2.5rem 1.5rem 4rem;
-  }
-  .skills__roadmap .skills__roadmap-path,
-  .skills__roadmap .skills__roadmap-here,
-  .skills__roadmap .skills__roadmap-start {
-    display: none;
-  }
-  .skills__roadmap .skills__roadmap-item {
-    position: relative;
-    top: auto;
-    left: auto;
-    display: flex;
-    align-items: center;
-    gap: 1.25rem;
-    /* road + dashed lane, drawn stop-to-stop so the line runs
-       exactly from one marker's centre to the next */
-  }
-  .skills__roadmap .skills__roadmap-item:not(:last-of-type)::before, .skills__roadmap .skills__roadmap-item:not(:last-of-type)::after {
-    content: "";
-    position: absolute;
-    left: 1.5rem;
-    top: 50%;
-    height: calc(100% + 2.75rem);
-    transform: translateX(-50%);
-  }
-  .skills__roadmap .skills__roadmap-item:not(:last-of-type)::before {
-    width: 18px;
-    background: rgba(216, 192, 144, 0.35);
-  }
-  .skills__roadmap .skills__roadmap-item:not(:last-of-type)::after {
-    width: 2px;
-    background: repeating-linear-gradient(to bottom, #fff 0 4px, transparent 4px 9px);
-  }
-  .skills__roadmap .skills__roadmap-item:nth-of-type(3) .skills__roadmap-content {
-    left: auto;
-    right: auto;
-    text-align: left;
-  }
-  .skills__roadmap .skills__roadmap-marker {
-    z-index: 1;
-    flex: none;
-    transform: none;
-  }
-  .skills__roadmap .skills__roadmap-marker:hover, .skills__roadmap .skills__roadmap-marker--active {
-    transform: scale(1.06);
+    height: 100vh;
+    height: 100dvh;
+    padding: 2.5rem 1.5rem;
   }
   .skills__roadmap .skills__roadmap-content {
-    position: static;
-    left: auto;
-    right: auto;
-    transform: none;
-    white-space: normal;
+    width: fit-content;
+  }
+  .skills__roadmap .skills__roadmap-content .skills__card-title {
+    white-space: nowrap;
+  }
+}
+@media (max-width: 575.98px) {
+  .skills__roadmap .skills__roadmap-content .skills__card-title {
+    font-size: 0.8rem;
   }
 }
 .skills {
-  /* skills__card-title, skills__card-points, skills__card-skills —
-     shared text styling for each roadmap phase's content */
+  /* skills__card-title, skills__card-points, skills__card-skills */
 }
 .skills__card {
   /* skills__card-title */
@@ -2944,7 +2961,7 @@ ___CSS_LOADER_EXPORT___.push([module.id, `@charset "UTF-8";
   .skills__roadmap-here {
     animation: none;
   }
-}`, "",{"version":3,"sources":["webpack://./styles/sections/skills.scss","webpack://./styles/global/variables.scss"],"names":[],"mappings":"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","sourceRoot":""}]);
+}`, "",{"version":3,"sources":["webpack://./styles/sections/skills.scss","webpack://./styles/global/variables.scss"],"names":[],"mappings":"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","sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -14647,6 +14664,17 @@ module.exports = __webpack_require__.p + "assets/background/1665-girl-with-a-pea
 
 /***/ },
 
+/***/ "./assets/background/1831-the-great-wave-off-kanagawa-hokusai.jpg"
+/*!************************************************************************!*\
+  !*** ./assets/background/1831-the-great-wave-off-kanagawa-hokusai.jpg ***!
+  \************************************************************************/
+(module, __unused_webpack_exports, __webpack_require__) {
+
+"use strict";
+module.exports = __webpack_require__.p + "assets/background/1831-the-great-wave-off-kanagawa-hokusai.jpg";
+
+/***/ },
+
 /***/ "./assets/background/1889-irises-van-gogh.jpg"
 /*!****************************************************!*\
   !*** ./assets/background/1889-irises-van-gogh.jpg ***!
@@ -14680,14 +14708,14 @@ module.exports = __webpack_require__.p + "assets/background/1908-the-kiss-klimt.
 
 /***/ },
 
-/***/ "./assets/personal-pictures/home-full-picture.png"
+/***/ "./assets/personal-pictures/home-picture-full.png"
 /*!********************************************************!*\
-  !*** ./assets/personal-pictures/home-full-picture.png ***!
+  !*** ./assets/personal-pictures/home-picture-full.png ***!
   \********************************************************/
 (module, __unused_webpack_exports, __webpack_require__) {
 
 "use strict";
-module.exports = __webpack_require__.p + "assets/personal-pictures/home-full-picture.png";
+module.exports = __webpack_require__.p + "assets/personal-pictures/home-picture-full.png";
 
 /***/ },
 
@@ -14702,14 +14730,14 @@ module.exports = __webpack_require__.p + "assets/personal-pictures/home-picture.
 
 /***/ },
 
-/***/ "./assets/project-logos/accenture-mark.svg"
-/*!*************************************************!*\
-  !*** ./assets/project-logos/accenture-mark.svg ***!
-  \*************************************************/
+/***/ "./assets/project-logos/accenture.svg"
+/*!********************************************!*\
+  !*** ./assets/project-logos/accenture.svg ***!
+  \********************************************/
 (module, __unused_webpack_exports, __webpack_require__) {
 
 "use strict";
-module.exports = __webpack_require__.p + "assets/project-logos/accenture-mark.svg";
+module.exports = __webpack_require__.p + "assets/project-logos/accenture.svg";
 
 /***/ },
 
@@ -14757,14 +14785,14 @@ module.exports = __webpack_require__.p + "assets/project-logos/eon.png";
 
 /***/ },
 
-/***/ "./assets/project-logos/equinix-mark.png"
-/*!***********************************************!*\
-  !*** ./assets/project-logos/equinix-mark.png ***!
-  \***********************************************/
+/***/ "./assets/project-logos/equinix.png"
+/*!******************************************!*\
+  !*** ./assets/project-logos/equinix.png ***!
+  \******************************************/
 (module, __unused_webpack_exports, __webpack_require__) {
 
 "use strict";
-module.exports = __webpack_require__.p + "assets/project-logos/equinix-mark.png";
+module.exports = __webpack_require__.p + "assets/project-logos/equinix.png";
 
 /***/ },
 
@@ -14779,36 +14807,36 @@ module.exports = __webpack_require__.p + "assets/project-logos/logo.svg";
 
 /***/ },
 
-/***/ "./assets/project-logos/myntra-mark.png"
-/*!**********************************************!*\
-  !*** ./assets/project-logos/myntra-mark.png ***!
-  \**********************************************/
+/***/ "./assets/project-logos/myntra.png"
+/*!*****************************************!*\
+  !*** ./assets/project-logos/myntra.png ***!
+  \*****************************************/
 (module, __unused_webpack_exports, __webpack_require__) {
 
 "use strict";
-module.exports = __webpack_require__.p + "assets/project-logos/myntra-mark.png";
+module.exports = __webpack_require__.p + "assets/project-logos/myntra.png";
 
 /***/ },
 
-/***/ "./assets/project-logos/tadigital-mark.png"
-/*!*************************************************!*\
-  !*** ./assets/project-logos/tadigital-mark.png ***!
-  \*************************************************/
+/***/ "./assets/project-logos/tadigital.png"
+/*!********************************************!*\
+  !*** ./assets/project-logos/tadigital.png ***!
+  \********************************************/
 (module, __unused_webpack_exports, __webpack_require__) {
 
 "use strict";
-module.exports = __webpack_require__.p + "assets/project-logos/tadigital-mark.png";
+module.exports = __webpack_require__.p + "assets/project-logos/tadigital.png";
 
 /***/ },
 
-/***/ "./assets/project-logos/thoughtworks-mark.svg"
-/*!****************************************************!*\
-  !*** ./assets/project-logos/thoughtworks-mark.svg ***!
-  \****************************************************/
+/***/ "./assets/project-logos/thoughtworks.svg"
+/*!***********************************************!*\
+  !*** ./assets/project-logos/thoughtworks.svg ***!
+  \***********************************************/
 (module, __unused_webpack_exports, __webpack_require__) {
 
 "use strict";
-module.exports = __webpack_require__.p + "assets/project-logos/thoughtworks-mark.svg";
+module.exports = __webpack_require__.p + "assets/project-logos/thoughtworks.svg";
 
 /***/ },
 
@@ -15035,23 +15063,20 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _javascript_site_roadmap_js__WEBPACK_IMPORTED_MODULE_15___default = /*#__PURE__*/__webpack_require__.n(_javascript_site_roadmap_js__WEBPACK_IMPORTED_MODULE_15__);
 /* harmony import */ var _javascript_site_pearl_js__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./javascript/site/pearl.js */ "./javascript/site/pearl.js");
 /* harmony import */ var _javascript_site_pearl_js__WEBPACK_IMPORTED_MODULE_16___default = /*#__PURE__*/__webpack_require__.n(_javascript_site_pearl_js__WEBPACK_IMPORTED_MODULE_16__);
-/* harmony import */ var _assets_personal_pictures_home_picture_png__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./assets/personal-pictures/home-picture.png */ "./assets/personal-pictures/home-picture.png");
-/* harmony import */ var _assets_personal_pictures_home_full_picture_png__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./assets/personal-pictures/home-full-picture.png */ "./assets/personal-pictures/home-full-picture.png");
-/* harmony import */ var _assets_background_1665_girl_with_a_pearl_earring_vermeer_cutout_png__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./assets/background/1665-girl-with-a-pearl-earring-vermeer-cutout.png */ "./assets/background/1665-girl-with-a-pearl-earring-vermeer-cutout.png");
-/* harmony import */ var _assets_background_1512_creation_of_adam_michelangelo_cutout_png__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./assets/background/1512-creation-of-adam-michelangelo-cutout.png */ "./assets/background/1512-creation-of-adam-michelangelo-cutout.png");
-/* harmony import */ var _assets_social_logos_instagram_png__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./assets/social-logos/instagram.png */ "./assets/social-logos/instagram.png");
-/* harmony import */ var _assets_social_logos_linkedin_png__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./assets/social-logos/linkedin.png */ "./assets/social-logos/linkedin.png");
-/* harmony import */ var _assets_project_logos_canopygrowth_png__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ./assets/project-logos/canopygrowth.png */ "./assets/project-logos/canopygrowth.png");
-/* harmony import */ var _assets_project_logos_dupont_png__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ./assets/project-logos/dupont.png */ "./assets/project-logos/dupont.png");
-/* harmony import */ var _assets_project_logos_eon_png__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ./assets/project-logos/eon.png */ "./assets/project-logos/eon.png");
-/* harmony import */ var _assets_project_logos_bt_png__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! ./assets/project-logos/bt.png */ "./assets/project-logos/bt.png");
-/* harmony import */ var _assets_project_logos_accenture_mark_svg__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! ./assets/project-logos/accenture-mark.svg */ "./assets/project-logos/accenture-mark.svg");
-/* harmony import */ var _assets_project_logos_thoughtworks_mark_svg__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! ./assets/project-logos/thoughtworks-mark.svg */ "./assets/project-logos/thoughtworks-mark.svg");
-/* harmony import */ var _assets_project_logos_myntra_mark_png__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(/*! ./assets/project-logos/myntra-mark.png */ "./assets/project-logos/myntra-mark.png");
-/* harmony import */ var _assets_project_logos_equinix_mark_png__WEBPACK_IMPORTED_MODULE_30__ = __webpack_require__(/*! ./assets/project-logos/equinix-mark.png */ "./assets/project-logos/equinix-mark.png");
-/* harmony import */ var _assets_project_logos_tadigital_mark_png__WEBPACK_IMPORTED_MODULE_31__ = __webpack_require__(/*! ./assets/project-logos/tadigital-mark.png */ "./assets/project-logos/tadigital-mark.png");
-/* harmony import */ var _assets_project_logos_logo_svg__WEBPACK_IMPORTED_MODULE_32__ = __webpack_require__(/*! ./assets/project-logos/logo.svg */ "./assets/project-logos/logo.svg");
-/* harmony import */ var _assets_resume_Nithila_Resume_pdf__WEBPACK_IMPORTED_MODULE_33__ = __webpack_require__(/*! ./assets/resume/Nithila_Resume.pdf */ "./assets/resume/Nithila_Resume.pdf");
+/* harmony import */ var _assets_background_1665_girl_with_a_pearl_earring_vermeer_cutout_png__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./assets/background/1665-girl-with-a-pearl-earring-vermeer-cutout.png */ "./assets/background/1665-girl-with-a-pearl-earring-vermeer-cutout.png");
+/* harmony import */ var _assets_social_logos_instagram_png__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./assets/social-logos/instagram.png */ "./assets/social-logos/instagram.png");
+/* harmony import */ var _assets_social_logos_linkedin_png__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./assets/social-logos/linkedin.png */ "./assets/social-logos/linkedin.png");
+/* harmony import */ var _assets_project_logos_canopygrowth_png__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./assets/project-logos/canopygrowth.png */ "./assets/project-logos/canopygrowth.png");
+/* harmony import */ var _assets_project_logos_dupont_png__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./assets/project-logos/dupont.png */ "./assets/project-logos/dupont.png");
+/* harmony import */ var _assets_project_logos_eon_png__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./assets/project-logos/eon.png */ "./assets/project-logos/eon.png");
+/* harmony import */ var _assets_project_logos_bt_png__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ./assets/project-logos/bt.png */ "./assets/project-logos/bt.png");
+/* harmony import */ var _assets_project_logos_accenture_svg__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ./assets/project-logos/accenture.svg */ "./assets/project-logos/accenture.svg");
+/* harmony import */ var _assets_project_logos_thoughtworks_svg__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ./assets/project-logos/thoughtworks.svg */ "./assets/project-logos/thoughtworks.svg");
+/* harmony import */ var _assets_project_logos_myntra_png__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! ./assets/project-logos/myntra.png */ "./assets/project-logos/myntra.png");
+/* harmony import */ var _assets_project_logos_equinix_png__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! ./assets/project-logos/equinix.png */ "./assets/project-logos/equinix.png");
+/* harmony import */ var _assets_project_logos_tadigital_png__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! ./assets/project-logos/tadigital.png */ "./assets/project-logos/tadigital.png");
+/* harmony import */ var _assets_project_logos_logo_svg__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(/*! ./assets/project-logos/logo.svg */ "./assets/project-logos/logo.svg");
+/* harmony import */ var _assets_resume_Nithila_Resume_pdf__WEBPACK_IMPORTED_MODULE_30__ = __webpack_require__(/*! ./assets/resume/Nithila_Resume.pdf */ "./assets/resume/Nithila_Resume.pdf");
 /* Styles */
 
 
@@ -15086,17 +15111,10 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-/* project marks — the brand symbol only, cropped from the full wordmark
-   logos, since the project name is already the card title */
-
-
-
-
-
 
 
 })();
 
 /******/ })()
 ;
-//# sourceMappingURL=bundle81df9d215ddc4a1993fb.js.map
+//# sourceMappingURL=bundle728aa9e8fdf5a3098060.js.map

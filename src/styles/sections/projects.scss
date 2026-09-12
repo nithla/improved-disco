@@ -1,36 +1,23 @@
-/* The Projects section is a horizontal reel on plain white. It pins to the
-   viewport on desktop and projects.js drives the track sideways off the
-   page's own vertical scroll; on small screens, no-JS and
-   prefers-reduced-motion it is a native horizontal scroll strip instead.
-
-   There is no single card template — every project gets one of four
-   compositions (band / billboard / column / ghost), assigned in
-   projects.js, so the reel reads like an editorial spread rather than a
-   deck of identical cards. The company logos do the work images would:
-   blown up, set in a tint band, or dropped in huge and faint as a
-   watermark. */
 .showcase {
     position: relative;
     padding: 0;
-    /* clip, not hidden: `overflow: hidden` here would become the scroll
-       container for .showcase__sticky and kill the pin. */
     overflow-x: clip;
+    min-height: 100vh;
+    min-height: 100dvh;
     background: $white;
     color: $black;
 
     @include media-breakpoint-down($lg) {
+        @include flex(column, center, stretch);
         height: auto;
-        min-height: 100vh;
-        min-height: 100dvh;
+        padding: $sectionPadding;
+        background: linear-gradient($black-p4, $black-p4), url('../../assets/background/1831-the-great-wave-off-kanagawa-hokusai.jpg') center / cover no-repeat;
     }
 
-    /* showcase__sticky — default: a native horizontal scroll strip. projects.js
-       adds --pin on desktop to turn it into the pinned viewport window. */
+    /* showcase__sticky */
     &__sticky {
         @include flex(row, flex-start, center);
         position: relative;
-        min-height: 100vh;
-        min-height: 100dvh;
         background: $white;
         overflow-x: auto;
         overflow-y: hidden;
@@ -52,11 +39,13 @@
             overflow: hidden;
             scroll-snap-type: none;
         }
+
+        @include media-breakpoint-down($lg) {
+            background: transparent;
+        }
     }
 
-    /* showcase__track — the reel: one wide flex row. Wide gaps and side
-       padding give it the airy, spaced-out rhythm. position: relative so
-       panel.offsetLeft (read by projects.js) is always measured against it. */
+    /* showcase__track */
     &__track {
         @include flex(row, flex-start, center);
         position: relative;
@@ -69,20 +58,36 @@
         }
 
         @include media-breakpoint-down($lg) {
-            gap: 2.5rem;
-            padding: 6rem 8vw;
-        }
-
-        @include media-breakpoint-down($sm) {
+            @include flex(column, center, center);
+            flex: 1 1 auto;
+            width: 100%;
             gap: 1.5rem;
-            padding: 5rem 6vw;
+            padding: 0;
         }
     }
 
-    /* showcase__panel — the reveal target. projects.js writes transform +
-       opacity on every panel each frame (content lifts and fades in as it
-       nears the centre of the window). No surface, no chrome — just content
-       on white. */
+    /* showcase__grid */
+    &__grid {
+        display: contents;
+
+        @include media-breakpoint-down($lg) {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            align-items: center;
+            width: 100%;
+            gap: 0.5rem;
+
+            @media (max-width: 767.98px) {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            @media (max-width: 539.98px) {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    }
+
+    /* showcase__panel */
     &__panel {
         position: relative;
         flex: 0 0 auto;
@@ -93,7 +98,7 @@
         }
     }
 
-    /* showcase__intro / showcase__outro — the bookends */
+    /* showcase__intro / showcase__outro */
     &__intro,
     &__outro {
         @include flex(column, center, flex-start);
@@ -106,6 +111,17 @@
             color: $black;
             word-spacing: normal;
         }
+
+        @include media-breakpoint-down($lg) {
+            width: 100%;
+            max-width: none;
+            align-items: center;
+
+            p {
+                color: $white;
+                text-align: center;
+            }
+        }
     }
 
     &__intro {
@@ -117,14 +133,29 @@
             text-align: left;
             text-shadow: none;
             color: $black;
+
+            @include media-breakpoint-down($lg) {
+                text-align: center;
+                color: $white;
+            }
+        }
+
+        @include media-breakpoint-down($lg) {
+            align-items: center;
+            gap: 0;
         }
     }
 
     &__outro {
         gap: 1.5rem;
+
+        @include media-breakpoint-down($lg) {
+            align-items: center;
+            gap: 0.5rem;
+        }
     }
 
-    /* showcase__cue — the "keep going" nudge, in the site's highlight style */
+    /* showcase__cue */
     &__cue {
         align-self: flex-start;
         margin-top: 0.25rem;
@@ -132,6 +163,10 @@
         background: $yellow;
         font: italic 500 0.95rem/1 $Jost;
         color: $black-p5;
+
+        @include media-breakpoint-down($lg) {
+            display: none;
+        }
     }
 
     &__cue-arrow {
@@ -139,20 +174,7 @@
         animation: showcase-cue 1.6s ease-in-out infinite;
     }
 
-    /* showcase__road — the Work-section roadmap doesn't stop at the section
-       break. This picks the road up exactly where the skills SVG drops it
-       (its viewBox x=55 ≈ 28.6% across, heading straight down at the section
-       edge) and carries it on into the reel, curving left to land at the
-       "My Projects" heading. It sits in the track, not the sticky, so it
-       travels — and leaves — with the intro rather than hanging over the
-       cards. Same build as the skills road: a paved stroke plus a dashed
-       centre lane, both non-scaling so the width holds under the viewBox's
-       non-uniform stretch. Desktop only — the small-screen strip has no
-       pinned viewport for it to bridge.
-       width/left are the untransformed geometry: calc(100vw - 8rem) is the
-       real sticky width (the .main side-nav padding), and at translate 0 the
-       track's box starts at the viewport's left edge, so viewBox x lines up
-       1:1 with the skills road's own coordinate space. */
+    /* showcase__road */
     &__road {
         position: absolute;
         top: 0;
@@ -185,22 +207,15 @@
         }
     }
 
-    /* ============================ cards ============================ */
-
     &__card {
         display: flex;
 
-        /* the global `p` rule carries word-spacing: 0.25rem, too loose in these
-           narrow measures — reset it for everything inside a card */
         p,
         li {
             word-spacing: normal;
         }
 
-        /* showcase__card-logo — the recurring graphic element. These are the
-           brand *marks* (symbol only), most cropped from small source PNGs,
-           so keep them near their native size everywhere except --ghost,
-           where scale doesn't matter because they're a faint watermark. */
+        /* showcase__card-logo */
         &-logo {
             @include flex(row, center, center);
             margin: 0;
@@ -213,7 +228,7 @@
             }
         }
 
-        /* showcase__card-num — the numeral motif; placed differently per layout */
+        /* showcase__card-num */
         &-num {
             margin: 0 0 0.75rem;
             font: italic 700 2.4rem/1 $Simonetta;
@@ -267,7 +282,7 @@
         }
     }
 
-    /* ---- band: mark set in a tint block across the top, content below ---- */
+    /* showcase__card--band */
     &__card--band {
         flex-direction: column;
         align-self: flex-start;
@@ -296,8 +311,7 @@
         }
     }
 
-    /* ---- billboard: a wide spread — the mark on the left behind a full-height
-           rule, an oversized numeral leading the detail column on the right ---- */
+    /* showcase__card--billboard */
     &__card--billboard {
         flex-direction: row;
         align-self: center;
@@ -331,7 +345,7 @@
         }
     }
 
-    /* ---- column: narrow, vertical, serif headline — a page ---- */
+    /* showcase__card--column */
     &__card--column {
         flex-direction: column;
         align-self: flex-start;
@@ -359,8 +373,7 @@
         }
     }
 
-    /* ---- ghost: the mark blown up huge and faint, bleeding off a corner;
-           text sits at full contrast over it ---- */
+    /* showcase__card--ghost */
     &__card--ghost {
         flex-direction: column;
         justify-content: flex-end;
@@ -396,60 +409,58 @@
         }
     }
 
-    /* ---- small screens: flatten every layout to one readable stack ---- */
+    /* showcase__card--bare */
+    &__card--bare {
+        display: none;
+    }
+
     @include media-breakpoint-down($lg) {
         &__card,
         &__card--band,
         &__card--billboard,
         &__card--column,
-        &__card--ghost {
-            flex-direction: column;
-            align-self: center;
-            width: min(84vw, 24rem);
-            min-height: 0;
-            gap: 0;
-            overflow: visible;
+        &__card--ghost,
+        &__card--bare {
+            all: revert;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
 
             .showcase__card-logo {
-                position: static;
-                justify-content: flex-start;
-                width: auto;
-                height: auto;
-                margin-bottom: 1.5rem;
-                padding: 0;
-                background: none;
-                border: 0;
-                opacity: 1;
+                all: revert;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin: 0;
+                padding: 1rem;
+                width: 100%;
+                border-radius: 0.5rem;
 
                 img {
+                    all: revert;
+                    display: block;
                     width: auto;
-                    height: 2.5rem;
-                    max-width: 100%;
-                    filter: none;
+                    height: auto;
+                    max-width: 6rem;
+                    max-height: 2.75rem;
+                    object-fit: contain;
+                    filter: brightness(0) invert(1) drop-shadow(0 4px 8px $black-p4);
+
+                    @include media-breakpoint-down($sm) {
+                        max-width: 4rem;
+                        max-height: 1.75rem;
+                    }
                 }
             }
 
             .showcase__card-text {
-                position: static;
-            }
-
-            .showcase__card-num {
-                position: static;
-                display: block;
-                margin: 0 0 0.5rem;
-                border: 0;
-                font: italic 700 2rem/1 $Simonetta;
-                letter-spacing: 0;
-                color: $black;
-            }
-
-            .showcase__card-name {
-                font: 700 1.6rem/1.1 $Jost;
+                display: none;
             }
         }
     }
 
-    /* showcase__rail — scroll-progress bar, pinned low in the window (desktop) */
+    /* showcase__rail */
     &__rail {
         position: absolute;
         left: 10vw;
@@ -472,7 +483,7 @@
         }
     }
 
-    /* showcase__resume — opens the résumé PDF (see download.js) */
+    /* showcase__resume */
     &__resume {
         @include flex(row, center, center);
         align-self: flex-start;
@@ -493,6 +504,12 @@
         &:hover {
             background: $black;
             color: $white;
+        }
+
+        @include media-breakpoint-down($lg) {
+            align-self: center;
+            background: $white;
+            color: $black;
         }
 
         &:focus-visible {

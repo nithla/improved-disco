@@ -12,11 +12,7 @@
         background: url('../../assets/background/1665-girl-with-a-pearl-earring-vermeer.jpg') center / cover no-repeat;
     }
 
-    /* skills__portrait — the girl, as a real image in her own column, not a
-       stretched background; this is what lets the pearl marker be positioned
-       from the image's actual rendered box (see pearl.js) instead of guessed math.
-       Positioned absolutely (not a flex child of .skills) so it can be freely
-       adjusted with its own top/right/bottom/left independent of the roadmap column. */
+    /* skills__portrait */
     &__portrait {
         position: absolute;
         inset: 0;
@@ -25,14 +21,10 @@
             @include flex(row, flex-end, flex-end);
         }
 
-        /* below $lg the portrait image and pearl are hidden (see below), but
-           the section title rides along here — keep the box in flow and hoist
-           it above the vertical roadmap */
         @include media-breakpoint-down($lg) {
             position: static;
             order: -1;
             width: 100%;
-            padding-top: 4.5rem;
         }
 
         &-img {
@@ -47,8 +39,7 @@
         }
     }
 
-    /* skills__pearl — position is set by pearl.js from the portrait image's
-       real rendered box, not CSS math, so it always lands on the pearl */
+    /* skills__pearl */
     &__pearl {
         position: absolute;
         z-index: 1;
@@ -69,7 +60,7 @@
         }
     }
 
-    /* skills__pearl-dialog — a small note anchored to the pearl, not a modal */
+    /* skills__pearl-dialog */
     &__pearl-dialog {
         position: absolute;
         z-index: 3;
@@ -99,7 +90,7 @@
         }
     }
 
-    /* skills__title — sits over on the right, where the girl portrait is */
+    /* skills__title */
     &__title {
         margin-bottom: 0;
         color: $white;
@@ -113,18 +104,26 @@
             transform: translateY(-50%);
         }
 
-        /* 992–1199: a vertically-centred title lands right on stop 3, the
-           road's widest bend (~68% across) — lift it to the top-right,
-           clear of every stop, and trim it so it doesn't crowd the portrait */
         @media (min-width: #{$lg}) and (max-width: #{calc($xl - 0.02px)}) {
             top: 2.5rem;
             font-size: 2rem;
             transform: none;
         }
 
+        /* pulled out of flow so it stops reserving its own row in
+           .skills__portrait, ahead of stop 1 — positioned relative to
+           .skills itself for now, roughly where it sat in flow. */
         @include media-breakpoint-down($lg) {
-            padding: 0 2rem;
+            position: absolute;
+            top: 48%;
+            left: -11rem;
+            z-index: 1;
             text-align: left;
+            transform: rotate(90deg);
+        }
+
+        @include media-breakpoint-down($sm) {
+            display: none;
         }
     }
 
@@ -140,29 +139,24 @@
         }
     }
 
-    /* skills__roadmap — five stops sitting directly on the curved path.
-       Each item's top/left below matches a point the path's "d" attribute
-       actually passes through (see the svg in index.html), so the marker
-       sits exactly on the line by construction rather than by eyeballing it.
-       width is explicit because every child here is position:absolute, so
-       without it the roadmap has no normal-flow content to size itself by
-       and collapses to near-zero width. */
+    /* skills__roadmap */
     &__roadmap {
         position: relative;
         width: 100%;
         height: 100%;
         padding: 0 $cardPadding;
 
-        /* skills__roadmap-path — a road, not just a line: a thick paved
-           stroke plus a dashed lane marking down the middle. Both use
-           non-scaling-stroke so the width stays consistent in pixels even
-           though the viewBox is stretched non-uniformly to fill the column. */
+        /* skills__roadmap-path */
         &-path {
             position: absolute;
             inset: 0;
             z-index: 0;
             width: 100%;
             height: 100%;
+
+            @include media-breakpoint-down($sm) {
+                transform: translateX(-2.75rem);
+            }
 
             .skills__roadmap-road {
                 fill: none;
@@ -188,13 +182,20 @@
             position: absolute;
             z-index: 1;
 
+            /* margin, not transform — roadmap.js positions .skills__roadmap-here
+               (the "you are here" tag) from item.offsetLeft, which a transform
+               doesn't touch (it's paint-only). margin-left actually shifts the
+               item's layout position, so the JS-computed tag stays in sync. */
+            @include media-breakpoint-down($sm) {
+                margin-left: -2.75rem;
+            }
+
             &:nth-of-type(1) {
                 top: 10%;
                 left: 50%;
             }
 
-            /* skills__roadmap-start — fixed tag on stop 1, sitting left of the
-               marker with a tail pointing at it: where the road begins */
+            /* skills__roadmap-start */
             .skills__roadmap-start {
                 position: absolute;
                 top: 0;
@@ -227,8 +228,6 @@
                 top: 50%;
                 left: 68%;
 
-                /* sits at the far-right bend of the road, so its label runs
-                   left of the marker instead of right — away from the portrait */
                 .skills__roadmap-content {
                     left: auto;
                     right: calc(100% + 2.5rem);
@@ -247,8 +246,7 @@
             }
         }
 
-        /* skills__roadmap-marker — a button: click a number to open the
-           phase overlay */
+        /* skills__roadmap-marker */
         &-marker {
             @include flex(row, center, center);
             position: relative;
@@ -295,9 +293,7 @@
             }
         }
 
-        /* skills__roadmap-here — a travelling 'you are here' pin. roadmap.js
-           sets its top/left to the centre of whichever stop is open (stop 1 on
-           load); the transition makes it glide the road between stops. */
+        /* skills__roadmap-here */
         &-here {
             position: absolute;
             z-index: 2;
@@ -306,7 +302,6 @@
             color: $white;
             font: italic 500 0.9rem/1 $Jost;
             white-space: nowrap;
-            /* lift above the 3rem marker, centred on it */
             transform: translate(-50%, calc(-100% - 1.75rem));
             animation: roadmap-here-bob 1.8s ease-in-out infinite;
 
@@ -326,9 +321,7 @@
             }
         }
 
-        /* skills__roadmap-overlay — the phase detail panel. Sits inside the
-           section, inset from every edge by the standard section padding, so
-           it lines up with where content sits in the other sections. */
+        /* skills__roadmap-overlay */
         &-overlay {
             position: absolute;
             z-index: 5;
@@ -358,8 +351,6 @@
                 left: 1.25rem;
                 z-index: 100;
                 max-height: calc(100vh - 3rem);
-                /* stand-in for a real ::backdrop — .show() (non-modal) has none,
-                   and an outside tap on this shadow still reaches the close handler */
                 box-shadow: 0 0 0 100vmax rgba(0, 0, 0, 0.6);
             }
 
@@ -407,87 +398,38 @@
             }
         }
 
-        /* --- small screens: the winding road needs a wide column to read,
-           so below $lg the roadmap folds into a vertical timeline — one
-           straight run of road down the left with the five stops threaded
-           onto it, each still a button that opens the same phase overlay. --- */
+        /* below 992px the road keeps its shape — same %-based points on the
+           same curved path — in a taller, narrower box instead of the wide
+           desktop column. height:100vh/100dvh direct on this box (not a
+           percentage of some ancestor) is deliberate: a percentage height
+           here depends on skills__wrapper actually growing to fill
+           .skills's min-height, which going through flex-grow on an
+           auto-height ancestor turned out not to reliably happen — the
+           result was a *shorter* box than before, not taller, so every
+           stop packed in closer together and overlapped. A direct
+           viewport unit doesn't have that dependency at all. */
         @include media-breakpoint-down($lg) {
-            display: flex;
-            flex-direction: column;
-            gap: 2.75rem;
-            height: auto;
-            padding: 2.5rem 1.5rem 4rem;
-
-            .skills__roadmap-path,
-            .skills__roadmap-here,
-            .skills__roadmap-start {
-                display: none;
-            }
-
-            .skills__roadmap-item {
-                position: relative;
-                top: auto;
-                left: auto;
-                display: flex;
-                align-items: center;
-                gap: 1.25rem;
-
-                /* road + dashed lane, drawn stop-to-stop so the line runs
-                   exactly from one marker's centre to the next */
-                &:not(:last-of-type)::before,
-                &:not(:last-of-type)::after {
-                    content: '';
-                    position: absolute;
-                    left: 1.5rem;
-                    top: 50%;
-                    height: calc(100% + 2.75rem);
-                    transform: translateX(-50%);
-                }
-
-                &:not(:last-of-type)::before {
-                    width: 18px;
-                    background: $tan-p35;
-                }
-
-                &:not(:last-of-type)::after {
-                    width: 2px;
-                    background: repeating-linear-gradient(
-                        to bottom,
-                        $white 0 4px,
-                        transparent 4px 9px
-                    );
-                }
-
-                &:nth-of-type(3) .skills__roadmap-content {
-                    left: auto;
-                    right: auto;
-                    text-align: left;
-                }
-            }
-
-            .skills__roadmap-marker {
-                z-index: 1;
-                flex: none;
-                transform: none;
-
-                &:hover,
-                &--active {
-                    transform: scale(1.06);
-                }
-            }
+            height: 100vh;
+            height: 100dvh;
+            padding: 2.5rem 1.5rem;
 
             .skills__roadmap-content {
-                position: static;
-                left: auto;
-                right: auto;
-                transform: none;
-                white-space: normal;
+                width: fit-content;
+
+                .skills__card-title {
+                    white-space: nowrap;
+                }
+            }
+        }
+
+        @include media-breakpoint-down($sm) {
+            .skills__roadmap-content .skills__card-title {
+                font-size: 0.8rem;
             }
         }
     }
 
-    /* skills__card-title, skills__card-points, skills__card-skills —
-       shared text styling for each roadmap phase's content */
+    /* skills__card-title, skills__card-points, skills__card-skills */
     &__card {
 
         /* skills__card-title */

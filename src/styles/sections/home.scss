@@ -24,13 +24,13 @@
             img {
                 position: relative;
                 right: -$cardPadding;
-                margin-top: 0.5rem;
                 display: block;
                 width: 15rem;
                 height: auto;
+                content: url('../../assets/personal-pictures/home-picture.png');
 
                 @include media-breakpoint-down($lg) {
-                    content: url('../../assets/personal-pictures/home-full-picture.png');
+                    content: url('../../assets/personal-pictures/home-picture-full.png');
                 }
 
                 @include media-breakpoint-down($md) {

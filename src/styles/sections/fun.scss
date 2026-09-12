@@ -1,12 +1,12 @@
 @use 'sass:color';
 
 .fun {
-    @include flex();
+    @include flex;
+    padding: $sectionPadding;
+    height: auto;
+    min-height: 100vh;
+    min-height: 100dvh;
     background: url('../../assets/background/1889-the-starry-night-van-gogh.jpg') center / cover no-repeat;
-
-    h2 {
-        text-align: center;
-    }
 
     /* fun__subsection */
     &__subsection {

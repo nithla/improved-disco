@@ -14,7 +14,7 @@ const PROJECTS = [
     {
         id: 'accenture',
         name: 'Accenture',
-        logo: 'assets/project-logos/accenture-mark.svg',
+        logo: 'assets/project-logos/accenture.svg',
         role: 'Business Analyst, Product Strategy · Expert Assist',
         summary: 'Owned the metadata and content strategy for Accenture’s GenAI-powered Expert Assist platform.',
         bullets: [
@@ -38,7 +38,7 @@ const PROJECTS = [
     {
         id: 'thoughtworks',
         name: 'Thoughtworks',
-        logo: 'assets/project-logos/thoughtworks-mark.svg',
+        logo: 'assets/project-logos/thoughtworks.svg',
         role: 'Frontend Lead',
         summary: 'Led the frontend rebrand and repository cleanup ahead of Thoughtworks’ NASDAQ IPO.',
         bullets: [
@@ -49,7 +49,7 @@ const PROJECTS = [
     {
         id: 'equinix',
         name: 'Equinix',
-        logo: 'assets/project-logos/equinix-mark.png',
+        logo: 'assets/project-logos/equinix.png',
         role: 'Frontend Developer',
         summary: 'Built the UI layer handling large-scale API result sets for Equinix’s product surfaces.',
         bullets: [
@@ -60,7 +60,7 @@ const PROJECTS = [
     {
         id: 'tadigital',
         name: 'TA Digital',
-        logo: 'assets/project-logos/tadigital-mark.png',
+        logo: 'assets/project-logos/tadigital.png',
         role: 'Frontend Developer · Corporate website rebuild',
         summary: 'Rebuilt TA Digital’s corporate site with a shared design system and reusable component library.',
         bullets: [
@@ -82,7 +82,7 @@ const PROJECTS = [
     {
         id: 'myntra',
         name: 'Myntra',
-        logo: 'assets/project-logos/myntra-mark.png',
+        logo: 'assets/project-logos/myntra.png',
         role: 'Summer Intern · B-School Internship',
         summary: 'A B-school summer internship analyzing growth opportunities across Myntra’s D2C partner network.',
         bullets: [
@@ -136,14 +136,34 @@ function cardMarkup(project, position, layout) {
     `;
 }
 
+/* projects with no copy to show (no role/summary/bullets) get no desktop
+   layout — see showcase__card--bare in projects.scss, hidden in the pinned
+   reel and shown only as a plain tile in the <992px logo grid. */
+function bareCardMarkup(project) {
+    return `
+        <article class="showcase__panel showcase__card showcase__card--bare">
+            <figure class="showcase__card-logo"><img src="${project.logo}" alt="${project.name}"></figure>
+        </article>
+    `;
+}
+
 if (track && section && sticky) {
     const featured = PROJECTS.filter((project) => project.bullets.length);
+    const bare = PROJECTS.filter((project) => !project.bullets.length);
     const intro = track.querySelector('.showcase__intro');
 
+    /* the cards are wrapped in their own showcase__grid — see projects.scss:
+       display:contents on desktop keeps them direct flex items of the reel
+       (untouched from before), and only becomes a real grid container
+       below 992px, so the <992px white background sits behind the cards
+       alone rather than the whole track (intro/outro included). */
     intro.insertAdjacentHTML(
         'afterend',
-        featured.map((project, index) =>
+        '<div class="showcase__grid">'
+        + featured.map((project, index) =>
             cardMarkup(project, index + 1, LAYOUTS[index % LAYOUTS.length])).join('')
+        + bare.map((project) => bareCardMarkup(project)).join('')
+        + '</div>'
     );
 
     /* only .showcase__panel children take the reveal — this lets other things
@@ -175,7 +195,12 @@ if (track && section && sticky) {
         const ratio = maxShift ? Math.min(Math.max(offset / maxShift, 0), 1) : 0;
 
         panels.forEach((panel, i) => {
-            if (reduced.matches) {
+            /* the lift/fade is a function of the reel's *horizontal* scroll
+               position — meaningful only in pinned mode. Below 992px there's
+               no reel (projects.scss lays the cards out as a static grid
+               instead), so distance-from-centre is just noise; leave every
+               panel at rest rather than reading it as a reveal cue. */
+            if (!pinned()) {
                 panel.style.transform = '';
                 panel.style.opacity = '';
                 return;
