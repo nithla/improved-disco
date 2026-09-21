@@ -21,3 +21,10 @@ menuToggle.on('keydown', function (event) {
 headerNavigation.on('click', 'a', function () {
     setMenu(false);
 });
+
+$(document).on('keydown', function (event) {
+    if (event.key === 'Escape' && !headerNavigation.hasClass('d-none')) {
+        setMenu(false);
+        menuToggle.trigger('focus');
+    }
+});

@@ -131,7 +131,7 @@ $boxShadow: 0 4px 24px $black-p4;
 }
 
 @mixin default-text {
-    font: 300 1.125rem/1.4rem $Jost;
+    font: 300 1.125rem/1.4 $Jost;
     word-spacing: 0.25rem;
 }
 

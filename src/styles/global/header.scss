@@ -1,6 +1,6 @@
 .header {
     @include media-breakpoint-up($lg) {
-        @include flex();
+        @include flex;
         position: fixed;
         right: 0;
         z-index: 4;
@@ -29,10 +29,6 @@
             top: 1.25rem;
             right: 1.25rem;
             z-index: 6;
-        }
-
-        &:focus-visible {
-            @include focus-ring;
         }
 
         &:hover &-bar {

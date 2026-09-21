@@ -73,8 +73,6 @@ module.exports = {
             title: 'Product, Design & Engineering',
             filename: 'index.html',
             template: 'index.html',
-            // single source of truth for the logo path — used for both the
-            // favicon and the header mark (see index.html)
             templateParameters: {
                 logo: 'assets/project-logos/logo.svg',
             },

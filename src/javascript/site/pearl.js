@@ -1,6 +1,6 @@
 const pearlButton = document.querySelector('.skills__pearl');
 const pearlDialog = document.getElementById('pearlDialog');
-const portraitImg = document.querySelector('.skills__portrait-img');
+const portraitImg = document.querySelector('.skills__illustration img');
 
 /* Where the pearl earring sits within 1665-girl-with-a-pearl-earring-vermeer-cutout.png, as a fraction of the
    image's own width/height. Measured directly against the cropped image, so
@@ -9,7 +9,7 @@ const PEARL_REL_X = 0.49;
 const PEARL_REL_Y = 0.488;
 
 function positionPearlButton() {
-    const anchor = pearlButton.closest('.skills__portrait');
+    const anchor = pearlButton.closest('.skills__illustration');
 
     if (!anchor) {
         return;
@@ -29,7 +29,7 @@ function positionPearlButton() {
 }
 
 function positionPearlDialog() {
-    const anchor = pearlButton.closest('.skills__portrait');
+    const anchor = pearlButton.closest('.skills__illustration');
     const buttonRect = pearlButton.getBoundingClientRect();
     const anchorRect = anchor.getBoundingClientRect();
 
@@ -54,5 +54,11 @@ if (pearlButton && pearlDialog && portraitImg) {
         }
 
         pearlDialog.close();
+    });
+
+    document.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape' && pearlDialog.open) {
+            pearlDialog.close();
+        }
     });
 }

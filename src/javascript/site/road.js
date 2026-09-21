@@ -1,11 +1,11 @@
-/* The five numbered stops on the Skills ("Work") roadmap. Each marker is a
-   button that opens the shared overlay (#roadmapOverlay) with that phase's
+/* The five numbered stops on the Skills ("Work") road. Each marker is a
+   button that opens the shared overlay (#skillsCard) with that phase's
    detail — the overlay is styled to sit inside the section, inset by the
    standard section padding. Mirrors the pearl-dialog pattern in pearl.js:
    a non-modal <dialog> shown with .show(), closed on the X, Esc, or an
    outside click. */
 
-const ROADMAP = {
+const ROAD = {
     1: {
         title: 'The product bet',
         points: [
@@ -72,20 +72,20 @@ const ROADMAP = {
     },
 };
 
-const overlay = document.getElementById('roadmapOverlay');
-const overlayBody = overlay?.querySelector('.skills__roadmap-overlay-body');
-const overlayClose = overlay?.querySelector('.skills__roadmap-overlay-close');
-const markers = Array.from(document.querySelectorAll('.skills__roadmap-marker'));
+const overlay = document.getElementById('skillsCard');
+const overlayBody = overlay?.querySelector('.skills__card__body');
+const overlayClose = overlay?.querySelector('.skills__card__close');
+const markers = Array.from(document.querySelectorAll('.skills__road-marker'));
 
 /* the travelling "you are here" pin — parks on stop 1, then follows whichever
    stop the reader opens; a little payoff once it reaches the last stop */
-const hereTag = document.querySelector('.skills__roadmap-here');
+const hereTag = document.querySelector('.skills__road-here');
 const HERE_LABEL = 'You are here';
 const HERE_LABEL_END = 'Woo hoo!';
 let currentPhase = 1;
 
 function moveHere(phase) {
-    const item = markers[Number(phase) - 1]?.closest('.skills__roadmap-item');
+    const item = markers[Number(phase) - 1]?.closest('.skills__road-item');
 
     if (!hereTag || !item) {
         return;
@@ -103,17 +103,17 @@ function list(className, items) {
 }
 
 function renderPhase(phase) {
-    const data = ROADMAP[phase];
+    const data = ROAD[phase];
 
     if (!data) {
         return;
     }
 
     overlayBody.innerHTML = `
-        <p class="skills__roadmap-overlay-step">Phase ${phase} of ${markers.length}</p>
-        <p class="skills__card-title">${data.title}</p>
-        ${list('skills__card-points', data.points)}
-        ${list('skills__card-skills', data.skills)}
+        <p class="skills__card__step">Phase ${phase} of ${markers.length}</p>
+        <p class="skills__card__title">${data.title}</p>
+        ${list('skills__card__desc', data.points)}
+        ${list('skills__card__list', data.skills)}
     `;
 
     overlay.scrollTop = 0;
@@ -126,12 +126,14 @@ function openPhase(phase) {
     moveHere(currentPhase);
 
     markers.forEach((marker) => {
-        marker.classList.toggle('skills__roadmap-marker--active', marker.dataset.phase === String(phase));
+        marker.classList.toggle('skills__road-marker--active', marker.dataset.phase === String(phase));
     });
 
     if (!overlay.open) {
         overlay.show();
     }
+
+    requestAnimationFrame(() => overlayClose?.focus());
 }
 
 function closeOverlay() {
@@ -139,13 +141,13 @@ function closeOverlay() {
         overlay.close();
     }
 
-    markers.forEach((marker) => marker.classList.remove('skills__roadmap-marker--active'));
+    markers.forEach((marker) => marker.classList.remove('skills__road-marker--active'));
 }
 
 if (overlay && overlayBody && markers.length) {
     /* park the pin on stop 1, then let it transition on later moves */
     moveHere(currentPhase);
-    requestAnimationFrame(() => hereTag?.classList.add('skills__roadmap-here--travelling'));
+    requestAnimationFrame(() => hereTag?.classList.add('skills__road-here--travelling'));
     window.addEventListener('resize', () => moveHere(currentPhase));
 
     markers.forEach((marker) => {
@@ -160,8 +162,18 @@ if (overlay && overlayBody && markers.length) {
         }
     });
 
+    /* non-modal dialog: the background stays interactive, so nothing stops
+       Tab walking straight out of it once it reaches the close button — the
+       only focusable thing inside. Trap it there instead. */
+    overlay.addEventListener('keydown', (event) => {
+        if (event.key === 'Tab') {
+            event.preventDefault();
+            overlayClose?.focus();
+        }
+    });
+
     document.addEventListener('click', (event) => {
-        if (!overlay.open || overlay.contains(event.target) || event.target.closest('.skills__roadmap-marker')) {
+        if (!overlay.open || overlay.contains(event.target) || event.target.closest('.skills__road-marker')) {
             return;
         }
 

@@ -1,191 +1,93 @@
 .skills {
-    @include flex();
+    @include flex(row, flex-start, stretch);
     position: relative;
     padding: 0;
     color: $black;
 
-    @include media-breakpoint-up($lg) {
-        @include flex(row, flex-start, stretch);
-    }
-
     @include media-breakpoint-down($lg) {
+        @include flex();
         background: url('../../assets/background/1665-girl-with-a-pearl-earring-vermeer.jpg') center / cover no-repeat;
     }
 
-    /* skills__portrait */
-    &__portrait {
-        position: absolute;
-        inset: 0;
+    /* skills__road */
+    &__road {
 
-        @include media-breakpoint-up($lg) {
-            @include flex(row, flex-end, flex-end);
-        }
-
-        @include media-breakpoint-down($lg) {
-            position: static;
-            order: -1;
-            width: 100%;
-        }
-
-        &-img {
-            display: block;
-            height: 110%;
-            width: auto;
-            max-width: none;
+        /* skills__road-wrapper */
+        &-wrapper {
+            @include flex(column, flex-start, stretch);
+            width: 52%;
+            height: 100%;
 
             @include media-breakpoint-down($lg) {
-                display: none;
+                width: 100%;
             }
         }
-    }
 
-    /* skills__pearl */
-    &__pearl {
-        position: absolute;
-        z-index: 1;
-        width: 3rem;
-        height: 3rem;
-        border: 0;
-        border-radius: 50%;
-        background: transparent;
-        cursor: pointer;
-
-        @include media-breakpoint-down($lg) {
-            display: none;
-        }
-
-        &:hover,
-        &:focus-visible {
-            @include focus-ring;
-        }
-    }
-
-    /* skills__pearl-dialog */
-    &__pearl-dialog {
-        position: absolute;
-        z-index: 3;
-        margin: 0;
-        border: 0;
-        border-radius: 1rem;
-        padding: 1.25rem 1.5rem;
-        max-width: 15rem;
-        background: $blue;
-        box-shadow: $boxShadow;
-        color: $white;
-
-        &::before {
-            position: absolute;
-            top: -0.5rem;
-            left: 1.5rem;
-            width: 0.85rem;
-            height: 0.85rem;
-            background: $blue;
-            content: '';
-            transform: rotate(45deg);
-        }
-
-        p {
-            font: italic 400 1.05rem/1.55 $Simonetta;
-            margin: 0;
-        }
-    }
-
-    /* skills__title */
-    &__title {
-        margin-bottom: 0;
-        color: $white;
-
-        @include media-breakpoint-up($lg) {
-            position: absolute;
-            top: 50%;
-            right: 4rem;
-            z-index: 1;
-            text-align: right;
-            transform: translateY(-50%);
-        }
-
-        @media (min-width: #{$lg}) and (max-width: #{calc($xl - 0.02px)}) {
-            top: 2.5rem;
-            font-size: 2rem;
-            transform: none;
-        }
-
-        /* pulled out of flow so it stops reserving its own row in
-           .skills__portrait, ahead of stop 1 — positioned relative to
-           .skills itself for now, roughly where it sat in flow. */
-        @include media-breakpoint-down($lg) {
-            position: absolute;
-            top: 48%;
-            left: -11rem;
-            z-index: 1;
-            text-align: left;
-            transform: rotate(90deg);
-        }
-
-        @include media-breakpoint-down($sm) {
-            display: none;
-        }
-    }
-
-    /* skills__wrapper */
-    &__wrapper {
-        @include flex(column, flex-start, stretch);
-        gap: .5rem;
-        height: 100%;
-        width: 100%;
-
-        @include media-breakpoint-up($lg) {
-            width: 52%;
-        }
-    }
-
-    /* skills__roadmap */
-    &__roadmap {
         position: relative;
         width: 100%;
         height: 100%;
-        padding: 0 $cardPadding;
 
-        /* skills__roadmap-path */
-        &-path {
-            position: absolute;
-            inset: 0;
-            z-index: 0;
-            width: 100%;
-            height: 100%;
+        @include media-breakpoint-down($lg) {
+            height: 100vh;
+            height: 100dvh;
 
-            @include media-breakpoint-down($sm) {
-                transform: translateX(-2.75rem);
+            @media (orientation: landscape) {
+                min-height: 40rem;
             }
 
-            .skills__roadmap-road {
-                fill: none;
-                stroke: $tan-p35;
-                stroke-width: 18;
-                stroke-linecap: round;
-                stroke-linejoin: round;
-                vector-effect: non-scaling-stroke;
-            }
-
-            .skills__roadmap-lane {
-                fill: none;
-                stroke: $white;
-                stroke-width: 1.5;
-                stroke-linecap: round;
-                stroke-dasharray: 4 5;
-                vector-effect: non-scaling-stroke;
+            .skills__road-title {
+                width: fit-content;
+                white-space: nowrap;
             }
         }
 
-        /* skills__roadmap-item */
+        @include media-breakpoint-down($sm) {
+            min-height: 0;
+
+            .skills__road-title {
+                font-size: 0.875rem;
+            }
+        }
+
+        /* skills__road-path */
+        &-path {
+
+            /* skills__road-path-wrapper */
+            &-wrapper {
+                position: absolute;
+                inset: 0;
+                z-index: 0;
+                width: 100%;
+                height: 100%;
+
+                @include media-breakpoint-down($sm) {
+                    transform: translateX(-2.75rem);
+                }
+
+                path {
+                    fill: none;
+                    stroke-linecap: round;
+                    vector-effect: non-scaling-stroke;
+                }
+            }
+
+            stroke: $tan-p35;
+            stroke-width: 18;
+            stroke-linejoin: round;
+        }
+
+        /* skills__road-lane */
+        &-lane {
+            stroke: $white;
+            stroke-width: 1.5;
+            stroke-dasharray: 4 5;
+        }
+
+        /* skills__road-item */
         &-item {
             position: absolute;
             z-index: 1;
 
-            /* margin, not transform — roadmap.js positions .skills__roadmap-here
-               (the "you are here" tag) from item.offsetLeft, which a transform
-               doesn't touch (it's paint-only). margin-left actually shifts the
-               item's layout position, so the JS-computed tag stays in sync. */
             @include media-breakpoint-down($sm) {
                 margin-left: -2.75rem;
             }
@@ -193,30 +95,6 @@
             &:nth-of-type(1) {
                 top: 10%;
                 left: 50%;
-            }
-
-            /* skills__roadmap-start */
-            .skills__roadmap-start {
-                position: absolute;
-                top: 0;
-                right: calc(100% + 2rem);
-                transform: translateY(-50%);
-                padding: 0.35rem 0.7rem;
-                background: $yellow;
-                color: $black-p5;
-                font: italic 500 0.9rem/1 $Jost;
-                white-space: nowrap;
-                animation: roadmap-start-pulse 2.4s ease-in-out infinite;
-
-                &::after {
-                    content: '';
-                    position: absolute;
-                    top: 50%;
-                    left: 100%;
-                    border: 0.4rem solid transparent;
-                    border-left-color: $yellow;
-                    transform: translateY(-50%);
-                }
             }
 
             &:nth-of-type(2) {
@@ -228,10 +106,14 @@
                 top: 50%;
                 left: 68%;
 
-                .skills__roadmap-content {
+                .skills__road-title {
                     left: auto;
                     right: calc(100% + 2.5rem);
                     text-align: right;
+
+                    @include media-breakpoint-down($sm) {
+                        right: calc(100% + 1.75rem);
+                    }
                 }
             }
 
@@ -246,68 +128,88 @@
             }
         }
 
-        /* skills__roadmap-marker */
-        &-marker {
-            @include flex(row, center, center);
-            position: relative;
-            width: 3rem;
-            height: 3rem;
-            border: 1px solid $blue;
-            border-radius: 50%;
-            background: $blue;
-            font: 400 1.35rem $Jost;
-            color: $white;
-            cursor: pointer;
-            transform: translate(-50%, -50%);
-            transition: box-shadow 0.2s ease, transform 0.2s ease;
+        /* skills__road-start */
+        &-start {
+            position: absolute;
+            top: 0;
+            right: calc(100% + 2rem);
+            transform: translateY(-50%);
+            padding: 0.35rem 0.7rem;
+            background: $yellow;
+            color: $black-p5;
+            font: italic 500 0.75rem/1 $Jost;
+            white-space: nowrap;
+            animation: road-start-pulse 2.4s ease-in-out infinite;
 
-            &:hover {
-                box-shadow: 0 0 0 0.4rem $blue-p18;
-                transform: translate(-50%, -50%) scale(1.06);
-            }
-
-            &:focus-visible {
-                @include focus-ring;
-            }
-
-            &--active {
-                box-shadow: 0 0 0 0.4rem $blue-p35;
-                transform: translate(-50%, -50%) scale(1.06);
+            &::after {
+                position: absolute;
+                top: 50%;
+                left: 100%;
+                transform: translateY(-50%);
+                border: 0.4rem solid transparent;
+                border-left-color: $yellow;
+                content: '';
             }
         }
 
-        /* skills__roadmap-content */
-        &-content {
+        /* skills__road-marker */
+        &-marker {
+            @include flex(row, center, center);
+            position: relative;
+            transform: translate(-50%, -50%);
+            border: 1px solid $blue;
+            border-radius: 50%;
+            width: 3rem;
+            height: 3rem;
+            background: $blue;
+            font: 400 1.5rem $Jost;
+            color: $white;
+            cursor: pointer;
+            transition: box-shadow 0.2s ease, transform 0.2s ease;
+
+            &:hover {
+                transform: translate(-50%, -50%) scale(1.06);
+                box-shadow: 0 0 0 0.4rem $blue-p18;
+            }
+
+            &--active {
+                transform: translate(-50%, -50%) scale(1.06);
+                box-shadow: 0 0 0 0.4rem $blue-p35;
+            }
+        }
+
+        /* skills__road-title */
+        &-title {
             @include default-text;
             position: absolute;
             top: 0;
             left: calc(100% - 0.5rem);
-            min-width: 0;
+            transform: translateY(-50%);
             padding: 0.15rem 0.5rem;
+            min-width: 0;
             background: $white;
             white-space: nowrap;
-            transform: translateY(-50%);
 
-            .skills__card-title {
-                margin-bottom: 0;
+            @include media-breakpoint-down($sm) {
+                left: calc(100% - 1.25rem);
             }
         }
 
-        /* skills__roadmap-here */
+        /* skills__road-here */
         &-here {
             position: absolute;
             z-index: 2;
             padding: 0.35rem 0.7rem;
             background: $red;
             color: $white;
-            font: italic 500 0.9rem/1 $Jost;
+            font: italic 500 0.75rem/1 $Jost;
             white-space: nowrap;
             transform: translate(-50%, calc(-100% - 1.75rem));
-            animation: roadmap-here-bob 1.8s ease-in-out infinite;
+            animation: road-here-bob 1.8s ease-in-out infinite;
 
             &--travelling {
                 transition: top 0.5s cubic-bezier(0.65, 0, 0.35, 1),
-                            left 0.5s cubic-bezier(0.65, 0, 0.35, 1);
+                    left 0.5s cubic-bezier(0.65, 0, 0.35, 1);
             }
 
             &::after {
@@ -320,126 +222,86 @@
                 border-top-color: $red;
             }
         }
-
-        /* skills__roadmap-overlay */
-        &-overlay {
-            position: absolute;
-            z-index: 5;
-            inset: $sectionPadding;
-            width: auto;
-            height: auto;
-            max-width: none;
-            max-height: none;
-            margin: 0;
-            border: 0;
-            border-radius: 0.5rem;
-            padding: $cardPadding;
-            overflow-y: auto;
-            background: $white;
-            box-shadow: $boxShadow;
-            color: $black;
-
-            &:not([open]) {
-                display: none;
-            }
-
-            @include media-breakpoint-down($lg) {
-                position: fixed;
-                top: 1.5rem;
-                right: 1.25rem;
-                bottom: auto;
-                left: 1.25rem;
-                z-index: 100;
-                max-height: calc(100vh - 3rem);
-                box-shadow: 0 0 0 100vmax rgba(0, 0, 0, 0.6);
-            }
-
-            /* skills__roadmap-overlay-close */
-            &-close {
-                position: absolute;
-                top: 0.75rem;
-                right: 1rem;
-                @include flex(row, center, center);
-                width: 2rem;
-                height: 2rem;
-                border-radius: 50%;
-                background: transparent;
-                font: 400 1.6rem/1 $Jost;
-                color: $black-p4;
-                cursor: pointer;
-
-                &:hover {
-                    color: $black;
-                }
-
-                &:focus-visible {
-                    @include focus-ring;
-                }
-            }
-
-            /* skills__roadmap-overlay-step */
-            &-step {
-                @include default-text;
-                margin-bottom: 0.5rem;
-                font-size: 0.95rem;
-                letter-spacing: 0.08em;
-                text-transform: uppercase;
-                color: $blue;
-            }
-
-            /* skills__roadmap-overlay-body */
-            &-body {
-                max-width: 44rem;
-
-                .skills__card-title {
-                    margin-bottom: 1.5rem;
-                    font: italic 500 2rem/1 $Simonetta;
-                }
-            }
-        }
-
-        /* below 992px the road keeps its shape — same %-based points on the
-           same curved path — in a taller, narrower box instead of the wide
-           desktop column. height:100vh/100dvh direct on this box (not a
-           percentage of some ancestor) is deliberate: a percentage height
-           here depends on skills__wrapper actually growing to fill
-           .skills's min-height, which going through flex-grow on an
-           auto-height ancestor turned out not to reliably happen — the
-           result was a *shorter* box than before, not taller, so every
-           stop packed in closer together and overlapped. A direct
-           viewport unit doesn't have that dependency at all. */
-        @include media-breakpoint-down($lg) {
-            height: 100vh;
-            height: 100dvh;
-            padding: 2.5rem 1.5rem;
-
-            .skills__roadmap-content {
-                width: fit-content;
-
-                .skills__card-title {
-                    white-space: nowrap;
-                }
-            }
-        }
-
-        @include media-breakpoint-down($sm) {
-            .skills__roadmap-content .skills__card-title {
-                font-size: 0.8rem;
-            }
-        }
     }
 
-    /* skills__card-title, skills__card-points, skills__card-skills */
+    /* skills__card */
     &__card {
+        position: absolute;
+        z-index: 5;
+        margin: 0;
+        box-shadow: $boxShadow;
+        border: 0;
+        border-radius: 0.5rem;
+        inset: $sectionPadding;
+        padding: $cardPadding;
+        width: auto;
+        height: auto;
+        max-width: none;
+        max-height: none;
+        overflow-y: auto;
+        background: $white;
+        color: $black;
 
-        /* skills__card-title */
-        &-title {
+        &:not([open]) {
+            display: none;
+        }
+
+        @include media-breakpoint-down($lg) {
+            position: fixed;
+            inset: $sectionPadding;
+            bottom: auto;
+            z-index: 100;
+            max-height: calc(100vh - 8rem);
+            box-shadow: 0 0 0 100vmax rgba(0, 0, 0, 0.6);
+        }
+
+        /* skills__card__close */
+        &__close {
+            @include flex(row, center, center);
+            position: absolute;
+            top: 0.75rem;
+            right: 1rem;
+            border-radius: 50%;
+            width: 2rem;
+            height: 2rem;
+            background: transparent;
+            font: 400 1.5rem/1 $Jost;
+            color: $black-p4;
+            cursor: pointer;
+
+            &:hover {
+                color: $black;
+            }
+        }
+
+        /* skills__card__step */
+        &__step {
+            @include default-text;
+            margin-bottom: 0.5rem;
+            font-size: 1rem;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: $blue;
+        }
+
+        /* skills__card__body */
+        &__body {
+            max-width: 44rem;
+
+            .skills__card__title {
+                margin-bottom: 1.5rem;
+                font: italic 500 2rem/1 $Simonetta;
+            }
+        }
+
+        /* skills__card__title */
+        &__title {
             margin-bottom: 1rem;
             font-weight: 400;
         }
 
-        /* skills__card-points */
-        &-points {
+        /* skills__card__desc */
+        &__desc {
             @include flex(column, center, left);
             gap: 0.5rem;
             margin-bottom: 1.25rem;
@@ -460,8 +322,8 @@
             }
         }
 
-        /* skills__card-skills */
-        &-skills {
+        /* skills__card__list */
+        &__list {
             @include flex(row, flex-start, center);
             flex-wrap: wrap;
             gap: 0.5rem;
@@ -472,7 +334,7 @@
                 border-radius: 999px;
                 padding: 0.4rem 0.85rem;
                 color: $black;
-                font-size: 0.875rem;
+                font-size: 0.75rem;
                 line-height: 1;
                 word-spacing: normal;
 
@@ -484,21 +346,139 @@
             }
         }
     }
+
+    /* skills__illustration */
+    &__illustration {
+        @include flex(row, flex-end, flex-end);
+        position: absolute;
+        inset: 0;
+
+        @include media-breakpoint-down($lg) {
+            position: static;
+            display: block;
+            order: -1;
+            width: 100%;
+        }
+
+        img {
+            display: block;
+            width: auto;
+            max-width: none;
+            height: 110%;
+
+            @include media-breakpoint-down($lg) {
+                display: none;
+            }
+        }
+    }
+
+    /* skills__title */
+    &__title {
+        position: absolute;
+        top: 48%;
+        right: 4rem;
+        z-index: 1;
+        margin-bottom: 0;
+        max-width: 16rem;
+        text-align: right;
+        color: $white;
+
+        @include media-breakpoint-down($lg) {
+            right: auto;
+            left: -13rem;
+            max-width: none;
+            text-align: left;
+            transform: rotate(90deg);
+        }
+
+        @include media-breakpoint-down($sm) {
+            left: auto;
+            right: 1.5rem;
+            font-size: 0;
+
+            &::after {
+                position: absolute;
+                top: -1rem;
+                left: -4rem;
+                font-size: 2.25rem;
+                font-style: italic;
+                white-space: nowrap;
+                content: 'What I do...';
+            }
+        }
+    }
+
+    /* skills__pearl */
+    &__pearl {
+        position: absolute;
+        z-index: 1;
+        border: 0;
+        border-radius: 50%;
+        width: 3rem;
+        height: 3rem;
+        background: transparent;
+        cursor: pointer;
+
+        @include media-breakpoint-down($lg) {
+            display: none;
+        }
+
+        &:hover {
+            @include focus-ring;
+        }
+
+        /* skills__pearl-dialog */
+        &-dialog {
+            position: absolute;
+            z-index: 3;
+            margin: 0;
+            border: 0;
+            border-radius: 1rem;
+            padding: 1.25rem 1.5rem;
+            max-width: 15rem;
+            background: $blue;
+            box-shadow: $boxShadow;
+            color: $white;
+
+            &::before {
+                position: absolute;
+                top: -0.5rem;
+                left: 1.5rem;
+                width: 0.85rem;
+                height: 0.85rem;
+                background: $blue;
+                transform: rotate(45deg);
+                content: '';
+            }
+
+            p {
+                font: italic 400 1rem/1.4 $Simonetta;
+                margin: 0;
+            }
+        }
+    }
 }
 
-@keyframes roadmap-start-pulse {
-    0%, 100% { transform: translateY(-50%) scale(1); }
-    50% { transform: translateY(-50%) scale(1.06); }
+@keyframes road-start-pulse {
+
+    0%,
+    100% {
+        transform: translateY(-50%) scale(1);
+    }
+
+    50% {
+        transform: translateY(-50%) scale(1.06);
+    }
 }
 
-@keyframes roadmap-here-bob {
-    0%, 100% { transform: translate(-50%, calc(-100% - 1.75rem)); }
-    50% { transform: translate(-50%, calc(-100% - 2.15rem)); }
-}
+@keyframes road-here-bob {
 
-@media (prefers-reduced-motion: reduce) {
-    .skills__roadmap-start,
-    .skills__roadmap-here {
-        animation: none;
+    0%,
+    100% {
+        transform: translate(-50%, calc(-100% - 1.75rem));
+    }
+
+    50% {
+        transform: translate(-50%, calc(-100% - 2.15rem));
     }
 }

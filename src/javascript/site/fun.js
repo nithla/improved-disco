@@ -6,9 +6,13 @@ const SCROLL_END_TOLERANCE = 2;
 
 function updateArrows() {
     const { scrollLeft, scrollWidth, clientWidth } = funMovies;
+    const atStart = scrollLeft <= SCROLL_END_TOLERANCE;
+    const atEnd = scrollLeft + clientWidth >= scrollWidth - SCROLL_END_TOLERANCE;
 
-    funPrev.classList.toggle('fun__carousel-arrow--hidden', scrollLeft <= SCROLL_END_TOLERANCE);
-    funNext.classList.toggle('fun__carousel-arrow--hidden', scrollLeft + clientWidth >= scrollWidth - SCROLL_END_TOLERANCE);
+    funPrev.classList.toggle('fun__carousel-arrow--hidden', atStart);
+    funPrev.disabled = atStart;
+    funNext.classList.toggle('fun__carousel-arrow--hidden', atEnd);
+    funNext.disabled = atEnd;
 }
 
 function renderStatus(list, message) {

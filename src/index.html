@@ -12,6 +12,21 @@
 
 <body>
     <div class="main" id="home">
+        <button class="main__music-toggle" type="button" id="musicToggle" aria-label="Unmute background music" aria-pressed="false">
+            <svg class="icon icon--music-on" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M3 9v6h4l5 5V4L7 9H3z" />
+                <path d="M16.5 12c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02z" />
+                <path d="M14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z" />
+            </svg>
+            <svg class="icon icon--music-off" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M3 9v6h4l5 5V4L7 9H3z" />
+                <path d="M19.5 8.5l-6 6m0-6l6 6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" fill="none" />
+            </svg>
+        </button>
+        <div class="main__music-frame" aria-hidden="true">
+            <div id="bgMusicPlayer"></div>
+        </div>
+
         <header class="header">
             <div class="header__menu" role="button" tabindex="0" aria-label="Menu" aria-controls="primary-navigation" aria-expanded="false">
                 <span class="header__menu-bar"></span>
@@ -48,54 +63,44 @@
         </section>
 
         <section class="skills" id="skills">
-            <div class="skills__wrapper">
-                <div class="skills__roadmap">
-                    <svg class="skills__roadmap-path" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
-                        <path class="skills__roadmap-road" d="M50,0 C55,4 52,7 50,10 C50,17 22,20 22,30 C22,40 68,40 68,50 C68,60 30,60 30,70 C30,80 55,83 55,90 C55,94 54.5,97.5 53.5,100" />
-                        <path class="skills__roadmap-lane" d="M50,0 C55,4 52,7 50,10 C50,17 22,20 22,30 C22,40 68,40 68,50 C68,60 30,60 30,70 C30,80 55,83 55,90 C55,94 54.5,97.5 53.5,100" />
+            <div class="skills__road-wrapper">
+                <div class="skills__road">
+                    <svg class="skills__road-path-wrapper" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
+                        <path class="skills__road-path" d="M50,0 C55,4 52,7 50,10 C50,17 22,20 22,30 C22,40 68,40 68,50 C68,60 30,60 30,70 C30,80 55,83 55,90 C55,94 54.5,97.5 53.5,100" />
+                        <path class="skills__road-lane" d="M50,0 C55,4 52,7 50,10 C50,17 22,20 22,30 C22,40 68,40 68,50 C68,60 30,60 30,70 C30,80 55,83 55,90 C55,94 54.5,97.5 53.5,100" />
                     </svg>
-                    <span class="skills__roadmap-here" aria-hidden="true">You are here</span>
-                    <div class="skills__roadmap-item">
-                        <button class="skills__roadmap-marker" type="button" data-phase="1" aria-haspopup="dialog" aria-controls="roadmapOverlay" aria-label="The product bet — start here, see details">1</button>
-                        <span class="skills__roadmap-start" aria-hidden="true">Start here</span>
-                        <div class="skills__roadmap-content">
-                            <p class="skills__card-title">The product bet</p>
-                        </div>
+                    <span class="skills__road-here" aria-hidden="true">You are here</span>
+                    <div class="skills__road-item">
+                        <button class="skills__road-marker" type="button" data-phase="1" aria-haspopup="dialog" aria-controls="skillsCard" aria-label="The product bet — start here, see details">1</button>
+                        <span class="skills__road-start" aria-hidden="true">Start here</span>
+                        <span class="skills__road-title">The product bet</span>
                     </div>
-                    <div class="skills__roadmap-item">
-                        <button class="skills__roadmap-marker" type="button" data-phase="2" aria-haspopup="dialog" aria-controls="roadmapOverlay" aria-label="Mise en Place — see details">2</button>
-                        <div class="skills__roadmap-content">
-                            <p class="skills__card-title">Mise en Place</p>
-                        </div>
+                    <div class="skills__road-item">
+                        <button class="skills__road-marker" type="button" data-phase="2" aria-haspopup="dialog" aria-controls="skillsCard" aria-label="Mise en Place — see details">2</button>
+                        <span class="skills__road-title">Mise en Place</span>
                     </div>
-                    <div class="skills__roadmap-item">
-                        <button class="skills__roadmap-marker" type="button" data-phase="3" aria-haspopup="dialog" aria-controls="roadmapOverlay" aria-label="The build — see details">3</button>
-                        <div class="skills__roadmap-content">
-                            <p class="skills__card-title">The build</p>
-                        </div>
+                    <div class="skills__road-item">
+                        <button class="skills__road-marker" type="button" data-phase="3" aria-haspopup="dialog" aria-controls="skillsCard" aria-label="The build — see details">3</button>
+                        <span class="skills__road-title">The build</span>
                     </div>
-                    <div class="skills__roadmap-item">
-                        <button class="skills__roadmap-marker" type="button" data-phase="4" aria-haspopup="dialog" aria-controls="roadmapOverlay" aria-label="Delivery & rigor — see details">4</button>
-                        <div class="skills__roadmap-content">
-                            <p class="skills__card-title">Delivery & rigor</p>
-                        </div>
+                    <div class="skills__road-item">
+                        <button class="skills__road-marker" type="button" data-phase="4" aria-haspopup="dialog" aria-controls="skillsCard" aria-label="Delivery & rigor — see details">4</button>
+                        <span class="skills__road-title">Delivery & rigor</span>
                     </div>
-                    <div class="skills__roadmap-item">
-                        <button class="skills__roadmap-marker" type="button" data-phase="5" aria-haspopup="dialog" aria-controls="roadmapOverlay" aria-label="The part that pays off — see details">5</button>
-                        <div class="skills__roadmap-content">
-                            <p class="skills__card-title">The part that pays off</p>
-                        </div>
+                    <div class="skills__road-item">
+                        <button class="skills__road-marker" type="button" data-phase="5" aria-haspopup="dialog" aria-controls="skillsCard" aria-label="The part that pays off — see details">5</button>
+                        <span class="skills__road-title">The part that pays off</span>
                     </div>
                 </div>
             </div>
 
-            <dialog class="skills__roadmap-overlay" id="roadmapOverlay">
-                <button class="skills__roadmap-overlay-close" type="button" aria-label="Close">&times;</button>
-                <div class="skills__roadmap-overlay-body"></div>
+            <dialog class="skills__card" id="skillsCard">
+                <button class="skills__card__close" type="button" aria-label="Close">&times;</button>
+                <div class="skills__card__body"></div>
             </dialog>
 
-            <div class="skills__portrait">
-                <img class="skills__portrait-img" src="assets/background/1665-girl-with-a-pearl-earring-vermeer-cutout.png" alt="">
+            <div class="skills__illustration">
+                <img src="assets/background/1665-girl-with-a-pearl-earring-vermeer-cutout.png" alt="">
                 <h2 class="skills__title">From concept to execution...</h2>
                 <button class="skills__pearl" type="button" aria-haspopup="dialog" aria-controls="pearlDialog" aria-label="A little secret about the pearl"></button>
                 <dialog class="skills__pearl-dialog" id="pearlDialog">
@@ -104,25 +109,26 @@
             </div>
         </section>
 
-        <section class="showcase" id="projects">
-            <div class="showcase__sticky">
-                <div class="showcase__track" id="projectsTrack">
+        <section class="showcase-wrapper" id="projects">
+            <div class="showcase">
+                <div class="showcase__projects-wrapper" id="projectsTrack">
                     <svg class="showcase__road" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
                         <path class="showcase__road-paving" d="M27.8,0 C27.1,2.6 25.7,5 24,7 C22,9.4 19,11.2 16,12 C7.6,14.3 -1.4,10.5 -10,9" />
                         <path class="showcase__road-lane" d="M27.8,0 C27.1,2.6 25.7,5 24,7 C22,9.4 19,11.2 16,12 C7.6,14.3 -1.4,10.5 -10,9" />
                     </svg>
-                    <div class="showcase__panel showcase__intro">
+                    <div class="showcase__projects--intro">
                         <h2>My Projects</h2>
                         <p>Six years of it, give or take &mdash; split between product and engineering.</p>
-                        <span class="showcase__cue">Scroll on <span class="showcase__cue-arrow" aria-hidden="true">&rarr;</span></span>
+                        <p class="showcase__projects__hint highlight">Scroll on <span class="showcase__projects__hint-arrow" aria-hidden="true">&darr;</span></p>
                     </div>
-                    <div class="showcase__panel showcase__outro">
+                    <!-- Here is where showcase__projects comes in -->
+                    <div class="showcase__projects--outro">
                         <p>Want the full picture &mdash; dates, tools, the lot?</p>
                         <button class="showcase__resume" type="button">
                             <svg class="icon icon--download" viewBox="0 0 512 512" fill="currentColor" aria-hidden="true">
                                 <path d="M288 32c0-17.7-14.3-32-32-32s-32 14.3-32 32V274.7l-73.4-73.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l128 128c12.5 12.5 32.8 12.5 45.3 0l128-128c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L288 274.7V32zM64 352c-35.3 0-64 28.7-64 64v32c0 35.3 28.7 64 64 64H448c35.3 0 64-28.7 64-64V416c0-35.3-28.7-64-64-64H346.5l-45.3 45.3c-25 25-65.5 25-90.5 0L165.5 352H64zm368 56a24 24 0 1 1 0 48 24 24 0 1 1 0-48z" />
                             </svg>
-                            Download résumé
+                            <span>Download résumé</span>
                         </button>
                     </div>
                 </div>
@@ -131,7 +137,7 @@
         </section>
 
         <section class="contact" id="contact">
-            <img/><!--The creation of Adam cutout-->
+            <img class="contact__illustration"/><!--The creation of Adam cutout-->
             <div class="contact__form-wrapper">
                 <div class="contact__form">
                     <h2 class="highlight">Get In Touch!</h2>
@@ -140,7 +146,7 @@
                         <input type="email" id="contactEmail" class="contact__input__text" placeholder="E-mail">
                         <textarea id="contactQuery" class="contact__input__textarea"
                             placeholder="Enter your query and I shall reach out to you!"></textarea>
-                        <button class="contact__input__button"><span>Contact me :D</span></button>
+                        <button class="contact__input__button" type="button"><span>Contact me :D</span></button>
                     </div>
                 </div>
                 <div class="contact__social">
@@ -155,9 +161,13 @@
             <h2>Coz it's not all just work</h2>
             <div class="fun__subsection-wrapper">
                 <div class="fun__subsection">
+                    <div id="spotifyEmbed"></div>
+                </div>
+
+                <div class="fun__subsection">
                     <p>My Top Films</p>
                     <div class="fun__carousel">
-                        <button class="fun__carousel-arrow fun__carousel-arrow--prev" id="funPrev" aria-label="Scroll left">
+                        <button class="fun__carousel-arrow fun__carousel-arrow--prev" id="funPrev" type="button" aria-label="Scroll left">
                             <svg class="icon icon--chevron" viewBox="0 0 320 512" fill="currentColor" aria-hidden="true">
                                 <path d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l192 192c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256 246.6 86.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-192 192z" />
                             </svg>
@@ -165,20 +175,12 @@
                         <ul id="funMovies">
                             <li>Loading...</li>
                         </ul>
-                        <button class="fun__carousel-arrow fun__carousel-arrow--next" id="funNext" aria-label="Scroll right">
+                        <button class="fun__carousel-arrow fun__carousel-arrow--next" id="funNext" type="button" aria-label="Scroll right">
                             <svg class="icon icon--chevron" viewBox="0 0 320 512" fill="currentColor" aria-hidden="true">
                                 <path d="M310.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-192 192c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L242.7 256 73.4 86.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l192 192z" />
                             </svg>
                         </button>
                     </div>
-                </div>
-
-                <div class="fun__subsection">
-                    <iframe title="Spotify Embed: Recently played songs"
-                        src="https://open.spotify.com/embed/playlist/6A9MEzxuJ9D0qvNJPmQHZv?theme=0" width="100%"
-                        frameborder="0"
-                        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-                        loading="lazy"></iframe>
                 </div>
             </div>
             <div class="fun__social">

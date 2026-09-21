@@ -1,177 +1,475 @@
 .showcase {
+
+    /* showcase-wrapper */
+    &-wrapper {
+        position: relative;
+        padding: 0;
+        min-height: 100vh;
+        min-height: 100dvh;
+        overflow-x: clip;
+
+        @include media-breakpoint-down($lg) {
+            @include flex(column, center, stretch);
+            padding: $sectionPadding;
+            height: auto;
+            background: linear-gradient($black-p4, $black-p4), url('../../assets/background/1831-the-great-wave-off-kanagawa-hokusai.jpg') center / cover no-repeat;
+        }
+    }
+
+    @include flex(row, flex-start, center);
     position: relative;
-    padding: 0;
-    overflow-x: clip;
-    min-height: 100vh;
-    min-height: 100dvh;
-    background: $white;
-    color: $black;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-snap-type: x proximity;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
 
-    @include media-breakpoint-down($lg) {
-        @include flex(column, center, stretch);
-        height: auto;
-        padding: $sectionPadding;
-        background: linear-gradient($black-p4, $black-p4), url('../../assets/background/1831-the-great-wave-off-kanagawa-hokusai.jpg') center / cover no-repeat;
+    &::-webkit-scrollbar {
+        height: 0;
+        background: transparent;
     }
 
-    /* showcase__sticky */
-    &__sticky {
-        @include flex(row, flex-start, center);
-        position: relative;
-        background: $white;
-        overflow-x: auto;
-        overflow-y: hidden;
-        scroll-snap-type: x proximity;
-        scrollbar-width: none;
-        -webkit-overflow-scrolling: touch;
-
-        &::-webkit-scrollbar {
-            height: 0;
-            background: transparent;
-        }
-
-        &--pin {
-            position: sticky;
-            top: 0;
-            height: 100vh;
-            height: 100dvh;
-            min-height: 0;
-            overflow: hidden;
-            scroll-snap-type: none;
-        }
-
-        @include media-breakpoint-down($lg) {
-            background: transparent;
-        }
+    /* showcase--pin */
+    &--pin {
+        position: sticky;
+        top: 0;
+        height: 100vh;
+        height: 100dvh;
+        min-height: 0;
+        overflow: hidden;
+        scroll-snap-type: none;
     }
 
-    /* showcase__track */
-    &__track {
-        @include flex(row, flex-start, center);
-        position: relative;
-        flex: 0 0 auto;
-        gap: 5rem;
-        padding: 4rem 10vw;
+    /* showcase__projects */
+    &__projects {
 
-        .showcase__sticky--pin & {
-            height: 100%;
+        /* showcase__projects-wrapper */
+        &-wrapper {
+            @include flex(row, flex-start, center);
+            position: relative;
+            padding: 4rem 7.5vw;
+            flex: 0 0 auto;
+            gap: 5rem;
+
+            .showcase--pin & {
+                height: 100%;
+            }
+
+            @include media-breakpoint-down($lg) {
+                @include flex;
+                padding: 0;
+                flex: 1 1 auto;
+                width: 100%;
+                gap: 0;
+            }
         }
 
-        @include media-breakpoint-down($lg) {
-            @include flex(column, center, center);
-            flex: 1 1 auto;
-            width: 100%;
-            gap: 1.5rem;
-            padding: 0;
-        }
-    }
-
-    /* showcase__grid */
-    &__grid {
         display: contents;
 
         @include media-breakpoint-down($lg) {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
-            align-items: center;
             width: 100%;
             gap: 0.5rem;
 
-            @media (max-width: 767.98px) {
+            @include media-breakpoint-down($md) {
                 grid-template-columns: repeat(3, 1fr);
             }
 
-            @media (max-width: 539.98px) {
+            @include media-breakpoint-down($sm) {
                 grid-template-columns: repeat(2, 1fr);
             }
         }
-    }
 
-    /* showcase__panel */
-    &__panel {
-        position: relative;
-        flex: 0 0 auto;
-        color: $black;
-
-        .showcase__sticky--pin & {
-            will-change: transform, opacity;
-        }
-    }
-
-    /* showcase__intro / showcase__outro */
-    &__intro,
-    &__outro {
-        @include flex(column, center, flex-start);
-        align-self: center;
-        width: 20rem;
-
-        p {
-            @include default-text;
-            margin: 0;
+        /* showcase__projects--intro / showcase__projects--outro */
+        &--intro,
+        &--outro {
+            position: relative;
             color: $black;
-            word-spacing: normal;
-        }
 
-        @include media-breakpoint-down($lg) {
-            width: 100%;
-            max-width: none;
-            align-items: center;
-
-            p {
-                color: $white;
-                text-align: center;
+            .showcase--pin & {
+                will-change: transform, opacity;
             }
-        }
-    }
 
-    &__intro {
-        gap: 1rem;
-
-        h2 {
-            margin: 0;
-            font-size: 3.25rem;
-            text-align: left;
-            text-shadow: none;
-            color: $black;
+            @include flex(column, center, flex-start);
+            width: 20rem;
 
             @include media-breakpoint-down($lg) {
-                text-align: center;
-                color: $white;
+                width: 100%;
+                max-width: none;
+                align-items: center;
+
+                p {
+                    color: $white;
+                    text-align: center;
+                }
             }
         }
 
-        @include media-breakpoint-down($lg) {
-            align-items: center;
-            gap: 0;
+        &--intro {
+
+            h2 {
+                text-shadow: none;
+
+                @include media-breakpoint-down($lg) {
+                    color: $white;
+                }
+            }
+
+            @include media-breakpoint-down($lg) {
+                align-items: center;
+            }
         }
-    }
 
-    &__outro {
-        gap: 1.5rem;
-
-        @include media-breakpoint-down($lg) {
-            align-items: center;
-            gap: 0.5rem;
+        &--outro {
+            padding-bottom: 0.3rem;
         }
-    }
 
-    /* showcase__cue */
-    &__cue {
-        align-self: flex-start;
-        margin-top: 0.25rem;
-        padding: 0.25rem 0.6rem;
-        background: $yellow;
-        font: italic 500 0.95rem/1 $Jost;
-        color: $black-p5;
+        /* showcase__projects__hint */
+        &__hint {
+            padding: 0.25rem 0.5rem;
 
-        @include media-breakpoint-down($lg) {
-            display: none;
+            @include media-breakpoint-down($lg) {
+                display: none;
+            }
+
+            /* showcase__projects__hint-arrow */
+            &-arrow {
+                display: inline-block;
+                animation: showcase-hint 1.6s ease-in-out infinite;
+            }
         }
-    }
 
-    &__cue-arrow {
-        display: inline-block;
-        animation: showcase-cue 1.6s ease-in-out infinite;
+        /* showcase__projects__card */
+        &__card {
+            position: relative;
+            display: flex;
+            flex: 0 0 auto;
+            color: $black;
+
+            .showcase--pin & {
+                will-change: transform, opacity;
+            }
+
+            p,
+            li {
+                word-spacing: normal;
+            }
+
+            @include media-breakpoint-down($lg) {
+                width: 100%;
+                min-height: 0;
+                justify-content: center;
+                align-items: center;
+                overflow: visible;
+            }
+
+            /* showcase__projects__card-logo */
+            &-logo {
+                @include flex(row, center, center);
+                margin: 0;
+
+                @include media-breakpoint-down($lg) {
+                    border-radius: 0.5rem;
+                    padding: 1rem;
+                    width: 100%;
+                    height: auto;
+                }
+
+                @include media-breakpoint-down($sm) {
+                    padding: 2rem;
+                }
+
+                img {
+                    display: block;
+                    width: auto;
+                    height: 2.75rem;
+                    object-fit: contain;
+
+                    @include media-breakpoint-down($lg) {
+                        height: auto;
+                        max-width: 6rem;
+                        max-height: 2.75rem;
+                        filter: brightness(0) invert(1) drop-shadow($boxShadow);
+                    }
+
+                    @include media-breakpoint-down($sm) {
+                        max-width: 4rem;
+                        max-height: 1.75rem;
+                    }
+                }
+            }
+
+            /* showcase__projects__card-num */
+            &-num {
+                margin: 0 0 0.75rem;
+                font: italic 700 2.25rem/1 $Simonetta;
+                color: $black;
+            }
+
+            /* showcase__projects__card-name */
+            &-name {
+                margin: 0 0 0.5rem;
+                font: 700 1.5rem/1 $Jost;
+                color: $black;
+                text-shadow: none;
+            }
+
+            /* showcase__projects__card-role */
+            &-role {
+                margin: 0 0 1rem;
+                font: italic 400 1rem/1.4 $Jost;
+                color: $black-p5;
+            }
+
+            /* showcase__projects__card-summary */
+            &-summary {
+                @include default-text;
+                margin: 0 0 1rem;
+                color: $black;
+                word-spacing: normal;
+            }
+
+            /* showcase__projects__card-bullets */
+            &-bullets {
+                @include default-text;
+
+                li {
+                    position: relative;
+                    margin-bottom: 0.75rem;
+                    padding-left: 1rem;
+
+                    &:last-child {
+                        margin-bottom: 0;
+                    }
+
+                    &::before {
+                        position: absolute;
+                        top: 0.5rem;
+                        left: 0;
+                        width: 0.4rem;
+                        height: 0.4rem;
+                        background: $red;
+                        content: '';
+                    }
+                }
+            }
+
+            /* showcase__projects__card-text */
+            &-text {
+                @include media-breakpoint-down($lg) {
+                    display: none;
+                }
+            }
+
+            /* showcase__projects__card--band */
+            &--band {
+                width: 25rem;
+                align-self: flex-start;
+                flex-direction: column;
+
+                @include media-breakpoint-down($lg) {
+                    width: 100%;
+                    align-self: center;
+                    flex-direction: row;
+                }
+
+                .showcase__projects__card-logo {
+                    margin-bottom: 2rem;
+                    border-bottom: 2px solid $yellow;
+                    padding: 0 1.75rem;
+                    width: 100%;
+                    height: 6rem;
+                    background: $tan-p18;
+                    justify-content: flex-start;
+
+                    @include media-breakpoint-down($lg) {
+                        margin-bottom: 0;
+                        border-bottom: none;
+                        padding: 1rem;
+                        height: auto;
+                        background: none;
+                        justify-content: center;
+                    }
+
+                    img {
+                        height: 3.5rem;
+
+                        @include media-breakpoint-down($lg) {
+                            height: auto;
+                        }
+                    }
+                }
+
+                .showcase__projects__card-num {
+                    position: absolute;
+                    top: 1.5rem;
+                    right: 1.5rem;
+                    font-size: 1.5rem;
+                    color: $black-p4;
+                }
+            }
+
+            /* showcase__projects__card--billboard */
+            &--billboard {
+                width: 43rem;
+                align-self: center;
+                flex-direction: row;
+                gap: 4rem;
+
+                @include media-breakpoint-down($lg) {
+                    width: 100%;
+                    gap: 0;
+                }
+
+                .showcase__projects__card-logo {
+                    border-right: 1px solid $black-p15;
+                    padding-right: 4rem;
+                    flex: 0 0 auto;
+
+                    @include media-breakpoint-down($lg) {
+                        border-right: none;
+                        padding-right: 1rem;
+                        flex: none;
+                    }
+
+                    img {
+                        height: 5.5rem;
+
+                        @include media-breakpoint-down($lg) {
+                            height: auto;
+                        }
+                    }
+                }
+
+                .showcase__projects__card-text {
+                    flex: 1;
+                    align-self: center;
+                }
+
+                .showcase__projects__card-num {
+                    margin: 0 0 0.5rem;
+                    font-size: 4rem;
+                    line-height: 1;
+                    color: $black;
+                }
+
+                .showcase__projects__card-name {
+                    font: italic 500 2rem/1 $Simonetta;
+                }
+            }
+
+            /* showcase__projects__card--column */
+            &--column {
+                width: 19rem;
+                align-self: flex-start;
+                flex-direction: column;
+
+                @include media-breakpoint-down($lg) {
+                    width: 100%;
+                    align-self: center;
+                    flex-direction: row;
+                }
+
+                .showcase__projects__card-logo {
+                    margin-bottom: 2.5rem;
+                    justify-content: flex-start;
+
+                    @include media-breakpoint-down($lg) {
+                        margin-bottom: 0;
+                        justify-content: center;
+                    }
+
+                    img {
+                        height: 2.25rem;
+
+                        @include media-breakpoint-down($lg) {
+                            height: auto;
+                        }
+                    }
+                }
+
+                .showcase__projects__card-num {
+                    margin-bottom: 0.4rem;
+                    font: 500 1rem/1 $Jost;
+                    letter-spacing: 0.2em;
+                    color: $black-p4;
+                }
+
+                .showcase__projects__card-name {
+                    margin-bottom: 1rem;
+                    font: italic 500 2.25rem/1 $Simonetta;
+                }
+            }
+
+            /* showcase__projects__card--ghost */
+            &--ghost {
+                width: 29rem;
+                min-height: 22rem;
+                overflow: hidden;
+                align-self: flex-end;
+                flex-direction: column;
+                justify-content: flex-end;
+
+
+                @include media-breakpoint-down($lg) {
+                    width: 100%;
+                    min-height: 0;
+                    overflow: visible;
+                    align-self: center;
+                    flex-direction: row;
+                    justify-content: center;
+                }
+
+                .showcase__projects__card-logo {
+                    position: absolute;
+                    top: -3rem;
+                    right: -4rem;
+                    width: 22rem;
+                    height: auto;
+                    opacity: 0.13;
+
+                    @include media-breakpoint-down($lg) {
+                        position: static;
+                        top: auto;
+                        right: auto;
+                        width: 100%;
+                        opacity: 1;
+                    }
+
+                    img {
+                        width: 100%;
+                        height: auto;
+                        filter: grayscale(1);
+
+                        @include media-breakpoint-down($lg) {
+                            width: auto;
+                            filter: brightness(0) invert(1) drop-shadow(0 4px 8px $black-p4);
+                        }
+                    }
+                }
+
+                .showcase__projects__card-text {
+                    position: relative;
+                    z-index: 1;
+                }
+
+                .showcase__projects__card-num {
+                    margin-bottom: 0.5rem;
+                    font-size: 3rem;
+                    color: $black;
+                }
+            }
+
+            /* showcase__projects__card--bare */
+            &--bare {
+                display: none;
+
+                @include media-breakpoint-down($lg) {
+                    display: flex;
+                }
+            }
+        }
     }
 
     /* showcase__road */
@@ -188,6 +486,7 @@
             display: none;
         }
 
+        /* showcase__road-paving */
         &-paving {
             fill: none;
             stroke: $tan-p35;
@@ -197,6 +496,7 @@
             vector-effect: non-scaling-stroke;
         }
 
+        /* showcase__road-lane */
         &-lane {
             fill: none;
             stroke: $white;
@@ -207,274 +507,22 @@
         }
     }
 
-    &__card {
-        display: flex;
-
-        p,
-        li {
-            word-spacing: normal;
-        }
-
-        /* showcase__card-logo */
-        &-logo {
-            @include flex(row, center, center);
-            margin: 0;
-
-            img {
-                display: block;
-                width: auto;
-                height: 2.75rem;
-                object-fit: contain;
-            }
-        }
-
-        /* showcase__card-num */
-        &-num {
-            margin: 0 0 0.75rem;
-            font: italic 700 2.4rem/1 $Simonetta;
-            color: $black;
-        }
-
-        &-name {
-            margin: 0 0 0.6rem;
-            font: 700 1.7rem/1.05 $Jost;
-            text-shadow: none;
-            color: $black;
-        }
-
-        &-role {
-            margin: 0 0 1.1rem;
-            font: italic 400 1rem/1.4 $Jost;
-            color: rgba(0, 0, 0, 0.62);
-        }
-
-        &-summary {
-            @include default-text;
-            margin: 0 0 1.1rem;
-            color: $black;
-            word-spacing: normal;
-        }
-
-        &-bullets {
-            @include default-text;
-            color: $black;
-            word-spacing: normal;
-
-            li {
-                position: relative;
-                margin-bottom: 0.7rem;
-                padding-left: 1.1rem;
-
-                &:last-child {
-                    margin-bottom: 0;
-                }
-
-                &::before {
-                    position: absolute;
-                    top: 0.55rem;
-                    left: 0;
-                    width: 0.4rem;
-                    height: 0.4rem;
-                    background: $yellow;
-                    content: '';
-                }
-            }
-        }
-    }
-
-    /* showcase__card--band */
-    &__card--band {
-        flex-direction: column;
-        align-self: flex-start;
-        width: 25rem;
-
-        .showcase__card-logo {
-            justify-content: flex-start;
-            width: 100%;
-            height: 6rem;
-            margin-bottom: 2rem;
-            padding: 0 1.75rem;
-            background: #f2efe7;
-            border-bottom: 2px solid $yellow;
-
-            img {
-                height: 3.5rem;
-            }
-        }
-
-        .showcase__card-num {
-            position: absolute;
-            top: 1.5rem;
-            right: 1.5rem;
-            font-size: 1.4rem;
-            color: $black-p4;
-        }
-    }
-
-    /* showcase__card--billboard */
-    &__card--billboard {
-        flex-direction: row;
-        align-self: center;
-        gap: 4rem;
-        width: 43rem;
-
-        .showcase__card-logo {
-            flex: 0 0 auto;
-            padding-right: 4rem;
-            border-right: 1px solid $black-p15;
-
-            img {
-                height: 5.5rem;
-            }
-        }
-
-        .showcase__card-text {
-            flex: 1;
-            align-self: center;
-        }
-
-        .showcase__card-num {
-            margin: 0 0 0.5rem;
-            font-size: 4.5rem;
-            line-height: 0.9;
-            color: $black;
-        }
-
-        .showcase__card-name {
-            font: italic 500 1.9rem/1.05 $Simonetta;
-        }
-    }
-
-    /* showcase__card--column */
-    &__card--column {
-        flex-direction: column;
-        align-self: flex-start;
-        width: 19rem;
-
-        .showcase__card-logo {
-            justify-content: flex-start;
-            margin-bottom: 2.5rem;
-
-            img {
-                height: 2.25rem;
-            }
-        }
-
-        .showcase__card-num {
-            margin-bottom: 0.4rem;
-            font: 500 1rem/1 $Jost;
-            letter-spacing: 0.2em;
-            color: $black-p4;
-        }
-
-        .showcase__card-name {
-            margin-bottom: 1rem;
-            font: italic 500 2.2rem/1.02 $Simonetta;
-        }
-    }
-
-    /* showcase__card--ghost */
-    &__card--ghost {
-        flex-direction: column;
-        justify-content: flex-end;
-        align-self: flex-end;
-        width: 29rem;
-        min-height: 22rem;
-        overflow: hidden;
-
-        .showcase__card-logo {
-            position: absolute;
-            top: -3rem;
-            right: -4rem;
-            width: 22rem;
-            height: auto;
-            opacity: 0.13;
-
-            img {
-                width: 100%;
-                height: auto;
-                filter: grayscale(1);
-            }
-        }
-
-        .showcase__card-text {
-            position: relative;
-            z-index: 1;
-        }
-
-        .showcase__card-num {
-            margin-bottom: 0.5rem;
-            font-size: 3.5rem;
-            color: $black;
-        }
-    }
-
-    /* showcase__card--bare */
-    &__card--bare {
-        display: none;
-    }
-
-    @include media-breakpoint-down($lg) {
-        &__card,
-        &__card--band,
-        &__card--billboard,
-        &__card--column,
-        &__card--ghost,
-        &__card--bare {
-            all: revert;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            width: 100%;
-
-            .showcase__card-logo {
-                all: revert;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                margin: 0;
-                padding: 1rem;
-                width: 100%;
-                border-radius: 0.5rem;
-
-                img {
-                    all: revert;
-                    display: block;
-                    width: auto;
-                    height: auto;
-                    max-width: 6rem;
-                    max-height: 2.75rem;
-                    object-fit: contain;
-                    filter: brightness(0) invert(1) drop-shadow(0 4px 8px $black-p4);
-
-                    @include media-breakpoint-down($sm) {
-                        max-width: 4rem;
-                        max-height: 1.75rem;
-                    }
-                }
-            }
-
-            .showcase__card-text {
-                display: none;
-            }
-        }
-    }
-
     /* showcase__rail */
     &__rail {
         position: absolute;
+        display: none;
         left: 10vw;
         right: 10vw;
         bottom: 2.25rem;
         z-index: 2;
-        display: none;
         height: 2px;
         background: $black-p15;
 
-        .showcase__sticky--pin & {
+        .showcase--pin & {
             display: block;
         }
 
+        /* showcase__rail-fill */
         &-fill {
             display: block;
             width: 0;
@@ -486,45 +534,40 @@
     /* showcase__resume */
     &__resume {
         @include flex(row, center, center);
-        align-self: flex-start;
-        gap: 0.5rem;
         border: 1px solid $black;
-        border-radius: 999px;
-        padding: 0.8rem 1.6rem;
-        background: transparent;
-        font: 500 1rem/1 $Jost;
-        color: $black;
-        transition: background 0.2s ease, color 0.2s ease;
+        align-self: flex-start;
 
         .icon--download {
+            margin-left: 0.75rem;
             width: 0.9rem;
             height: 0.9rem;
         }
 
         &:hover {
-            background: $black;
-            color: $white;
+            @include focus-ring;
         }
 
         @include media-breakpoint-down($lg) {
+            border: none;
             align-self: center;
-            background: $white;
-            color: $black;
-        }
-
-        &:focus-visible {
-            @include focus-ring;
         }
     }
 }
 
-@keyframes showcase-cue {
-    0%, 100% { transform: translateX(0); }
-    50% { transform: translateX(0.35rem); }
+@keyframes showcase-hint {
+
+    0%,
+    100% {
+        transform: translateY(-0.175rem);
+    }
+
+    50% {
+        transform: translateY(0.175rem);
+    }
 }
 
 @media (prefers-reduced-motion: reduce) {
-    .showcase__cue-arrow {
+    .showcase__projects__hint-arrow {
         animation: none;
     }
 }

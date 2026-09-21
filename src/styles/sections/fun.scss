@@ -13,7 +13,7 @@
         /* fun__subsection-wrapper */
         &-wrapper {
             @include flex(row, stretch, stretch);
-            @include card(0.5rem, $black-p4);
+            @include card(0.75rem, $black-p4);
             margin-bottom: 1.5rem;
             padding: 0;
             width: 100%;
@@ -26,8 +26,7 @@
         flex: 1;
         min-width: 0;
 
-        &:first-child {
-            order: 2;
+        &:last-child {
             padding: 3rem 1.5rem 1.5rem;
 
             @include media-breakpoint-down($lg) {
@@ -96,14 +95,6 @@
                 @include media-breakpoint-down($sm) {
                     transform: none;
                 }
-            }
-
-            &:focus {
-                outline: none;
-            }
-
-            &:focus-visible {
-                @include focus-ring;
             }
 
             .icon--chevron {
@@ -212,8 +203,7 @@
 
             span {
                 margin-top: 0.5rem;
-                font: 300 0.75rem $Poppins;
-                line-height: 1.25;
+                font: 300 0.75rem/1.4 $Poppins;
                 word-spacing: normal;
                 color: $black;
             }

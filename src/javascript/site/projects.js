@@ -111,7 +111,7 @@ const PROJECTS = [
 
 const track = document.getElementById('projectsTrack');
 const section = document.getElementById('projects');
-const sticky = section && section.querySelector('.showcase__sticky');
+const sticky = section && section.querySelector('.showcase');
 const progress = document.getElementById('projectsProgress');
 
 /* one of four compositions per project, in a deliberate order so no two
@@ -123,26 +123,26 @@ function cardMarkup(project, position, layout) {
     const bullets = project.bullets.map((bullet) => `<li>${bullet}</li>`).join('');
 
     return `
-        <article class="showcase__panel showcase__card showcase__card--${layout}">
-            <figure class="showcase__card-logo"><img src="${project.logo}" alt="${project.name}"></figure>
-            <div class="showcase__card-text">
-                <p class="showcase__card-num" aria-hidden="true">${num}</p>
-                <h3 class="showcase__card-name">${project.name}</h3>
-                ${project.role ? `<p class="showcase__card-role">${project.role}</p>` : ''}
-                ${project.summary ? `<p class="showcase__card-summary">${project.summary}</p>` : ''}
-                <ul class="showcase__card-bullets">${bullets}</ul>
+        <article class="showcase__projects__card showcase__projects__card--${layout}">
+            <figure class="showcase__projects__card-logo"><img src="${project.logo}" alt="${project.name}"></figure>
+            <div class="showcase__projects__card-text">
+                <p class="showcase__projects__card-num" aria-hidden="true">${num}</p>
+                <h3 class="showcase__projects__card-name">${project.name}</h3>
+                ${project.role ? `<p class="showcase__projects__card-role">${project.role}</p>` : ''}
+                ${project.summary ? `<p class="showcase__projects__card-summary">${project.summary}</p>` : ''}
+                <ul class="showcase__projects__card-bullets">${bullets}</ul>
             </div>
         </article>
     `;
 }
 
 /* projects with no copy to show (no role/summary/bullets) get no desktop
-   layout — see showcase__card--bare in projects.scss, hidden in the pinned
-   reel and shown only as a plain tile in the <992px logo grid. */
+   layout — see showcase__projects__card--bare in projects.scss, hidden in the
+   pinned reel and shown only as a plain tile in the <992px logo grid. */
 function bareCardMarkup(project) {
     return `
-        <article class="showcase__panel showcase__card showcase__card--bare">
-            <figure class="showcase__card-logo"><img src="${project.logo}" alt="${project.name}"></figure>
+        <article class="showcase__projects__card showcase__projects__card--bare">
+            <figure class="showcase__projects__card-logo"><img src="${project.logo}" alt="${project.name}"></figure>
         </article>
     `;
 }
@@ -150,25 +150,27 @@ function bareCardMarkup(project) {
 if (track && section && sticky) {
     const featured = PROJECTS.filter((project) => project.bullets.length);
     const bare = PROJECTS.filter((project) => !project.bullets.length);
-    const intro = track.querySelector('.showcase__intro');
+    const intro = track.querySelector('.showcase__projects--intro');
 
-    /* the cards are wrapped in their own showcase__grid — see projects.scss:
+    /* the cards are wrapped in their own showcase__projects — see projects.scss:
        display:contents on desktop keeps them direct flex items of the reel
        (untouched from before), and only becomes a real grid container
        below 992px, so the <992px white background sits behind the cards
        alone rather than the whole track (intro/outro included). */
     intro.insertAdjacentHTML(
         'afterend',
-        '<div class="showcase__grid">'
+        '<div class="showcase__projects">'
         + featured.map((project, index) =>
             cardMarkup(project, index + 1, LAYOUTS[index % LAYOUTS.length])).join('')
         + bare.map((project) => bareCardMarkup(project)).join('')
         + '</div>'
     );
 
-    /* only .showcase__panel children take the reveal — this lets other things
+    /* only these panel-like children take the reveal — this lets other things
        (e.g. a decorative SVG) live in the track without being stomped */
-    const panels = Array.from(track.querySelectorAll('.showcase__panel'));
+    const panels = Array.from(track.querySelectorAll(
+        '.showcase__projects--intro, .showcase__projects--outro, .showcase__projects__card'
+    ));
 
     const canPin = window.matchMedia('(min-width: 992px)');
     const reduced = window.matchMedia('(prefers-reduced-motion: reduce)');
@@ -262,7 +264,20 @@ if (track && section && sticky) {
     }
 
     function onStripScroll() {
-        if (pinned() || stripQueued) {
+        if (pinned()) {
+            /* while pinned, the reel is driven entirely by the track's
+               transform — sticky itself must stay put. The browser's own
+               focus-into-view still tries to drag sticky's real scrollLeft
+               toward the (transform-blind) focused element, stacking a
+               second shift on top of ours; cancel it out immediately. */
+            if (sticky.scrollLeft !== 0) {
+                sticky.scrollLeft = 0;
+            }
+
+            return;
+        }
+
+        if (stripQueued) {
             return;
         }
 
@@ -271,7 +286,7 @@ if (track && section && sticky) {
     }
 
     function measure() {
-        sticky.classList.toggle('showcase__sticky--pin', pinned());
+        sticky.classList.toggle('showcase--pin', pinned());
         cachePanels();
 
         if (!pinned()) {
@@ -293,6 +308,36 @@ if (track && section && sticky) {
         reel(0);
         onScroll();
     }
+
+    /* Tab can jump focus straight to the résumé button past every card in
+       one go. The browser's own scroll-into-view can't see the track's
+       transform, so on an off-screen target it just scrolls the whole
+       pinned section to its vertical end — past the last panel, into the
+       track's trailing padding (showcase__projects-wrapper { padding: 4rem 10vw }).
+       That overshoots the reel into empty space. Recompute where the
+       focused panel actually sits and centre it instead, then resync the
+       page's own scroll to match so the next scroll event doesn't fight it. */
+    track.addEventListener('focusin', (event) => {
+        if (!pinned() || maxShift === 0) {
+            return;
+        }
+
+        const panel = event.target.closest(
+            '.showcase__projects--intro, .showcase__projects--outro, .showcase__projects__card'
+        );
+
+        if (!panel) {
+            return;
+        }
+
+        target = Math.min(Math.max(panel.offsetLeft + panel.offsetWidth / 2 - sticky.clientWidth / 2, 0), maxShift);
+        currentX = target;
+        track.style.transform = `translate3d(${-currentX}px, 0, 0)`;
+        reel(currentX);
+
+        const sectionDocTop = window.scrollY + section.getBoundingClientRect().top;
+        window.scrollTo({ top: sectionDocTop + target, left: 0, behavior: 'instant' });
+    });
 
     window.addEventListener('scroll', onScroll, { passive: true });
     sticky.addEventListener('scroll', onStripScroll, { passive: true });

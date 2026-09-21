@@ -1,11 +1,7 @@
 .contact {
-    @include flex(row, space-between, unset);
+    @include flex;
     position: relative;
     z-index: 1;
-    padding: 2rem 0;
-    height: auto;
-    min-height: 100vh;
-    min-height: 100dvh;
     overflow-x: clip;
 
     @include media-breakpoint-down($lg) {
@@ -13,7 +9,7 @@
         background: url('../../assets/background/1512-creation-of-adam-michelangelo.png') center / cover no-repeat;
     }
 
-    img {
+    &__illustration {
         position: absolute;
         bottom: -4rem;
         left: -4rem;
@@ -32,11 +28,9 @@
 
         /* contact__form-wrapper */
         &-wrapper {
-            @include flex(column, center, stretch);
-            margin: auto auto;
+            @include flex;
             padding: 4rem $cardPadding;
             flex: 1;
-            max-width: fit-content;
             max-height: fit-content;
             background: $black-p4;
             gap: 3rem;
@@ -44,17 +38,16 @@
             @include media-breakpoint-down($lg) {
                 margin: 0;
                 width: 100%;
-                max-width: none;
                 max-height: none;
                 min-height: 100%;
             }
         }
 
         @include flex(column, center, stretch);
-        margin: 0 auto;
 
         @include media-breakpoint-down($sm) {
             margin: 0;
+            width: 100%;
             text-align: center;
         }
     }
@@ -64,7 +57,7 @@
 
         /* contact__input-wrapper */
         &-wrapper {
-            @include flex();
+            @include flex;
             padding: 0;
             gap: 1.5rem;
 
@@ -119,9 +112,15 @@
         &__textarea {
             padding: 0 0.5rem 0.5rem;
             height: 6rem;
-            max-width: 100%;
             resize: vertical;
             scrollbar-color: $yellow-p25 transparent;
+        }
+
+        /* contact__button */
+        &__button {
+            &:hover {
+                @include focus-ring;
+            }
         }
     }
 }
