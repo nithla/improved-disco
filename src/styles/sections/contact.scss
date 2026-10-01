@@ -1,0 +1,126 @@
+.contact {
+    @include flex;
+    position: relative;
+    z-index: 1;
+    overflow-x: clip;
+
+    @include media-breakpoint-down($lg) {
+        padding: 0;
+        background: url('../../assets/background/1512-creation-of-adam-michelangelo.png') center / cover no-repeat;
+    }
+
+    &__illustration {
+        position: absolute;
+        bottom: -4rem;
+        left: -4rem;
+        z-index: -1;
+        width: 125%;
+        height: auto;
+        content: url('../../assets/background/1512-creation-of-adam-michelangelo-cutout.png');
+
+        @include media-breakpoint-down($lg) {
+            display: none;
+        }
+    }
+
+    /* contact__form */
+    &__form {
+
+        /* contact__form-wrapper */
+        &-wrapper {
+            @include flex;
+            padding: 4rem $cardPadding;
+            flex: 1;
+            max-height: fit-content;
+            background: $black-p4;
+            gap: 3rem;
+
+            @include media-breakpoint-down($lg) {
+                margin: 0;
+                width: 100%;
+                max-height: none;
+                min-height: 100%;
+            }
+        }
+
+        @include flex(column, center, stretch);
+
+        @include media-breakpoint-down($sm) {
+            margin: 0;
+            width: 100%;
+            text-align: center;
+        }
+    }
+
+    /* contact__input */
+    &__input {
+
+        /* contact__input-wrapper */
+        &-wrapper {
+            @include flex;
+            padding: 0;
+            gap: 1.5rem;
+
+            .error {
+                @include default-text;
+                margin: -1.2rem 0 0;
+                padding: 0 0.25rem;
+                background: $black;
+                font-size: 1rem;
+                color: $red;
+            }
+        }
+
+        /* contact__text, contact__textarea */
+        &__text,
+        &__textarea {
+            @include default-text;
+            border: 0;
+            border-bottom: 1px solid $yellow-p25;
+            display: block;
+            padding: 0.5rem;
+            width: 100%;
+            height: 1.5rem;
+            background: none;
+            color: $white;
+
+            &:focus,
+            &:hover {
+                outline: 0;
+                border-bottom: $yellow solid 2px;
+            }
+
+            &::placeholder {
+                color: $white-p7;
+            }
+
+            &:-webkit-autofill,
+            &:-webkit-autofill:hover,
+            &:-webkit-autofill:focus {
+                -webkit-text-fill-color: $white;
+                caret-color: $white;
+                transition: background-color 600000s 0s, color 600000s 0s;
+            }
+
+            &:autofill {
+                background-color: transparent;
+                color: $white;
+            }
+        }
+
+        /* contact__textarea */
+        &__textarea {
+            padding: 0 0.5rem 0.5rem;
+            height: 6rem;
+            resize: vertical;
+            scrollbar-color: $yellow-p25 transparent;
+        }
+
+        /* contact__button */
+        &__button {
+            &:hover {
+                @include focus-ring;
+            }
+        }
+    }
+}

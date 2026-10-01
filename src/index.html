@@ -7,157 +7,206 @@
     <title>
         <%=htmlWebpackPlugin.options.title %>
     </title>
-    <link rel="icon" href="logo.png" type="image/png">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="icon" href="<%= logo %>" type="image/svg+xml">
 </head>
 
 <body>
     <div class="main" id="home">
+        <button class="main__music-toggle" type="button" id="musicToggle" aria-label="Unmute background music"
+            aria-pressed="false">
+            <svg class="icon icon--music-on" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M3 9v6h4l5 5V4L7 9H3z" />
+                <path d="M16.5 12c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02z" />
+                <path
+                    d="M14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z" />
+            </svg>
+            <svg class="icon icon--music-off" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M3 9v6h4l5 5V4L7 9H3z" />
+                <path d="M19.5 8.5l-6 6m0-6l6 6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"
+                    fill="none" />
+            </svg>
+        </button>
+        <div class="main__music-frame" aria-hidden="true">
+            <div id="bgMusicPlayer"></div>
+        </div>
+
         <header class="header">
-            <div class="header__logo">
-                <p class="header__logo-text"><a href="#home">NRG</a></p>
-                <div class="header__logo-caret">
-                    <p>Menu</p>
-                </div>
+            <div class="header__menu" role="button" tabindex="0" aria-label="Menu" aria-controls="primary-navigation"
+                aria-expanded="false">
+                <span class="header__menu-bar"></span>
             </div>
-            <div class="header__navigation">
-                <ul class="header__navigation-links d-none">
+            <div class="header__navigation d-none" id="primary-navigation">
+                <a class="header__logo" href="#home" aria-label="Home"><img src="<%= logo %>" alt="Home"></a>
+                <ul class="header__navigation-links">
                     <li><a href="#home">Home</a></li>
-                    <li><a href="#work">Work</a></li>
+                    <li><a href="#skills">What I do</a></li>
+                    <li><a href="#projects">Experience</a></li>
                     <li><a href="#contact">Contact</a></li>
+                    <li><a href="#fun">Fun</a></li>
                 </ul>
             </div>
         </header>
 
-        <section class="home" >
+        <section class="home">
+            <h1>Hi, I’m <span class="highlight">Nithila</span>!</h1>
             <div class="home__bio">
-                <div class="home__bio-text-wrapper">
-                    <h2 class="home__title">Hi, I’m Nithila!</h2>
-                    <p class="home__bio-text"> With over four years of experience in the tech & consulting, I’ve
-                        evolved from a <u class="underline">software developer</u> to a <u class="underline">product
-                            owner</u>, merging my technical skills with a strong business mindset. I’ve worked on global
-                        projects like corporate websites and DevOps tools, and
-                        my journey has taught me how to bridge the gap between what users need and what businesses
-                        require.</p>
-                    <p class="home__bio-text" >I’m passionate about driving product success by crafting clear roadmaps,
-                        prioritizing the right
-                        features, and ensuring seamless collaboration between stakeholders and teams. With an <u class="underline">MBA from
-                        IIM Kozhikode</u> and a <u class="underline">B.Tech. in Computer Science</u> from MGIT, I’m here to make things happen—innovative,
-                        impactful, and on-point.</p>
+                <div class="home__bio__text">
+                    <p>After many years of introspection, the way I like to describe myself today is simple. I'm a lover of beauty. Beauty for the eyes, for the touch, or simply for that little itch in the brain that wants to be scratched. I believe it serves a purpose. And if there's no appeal in the thought, I don't see much point in doing it at all. I'm also an engineer with an MBA. Somewhere at the intersection of those things, how something works, why it should exist, and how it feels to use, is where I found <span class="highlight">product.</span></p>
+                    <p>I've shipped rebrands, migrations, and sites built from scratch. These days, I'm deciding what gets built next and making the case for it. Six years in, split pretty evenly between engineering and strategy. Front-end to back-end, brand to data, I've been somewhere in most of it.</p>
                 </div>
-                <div class="home__bio-picture"><img src="sp1.png"></div>
-            </div>
-        </section>
-        <section class="empty" id="work"></section>
-        <section class="pivot">
-            <h2 class="pivot__text">From concept to execution, driving results and not just output!</h2>
-            <div class="pivot__card-wrapper">
-                <div class="pivot__card">
-                    <p class="pivot__card__text">How I lead change</p>
-                    <ul class="pivot__card__bullets">
-                        <li>Align product vision with business & market goals</li>
-                        <li>Develop user-centric, scalable solutions</li>
-                        <li>Lead cross-functional teams</li>
-                    </ul>
-                </div>
-                <div class="pivot__card">
-                    <p class="pivot__card__text">How I leverage expertise</p>
-                    <ul class="pivot__card__bullets">
-                        <li>Agile Scrum + JIRA</li>
-                        <li>UI/UX experience</li>
-                        <li>Business intelligence tools</li>
-                    </ul>
-                </div>
-                <div class="pivot__card">
-                    <p class="pivot__card__text">How you'll thrive</p>
-                    <ul class="pivot__card__bullets">
-                        <li>Increased user engagement & retention</li>
-                        <li>Fast, iterative releases</li>
-                        <li>Data-driven decision making</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="pivot__caret">
-                <p>Learn more</p>
+                <div class="home__bio__picture"><img><!--Loading from CSS--></div>
             </div>
         </section>
 
-        <section class="skills d-none">
-            <h3 class="skills__text">My skills</h3>
-            <table class="skills__list">
-                <tr>
-                    <th>Product management</th>
-                    <th>Stakeholder management</th>
-                    <th>Feature prioritization & backlog management</th>
-                    <th>Risk management</th>
-                </tr>
-                <tr>
-                    <th>Root cause analysis</th>
-                    <th>Cross-functional collaboration</th>
-                    <th>Sprint planning & exceution</th>
-                    <th>Conflict resolution</th>
-                </tr>
-                <tr>
-                    <th>Roadmap planning</th>
-                    <th>Agile Scrum</th>
-                    <th>User story creation, mapping & refinement</th>
-                    <th>Analytics & KPIs, SQL</th>
-                </tr>
-                <tr>
-                    <th>Go-to-market strategy</th>
-                    <th>Jira & Confluence</th>
-                    <th>Continuous & iterative improvement</th>
-                    <th>Reports + dashboards: PowerBI, Tableau</th>
-                </tr>
-                <tr>
-                    <th>Customer research</th>
-                    <th>Figma, Adobe XD, InVision</th>
-                    <th>Quality assurance</th>
-                    <th>Frontend developer expertise</th>
-                </tr>
-            </table>
+        <section class="skills" id="skills">
+            <div class="skills__road-wrapper">
+                <div class="skills__road">
+                    <svg class="skills__road-path-wrapper" viewBox="0 0 100 100" preserveAspectRatio="none"
+                        aria-hidden="true">
+                        <path class="skills__road-path"
+                            d="M50,0 C55,4 52,7 50,10 C50,17 22,20 22,30 C22,40 68,40 68,50 C68,60 30,60 30,70 C30,80 55,83 55,90 C55,94 54.5,97.5 53.5,100" />
+                        <path class="skills__road-lane"
+                            d="M50,0 C55,4 52,7 50,10 C50,17 22,20 22,30 C22,40 68,40 68,50 C68,60 30,60 30,70 C30,80 55,83 55,90 C55,94 54.5,97.5 53.5,100" />
+                    </svg>
+                    <span class="skills__road-here" aria-hidden="true">You are here</span>
+                    <div class="skills__road-item">
+                        <button class="skills__road-marker" type="button" data-phase="1" aria-haspopup="dialog"
+                            aria-controls="skillsCard" aria-label="The product bet — start here, see details">1</button>
+                        <span class="skills__road-start" aria-hidden="true">Start here</span>
+                        <span class="skills__road-title">The product bet</span>
+                    </div>
+                    <div class="skills__road-item">
+                        <button class="skills__road-marker" type="button" data-phase="2" aria-haspopup="dialog"
+                            aria-controls="skillsCard" aria-label="Mise en Place — see details">2</button>
+                        <span class="skills__road-title">Mise en Place</span>
+                    </div>
+                    <div class="skills__road-item">
+                        <button class="skills__road-marker" type="button" data-phase="3" aria-haspopup="dialog"
+                            aria-controls="skillsCard" aria-label="The build — see details">3</button>
+                        <span class="skills__road-title">The build</span>
+                    </div>
+                    <div class="skills__road-item">
+                        <button class="skills__road-marker" type="button" data-phase="4" aria-haspopup="dialog"
+                            aria-controls="skillsCard" aria-label="Delivery & rigor — see details">4</button>
+                        <span class="skills__road-title">Delivery & rigor</span>
+                    </div>
+                    <div class="skills__road-item">
+                        <button class="skills__road-marker" type="button" data-phase="5" aria-haspopup="dialog"
+                            aria-controls="skillsCard" aria-label="The part that pays off — see details">5</button>
+                        <span class="skills__road-title">The part that pays off</span>
+                    </div>
+                </div>
+            </div>
 
-            <button class="skills__download"><span><i class="fa fa-download"></i>Download resume</span></button>
+            <dialog class="skills__card" id="skillsCard">
+                <button class="skills__card__close" type="button" aria-label="Close">&times;</button>
+                <div class="skills__card__body"></div>
+            </dialog>
+
+            <div class="skills__illustration">
+                <img src="assets/background/1665-girl-with-a-pearl-earring-vermeer-cutout.png" alt="">
+                <h2 class="skills__title">From concept to execution...</h2>
+                <button class="skills__pearl" type="button" aria-haspopup="dialog" aria-controls="pearlDialog"
+                    aria-label="A little secret about the pearl"></button>
+                <dialog class="skills__pearl-dialog" id="pearlDialog">
+                    <p>The name Nithila means &lsquo;beautiful, like a pearl,&rsquo; or simply, &lsquo;a pearl.&rsquo;
+                        So the pearl here is me, or rather, it is the girl, and I&rsquo;m looking right at you.</p>
+                </dialog>
+            </div>
         </section>
 
-        <section class="work">
-            <div class="work__carousel">
-                <img src="bt.png">
-                <img src="accenture.png">
-                <img src="canopygrowth.png">
-                <img src="dupont.png">
-                <img src="eon.png">
-                <img src="equinix.png">
-                <img src="myntra.png">
-                <img src="tadigital.png">
-                <img src="thoughtworks.png">
+        <section class="showcase-wrapper" id="projects">
+            <div class="showcase">
+                <div class="showcase__projects-wrapper" id="projectsTrack">
+                    <svg class="showcase__road" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
+                        <path class="showcase__road-paving"
+                            d="M27.8,0 C27.1,2.6 25.7,5 24,7 C22,9.4 19,11.2 16,12 C7.6,14.3 -1.4,10.5 -10,9" />
+                        <path class="showcase__road-lane"
+                            d="M27.8,0 C27.1,2.6 25.7,5 24,7 C22,9.4 19,11.2 16,12 C7.6,14.3 -1.4,10.5 -10,9" />
+                    </svg>
+                    <div class="showcase__projects--intro">
+                        <h2>My Projects</h2>
+                        <p>Six years of it, give or take &mdash; split between product and engineering.</p>
+                        <p class="showcase__projects__hint highlight">Scroll on <span
+                                class="showcase__projects__hint-arrow" aria-hidden="true">&darr;</span></p>
+                    </div>
+                    <!-- Here is where showcase__projects comes in -->
+                    <div class="showcase__projects--outro">
+                        <p>Want the full picture &mdash; dates, tools, the lot?</p>
+                        <button class="showcase__resume" type="button">
+                            <svg class="icon icon--download" viewBox="0 0 512 512" fill="currentColor"
+                                aria-hidden="true">
+                                <path
+                                    d="M288 32c0-17.7-14.3-32-32-32s-32 14.3-32 32V274.7l-73.4-73.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l128 128c12.5 12.5 32.8 12.5 45.3 0l128-128c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L288 274.7V32zM64 352c-35.3 0-64 28.7-64 64v32c0 35.3 28.7 64 64 64H448c35.3 0 64-28.7 64-64V416c0-35.3-28.7-64-64-64H346.5l-45.3 45.3c-25 25-65.5 25-90.5 0L165.5 352H64zm368 56a24 24 0 1 1 0 48 24 24 0 1 1 0-48z" />
+                            </svg>
+                            <span>Download résumé</span>
+                        </button>
+                    </div>
+                </div>
+                <span class="showcase__rail" aria-hidden="true"><span class="showcase__rail-fill"
+                        id="projectsProgress"></span></span>
             </div>
-            <p>Projects I've worked on</p>
-            <div class="work__download-resume"></div>
         </section>
 
         <section class="contact" id="contact">
-            <h2 class="contact__text">Get in touch!</h2>
-            <div class="contact__input-wrapper">
-                <input type="text" id="contactName" class="contact__input__name" placeholder="Name">
-                <input type="email" id="contactEmail" class="contact__input__name" placeholder="E-mail">
-                <input type="tel" id="contactPhone" class="contact__input__name" placeholder="Phone number">
-            </div>
-            <div class="contact__input-wrapper">
-                <textarea id="contactQuery" class="contact__input__query"
-                    placeholder="Enter your query and I shall reach out to you!"></textarea>
-                <button class="contact__input__button"><span>Contact me :D</span></button>
+            <img class="contact__illustration" /><!--The creation of Adam cutout-->
+            <div class="contact__form-wrapper">
+                <div class="contact__form">
+                    <h2 class="highlight">Get In Touch!</h2>
+                    <div class="contact__input-wrapper">
+                        <input type="text" id="contactName" class="contact__input__text" placeholder="Name">
+                        <input type="email" id="contactEmail" class="contact__input__text" placeholder="E-mail">
+                        <textarea id="contactQuery" class="contact__input__textarea"
+                            placeholder="Enter your query and I shall reach out to you!"></textarea>
+                        <button class="contact__input__button" type="button"><span>Contact me :D</span></button>
+                    </div>
+                </div>
+                <div class="contact__social">
+                    <p>You can also reach out to me on LinkedIn</p>
+                    <a href="https://www.linkedin.com/in/nithilareddygaddam/" target="_blank"
+                        rel="noopener noreferrer"><img src="assets/social-logos/linkedin.png"></a>
+                </div>
             </div>
         </section>
 
-        <footer class="footer">
-            <p>You can also reach out to me on LinkedIn</p>
-            <ul class="footer__social-links">
-                <li><a href="https://www.linkedin.com/in/nithilareddygaddam/" target="_blank" rel="noopener noreferrer"><img src="linkedin.png"></a></li>
-            </ul>
-        </footer>
+        <section class="fun" id="fun">
+            <h2>Coz it's not all just work</h2>
+            <div class="fun__subsection-wrapper">
+                <div class="fun__subsection">
+                    <div id="spotifyEmbed"></div>
+                </div>
+
+                <div class="fun__subsection">
+                    <p>My Top Films</p>
+                    <div class="fun__carousel">
+                        <button class="fun__carousel-arrow fun__carousel-arrow--prev" id="funPrev" type="button"
+                            aria-label="Scroll left">
+                            <svg class="icon icon--chevron" viewBox="0 0 320 512" fill="currentColor"
+                                aria-hidden="true">
+                                <path
+                                    d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l192 192c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256 246.6 86.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-192 192z" />
+                            </svg>
+                        </button>
+                        <ul id="funMovies">
+                            <li>Loading...</li>
+                        </ul>
+                        <button class="fun__carousel-arrow fun__carousel-arrow--next" id="funNext" type="button"
+                            aria-label="Scroll right">
+                            <svg class="icon icon--chevron" viewBox="0 0 320 512" fill="currentColor"
+                                aria-hidden="true">
+                                <path
+                                    d="M310.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-192 192c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L242.7 256 73.4 86.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l192 192z" />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="fun__social">
+                <p>You can also find me on Instagram</p>
+                <a href="https://www.instagram.com/red_dyvelvet/" target="_blank" rel="noopener noreferrer"><img
+                        src="assets/social-logos/instagram.png"></a>
+            </div>
+        </section>
     </div>
 </body>
 

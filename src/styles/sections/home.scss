@@ -1,0 +1,47 @@
+.home {
+    @include flex();
+    background: url('../../assets/background/1889-irises-van-gogh.jpg') center / cover no-repeat;
+
+    /* home__bio */
+    &__bio {
+        @include flex(row, unset, flex-end);
+        @include card;
+        padding: $cardPadding $cardPadding 0;
+        width: 100%;
+        color: $black;
+
+        @include media-breakpoint-down($md) {
+            flex-direction: column;
+            align-items: flex-end;
+        }
+
+        /* home__bio__text */
+        &__text {
+            align-self: flex-start;
+
+            @include media-breakpoint-down($md) {
+                align-self: flex-end;
+            }
+        }
+
+        /* home__picture */
+        &__picture {
+            img {
+                position: relative;
+                right: -$cardPadding;
+                display: block;
+                width: 15rem;
+                height: auto;
+                content: url('../../assets/personal-pictures/home-picture.png');
+
+                @include media-breakpoint-down($lg) {
+                    content: url('../../assets/personal-pictures/home-picture-full.png');
+                }
+
+                @include media-breakpoint-down($md) {
+                    content: url('../../assets/personal-pictures/home-picture.png');
+                }
+            }
+        }
+    }
+}

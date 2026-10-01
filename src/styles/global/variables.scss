@@ -1,0 +1,149 @@
+/*--------------------------- Theme Colours ---------------------------*/
+
+/* Colours */
+$white: #fff;
+$white-p7: rgba(255, 255, 255, 0.7);
+$black: #000;
+$black-p15: rgba(0, 0, 0, 0.15);
+$black-p4: rgba(0, 0, 0, 0.4);
+$black-p5: rgba(0, 0, 0, 0.55);
+$black-p8: rgba(0, 0, 0, 0.8);
+
+$yellow: #ffff00;
+$yellow-p12: rgba(255, 255, 0, 0.12);
+$yellow-p25: rgba(255, 255, 0, 0.25);
+$red: #c9333f;
+
+$tan: #d8c090;
+$tan-p18: rgba(216, 192, 144, 0.18);
+$tan-p35: rgba(216, 192, 144, 0.35);
+
+$blue: #6f8fb5;
+$blue-p18: rgba(111, 143, 181, 0.18);
+$blue-p35: rgba(111, 143, 181, 0.35);
+
+/*-------------------------- Theme Colours End -------------------------*/
+
+
+/*-------------------------------- Fonts -------------------------------*/
+/******************** Serif Fonts *****************************/
+/* Simonetta */
+@import url('https://fonts.googleapis.com/css2?family=Simonetta:ital,wght@0,400;0,900;1,400;1,900&display=swap');
+$Simonetta: 'Simonetta',
+Cambria,
+serif;
+
+/********************* Sans-serif Fonts ************************/
+/* Jost */
+@import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&display=swap');
+$Jost: 'Jost',
+Futura,
+Arial,
+sans-serif;
+
+/* Poppins */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+$Poppins: 'Poppins',
+Arial,
+Helvetica,
+sans-serif;
+/*------------------------------ Fonts End -----------------------------*/
+
+
+/*----------------------------- Breakpoints ----------------------------*/
+
+$sm: 576px;
+$md: 768px;
+$lg: 992px;
+$xl: 1200px;
+
+/*--------------------------- Breakpoints End --------------------------*/
+
+
+/*------------------------------- Layout --------------------------------*/
+
+$sectionPadding: 4rem 7.5vw;
+$cardPadding: 2rem;
+$boxShadow: 0 4px 24px $black-p4;
+
+/*----------------------------- Layout End ------------------------------*/
+
+
+/*------------------------------- Mixins -------------------------------*/
+
+@mixin media-breakpoint-down($breakpoint) {
+    @if $breakpoint==$sm {
+        @media (max-width: calc($sm - 0.02px)) {
+            @content;
+        }
+    }
+
+    @else if $breakpoint==$md {
+        @media (max-width: calc($md - 0.02px)) {
+            @content;
+        }
+    }
+
+    @else if $breakpoint==$lg {
+        @media (max-width: calc($lg - 0.02px)) {
+            @content;
+        }
+    }
+
+    @else {
+        @media (max-width: calc($xl - 0.02px)) {
+            @content;
+        }
+    }
+}
+
+@mixin media-breakpoint-up($breakpoint) {
+    @if $breakpoint==$sm {
+        @media (min-width: $sm) {
+            @content;
+        }
+    }
+
+    @else if $breakpoint==$md {
+        @media (min-width: $md) {
+            @content;
+        }
+    }
+
+    @else if $breakpoint==$lg {
+        @media (min-width: $lg) {
+            @content;
+        }
+    }
+
+    @else {
+        @media (min-width: $xl) {
+            @content;
+        }
+    }
+}
+
+@mixin flex($direction: column, $justify-content: center, $align-items: center) {
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $justify-content;
+    align-items: $align-items;
+}
+
+@mixin default-text {
+    font: 300 1.125rem/1.4 $Jost;
+    word-spacing: 0.25rem;
+}
+
+@mixin card($radius: 0.5rem, $bg: $white) {
+    box-shadow: $boxShadow;
+    border-radius: $radius;
+    background: $bg;
+}
+
+@mixin focus-ring {
+    outline: 2px solid $yellow;
+    outline-offset: 2px;
+}
+
+/*----------------------------- Mixins End -----------------------------*/
