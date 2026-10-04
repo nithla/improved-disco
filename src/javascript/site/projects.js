@@ -3,7 +3,7 @@ const PROJECTS = [
         id: 'accenture',
         name: 'Accenture',
         logo: 'assets/project-logos/accenture.svg',
-        role: 'Product · GenAI & agentic AI for HR',
+        role: 'Product Owner · GenAI & agentic AI for HR',
         summary: 'AI built for everyday HR, from GenAI answers to agentic actions, all powered by the CMS I run',
         bullets: [
             '45+ countries & 6,000+ HR professionals on one global platform',
@@ -31,7 +31,7 @@ const PROJECTS = [
         bullets: [
             '3 platforms, commerce, promotions & search, linked to the product pages through one service layer',
             '2 core shopping journeys, product detail & listing pages, delivered from requirements to release',
-            '1 backlog, owned end to end, from requirements through sprint planning to release',
+            'Every sprint planned & refined, keeping the team on what mattered most',
         ],
     },
     {
