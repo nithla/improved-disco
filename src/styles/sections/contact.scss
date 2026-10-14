@@ -4,6 +4,10 @@
     z-index: 1;
     overflow-x: clip;
 
+    @include media-breakpoint-up($lg) {
+        height: auto;
+    }
+
     @include media-breakpoint-down($lg) {
         padding: 0;
         background: url('../../assets/background/1512-creation-of-adam-michelangelo.png') center / cover no-repeat;

@@ -11,6 +11,10 @@
 </head>
 
 <body>
+    <div class="loader" role="status" aria-label="Loading">
+        <img class="loader__logo" src="<%= logo %>" alt="" width="96" height="96">
+    </div>
+
     <div class="main" id="home">
         <button class="main__music-toggle" type="button" id="musicToggle" aria-label="Unmute background music"
             aria-pressed="false">
@@ -51,9 +55,16 @@
             <h1>Hi, I’m <span class="highlight">Nithila</span>!</h1>
             <div class="home__bio">
                 <div class="home__bio__text">
-                    <p>After many years of introspection, the way I like to describe myself today is simple. I'm drawn to things that make you pause: beauty for the eyes, something satisfying to touch, or simply that little itch in the brain that wants to be scratched. I believe that pull serves a purpose. If there's no appeal in the thought, I don't see much point in doing it at all.</p>
-                    <p>I'm also an engineer with an MBA. Somewhere at the intersection of how something works, why it should exist, and how it feels to use, I found <span class="highlight">product.</span></p>
-                    <p>I've shipped rebrands, migrations, and sites built from scratch. These days, I'm deciding what gets built next and making the case for it. Six years in, split pretty evenly between engineering and strategy. Front-end to back-end, brand to data, I've been somewhere in most of it.</p>
+                    <p>After many years of introspection, the way I like to describe myself today is simple. I'm drawn
+                        to things that make you pause: beauty for the eyes, something satisfying to touch, or simply
+                        that little itch in the brain that wants to be scratched. I believe that pull serves a purpose.
+                        If there's no appeal in the thought, I don't see much point in doing it at all.
+                        I'm also an engineer with an MBA. Somewhere at the intersection of how something works, why it
+                        should exist, and how it feels to use, I found <span class="highlight">product.</span></p>
+                    <p>I've shipped rebrands, migrations, and sites built from scratch. These days, I'm deciding what
+                        gets built next and making the case for it. Six years in, split pretty evenly between
+                        engineering and strategy. Front-end to back-end, brand to data, I've been somewhere in most of
+                        it.</p>
                 </div>
                 <div class="home__bio__picture"><img><!--Loading from CSS--></div>
             </div>

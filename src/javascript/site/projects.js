@@ -30,13 +30,12 @@ const PROJECTS = [
         summary: 'EE Store, BT Group’s online shop, and the service layer connecting it to the systems behind it',
         bullets: [
             '3 platforms, commerce, promotions & search, linked to the product pages through one service layer',
-            '2 core shopping journeys, product detail & listing pages, delivered from requirements to release',
-            'Every sprint planned & refined, keeping the team on what mattered most',
+            '2 core journeys, product detail & listing, taken from requirements to release, sprint by sprint',
         ],
     },
     {
         id: 'dupont',
-        name: 'DuPont',
+        name: 'DuPont Sustainable Solutions',
         logo: 'assets/project-logos/dupont.png',
         role: 'Full-stack Developer',
         summary: 'DuPont Sustainable Solutions’ corporate site, rebuilt on BigCommerce after the business spun off from DuPont',
@@ -53,8 +52,8 @@ const PROJECTS = [
         role: 'Summer Intern · B-School Internship',
         summary: 'Research to strengthen the Brand Accelerator, Myntra’s program for D2C brands',
         bullets: [
-            '2,500+ accelerator programs mapped across APAC, the Americas & EMEA',
-            '50+ stakeholders & 15+ category teams consulted to shape the program’s next version',
+            '2,500+ accelerator programs mapped across APAC, Americas & EMEA',
+            '75+ stakeholders across categories & brands consulted to shape the program’s next version',
             '10+ D2C founders interviewed to build an onboarding roadmap',
             'Selected from 10+ B-school interns for a pre-placement interview',
         ],
@@ -98,7 +97,7 @@ const PROJECTS = [
         name: 'nrg',
         logo: 'assets/project-logos/logo.svg',
         role: 'Designer & Developer · This site',
-        summary: 'A portfolio that blends my two worlds: product thinking and hand-written code',
+        summary: 'A portfolio that blends my two worlds: product thinking & code',
         bullets: [
             '4 AWS services (Lambda, API Gateway, SES & EventBridge) handling the contact form, a live Letterboxd feed & a playlist that refreshes itself hourly',
             'Old masters on the walls, Tchaikovsky in the background, my Spotify & Letterboxd picks up front: the art and media I love, woven through every section',
