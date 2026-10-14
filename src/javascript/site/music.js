@@ -86,16 +86,18 @@ if (musicToggle && musicWrapper) {
         setUnmuted(true);
     }
 
+    /* No 'touchstart' here: it isn't an activation-granting event (like 'scroll'),
+       and since it fires before the tap's 'click', it would consume this one-shot
+       handler and create the player without audio permission on mobile. A tap
+       still produces a 'click', which is. */
     function handleFirstInteraction() {
         document.removeEventListener('click', handleFirstInteraction);
         document.removeEventListener('keydown', handleFirstInteraction);
-        document.removeEventListener('touchstart', handleFirstInteraction);
         revealSound();
     }
 
     document.addEventListener('click', handleFirstInteraction);
     document.addEventListener('keydown', handleFirstInteraction);
-    document.addEventListener('touchstart', handleFirstInteraction);
 
     musicToggle.addEventListener('click', () => {
         if (unmuted && player) {
