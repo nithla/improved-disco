@@ -47,7 +47,7 @@
         &-wrapper {
             @include flex(row, flex-start, center);
             position: relative;
-            padding: 4rem 7.5vw;
+            padding: 2rem 7.5vw 4rem;
             flex: 0 0 auto;
             gap: 5rem;
 
@@ -264,7 +264,7 @@
 
             /* showcase__projects__card--band */
             &--band {
-                width: 25rem;
+                width: 31rem;
                 align-self: flex-start;
                 flex-direction: column;
 
@@ -361,7 +361,7 @@
 
             /* showcase__projects__card--column */
             &--column {
-                width: 19rem;
+                width: 21rem;
                 align-self: flex-start;
                 flex-direction: column;
 

@@ -422,67 +422,68 @@ if (pearlButton && pearlDialog && portraitImg) {
 () {
 
 var PROJECTS = [{
-  id: 'nrg',
-  name: 'nrg',
-  logo: 'assets/project-logos/logo.svg',
-  role: 'Personal Portfolio · This Site',
-  summary: 'A personal portfolio built from scratch to showcase my work across product and engineering.',
-  bullets: ['Built with webpack 5, SCSS (sass-loader/css-loader/style-loader), and Babel + jQuery, templated via html-webpack-plugin from a single index.html entry point', 'npm run dev starts a live-reload dev server on port 3000; npm run build bundles the site into dist/', 'Organized per-section — styles, JS behavior, and assets (backgrounds, photos, logos, resume) mirrored into dist/ on build']
-}, {
   id: 'accenture',
   name: 'Accenture',
   logo: 'assets/project-logos/accenture.svg',
-  role: 'Business Analyst, Product Strategy · Expert Assist',
-  summary: 'Owned the metadata and content strategy for Accenture’s GenAI-powered Expert Assist platform.',
-  bullets: ['Delivered an 88% GenAI accuracy gain by owning metadata strategy & driving structural alignment of the index', 'Spearheaded the product roadmap for multi-tenant scalability, powering content team operations in 25+ regions', 'Overhauled UX for 10+ CMS features, transforming navigation, workflows, & in-app usability']
-}, {
-  id: 'bt',
-  name: 'British Telecom',
-  logo: 'assets/project-logos/bt.png',
-  role: 'Product Owner, Technical Business Analyst · Everything Everywhere',
-  summary: 'Partnered with EE’s PDP/PLP teams to streamline data flow and sharpen the on-site search & promo experience.',
-  bullets: ['Streamlined data flow, enabling a 15% faster feature rollout between backend services & PDP–PLP pages', 'Enhanced search & refined promotional strategies, driving a 20% increase in user engagement & satisfaction', 'Cut turnaround time by 10% by translating complex technicalities into priorities for cross-functional teams']
+  role: 'Product Owner · GenAI & agentic AI for HR',
+  summary: 'AI built for everyday HR, from GenAI answers to agentic actions, all powered by the CMS I run',
+  bullets: ['45+ countries & 6,000+ HR professionals on one global platform', 'Every AI answer grounded in approved HR policy, personalized through 6 layers of metadata to who’s asking and where', '15+ CMS features, from access controls to approval workflows, keeping HR content current at global scale']
 }, {
   id: 'thoughtworks',
   name: 'Thoughtworks',
   logo: 'assets/project-logos/thoughtworks.svg',
   role: 'Frontend Lead',
-  summary: 'Led the frontend rebrand and repository cleanup ahead of Thoughtworks’ NASDAQ IPO.',
-  bullets: ['Facilitated a $0.77 billion IPO on the NASDAQ by spearheading the rebranding & full visual refresh campaign', 'Expanded website traffic by 15% & eliminated redundancy in under 4 weeks through repository restructuring']
+  summary: 'Thoughtworks’ 75,000-page global site, rebranded and replatformed in the run-up to its 2021 Nasdaq IPO',
+  bullets: ['$0.77B Nasdaq IPO, introduced to the world through a website rebrand I led', '&lt;4 weeks to restructure the codebase & clear out redundancy']
 }, {
-  id: 'equinix',
-  name: 'Equinix',
-  logo: 'assets/project-logos/equinix.png',
-  role: 'Frontend Developer',
-  summary: 'Built the UI layer handling large-scale API result sets for Equinix’s product surfaces.',
-  bullets: ['Seamlessly integrated 1000s of results into the UI, optimizing complex API data handled from database requests', 'Reduced development effort by 25% by building versatile, modular, & reusable UI components for scalability']
-}, {
-  id: 'tadigital',
-  name: 'TA Digital',
-  logo: 'assets/project-logos/tadigital.png',
-  role: 'Frontend Developer · Corporate website rebuild',
-  summary: 'Rebuilt TA Digital’s corporate site with a shared design system and reusable component library.',
-  bullets: ['Created global styles & 10+ reusable functions, streamlining the design of 100+ pages in the site’s redesign', 'Developed 15+ dynamic components, enabling data analytics & powering essential site-level functionalities']
+  id: 'bt',
+  name: 'British Telecom',
+  logo: 'assets/project-logos/bt.png',
+  role: 'Product Owner, Technical Business Analyst · Everything Everywhere',
+  summary: 'EE Store, BT Group’s online shop, and the service layer connecting it to the systems behind it',
+  bullets: ['3 platforms, commerce, promotions & search, linked to the product pages through one service layer', '2 core shopping journeys, product detail & listing pages, delivered from requirements to release', 'Every sprint planned & refined, keeping the team on what mattered most']
 }, {
   id: 'dupont',
   name: 'DuPont',
   logo: 'assets/project-logos/dupont.png',
   role: 'Full-stack Developer',
-  summary: 'Migrated DuPont’s multi-language site from AEM to BigCommerce as a full-stack effort.',
-  bullets: ['Spearheaded a platform migration of 624 HTML pages from AEM to BigCommerce, saving $40,000 annually', 'Optimized structure for 9 language sites, enhancing SEO & ranking, & reducing developer workload by 50%']
+  summary: 'DuPont Sustainable Solutions’ corporate site, rebuilt on BigCommerce after the business spun off from DuPont',
+  bullets: ['$40K saved a year by moving 624 pages from AEM to BigCommerce', '9 language sites restructured for stronger SEO & ranking', '50% less developer workload after launch']
 }, {
   id: 'myntra',
   name: 'Myntra',
   logo: 'assets/project-logos/myntra.png',
   role: 'Summer Intern · B-School Internship',
-  summary: 'A B-school summer internship analyzing growth opportunities across Myntra’s D2C partner network.',
-  bullets: ['Identified key growth opportunities by leveraging insights from 50+ stakeholders & 2,500+ global programs', 'Collaborated with 10+ D2C entrepreneurs & 15+ categories to identify & introduce strategic improvements', 'Designed an onboarding roadmap using data from 5 partner brands to streamline & advance program entry']
+  summary: 'Research to strengthen the Brand Accelerator, Myntra’s program for D2C brands',
+  bullets: ['2,500+ accelerator programs mapped across APAC, the Americas & EMEA', '50+ stakeholders & 15+ category teams consulted to shape the program’s next version', '10+ D2C founders interviewed to build an onboarding roadmap', 'Selected from 10+ B-school interns for a pre-placement interview']
+}, {
+  id: 'tadigital',
+  name: 'TA Digital',
+  logo: 'assets/project-logos/tadigital.png',
+  role: 'Frontend Developer · Corporate website rebuild',
+  summary: 'TA Digital’s new corporate site after its rebrand from TechAspect, moving from WordPress to Drupal 8',
+  bullets: ['100+ pages redesigned on shared global styles & 10+ reusable functions', '15+ dynamic components powering analytics & core site features', 'SPOT award (Special Performer of TA Digital) for the site’s launch']
+}, {
+  id: 'equinix',
+  name: 'Equinix',
+  logo: 'assets/project-logos/equinix.png',
+  role: 'Frontend Developer',
+  summary: 'Self-service tools that let users reach the infrastructure data held in Equinix’s backend systems',
+  bullets: ['1000s of API results rendered cleanly in the UI', '25% less development effort from modular, reusable components']
 }, {
   id: 'canopygrowth',
   name: 'Canopy Growth',
   logo: 'assets/project-logos/canopygrowth.png',
-  role: null,
-  bullets: []
+  role: 'Frontend Developer · Analytics data layer',
+  summary: 'The analytics data layer behind Canopy Growth’s checkout, built for its Analytics & Personalization team',
+  bullets: ['1 week ahead of schedule, so analytics work started early', '2 key commerce pages, Checkout & Thank You, instrumented for Adobe Analytics']
+}, {
+  id: 'nrg',
+  name: 'nrg',
+  logo: 'assets/project-logos/logo.svg',
+  role: 'Designer & Developer · This site',
+  summary: 'A portfolio that blends my two worlds: product thinking and hand-written code',
+  bullets: ['4 AWS services (Lambda, API Gateway, SES & EventBridge) handling the contact form, a live Letterboxd feed & a playlist that refreshes itself hourly', 'Old masters on the walls, Tchaikovsky in the background, my Spotify & Letterboxd picks up front: the art and media I love, woven through every section', '100% custom HTML, SCSS & JavaScript, with no templates or page builders']
 }, {
   id: 'eon',
   name: 'E.ON',
@@ -1533,6 +1534,11 @@ ___CSS_LOADER_EXPORT___.push([module.id, `/*--------------------------- Theme Co
   z-index: 1;
   overflow-x: clip;
 }
+@media (min-width: 992px) {
+  .contact {
+    height: auto;
+  }
+}
 @media (max-width: 991.98px) {
   .contact {
     padding: 0;
@@ -1660,7 +1666,7 @@ ___CSS_LOADER_EXPORT___.push([module.id, `/*--------------------------- Theme Co
 .contact__input__button:hover {
   outline: 2px solid #ffff00;
   outline-offset: 2px;
-}`, "",{"version":3,"sources":["webpack://./styles/global/variables.scss","webpack://./styles/sections/contact.scss"],"names":[],"mappings":"AAAA,wEAAA;AAEA,YAAA;AAsBA,yEAAA;AAGA,yEAAA;AACA,+DAAA;AACA,cAAA;AAMA,gEAAA;AACA,SAAA;AAOA,YAAA;AAMA,yEAAA;AAGA,yEAAA;AAOA,yEAAA;AAGA,0EAAA;AAMA,0EAAA;AAGA,yEAAA;AA6EA,yEAAA;AClJgC;ED4H5B,aAAA;EACA,sBAFoB;EAGpB,uBAH8C;EAI9C,mBAJoE;ECzHpE,kBAAA;EACA,UAAA;EACA,gBAAA;AAqBJ;AD4DQ;ECrFwB;IAOxB,UAAA;IACA,0EAAA;EAsBN;AACF;AApBI;EACI,kBAAA;EACA,aAAA;EACA,WAAA;EACA,WAAA;EACA,WAAA;EACA,YAAA;EACA,gDAAA;AAsBR;AD6CQ;EC1EJ;IAUQ,aAAA;EAuBV;AACF;AA7CgC;EAyB5B,kBAAA;AAuBJ;AAtBI;EAEI,0BAAA;AAuBR;AAtBQ;ED+FJ,aAAA;EACA,sBAFoB;EAGpB,uBAH8C;EAI9C,mBAJoE;EC5F5D,kBAAA;EACA,OAAA;EACA,uBAAA;EACA,8BD7BD;EC8BC,SAAA;AA2BZ;ADuBQ;ECxDA;IASQ,SAAA;IACA,WAAA;IACA,gBAAA;IACA,gBAAA;EA4Bd;AACF;AA5CI;EDkGA,aAAA;EACA,sBChFkB;EDiFlB,uBCjF0B;EDkF1B,oBClFkC;AA+BtC;ADHQ;EC/CJ;IAsBQ,SAAA;IACA,WAAA;IACA,kBAAA;EAgCV;AACF;AAnFgC;EAsD5B,mBAAA;AAgCJ;AA/BI;EAEI,2BAAA;AAgCR;AA/BQ;EDkEJ,aAAA;EACA,sBAFoB;EAGpB,uBAH8C;EAI9C,mBAJoE;EC/D5D,UAAA;EACA,WAAA;AAoCZ;AAlCY;EDoER,wDAAA;EACA,qBAAA;ECnEY,mBAAA;EACA,kBAAA;EACA,gBDhER;ECiEQ,eAAA;EACA,cDzDV;AC8FN;AAnDI;EAkBI,qCAAA;AAoCR;AAnCQ;EDyDJ,wDAAA;EACA,qBAAA;ECvDQ,SAAA;EACA,gDAAA;EACA,cAAA;EACA,eAAA;EACA,WAAA;EACA,cAAA;EACA,gBAAA;EACA,WDnFJ;ACwHR;AAnCY;EAEI,UAAA;EACA,gCAAA;AAoChB;AAjCY;EACI,+BD3FL;AC8HX;AAhCY;EAGI,6BDlGR;ECmGQ,iBDnGR;ECoGQ,yDAAA;AAgChB;AA7BY;EACI,6BAAA;EACA,WDzGR;ACwIR;AAlFI;EAuDI,sBAAA;AA8BR;AA7BQ;EACI,wBAAA;EACA,YAAA;EACA,gBAAA;EACA,oDAAA;AA+BZ;AA3FI;EA+DI,oBAAA;AA+BR;AA7BY;EDsBR,0BAAA;EACA,mBAAA;ACUJ","sourceRoot":""}]);
+}`, "",{"version":3,"sources":["webpack://./styles/global/variables.scss","webpack://./styles/sections/contact.scss"],"names":[],"mappings":"AAAA,wEAAA;AAEA,YAAA;AAsBA,yEAAA;AAGA,yEAAA;AACA,+DAAA;AACA,cAAA;AAMA,gEAAA;AACA,SAAA;AAOA,YAAA;AAMA,yEAAA;AAGA,yEAAA;AAOA,yEAAA;AAGA,0EAAA;AAMA,0EAAA;AAGA,yEAAA;AA6EA,yEAAA;AClJgC;ED4H5B,aAAA;EACA,sBAFoB;EAGpB,uBAH8C;EAI9C,mBAJoE;ECzHpE,kBAAA;EACA,UAAA;EACA,gBAAA;AAqBJ;ADsFQ;EC/GwB;IAOxB,YAAA;EAsBN;AACF;ADuDQ;ECrFwB;IAWxB,UAAA;IACA,0EAAA;EAuBN;AACF;AArBI;EACI,kBAAA;EACA,aAAA;EACA,WAAA;EACA,WAAA;EACA,WAAA;EACA,YAAA;EACA,gDAAA;AAuBR;ADwCQ;ECtEJ;IAUQ,aAAA;EAwBV;AACF;AAlDgC;EA6B5B,kBAAA;AAwBJ;AAvBI;EAEI,0BAAA;AAwBR;AAvBQ;ED2FJ,aAAA;EACA,sBAFoB;EAGpB,uBAH8C;EAI9C,mBAJoE;ECxF5D,kBAAA;EACA,OAAA;EACA,uBAAA;EACA,8BDjCD;ECkCC,SAAA;AA4BZ;ADkBQ;ECpDA;IASQ,SAAA;IACA,WAAA;IACA,gBAAA;IACA,gBAAA;EA6Bd;AACF;AA7CI;ED8FA,aAAA;EACA,sBC5EkB;ED6ElB,uBC7E0B;ED8E1B,oBC9EkC;AAgCtC;ADRQ;EC3CJ;IAsBQ,SAAA;IACA,WAAA;IACA,kBAAA;EAiCV;AACF;AAxFgC;EA0D5B,mBAAA;AAiCJ;AAhCI;EAEI,2BAAA;AAiCR;AAhCQ;ED8DJ,aAAA;EACA,sBAFoB;EAGpB,uBAH8C;EAI9C,mBAJoE;EC3D5D,UAAA;EACA,WAAA;AAqCZ;AAnCY;EDgER,wDAAA;EACA,qBAAA;EC/DY,mBAAA;EACA,kBAAA;EACA,gBDpER;ECqEQ,eAAA;EACA,cD7DV;ACmGN;AApDI;EAkBI,qCAAA;AAqCR;AApCQ;EDqDJ,wDAAA;EACA,qBAAA;ECnDQ,SAAA;EACA,gDAAA;EACA,cAAA;EACA,eAAA;EACA,WAAA;EACA,cAAA;EACA,gBAAA;EACA,WDvFJ;AC6HR;AApCY;EAEI,UAAA;EACA,gCAAA;AAqChB;AAlCY;EACI,+BD/FL;ACmIX;AAjCY;EAGI,6BDtGR;ECuGQ,iBDvGR;ECwGQ,yDAAA;AAiChB;AA9BY;EACI,6BAAA;EACA,WD7GR;AC6IR;AAnFI;EAuDI,sBAAA;AA+BR;AA9BQ;EACI,wBAAA;EACA,YAAA;EACA,gBAAA;EACA,oDAAA;AAgCZ;AA5FI;EA+DI,oBAAA;AAgCR;AA9BY;EDkBR,0BAAA;EACA,mBAAA;ACeJ","sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -2166,7 +2172,7 @@ ___CSS_LOADER_EXPORT___.push([module.id, `/*--------------------------- Theme Co
   justify-content: flex-start;
   align-items: center;
   position: relative;
-  padding: 4rem 7.5vw;
+  padding: 1rem 7.5vw;
   flex: 0 0 auto;
   gap: 5rem;
 }
@@ -2407,7 +2413,7 @@ ___CSS_LOADER_EXPORT___.push([module.id, `/*--------------------------- Theme Co
   /* showcase__projects__card--band */
 }
 .showcase__projects__card--band {
-  width: 25rem;
+  width: 36rem;
   align-self: flex-start;
   flex-direction: column;
 }
@@ -2504,7 +2510,7 @@ ___CSS_LOADER_EXPORT___.push([module.id, `/*--------------------------- Theme Co
   /* showcase__projects__card--column */
 }
 .showcase__projects__card--column {
-  width: 19rem;
+  width: 27rem;
   align-self: flex-start;
   flex-direction: column;
 }
@@ -15458,4 +15464,4 @@ __webpack_require__.r(__webpack_exports__);
 
 /******/ })()
 ;
-//# sourceMappingURL=bundleb25aab5f21267ab8f25f.js.map
+//# sourceMappingURL=bundle31f7ccfa7559f903cdb7.js.map

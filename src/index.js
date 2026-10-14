@@ -3,6 +3,7 @@ import './styles/global/reset.scss'
 import './styles/global/main.scss'
 import './styles/global/variables.scss'
 import './styles/global/header.scss'
+import './styles/global/loader.scss'
 
 /* Section Styles */
 import './styles/sections/contact.scss'
@@ -13,6 +14,7 @@ import './styles/sections/skills.scss'
 
 /* JavaScript */
 import './javascript/site/jquery.js'
+import './javascript/site/loader.js'
 import './javascript/site/download.js'
 import './javascript/site/form.js'
 import './javascript/site/fun.js'

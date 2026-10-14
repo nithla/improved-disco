@@ -1,5 +1,6 @@
 const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 
 module.exports = {
     mode: 'development',
@@ -29,7 +30,7 @@ module.exports = {
             {
                 test: /\.scss$/,
                 use: [
-                    'style-loader',
+                    MiniCssExtractPlugin.loader,
                     'css-loader',
                     {
                         loader: 'sass-loader',
@@ -69,6 +70,11 @@ module.exports = {
         ],
     },
     plugins: [
+        /* CSS ships as a <link> in <head> so the browser waits for it before painting;
+           with style-loader the raw HTML flashed until the JS bundle ran. */
+        new MiniCssExtractPlugin({
+            filename: '[name][contenthash].css',
+        }),
         new HtmlWebpackPlugin({
             title: 'Product, Design & Engineering',
             filename: 'index.html',
